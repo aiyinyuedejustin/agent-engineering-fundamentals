@@ -86,6 +86,10 @@ flowchart BT
 | [09 身份、合规与运营治理](docs/09-identity-compliance-ops.md) | 凭证放哪、谁的身份在干活、数据被留了多久、ZDR（零数据保留）和驻留的冲突、组织策略下发、钩子和预算的语义。 |
 | [10 检索、记忆与 agent 间协议](docs/10-retrieval-memory-a2a.md) | embedding 和向量库的生命周期、提前检索还是让 agent 自己搜、记忆的读写与纠错、A2A/ACP 协议、子 agent 的权限和失败。 |
 
+## 推荐阅读
+
+📚 **[推荐阅读：8 份可以直接对着读的体系化资料](docs/recommended-reading.md)**：书、系列教程和带讲解的源码解读，每份写了强在哪、缺什么、重点章节。页里有一张覆盖表，标出每份资料覆盖知识地图的哪些板块，以及合起来仍然缺、要回到本仓库对应章节补的部分。
+
 ## 阅读路径
 
 **入门（先建立整体感）**
@@ -117,7 +121,7 @@ flowchart BT
 
 每一章的资料清单都尽量用一手资料：厂商官方文档、协议规范、RFC，以及开源 agent 的源码（OpenAI Codex、opencode、Goose、Gemini CLI、Aider、Cline、OpenHands、pydantic-ai、Vercel AI SDK、LangGraph、vLLM 等），源码链接多数固定到具体提交。工程经验类文章只保留有独家内容的。
 
-体系化的中文参考：李博杰《深入理解 AI Agent》（[bojieli/ai-agent-book](https://github.com/bojieli/ai-agent-book)），各章资料清单里按对应章节给了链接，书里独有的一线经验已经吸收进相关章节并注明出处。
+想找成体系、可以从头读到尾的书和教程，见[推荐阅读](docs/recommended-reading.md)，李博杰《深入理解 AI Agent》的介绍和重点章节也在那一页。这本书里独有的一线经验，已经吸收进本仓库相关章节并注明出处。
 
 ## 许可
 
