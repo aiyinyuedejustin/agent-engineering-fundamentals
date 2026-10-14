@@ -218,6 +218,23 @@ bootstrap hydration 先从响应取出组织标识与 `current_user_access`，�
 
 ## 11 可迁移的实现检查表
 
+### 原创示例的缺省值与快照契约
+
+下面是本书 `decideAccess` 的判断顺序，和产品中每项能力各自的兼容默认值分开理解。
+
+| 输入状态 | 示例结果 | 关键区别 |
+|---|---|---|
+| clientGate 为 undefined | loading，不允许 | 尚未取得信息，不等于用户关闭 |
+| clientGate 为 false | platform，不允许 | 当前客户端门关闭 |
+| 客户端门已开，serverStatus 为 undefined | loading，不允许 | 仍在等待服务能力状态 |
+| serverStatus 不为 available | 保留服务状态，不允许 | 原因不会压成单一 false |
+| 能力可用，userEnabled 为 false | user-paused，不允许 | 用户暂停与平台不支持不同 |
+| 能力可用且用户未暂停 | available，允许 | 必须经过前面的可用性判断 |
+
+原创 `resolveFreshAccess` 只复用非未来、年龄不超过 maxAge 的快照，且只有 `allowed === true` 才放行。例如 now=1000、maxAge=100：checkedAt=950 可以复用，800 或 1100 都要刷新；刷新失败则拒绝新动作。这是教学策略，不是产品所有动作共享的授权规则，也不是组织 bootstrap 缓存策略的别名。
+
+
+
 下面的建议由上述机制归纳而来，是原创工程建议，不是对 Claude 全部实现的宣称。
 
 | 设计问题 | 建议的不变量 | 对应测试 |
