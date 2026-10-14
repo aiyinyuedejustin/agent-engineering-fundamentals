@@ -1,0 +1,14 @@
+%% Original explanatory diagram for the book.
+stateDiagram-v2
+    [*] --> idle
+    idle --> initializing: cold start / resume
+    initializing --> running: current generation attaches query
+    initializing --> idle: initialization fails
+    initializing --> stopping: user stop
+    running --> idle: turn settles and no immediate work
+    running --> stopping: stop session
+    stopping --> idle: teardown
+    idle --> running: eligible warm reuse
+    idle --> archived: archive
+    archived --> initializing: restart archived session
+    idle --> stopping: explicit stop

@@ -35,22 +35,37 @@
 - [设置与数据看板](01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html)
 - [Quick Entry 指令面板](01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html)
 
+## 模板实景
+
+[![对话工作台实景](assets/screenshots/02-chat-d63d0f4.jpg)](01-Frontend-Design-And-HTML-Templates/templates/README.md#浏览器实景)
+
+[查看六套模板截图与用法](01-Frontend-Design-And-HTML-Templates/templates/README.md#浏览器实景)
+
 ## 技术全书：十卷主线，专题补充
 
 | 卷 | 主题 | 要解决的问题 |
 |---|---|---|
 | 01 | [整体架构与多进程协同](02-Illustrated-Deep-Dive-Book/01-System-Architecture/README.md) | 一个窗口后面，哪些东西一起活、哪些东西分别活？ |
-| 02 | Agent Loop 与执行状态机 | 一次回复结束，为什么执行进程未必结束？ |
-| 03 | Computer Use 与 Cowork | 主机、虚拟机、终端和屏幕操作怎样分工？ |
-| 04 | Prompt、工具契约与解析 | 从连续字节到可执行动作，中间有哪些结构边界？ |
+| 02 | [Agent Loop 与执行状态机](02-Illustrated-Deep-Dive-Book/02-Agent-Loop-Engine/README.md) | 一次回复结束，为什么执行进程未必结束？ |
+| 03 | [Computer Use 与 Cowork](02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md) | 主机、虚拟机、终端和屏幕操作怎样分工？ |
+| 04 | [Prompt、工具契约与解析](02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md) | 从连续字节到可执行动作，中间有哪些结构边界？ |
 | 05 | [上下文与文件管线](02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md) | 拖入一个文件后，哪些工作在本地，哪些交给服务？ |
 | 06 | [MCP 宿主与扩展](02-Illustrated-Deep-Dive-Book/06-MCP-Host-Internals/README.md) | 安装一个工具，为什么还不等于可以调用它？ |
-| 07 | Artifacts 与预览沙盒 | 怎样让生成代码可见、可交互，又不拿到宿主能力？ |
-| 08 | 对话分支与流式渲染 | 编辑、重试和连续输出如何保持一致？ |
-| 09 | Memory、Projects 与 Styles | 跨对话信息和当前轮输入怎样分层组织？ |
-| 10 | Feature Flags 与配置演化 | 开关、能力与产品入口如何组合，代码能说明什么？ |
+| 07 | [Artifacts 与预览沙盒](02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md) | 怎样让生成代码可见、可交互，又不拿到宿主能力？ |
+| 08 | [对话分支与流式渲染](02-Illustrated-Deep-Dive-Book/08-Conversation-Tree-And-Streaming/README.md) | 编辑、重试和连续输出如何保持一致？ |
+| 09 | [Memory、Projects 与 Styles](02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md) | 跨对话信息和当前轮输入怎样分层组织？ |
+| 10 | [Feature Flags 与配置演化](02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md) | 开关、能力与产品入口如何组合，代码能说明什么？ |
 | 专题 | [状态、恢复与更新](02-Illustrated-Deep-Dive-Book/11-State-Recovery-And-Updates/README.md) | 网络失败、配置损坏、崩溃与升级分别怎样处理？ |
 | 专题 | [版本与跨平台](02-Illustrated-Deep-Dive-Book/12-Versions-And-Cross-Platform/README.md) | 三个平台共享哪些字节，又保留哪些系统差异？ |
+
+## 读完最值得带走的六件事
+
+1. **一轮结束，不等于进程结束。** 把 session、一次执行和进程复用分别建模，停止时让旧异步结果失效。
+2. **安装成功，不等于工具可调用。** 安装、启用、配置、连接和具体动作授权，是五道不同的门。
+3. **网络分块不是字符、事件或 token。** UTF-8 解码、SSE 分帧、内容块归约与界面绘制，各自维护自己的边界。
+4. **对话分支首先是身份问题。** 编辑、重试和选择历史，必须明确父节点、临时节点与当前可见路径。
+5. **预览安全不止检查来源。** 同一个 iframe 里的旧内容请求也可能晚到；内容代次与请求归属值得单独设计。
+6. **审美可以变成可操作的参数。** 表面、文字、边框、动作分别命名；阅读字号和控件密度分别控制，主题切换才不会变成整页换色。
 
 ## 使用这份材料
 

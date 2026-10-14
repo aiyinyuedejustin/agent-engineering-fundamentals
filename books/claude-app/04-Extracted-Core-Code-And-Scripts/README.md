@@ -2,10 +2,18 @@
 
 这里放命名清楚、能独立阅读和运行的工程化实现，以及将结论连接到输入的工具。算法示例采用原创重写；完整安装包、商业字体和混淆产物不放进代码库。
 
-## 可直接运行
+## 随仓即可运行
+
+- [原创机制实验室](core-code-lab/README.md)：流式协议、对话树、执行循环、预览状态、记忆与配置；106 项离线测试。
+- [三张学习图生成器](scripts/build_learning_figures.py)：Python 标准库生成坐标、UTF-8/SSE 与分支阅读图。
+
+## 需要本地产品样本的工具
 
 - [精选证据校验](scripts/verify_evidence.py)：核对源文件身份与声明定位。
 - [三平台 UI 对照](scripts/compare_ui_trees.py)：从三份解包目录重新生成清单与差异，不依赖缓存计数。
+
+## 设计图与交互测试
+
 - [色卡与组件图生成](scripts/make_anatomy_figures.py) · [表面图生成](scripts/make_study_figures.py)：从设计数据重建原创 SVG。
 - [基础交互测试](tests/demo-state/README.md) · [密度、阅读与 Quick Entry 测试](tests/phase2-components/README.md)：可复现的状态与静态检查。
 

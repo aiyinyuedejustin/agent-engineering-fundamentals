@@ -1,0 +1,283 @@
+{
+  "format_version": 1,
+  "hash_algorithm": "SHA-256",
+  "scope": "Original teaching models and analysis tools; no proprietary sample inputs or generated outputs.",
+  "self_hash": "manifest.json is excluded to avoid recursive hashing.",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 4957,
+      "sha256": "87355996104781df0b427b2bc41582cf84779c3bcb8186c237a43e890bb348fb",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "color-tools/.gitignore",
+      "bytes": 50,
+      "sha256": "05962099782cf214b7b185e72254742d383d6f4d327a7faefd68f2ce340572cf",
+      "source": "staging/color-tools/.gitignore",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/README.md",
+      "bytes": 12286,
+      "sha256": "f16015f817ffd1439fcd22f33fcebe4bd27451ed04b46c3983bb6037b71ca7d1",
+      "source": "staging/color-tools/README.md",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/build_color_catalog.py",
+      "bytes": 20497,
+      "sha256": "ff687f65108b501de15e2f720613dc0ef3d00e88b4c976a343a65de99a526acb",
+      "source": "staging/color-tools/build_color_catalog.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/color_catalog_template.html",
+      "bytes": 26465,
+      "sha256": "3c6b6fe0bff694db8dfe5ac5a40a6627849cb1e6a93f7975e00dc458be80ed03",
+      "source": "staging/color-tools/color_catalog_template.html",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/extract_design_tokens.py",
+      "bytes": 10101,
+      "sha256": "bab0c769b777b06be08a76f7a9367d2f464ab94f1f0de5cf7aa31dd4d2877990",
+      "source": "staging/color-tools/extract_design_tokens.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/inventory_inputs.py",
+      "bytes": 4486,
+      "sha256": "1039767b7cb6eed4aafc80d01980044570d9b63dcaa471f6b33e445ba8d3dde4",
+      "source": "staging/color-tools/inventory_inputs.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/package.json",
+      "bytes": 261,
+      "sha256": "e16285039bfbbd9531fd499d802cc8c41a78a0ef72077b8a27c295df19d05cd9",
+      "source": "staging/color-tools/package.json",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/tests/test_browser_dom.cjs",
+      "bytes": 6666,
+      "sha256": "c10c4672e7e8a36fc145c51fca9bf0c1427d4206ae6d1bcb3f39eca4b2f89033",
+      "source": "staging/color-tools/tests/test_browser_dom.cjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/tests/test_color_tools.py",
+      "bytes": 16543,
+      "sha256": "f85010fc5490ebb37bd3efe5367236aaf24431a607c1f643a31422b51d07a163",
+      "source": "staging/color-tools/tests/test_color_tools.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/tests/verify_baseline.py",
+      "bytes": 3790,
+      "sha256": "06580f20534680298e889f5017b88aa6a5f6b1ba86f23aa5838895b32ded2af0",
+      "source": "staging/color-tools/tests/verify_baseline.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/README.md",
+      "bytes": 1231,
+      "sha256": "c6af43ec7fe3588eca4705cc8d2f17cc19b4f4a5fa4eb8d9a24343248ebf985a",
+      "source": "staging/loop-cowork/README.md",
+      "copy": "portable-readme-edit",
+      "source_sha256": "667ca3cd9ec7c2568bc7a60f582f7b8d1cd392db225517efcc72a43eb57e8b51"
+    },
+    {
+      "path": "loop-cowork/diagrams/agent-loop-1.mmd",
+      "bytes": 613,
+      "sha256": "109039d7e83700845016b7976fc01679213cd4b62d69b9ac1802cfb5e984d58c",
+      "source": "staging/loop-cowork/diagrams/agent-loop-1.mmd",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/diagrams/agent-loop-2.mmd",
+      "bytes": 573,
+      "sha256": "e0e4460ace0a1c24d7c2122525be5a053336b654a377239b1e292044a7f2d084",
+      "source": "staging/loop-cowork/diagrams/agent-loop-2.mmd",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/diagrams/agent-loop-3.mmd",
+      "bytes": 765,
+      "sha256": "1880cfa53404d22e3027d833b1b8bcb2ec68a6e17b61709fddbb28e9f8a2623f",
+      "source": "staging/loop-cowork/diagrams/agent-loop-3.mmd",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/diagrams/cowork-control-1.mmd",
+      "bytes": 633,
+      "sha256": "e63d21e42e4e67ac1634ffeabf5e2b367c7b1ffb7371c0c54335d905f3d8af24",
+      "source": "staging/loop-cowork/diagrams/cowork-control-1.mmd",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/diagrams/cowork-control-2.mmd",
+      "bytes": 657,
+      "sha256": "4fecb2918ccb8177539b22048ee37ace3d67c95dbecfab7223c0a52ec34bbcc3",
+      "source": "staging/loop-cowork/diagrams/cowork-control-2.mmd",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/model.py",
+      "bytes": 8255,
+      "sha256": "3c2b620fd03a5866fa56f3d43aef27683bc46da7b4da664471f929d126eec30e",
+      "source": "staging/loop-cowork/model.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/test_model.py",
+      "bytes": 5607,
+      "sha256": "d1790462098950a4807dabdea63ec0e820e24ffb518985c670610afd893d6711",
+      "source": "staging/loop-cowork/test_model.py",
+      "copy": "unchanged"
+    },
+    {
+      "path": "memory-flags/README.md",
+      "bytes": 2331,
+      "sha256": "87aa45ef2b640c1ad82db7f461586d58b57cc503aafbb3375d6e0891a89e81da",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "memory-flags/demo.mjs",
+      "bytes": 1849,
+      "sha256": "b6927cf84045a0d2d93b38ea0fcd3f6acb4578863e8ab015d0d5358e5cb8520c",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "memory-flags/memory-flags-model.mjs",
+      "bytes": 3155,
+      "sha256": "607988b598623578cc8a82328d85a8e9cb2b10e14d605bedeef1c2fd240e2a91",
+      "source": "drafts/memory-flags-model.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "memory-flags/memory-flags-model.test.mjs",
+      "bytes": 5494,
+      "sha256": "6c19e5089fe344c778d3e6f49e36ab1c72b3b414726894431e8f91b8819e302d",
+      "source": "drafts/memory-flags-model.test.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/README.md",
+      "bytes": 1545,
+      "sha256": "e5b3740db7a6352f970f31f3508618cc5f1bccd93ba070e7e8e9efd016681b25",
+      "source": "staging/protocol-tree/README.md",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/branch-manager.mjs",
+      "bytes": 6582,
+      "sha256": "6c4f7f19374b51b439876e3dc1e725361297b261c78473f80378dc94900216e4",
+      "source": "staging/protocol-tree/branch-manager.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/content-reducer.mjs",
+      "bytes": 5736,
+      "sha256": "b156d78dd725dba7d78b8b68d2f61349aef6f5cd72e0ff7717a91540e58b82a2",
+      "source": "staging/protocol-tree/content-reducer.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/demo.mjs",
+      "bytes": 1720,
+      "sha256": "c778f7d000117fa75468aca4744702bbbeeddb0796eab3e73de37354f08a6b5f",
+      "source": "staging/protocol-tree/demo.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/incremental-sse.mjs",
+      "bytes": 3946,
+      "sha256": "ad6c33ee9c002b445da4f4007b8044e8cc6b6e9ca35ad439fcf7cc4f01b8b21a",
+      "source": "staging/protocol-tree/incremental-sse.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/legacy-tags.mjs",
+      "bytes": 3058,
+      "sha256": "3ea1e3aaec2106a1abebaf048cea8dd8f7d78039c935f1ffa616063ce6eb236b",
+      "source": "staging/protocol-tree/legacy-tags.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/package.json",
+      "bytes": 185,
+      "sha256": "fecc44a3177d2ad758569bfb62e721f19b5fcac91ef0bdef7580900c83678ca6",
+      "source": "staging/protocol-tree/package.json",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/test/branches.test.mjs",
+      "bytes": 3327,
+      "sha256": "27f2ca541a7fd65b08435fb11673bf9d432ed73cc2c76a69901ee0d0bbb9ebf1",
+      "source": "staging/protocol-tree/test/branches.test.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/test/protocol.test.mjs",
+      "bytes": 8653,
+      "sha256": "9fe68117aee2d19435c28200a1c8e317c06ca78774be7aae5fb6626ce4f05a50",
+      "source": "staging/protocol-tree/test/protocol.test.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "run_tests.py",
+      "bytes": 3036,
+      "sha256": "02fde6d4ab2b30fd8e3b7e5ca9cd6fa39cc873ceee2a919c1109d02986add821",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "verify_manifest.py",
+      "bytes": 1463,
+      "sha256": "2b04d01ca9432e455a772cbf67f49a8f6f1de0e2567f99066630d32f0c9709b2",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "workspace-core/README.md",
+      "bytes": 3537,
+      "sha256": "6a0f7f11a8eef58677704841f722845d0a8206ee16a1f45770817ba556d53fd1",
+      "source": "staging/workspace-core/README.md",
+      "copy": "portable-readme-edit",
+      "source_sha256": "a27369c7af4e65e8d480e62fd942b368a4968ca86c199775ae4d11c09dc875e0"
+    },
+    {
+      "path": "workspace-core/demo.mjs",
+      "bytes": 1308,
+      "sha256": "02c9cac2a5adace138a74617e05e4c896cce9b5e9463e4f9b905a93a004764e4",
+      "source": "staging/workspace-core/demo.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "workspace-core/package.json",
+      "bytes": 356,
+      "sha256": "0e17179e84f6183a57eeff04d401ec4a846ffadcdda39f0156bbffcb31a88a3e",
+      "source": "staging/workspace-core/package.json",
+      "copy": "unchanged"
+    },
+    {
+      "path": "workspace-core/workspaces-model.mjs",
+      "bytes": 4725,
+      "sha256": "58d126b79c783e4fcd0916ca378d9aeba35a5e823890718cfe5844759d6f97c5",
+      "source": "staging/workspace-core/workspaces-model.mjs",
+      "copy": "unchanged"
+    },
+    {
+      "path": "workspace-core/workspaces-model.test.mjs",
+      "bytes": 6214,
+      "sha256": "78ea36fb8c1e3f8eee192f4361096f21fa015fc16be44db2f56f275e21534885",
+      "source": "staging/workspace-core/workspaces-model.test.mjs",
+      "copy": "unchanged"
+    }
+  ]
+}

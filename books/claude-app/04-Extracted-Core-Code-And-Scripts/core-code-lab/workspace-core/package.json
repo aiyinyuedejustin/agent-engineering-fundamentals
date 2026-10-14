@@ -1,0 +1,9 @@
+{
+  "name": "artifact-workspace-teaching-model",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Original offline teaching model for artifact selection, content acknowledgement and workspace modes.",
+  "scripts": { "test": "node --test workspaces-model.test.mjs", "demo": "node demo.mjs" },
+  "engines": { "node": ">=20" }
+}

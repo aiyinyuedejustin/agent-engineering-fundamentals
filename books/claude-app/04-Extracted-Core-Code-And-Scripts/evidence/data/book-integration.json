@@ -1,0 +1,172 @@
+{
+  "schema": "claude-book-publication-integration/v1",
+  "status": "complete",
+  "corrected_volumes": 8,
+  "supplemental_mobile_volume_added": true,
+  "chapters": [
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/02-Agent-Loop-Engine/README.md",
+      "corrected_source_sha256": "0556d7d4d64e518408317126410bec5345166b3aab9168359f1a94cac310105d",
+      "publication_sha256": "77503b600743e6011dc2869f93061800460d6b96570fe6863551163d739682c1",
+      "bytes": 18468,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+      "corrected_source_sha256": "9f30247135d64d4d763be0e89477951c7783a18a8af25176f36f54f048eefc27",
+      "publication_sha256": "943fb48b167d393ac8173051e99655b0cd6ac981d2252ac421c9e160e94d11d1",
+      "bytes": 20124,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added",
+        "Original explanatory SVG embedded"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md",
+      "corrected_source_sha256": "85a02dc838a68d3e92182fb42c74054c7727fd5565120b3913d08c9ed56ed58c",
+      "publication_sha256": "1816e738c681501ffa9fb1e4605d4c3901c1406b2e73cb5a24f4f5ffd7fb41b2",
+      "bytes": 20702,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added",
+        "Original explanatory SVG embedded"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md",
+      "corrected_source_sha256": "047ae28c8344bbf4beed437d4847437c568fba72e6f57f430cc041047ce65559",
+      "publication_sha256": "383e00cafc11d02f086dc0246f780138f21ff0b118456cc6b752d578899671f8",
+      "bytes": 27359,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md",
+      "corrected_source_sha256": "3f101b741bdfbc6cb1ddf01eaff0eef9ea5cc2db26055483bd9629a0bd878719",
+      "publication_sha256": "10b541033807de920ca88b0faa66308541d35d09ef1829911bd097d89ca20a82",
+      "bytes": 34253,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/08-Conversation-Tree-And-Streaming/README.md",
+      "corrected_source_sha256": "44d44fda926a74695bd12ba10008bb5b75c244df63f716251e550d3b24694e58",
+      "publication_sha256": "e5e28b3e2832e21965d4263444c415983772a7d6a3e4ffb651f1b350e6cb3751",
+      "bytes": 22549,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added",
+        "Original explanatory SVG embedded"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+      "corrected_source_sha256": "d0ba9f36b0f36485e7d5ec619d4eaa44637f60ff1ab8d214e5a9b8d2741efb06",
+      "publication_sha256": "a106b860e2a6eeb2e50f1c502c1dd8ec6912a6d8c5fd03b30318d5e3c8108438",
+      "bytes": 22726,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+      "corrected_source_sha256": "5cdff3adf8d93b0fc26be0142d80b417bf3c8a2145a7da771efa0ab34fcea13d",
+      "publication_sha256": "aaa44d58e12a16b92cf80a269ac32e77bd9416b59681968d6caee690cfa32c28",
+      "bytes": 18478,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added"
+      ]
+    },
+    {
+      "chapter": "02-Illustrated-Deep-Dive-Book/13-Mobile-Surfaces/README.md",
+      "corrected_source_sha256": "b3e8440621c1228aaafe6b0c8e4e287b353be568ca47cf586ba84776b90f96c2",
+      "publication_sha256": "6650b330333a9f651e4e15b2f0bff7e62018450c2cd3d951ddd17877143a6d24",
+      "bytes": 16998,
+      "adaptations": [
+        "Relative evidence and teaching-code links updated for publication layout",
+        "Book navigation added",
+        "Mobile appendix numbered as volume 13"
+      ]
+    }
+  ],
+  "evidence_ledgers": [
+    {
+      "path": "04-Extracted-Core-Code-And-Scripts/evidence/data/agent-loop-cowork.json",
+      "sha256": "bff8facf13172eb43d0fb2c99724dbd0f92819d770c4667d9541a8d62aa354b0",
+      "claims_preserved": 50,
+      "review_corrections_preserved": 4
+    },
+    {
+      "path": "04-Extracted-Core-Code-And-Scripts/evidence/data/input-pipeline.json",
+      "sha256": "105b3a0c400e928dcc8591cc723cfbe99ddc2ca8fc27addcd2c592b5878bf88c",
+      "claims_preserved": 35,
+      "review_corrections_preserved": 4
+    },
+    {
+      "path": "04-Extracted-Core-Code-And-Scripts/evidence/data/workspaces-deep-dive.json",
+      "sha256": "882755762c111b7557ac63260bbeb7e1db148046322dae2b0a8e298440779b02",
+      "claims_preserved": 24,
+      "review_corrections_preserved": 2
+    },
+    {
+      "path": "04-Extracted-Core-Code-And-Scripts/evidence/data/memory-flags.json",
+      "sha256": "69021a5159d589826aa562bda5fdd7a8afb9f78e893b8d254653be5debe92236",
+      "claims_preserved": 41,
+      "review_corrections_preserved": 8
+    },
+    {
+      "path": "04-Extracted-Core-Code-And-Scripts/evidence/data/protocol-tree-streaming.json",
+      "sha256": "9e2a637c8f5d2fa6eaf0681dfca3c99e5ad1bbb9b695cc32e2f915c7217909a4",
+      "claims_preserved": 54,
+      "review_corrections_preserved": 2
+    }
+  ],
+  "preserved_chapters": [
+    {
+      "path": "02-Illustrated-Deep-Dive-Book/06-MCP-Host-Internals/README.md",
+      "sha256": "2bbc0a97e5669cb16ceb8e4bc220152ae25213baf478b004038e845435d14863",
+      "excluded_from_edit_scope": true
+    },
+    {
+      "path": "02-Illustrated-Deep-Dive-Book/01-System-Architecture/README.md",
+      "sha256": "b50c928485de3f786b36e59e2ba6e6f7e56d0fe92c65712392bcba58c314320c",
+      "excluded_from_edit_scope": true
+    },
+    {
+      "path": "02-Illustrated-Deep-Dive-Book/12-Versions-And-Cross-Platform/README.md",
+      "sha256": "0ccdaf21dcdc51bf42a888952c86dcb9cf3210c7252b971850e8427fba4d7358",
+      "excluded_from_edit_scope": true
+    },
+    {
+      "path": "02-Illustrated-Deep-Dive-Book/11-State-Recovery-And-Updates/README.md",
+      "sha256": "ef9de53a58e765447e9badd34696ade0bdde0fd501e35c821aae782e191b617c",
+      "excluded_from_edit_scope": true
+    }
+  ],
+  "pending_dependency": null,
+  "notes": [
+    "All corrected draft source hashes match the completed correction review.",
+    "Claim text, conditions and compact source anchors are preserved when sanitizing ledgers.",
+    "Code-lab links use the confirmed nested publication destination."
+  ],
+  "validation": {
+    "book_markdown_files": 14,
+    "relative_links_checked": 143,
+    "fragments_checked": 29,
+    "balanced_fenced_blocks": 57,
+    "source_anchors": 653,
+    "maximum_source_anchor_utf8_bytes": 156,
+    "code_lab_present": true,
+    "errors": []
+  }
+}

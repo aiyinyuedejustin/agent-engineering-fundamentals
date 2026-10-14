@@ -1,0 +1,1405 @@
+{
+  "research_scope": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "observed_at": "2026-10-14T17:35:00Z",
+    "artifact_root": "resources/ion-dist",
+    "installation_package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "target_execution": false,
+    "authenticated_requests": false,
+    "private_endpoint_requests": false,
+    "source_bodies_republished": false
+  },
+  "collection_status": "closed for the selected classic C1/C2 chat path, legacy artifacts, selected synthetic reminders, conversation tree and comparative Code/voice scheduling paths; not all client surfaces or server logic",
+  "rea": {
+    "evidence_id": "ev_f47b7beade7434ad70200da0b91106ccd1badbda527df5ce7c230ecc794c7ca5",
+    "provider": {
+      "id": "rea-javascript-application",
+      "name": "REA JavaScript application analyzer",
+      "version": "1"
+    },
+    "root_artifact_sha256": "ec34292b7d85207e70a6246a2d60cd2bb9c8d51cf3c85e255520ae79496881fb",
+    "source_selection": {
+      "requested_paths": [
+        "assets/v1/vendor-all-0-GGdiWMtM.js",
+        "assets/v1/shared-156-BeTC6pHT.js",
+        "assets/v1/shared-130-CGEumh8Q.js",
+        "assets/v1/shared-104-lA7EKODn.js",
+        "assets/v1/c46686c0b-DmFpsCbb.js",
+        "assets/v1/cff3d66ec-Co47hx_b.js"
+      ],
+      "unselected_files": 3490
+    },
+    "statistics": {
+      "relevant_files": 3496,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 1295663,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 6,
+      "visited_ast_nodes": 362158,
+      "findings": 4439,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "limitations": [
+      "Caller-selected source analysis leaves 3490 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+    ],
+    "private_raw_result_sha256": "6dc5bfe2707ffd0791549292fbff7ab20270e247325bd9f61f02fd94f663179c",
+    "publication_note": "The large raw REA output is intentionally not included because it contains original target-source material."
+  },
+  "scope_inventory": {
+    "scope_is_exhaustive_only_for": "The literal local event enum and the named selected functions. This is not the full service schema or the whole client protocol.",
+    "sse_event_enum": [
+      "ping",
+      "completion",
+      "error",
+      "content_block_delta",
+      "content_block_start",
+      "content_block_stop",
+      "message_delta",
+      "message_start",
+      "message_stop",
+      "message_limit",
+      "compaction_status",
+      "conversation_ready",
+      "tool_approval",
+      "mcp_auth_required",
+      "mcp_elicitation",
+      "mcp_elicitation_complete",
+      "cache_performance",
+      "model_fallback",
+      "model_update",
+      "content_block_retract",
+      "composer_notice",
+      "notice_poll_hint",
+      "melange_edit_result"
+    ],
+    "classic_reducer_block_types": [
+      "text",
+      "connector_text",
+      "thinking",
+      "tool_use",
+      "tool_result"
+    ],
+    "classic_reducer_delta_types": [
+      "text_delta",
+      "connector_text_delta",
+      "thinking_delta",
+      "thinking_summary_delta",
+      "thinking_cut_off_delta",
+      "input_json_delta",
+      "tool_use_block_update_delta",
+      "citation_start_delta",
+      "citation_end_delta",
+      "flag_delta"
+    ],
+    "other_delta_names_in_first_content_classifier": [
+      "signature_delta",
+      "bell_delta",
+      "voice_note_delta"
+    ],
+    "artifact_input_fields": [
+      "version_uuid",
+      "version_number",
+      "command",
+      "id",
+      "title",
+      "type",
+      "language",
+      "content",
+      "old_str",
+      "new_str",
+      "source",
+      "md_citations"
+    ],
+    "artifact_commands": [
+      "create",
+      "update",
+      "rewrite"
+    ],
+    "artifact_types": [
+      "text/plain",
+      "text/markdown",
+      "text/html",
+      "image/svg+xml",
+      "application/vnd.ant.code",
+      "application/vnd.ant.mermaid",
+      "application/vnd.ant.react"
+    ],
+    "classic_request_builder_fields": [
+      "prompt",
+      "parent_message_uuid",
+      "timezone",
+      "locale",
+      "custom_system_prompt",
+      "model",
+      "paprika_mode",
+      "effort",
+      "thinking_mode",
+      "onboarding_chat_variant",
+      "input_mode",
+      "tools",
+      "tool_states",
+      "compass_suggestion_accept",
+      "publish_file",
+      "turn_message_uuids"
+    ],
+    "request_builder_open_extension": "antOnlyFields may Object.assign extra fields; the listed object keys do not close that extension.",
+    "legacy_tag_spellings": [
+      "antArtifact",
+      "antThinking"
+    ],
+    "tree_indexes": [
+      "messageByUuid",
+      "parentByChildUuid",
+      "childrenByParentUuid",
+      "selectedChildByUuid"
+    ],
+    "tree_root_sentinel": "00000000-0000-4000-8000-000000000000"
+  },
+  "files": {
+    "assets/v1/vendor-all-0-GGdiWMtM.js": {
+      "sha256": "d04d27c59c211c9cba794ead9ac0fd0604f0d000eb93d4c71333bceed43aeb47",
+      "bytes": 33503
+    },
+    "assets/v1/shared-156-BeTC6pHT.js": {
+      "sha256": "b0e9ec9ce4efa5474d12098f0c7811b3d47a5f83bc1c71e9cec34462d0cceee9",
+      "bytes": 448220
+    },
+    "assets/v1/shared-25-BQdcIBNa.js": {
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "bytes": 374355
+    },
+    "assets/v1/shared-104-lA7EKODn.js": {
+      "sha256": "60a441eeb9086024face5a823bce2cc9a1129d592aafb58db615f72f57398983",
+      "bytes": 348029
+    },
+    "assets/v1/shared-1-7J3IM-U8.js": {
+      "sha256": "574dfbd5228bfbb92236000f4c73d603c7bcf32a0086a6888665bd5665640f58",
+      "bytes": 337733
+    },
+    "assets/v1/c71860c77-DfqilKcH.js": {
+      "sha256": "cb4dba315739c8c75d90ef4c5dccdf1cc80fa5f67cbdf91c2b0a40ccbce10d69",
+      "bytes": 1544
+    },
+    "assets/v1/c46686c0b-DmFpsCbb.js": {
+      "sha256": "e2dcaf9631249dc2104ab668907e98c7d762cddfe15470483b916ff6da15d9a3",
+      "bytes": 962
+    },
+    "assets/v1/cff3d66ec-Co47hx_b.js": {
+      "sha256": "95e3ce8db63024f2b94d67080a4ec3f75e4a817b350d616cdb5a4e86b004b93a",
+      "bytes": 1106
+    },
+    "assets/v1/cc6b8c296-BeLC7y8K.js": {
+      "sha256": "933bc4bef9023a54513d6e7c0b9047ca691ca8d4cd042b3d8e003743845ee999",
+      "bytes": 8190
+    },
+    "assets/v1/shared-130-CGEumh8Q.js": {
+      "sha256": "ccee249b4f0203b0a462e6c1d488905fec77b03fe7aee3f0390a470016795e10",
+      "bytes": 463843
+    },
+    "assets/v1/shared-2-SYzsATg-.js": {
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc",
+      "bytes": 440042
+    },
+    "assets/v1/cce741025-CALYDt2I.js": {
+      "sha256": "8a2b47256451494209ccf588a6cbb39595012ecce9f6d167a4a8b9c42bfaea95",
+      "bytes": 60046
+    },
+    "assets/v1/shared-4-1vKV8QN9.js": {
+      "sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852",
+      "bytes": 259727
+    },
+    "assets/v1/c93371e43-DFq5zXvj.js": {
+      "sha256": "8ab1c9669d7e04a1acd927f36ffc675a69f49f384a226673d14474412e1e01be",
+      "bytes": 7791
+    },
+    "assets/v1/c06cf64bb-BfbQ1i62.js": {
+      "sha256": "e5abf89f900c1b8677df72a1ce223cad85e2293ebc9e29b4782f6caa6c6421c0",
+      "bytes": 205565
+    },
+    "assets/v1/c1373296b-Cbh7XFq2.js": {
+      "sha256": "f7d54c8718e1c456753effb6cedcd0e0adb9def349db2f95eaf54ce48cab8236",
+      "bytes": 35305
+    },
+    "assets/v1/cc1aae219-_TxnVCRG.js": {
+      "sha256": "99c4cd7095acdfa231e1729882d131ac0e2bc58b847300eb165ea152a035e41c",
+      "bytes": 576438
+    },
+    "assets/v1/c3e61dd2f-DanJU2NC.js": {
+      "sha256": "9677ab70e09dd6b6f5073abc63972875e391548c85d6a669e7c2ccf5ae654758",
+      "bytes": 12370
+    },
+    "assets/v1/ccc68ce7f-D2Vyaff-.js": {
+      "sha256": "7d5ca5a0e92bb931724f1115c9ebbdc9fa234c29a65943e28f421c4f411905e0",
+      "bytes": 344167
+    }
+  },
+  "claims": [
+    {
+      "id": "PT-01",
+      "claim": "The SSE stream reader awaits a thenable returned by the per-chunk callback before reading the next chunk.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/vendor-all-0-GGdiWMtM.js",
+      "anchor": "async function et(e,t)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 22077,
+        "end": 22099,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 22077,
+        "end": 22099,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-02",
+      "claim": "The line decoder retains incomplete bytes, recognizes CR/LF, and suppresses the LF following CR.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/vendor-all-0-GGdiWMtM.js",
+      "anchor": "function tt(e){let t,n,r,i=!1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 22216,
+        "end": 22245,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 22216,
+        "end": 22245,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-03",
+      "claim": "Blank lines dispatch frames; fields include data, event, id and retry. Data appends a newline only when the accumulated string is non-empty, so initial empty data lines do not preserve their leading newline before a later non-empty value.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/vendor-all-0-GGdiWMtM.js",
+      "anchor": "function nt(e,t,n){let r=it(),i=new TextDecoder",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 22549,
+        "end": 22596,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 22549,
+        "end": 22596,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-04",
+      "claim": "The fetch SSE wrapper retains last event ID in a request header and has configurable open/message/chunk/close/error callbacks.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/vendor-all-0-GGdiWMtM.js",
+      "anchor": "st=\"last-event-id\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 23429,
+        "end": 23447,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 23429,
+        "end": 23447,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-05",
+      "claim": "Selected classic completion endpoints are completion or retry_completion, optionally suffixed 2; C3 override is not used by this helper.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function Cj(e,t,n,r=!0)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 259222,
+        "end": 259245,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 259222,
+        "end": 259245,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-06",
+      "claim": "This local event enumeration has the exact values recorded under scope_inventory.sse_event_enum.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "Tj=function(e){return e.Ping=\"ping\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 259882,
+        "end": 259917,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 259882,
+        "end": 259917,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-07",
+      "claim": "SSE JSON parse failures throw an event-classified error; the helper is not a complete payload schema validator.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function Oj(e,t){try{return JSON.parse(e)}",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 260854,
+        "end": 260896,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 260854,
+        "end": 260896,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-08",
+      "claim": "Classic completion instantiates the generic buffer with smoothing disabled and coalesced deliveries enabled.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "F.dont_smooth=!0,F.coalesce_deliveries=!0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 263377,
+        "end": 263418,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 263377,
+        "end": 263418,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-09",
+      "claim": "Classic completion has an 8ms cooperative work budget and invokes its checkpoint from the awaited chunk hook.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "let N=at=BE({budgetMs:8})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 268109,
+        "end": 268134,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 268109,
+        "end": 268134,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-10",
+      "claim": "The chunk hook flushes pending delivery, and skips cooperative yielding before content or while hidden.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "F.flushPendingDelivery(),!ee||",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 268295,
+        "end": 268325,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 268295,
+        "end": 268325,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-11",
+      "claim": "A paint-hold wrapper temporarily drains the response into an array and exposes a stream with highWaterMark zero; this is not a proven end-to-end bounded queue.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function nj(e,t,n)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 251674,
+        "end": 251692,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 251674,
+        "end": 251692,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-12",
+      "claim": "The generic buffer coalesces direct deliveries via one pending microtask.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "this.coalesce_deliveries?this.deliveryPending",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 217822,
+        "end": 217867,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 217822,
+        "end": 217867,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-13",
+      "claim": "The generic smoother retains a separate visibility-aware task with 60Hz-ish, 100ms and 200ms scheduling values; presence is not proof of use on every surface.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "var qE=1e3/60,JE=200,YE=100",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 213067,
+        "end": 213094,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 213067,
+        "end": 213094,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-14",
+      "claim": "The content block reducer uses type-specific sizing, slicing, creation, delta application and stop operations.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function nD(){let e=new Map,t=0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 219939,
+        "end": 219970,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 219939,
+        "end": 219970,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-15",
+      "claim": "Classic completion enforces active-block index matching, with late exceptions for thinking summaries and tool-use block updates.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "e.index!==Ze&&e.delta.type!==\"thinking_summary_delta\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 273106,
+        "end": 273159,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 273106,
+        "end": 273159,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-16",
+      "claim": "Retraction discards a suffix of blocks and resets affected active-index, buffered-input and first-answer state.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "case\"content_block_retract\":{let e=Oj",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 274231,
+        "end": 274268,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 274231,
+        "end": 274268,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-17",
+      "claim": "Tool-use partial JSON is appended as text instead of parsing every delta as a complete object.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "partial_json:(r.partial_json??\"\")+n.delta.partial_json",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 222027,
+        "end": 222081,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 222027,
+        "end": 222081,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-18",
+      "claim": "In this reducer, tool-result input_json_delta is parsed as a complete replacement content array, or retained as one text item.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "case\"tool_result\":switch(n.delta.type)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 221630,
+        "end": 221668,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 221630,
+        "end": 221668,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-19",
+      "claim": "Partial tool input parsing tokenizes, closes unmatched containers and can drop an incomplete trailing property.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-25-BQdcIBNa.js",
+      "anchor": "function Sj(e){let t=xj(e),n=[]",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 244135,
+        "end": 244166,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 244135,
+        "end": 244166,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-20",
+      "claim": "A populated input object takes precedence over partial_json; partial parse results are weakly cached; failures fall back to an empty object.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-25-BQdcIBNa.js",
+      "anchor": "function Dj(e){if(e.input&&Object.keys(e.input).length>0)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 245009,
+        "end": 245066,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 245009,
+        "end": 245066,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-21",
+      "claim": "The exact legacy artifact tag is antArtifact, with prefix suppression, open-ended body matching and attribute parsing.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "var EN=\"antArtifact\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 290381,
+        "end": 290401,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 290381,
+        "end": 290401,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-22",
+      "claim": "The exact antThinking legacy region and incomplete opening prefixes are removed by a dedicated text helper.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "var QN=\"antThinking\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 294555,
+        "end": 294575,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 294555,
+        "end": 294575,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-23",
+      "claim": "Artifact extraction additionally consumes a structured tool_use named artifacts, with cancelled result filtering.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "t.name===\"artifacts\"&&t.input",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 293410,
+        "end": 293439,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 293410,
+        "end": 293439,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-24",
+      "claim": "The artifact input parser fields and tolerant optional constraints are inventoried in the ledger.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "XM=c(()=>l({version_uuid:YM",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 284867,
+        "end": 284894,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 284867,
+        "end": 284894,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-25",
+      "claim": "Create/rewrite replaces content; update performs a first string replacement, with trimmed-old-string fallback.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "function RN(e,t){if(e.command===\"create\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 291381,
+        "end": 291421,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 291381,
+        "end": 291421,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-26",
+      "claim": "Legacy artifact detection keeps a short suffix across adjacent text blocks so a tag opener can straddle blocks.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "function YN(e){if(!e)return!1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 292634,
+        "end": 292663,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 292634,
+        "end": 292663,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-27",
+      "claim": "The classic request builder explicitly constructs a prompt and optional client fields; it does not reveal final server-side message assembly.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "function xk(e){let t={prompt:e.prompt",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 161855,
+        "end": 161892,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 161855,
+        "end": 161892,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "PT-28",
+      "claim": "The visible custom system-prompt editor is gated; its placeholder is not proof of the production system prompt.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c71860c77-DfqilKcH.js",
+      "anchor": "a(\"system_prompt_editor\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 465,
+        "end": 490,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 465,
+        "end": 490,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-29",
+      "claim": "Folder-path reminder interpolation has length, control/format, quote/angle, trailing-backslash and reminder-literal checks. List validation accepts at most 16 entries and rejects duplicate entries rather than deduplicating them.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c46686c0b-DmFpsCbb.js",
+      "anchor": "function t(e){return e.length===0||e.length>1024",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 328,
+        "end": 376,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 328,
+        "end": 376,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-30",
+      "claim": "The context reminder combines folder and attached-file sections, distinguishing selected files from other files in reachable folders.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cff3d66ec-Co47hx_b.js",
+      "anchor": "function a(e,n){return n.length===0?t(e)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 592,
+        "end": 632,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 592,
+        "end": 632,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-31",
+      "claim": "The selected remote-session builder wraps path reminders in a non-querying user event, followed by the actual user prompt; tag names do not imply a system role.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cc6b8c296-BeLC7y8K.js",
+      "anchor": "shouldQuery:!1,message:{role:\"user\",content:m(i,a)}",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 814,
+        "end": 865,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 814,
+        "end": 865,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-32",
+      "claim": "Artifact view-context framing includes canonical escaped JSON, a 6144-character JSON check, and a separate composed-message limit.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "kM=\"artifact-view-context\",AM=6144",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 288232,
+        "end": 288266,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 288232,
+        "end": 288266,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 8
+    },
+    {
+      "id": "PT-33",
+      "claim": "The artifact view-context envelope is a synthetic client-composed user message, with shouldQuery false.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "shouldQuery:!1,isSynthetic:!0,client_composed:!0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 289846,
+        "end": 289894,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 289846,
+        "end": 289894,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 12
+    },
+    {
+      "id": "PT-34",
+      "claim": "A conversation read is indexed by UUID, parent, ordered child lists and selected child positions; legacy parent fallback searches previous indexes.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function qu(e){let t=new Map,n=new Map",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 24349,
+        "end": 24387,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 24349,
+        "end": 24387,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-35",
+      "claim": "Selecting a leaf walks upward and selects each parent-to-child edge, with cycle detection.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function Gu(e,t){let n=t??e.current_leaf_message_uuid",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 23821,
+        "end": 23874,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 23821,
+        "end": 23874,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-36",
+      "claim": "The visible path walks downward from the root or supplied node using selected-child positions; rows gain sibling metadata.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function ed(e,t){let n=[],r=t??",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 27210,
+        "end": 27241,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 27210,
+        "end": 27241,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-37",
+      "claim": "Sibling navigation clamps the new selected index, follows its chosen descendants, and selects the resulting leaf.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function nd(e,t,n){let r=Wu",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 27768,
+        "end": 27795,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 27768,
+        "end": 27795,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-38",
+      "claim": "A loader separates unanswered dangling human messages by default, retaining assistants, their human parents and needed ancestors.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function Ju(e,t=!1)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 25055,
+        "end": 25074,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 25055,
+        "end": 25074,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-39",
+      "claim": "Appending messages requires explicit parents, adds ordered children, selects new siblings and then the last appended leaf.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function Qu(e,t){if(t.length===0)return e",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 26654,
+        "end": 26695,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 26654,
+        "end": 26695,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-40",
+      "claim": "The displayed-path callback updates cached tree selection and invokes a callback with the selected leaf.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-2-SYzsATg-.js",
+      "anchor": "changeDisplayedConversationPath:h((e,t,r,i)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 398292,
+        "end": 398335,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 398292,
+        "end": 398335,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 39
+    },
+    {
+      "id": "PT-41",
+      "claim": "The classic chat host sends the selected leaf through its leaf-persistence mutation.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cce741025-CALYDt2I.js",
+      "anchor": "Qn(t,e,n,e=>hi({current_leaf_message_uuid:e}))",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 53123,
+        "end": 53169,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 53123,
+        "end": 53169,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 8
+    },
+    {
+      "id": "PT-42",
+      "claim": "The selected leaf mutation uses a conversation-scoped PUT path, recorded as inert source only.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "/current_leaf_message_uuid`,\"PUT\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 80332,
+        "end": 80365,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 80332,
+        "end": 80365,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "PT-43",
+      "claim": "Human-message editing sends new text at the original parent, with isEdit true; the send path creates a new pair.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cce741025-CALYDt2I.js",
+      "anchor": "parent_message_uuid:e.parent_message_uuid??void 0,compass_mode",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 52444,
+        "end": 52506,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 52444,
+        "end": 52506,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 8
+    },
+    {
+      "id": "PT-44",
+      "claim": "The optimistic append creates a human and assistant pair; the assistant points to the newly minted human placeholder.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-4-1vKV8QN9.js",
+      "anchor": "parent_message_uuid:V,metadata:{compass_mode:c}",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 199469,
+        "end": 199516,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 199469,
+        "end": 199516,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 8
+    },
+    {
+      "id": "PT-45",
+      "claim": "Retry creates a new assistant child at the chosen human parent and uses a distinct retry endpoint mode.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-4-1vKV8QN9.js",
+      "anchor": "endpoint:tr.RETRY_MESSAGE_WITH_COMPLETION",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 201797,
+        "end": 201838,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 201797,
+        "end": 201838,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 8
+    },
+    {
+      "id": "PT-46",
+      "claim": "Optimistic-to-server rekeying checks parent consistency, duplicates and absent children before updating all tree indexes.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c93371e43-DFq5zXvj.js",
+      "anchor": "if(p(i.parent_message_uuid??\"\")!==t.humanUuid)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 856,
+        "end": 902,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 856,
+        "end": 902,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-47",
+      "claim": "Fast settlement is gated on honored client UUIDs, one message start, no discarded parent/compaction, non-error clean closure and substantive content.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c93371e43-DFq5zXvj.js",
+      "anchor": "e.messageStartCount===1&&!e.sawCompaction",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 5731,
+        "end": 5772,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 5731,
+        "end": 5772,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-48",
+      "claim": "The separate Code reply-publishing path batches at 33ms when visible, 100ms off-panel, or 200ms hidden, with immediate first/flush/stop handling.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c06cf64bb-BfbQ1i62.js",
+      "anchor": "return e.cachedVisibility?33:",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 100673,
+        "end": 100702,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 100673,
+        "end": 100702,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 9
+    },
+    {
+      "id": "PT-49",
+      "claim": "The selected Code reply path also disables the generic smoother and layers its own commit scheduler.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c06cf64bb-BfbQ1i62.js",
+      "anchor": "n.dont_smooth=!0,t={buffer:n",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 101216,
+        "end": 101244,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 101216,
+        "end": 101244,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 9
+    },
+    {
+      "id": "PT-50",
+      "claim": "The display layer may merge consecutive assistant messages into one row while retaining their separate message UUIDs.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c1373296b-Cbh7XFq2.js",
+      "anchor": "mergedContent:i,isChain:e.length>1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 6348,
+        "end": 6382,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 6348,
+        "end": 6382,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-51",
+      "claim": "The visible version selector uses previous/next actions, disables endpoints and shows one-based selected option over sibling count.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cc1aae219-_TxnVCRG.js",
+      "anchor": "\"data-testid\":o?\"user-message-previous-version\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 131129,
+        "end": 131176,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 131129,
+        "end": 131176,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 20
+    },
+    {
+      "id": "PT-52",
+      "claim": "An optional inline-comparison path coalesces held text/thinking frames and abandons an unpublished pair at its deferred-frame cap.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "B.length>=5e4",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 264696,
+        "end": 264709,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 264696,
+        "end": 264709,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-53",
+      "claim": "A separate cross-device sync path compares update times and leaf identity and may refetch; it is not a graph merge algorithm.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c3e61dd2f-DanJU2NC.js",
+      "anchor": "reason:\"foreign_update\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 1583,
+        "end": 1606,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 1583,
+        "end": 1606,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-54",
+      "claim": "The voice reducer accumulates tool-result JSON differently from the selected classic reducer; identical delta names do not guarantee identical surface semantics.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/ccc68ce7f-D2Vyaff-.js",
+      "anchor": "this.toolResultJsonBuffer+=t",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 256526,
+        "end": 256554,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 256526,
+        "end": 256554,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 4
+    }
+  ],
+  "limitations": [
+    "Static code establishes reachable source relationships, not rollout or exercised runtime state.",
+    "Selected C1/C2 request building does not expose the final server system prompt or all model context.",
+    "The code includes other transports and surfaces, including C3/hub, Code/Cowork and voice; shared names are not a universal contract.",
+    "The generic buffer smoothing task is not assumed active in the selected main chat path.",
+    "Local awaited reads and a highWaterMark of zero are not end-to-end proof of network/model backpressure.",
+    "The tree data model supports one parent per message; this study did not establish a multi-parent DAG or merge operation."
+  ],
+  "original_deliverable": {
+    "path": "../../core-code-lab/protocol-tree",
+    "target_code_imported": false,
+    "tests": {
+      "command": "node --test test/*.test.mjs",
+      "passed": 24,
+      "failed": 0
+    },
+    "differences": [
+      "SSE decoder adds resource limits, NUL-ID protection and strict numeric retry handling.",
+      "Teaching content reducer implements an explicit subset and promotes tool JSON only after complete JSON parses.",
+      "Legacy-tag recognizer is a data-only incremental state machine, not the target regular-expression implementation.",
+      "Branch manager adds atomic batch validation and rejects missing parents more strictly."
+    ]
+  },
+  "applied_review_corrections": [
+    {
+      "review_id": "PI-A04",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "path": "ion-dist/assets/v1/c46686c0b-DmFpsCbb.js",
+          "sha256": "e2dcaf9631249dc2104ab668907e98c7d762cddfe15470483b916ff6da15d9a3",
+          "line": 1,
+          "utf8_byte_range": {
+            "start": 815,
+            "end": 870,
+            "end_exclusive": true
+          },
+          "anchor": "if(new Set(e).size!==e.length)return\"duplicate_entries\"",
+          "observed_control_flow": "The list validator returns a duplicate_entries error, not a normalized unique list."
+        },
+        {
+          "path": "ion-dist/assets/v1/cc6b8c296-BeLC7y8K.js",
+          "sha256": "933bc4bef9023a54513d6e7c0b9047ca691ca8d4cd042b3d8e003743845ee999",
+          "line": 1,
+          "utf8_byte_range": {
+            "start": 3829,
+            "end": 3856,
+            "end_exclusive": true
+          },
+          "anchor": "if(c!==void 0&&p(c)!==null)",
+          "observed_control_flow": "The bound create path rejects a non-null folder-validator result with bound_session_request_invalid before calling the message constructor."
+        }
+      ]
+    },
+    {
+      "review_id": "PI-A05",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "path": "ion-dist/assets/v1/vendor-all-0-GGdiWMtM.js",
+          "sha256": "d04d27c59c211c9cba794ead9ac0fd0604f0d000eb93d4c71333bceed43aeb47",
+          "line": 1,
+          "utf8_byte_range": {
+            "start": 22751,
+            "end": 22783,
+            "end_exclusive": true
+          },
+          "anchor": "case\"data\":r.data=r.data?r.data+",
+          "observed_control_flow": "A newline is appended only when the accumulated data string is already truthy. One or more initial empty data values are therefore collapsed before a later non-empty value."
+        }
+      ]
+    }
+  ],
+  "publication_note": {
+    "source_paths": "Product-source paths are package-relative identifiers; original product files are not distributed. Teaching-model paths are relative to this ledger directory.",
+    "review_summary": "book-corrections.json",
+    "published_material": "Reviewed claims, source hashes, compact literal anchors and analysis limits; no full modules, raw graphs or research-computer paths."
+  }
+}

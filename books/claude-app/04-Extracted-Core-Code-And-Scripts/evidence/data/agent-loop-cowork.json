@@ -1,0 +1,2256 @@
+{
+  "schema": "original-agent-loop-cowork-study/v1",
+  "recorded_at_utc": "2026-10-14T17:44:13.611520+00:00",
+  "subject": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14"
+  },
+  "method": {
+    "target_executed": false,
+    "target_imported": false,
+    "private_endpoints_probed": false,
+    "private_user_data_read": false,
+    "static_analysis": "Bounded REA exact-file analysis; inert Babel AST inventory and manual source cross-reference; native file/ELF header inventory only.",
+    "not_recovered": "Model/server inference implementation, CLI executable internal model-to-tool loop, native CU internals and native VM enforcement."
+  },
+  "files": [
+    {
+      "key": "loop",
+      "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+      "bytes": 595508,
+      "sha256": "e1d802b46c6d6f648ab2d918fe9b509a92c7a6d302c4d9f37895761d59ac69f9"
+    },
+    {
+      "key": "control",
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "bytes": 229134,
+      "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+    },
+    {
+      "key": "sdk",
+      "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+      "bytes": 1199908,
+      "sha256": "622b069ec0b06b9ad1e8320dc0471496ad89a9289dfd2cd50e068336d25af8cc"
+    },
+    {
+      "key": "main",
+      "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+      "bytes": 6956732,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "key": "ipc",
+      "file": "app.asar/.vite/build/index.chunk-DMXnzgNn.js",
+      "bytes": 98926,
+      "sha256": "8e8b68462a64e77bf1a1fd3c95c6901ba79cb930043e2b60388b758b520b95d2"
+    },
+    {
+      "key": "preload",
+      "file": "app.asar/.vite/build/mainView.js",
+      "bytes": 168708,
+      "sha256": "ad65b0048b6251c77b68e19e183c4c85cd74d23cb86bfbb43bef72833643ba38"
+    },
+    {
+      "key": "tools",
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "bytes": 729748,
+      "sha256": "6c68132d14051ad2f503d18db364fdf1f39e4c27e956c485cf90d667b1e30c87"
+    }
+  ],
+  "native_inventory": [
+    {
+      "file": "resources/cowork-linux-helper",
+      "bytes": 3272888,
+      "sha256": "a9b2eb4bce2ea0a32b1445a0f62c07c95f33ebe053afb08633a9fb39416b51ee",
+      "inert_inventory": "ELF64 x86-64 static executable; stripped"
+    },
+    {
+      "file": "resources/app.asar.unpacked/node_modules/@ant/claude-native/claude-native-binding.node",
+      "bytes": 10026272,
+      "sha256": "c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6",
+      "inert_inventory": "ELF64 x86-64 shared object; stripped"
+    },
+    {
+      "file": "resources/smol-bin.x64.img",
+      "bytes": 28311552,
+      "sha256": "e03447b1fc4f0d4ee3e3ef9511c677a1f91b1ac9a31c9c368ce4218c2abc5640",
+      "inert_inventory": "MBR disk image; not mounted or executed"
+    }
+  ],
+  "rea_runs": [
+    {
+      "run": "rea-loop-control",
+      "evidence_id": "ev_19278318e7f5a7305ba954956c318665ca4c48ea9b6c4d7cc2e34b8dc198ab3b",
+      "status": "completed",
+      "raw_sha256": "d3002805fc533aff60522fb3cecb71ecda9ea4b9a5e505b02d4b27c64aa442ab",
+      "raw_bytes": 44245791,
+      "parameters": {
+        "format": "directory",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 9000,
+        "max_semantic_nodes_per_file": 3500,
+        "source_paths": [
+          ".vite/build/index.chunk-Dvr3hk9Q.js",
+          ".vite/build/index.chunk-Cdc21k2u.js",
+          ".vite/build/index.chunk-BfMLHHVo.js",
+          ".vite/build/computerUseTeach.js"
+        ],
+        "max_heap_mb": 1024,
+        "analysis_timeout_ms": 90000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 839092,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 4,
+        "visited_ast_nodes": 180031,
+        "findings": 236,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "summary": {
+        "browser_windows": 0,
+        "explicit_web_preferences": 0,
+        "preload_entrypoints": 0,
+        "context_bridge_apis": 2,
+        "exposed_api_members": 0,
+        "ipc": {
+          "operations": 33,
+          "literal_channels": 0,
+          "dynamic_channel_operations": 33,
+          "renderer_transmissions": 21,
+          "renderer_listeners": 12,
+          "main_handlers": 0,
+          "paired_renderer_transmissions": 0,
+          "ambiguous_renderer_transmissions": 0,
+          "unpaired_literal_renderer_transmissions": 0
+        },
+        "sender_validation_observations": 0,
+        "utility_processes": 0,
+        "resolved_utility_entrypoints": 0,
+        "native_addon_bindings": 0,
+        "resolved_native_addon_bindings": 0
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 433 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_publication": "Excluded; contains proprietary source-derived material."
+    },
+    {
+      "run": "rea-sdk-transport",
+      "evidence_id": "ev_e4e958733036cd56bde8e411a89e50b54a6ecc3e1552aca56985b6c6f93658b9",
+      "status": "completed",
+      "raw_sha256": "942822480e6ecd042a4255961fe30e18037d15e8abcdf13bcabad12a2927c4cf",
+      "raw_bytes": 45735472,
+      "parameters": {
+        "format": "directory",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 3000,
+        "max_semantic_nodes_per_file": 3000,
+        "source_paths": [
+          ".vite/build/index.chunk-C4qJSrNf.js"
+        ],
+        "max_heap_mb": 1024,
+        "analysis_timeout_ms": 90000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 1199908,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 1,
+        "visited_ast_nodes": 299884,
+        "findings": 132,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "summary": {
+        "browser_windows": 0,
+        "explicit_web_preferences": 0,
+        "preload_entrypoints": 0,
+        "context_bridge_apis": 0,
+        "exposed_api_members": 0,
+        "ipc": {
+          "operations": 0,
+          "literal_channels": 0,
+          "dynamic_channel_operations": 0,
+          "renderer_transmissions": 0,
+          "renderer_listeners": 0,
+          "main_handlers": 0,
+          "paired_renderer_transmissions": 0,
+          "ambiguous_renderer_transmissions": 0,
+          "unpaired_literal_renderer_transmissions": 0
+        },
+        "sender_validation_observations": 0,
+        "utility_processes": 0,
+        "resolved_utility_entrypoints": 0,
+        "native_addon_bindings": 0,
+        "resolved_native_addon_bindings": 0
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 436 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_publication": "Excluded; contains proprietary source-derived material."
+    }
+  ],
+  "claims": [
+    {
+      "id": "AL-01",
+      "finding_zh": "AgentLoopEngine 是本书对协作层的命名；可见实现包含 LocalAgentModeSessions IPC、会话管理器、SDK query 消费器和 CLI transport。",
+      "activation_condition_zh": "本次 Linux 分发包中的静态结构。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "LocalAgentModeSessions_$_start",
+          "utf8_byte_start": 63302,
+          "utf8_byte_end_exclusive": 63332,
+          "character_start": 63302,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-DMXnzgNn.js",
+          "literal": "async start(r)",
+          "utf8_byte_start": 49304,
+          "utf8_byte_end_exclusive": 49318,
+          "character_start": 49304,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "setupQueryHandlers(e,t)",
+          "utf8_byte_start": 577678,
+          "utf8_byte_end_exclusive": 577701,
+          "character_start": 577678,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "function ZSe({prompt:e,options:t})",
+          "utf8_byte_start": 1179253,
+          "utf8_byte_end_exclusive": 1179287,
+          "character_start": 1179253,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不将章节标题说成恢复出的原始类名，也不等同于服务器端模型循环。"
+    },
+    {
+      "id": "AL-02",
+      "finding_zh": "启动先检查消息 token cap、会话 ID/碰撞、账户与组织身份；创建内部 local_ 会话后异步初始化。",
+      "activation_condition_zh": "startSession 的新会话与 cold-resume 路径。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async function xh(e,r)",
+          "utf8_byte_start": 410737,
+          "utf8_byte_end_exclusive": 410759,
+          "character_start": 410737,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "startSession: invalid sessionId",
+          "utf8_byte_start": 411714,
+          "utf8_byte_end_exclusive": 411745,
+          "character_start": 411714,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 4
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "startSession: the account changed while the session was starting",
+          "utf8_byte_start": 419993,
+          "utf8_byte_end_exclusive": 420057,
+          "character_start": 419993,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-03",
+      "finding_zh": "生命周期有 idle、initializing、running、stopping、archived 五态，转移需通过显式合法转移表。",
+      "activation_condition_zh": "会话管理器 transitionTo。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.VALID_TRANSITIONS={idle:new Set",
+          "utf8_byte_start": 504058,
+          "utf8_byte_end_exclusive": 504094,
+          "character_start": 504058,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "transitionTo(n,r,i)",
+          "utf8_byte_start": 506153,
+          "utf8_byte_end_exclusive": 506172,
+          "character_start": 506153,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Invalid transition ${a}",
+          "utf8_byte_start": 506270,
+          "utf8_byte_end_exclusive": 506293,
+          "character_start": 506270,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-04",
+      "finding_zh": "initGen 与会话对象身份一起防止过时初始化结果重新挂接查询；停止时递增 initGen。",
+      "activation_condition_zh": "初始化已创建 query、准备写回当前会话；或 stopSession。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Q!==d||Q.initGen!==a",
+          "utf8_byte_start": 407185,
+          "utf8_byte_end_exclusive": 407205,
+          "character_start": 407185,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Abandoning init for ${i}",
+          "utf8_byte_start": 407230,
+          "utf8_byte_end_exclusive": 407254,
+          "character_start": 407230,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "r.initGen=(r.initGen??0)+1",
+          "utf8_byte_start": 546712,
+          "utf8_byte_end_exclusive": 546738,
+          "character_start": 546712,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-05",
+      "finding_zh": "初始化阶段的新消息进入 pendingStartMessages；具备 query 与 inputStream 时委托暖发送，否则走重新启动。",
+      "activation_condition_zh": "startSession/sendMessage 对已存在会话的分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "l.lifecycleState===\"initializing\"",
+          "utf8_byte_start": 519600,
+          "utf8_byte_end_exclusive": 519633,
+          "character_start": 519600,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "l.pendingStartMessages??=[]",
+          "utf8_byte_start": 519875,
+          "utf8_byte_end_exclusive": 519902,
+          "character_start": 519875,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "!l.query||!l.inputStream)",
+          "utf8_byte_start": 522087,
+          "utf8_byte_end_exclusive": 522112,
+          "character_start": 522087,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "Share-screen trailing blocks 有拒绝或降级处理，不可把所有附件都视为相同队列语义。"
+    },
+    {
+      "id": "AL-06",
+      "finding_zh": "用户消息带 type、uuid、session_id、parent_tool_use_id、client_platform、timestamp 及 message.role/content；显示缓冲与实际入流内容可以不同。",
+      "activation_condition_zh": "消息包装后加入 buffer，再 enqueue 到 SDK 输入流。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "client_platform:\"desktop_app\"",
+          "utf8_byte_start": 51531,
+          "utf8_byte_end_exclusive": 51560,
+          "character_start": 51531,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 4
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "l.inputStream.enqueue(ne)",
+          "utf8_byte_start": 527566,
+          "utf8_byte_end_exclusive": 527591,
+          "character_start": 527566,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "inFlightTurnMessages??=new Map",
+          "utf8_byte_start": 527604,
+          "utf8_byte_end_exclusive": 527634,
+          "character_start": 527604,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-07",
+      "finding_zh": "执行路线由 hostLoopMode 保留；新的选择受组织 requireFullVmSandbox、forceDisableHostLoop、host-loop gate 等条件决定。",
+      "activation_condition_zh": "首次或尚未拿到 CLI session ID 的会话；已存在会话按历史 mode 继续，并核对新策略。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function nq(){return CFr()||bFr()?!1:",
+          "utf8_byte_start": 4074724,
+          "utf8_byte_end_exclusive": 4074761,
+          "character_start": 4074724,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function CFr(){return K().workspace.requireFullVmSandbox}",
+          "utf8_byte_start": 4074667,
+          "utf8_byte_end_exclusive": 4074724,
+          "character_start": 4074667,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "This session was created before your organization required the VM sandbox.",
+          "utf8_byte_start": 424943,
+          "utf8_byte_end_exclusive": 425017,
+          "character_start": 424943,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "分发代码里的 gate 名和默认值不证明当前用户已获开放。"
+    },
+    {
+      "id": "AL-08",
+      "finding_zh": "普通恢复使用 cliSessionId；rewind 可设置 resumeSessionAt 与 forkSession；branch 先复制 transcript 再恢复到新 CLI session。",
+      "activation_condition_zh": "cold spawn 的对应恢复分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "J.resume=G.cliSessionId,J.resumeSessionAt=ut,J.forkSession=!0",
+          "utf8_byte_start": 392970,
+          "utf8_byte_end_exclusive": 393031,
+          "character_start": 392970,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "J.resume=y.cliSessionIdToResume",
+          "utf8_byte_start": 393252,
+          "utf8_byte_end_exclusive": 393283,
+          "character_start": 393252,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "!c&&G?.cliSessionId&&(J.resume=G.cliSessionId)",
+          "utf8_byte_start": 393388,
+          "utf8_byte_end_exclusive": 393434,
+          "character_start": 393388,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-09",
+      "finding_zh": "主进程加载独立 SDK chunk，并调用 query({prompt: async input stream, options})；进程协议使用 stream-json 输入与输出。",
+      "activation_condition_zh": "Cowork query 启动；此 SDK 的 ProcessTransport 分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "require(\"./index.chunk-C4qJSrNf.js\")",
+          "utf8_byte_start": 3021896,
+          "utf8_byte_end_exclusive": 3021932,
+          "character_start": 3021896,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "let Vt=zt({prompt:_e,options:J})",
+          "utf8_byte_start": 407093,
+          "utf8_byte_end_exclusive": 407125,
+          "character_start": 407093,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "[\"--output-format\",\"stream-json\",\"--verbose\",\"--input-format\",\"stream-json\"]",
+          "utf8_byte_start": 1106710,
+          "utf8_byte_end_exclusive": 1106786,
+          "character_start": 1106710,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-10",
+      "finding_zh": "SDK 分离 control_response、control_request、control_cancel_request、keep_alive、transcript_mirror 与应用 SDK 消息。",
+      "activation_condition_zh": "Query.readMessages 消费 transport。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "if(t.type===\"control_response\")",
+          "utf8_byte_start": 1123850,
+          "utf8_byte_end_exclusive": 1123881,
+          "character_start": 1123850,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "if(t.type===\"control_cancel_request\")",
+          "utf8_byte_start": 1124308,
+          "utf8_byte_end_exclusive": 1124345,
+          "character_start": 1124308,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "if(t.type===\"transcript_mirror\")",
+          "utf8_byte_start": 1124416,
+          "utf8_byte_end_exclusive": 1124448,
+          "character_start": 1124416,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-11",
+      "finding_zh": "can_use_tool 是授权回调请求，回传行为与工具输入；不是主进程直接执行任意工具的入口。",
+      "activation_condition_zh": "SDK 收到对应 control_request subtype。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "if(e.request.subtype===\"can_use_tool\")",
+          "utf8_byte_start": 1128316,
+          "utf8_byte_end_exclusive": 1128354,
+          "character_start": 1128316,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "this.canUseTool(e.request.tool_name,e.request.input",
+          "utf8_byte_start": 1128467,
+          "utf8_byte_end_exclusive": 1128518,
+          "character_start": 1128467,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "toolUseID:e.request.tool_use_id",
+          "utf8_byte_start": 1129151,
+          "utf8_byte_end_exclusive": 1129182,
+          "character_start": 1129151,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 3
+        }
+      ],
+      "qualification_zh": "CLI 内建工具执行与 SDK-hosted MCP dispatch 必须分开画。"
+    },
+    {
+      "id": "AL-12",
+      "finding_zh": "SDK-hosted MCP 把 mcp_message 转交已注册 transport 的 onmessage，以 server name 与 JSON-RPC id 关联返回。",
+      "activation_condition_zh": "control_request subtype=mcp_message；SDK MCP server 已连接。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "connectSdkMcpServer(e,t)",
+          "utf8_byte_start": 1121753,
+          "utf8_byte_end_exclusive": 1121777,
+          "character_start": 1121753,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "handleMcpControlRequest(e,t,n)",
+          "utf8_byte_start": 1153892,
+          "utf8_byte_end_exclusive": 1153922,
+          "character_start": 1153892,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "let n=`${e}:${t.id}`",
+          "utf8_byte_start": 1153287,
+          "utf8_byte_end_exclusive": 1153307,
+          "character_start": 1153287,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-13",
+      "finding_zh": "授权卡有 requestId、sessionId、toolName、input、suggestions、decisionReason 等字段；挂起 Promise 到一次决定或 abort。",
+      "activation_condition_zh": "不能由前置 gate 或既有规则直接处理的工具请求。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async handleToolPermission(e,r,i,a,o,s,c)",
+          "utf8_byte_start": 221287,
+          "utf8_byte_end_exclusive": 221328,
+          "character_start": 221287,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "type:\"tool_permission_request\"",
+          "utf8_byte_start": 226567,
+          "utf8_byte_end_exclusive": 226597,
+          "character_start": 226567,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "message:\"Request aborted\"",
+          "utf8_byte_start": 225948,
+          "utf8_byte_end_exclusive": 225973,
+          "character_start": 225948,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-14",
+      "finding_zh": "deny/once/always/scheduled 被转换为 deny 或 allow、updatedInput 与可选 updatedPermissions；未知决定默认 deny。",
+      "activation_condition_zh": "respondToToolPermission 找到仍然 pending 的请求。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "respondToToolPermission(e,n,r)",
+          "utf8_byte_start": 227255,
+          "utf8_byte_end_exclusive": 227285,
+          "character_start": 227255,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "case\"once\":s={behavior:\"allow\"",
+          "utf8_byte_start": 228693,
+          "utf8_byte_end_exclusive": 228723,
+          "character_start": 228693,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "default:s={behavior:\"deny\",message:\"Unknown decision\"}",
+          "utf8_byte_start": 229099,
+          "utf8_byte_end_exclusive": 229153,
+          "character_start": 229099,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "可保存的规则受工具、策略、launcher 与 scheduled 路线等约束；always 不保证每个请求都持久化。"
+    },
+    {
+      "id": "AL-15",
+      "finding_zh": "SDK 忽略关闭后的控制请求与同 ID 的在途重复请求；cancel 请求触发对应 AbortController。",
+      "activation_condition_zh": "control_request/control_cancel_request 处理。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "Duplicate delivery of in-flight request",
+          "utf8_byte_start": 1127188,
+          "utf8_byte_end_exclusive": 1127227,
+          "character_start": 1127188,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "handleControlCancelRequest(e)",
+          "utf8_byte_start": 1127948,
+          "utf8_byte_end_exclusive": 1127977,
+          "character_start": 1127948,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "t.abort(),this.cancelControllers.delete(e.request_id)",
+          "utf8_byte_start": 1128029,
+          "utf8_byte_end_exclusive": 1128082,
+          "character_start": 1128029,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-16",
+      "finding_zh": "异步消息消费器处理 init、assistant、stream_event、result 等；非 stream_event 进入 messageBuffer，stream delta 走 coalescer。",
+      "activation_condition_zh": "当前 query 的消息循环。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "for await(let i of r)",
+          "utf8_byte_start": 182528,
+          "utf8_byte_end_exclusive": 182549,
+          "character_start": 182528,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "if(o.type!==\"stream_event\")",
+          "utf8_byte_start": 184096,
+          "utf8_byte_end_exclusive": 184123,
+          "character_start": 184096,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.streamDeltaCoalescer.push(o,e.currentTurnUserMessageUuid)",
+          "utf8_byte_start": 184907,
+          "utf8_byte_end_exclusive": 184969,
+          "character_start": 184907,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-17",
+      "finding_zh": "result 的 success 与 is_error 共同判断一次 turn；有排队消息时继续，否则可经过 5 秒 suggestion wait 或进入 idle。",
+      "activation_condition_zh": "onResult 的成功分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "a=e.is_error||i!==\"success\"",
+          "utf8_byte_start": 195790,
+          "utf8_byte_end_exclusive": 195817,
+          "character_start": 195790,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "n.inputStream?.hasPending()",
+          "utf8_byte_start": 201331,
+          "utf8_byte_end_exclusive": 201358,
+          "character_start": 201331,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.delegate.transitionTo(n,\"idle\")}),5e3)",
+          "utf8_byte_start": 202021,
+          "utf8_byte_end_exclusive": 202064,
+          "character_start": 202021,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "result 不等于进程已经退出；子工具、后台任务与自唤醒消息另有分支。"
+    },
+    {
+      "id": "AL-18",
+      "finding_zh": "idle 可保留活 query/inputStream，前提包括无错误的 running→idle、grace 或 workflow hold、非 dispatch_child 及策略允许；复用前复查凭据与策略。",
+      "activation_condition_zh": "transitionTo idle 与 sendMessage warm reuse。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "let e=this.warmLifecycle.getTimeoutMs()",
+          "utf8_byte_start": 509974,
+          "utf8_byte_end_exclusive": 510013,
+          "character_start": 509974,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.heldProcessPolicyVeto(n)",
+          "utf8_byte_start": 510160,
+          "utf8_byte_end_exclusive": 510189,
+          "character_start": 510160,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.warmLifecycle.checkWarmReuse(l)",
+          "utf8_byte_start": 520822,
+          "utf8_byte_end_exclusive": 520858,
+          "character_start": 520822,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-19",
+      "finding_zh": "迭代器没有结果就结束不视为成功；错误处理区分 stale query、intentional stop、warm-grace error 与运行故障。",
+      "activation_condition_zh": "query loop complete/catch。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "stream_ended_no_result",
+          "utf8_byte_start": 202999,
+          "utf8_byte_end_exclusive": 203021,
+          "character_start": 202999,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.exitPath=\"error-stale\"",
+          "utf8_byte_start": 204584,
+          "utf8_byte_end_exclusive": 204611,
+          "character_start": 204584,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "query interrupted by user (intentional stop)",
+          "utf8_byte_start": 205173,
+          "utf8_byte_end_exclusive": 205217,
+          "character_start": 205173,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-20",
+      "finding_zh": "UI stop 走 stopSession；interruptTurn 是另一个控制动作。stop 递增代次、结束输入流、清队列、转 stopping/idle；interrupt 发送 SDK interrupt。",
+      "activation_condition_zh": "对应 IPC stop 或桥接 interrupt。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-DMXnzgNn.js",
+          "literal": "await n.stopSession(e)",
+          "utf8_byte_start": 52592,
+          "utf8_byte_end_exclusive": 52614,
+          "character_start": 52592,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async stopSession(e,n=!1)",
+          "utf8_byte_start": 546646,
+          "utf8_byte_end_exclusive": 546671,
+          "character_start": 546646,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async interruptTurn(e)",
+          "utf8_byte_start": 540415,
+          "utf8_byte_end_exclusive": 540437,
+          "character_start": 540415,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "subtype:\"interrupt\"",
+          "utf8_byte_start": 1138532,
+          "utf8_byte_end_exclusive": 1138551,
+          "character_start": 1138532,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不把 UI 停止按钮描述为仅暂停当前模型输出。"
+    },
+    {
+      "id": "AL-21",
+      "finding_zh": "退出运行态会拒绝 pending approvals、释放 CU lock、清理 teach 状态并尝试恢复隐藏应用和剪贴板。",
+      "activation_condition_zh": "transitionTo idle/stopping/archived。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "denyPendingPermissionsForSession(n.sessionId,\"Turn ended\")",
+          "utf8_byte_start": 509093,
+          "utf8_byte_end_exclusive": 509151,
+          "character_start": 509093,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "n.cuClipboardStash",
+          "utf8_byte_start": 86977,
+          "utf8_byte_end_exclusive": 86995,
+          "character_start": 86977,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 5
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "release_trigger:r",
+          "utf8_byte_start": 508117,
+          "utf8_byte_end_exclusive": 508134,
+          "character_start": 508117,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "恢复原生 UI/剪贴板是异步尝试，源码日志本身不证明完成。"
+    },
+    {
+      "id": "AL-22",
+      "finding_zh": "普通健康检测默认 600000ms 不活跃阈值、60000ms tick；pending 普通审批阻止判超时，scheduled approvals 用另一阈值并考虑睡眠恢复。",
+      "activation_condition_zh": "health monitor 与对应配置 gate。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "\"coworkMessageTimeoutMs\",6e5",
+          "utf8_byte_start": 171228,
+          "utf8_byte_end_exclusive": 171256,
+          "character_start": 171228,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "r=6e4,i=t.L2",
+          "utf8_byte_start": 171356,
+          "utf8_byte_end_exclusive": 171368,
+          "character_start": 171356,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "u&&this.reapTimedOutScheduledRun(r,h)",
+          "utf8_byte_start": 173028,
+          "utf8_byte_end_exclusive": 173065,
+          "character_start": 173028,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "这个检测首先记录健康信息；只有满足无人值守 scheduled 分支才调用 reap，不能写成所有会话十分钟自动杀进程。"
+    },
+    {
+      "id": "AL-23",
+      "finding_zh": "授权等待 300 秒只触发 stalled telemetry；computer-use dialog signal 的 290 秒边界属于另一机制。",
+      "activation_condition_zh": "pending approval 仍存在时的 3e5 timer；CU binder timer。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "seconds_waiting:300",
+          "utf8_byte_start": 227183,
+          "utf8_byte_end_exclusive": 227202,
+          "character_start": 227183,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "var ra=29e4",
+          "utf8_byte_start": 215238,
+          "utf8_byte_end_exclusive": 215249,
+          "character_start": 215238,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "二者都不能未经调用链证明写成全局工具执行超时。"
+    },
+    {
+      "id": "AL-24",
+      "finding_zh": "SDK ProcessTransport close 先结束 stdin，再给 2 秒宽限；非 Windows 路径发 SIGTERM，再保留 5 秒升级 SIGKILL；Query cleanup 另清空与拒绝 pending RPC。",
+      "activation_condition_zh": "此 SDK 的本地进程 transport close，进程仍活着时。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "var Nxe=2e3",
+          "utf8_byte_start": 1101114,
+          "utf8_byte_end_exclusive": 1101125,
+          "character_start": 1101114,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "e.kill(\"SIGTERM\")",
+          "utf8_byte_start": 1101546,
+          "utf8_byte_end_exclusive": 1101563,
+          "character_start": 1101546,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "async performCleanup(e)",
+          "utf8_byte_start": 1122517,
+          "utf8_byte_end_exclusive": 1122540,
+          "character_start": 1122517,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "VM 的自定义 process adapter 与平台分支应各按其实现解释，不能把 Node child-process 路线泛化为所有后端。"
+    },
+    {
+      "id": "CU-01",
+      "finding_zh": "计算机工具表、session binder 与平台 executor 分层；binder 注入会话 app grants、display、截图尺寸、locks 与用户决定回调。",
+      "activation_condition_zh": "已注册 computer-use tool handler。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "function Kr(e,r)",
+          "utf8_byte_start": 48260,
+          "utf8_byte_end_exclusive": 48276,
+          "character_start": 48260,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "function Zr(e,r)",
+          "utf8_byte_start": 52078,
+          "utf8_byte_end_exclusive": 52094,
+          "character_start": 52078,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function ca(t,n,r)",
+          "utf8_byte_start": 215533,
+          "utf8_byte_end_exclusive": 215551,
+          "character_start": 215533,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-02",
+      "finding_zh": "enabled 要求支持平台、HIPAA gate 未拒绝、rollout gate 满足和 chicagoEnabled 用户设置；registerable 另有可仅提供启用入口的分支。",
+      "activation_condition_zh": "本包 $V/Uar 条件。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function $V(e={})",
+          "utf8_byte_start": 3634143,
+          "utf8_byte_end_exclusive": 3634160,
+          "character_start": 3634143,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function Uar(e={})",
+          "utf8_byte_start": 3634586,
+          "utf8_byte_end_exclusive": 3634604,
+          "character_start": 3634586,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function QV(e={})",
+          "utf8_byte_start": 3633877,
+          "utf8_byte_end_exclusive": 3633894,
+          "character_start": 3633877,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "Mac/Windows/Linux 名称出现在包里不等于功能对每个用户可用。"
+    },
+    {
+      "id": "CU-03",
+      "finding_zh": "app-scoped 后台控制有效 gate 限 macOS，要求版本至少 15、未超过配置上界、所需 gate 新鲜且 appScopedEnabled；普通 macOS CU floor 为 14。",
+      "activation_condition_zh": "本次包的平台与 gate 函数。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function iH(e={})",
+          "utf8_byte_start": 3635446,
+          "utf8_byte_end_exclusive": 3635463,
+          "character_start": 3635446,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "MIN_COMPUTER_USE_MACOS_MAJOR:()=>14",
+          "utf8_byte_start": 3630371,
+          "utf8_byte_end_exclusive": 3630406,
+          "character_start": 3630371,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function har()",
+          "utf8_byte_start": 3630715,
+          "utf8_byte_end_exclusive": 3630729,
+          "character_start": 3630715,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不能把 Linux 包包含 app_* 共享代码写成 Linux 也已启用 app-scoped。"
+    },
+    {
+      "id": "CU-04",
+      "finding_zh": "request_access 接受 apps/reason，并可分别请求 clipboardRead、clipboardWrite、systemKeyCombos；app grant 不自动等于 full-screen takeover consent。",
+      "activation_condition_zh": "工具 schema 与 binder takeover 分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "clipboardRead:{type:\"boolean\"",
+          "utf8_byte_start": 17880,
+          "utf8_byte_end_exclusive": 17909,
+          "character_start": 17880,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "required:[\"apps\",\"reason\"]",
+          "utf8_byte_start": 18371,
+          "utf8_byte_end_exclusive": 18397,
+          "character_start": 18371,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "onTakeoverRequest===void 0",
+          "utf8_byte_start": 222038,
+          "utf8_byte_end_exclusive": 222064,
+          "character_start": 222038,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-05",
+      "finding_zh": "grants 区分 read、click、full；read 拒绝点击与键盘输入，但未按住鼠标键的纯移动走 mouse_position，tier 判定允许。按住鼠标键的移动走 mouse 并继续检查 mouse_full 目标；click 不开放所有按键和修饰点击。锁、几何和系统检查仍可拒绝。",
+      "activation_condition_zh": "display-scope interaction path。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "var r={read:0,click:1,full:2}",
+          "utf8_byte_start": 672,
+          "utf8_byte_end_exclusive": 701,
+          "character_start": 672,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function V(t,n,r,i,a={})",
+          "utf8_byte_start": 59525,
+          "utf8_byte_end_exclusive": 59555,
+          "character_start": 59525,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function U(e,t,n,r,i,a,o,s)",
+          "utf8_byte_start": 64419,
+          "utf8_byte_end_exclusive": 64452,
+          "character_start": 64419,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "平台 hitTest=none 的路径降级为其声明能力，不能声称逐像素命中验证仍然有效。"
+    },
+    {
+      "id": "CU-06",
+      "finding_zh": "CU lock、app lock、takeover approval 相互独立；无人值守且需要 takeover consent 的动作直接失败。",
+      "activation_condition_zh": "binder acquire/check 与 unattended branch。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "unattended_no_approver",
+          "utf8_byte_start": 116384,
+          "utf8_byte_end_exclusive": 116406,
+          "character_start": 116384,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 4
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "getAppLockHeld?.()",
+          "utf8_byte_start": 99983,
+          "utf8_byte_end_exclusive": 100001,
+          "character_start": 99983,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 8
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "await(r.acquireCuLock?.())",
+          "utf8_byte_start": 223864,
+          "utf8_byte_end_exclusive": 223890,
+          "character_start": 223864,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-07",
+      "finding_zh": "截图返回 JPEG image content，另保留 width/height、displayWidth/displayHeight、displayId、originX/Y，某些缩放路径附 frameWidth/frameHeight。",
+      "activation_condition_zh": "成功的 display screenshot。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "mimeType:\"image/jpeg\"",
+          "utf8_byte_start": 122384,
+          "utf8_byte_end_exclusive": 122405,
+          "character_start": 122384,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 5
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "displayWidth:c.displayWidth,displayHeight:c.displayHeight",
+          "utf8_byte_start": 190013,
+          "utf8_byte_end_exclusive": 190070,
+          "character_start": 190013,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "r.onScreenshotCaptured?.(n)",
+          "utf8_byte_start": 227134,
+          "utf8_byte_end_exclusive": 227161,
+          "character_start": 227134,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-08",
+      "finding_zh": "像素坐标依据最近截图的 frameWidth/Height 或 image width/height 换算到显示坐标，并加 display origin；归一化模式按 0..100 百分比映射。",
+      "activation_condition_zh": "coordinate conversion nt。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function nt(e,t,n,r,i,a,o=\"coordinate\")",
+          "utf8_byte_start": 55491,
+          "utf8_byte_end_exclusive": 55530,
+          "character_start": 55491,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "i.frameWidth??i.width",
+          "utf8_byte_start": 55809,
+          "utf8_byte_end_exclusive": 55830,
+          "character_start": 55809,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "n===\"normalized_0_100\"",
+          "utf8_byte_start": 55588,
+          "utf8_byte_end_exclusive": 55610,
+          "character_start": 55588,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-09",
+      "finding_zh": "换算会拒绝负数与超过 coordinate frame 的点，最终夹到显示器最后一个像素；无截图时存在按 scaleFactor 回落并警告的路径。",
+      "activation_condition_zh": "nt/rt 的成功与错误分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function rt(e,t,n,r,i,a)",
+          "utf8_byte_start": 56668,
+          "utf8_byte_end_exclusive": 56692,
+          "character_start": 56668,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "falling back to /scaleFactor.",
+          "utf8_byte_start": 56288,
+          "utf8_byte_end_exclusive": 56317,
+          "character_start": 56288,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "e>n||t>r?Error",
+          "utf8_byte_start": 55864,
+          "utf8_byte_end_exclusive": 55878,
+          "character_start": 55864,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不能把这种 fallback 教成更可靠的默认算法。"
+    },
+    {
+      "id": "CU-10",
+      "finding_zh": "zoom 不更换后续点击的全屏坐标参照；computer_batch 内坐标依 batch 前 full screenshot，内部截图结果不会改写同一批的坐标 context。",
+      "activation_condition_zh": "tool schema 与 Xi loop。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "never a mid-batch screenshot, never a prior zoom",
+          "utf8_byte_start": 10683,
+          "utf8_byte_end_exclusive": 10731,
+          "character_start": 10683,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function Xi(e,t,r,i,a)",
+          "utf8_byte_start": 210716,
+          "utf8_byte_end_exclusive": 210744,
+          "character_start": 210716,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "if(m&&(d=m),u.push",
+          "utf8_byte_start": 211557,
+          "utf8_byte_end_exclusive": 211575,
+          "character_start": 211557,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-11",
+      "finding_zh": "computer_batch 按顺序执行，在每次迭代入口检查 abort，之后可能等待再 dispatch；这不保证停止与下一 GUI 副作用原子互斥。入口发现 abort 时报告已执行数量；首个 isError 停止并报告已完成/剩余动作，有错或异常会尝试 releaseHeldMouse。",
+      "activation_condition_zh": "batch dispatcher。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "Batch aborted after ${u.length}",
+          "utf8_byte_start": 211163,
+          "utf8_byte_end_exclusive": 211194,
+          "character_start": 211163,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "if(m&&(d=m),u.push",
+          "utf8_byte_start": 211557,
+          "utf8_byte_end_exclusive": 211575,
+          "character_start": 211557,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "Batch stopped at actions[${t}]",
+          "utf8_byte_start": 160033,
+          "utf8_byte_end_exclusive": 160063,
+          "character_start": 160033,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        }
+      ],
+      "qualification_zh": "不应将一批动作当成原子事务；已执行的 UI 变化不会回滚。Stop 到达于检查后的等待间隙时，动作能否取消依赖具体动作与 executor 的后续检查；最后一项之后也可能正常结束。这里只确认 JS 分发条件，不推定原生执行效果。"
+    },
+    {
+      "id": "CU-12",
+      "finding_zh": "pixel validation 默认子 gate 为 false，batch 显式关掉；缺少可比较截图、scaled-frame 标记或比较异常时可 skipped。",
+      "activation_condition_zh": "pixel validation 子 gate、Te 与 Xi。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Far={pixelValidation:!1",
+          "utf8_byte_start": 3633662,
+          "utf8_byte_end_exclusive": 3633685,
+          "character_start": 3633662,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "if(!t||t.frameWidth!==void 0)",
+          "utf8_byte_start": 9100,
+          "utf8_byte_end_exclusive": 9129,
+          "character_start": 9100,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "pixelValidation:!1,autoTargetDisplay:!1",
+          "utf8_byte_start": 184227,
+          "utf8_byte_end_exclusive": 184266,
+          "character_start": 184227,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        }
+      ],
+      "qualification_zh": "这不是一个普遍 fail-closed 的屏幕变化保证。"
+    },
+    {
+      "id": "CU-13",
+      "finding_zh": "app-scoped snapshot cache 强制以 sessionId 分隔；缺少 sessionId 且 executor 提供 appScoped 时抛错。",
+      "activation_condition_zh": "bindSessionContext 的 app-scoped 平台。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "hosts that wire executor.appScoped must plumb ctx.sessionId",
+          "utf8_byte_start": 215730,
+          "utf8_byte_end_exclusive": 215789,
+          "character_start": 215730,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "getLastAppSnapshot:(e,t)=>d.get($(e,t))",
+          "utf8_byte_start": 226267,
+          "utf8_byte_end_exclusive": 226306,
+          "character_start": 226267,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-14",
+      "finding_zh": "Linux X11 适配器调用 native cuListRunningApps、cuHideApps、cuAppUnderPoint 与截图函数；Wayland 走 cuWaylandStart/capture/input，能力声明 none filtering/none hitTest。",
+      "activation_condition_zh": "host adapter 按 Linux session environment 分派。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function gUi(e)",
+          "utf8_byte_start": 5268796,
+          "utf8_byte_end_exclusive": 5268811,
+          "character_start": 5268796,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function TUi(e)",
+          "utf8_byte_start": 5273047,
+          "utf8_byte_end_exclusive": 5273062,
+          "character_start": 5273047,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "YV={screenshotFiltering:\"none\",platform:\"linux\",hitTest:\"none\"}",
+          "utf8_byte_start": 3631147,
+          "utf8_byte_end_exclusive": 3631210,
+          "character_start": 3631147,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-15",
+      "finding_zh": "Wayland 使用 XDG_SESSION_TYPE 优先、WAYLAND_DISPLAY 后备判断；native portal start 负责建立共享会话，JS guard 在自家 dialog 打开时拒绝输入。",
+      "activation_condition_zh": "Linux Wayland executor。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "var JO=()=>{let e=qO().XDG_SESSION_TYPE",
+          "utf8_byte_start": 2910866,
+          "utf8_byte_end_exclusive": 2910905,
+          "character_start": 2910866,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "async function iK()",
+          "utf8_byte_start": 3985793,
+          "utf8_byte_end_exclusive": 3985812,
+          "character_start": 3985793,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function D0(){if(CUi>0)throw Error",
+          "utf8_byte_start": 5272731,
+          "utf8_byte_end_exclusive": 5272765,
+          "character_start": 5272731,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "ensureOsPermissions 在 Linux 返回 granted 并不意味着无需 portal 用户同意。"
+    },
+    {
+      "id": "CU-16",
+      "finding_zh": "macOS adapter 通过 @ant/claude-swift computerUse，Windows/Linux 通用 native 边界通过 @ant/claude-native；这里能确认 JS API 调用，不能恢复未分析的 native 内部。",
+      "activation_condition_zh": "不同 platform executor 的源码分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "await import(\"@ant/claude-swift\")",
+          "utf8_byte_start": 3798878,
+          "utf8_byte_end_exclusive": 3798911,
+          "character_start": 3798878,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 3
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "require(\"@ant/claude-native\")",
+          "utf8_byte_start": 282379,
+          "utf8_byte_end_exclusive": 282408,
+          "character_start": 282379,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "cuWaylandCapture(r.nodeId)",
+          "utf8_byte_start": 3987957,
+          "utf8_byte_end_exclusive": 3987983,
+          "character_start": 3987957,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "静态分发代码没有给出原生 API 完整安全证明。"
+    },
+    {
+      "id": "CU-17",
+      "finding_zh": "host-loop 将 Bash/WebFetch 工具 alias 到 workspace MCP；主机文件工具不因此也在 VM 运行。",
+      "activation_condition_zh": "host-loop options patch bm。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "e.toolAliases={Bash:t.yK,WebFetch:t.bK}",
+          "utf8_byte_start": 323258,
+          "utf8_byte_end_exclusive": 323297,
+          "character_start": 323258,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "workspaceMcpServer:qe",
+          "utf8_byte_start": 334349,
+          "utf8_byte_end_exclusive": 334370,
+          "character_start": 334349,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "VM path on host: ${i}",
+          "utf8_byte_start": 306083,
+          "utf8_byte_end_exclusive": 306104,
+          "character_start": 306083,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-18",
+      "finding_zh": "workspace bash 接受 command、可选 timeout_ms；每次通过 bash -c，在 /sessions/.../mnt 下的 VM cwd 运行。底层把 stdout 与 stderr 合并到 output 并返回 exitCode；MCP 成功结果展示输出，非零退出额外显示退出码并标为 isError。",
+      "activation_condition_zh": "已通过 shell 策略检查且 VM ready 的 workspace tool。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "function zp({createSdkMcpServer:e,tool:n},r)",
+          "utf8_byte_start": 295556,
+          "utf8_byte_end_exclusive": 295600,
+          "character_start": 295556,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "command:\"bash\",args:[\"-c\"",
+          "utf8_byte_start": 298893,
+          "utf8_byte_end_exclusive": 298918,
+          "character_start": 298893,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "return n.exitCode===0?jp(h+i):kp(",
+          "utf8_byte_start": 300147,
+          "utf8_byte_end_exclusive": 300180,
+          "character_start": 300147,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "CU-19",
+      "finding_zh": "workspace bash timeout 默认 120000ms、schema 最大 600000ms；传入包装器的值为 min(请求值或默认值, max(1000ms, MCP cap − 已用准备时间 − 2000ms))，预算项的 1000ms 下限使它不是严格端到端剩余预算保证。VM boot wait 通常先等 5000ms，可按 gate 对首次等待 30000ms。",
+      "activation_condition_zh": "对应 workspace tool 与 feature gate。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "vp=12e4,yp=6e5,bp=2e3,xp=5e3,Sp=3e4",
+          "utf8_byte_start": 291621,
+          "utf8_byte_end_exclusive": 291656,
+          "character_start": 291621,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Math.min(e.timeout_ms??vp,Math.max(1e3,t.mA()-(Date.now()-s)-bp))",
+          "utf8_byte_start": 298779,
+          "utf8_byte_end_exclusive": 298844,
+          "character_start": 298779,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "VM booting 返回可重试结果，不代表该 shell command 已运行。"
+    },
+    {
+      "id": "CU-20",
+      "finding_zh": "workspace mounts 逐次计算；uploads、项目上下文与插件常用 ro，outputs 与用户目录依据路径/批准/只读策略选择 mode；恢复时重新解析并剔除目标变化的目录。",
+      "activation_condition_zh": "workspace computeBashMounts、VM spawn 及 resume folder validation。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "function xm(e,n,r,i,a,o,s,c,l,u,d,f,p,m)",
+          "utf8_byte_start": 334772,
+          "utf8_byte_end_exclusive": 334812,
+          "character_start": 334772,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async function fh(e,n,r)",
+          "utf8_byte_start": 382421,
+          "utf8_byte_end_exclusive": 382445,
+          "character_start": 382421,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Dropping folder whose resolved location changed since it was granted",
+          "utf8_byte_start": 431029,
+          "utf8_byte_end_exclusive": 431097,
+          "character_start": 431029,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "mode 字符串只是传给后端的配置证据，底层 VM/filesystem 执法需要后端证据。"
+    },
+    {
+      "id": "CU-21",
+      "finding_zh": "VM spawn adapter 提供 stdin/stdout/process-like 对象，把 command/args/cwd/env/mounts 等交给异步 VM spawn；Linux helper、virtiofsd、smol image 是另外的分发构件。",
+      "activation_condition_zh": "VM-loop 或 workspace VM 路线。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function IKr(e)",
+          "utf8_byte_start": 4242633,
+          "utf8_byte_end_exclusive": 4242648,
+          "character_start": 4242633,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "r.setupStdinForwarding()",
+          "utf8_byte_start": 4243061,
+          "utf8_byte_end_exclusive": 4243085,
+          "character_start": 4243061,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "\"cowork-linux-helper\"",
+          "utf8_byte_start": 2932220,
+          "utf8_byte_end_exclusive": 2932241,
+          "character_start": 2932220,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "\"virtiofsd\"",
+          "utf8_byte_start": 2932446,
+          "utf8_byte_end_exclusive": 2932457,
+          "character_start": 2932446,
+          "line_1_based": 13,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 3
+        }
+      ],
+      "qualification_zh": "helper 文件存在不证明目标设备具备 KVM、vsock 或已启动 VM。"
+    },
+    {
+      "id": "CU-22",
+      "finding_zh": "folder request 与主机文件访问核对规范化路径、保护位置、allowed roots；host-loop PreToolUse 再检查具体文件输入并拒绝不安全解析。",
+      "activation_condition_zh": "连接目录申请和 host-file hook。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "protected host location",
+          "utf8_byte_start": 367076,
+          "utf8_byte_end_exclusive": 367099,
+          "character_start": 367076,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "PreToolUse resolve failed",
+          "utf8_byte_start": 328776,
+          "utf8_byte_end_exclusive": 328801,
+          "character_start": 328776,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "PreToolUse: protected location: ${u}",
+          "utf8_byte_start": 329128,
+          "utf8_byte_end_exclusive": 329164,
+          "character_start": 329128,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "本章描述可见检查链，不把 JavaScript 检查当作 OS sandbox。"
+    },
+    {
+      "id": "CU-23",
+      "finding_zh": "截图结果可被发送到会话 live preview 回调；截屏与鼠标实际副作用由 executor 承担，主对话 renderer 主要消费状态/图像。",
+      "activation_condition_zh": "computer binder 成功返回 screenshot 的分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "r.onScreenshotFrame?.({base64:t,dims:n,source:{mode:\"display\"}})",
+          "utf8_byte_start": 227162,
+          "utf8_byte_end_exclusive": 227226,
+          "character_start": 227162,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "onScreenshotFrame:n=>t.gC(e.sessionId,n)",
+          "utf8_byte_start": 49397,
+          "utf8_byte_end_exclusive": 49437,
+          "character_start": 49397,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "framebuffer preview 是另一套接口，不能仅凭名称合并为同一捕获通道。"
+    },
+    {
+      "id": "AL-25",
+      "finding_zh": "SDK 的 runEnded/resultReceived/sessionState 与 Desktop 五态另行管理；result 后可等待 session_state_changed=idle，requires_action 会清掉 run-end ceiling。",
+      "activation_condition_zh": "SDK Query.readMessages 与双向控制需要。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "this.sessionState===void 0||this.sessionState===\"idle\"||!this.hasBidirectionalNeeds()",
+          "utf8_byte_start": 1125359,
+          "utf8_byte_end_exclusive": 1125444,
+          "character_start": 1125359,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "t.state===\"requires_action\"?this.clearRunEndCeiling()",
+          "utf8_byte_start": 1125684,
+          "utf8_byte_end_exclusive": 1125737,
+          "character_start": 1125684,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不要把 SDK runEnded、Desktop idle 和 OS process exit 画成同一个状态。"
+    },
+    {
+      "id": "CU-24",
+      "finding_zh": "display batch 复用一次 tool-call 的 context；存在 readTheGrantsAfresh 回调，但可见显式重读在 app-scoped 等待用户停打后的重试处。",
+      "activation_condition_zh": "Xi display batch 与 wn app-scoped input wait loop。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "p=await Qi(f,o,e,r,c)",
+          "utf8_byte_start": 211341,
+          "utf8_byte_end_exclusive": 211362,
+          "character_start": 211341,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "s=$i({...t,...t.readTheGrantsAfresh?.()})",
+          "utf8_byte_start": 105174,
+          "utf8_byte_end_exclusive": 105215,
+          "character_start": 105174,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "逐项 target 检查不等于每项都从最新持久化 grant 重载；教学模型逐项读取 live grants 是明确的原创设计选择。"
+    },
+    {
+      "id": "CU-25",
+      "finding_zh": "app_batch 在错误或中断返回时移除已积累的 image content，插入 image omitted 文本；无错完成才返回完整积累内容。",
+      "activation_condition_zh": "app-scoped batch dispatcher fr 的结果组装。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function fr(e,t,r)",
+          "utf8_byte_start": 158468,
+          "utf8_byte_end_exclusive": 158492,
+          "character_start": 158468,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "[Image omitted due to error]",
+          "utf8_byte_start": 159015,
+          "utf8_byte_end_exclusive": 159043,
+          "character_start": 159015,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "All ${o.length} actions ok.",
+          "utf8_byte_start": 160219,
+          "utf8_byte_end_exclusive": 160246,
+          "character_start": 160219,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "display computer_batch 与 app_batch 结果组装并不相同。"
+    }
+  ],
+  "cross_references": [
+    "shell-architecture.json: SH-12..SH-15 for IPC origin/sender validation",
+    "extension-boundaries.json for independent MCP installation/transport lifecycle",
+    "settings-resilience.json for app configuration and load resilience"
+  ],
+  "verification": {
+    "anchors_checked": 147,
+    "all_anchor_ranges_readback_match": true,
+    "source_files_checked": 7,
+    "source_code_redistributed": false
+  },
+  "editorial_note": "AgentLoopEngine is this book’s explanatory heading, not an asserted recovered original class name. Conditions and local execution routes are per this pinned artifact, not universal current product claims.",
+  "applied_review_corrections": [
+    {
+      "review_id": "NVA-CU-04",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 210716,
+          "anchor": "async function Xi(e,t,r,i,a)",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 211296,
+          "anchor": "await(0,n.setTimeout)(Gi(f,i,e,r))",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 198527,
+          "anchor": "async function vi(e,t,n,r)",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 192489,
+          "anchor": "async function pi(t,n,r,i,a,o)",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        }
+      ]
+    },
+    {
+      "review_id": "NVA-CU-01",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 57103,
+          "anchor": "function at(e,t)",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 198527,
+          "anchor": "async function vi(e,t,n,r)",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 198645,
+          "anchor": "Z?\"mouse\":\"mouse_position\"",
+          "occurrence_zero_based": 0,
+          "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+        }
+      ]
+    },
+    {
+      "review_id": "NVA-CU-02",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4189263,
+          "anchor": "async function uUr()",
+          "occurrence_zero_based": 0,
+          "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4238645,
+          "anchor": "DKr=class e",
+          "occurrence_zero_based": 0,
+          "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_offset": 300100,
+          "anchor": "let h=n.output.length>0?n.output:\"(no output)\"",
+          "occurrence_zero_based": 0,
+          "sha256": "e1d802b46c6d6f648ab2d918fe9b509a92c7a6d302c4d9f37895761d59ac69f9"
+        }
+      ]
+    },
+    {
+      "review_id": "NVA-CU-03",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_offset": 298779,
+          "anchor": "Math.min(e.timeout_ms??vp,Math.max(1e3,t.mA()-(Date.now()-s)-bp))",
+          "occurrence_zero_based": 0,
+          "sha256": "e1d802b46c6d6f648ab2d918fe9b509a92c7a6d302c4d9f37895761d59ac69f9"
+        }
+      ]
+    }
+  ],
+  "publication_note": {
+    "source_paths": "Product-source paths are package-relative identifiers; original product files are not distributed. Teaching-model paths are relative to this ledger directory.",
+    "review_summary": "book-corrections.json",
+    "published_material": "Reviewed claims, source hashes, compact literal anchors and analysis limits; no full modules, raw graphs or research-computer paths."
+  }
+}

@@ -1,0 +1,14 @@
+%% Original explanatory diagram for the book.
+flowchart TD
+    TOOL["一次 computer-use tool call"] --> ENABLED{"feature 可用"}
+    ENABLED -->|"否"| FAIL["错误结果"]
+    ENABLED -->|"是"| GRANT{"app / capability 已授权"}
+    GRANT -->|"否"| ASK["request_access / 对应审批"]
+    GRANT -->|"是"| LOCK{"锁与控制模式兼容"}
+    LOCK -->|"否"| FAIL
+    LOCK -->|"需接管"| TAKEOVER{"能取得 takeover consent"}
+    TAKEOVER -->|"否"| FAIL
+    TAKEOVER -->|"是"| TARGET["检查目标 / 坐标 / tier"]
+    LOCK -->|"是"| TARGET
+    TARGET --> EXEC["平台 executor"]
+    EXEC --> RESULT["text / image / isError + 截图 sidecar"]

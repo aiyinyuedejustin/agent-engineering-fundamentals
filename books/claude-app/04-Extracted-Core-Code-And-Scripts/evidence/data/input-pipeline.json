@@ -86,7 +86,6 @@
     "analyses": [
       {
         "evidence_id": "ev_56265a75d829df875922c1376e05fe0a37784938155661ae8658dfe0adfda21d",
-        "private_output": "private-downloads/input-pipeline-work/rea-input.json",
         "output_sha256": "665b49547d6f54448c4151f8aeb69d9400bf874d99c2a76e82fca029536b5a3c",
         "parameters": {
           "format": "auto",
@@ -133,7 +132,6 @@
       },
       {
         "evidence_id": "ev_e9d3d5c725174d6a888a92c8ad84bbe7102bb4789787ef042b56539ec9429891",
-        "private_output": "private-downloads/input-pipeline-work/rea-lifecycle.json",
         "output_sha256": "e18d796d48e0c37bc3cb72695ac87229f649fb3457833256c4f587687838c78f",
         "parameters": {
           "format": "auto",
@@ -180,7 +178,6 @@
       },
       {
         "evidence_id": "ev_a79cc51fb5d23b7f0b2fc130ed594bf3d83bce393de50a13476ab9d510a1a3e5",
-        "private_output": "private-downloads/input-pipeline-work/rea-preprocess.json",
         "output_sha256": "b4be208d7ccaa977547d9b12c68655a0591d610bf8be6fc0cdd9e41f72a289b1",
         "parameters": {
           "format": "auto",
@@ -975,7 +972,7 @@
       "classification": "observed_packaged_client_control_flow",
       "conditions": [
         "Requires conversation identity and a higher configured upload cap.",
-        "Cleanup avoids deleting paths that may still be shared or held."
+        "After an upload result exists, empty stored output or changed source size enters deletion directly. Other failures delete only when a returned filename exists and the shared-path guard explicitly permits deletion; that guard is not universal across failure branches."
       ],
       "evidence": [
         {
@@ -1375,7 +1372,7 @@
     {
       "id": "IP31",
       "title": "Voice navigation handoff",
-      "finding": "An active full-voice session can hand off its first interim transcript to a newly created conversation, with an explicit user-message identity; the effect unsubscribes and clears handed-off interim text on cleanup.",
+      "finding": "An active full-voice session can hand off the retained interim transcript at the navigation-ready transition, updated by eligible non-empty interim changes, to a newly created conversation with an explicit user-message identity; the effect unsubscribes and clears handed-off interim text on cleanup.",
       "classification": "observed_packaged_client_control_flow",
       "conditions": [],
       "evidence": [
@@ -1406,7 +1403,7 @@
     {
       "id": "IP32",
       "title": "Ordering is route-specific",
-      "finding": "The selected session message builder emits images before text in its ordinary branch; recording-frame mode interleaves frame-related text with images. Draft queue restoration uses before-draft and after-draft groups and deduplicates file UUIDs/sync-source identifiers.",
+      "finding": "The selected session message builder emits images before text in its ordinary branch; recording-frame mode interleaves frame-related text with images. Draft queue restoration uses before-draft and after-draft groups. Queued files are filtered against UUIDs already in the current draft; the helper does not globally deduplicate UUIDs across different queued entries. Sync-source identifiers are deduplicated across the merged collection.",
       "classification": "observed_packaged_client_control_flow",
       "conditions": [],
       "evidence": [
@@ -1537,5 +1534,120 @@
     ],
     "interpretation": "Literal absence is only a bounded search result, not proof that no cache or estimation implementation exists."
   },
-  "reproduction_policy": "Publish original explanations, diagrams and compact anchors only; do not distribute extracted bundles or raw REA graphs."
+  "reproduction_policy": "Publish original explanations, diagrams and compact anchors only; do not distribute extracted bundles or raw REA graphs.",
+  "applied_review_corrections": [
+    {
+      "review_id": "PI-A01",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "line": 47,
+          "utf8_byte_range": {
+            "start": 210137,
+            "end": 210157,
+            "end_exclusive": true
+          },
+          "anchor": "m=p||n instanceof kk",
+          "observed_control_flow": "p is an UploadStoredEmptyError check; kk is UploadSourceChangedError. Either sets m true."
+        },
+        {
+          "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "line": 47,
+          "utf8_byte_range": {
+            "start": 210158,
+            "end": 210192,
+            "end_exclusive": true
+          },
+          "anchor": "h=u===void 0?\"none\":m||u.file_name",
+          "observed_control_flow": "With a prepared upload u, m alone chooses the deleted branch. isUploadPathShared is consulted only by the alternate named-upload branch; JavaScript || short-circuits before that guard when m is true."
+        },
+        {
+          "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "line": 47,
+          "utf8_byte_range": {
+            "start": 207976,
+            "end": 207992,
+            "end_exclusive": true
+          },
+          "anchor": "function Dk(e,t)",
+          "observed_control_flow": "The sharing helper is conservative when the callback is absent or throws, but that does not make it run for the two integrity-error cases."
+        }
+      ]
+    },
+    {
+      "review_id": "PI-A02",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "line": 47,
+          "utf8_byte_range": {
+            "start": 168169,
+            "end": 168211,
+            "end_exclusive": true
+          },
+          "anchor": "let l=new Set(n.files.map(e=>e.file_uuid))",
+          "observed_control_flow": "The Set is initialized only from current draft files. The queue helper filters with !l.has(file_uuid), but never adds accepted queued UUIDs. Before- and after-draft queue groups are filtered separately against the same unchanged Set."
+        }
+      ]
+    },
+    {
+      "review_id": "PI-A03",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "path": "ion-dist/assets/v1/cbc9f9e27-Cd2G_MtE.js",
+          "sha256": "b32af0968a78324bf58c1537507e3d28828a307ce9cfc062c97e2c8bbbe7d9f3",
+          "line": 57,
+          "utf8_byte_range": {
+            "start": 6281,
+            "end": 6300,
+            "end_exclusive": true
+          },
+          "anchor": "o.blob.size>=t.size",
+          "observed_control_flow": "The no-savings outcome applies to an output whose size is greater than or equal to the input size."
+        }
+      ]
+    },
+    {
+      "review_id": "PI-A06",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "path": "ion-dist/assets/v1/c0315458b-DZFr6C0D.js",
+          "sha256": "e6f358d1de88ca8ff8f1b3ff1536b5b75aeb3da831a977d43f23a4df9839cbdf",
+          "line": 1,
+          "utf8_byte_range": {
+            "start": 927,
+            "end": 956,
+            "end_exclusive": true
+          },
+          "anchor": "A.current=e.interimTranscript",
+          "observed_control_flow": "Each changed, non-empty interim transcript updates the retained value while the eligibility condition holds."
+        },
+        {
+          "path": "ion-dist/assets/v1/c0315458b-DZFr6C0D.js",
+          "sha256": "e6f358d1de88ca8ff8f1b3ff1536b5b75aeb3da831a977d43f23a4df9839cbdf",
+          "line": 1,
+          "utf8_byte_range": {
+            "start": 1215,
+            "end": 1255,
+            "end_exclusive": true
+          },
+          "anchor": "let r=A.current||e.interimTranscript||\"\"",
+          "observed_control_flow": "The navigation-ready handoff uses that retained value, which can be the latest of several interim updates."
+        }
+      ]
+    }
+  ],
+  "publication_note": {
+    "source_paths": "Product-source paths are package-relative identifiers; original product files are not distributed. Teaching-model paths are relative to this ledger directory.",
+    "review_summary": "book-corrections.json",
+    "published_material": "Reviewed claims, source hashes, compact literal anchors and analysis limits; no full modules, raw graphs or research-computer paths."
+  }
 }

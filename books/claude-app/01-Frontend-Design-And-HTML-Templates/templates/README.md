@@ -67,3 +67,32 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 ## 检查与截图
 
 [交互检查与截图清单](QA-CHECKLIST.md)给出每页的入口、桌面/窄屏规格，以及实际浏览器需要确认的事项。[tests/results.json](tests/results.json)记录静态与模拟 DOM 检查，不能替代真实布局、CSP 执行、中文输入法和辅助技术测试。
+
+
+## 浏览器实景
+
+以下为本书原创模板在 Chrome 中的实际渲染，视口 1188 × 761，版本 d63d0f4。通过公开 HTTPS 预览页面加载；离线 file:// 是另一项验证条件。
+
+### 组件画廊
+
+![组件画廊](../../assets/screenshots/01-gallery-light-d63d0f4.jpg)
+
+### 对话工作台
+
+![对话工作台](../../assets/screenshots/02-chat-d63d0f4.jpg)
+
+### 分屏代码与预览
+
+![分屏代码与预览](../../assets/screenshots/03-ide-d63d0f4.jpg)
+
+### 技术博客
+
+![技术博客](../../assets/screenshots/04-editorial-d63d0f4.jpg)
+
+### 设置与看板
+
+![设置与看板](../../assets/screenshots/05-settings-d63d0f4.jpg)
+
+### Quick Entry
+
+![Quick Entry](../../assets/screenshots/06-launcher-d63d0f4.jpg)

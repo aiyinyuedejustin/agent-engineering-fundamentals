@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1190" viewBox="0 0 1440 1190" role="img" aria-labelledby="title desc">
+<title id="title">双屏坐标：截图、显示器局部与桌面全局</title><desc id="desc">原创双屏例子。左屏原点 (-2000, 0)，尺寸 2000×1200。截图 1000×600 的点 (500,300)，先换算成局部 (1000,600)，再加原点得到全局 (-1000,600)。缩放观察和批内新截图不改变本批开始前的完整截图参照。</desc>
+<style>text{font-family:"Noto Sans CJK SC",system-ui,sans-serif} .mono{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace}</style>
+<defs><marker id="arrow-muted" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#67645c"/></marker><marker id="arrow-rust" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#a65539"/></marker><marker id="arrow-sage" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#466957"/></marker></defs>
+<rect x="0" y="0" width="1440" height="1190" rx="0" fill="#f5f3ec"/>
+<text x="60" y="56" font-size="18" fill="#a65539" font-weight="600" text-anchor="start">卷 03 · COMPUTER USE / 原创学习图</text>
+<text x="60" y="110" font-size="37" fill="#25231e" font-weight="700" text-anchor="start">坐标要经过缩放，再加上屏幕原点</text>
+<text x="60" y="148" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">同一个目标，在截图坐标、显示器局部坐标和桌面全局坐标中有不同的数值。</text>
+<rect x="60" y="180" width="1320" height="530" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="90" y="222" font-size="24" fill="#25231e" font-weight="650" text-anchor="start">桌面全局坐标：两块屏幕并排</text>
+<rect x="1035" y="198" width="310" height="34" rx="17" fill="#e7ece7"/>
+<text x="1190.0" y="222" font-size="17" fill="#466957" font-weight="600" text-anchor="middle">尺寸为教学例子，非设备实测</text>
+<rect x="90" y="258" width="330" height="198" rx="8" fill="#e7ece7" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="255" y="291" font-size="19" fill="#67645c" font-weight="500" text-anchor="middle">左屏 · 2000 × 1200</text>
+<path d="M255 456L255 474" fill="none" stroke="#67645c" stroke-width="3" stroke-linecap="round"/>
+<path d="M215 474L295 474" fill="none" stroke="#67645c" stroke-width="3" stroke-linecap="round"/>
+<rect x="430" y="258" width="330" height="198" rx="8" fill="#eeeae1" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="595" y="291" font-size="19" fill="#67645c" font-weight="500" text-anchor="middle">右屏 · 2000 × 1200</text>
+<path d="M595 456L595 474" fill="none" stroke="#67645c" stroke-width="3" stroke-linecap="round"/>
+<path d="M555 474L635 474" fill="none" stroke="#67645c" stroke-width="3" stroke-linecap="round"/>
+<path d="M420 245L420 485" fill="none" stroke="#a65539" stroke-width="2" stroke-linecap="round"/>
+<text x="90" y="248" font-size="18" fill="#67645c" font-weight="400" text-anchor="start" class="mono">(-2000, 0)</text>
+<text x="435" y="248" font-size="18" fill="#a65539" font-weight="400" text-anchor="start" class="mono">(0, 0)</text>
+<text x="770" y="491" font-size="18" fill="#67645c" font-weight="400" text-anchor="end">x 向右；y 向下</text>
+<path d="M90 258L255 357" fill="none" stroke="#466957" stroke-width="2" stroke-linecap="round"/>
+<circle cx="255" cy="357" r="8" fill="#466957"/>
+<rect x="115" y="382" width="280" height="44" rx="10" fill="#fcfcfa"/>
+<text x="255" y="412" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">全局点 (-1000, 600)</text>
+<text x="880" y="249" font-size="22" fill="#25231e" font-weight="600" text-anchor="start">左屏返回的完整截图 F0</text>
+<rect x="880" y="270" width="400" height="240" rx="8" fill="#f2e2d7" stroke="#d9d5cb" stroke-width="1.5"/>
+<path d="M1080 270L1080 510" fill="none" stroke="#d9d5cb" stroke-width="1" stroke-linecap="round"/>
+<path d="M880 390L1280 390" fill="none" stroke="#d9d5cb" stroke-width="1" stroke-linecap="round"/>
+<circle cx="1080" cy="390" r="8" fill="#a65539"/>
+<text x="1080" y="347" font-size="22" fill="#67645c" font-weight="500" text-anchor="middle">1000 × 600</text>
+<text x="1080" y="441" font-size="22" fill="#a65539" font-weight="600" text-anchor="middle">截图点 (500, 300)</text>
+<path d="M880 390 C820 390 820 357 784 357" fill="none" stroke="#67645c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<text x="816" y="325" font-size="18" fill="#67645c" font-weight="400" text-anchor="middle">换算</text>
+<rect x="90" y="542" width="380" height="130" rx="12" fill="#f2e2d7"/>
+<text x="110" y="574" font-size="20" fill="#67645c" font-weight="500" text-anchor="start">① 截图坐标</text>
+<text x="110" y="613" font-size="29" fill="#a65539" font-weight="650" text-anchor="start">(500, 300)</text>
+<text x="110" y="649" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">frame：1000 × 600</text>
+<rect x="530" y="542" width="380" height="130" rx="12" fill="#e7ece7"/>
+<text x="550" y="574" font-size="20" fill="#67645c" font-weight="500" text-anchor="start">② 显示器局部坐标</text>
+<text x="550" y="613" font-size="29" fill="#466957" font-weight="650" text-anchor="start">(1000, 600)</text>
+<text x="550" y="649" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">x × 2000/1000；y × 1200/600</text>
+<rect x="970" y="542" width="380" height="130" rx="12" fill="#e7ece7"/>
+<text x="990" y="574" font-size="20" fill="#67645c" font-weight="500" text-anchor="start">③ 桌面全局坐标</text>
+<text x="990" y="613" font-size="29" fill="#466957" font-weight="650" text-anchor="start">(-1000, 600)</text>
+<text x="990" y="649" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">(1000, 600) + (-2000, 0)</text>
+<path d="M479 607L515 607" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<path d="M919 607L955 607" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<text x="90" y="698" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">实现顺序：按 frame 比例换算 → 四舍五入 → 加 origin → 夹到显示器最后一个像素。</text>
+<rect x="60" y="740" width="1320" height="350" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="90" y="785" font-size="25" fill="#25231e" font-weight="650" text-anchor="start">缩放只改变观察；本批动作共用开始前的 F0</text>
+<rect x="90" y="836" width="230" height="138" rx="8" fill="#f2e2d7" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="205" y="866" font-size="18" fill="#a65539" font-weight="600" text-anchor="middle">批开始前的完整 F0</text>
+<rect x="158" y="884" width="66" height="49" rx="2" fill="#fcfcfa" stroke="#a65539" stroke-width="1.5"/>
+<circle cx="191" cy="908" r="5" fill="#a65539"/>
+<text x="205" y="962" font-size="18" fill="#67645c" font-weight="400" text-anchor="middle">1000 × 600</text>
+<path d="M320 908L366 908" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="380" y="836" width="200" height="138" rx="8" fill="#eeeae1" stroke="#d9d5cb" stroke-width="1.5"/>
+<circle cx="480" cy="894" r="13" fill="#a65539"/>
+<text x="480" y="930" font-size="19" fill="#25231e" font-weight="500" text-anchor="middle">Zoom 局部放大</text>
+<text x="480" y="960" font-size="18" fill="#67645c" font-weight="400" text-anchor="middle">只用来观察</text>
+<text x="90" y="1013" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">放大图不成为后续 click 的局部坐标系。</text>
+<path d="M205 824 V810 H1270 V833" fill="none" stroke="#466957" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="878" y="802" font-size="19" fill="#466957" font-weight="600" text-anchor="middle">本批的坐标 / region 一直参照 F0</text>
+<rect x="645" y="846" width="190" height="96" rx="12" fill="#e7ece7"/>
+<text x="740" y="884" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">1 · click</text>
+<text x="740" y="920" font-size="20" fill="#67645c" font-weight="400" text-anchor="middle">参照 F0</text>
+<rect x="890" y="846" width="190" height="96" rx="12" fill="#f2e2d7"/>
+<text x="985" y="884" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">2 · screenshot</text>
+<text x="985" y="920" font-size="20" fill="#67645c" font-weight="400" text-anchor="middle">得到 F1</text>
+<rect x="1135" y="846" width="190" height="96" rx="12" fill="#e7ece7"/>
+<text x="1230" y="884" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">3 · click</text>
+<text x="1230" y="920" font-size="20" fill="#67645c" font-weight="400" text-anchor="middle">仍参照 F0</text>
+<path d="M843 894L880 894" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<path d="M1088 894L1125 894" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<text x="645" y="988" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">F1 可作为批结果返回，</text>
+<text x="645" y="1019" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">但不替换这一批共用的 F0 参照。</text>
+<text x="90" y="1067" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">注意：固定坐标参照不代表目标不会移动；batch 仍顺序执行，已发生的动作不自动回滚。</text>
+<text x="60" y="1143" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">读图范围：正常的有截图 frame 分支；normalized 与无前图回落另见正文。原点与尺寸属于截图 sidecar。</text>
+</svg>

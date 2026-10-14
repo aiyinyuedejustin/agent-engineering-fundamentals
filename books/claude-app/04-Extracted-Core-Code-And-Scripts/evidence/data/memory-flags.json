@@ -1,0 +1,2891 @@
+{
+  "title": "Memory, Projects, Styles, Feature Flags and configuration: source evidence",
+  "observed_at": "2026-10-14T18:02:00Z",
+  "scope": {
+    "version": "Claude Desktop Linux amd64 2.37337.1",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "mode": "Official distributed ion-dist assets; inert analysis only; no target app execution, login, hidden-route requests, flag manipulation, profile or credential access",
+    "code_claims": "Conditional client implementation; not an authenticated runtime observation"
+  },
+  "source_files": {
+    "shared-182-CW7gYT2d.js": {
+      "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+      "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+      "bytes": 421033
+    },
+    "shared-3-DJJeaAOk.js": {
+      "path": "ion-dist/assets/v1/shared-3-DJJeaAOk.js",
+      "sha256": "0e0ba9d4992495c31b0ce12e17528088eb642a1c263825cb1201de5e400c74bc",
+      "bytes": 483660
+    },
+    "shared-156-BeTC6pHT.js": {
+      "path": "ion-dist/assets/v1/shared-156-BeTC6pHT.js",
+      "sha256": "b0e9ec9ce4efa5474d12098f0c7811b3d47a5f83bc1c71e9cec34462d0cceee9",
+      "bytes": 448220
+    },
+    "shared-6-Bd4qnyl_.js": {
+      "path": "ion-dist/assets/v1/shared-6-Bd4qnyl_.js",
+      "sha256": "a3fb6bc3c537a24bd2e38d34c7c94135dfc5cfb03f2f25f6999bfffb69bd4da1",
+      "bytes": 389499
+    },
+    "c9b54eb90-BNce2Kh6.js": {
+      "path": "ion-dist/assets/v1/c9b54eb90-BNce2Kh6.js",
+      "sha256": "49d820bef1d1e0643b7012d3d5fdfc98b169481c69f543cfc284dc5c00080157",
+      "bytes": 16009
+    },
+    "shared-4-1vKV8QN9.js": {
+      "path": "ion-dist/assets/v1/shared-4-1vKV8QN9.js",
+      "sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852",
+      "bytes": 259727
+    },
+    "shared-0-CIydqnOr.js": {
+      "path": "ion-dist/assets/v1/shared-0-CIydqnOr.js",
+      "sha256": "710b12a51d9f978721d0683c8229d5d50e82507b7b7d13d49ae9cd6f30baa3e2",
+      "bytes": 370934
+    },
+    "shared-14-DGogl1at.js": {
+      "path": "ion-dist/assets/v1/shared-14-DGogl1at.js",
+      "sha256": "31cd577e67a7e4a6b711df256eeff31979efa292a6ce88696e76b5262aa8ffd7",
+      "bytes": 118320
+    },
+    "shared-28-DGrBzvHd.js": {
+      "path": "ion-dist/assets/v1/shared-28-DGrBzvHd.js",
+      "sha256": "2712645ae3bce4cef02045068dd2e738469e5207c56c159ee65b485e2f4dda24",
+      "bytes": 337693
+    },
+    "cc43287c9-CNtlFMhj.js": {
+      "path": "ion-dist/assets/v1/cc43287c9-CNtlFMhj.js",
+      "sha256": "ae5f70e67821ff49950570aa3c9c57189df8e3234a7eda1ee43f7cf9edd4ad92",
+      "bytes": 794437
+    },
+    "shared-25-BQdcIBNa.js": {
+      "path": "ion-dist/assets/v1/shared-25-BQdcIBNa.js",
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "bytes": 374355
+    },
+    "shared-52-DOMr1cuc.js": {
+      "path": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+      "bytes": 411479
+    },
+    "ce751cbc9-eTDhHIbX.js": {
+      "path": "ion-dist/assets/v1/ce751cbc9-eTDhHIbX.js",
+      "sha256": "f5b5fee9b706348a9d893c134c9e537120de1ac3383ef7daf4e299cc2aa8959a",
+      "bytes": 9467
+    },
+    "shared-23-BY6HquaF.js": {
+      "path": "ion-dist/assets/v1/shared-23-BY6HquaF.js",
+      "sha256": "ed9f321af9c143cc7015e53996e871bf3af52616dfbe392ff8620f916de1b9a1",
+      "bytes": 419667
+    },
+    "c07052af7-B_IWijU4.js": {
+      "path": "ion-dist/assets/v1/c07052af7-B_IWijU4.js",
+      "sha256": "42fba150f51abf6254da4e4a9a9996dd45cd5c4bdda01f5d09ad3bb8fd694814",
+      "bytes": 13117
+    },
+    "c10d810aa-CxtsgJm4.js": {
+      "path": "ion-dist/assets/v1/c10d810aa-CxtsgJm4.js",
+      "sha256": "c9c908efa2f111e665a00f341af0bd64ee341e5aa0330c56d6076dfd0fb515c3",
+      "bytes": 2747
+    },
+    "c2923ee12-Cz8pO74m.js": {
+      "path": "ion-dist/assets/v1/c2923ee12-Cz8pO74m.js",
+      "sha256": "03ea3ff0c35bde97ce8dc9643a235834840375a3365a3995d4eedc6494115049",
+      "bytes": 11177
+    },
+    "c50575b1c-DazMM7oI.js": {
+      "path": "ion-dist/assets/v1/c50575b1c-DazMM7oI.js",
+      "sha256": "43cf61192657d2c3d82aa6512b673f1fe62d1ec24c4930589798c4d69c09def3",
+      "bytes": 76723
+    },
+    "c71860c77-c9bN7Yld.js": {
+      "path": "ion-dist/assets/v1/c71860c77-c9bN7Yld.js",
+      "sha256": "be1c69a86221ad15fb45dfa9d37714d3ff3f3ca4b4be816339a9be4b5a03f21a",
+      "bytes": 62318
+    },
+    "ca25db325-k3svzMma.js": {
+      "path": "ion-dist/assets/v1/ca25db325-k3svzMma.js",
+      "sha256": "f3d399a41f3c5ee0297f3cd2e24314d6c37e1d156ffb0ba061769d51fe5c830d",
+      "bytes": 17413
+    },
+    "ca5811b6a-Pt0-ZVxf.js": {
+      "path": "ion-dist/assets/v1/ca5811b6a-Pt0-ZVxf.js",
+      "sha256": "6e853a4dc73dcb8b063342953cbf651ad3ab9779effc249ffc87f987e8bcc7b5",
+      "bytes": 6742
+    },
+    "cb1e253a0-1Hp_ue9h.js": {
+      "path": "ion-dist/assets/v1/cb1e253a0-1Hp_ue9h.js",
+      "sha256": "b84b98fd09087e506aa0d69b29dc44b3383f6fcd979905daba2673cb6f9aca9b",
+      "bytes": 206579
+    },
+    "cf8e5c5b5-DDPjNgVZ.js": {
+      "path": "ion-dist/assets/v1/cf8e5c5b5-DDPjNgVZ.js",
+      "sha256": "2b40ac95a34e38c540f4ddee3c0025cef109341df821882d0ea0377c9a1696b8",
+      "bytes": 94330
+    },
+    "shared-1-7J3IM-U8.js": {
+      "path": "ion-dist/assets/v1/shared-1-7J3IM-U8.js",
+      "sha256": "574dfbd5228bfbb92236000f4c73d603c7bcf32a0086a6888665bd5665640f58",
+      "bytes": 337733
+    },
+    "shared-130-CGEumh8Q.js": {
+      "path": "ion-dist/assets/v1/shared-130-CGEumh8Q.js",
+      "sha256": "ccee249b4f0203b0a462e6c1d488905fec77b03fe7aee3f0390a470016795e10",
+      "bytes": 463843
+    },
+    "shared-19-SWo9Ge1k.js": {
+      "path": "ion-dist/assets/v1/shared-19-SWo9Ge1k.js",
+      "sha256": "ff57838a99f79f5e8c55f9f798559f63a431c1f8cee085a054d1aebc15959b1b",
+      "bytes": 505863
+    },
+    "shared-8-Cjyy_X81.js": {
+      "path": "ion-dist/assets/v1/shared-8-Cjyy_X81.js",
+      "sha256": "dd7fc8a69f431e4b05ad8f4036e8b2acbe82e32adca70b914df2f0c396c29efe",
+      "bytes": 343724
+    }
+  },
+  "facts": [
+    {
+      "id": "MEM-01",
+      "claim": "Classic memory response parser accepts summary text, nullable string-array controls, timezone-normalized timestamp, optional project import and mode.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89800,
+          "length_bytes": 63,
+          "anchor": "Wg=u(()=>d({memory:c(),controls:l(c()).nullable(),updated_at:Vg",
+          "occurrence": 0,
+          "anchor_sha256": "f22547d86eb8322443ea6abd2e968de4a7da1b97c2b708b4469f80a54bc9d5b9"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89703,
+          "length_bytes": 43,
+          "anchor": "status:a([\"pending\",\"migrated\",\"withheld\"])",
+          "occurrence": 0,
+          "anchor_sha256": "d4e643723a523a2021a6fca4a8b90bc410862b7a7656c7cf34db4833d028ecfd"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89765,
+          "length_bytes": 34,
+          "anchor": "Ug=u(()=>a([\"melange\",\"classic\"]))",
+          "occurrence": 0,
+          "anchor_sha256": "6b1eb1ff247ed33a06290dce50f75ded0ee043cd72638af8cb0c765df392fe11"
+        }
+      ]
+    },
+    {
+      "id": "MEM-02",
+      "claim": "Classic reads are account/org/project scoped and gated by organization, caller enabled, feature, and policy status.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 90216,
+          "length_bytes": 51,
+          "anchor": "queryKey:[$n,{accountUuid:i,orgUuid:a,projectUuid:e",
+          "occurrence": 0,
+          "anchor_sha256": "4dd7c46133ecca93cd0119bc3ba53699ab9b9a761190548766d1ad9bf39b7ff7"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 90303,
+          "length_bytes": 36,
+          "anchor": "enabled:!!r&&(t?.enabled??!0)&&o&&!s",
+          "occurrence": 0,
+          "anchor_sha256": "aafe7fc99b6ed94c02abe5b56546938ccbd81621025e2b123320e868a6d23564"
+        }
+      ]
+    },
+    {
+      "id": "MEM-03",
+      "claim": "Classic controls PUT is distinct from summary synthesis POST; successful controls edit optionally chains synthesis then invalidates scoped cached data.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 91917,
+          "length_bytes": 23,
+          "anchor": "/memory/controls`,\"PUT\"",
+          "occurrence": 0,
+          "anchor_sha256": "57de9fd5024cfb44e84b587155fbe80f08d697690fc254708871c78a59a855bd"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 90545,
+          "length_bytes": 26,
+          "anchor": "/memory/synthesize`,\"POST\"",
+          "occurrence": 0,
+          "anchor_sha256": "877382feb9086cd4db3be6b03b4e6522f7108cb9385bf4fee6a0baee8f055d6d"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 92247,
+          "length_bytes": 33,
+          "anchor": "v?h({project_uuid:a.project_uuid}",
+          "occurrence": 0,
+          "anchor_sha256": "f317c66fb0018df3991f51a3ec5e8dda963cfd66b59bcb245c661438c859f826"
+        }
+      ]
+    },
+    {
+      "id": "MEM-04",
+      "claim": "Reset POST and user disable/cache purge are distinct client actions; a settings switch does not by itself prove server deletion.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 91079,
+          "length_bytes": 21,
+          "anchor": "/memory/reset`,\"POST\"",
+          "occurrence": 0,
+          "anchor_sha256": "3c9e9b3b2dfe27dd731bdfde4313bf7dc5f0f20f8055130d967f29ef83be134a"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 93687,
+          "length_bytes": 8,
+          "anchor": "n||Uh(r)",
+          "occurrence": 0,
+          "anchor_sha256": "a6f32574bbb7f1b720e8855af534848822da3add9999461808da2c9d3b00a3d3"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 79358,
+          "length_bytes": 24,
+          "anchor": "var zh=\"cardinal-cache-\"",
+          "occurrence": 0,
+          "anchor_sha256": "cbc1df2f4ecf33ded561ce1e9a56ab0a7dea5531c6205c73b9dd11ddc32e3b55"
+        }
+      ]
+    },
+    {
+      "id": "MEM-05",
+      "claim": "User gestures accept four exact key sets; clear_data is accepted only for master-off with both memory flags false.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 79923,
+          "length_bytes": 109,
+          "anchor": "Gh=[[\"enabled_saffron\"],[\"enabled_saffron_search\"],[\"enabled_melange\"],[\"enabled_melange\",\"enabled_saffron\"]]",
+          "occurrence": 0,
+          "anchor_sha256": "911d92028f0599d6006b8a515ffc7da28968d1c743a93021f8a17c22bbbc7b80"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 80904,
+          "length_bytes": 65,
+          "anchor": "t.clear_data!==!0||t.enabled_melange!==!1||t.enabled_saffron!==!1",
+          "occurrence": 0,
+          "anchor_sha256": "636c0b3bf2647c22dd8d4fc67753bf72b1f51f798fc4d67e4eafdd70c242f5a7"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89379,
+          "length_bytes": 32,
+          "anchor": "Kh(e),o({...e,user_initiated:!0}",
+          "occurrence": 0,
+          "anchor_sha256": "c0248c4ffd59af9b0c724e68619e81f4518836624d7c4d3ecf4b34321891b0af"
+        }
+      ]
+    },
+    {
+      "id": "MEM-06",
+      "claim": "Ordinary mutation strips user_initiated and clear_data; gesture mutation adds explicit user intent after validation.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 81225,
+          "length_bytes": 43,
+          "anchor": "delete t.user_initiated,delete t.clear_data",
+          "occurrence": 0,
+          "anchor_sha256": "5b332e6b8a41cab374e07af947a2ce53916a76510fde5db3c0874d43b4397b28"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89534,
+          "length_bytes": 36,
+          "anchor": "mutateGesture:u,mutateGestureAsync:c",
+          "occurrence": 0,
+          "anchor_sha256": "47b02f22233106880389fc6314ee54219ce65196b7a84e595579dbe426102424"
+        }
+      ]
+    },
+    {
+      "id": "MEM-07",
+      "claim": "Memory settings writes serialize per organization and recover the queue after failures; optimistic bootstrap fields are rolled back on error.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 87373,
+          "length_bytes": 32,
+          "anchor": "var Ig=new Map,Lg=new Map,Rg=3e4",
+          "occurrence": 0,
+          "anchor_sha256": "eb20d93534e791ab765cd5b7e8826938d7a4fbf81f985fe5b74d1ce61e07bd9c"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 87469,
+          "length_bytes": 47,
+          "anchor": "return e.set(t,r.then(()=>void 0,()=>void 0)),r",
+          "occurrence": 0,
+          "anchor_sha256": "6e6644ec69485d8b9befa70a03e688f58c21f27c72accac2ea5e58aa6e474928"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 88735,
+          "length_bytes": 19,
+          "anchor": "t?zg(Lg,t,async()=>",
+          "occurrence": 0,
+          "anchor_sha256": "d75fbfee55a454d52d4d0b00576502dd075c6a1d1d99159a889aa82b93f64723"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89144,
+          "length_bytes": 35,
+          "anchor": "catch(e){throw s(),l?.data!==void 0",
+          "occurrence": 0,
+          "anchor_sha256": "c428c7be18163d47d1808ce9d9d6b183512899888e5302786684ef32c202ff24"
+        }
+      ]
+    },
+    {
+      "id": "MEM-08",
+      "claim": "Successful settings response replaces the scoped settings cache and mode; write requests have a 30-second abort timeout.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 88840,
+          "length_bytes": 23,
+          "anchor": "AbortSignal.timeout(Rg)",
+          "occurrence": 0,
+          "anchor_sha256": "74945756300d8f97484f372dae51f0bd47a70c86adb0948ead529ca197875069"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 88959,
+          "length_bytes": 23,
+          "anchor": "n.setQueryData(Yh(t),s)",
+          "occurrence": 0,
+          "anchor_sha256": "501dcf09a2f61ae7ecbe54843402cf5317833a89ed18f617ff1127efa50fc7c3"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 89040,
+          "length_bytes": 25,
+          "anchor": "memory_mode:s.memory_mode",
+          "occurrence": 0,
+          "anchor_sha256": "50df7367b8cce5a0402d76df95a66447b555454fcb6828167a14f6dacb980e19"
+        }
+      ]
+    },
+    {
+      "id": "MEM-09",
+      "claim": "Settings caches have explicit refresh budgets; a pre-start path can reread old settings and fail closed unless a held-value policy is explicitly selected.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 81518,
+          "length_bytes": 34,
+          "anchor": "var Qh=432e5,$h=6e5,eg=36e5,tg=6e4",
+          "occurrence": 0,
+          "anchor_sha256": "b2449abf999d134e4ccda25ba2da86a428448251dfca74ee6366364ffcd4d5cb"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 84553,
+          "length_bytes": 44,
+          "anchor": "unattended:i=!1,unread:a=dg,waitMs:o=i?ig:rg",
+          "occurrence": 0,
+          "anchor_sha256": "b6ae189091a11b68f1af165b9b1baeee492741d5a9f9777535d53c4723914621"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 84998,
+          "length_bytes": 32,
+          "anchor": "(t===\"fetched\"||a===\"held\")&&l()",
+          "occurrence": 0,
+          "anchor_sha256": "70b6153297ebe9193f858a87834bbf7c1375e1119ae758f923dd221177e7167a"
+        }
+      ],
+      "limits": "These are client branch defaults, not observed request timings or product retention periods."
+    },
+    {
+      "id": "MEM-10",
+      "claim": "The memory resolver first uses a non-null/non-undefined server mode for memoryOn and a candidate mode; otherwise it derives a candidate from preference, flags and capability state. The returned UI mode then projects a saffron/classic candidate to melange when classic is unavailable and melange is available. The original value remains separately exposed as serverMemoryMode; blocked status is not equivalent to user pause.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-3-DJJeaAOk.js",
+          "offset_utf8_bytes": 12440,
+          "length_bytes": 58,
+          "anchor": "if(e!=null)c=e!==\"off\",l=e===\"classic\"?\"saffron\":\"melange\"",
+          "occurrence": 0,
+          "anchor_sha256": "c15676a1a27804a8fe4795645c17d9b2f9402e559eccd1f52c29a9a0e63c0964"
+        },
+        {
+          "file": "shared-3-DJJeaAOk.js",
+          "offset_utf8_bytes": 12579,
+          "length_bytes": 31,
+          "anchor": "status===\"blocked_by_org_admin\"",
+          "occurrence": 0,
+          "anchor_sha256": "f2f226c02eadef14fcba916339459fa6b09c8ca64efa153d8bc906fc4d23ad93"
+        },
+        {
+          "file": "shared-3-DJJeaAOk.js",
+          "offset_utf8_bytes": 12840,
+          "length_bytes": 18,
+          "anchor": "serverMemoryMode:e",
+          "occurrence": 0,
+          "anchor_sha256": "d1e2a78ebf2cd5c4f2151cf455b8afb759727b91445abb2ef97dc63117130793"
+        }
+      ]
+    },
+    {
+      "id": "MEM-11",
+      "claim": "Topic memory list and per-path reads use org-scoped cache keys and POST-backed query functions.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 284998,
+          "length_bytes": 21,
+          "anchor": "list:[Jj,{orgUuid:t}]",
+          "occurrence": 0,
+          "anchor_sha256": "a45cfbc017cb6e9ab14888f039c5ec39a1abe7971c16b7e6f11ba459103cc9e1"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 285020,
+          "length_bytes": 31,
+          "anchor": "read:e=>[Yj,{orgUuid:t,path:e}]",
+          "occurrence": 0,
+          "anchor_sha256": "5d678014b4de3b0441d1be7b75fbe200e385bba1d19451b1f29fa83c2c9cdefe"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 285384,
+          "length_bytes": 36,
+          "anchor": "staleTime:1/0,queryFn:async()=>r({})",
+          "occurrence": 0,
+          "anchor_sha256": "490572b0c6e9d177943e88879bbdc8907afafa0341282b4e5febeadfe350ae25"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 285740,
+          "length_bytes": 32,
+          "anchor": "queryFn:async()=>i({path:e??\"\"})",
+          "occurrence": 0,
+          "anchor_sha256": "f8ef7b05ca0f8b1b0e3a13d900e9b55e2e17832cb47fb372b308d8979bee34c2"
+        }
+      ]
+    },
+    {
+      "id": "MEM-12",
+      "claim": "Topic delete removes its cached row and read query and updates probe counts. Reset cancels old queries before clearing list/probe/read state.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 286300,
+          "length_bytes": 21,
+          "anchor": "removeListEntry:C(n=>",
+          "occurrence": 0,
+          "anchor_sha256": "8ec01e6675128196a5000ef8fd261e911bcde0a6b340cb8cbab3bd0af57997af"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 286438,
+          "length_bytes": 37,
+          "anchor": "e.removeQueries({queryKey:t.read(n)})",
+          "occurrence": 0,
+          "anchor_sha256": "7f3f1170576e0a305cf3a2501ef9b4db0a449af53dadaa73e2a215ab50f73c70"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 286714,
+          "length_bytes": 27,
+          "anchor": "clearAfterReset:C(async()=>",
+          "occurrence": 0,
+          "anchor_sha256": "7322b785d03a1afe8e0e318bfdebb8d65ab30ab1c0307d756fdf8fdcff53b415"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 286887,
+          "length_bytes": 54,
+          "anchor": "e.setQueryData(t.probe,{has_memories:!1,file_count:0})",
+          "occurrence": 0,
+          "anchor_sha256": "2c29e80f432587ee7562159cf10a354766c02ff4897bdc03686e5bbc1b81b861"
+        }
+      ]
+    },
+    {
+      "id": "MEM-13",
+      "claim": "Topic edit is a streaming instruction request with optional path/model, not a local extractor implementation.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 280721,
+          "length_bytes": 14,
+          "anchor": "/melange/edit`",
+          "occurrence": 0,
+          "anchor_sha256": "6e0d3c556f5512c6c60cdb3859b46cc9a694487d7823e068d02254deb6e5a9e7"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 280738,
+          "length_bytes": 66,
+          "anchor": "JSON.stringify({instruction:t,...r?{path:r}:{},...i?{model:i}:{}})",
+          "occurrence": 0,
+          "anchor_sha256": "f3575732c84b20cfc2a13006b515782facb7b88ae3530cb97de805d07f2694c8"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 281112,
+          "length_bytes": 26,
+          "anchor": "Accept:\"text/event-stream\"",
+          "occurrence": 0,
+          "anchor_sha256": "4ae7410995fefd41beb6bfc17e3dd9b0afbce74f925d9eda808338572ac1db1c"
+        }
+      ],
+      "limits": "No extraction, retrieval ranking, server storage implementation, or model prompt ordering is recovered by this API call."
+    },
+    {
+      "id": "MEM-14",
+      "claim": "Topic edit cancels the previous request, versions UI state, ignores late aborted results, prefers authoritative server edit results, and reconciles a fresh list when parsing cannot establish mutations.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 288468,
+          "length_bytes": 44,
+          "anchor": "l.current?.abort();let m=new AbortController",
+          "occurrence": 0,
+          "anchor_sha256": "6b8f3da086fb3a5cc8f267bdfec9d18056b3a9675cd80c88022daea1aa6d56f0"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 289140,
+          "length_bytes": 31,
+          "anchor": "m.signal.aborted||u.current!==h",
+          "occurrence": 0,
+          "anchor_sha256": "d6c9bbcc524ffbe78ba234a96a6958489022e6d15952f30ca660d8d9dd4b470b"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 289193,
+          "length_bytes": 52,
+          "anchor": "!e.serverResult&&(e.unparsed||e.unclassifiedToolUse)",
+          "occurrence": 0,
+          "anchor_sha256": "29e17a0642d595604a6dadd0238efc028a8929e07bb65517c18ced34f065aabd"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 289194,
+          "length_bytes": 14,
+          "anchor": "e.serverResult",
+          "occurrence": 0,
+          "anchor_sha256": "b2b7b05e0b191bf2eba7ab50fbeb77e1b628d15683229b00238a8843244baf08"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 288687,
+          "length_bytes": 12,
+          "anchor": "requestKey:h",
+          "occurrence": 0,
+          "anchor_sha256": "d7614a9ef01637a4ef1106f645092e494bb3328353d02ee63ba90af20ec349c0"
+        }
+      ]
+    },
+    {
+      "id": "MEM-15",
+      "claim": "Topic import polls pending state at five seconds; switch-import has bounded 404/transient tolerance distinct from pending processing.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 290153,
+          "length_bytes": 17,
+          "anchor": "var bM=5e3,xM=9e4",
+          "occurrence": 0,
+          "anchor_sha256": "57794b00088017407473c9667ff64d87e8171e51025ae9c4474d56e8144a6d40"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 291596,
+          "length_bytes": 55,
+          "anchor": "refetchInterval:e=>e.state.data?.status===\"pending\"&&bM",
+          "occurrence": 0,
+          "anchor_sha256": "9307b77a6b533d3b2e4af166fb2b217c3260bb2ae12569750ad668abc8f73203"
+        },
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset_utf8_bytes": 290541,
+          "length_bytes": 18,
+          "anchor": "n-t.current<xM&&bM",
+          "occurrence": 0,
+          "anchor_sha256": "ee5ea258a57f47afa62f9bcadf7c901c989db06444e46cdd62d4aa6feeeb885b"
+        }
+      ]
+    },
+    {
+      "id": "MEM-16",
+      "claim": "Local Cowork startup plumbing visibly carries a resolved memoryEnabled and optional template inputs; this is distinct from current server-side Chat retrieval.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 228654,
+          "length_bytes": 74,
+          "anchor": "typeof e.memoryEnabled==\"boolean\"?e.memoryEnabled:e.memoryEnabled.answer()",
+          "occurrence": 0,
+          "anchor_sha256": "c74ca635e5a5a9062f1303b4715bc5660f50db80290ae8b4df3b4601d1ba65b7"
+        },
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 229014,
+          "length_bytes": 34,
+          "anchor": "memoryGuidelinesTemplate:n||void 0",
+          "occurrence": 0,
+          "anchor_sha256": "5bb902396c12326a4d66b7355f5e72d5d3747e013be360d5fa5cfd09c614d5ff"
+        },
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 227984,
+          "length_bytes": 71,
+          "anchor": "function pL(e,t){let n={base:e,appends:[]};return t&&(n=aL(n,rM(t))),n}",
+          "occurrence": 0,
+          "anchor_sha256": "c273b4b011370f3a035160465e4535146433e38762e1cdc0105014b70e2eb2fe"
+        }
+      ],
+      "limits": "Current official product documentation says local Cowork does not use shared Chat memory. Retained branch inputs are not evidence that local shared-memory behavior is enabled."
+    },
+    {
+      "id": "PRJ-01",
+      "claim": "Project detail has org/project cache scope, optional placeholder data, and separate knowledge/settings/member permissions.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 11847,
+          "length_bytes": 54,
+          "anchor": "function Ol(e,t){return[Tn,{orgUuid:e,projectUuid:t}]}",
+          "occurrence": 0,
+          "anchor_sha256": "b9e79d119cd95e1635a1f0f7bb8825a070956b91f8dd666b4dba937f2c622265"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 278952,
+          "length_bytes": 23,
+          "anchor": "prompt_template:\"\",...i",
+          "occurrence": 0,
+          "anchor_sha256": "427d14268ae51cfa60614f0793c52621a0170edb6bb0325e31176071fd7975db"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 11539,
+          "length_bytes": 50,
+          "anchor": "include_has_sync_sources=true&include_counts=false",
+          "occurrence": 0,
+          "anchor_sha256": "6727c73df7b6dbf369932e10ef146f14fe1e4894e1d9be760ed307dcf83f08bc"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-02",
+      "claim": "Project instructions are saved as prompt_template through project PUT; the editor guards duplicate save and supports view-only mode.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "c9b54eb90-BNce2Kh6.js",
+          "offset_utf8_bytes": 13414,
+          "length_bytes": 24,
+          "anchor": "e===void 0||y||S.current",
+          "occurrence": 0,
+          "anchor_sha256": "376098ee86c728cdea571fc0923fc697b88019483b42ac1066240bd26125b1f0"
+        },
+        {
+          "file": "c9b54eb90-BNce2Kh6.js",
+          "offset_utf8_bytes": 13478,
+          "length_bytes": 22,
+          "anchor": "E({prompt_template:t})",
+          "occurrence": 0,
+          "anchor_sha256": "807f0280302abb9847ee3ee748b85f62666d7c924391ffa199b8334a18ffa57f"
+        },
+        {
+          "file": "c9b54eb90-BNce2Kh6.js",
+          "offset_utf8_bytes": 12942,
+          "length_bytes": 10,
+          "anchor": "viewOnly:d",
+          "occurrence": 0,
+          "anchor_sha256": "4d53e9aa3d45de0d9321693e193672153f33a52d20b63a6c07a0580ac62f22d9"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-03",
+      "claim": "Projects distinguish doc text, uploaded files, and connector sync sources, with separate list/mutation contracts.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 361189,
+          "length_bytes": 20,
+          "anchor": "/projects/${e}/docs`",
+          "occurrence": 0,
+          "anchor_sha256": "8a9bbe0547a7e005e1507acff9f312ed4ad076b592ed3863646b879df56d137c"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 363945,
+          "length_bytes": 21,
+          "anchor": "/projects/${e}/files`",
+          "occurrence": 0,
+          "anchor_sha256": "8325938c0e10449f265fa4581d01ed100a848c82bbd11de8ce882277eb61fde5"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 330595,
+          "length_bytes": 44,
+          "anchor": "/projects/${e}/syncs?calculate_size=${t??!1}",
+          "occurrence": 0,
+          "anchor_sha256": "7ccafdbbcba6842b09a05aba2d8bc4ca2246083b9bb22679e5e2bc9690b4f0e4"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-04",
+      "claim": "Document list may request compact metadata and per-document detail; compact listing is not proof that content was deleted.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 361266,
+          "length_bytes": 23,
+          "anchor": "a?o:`${o}?compact=true`",
+          "occurrence": 0,
+          "anchor_sha256": "7631330bc443b3b9d6cafa3af8685de984f766f0be11e6ac215bcbecc47e508b"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 361950,
+          "length_bytes": 25,
+          "anchor": "/projects/${e}/docs/${t}`",
+          "occurrence": 0,
+          "anchor_sha256": "f3bd3f408ef9c9500b1182c23df8023e0e2e0fd59f39936afd758dfa674331a0"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 361757,
+          "length_bytes": 16,
+          "anchor": "unfilteredData:s",
+          "occurrence": 0,
+          "anchor_sha256": "23c36fe8fd3650e523984a93baa7f2b027472f156a5c316700bed74b490e9372"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-05",
+      "claim": "The inspected project document contracts support create, single delete and bulk delete with list/detail/totals maintenance; bulk removal uses identity arrays. They do not establish an independent existing-document edit/update operation.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 363140,
+          "length_bytes": 25,
+          "anchor": "/docs/delete_many`,\"POST\"",
+          "occurrence": 0,
+          "anchor_sha256": "a123f9f58877f28a016869f9d53e00d9c6755acd9036c0b6d05c3ce2b383ee83"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 363188,
+          "length_bytes": 29,
+          "anchor": "!e.doc_uuids.includes(t.uuid)",
+          "occurrence": 0,
+          "anchor_sha256": "074e089e1bdcb91825a98597e7285ca05888727ac696d4313dd749dbfe370cd8"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 362444,
+          "length_bytes": 27,
+          "anchor": "refreshTotalsOnSettled!==!1",
+          "occurrence": 0,
+          "anchor_sha256": "a33ef0274216c7dd4a584569a9275a303038308a7d7dc814cca6c64ff15287fe"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-06",
+      "claim": "The connector refetchInterval returns false for absent, non-array or empty lists. Nonempty lists poll every five seconds while a sync is pending, otherwise every five minutes; transition out of pending triggers knowledge refresh.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 330805,
+          "length_bytes": 18,
+          "anchor": "t.some(_i)?5e3:3e5",
+          "occurrence": 0,
+          "anchor_sha256": "2b7ef5c545b847535e6669dbc9499257f92bc0ed78b38c5c622e5f9ff3e4b35c"
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset_utf8_bytes": 330924,
+          "length_bytes": 38,
+          "anchor": "r&&!o&&bh(a,{orgUuid:i,projectUuid:e})",
+          "occurrence": 0,
+          "anchor_sha256": "be06812ea1fbdda4b7b0ce239ec21fbd04df01a5e779d490324f40b85175847c"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-07",
+      "claim": "Knowledge-search admission combines a client flag, capability check where applicable, and project-specific KB stats. Only then does tool construction include project_knowledge_search.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 83194,
+          "length_bytes": 34,
+          "anchor": "W(\"claude_ai_project_bananagrams\")",
+          "occurrence": 0,
+          "anchor_sha256": "fcd18a91b19fec0e86a21608d6befee2a98d5432023419ab95fc739b1981dd9c"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 83238,
+          "length_bytes": 42,
+          "anchor": "rt(\"project_knowledge_search\").isAvailable",
+          "occurrence": 0,
+          "anchor_sha256": "6e98e5d63c2e6380740060b6379fd93003cee38010c522bb8d21b5e7ce3422f3"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 83383,
+          "length_bytes": 30,
+          "anchor": "n.use_project_knowledge_search",
+          "occurrence": 0,
+          "anchor_sha256": "09b26ca55c23109317afb8442b51ea1e8f09d4b2ce25ee5747a21380f99ae9cd"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 153897,
+          "length_bytes": 76,
+          "anchor": "a&&t.push({type:\"project_knowledge_search\",name:\"project_knowledge_search\"})",
+          "occurrence": 0,
+          "anchor_sha256": "a81e12809f17a4b0a46e8d4740dfe073bb21be2786c21ff1c967f9583b82ed9a"
+        }
+      ]
+    },
+    {
+      "id": "PRJ-08",
+      "claim": "Knowledge capacity uses general search eligibility gh(), not the per-project use_project_knowledge_search decision. If general eligibility passes it uses the remote budget; otherwise it uses rounded 90 percent of the largest returned model hard_limit, with a fallback when no hard_limit exists. Missing text token estimates use ceil(content length / 4).",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 82795,
+          "length_bytes": 23,
+          "anchor": "var ch=19e4,lh=52428800",
+          "occurrence": 0,
+          "anchor_sha256": "9dc2b09e69e0c2b16ef276d8423c47452e37ebe3e7642d058dd18dc902074d11"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 83467,
+          "length_bytes": 37,
+          "anchor": "project_knowledge_limit\",\"limit\",lh,H",
+          "occurrence": 0,
+          "anchor_sha256": "bf918f8202d4f77682172f4f60064cdf466f520a0c1f9316145af3c56d5461fb"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 83683,
+          "length_bytes": 28,
+          "anchor": "maxKbTokens:Math.round(i*.9)",
+          "occurrence": 0,
+          "anchor_sha256": "8d4f7ee6f1a8d4e049430eb5b1212315022eafd943c7dee3baca4527a9dbe645"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 83912,
+          "length_bytes": 21,
+          "anchor": "return Math.ceil(t/4)",
+          "occurrence": 0,
+          "anchor_sha256": "970df4730f144b524ac8ad7086a45913e15eb2f4ef39ef5abd689c8d153f05dd"
+        }
+      ],
+      "limits": "Client capacity/UX accounting is not the server tokenizer, ranking algorithm, or proof that every file is fully injected."
+    },
+    {
+      "id": "PRJ-09",
+      "claim": "Project editing checks settings permission, knowledge editing permission, and member-management permission independently.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 85828,
+          "length_bytes": 27,
+          "anchor": "hasSettingsEditPermission:p",
+          "occurrence": 0,
+          "anchor_sha256": "c308fc1d219184739b7c66037c5d58308cda6f910443e890a62418977dd6ab64"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 85874,
+          "length_bytes": 22,
+          "anchor": "hasKBEditPermissions:y",
+          "occurrence": 0,
+          "anchor_sha256": "98dac58bb6425190b22bdd5a9f0a69ece0fca9a17f1a9408a4b6df75ba651d0e"
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset_utf8_bytes": 85897,
+          "length_bytes": 54,
+          "anchor": "canManageMembers:b||x||!!d?.includes(Le.MembersManage)",
+          "occurrence": 0,
+          "anchor_sha256": "d9063689aad70276de9d45dc67e5c2d0cce1f30c7b50a0db5a8fd78624547b35"
+        }
+      ]
+    },
+    {
+      "id": "STY-01",
+      "claim": "The styles search finds a compatibility menu enum, not a verified current chat Custom Styles CRUD implementation.",
+      "status": "bounded-negative-finding",
+      "anchors": [
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 278728,
+          "length_bytes": 17,
+          "anchor": "e.STYLES=\"styles\"",
+          "occurrence": 0,
+          "anchor_sha256": "cb0ece4084eaf935d11fdc0dcd0a5c9566e5b842412e0c80639195b6556e7a97"
+        }
+      ],
+      "limits": "A shipped enum is not proof of a displayed menu, nor proof that a feature is globally removed."
+    },
+    {
+      "id": "STY-02",
+      "claim": "customStyles:chatFont is visual typography preference, distinct from language-model response style.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-14-DGogl1at.js",
+          "offset_utf8_bytes": 117631,
+          "length_bytes": 54,
+          "anchor": "var pn=[\"serif\",\"sans\",\"system\",\"atkinson\",\"dyslexia\"]",
+          "occurrence": 0,
+          "anchor_sha256": "186770cbc4812fc7094bf23974dd1fefe18f318c48e9698304aca04d09ef0750"
+        },
+        {
+          "file": "shared-14-DGogl1at.js",
+          "offset_utf8_bytes": 117830,
+          "length_bytes": 30,
+          "anchor": "var vn=\"customStyles:chatFont\"",
+          "occurrence": 0,
+          "anchor_sha256": "5fc94eaff952400f7e5001024d21511dc2ce401d63c0d73319818e0cb2711068"
+        }
+      ]
+    },
+    {
+      "id": "STY-03",
+      "claim": "The inspected send telemetry hard-codes has_personalized_style false; telemetry is not a complete API or product specification.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-28-DGrBzvHd.js",
+          "offset_utf8_bytes": 207595,
+          "length_bytes": 56,
+          "anchor": "has_personalized_style:!1,include_profile_preferences:cr",
+          "occurrence": 0,
+          "anchor_sha256": "9b781b35d68f8081a111bb40ad629b8dfa61d1e72780d4f91b3ff22158aab210"
+        }
+      ]
+    },
+    {
+      "id": "STY-04",
+      "claim": "Code output-style command has no-session, loading, unavailable, choose, match-name/label, and switch branches.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "cc43287c9-CNtlFMhj.js",
+          "offset_utf8_bytes": 685545,
+          "length_bytes": 46,
+          "anchor": "t.match(/^\\/output-style(?:[\\s:,.]+(.*))?$/is)",
+          "occurrence": 0,
+          "anchor_sha256": "aafad3d4f3c1876258d649b2781c7618411ad43a4af054d8c74c26fb07241d40"
+        },
+        {
+          "file": "cc43287c9-CNtlFMhj.js",
+          "offset_utf8_bytes": 686301,
+          "length_bytes": 61,
+          "anchor": "Output styles haven\\u2019t loaded yet. Try again in a moment.",
+          "occurrence": 0,
+          "anchor_sha256": "66f89b3b42941f31e15eb4cd4524fc5f4856f12121c65b9b6aeb664cc14e331f"
+        },
+        {
+          "file": "cc43287c9-CNtlFMhj.js",
+          "offset_utf8_bytes": 686702,
+          "length_bytes": 22,
+          "anchor": "En.find(t=>t.name===e)",
+          "occurrence": 0,
+          "anchor_sha256": "b784c2120c3f8cfa2cea60976213488f31d95c214aafaee2d1e81a4af2de9805"
+        },
+        {
+          "file": "cc43287c9-CNtlFMhj.js",
+          "offset_utf8_bytes": 686778,
+          "length_bytes": 51,
+          "anchor": "En.find(t=>t.label.toLowerCase()===e.toLowerCase())",
+          "occurrence": 0,
+          "anchor_sha256": "f7766a1ab42f599f8a97482b4d08ce7e51e64e5e299679c5568e8ff93674db59"
+        }
+      ]
+    },
+    {
+      "id": "STY-05",
+      "claim": "Writing-profile setup banner and Code output styles are separate consumers; neither proves the classic chat style manager exists.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 272923,
+          "length_bytes": 34,
+          "anchor": "cowork_writing_style_upsell_banner",
+          "occurrence": 0,
+          "anchor_sha256": "69af3ffd352f4f9d6b59b4def9a799793920804a85f598846fb8bd42d8d61d84"
+        },
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 275625,
+          "length_bytes": 20,
+          "anchor": "/setup-writing-style",
+          "occurrence": 0,
+          "anchor_sha256": "3e04d4aaf1d952343823bb70f347967cde63e2ba88ab8c452292a0b4fc3df55e"
+        }
+      ],
+      "limits": "The prompt itself is deliberately omitted from this evidence and prose."
+    },
+    {
+      "id": "FLG-01",
+      "claim": "Feature names normalize to decimal unsigned 32-bit keys; __gb__ identifiers already carry their key.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 48697,
+          "length_bytes": 59,
+          "anchor": "function Pa(e){if(e.startsWith(\"__gb__\"))return e.slice(6);",
+          "occurrence": 0,
+          "anchor_sha256": "87f1076c1d7b63d5a5be6931051d8412e365d8d9c3004555cae5920f8200735d"
+        },
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 48823,
+          "length_bytes": 37,
+          "anchor": "return((t&4294967295)>>>0).toString()",
+          "occurrence": 0,
+          "anchor_sha256": "e3d6764d7de0a5e4e0a49c335b58899b514f42e137ed4b2bf679dcba92e30177"
+        }
+      ],
+      "limits": "This is key normalization, not encryption, authorization, proof of secrecy, or a reason to reverse-map opaque IDs."
+    },
+    {
+      "id": "FLG-02",
+      "claim": "Security-relevant feature keys are removed from local forced-feature overrides by a guard around setForcedFeatures.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 54849,
+          "length_bytes": 22,
+          "anchor": "Ia=new Set(Fa.map(Pa))",
+          "occurrence": 0,
+          "anchor_sha256": "f46db246c51378d2660b0689a615fe0cd1addc3fd42d472e894c6644ed10c4bd"
+        },
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 55086,
+          "length_bytes": 38,
+          "anchor": "for(let n of Ia)e.delete(n)&&t.push(n)",
+          "occurrence": 0,
+          "anchor_sha256": "8d157954c782a7251e946df19e04c9499b57f0ed2489feb67bf373f4f4adc27d"
+        },
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 55571,
+          "length_bytes": 48,
+          "anchor": "e.setForcedFeatures=e=>{let t=new Map(e),r=za(t)",
+          "occurrence": 0,
+          "anchor_sha256": "066ac09d362f9eedb79f6cabc18ae5ad5e3384e2fd4fde2e1bb499829f15c4c2"
+        }
+      ],
+      "limits": "Static defense observation only; no overrides were set or tested."
+    },
+    {
+      "id": "FLG-03",
+      "claim": "The feature wrapper distinguishes on/off/unknown and memoizes shared evaluations.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 34372,
+          "length_bytes": 103,
+          "anchor": "e.source===\"unknownFeature\"||e.source===\"prerequisite\"||e.source===\"cyclicPrerequisite\"?\"unknown\":\"off\"",
+          "occurrence": 0,
+          "anchor_sha256": "c506b04b0e64fc4b02ee04cae0e9cc80251d08a05254398e31d5452b10a91879"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 34306,
+          "length_bytes": 30,
+          "anchor": "i=n.evalFeature(t),r?.set(t,i)",
+          "occurrence": 0,
+          "anchor_sha256": "bc20f05723e836bd00ba9cff2b85f625df4a5486d0b204a6759fb7f41017d42c"
+        }
+      ]
+    },
+    {
+      "id": "FLG-04",
+      "claim": "Remote structured configuration uses schema safeParse and bounded fallback reporting. Absence can return a wrapper fallback without parsing or diagnostics; a field fallback that validates need not produce a diagnostic. Only the failure path classifies absent, mismatch, fallback_rejected or threw and deduplicates the report.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 36484,
+          "length_bytes": 14,
+          "anchor": "r.safeParse(t)",
+          "occurrence": 0,
+          "anchor_sha256": "5bb694d2212719a0a7a61c8f630244e65543a46d5053b58c42894ed245d41910"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 36177,
+          "length_bytes": 45,
+          "anchor": "Object.is(e,t)?\"fallback_rejected\":\"mismatch\"",
+          "occurrence": 0,
+          "anchor_sha256": "115cc2c8c923cce34d4c06d29616c82ba1692662ab97e3bc7a9a0134a7027fca"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 40080,
+          "length_bytes": 19,
+          "anchor": "var Sc=5,Cc=new Set",
+          "occurrence": 0,
+          "anchor_sha256": "1c0209fcd7c2da5888c134235472deedabb54884b4953629a2be621fcff2fb57"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 40331,
+          "length_bytes": 36,
+          "anchor": "outcome:a,issueCount:i.issues.length",
+          "occurrence": 0,
+          "anchor_sha256": "37367591bbfb860d065f06abea5feaa21361a9251d6c885e3cc5f29fbeceba85"
+        }
+      ]
+    },
+    {
+      "id": "FLG-05",
+      "claim": "Account capability resolver maps explicit available/platform/tier/admin/entitlement states and uses per-feature fallbacks when a verdict is absent.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 302916,
+          "length_bytes": 32,
+          "anchor": "return t===void 0?iR[e]??X:sR(t)",
+          "occurrence": 0,
+          "anchor_sha256": "36e624d9f8ebd3f0518193af2158e74bd8f1d9da7d3b60b4c2a7ffc4a3ee60a7"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 303014,
+          "length_bytes": 74,
+          "anchor": "blocked_by_org_tier:{isAvailable:!1,isPolicyBlocked:!0,isUpsellEligible:!0",
+          "occurrence": 0,
+          "anchor_sha256": "37c45e4106f3e7d7615b3c23f93953b360f7dd5ccaf769ea66c0660c94c1d06c"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 303226,
+          "length_bytes": 57,
+          "anchor": "blocked_by_entitlement:{isAvailable:!1,isPolicyBlocked:!1",
+          "occurrence": 0,
+          "anchor_sha256": "462f38d06c359d9d0d37fdf222c4c04fb6264595bdeb7440ef599547eccacfcf"
+        }
+      ]
+    },
+    {
+      "id": "FLG-06",
+      "claim": "UI capability wrappers expose distinct consumers: useEnabledForUser combines availability with the user preference; useAdminToggleState displays the forced policy value when policy-controlled and otherwise reads the organization setting. User preference, organization setting and forced policy are not interchangeable.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-52-DOMr1cuc.js",
+          "offset_utf8_bytes": 53091,
+          "length_bytes": 22,
+          "anchor": "useEnabledForUser:()=>",
+          "occurrence": 0,
+          "anchor_sha256": "b9c759d7b41d6b8e72991a031fa3ca2080986100ce97d3d0be271123a9a7be7d"
+        },
+        {
+          "file": "shared-52-DOMr1cuc.js",
+          "offset_utf8_bytes": 53259,
+          "length_bytes": 37,
+          "anchor": "isOrgPolicyControlled:t,policyValue:n",
+          "occurrence": 0,
+          "anchor_sha256": "f1328675873c99b1e2de3a4ee7ff58c6fbd504708d97ddb404f2a53d072f9126"
+        },
+        {
+          "file": "shared-52-DOMr1cuc.js",
+          "offset_utf8_bytes": 53331,
+          "length_bytes": 23,
+          "anchor": "checked:t?n===!0:e!==!1",
+          "occurrence": 0,
+          "anchor_sha256": "d80abe54908f1295f3b8d6d9b4032019a32964ae5a7ad8eda88c3ee82dc82630"
+        },
+        {
+          "file": "shared-52-DOMr1cuc.js",
+          "offset_utf8_bytes": 52086,
+          "length_bytes": 29,
+          "anchor": "/feature_settings?strong=true",
+          "occurrence": 0,
+          "anchor_sha256": "4569cdfa449083fe5a5a443223192930008e000f71f474c741c2c76f55a2ee3c"
+        }
+      ]
+    },
+    {
+      "id": "FLG-07",
+      "claim": "A static organization capability table declares dependencies, destination field/endpoint, destructive-disable and consent metadata, and RBAC entitlements.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "ce751cbc9-eTDhHIbX.js",
+          "offset_utf8_bytes": 396,
+          "length_bytes": 108,
+          "anchor": "saffron:{orgUpdateField:\"enabled_saffron\",destructiveDisable:!0,dependsOn:[\"chat\"],rbacEntitlement:\"memory\"}",
+          "occurrence": 0,
+          "anchor_sha256": "cb86f64ec9bc13697da8d92eb42ef547c1d96545796d81522f173a1fb05f0cda"
+        },
+        {
+          "file": "ce751cbc9-eTDhHIbX.js",
+          "offset_utf8_bytes": 683,
+          "length_bytes": 86,
+          "anchor": "skill_creation:{orgUpdateField:\"claude_ai_skill_creation_enabled\",dependsOn:[\"skills\"]",
+          "occurrence": 0,
+          "anchor_sha256": "2a7c41d78ea60dd3ace6f380b9fd162b61af5841a7c0f6f482dfb629cfb2548c"
+        },
+        {
+          "file": "ce751cbc9-eTDhHIbX.js",
+          "offset_utf8_bytes": 651,
+          "length_bytes": 30,
+          "anchor": "writeEndpoint:\"skill_settings\"",
+          "occurrence": 0,
+          "anchor_sha256": "eadd8fec0197373e3c46719aa17592ca1fd5b2c49912b187321527d4c192f7c4"
+        }
+      ]
+    },
+    {
+      "id": "FLG-08",
+      "claim": "Gated imports and translation catalogs carry build and organization identity; data from another build/org is not automatically applied.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-23-BY6HquaF.js",
+          "offset_utf8_bytes": 49708,
+          "length_bytes": 22,
+          "anchor": "gated_imports_build_id",
+          "occurrence": 0,
+          "anchor_sha256": "53242b8d21e9be29548584b5cc6c53da8579a569b9390d5143909a699c7f7298"
+        },
+        {
+          "file": "shared-23-BY6HquaF.js",
+          "offset_utf8_bytes": 49826,
+          "length_bytes": 18,
+          "anchor": "d===f&&(e(u??{},p)",
+          "occurrence": 0,
+          "anchor_sha256": "1db3cb731ce427f40b97a9799310305a58e4d38751d8ddced13ef580fd0adb4a"
+        },
+        {
+          "file": "shared-23-BY6HquaF.js",
+          "offset_utf8_bytes": 49920,
+          "length_bytes": 5,
+          "anchor": "p!==m",
+          "occurrence": 0,
+          "anchor_sha256": "f0f9d12b4a0da23929084431e0867c231eb5eb22631d5d9c3568d6503b7962ad"
+        },
+        {
+          "file": "shared-23-BY6HquaF.js",
+          "offset_utf8_bytes": 65468,
+          "length_bytes": 21,
+          "anchor": "n===r&&wF(e.locale,t)",
+          "occurrence": 0,
+          "anchor_sha256": "859dec2b58f4d239237d1d4c6e94f532a06b51d70a7bdd341d6aff5eae889e90"
+        }
+      ]
+    },
+    {
+      "id": "FLG-09",
+      "claim": "A compatibility fetch path keeps bootstrap data while automatic network query is disabled and exposed refetch is a no-op.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 163030,
+          "length_bytes": 22,
+          "anchor": "/cowork_sysprompt_map`",
+          "occurrence": 0,
+          "anchor_sha256": "07b3fc1328322dadd89966c45d0a8e6bcac7b9226085a80c65d3537d92f813a6"
+        },
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 163065,
+          "length_bytes": 23,
+          "anchor": "enabled:!1,staleTime:Gj",
+          "occurrence": 0,
+          "anchor_sha256": "6e14ebd7b0be0b3425bd57b2b7458cdabc2f0a648dd27d553ed1d082f1f8e82e"
+        },
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 163322,
+          "length_bytes": 19,
+          "anchor": "refetch:aM,source:d",
+          "occurrence": 0,
+          "anchor_sha256": "b0567f73545c74af36f87829da547d15bb4abc9592e51961036fb17beb02632c"
+        },
+        {
+          "file": "shared-6-Bd4qnyl_.js",
+          "offset_utf8_bytes": 163358,
+          "length_bytes": 34,
+          "anchor": "var aM=()=>Promise.resolve(void 0)",
+          "occurrence": 0,
+          "anchor_sha256": "144c0bf43889d0b78524e2568d0297fbb228df1175904430ab05557fc23c2b5f"
+        }
+      ]
+    },
+    {
+      "id": "FLG-10",
+      "claim": "Route normalization maps old desktop Code paths into canonical paths with platform conditions, exceptions, and a maximum four passes.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 32451,
+          "length_bytes": 13,
+          "anchor": "from:es,to:$o",
+          "occurrence": 0,
+          "anchor_sha256": "f31735838e793f850d3c7251134a5f6621de121ffc4171d0cbb562b109cbe71d"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 32703,
+          "length_bytes": 24,
+          "anchor": "when:\"desktop\",except:ns",
+          "occurrence": 0,
+          "anchor_sha256": "1d83a67fa81a82b23eee096d67278ab2dbd63ac406038da35b86029578897284"
+        },
+        {
+          "file": "shared-25-BQdcIBNa.js",
+          "offset_utf8_bytes": 32904,
+          "length_bytes": 20,
+          "anchor": "for(let i=0;i<4;i++)",
+          "occurrence": 0,
+          "anchor_sha256": "2c361fb0d3977b2f2e925ebc6d28f94456f301092a055c02ff5a419b5374eeee"
+        }
+      ]
+    },
+    {
+      "id": "FLG-11",
+      "claim": "Bootstrap capability hydration keys verdicts by supplied organization. It keeps existing data when not invalidated, updated no earlier than module startup, not in the future and younger than one minute, instead of overwriting it with bootstrap. Missing usable identity/verdict invalidates only stale capability queries. Membership-mismatched responses are independently skipped by the subscription path. This is a hydration/invalidation rule, not a universal freshness check before every capability read.",
+      "status": "client-code-observed",
+      "anchors": [
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 312280,
+          "length_bytes": 66,
+          "anchor": "function YK(e){let t=e.featureFlagsOrgUuid,n=e.current_user_access",
+          "occurrence": 0,
+          "anchor_sha256": "c0b4e40f0a0269dd07298876ed3b2a399938168b05c457e1064b6fbee5b8fc7e"
+        },
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 312258,
+          "length_bytes": 21,
+          "anchor": "t-e.dataUpdatedAt<6e4",
+          "occurrence": 0,
+          "anchor_sha256": "7ea29d84d11873da37948c1fce9ae3ddc44f208ee995d6f163771d06ccee1d49"
+        },
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 312833,
+          "length_bytes": 17,
+          "anchor": "!wK(r)&&ZK(t(),r)",
+          "occurrence": 0,
+          "anchor_sha256": "d11cf3f9b654b304a0d4ec11b7afa4bf843034aff34aee45d3e5170c8d3a6b08"
+        },
+        {
+          "file": "shared-0-CIydqnOr.js",
+          "offset_utf8_bytes": 310663,
+          "length_bytes": 69,
+          "anchor": "wK=e=>{let{account:t,featureFlagsOrgUuid:n}=e??{},r=n?.toLowerCase();",
+          "occurrence": 0,
+          "anchor_sha256": "762af41547619980f5af5098a0a2f2e7e10855aa428314279b1802aa789e62e3"
+        }
+      ],
+      "limits": "Membership mismatch and absent verdict are different branches. This is client cache hygiene, not proof of server authorization or a universal active-organization refresh rule."
+    }
+  ],
+  "rea_runs": [
+    {
+      "evidence_id": "ev_d044d66c68ab9b5e20794b75a18ad35d46706a9ca5d98150c48bc0abf2a6dec5",
+      "tool": "REA 6.5.0 analyze-javascript-application",
+      "result_sha256": "009ed6f834cd9b6933db396b30357c62721dbefd16302f47580bba457eccf4da",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 4000,
+        "max_semantic_nodes_per_file": 2000,
+        "source_paths": [
+          "assets/v1/ce751cbc9-eTDhHIbX.js",
+          "assets/v1/cf8e2003d-Dbk42JfU.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "statistics": {
+        "relevant_files": 3496,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 28087,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 2,
+        "visited_ast_nodes": 5117,
+        "findings": 182,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 3494 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "semantic_graph_limits": [
+        "Boundary extraction covers unshadowed JSON/global coercions plus parse and validation method candidates.",
+        "Child-process extraction covers asynchronous node:child_process creation, literal argv/env/stdio options, exit/error listeners, and kill signals.",
+        "Configuration extraction covers process.env, process.argv, node:fs reads, and direct logical defaults.",
+        "Event extraction covers EventEmitter-style literal registrations, removals, and dispatch candidates; dynamic names remain unknown.",
+        "Function fingerprints are static candidates; equal digests can remain ambiguous and do not prove behavioral equivalence.",
+        "Local data flow does not claim control-flow-sensitive reaching definitions or arbitrary dynamic property resolution.",
+        "Promise ownership covers explicit unshadowed Promise construction, static factories, aggregation, chaining, and await syntax only.",
+        "Request extraction covers fetch, WebSocket, node:http/node:https construction, direct option fields, and exact local response consumers.",
+        "Resource extraction covers built-in filesystem/network acquisition and exact local close/destroy/end handles.",
+        "The semantic graph contains static syntax observations and conservative relationship candidates; it does not claim runtime execution.",
+        "Timer extraction covers global or node:timers scheduling and exact local-handle cancellation."
+      ],
+      "raw_artifact_published": false
+    },
+    {
+      "evidence_id": "ev_ba94e2adb445748f3d3f633a0f5760c62a04b821e101d9c6a30fbae9c8b165fb",
+      "tool": "REA 6.5.0 analyze-javascript-application",
+      "result_sha256": "7fa6ceb003b4768e209acddadde3058a5267e308745cd50020df0d5f0f3e604d",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 8000,
+        "max_semantic_nodes_per_file": 4000,
+        "source_paths": [
+          "assets/v1/shared-182-CW7gYT2d.js",
+          "assets/v1/shared-25-BQdcIBNa.js"
+        ],
+        "max_heap_mb": 768,
+        "analysis_timeout_ms": 45000
+      },
+      "statistics": {
+        "relevant_files": 3496,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 795388,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 2,
+        "visited_ast_nodes": 228607,
+        "findings": 2860,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 3494 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "semantic_graph_limits": [
+        "Boundary extraction covers unshadowed JSON/global coercions plus parse and validation method candidates.",
+        "Child-process extraction covers asynchronous node:child_process creation, literal argv/env/stdio options, exit/error listeners, and kill signals.",
+        "Configuration extraction covers process.env, process.argv, node:fs reads, and direct logical defaults.",
+        "Event extraction covers EventEmitter-style literal registrations, removals, and dispatch candidates; dynamic names remain unknown.",
+        "Function fingerprints are static candidates; equal digests can remain ambiguous and do not prove behavioral equivalence.",
+        "Local data flow does not claim control-flow-sensitive reaching definitions or arbitrary dynamic property resolution.",
+        "Promise ownership covers explicit unshadowed Promise construction, static factories, aggregation, chaining, and await syntax only.",
+        "Request extraction covers fetch, WebSocket, node:http/node:https construction, direct option fields, and exact local response consumers.",
+        "Resource extraction covers built-in filesystem/network acquisition and exact local close/destroy/end handles.",
+        "The semantic graph contains static syntax observations and conservative relationship candidates; it does not claim runtime execution.",
+        "Timer extraction covers global or node:timers scheduling and exact local-handle cancellation."
+      ],
+      "raw_artifact_published": false
+    }
+  ],
+  "static_inventory": {
+    "method": "Babel inert AST, direct imported evaluators with conservative ancestor-function shadow exclusion; no target execution; import-graph reachability is not runtime reachability",
+    "statistics": {
+      "files": 3426,
+      "parse_failures": 0,
+      "calls": 2925,
+      "literal_calls": 1595,
+      "unique_literal_flags": 979,
+      "reachable_files": 3424
+    },
+    "evaluator_kinds": {
+      "boolean-hook": 1090,
+      "conditional-boolean-hook": 151,
+      "nonreactive-sdk-boolean": 49,
+      "override-or-payload-boolean": 10,
+      "parsed-config-field": 86,
+      "parsed-config": 76,
+      "parsed-experiment-field": 12,
+      "raw-boolean-hook": 19,
+      "nonreactive-boolean": 33,
+      "payload-membership": 2,
+      "conditional-string-hook": 4,
+      "number-hook": 7,
+      "parsed-layer-field": 7,
+      "conditional-parsed-config": 2,
+      "conditional-experiment-field": 5,
+      "nonreactive-payload-boolean": 2,
+      "raw-value-hook": 26,
+      "raw-payload-value": 2,
+      "overridden-value-hook": 2,
+      "conditional-config-field": 2,
+      "string-hook": 4,
+      "nonreactive-evaluated-value": 4
+    },
+    "html_script_roots": [
+      {
+        "html": "frame-shell.html",
+        "file": "frame-shell-BrIqb8O3.js"
+      },
+      {
+        "html": "frame-manage.html",
+        "file": "frame-manage-CQM1GquW.js"
+      },
+      {
+        "html": "frame-connect.html",
+        "file": "frame-connect-CgkmJXJx.js"
+      },
+      {
+        "html": "index.html",
+        "file": "index-DthvVvF0.js"
+      }
+    ],
+    "private_raw_inventory_sha256": "693dc89e78f9c55e115f2a519384d4b7f4b78147e350144f02ad054a8cf27da8",
+    "limitations": [
+      "Conservative ancestor-function shadow exclusion can undercount valid calls.",
+      "Only explicitly mapped evaluator wrappers and direct imported bindings are counted; dynamic keys and additional wrapper chains are unresolved.",
+      "Literal keys include configuration objects and experiments, not only Boolean flags.",
+      "HTML script/static/dynamic import reachability is a necessary module-level candidate path; it does not prove that a function executes or that a user is entitled.",
+      "Neither opaque IDs nor codenames are interpreted as future features."
+    ],
+    "literal_key_scope": {
+      "literal_calls_and_unique_literal_flags": "Nonempty StringLiteral arguments only; excludes one empty-string placeholder call.",
+      "all_string_literal_calls": 1596,
+      "all_distinct_string_literal_values": 980,
+      "excluded_empty_string_calls": 1
+    }
+  },
+  "relevant_flag_inventory": [
+    {
+      "name": "chat_network_retry",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "c07052af7-B_IWijU4.js",
+          "offset": 6920,
+          "end_offset": 6943,
+          "enclosing_function": "I",
+          "callee": "i",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "chat_network_retry",
+          "field": null,
+          "anchor": "i(\"chat_network_retry\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "cb1e253a0-1Hp_ue9h.js",
+          "offset": 142645,
+          "end_offset": 142668,
+          "enclosing_function": "Ay",
+          "callee": "P",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "chat_network_retry",
+          "field": null,
+          "anchor": "P(\"chat_network_retry\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-1-7J3IM-U8.js",
+          "offset": 167334,
+          "end_offset": 167357,
+          "enclosing_function": "pA",
+          "callee": "M",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "chat_network_retry",
+          "field": null,
+          "anchor": "M(\"chat_network_retry\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-130-CGEumh8Q.js",
+          "offset": 59599,
+          "end_offset": 59623,
+          "enclosing_function": "fm",
+          "callee": "Ce",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "chat_network_retry",
+          "field": null,
+          "anchor": "Ce(\"chat_network_retry\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 283449,
+          "end_offset": 283472,
+          "enclosing_function": "WF",
+          "callee": "O",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "chat_network_retry",
+          "field": null,
+          "anchor": "O(\"chat_network_retry\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_saffron_frontend",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "c10d810aa-CxtsgJm4.js",
+          "offset": 1606,
+          "end_offset": 1664,
+          "enclosing_function": "M",
+          "callee": "a",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "legacy_export_ends_at",
+          "anchor": "a(\"claudeai_saffron_frontend\",\"legacy_export_ends_at\",E,k)",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "c10d810aa-CxtsgJm4.js",
+          "offset": 1667,
+          "end_offset": 1735,
+          "enclosing_function": "M",
+          "callee": "a",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "legacy_export_days_after_import",
+          "anchor": "a(\"claudeai_saffron_frontend\",\"legacy_export_days_after_import\",D,A)",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 91466,
+          "end_offset": 91530,
+          "enclosing_function": "Jg",
+          "callee": "A",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "edit_resynthesize_enabled",
+          "anchor": "A(\"claudeai_saffron_frontend\",\"edit_resynthesize_enabled\",!1,Pe)",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 94969,
+          "end_offset": 95028,
+          "enclosing_function": "d_",
+          "callee": "A",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "resynthesize_enabled",
+          "anchor": "A(\"claudeai_saffron_frontend\",\"resynthesize_enabled\",!1,Pe)",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 95050,
+          "end_offset": 95116,
+          "enclosing_function": "f_",
+          "callee": "A",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "import_resynthesize_enabled",
+          "anchor": "A(\"claudeai_saffron_frontend\",\"import_resynthesize_enabled\",!1,Pe)",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 95876,
+          "end_offset": 95930,
+          "enclosing_function": "m_",
+          "callee": "A",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "max_num_controls",
+          "anchor": "A(\"claudeai_saffron_frontend\",\"max_num_controls\",10,C)",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 95952,
+          "end_offset": 96008,
+          "enclosing_function": "h_",
+          "callee": "A",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_frontend",
+          "field": "max_control_chars",
+          "anchor": "A(\"claudeai_saffron_frontend\",\"max_control_chars\",100,C)",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "api_enable_claude_code_team_memory_sync",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "c2923ee12-Cz8pO74m.js",
+          "offset": 5271,
+          "end_offset": 5315,
+          "enclosing_function": "yt",
+          "callee": "l",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "api_enable_claude_code_team_memory_sync",
+          "field": null,
+          "anchor": "l(\"api_enable_claude_code_team_memory_sync\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "cf8e5c5b5-DDPjNgVZ.js",
+          "offset": 11191,
+          "end_offset": 11235,
+          "enclosing_function": "Yo",
+          "callee": "p",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "api_enable_claude_code_team_memory_sync",
+          "field": null,
+          "anchor": "p(\"api_enable_claude_code_team_memory_sync\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "saffron_parcel_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "c50575b1c-DazMM7oI.js",
+          "offset": 26340,
+          "end_offset": 26368,
+          "enclosing_function": "Yn",
+          "callee": "ie",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "saffron_parcel_enabled",
+          "field": null,
+          "anchor": "ie(\"saffron_parcel_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "ccr_persistent_memory_default_on",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "c71860c77-c9bN7Yld.js",
+          "offset": 21186,
+          "end_offset": 21223,
+          "enclosing_function": null,
+          "callee": "w",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "ccr_persistent_memory_default_on",
+          "field": null,
+          "anchor": "w(\"ccr_persistent_memory_default_on\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_saffron_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "ca25db325-k3svzMma.js",
+          "offset": 16492,
+          "end_offset": 16521,
+          "enclosing_function": "F",
+          "callee": "r",
+          "evaluator": {
+            "kind": "raw-boolean-hook",
+            "function": "ec",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_enabled",
+          "field": null,
+          "anchor": "r(\"claudeai_saffron_enabled\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 92732,
+          "end_offset": 92761,
+          "enclosing_function": "Xg",
+          "callee": "O",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_enabled",
+          "field": null,
+          "anchor": "O(\"claudeai_saffron_enabled\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-52-DOMr1cuc.js",
+          "offset": 54574,
+          "end_offset": 54603,
+          "enclosing_function": null,
+          "callee": "k",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_enabled",
+          "field": null,
+          "anchor": "k(\"claudeai_saffron_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_saffron_search_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "ca25db325-k3svzMma.js",
+          "offset": 16524,
+          "end_offset": 16560,
+          "enclosing_function": "F",
+          "callee": "r",
+          "evaluator": {
+            "kind": "raw-boolean-hook",
+            "function": "ec",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_search_enabled",
+          "field": null,
+          "anchor": "r(\"claudeai_saffron_search_enabled\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 94317,
+          "end_offset": 94353,
+          "enclosing_function": "a_",
+          "callee": "O",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_search_enabled",
+          "field": null,
+          "anchor": "O(\"claudeai_saffron_search_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "project_image",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "ca5811b6a-Pt0-ZVxf.js",
+          "offset": 1107,
+          "end_offset": 1125,
+          "enclosing_function": "_e",
+          "callee": "c",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "project_image",
+          "field": null,
+          "anchor": "c(\"project_image\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset": 88163,
+          "end_offset": 88181,
+          "enclosing_function": "Th",
+          "callee": "W",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "project_image",
+          "field": null,
+          "anchor": "W(\"project_image\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-8-Cjyy_X81.js",
+          "offset": 86172,
+          "end_offset": 86191,
+          "enclosing_function": "bx",
+          "callee": "he",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "project_image",
+          "field": null,
+          "anchor": "he(\"project_image\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "melange_enabled_for_orbit",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset": 284684,
+          "end_offset": 284715,
+          "enclosing_function": "aM",
+          "callee": "et",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "melange_enabled_for_orbit",
+          "field": null,
+          "anchor": "et(\"melange_enabled_for_orbit\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "melange_enabled_for_chat",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset": 284718,
+          "end_offset": 284748,
+          "enclosing_function": "aM",
+          "callee": "et",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "melange_enabled_for_chat",
+          "field": null,
+          "anchor": "et(\"melange_enabled_for_chat\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 87252,
+          "end_offset": 87281,
+          "enclosing_function": "Fg",
+          "callee": "O",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "melange_enabled_for_chat",
+          "field": null,
+          "anchor": "O(\"melange_enabled_for_chat\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudified_melange_memory_migration_v2",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset": 284751,
+          "end_offset": 284795,
+          "enclosing_function": "aM",
+          "callee": "gt",
+          "evaluator": {
+            "kind": "raw-value-hook",
+            "function": "Fs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudified_melange_memory_migration_v2",
+          "field": null,
+          "anchor": "gt(\"claudified_melange_memory_migration_v2\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 87284,
+          "end_offset": 87327,
+          "enclosing_function": "Fg",
+          "callee": "k",
+          "evaluator": {
+            "kind": "raw-value-hook",
+            "function": "Fs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudified_melange_memory_migration_v2",
+          "field": null,
+          "anchor": "k(\"claudified_melange_memory_migration_v2\")",
+          "import_graph_reachable": true
+        },
+        {
+          "file": "shared-3-DJJeaAOk.js",
+          "offset": 12378,
+          "end_offset": 12422,
+          "enclosing_function": "pm",
+          "callee": "St",
+          "evaluator": {
+            "kind": "raw-value-hook",
+            "function": "Fs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudified_melange_memory_migration_v2",
+          "field": null,
+          "anchor": "St(\"claudified_melange_memory_migration_v2\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "melange_external_import_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset": 290115,
+          "end_offset": 290152,
+          "enclosing_function": "yM",
+          "callee": "et",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "melange_external_import_enabled",
+          "field": null,
+          "anchor": "et(\"melange_external_import_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "melange_saffron_import_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-156-BeTC6pHT.js",
+          "offset": 291820,
+          "end_offset": 291856,
+          "enclosing_function": "jM",
+          "callee": "et",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "melange_saffron_import_enabled",
+          "field": null,
+          "anchor": "et(\"melange_saffron_import_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_saffron_default_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 93319,
+          "end_offset": 93356,
+          "enclosing_function": "n_",
+          "callee": "O",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_default_enabled",
+          "field": null,
+          "anchor": "O(\"claudeai_saffron_default_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_saffron_port_enabled",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 94375,
+          "end_offset": 94409,
+          "enclosing_function": "o_",
+          "callee": "O",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_port_enabled",
+          "field": null,
+          "anchor": "O(\"claudeai_saffron_port_enabled\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_saffron_port_config",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-182-CW7gYT2d.js",
+          "offset": 94431,
+          "end_offset": 94479,
+          "enclosing_function": "s_",
+          "callee": "A",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claudeai_saffron_port_config",
+          "field": "prompt",
+          "anchor": "A(\"claudeai_saffron_port_config\",\"prompt\",\"\",He)",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claudeai_safe_prompt_hashes",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-19-SWo9Ge1k.js",
+          "offset": 141288,
+          "end_offset": 141324,
+          "enclosing_function": "TN",
+          "callee": "Ln",
+          "evaluator": {
+            "kind": "nonreactive-evaluated-value",
+            "function": "io",
+            "root": "shared-0-CIydqnOr.js"
+          },
+          "flag": "claudeai_safe_prompt_hashes",
+          "field": null,
+          "anchor": "Ln(\"claudeai_safe_prompt_hashes\",[])",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "melange_default_enabled_for_chat",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-3-DJJeaAOk.js",
+          "offset": 12337,
+          "end_offset": 12375,
+          "enclosing_function": "pm",
+          "callee": "nt",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "melange_default_enabled_for_chat",
+          "field": null,
+          "anchor": "nt(\"melange_default_enabled_for_chat\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "claude_ai_project_bananagrams",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset": 83194,
+          "end_offset": 83228,
+          "enclosing_function": "gh",
+          "callee": "W",
+          "evaluator": {
+            "kind": "boolean-hook",
+            "function": "Rs",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "claude_ai_project_bananagrams",
+          "field": null,
+          "anchor": "W(\"claude_ai_project_bananagrams\")",
+          "import_graph_reachable": true
+        }
+      ]
+    },
+    {
+      "name": "project_knowledge_limit",
+      "classification": "direct-evaluator-consumer-in-import-reachable-module",
+      "consumers": [
+        {
+          "file": "shared-4-1vKV8QN9.js",
+          "offset": 83463,
+          "end_offset": 83505,
+          "enclosing_function": "vh",
+          "callee": "Ke",
+          "evaluator": {
+            "kind": "parsed-config-field",
+            "function": "oc",
+            "root": "shared-25-BQdcIBNa.js"
+          },
+          "flag": "project_knowledge_limit",
+          "field": "limit",
+          "anchor": "Ke(\"project_knowledge_limit\",\"limit\",lh,H)",
+          "import_graph_reachable": true
+        }
+      ]
+    }
+  ],
+  "organization_configuration": {
+    "literal_rows": 75,
+    "dependency_edges": 46,
+    "rows_with_pending_entitlement_marker": 14,
+    "selected_rows": {
+      "chat": {
+        "orgUpdateField": "chat_enabled",
+        "destructiveDisable": true,
+        "dependsOn": [],
+        "rbacEntitlement": "chat"
+      },
+      "web_search": {
+        "orgUpdateField": "web_search_enabled",
+        "dependsOn": [
+          "chat"
+        ],
+        "rbacEntitlement": "web_search"
+      },
+      "saffron": {
+        "orgUpdateField": "enabled_saffron",
+        "destructiveDisable": true,
+        "dependsOn": [
+          "chat"
+        ],
+        "rbacEntitlement": "memory"
+      },
+      "skills": {
+        "orgUpdateField": "skills_enabled",
+        "dependsOn": [],
+        "writeEndpoint": "skill_settings"
+      },
+      "skill_creation": {
+        "orgUpdateField": "claude_ai_skill_creation_enabled",
+        "dependsOn": [
+          "skills"
+        ],
+        "writeEndpoint": "skill_settings",
+        "rbacEntitlement": "skill_creation"
+      },
+      "skill_sharing": {
+        "orgUpdateField": "claude_ai_skill_sharing_enabled",
+        "dependsOn": [
+          "skills"
+        ],
+        "writeEndpoint": "skill_settings",
+        "rbacEntitlement": "skill_sharing"
+      },
+      "project_sharing": {
+        "orgUpdateField": "claude_ai_project_sharing_enabled",
+        "destructiveDisable": true,
+        "writeEndpoint": "privacy_settings",
+        "dependsOn": [],
+        "rbacEntitlement": "project_sharing"
+      },
+      "public_projects": {
+        "orgUpdateField": "public_projects_enabled",
+        "destructiveDisable": true,
+        "writeEndpoint": "privacy_settings",
+        "dependsOn": [
+          "chat",
+          "project_sharing"
+        ],
+        "rbacEntitlement": "public_projects"
+      },
+      "cowork_remote_control": {
+        "orgUpdateField": "cowork_remote_control_enabled",
+        "destructiveDisable": true,
+        "dependsOn": [],
+        "rbacEntitlement": "cowork_remote_control",
+        "rbacEntitlementPendingRollout": true
+      },
+      "claude_code_desktop": {
+        "orgUpdateField": "claude_code_desktop_enabled",
+        "dependsOn": [],
+        "rbacEntitlement": "claude_code"
+      },
+      "operon_memory": {
+        "orgUpdateField": "operon_memory_enabled",
+        "dependsOn": [
+          "operon"
+        ],
+        "rbacEntitlement": "operon_memory",
+        "rbacEntitlementPendingRollout": true
+      }
+    },
+    "interpretation": "A declarative client capability registry; pending rollout is metadata, not a launch-date assertion."
+  },
+  "protected_override_registry": {
+    "entry_count": 226,
+    "publication": "Only count and representative guard mechanism are published; no attempted bypass or forced flag execution."
+  },
+  "styles_negative_search": {
+    "corpus": "3426 assets/v1 JavaScript files",
+    "queries": [
+      {
+        "term": "custom_style",
+        "matches": []
+      },
+      {
+        "term": "custom-styles",
+        "matches": []
+      },
+      {
+        "term": "style_id",
+        "matches": []
+      },
+      {
+        "term": "style_uuid",
+        "matches": []
+      },
+      {
+        "term": "selectedStyle",
+        "matches": []
+      },
+      {
+        "term": "user_styles",
+        "matches": []
+      }
+    ],
+    "conclusion": "No classic chat-style CRUD chain recovered by these terms and reviewed consumers. This does not establish global feature absence."
+  },
+  "public_documents": [
+    {
+      "id": "DOC-MEM",
+      "url": "https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "legacy vs current memory distinction",
+        "project scoped product description",
+        "cloud vs local Cowork memory distinction",
+        "single-chat setting fixed at start"
+      ],
+      "limits": "Help text is separate evidence from the packaged client; summarizes public product contract, not internal algorithm.",
+      "rechecked_at": "2026-10-14"
+    },
+    {
+      "id": "DOC-COWORK",
+      "url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "staged client experience coexistence, without inferring private rollout conditions"
+      ],
+      "rechecked_at": "2026-10-14"
+    },
+    {
+      "id": "DOC-CODE-STYLE",
+      "url": "https://code.claude.com/docs/en/output-styles",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "Code output styles are instructions, separate from permissions and project knowledge"
+      ],
+      "limits": "Current docs and packaged desktop menus are versioned independently.",
+      "rechecked_at": "2026-10-14"
+    },
+    {
+      "id": "DOC-OLD-STYLE",
+      "url": "https://support.claude.com/en/articles/10181068-configuring-and-using-styles",
+      "read_at": "2026-10-14",
+      "status": "prior_pass_reported_404; current_pass_reader_returned_internal_error_without_body",
+      "used_for": [],
+      "limits": "No readable current article body established. Neither the prior 404 nor the current read error proves global feature removal; old search snippets are not used as implementation evidence.",
+      "rechecked_at": "2026-10-14"
+    },
+    {
+      "id": "DOC-PROJECTS",
+      "url": "https://support.claude.com/en/articles/9517075-what-are-projects",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "existing knowledge-base projects vs staged Code Projects beta"
+      ],
+      "limits": "The current article contains both generations. Existing project CRUD must not be projected onto the beta."
+    },
+    {
+      "id": "DOC-PROJECT-MANAGE",
+      "url": "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "project knowledge and instruction scope"
+      ],
+      "limits": "Product-facing workflow description, not evidence of full transcript injection or ranking algorithms."
+    },
+    {
+      "id": "DOC-PERSONALIZATION",
+      "url": "https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "account instructions vs project instructions vs skills"
+      ],
+      "limits": "The page retains inconsistent plan wording; the chapters do not derive a plan availability table from it."
+    },
+    {
+      "id": "DOC-CODE-PROJECTS",
+      "url": "https://code.claude.com/docs/en/claude-projects",
+      "read_at": "2026-10-14",
+      "status": "opened",
+      "used_for": [
+        "parallel cloud-thread Projects beta is a distinct documented product surface"
+      ],
+      "limits": "Opened as the high-value reference chain from the Projects help page; only used to bound generation/surface, not to infer private rollout rules."
+    }
+  ],
+  "original_teaching_model": {
+    "path": "../../core-code-lab/memory-flags/memory-flags-model.mjs",
+    "tests_path": "../../core-code-lab/memory-flags/memory-flags-model.test.mjs",
+    "passed": 15,
+    "failed": 0,
+    "scope": "Original scope queue, optimistic rollback, request-version guard, stale-access fail-closed example, capability-state resolver, bounded numeric config, dependency graph validation. No target code execution or API calls. Teaching defaults are not claimed to match every target compatibility path."
+  },
+  "open_boundaries": [
+    "No server memory extraction, embedding, retrieval ranking, topic-merging or full prompt-injection algorithm recovered.",
+    "No classic chat Custom Styles model CRUD recovered in this corpus.",
+    "No account-specific flags, assignments, server permissions or live availability established.",
+    "No chronology inferred from opaque feature names."
+  ],
+  "collection_closure": {
+    "status": "closed_for_these_two_volumes",
+    "at": "2026-10-14T18:02:00Z",
+    "questions": [
+      {
+        "question": "What client state and mutation boundaries exist for legacy and topic memory?",
+        "evidence": "MEM-01 through MEM-16; current memory help"
+      },
+      {
+        "question": "What separates project instructions, knowledge, permissions and retrieval admission?",
+        "evidence": "PRJ-01 through PRJ-09; official existing-project help"
+      },
+      {
+        "question": "What does Styles refer to in this package?",
+        "evidence": "STY-01 through STY-05; bounded negative search; Code output styles; classic CRUD remains unrecovered"
+      },
+      {
+        "question": "How are flag values, typed configuration, capability status and compatibility handled?",
+        "evidence": "FLG-01 through FLG-11; inert AST inventory and declarative capability table"
+      },
+      {
+        "question": "What server memory algorithms or private rollout chronology can be established?",
+        "evidence": "Not established; explicitly excluded rather than inferred"
+      }
+    ],
+    "reconciled_boundaries": [
+      "Current topic memory and legacy synthesis descriptions are versioned separately, including deletion semantics.",
+      "Current cloud Cowork memory sharing does not imply local Cowork sharing; retained startup parameters are conditional static evidence.",
+      "Existing project knowledge CRUD is not treated as the new Code Projects beta implementation.",
+      "Compatibility STYLES enum, chat typography, writing-profile setup and Code output styles are not collapsed into classic Chat Styles CRUD.",
+      "Bootstrap membership-mismatch skip and missing-verdict stale-cache invalidation are distinct branches."
+    ],
+    "remaining_unknowns": [
+      "No server memory extraction, embedding, retrieval ranking, topic-merging or full prompt-injection algorithm recovered.",
+      "No classic chat Custom Styles model CRUD recovered in this corpus.",
+      "No account-specific flags, assignments, server permissions or live availability established.",
+      "No chronology inferred from opaque feature names."
+    ]
+  },
+  "deliverables": [
+    {
+      "path": "../../../02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+      "volume": 9,
+      "kind": "original Chinese research chapter",
+      "bytes": 22726,
+      "sha256": "a106b860e2a6eeb2e50f1c502c1dd8ec6912a6d8c5fd03b30318d5e3c8108438"
+    },
+    {
+      "path": "../../../02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+      "volume": 10,
+      "kind": "original Chinese research chapter",
+      "bytes": 18478,
+      "sha256": "aaa44d58e12a16b92cf80a269ac32e77bd9416b59681968d6caee690cfa32c28"
+    }
+  ],
+  "independent_revalidation": {
+    "checked_at": "2026-10-14T18:02:00Z",
+    "source_files_checked": 27,
+    "anchors_checked": 125,
+    "errors": [],
+    "method": "Recomputed source SHA-256 and lengths; compared every anchor against the inert official-package file at its UTF-8 byte offset and verified anchor SHA-256."
+  },
+  "applied_review_corrections": [
+    {
+      "review_id": "MFADV-01",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+          "module_sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+          "utf8_byte_start": 52918,
+          "utf8_byte_end_exclusive": 53003,
+          "anchor": "r=e.useOrgSetting??(()=>z(n)),i=e.useOrgPolicy??(()=>dp(n)),a=e.useUserPreference??hp",
+          "anchor_sha256": "8a2107a6550c6a7ca3c291ad3e95804a628d0d3017e70326a217652a2a3c5b05"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+          "module_sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+          "utf8_byte_start": 53091,
+          "utf8_byte_end_exclusive": 53166,
+          "anchor": "useEnabledForUser:()=>{let e=o(),t=a();return e.isAvailable?t===!1?mp:fp:e}",
+          "anchor_sha256": "d2ddb1a2e4efe92bbd3950440252947663530f2aea95ce7031eb5d84db9a4e1f"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+          "module_sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+          "utf8_byte_start": 53223,
+          "utf8_byte_end_exclusive": 53354,
+          "anchor": "useAdminToggleState:()=>{let e=r(),{isOrgPolicyControlled:t,policyValue:n,isLoading:a,isError:o}=i();return{checked:t?n===!0:e!==!1",
+          "anchor_sha256": "99c13436f4e44eea69296350851326181a7e81b8c5d905e362bfa8eadc0563a6"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-02",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-3-DJJeaAOk.js",
+          "module_sha256": "0e0ba9d4992495c31b0ce12e17528088eb642a1c263825cb1201de5e400c74bc",
+          "utf8_byte_start": 12440,
+          "utf8_byte_end_exclusive": 12498,
+          "anchor": "if(e!=null)c=e!==\"off\",l=e===\"classic\"?\"saffron\":\"melange\"",
+          "anchor_sha256": "c15676a1a27804a8fe4795645c17d9b2f9402e559eccd1f52c29a9a0e63c0964"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-3-DJJeaAOk.js",
+          "module_sha256": "0e0ba9d4992495c31b0ce12e17528088eb642a1c263825cb1201de5e400c74bc",
+          "utf8_byte_start": 12719,
+          "utf8_byte_end_exclusive": 12781,
+          "anchor": "d=r??n;return{memoryOn:c,mode:l===\"saffron\"&&!d&&i?\"melange\":l",
+          "anchor_sha256": "cf8a0b30a0e81c5832acb3a43d33e7eeb49936cea7f443483b5fe6c5676ec66f"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-3-DJJeaAOk.js",
+          "module_sha256": "0e0ba9d4992495c31b0ce12e17528088eb642a1c263825cb1201de5e400c74bc",
+          "utf8_byte_start": 12794,
+          "utf8_byte_end_exclusive": 12858,
+          "anchor": "saffronModeAvailable:d,melangeModeAvailable:i,serverMemoryMode:e",
+          "anchor_sha256": "a263c8a816719a838c438208d4210b48759911b0fa9e74a8cf60b31e6a59b2f7"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-03",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-4-1vKV8QN9.js",
+          "module_sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852",
+          "utf8_byte_start": 83174,
+          "utf8_byte_end_exclusive": 83299,
+          "anchor": "function gh(){let e=W(\"claude_ai_project_bananagrams\"),t=Nc(),n=rt(\"project_knowledge_search\").isAvailable;return e&&(!t||n)}",
+          "anchor_sha256": "dcc8d44d2021c02e8079c5e87f4f2bac62b47b833828e1f3588b2b10f7eda36c"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-4-1vKV8QN9.js",
+          "module_sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852",
+          "utf8_byte_start": 83299,
+          "utf8_byte_end_exclusive": 83415,
+          "anchor": "function _h(e){let t=gh(),{data:n}=pl(e,t);if(!t)return!1;if(n!==void 0)return!!(t&&n.use_project_knowledge_search)}",
+          "anchor_sha256": "f07871a3f592bb5fc9e4488b2edd71f8806119af38a16c471ca95b7237075098"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-4-1vKV8QN9.js",
+          "module_sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852",
+          "utf8_byte_start": 83415,
+          "utf8_byte_end_exclusive": 83561,
+          "anchor": "function vh(){let{models:e}=qt(\"chat\"),t=gh(),n=Ke(\"project_knowledge_limit\",\"limit\",lh,H);if(t)return{maxKbTokens:n,modelWithLargestContext:null}",
+          "anchor_sha256": "6a606737f072b93bb78526fe67e54ae5a8ae09d99418dde33781aca668b57110"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-05",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "module_sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "utf8_byte_start": 362158,
+          "utf8_byte_end_exclusive": 362208,
+          "anchor": "a=[\"create_project_doc\",{orgUuid:r,projectUuid:e}]",
+          "anchor_sha256": "7d7102620050a31b19f2061fbad57167a7ed55af7fb2e5f470159a55433b0622"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "module_sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "utf8_byte_start": 362209,
+          "utf8_byte_end_exclusive": 362273,
+          "anchor": "return P(()=>`/api/organizations/${r}/projects/${e}/docs`,\"POST\"",
+          "anchor_sha256": "93222bf0b118375be374df080264aebbcdca3d08cf365537ea01f63c9b913841"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "module_sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "utf8_byte_start": 362647,
+          "utf8_byte_end_exclusive": 362719,
+          "anchor": "Wn(t=>`/api/organizations/${r}/projects/${e}/docs/${t.docUuid}`,\"DELETE\"",
+          "anchor_sha256": "82612563dc46564fdf83625f87a9d4d876179dccb3b1ae2d4726a38a25c916f1"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "module_sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "utf8_byte_start": 363140,
+          "utf8_byte_end_exclusive": 363165,
+          "anchor": "/docs/delete_many`,\"POST\"",
+          "anchor_sha256": "a123f9f58877f28a016869f9d53e00d9c6755acd9036c0b6d05c3ce2b383ee83"
+        },
+        {
+          "file": "ion-dist/assets/v1/cf2f34ee4-C1KJUra-.js",
+          "module_sha256": "ba9285fecc35fc9b488a4f6d5c451fc622d27ca21751b8e02cb07f9fc2702562",
+          "utf8_byte_start": 29008,
+          "utf8_byte_end_exclusive": 29041,
+          "anchor": "await te({file_name:E,content:w})",
+          "anchor_sha256": "54958b09220279ef9c20f7dc1bd759c9e511440fdcc40b2c91e2eb9acd77f0cd"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-06",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-25-BQdcIBNa.js",
+          "module_sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+          "utf8_byte_start": 35954,
+          "utf8_byte_end_exclusive": 35994,
+          "anchor": "signature:n,result:n===void 0?void 0:r()",
+          "anchor_sha256": "f41d80e483a844fa5a773f6d3dfa513957b952571a73f5472eb2781e28f742a8"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-25-BQdcIBNa.js",
+          "module_sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+          "utf8_byte_start": 35998,
+          "utf8_byte_end_exclusive": 36067,
+          "anchor": "if(a.name===e&&a.key===t&&Object.is(a.signature,n))return a.result??i",
+          "anchor_sha256": "ef4661f2d37bc01bdf0f00eceb8a7cdc31056d6ea6d646de76e270e5b64f9cea"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-25-BQdcIBNa.js",
+          "module_sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+          "utf8_byte_start": 39955,
+          "utf8_byte_end_exclusive": 40048,
+          "anchor": "function yc(e,t,n){return typeof e==\"object\"&&e&&t in e?e[t]:e!=null&&typeof e!=\"object\"?e:n}",
+          "anchor_sha256": "00c4aec2ae8477bc67bd2959503ca8c322d8b6257ac85769687cade9feebdf1c"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-25-BQdcIBNa.js",
+          "module_sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+          "utf8_byte_start": 36620,
+          "utf8_byte_end_exclusive": 36705,
+          "anchor": "return s.success?s.data:(wc(a.type,a.name,a.key,t,s.error,s.threw?\"threw\":ks(t,i)),i)",
+          "anchor_sha256": "6f4b228c868da206a826eb7d0c6e701eb761b354742a33788e5224ea3bff1226"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-07",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-0-CIydqnOr.js",
+          "module_sha256": "710b12a51d9f978721d0683c8229d5d50e82507b7b7d13d49ae9cd6f30baa3e2",
+          "utf8_byte_start": 312135,
+          "utf8_byte_end_exclusive": 312280,
+          "anchor": "function JK(e,t=Date.now()){return e!==void 0&&e.data!==void 0&&!e.isInvalidated&&e.dataUpdatedAt>=qK&&e.dataUpdatedAt<=t&&t-e.dataUpdatedAt<6e4}",
+          "anchor_sha256": "fb6030bcf724fb92d8e4aaf606f8ca94372f814d39ffe037f2477c8101c0bd6e"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-0-CIydqnOr.js",
+          "module_sha256": "710b12a51d9f978721d0683c8229d5d50e82507b7b7d13d49ae9cd6f30baa3e2",
+          "utf8_byte_start": 312444,
+          "utf8_byte_end_exclusive": 312600,
+          "anchor": "function ZK(e,t){let n=t&&YK(t);if(!n){e.invalidateQueries(XK,{cancelRefetch:!1});return}JK(e.getQueryState(n.queryKey))||e.setQueryData(n.queryKey,n.data)}",
+          "anchor_sha256": "c2467b6de9e3b1ac2f6a343a2dbf598a46081a34c543caf277c29ebc70b70bb9"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-25-BQdcIBNa.js",
+          "module_sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+          "utf8_byte_start": 302879,
+          "utf8_byte_end_exclusive": 302949,
+          "anchor": "function aR(e){let t=KL(Hr(HL,qL),e);return t===void 0?iR[e]??X:sR(t)}",
+          "anchor_sha256": "1f1d81d61bcfc2a7aee1dbebefc3bbfd9ec4a822f6d39f5f058e740e106c2a55"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-04",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "module_sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "utf8_byte_start": 330725,
+          "utf8_byte_end_exclusive": 330824,
+          "anchor": "refetchInterval:e=>{let t=e.state.data;return!Array.isArray(t)||t.length===0?!1:t.some(_i)?5e3:3e5}",
+          "anchor_sha256": "17c6e15123e761e5344b279b4b440303401744f5d2921772b54574676802c4b5"
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+          "module_sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+          "utf8_byte_start": 330924,
+          "utf8_byte_end_exclusive": 330962,
+          "anchor": "r&&!o&&bh(a,{orgUuid:i,projectUuid:e})",
+          "anchor_sha256": "be06812ea1fbdda4b7b0ce239ec21fbd04df01a5e779d490324f40b85175847c"
+        }
+      ]
+    },
+    {
+      "review_id": "MFADV-08",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+          "module_sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+          "utf8_byte_start": 306296,
+          "utf8_byte_end_exclusive": 306323,
+          "anchor": "function iI(){return k(\"\")}",
+          "anchor_sha256": "c04c646ebfcf878c90e326f3234b517dbace8e080796d1fe2f745ddee6d9866d"
+        }
+      ]
+    }
+  ],
+  "publication_note": {
+    "source_paths": "Product-source paths are package-relative identifiers; original product files are not distributed. Teaching-model paths are relative to this ledger directory.",
+    "review_summary": "book-corrections.json",
+    "published_material": "Reviewed claims, source hashes, compact literal anchors and analysis limits; no full modules, raw graphs or research-computer paths."
+  }
+}

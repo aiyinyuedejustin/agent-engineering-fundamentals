@@ -1,0 +1,1423 @@
+{
+  "schema_version": 1,
+  "target": {
+    "product": "Claude Desktop",
+    "package_version": "2.37337.1",
+    "platform": "Linux x64",
+    "surface": "bundled ion-dist client",
+    "hosted_site_equivalence": "not established"
+  },
+  "scope": "Inert static source inspection and two bounded REA analyses; target code was never executed; no application endpoints were probed.",
+  "rea": [
+    {
+      "operation": "analyze_javascript_application",
+      "evidence_id": "ev_48d50c1c0abb68874003ecd689ae855a20d2cc44956a2055b2fc52011734d979",
+      "raw_result_sha256": "2c5b3ea95e4edf611e7d1d616e6e13b7f8412621ed68eee3bea3b3de62be3fac",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 12000,
+        "max_semantic_nodes_per_file": 3000,
+        "source_paths": [
+          "assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "assets/v1/c2bb74286-B_U3Ykl2.js",
+          "assets/v1/c3cbaca16-BL3UuVuE.js",
+          "assets/v1/c147e6f61-DhyK3m35.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 45000
+      },
+      "source_selection": {
+        "requested_paths": [
+          "assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "assets/v1/c2bb74286-B_U3Ykl2.js",
+          "assets/v1/c3cbaca16-BL3UuVuE.js",
+          "assets/v1/c147e6f61-DhyK3m35.js"
+        ],
+        "unselected_files": 3492
+      },
+      "statistics": {
+        "relevant_files": 3496,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 169549,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 4,
+        "visited_ast_nodes": 46962,
+        "findings": 763,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "application_coverage": {
+        "status": "partial",
+        "truncated": false,
+        "omitted_count": null,
+        "limits": []
+      },
+      "semantic_coverage": {
+        "status": "partial",
+        "truncated": true,
+        "omitted_nodes": null,
+        "omitted_relations": null,
+        "limits": [
+          {
+            "name": "semantic_graph_file_node_ceiling",
+            "value": 3000,
+            "unit": "items"
+          },
+          {
+            "name": "semantic_graph_node_ceiling",
+            "value": 12000,
+            "unit": "items"
+          }
+        ],
+        "families": [
+          {
+            "family": "boundary",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "call-flow",
+            "status": "partial",
+            "retained_relations": 406,
+            "omitted_relations": null,
+            "unknown_id_count": 5977
+          },
+          {
+            "family": "child-process",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "closure",
+            "status": "partial",
+            "retained_relations": 3837,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "configuration",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "data-flow",
+            "status": "partial",
+            "retained_relations": 5581,
+            "omitted_relations": null,
+            "unknown_id_count": 6781
+          },
+          {
+            "family": "event",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "object-flow",
+            "status": "partial",
+            "retained_relations": 61,
+            "omitted_relations": null,
+            "unknown_id_count": 6615
+          },
+          {
+            "family": "promise-ownership",
+            "status": "partial",
+            "retained_relations": 4,
+            "omitted_relations": null,
+            "unknown_id_count": 3464
+          },
+          {
+            "family": "request",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "resource-lifecycle",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "timer",
+            "status": "partial",
+            "retained_relations": 3,
+            "omitted_relations": null,
+            "unknown_id_count": 3463
+          }
+        ]
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 3492 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_graph_publication": "excluded; contains extracted application data"
+    },
+    {
+      "operation": "analyze_javascript_application",
+      "evidence_id": "ev_799ffadc09d17c8da7f4dfb4f2d3c3e18bf3e5b5374df31c8884ea01e5b8c73e",
+      "raw_result_sha256": "bcbb465df70ccf05fa9018c082a831f4d7867b79a132bd5b0a08fc0fa7a1a85e",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 12000,
+        "max_semantic_nodes_per_file": 3000,
+        "source_paths": [
+          "assets/v1/cc61d0d63-CISU76WY.js",
+          "assets/v1/c8d13a287-DgonFoFm.js",
+          "assets/v1/shared-15-J8PhW4f7.js",
+          "assets/v1/c180af5e0-BOkaYDLm.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 45000
+      },
+      "source_selection": {
+        "requested_paths": [
+          "assets/v1/cc61d0d63-CISU76WY.js",
+          "assets/v1/c8d13a287-DgonFoFm.js",
+          "assets/v1/shared-15-J8PhW4f7.js",
+          "assets/v1/c180af5e0-BOkaYDLm.js"
+        ],
+        "unselected_files": 3492
+      },
+      "statistics": {
+        "relevant_files": 3496,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 116481,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 4,
+        "visited_ast_nodes": 32905,
+        "findings": 436,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "application_coverage": {
+        "status": "partial",
+        "truncated": false,
+        "omitted_count": null,
+        "limits": []
+      },
+      "semantic_coverage": {
+        "status": "partial",
+        "truncated": true,
+        "omitted_nodes": null,
+        "omitted_relations": null,
+        "limits": [
+          {
+            "name": "semantic_graph_file_node_ceiling",
+            "value": 3000,
+            "unit": "items"
+          },
+          {
+            "name": "semantic_graph_node_ceiling",
+            "value": 12000,
+            "unit": "items"
+          }
+        ],
+        "families": [
+          {
+            "family": "boundary",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "call-flow",
+            "status": "partial",
+            "retained_relations": 406,
+            "omitted_relations": null,
+            "unknown_id_count": 5404
+          },
+          {
+            "family": "child-process",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "closure",
+            "status": "partial",
+            "retained_relations": 2919,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "configuration",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "data-flow",
+            "status": "partial",
+            "retained_relations": 4239,
+            "omitted_relations": null,
+            "unknown_id_count": 5903
+          },
+          {
+            "family": "event",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "object-flow",
+            "status": "partial",
+            "retained_relations": 206,
+            "omitted_relations": null,
+            "unknown_id_count": 6147
+          },
+          {
+            "family": "promise-ownership",
+            "status": "partial",
+            "retained_relations": 1,
+            "omitted_relations": null,
+            "unknown_id_count": 3462
+          },
+          {
+            "family": "request",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "resource-lifecycle",
+            "status": "partial",
+            "retained_relations": 0,
+            "omitted_relations": null,
+            "unknown_id_count": 3461
+          },
+          {
+            "family": "timer",
+            "status": "partial",
+            "retained_relations": 4,
+            "omitted_relations": null,
+            "unknown_id_count": 3463
+          }
+        ]
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 3492 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_graph_publication": "excluded; contains extracted application data"
+    }
+  ],
+  "claims": [
+    {
+      "id": "W01",
+      "finding": "Version selection prioritizes currently streaming/latest placeholder, then matching version UUID, tool-use ID, message UUID, and finally newest index.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 15380,
+          "byte_length": 50,
+          "anchor": "if(Y||c?.startsWith(\"new-assistant-message-uuid\"))",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 15326,
+          "byte_length": 29,
+          "anchor": "lt=s&&!at?.isClosed,Y=lt&&!Ce",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 21065,
+          "byte_length": 23,
+          "anchor": "handleVersionSelect:e=>",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W02",
+      "finding": "The body resolver compares nonempty server records with client-rebuilt versions, carries forward repeated client bodies, and has two guarded partial-record heuristics.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 11224,
+          "byte_length": 14,
+          "anchor": "function dn(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 11621,
+          "byte_length": 16,
+          "anchor": "function mn(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 11944,
+          "byte_length": 22,
+          "anchor": "follows_partial_record",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 12035,
+          "byte_length": 17,
+          "anchor": "record_is_partial",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "This is client conflict selection, not evidence of the server write/merge algorithm."
+    },
+    {
+      "id": "W03",
+      "finding": "Plain text forces raw source; Code/Markdown hide the mode switch. While current artifact is streaming, HTML/React/SVG/Mermaid cannot use normal preview. HTML/React expose refresh outside raw mode.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 18333,
+          "byte_length": 19,
+          "anchor": "sn=V?.type===L.Text",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 18434,
+          "byte_length": 26,
+          "anchor": "un=V?.type!==L.Text&&!(Y&&",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 15774,
+          "byte_length": 14,
+          "anchor": "he([K,ht??X,g]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 32182,
+          "byte_length": 36,
+          "anchor": "segments:[{value:\"normal\",icon:\"Eye\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 7534,
+          "byte_length": 14,
+          "anchor": "h===_.Code||g?",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W04",
+      "finding": "The code renderer uses a 500 ms comparison baseline for a streaming highlight flag, not a 500 ms source-content debounce. Update streams seek to the first differing line percentage; streaming end re-enables scrolling.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 11142,
+          "byte_length": 9,
+          "anchor": "var H=500",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 11389,
+          "byte_length": 19,
+          "anchor": "n!==!0&&e!==d&&f(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 11581,
+          "byte_length": 20,
+          "anchor": "children:e}),[e,i,p]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 12252,
+          "byte_length": 16,
+          "anchor": "function le(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 8610,
+          "byte_length": 27,
+          "anchor": "G.current.enableScrolling()",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W05",
+      "finding": "Rich rendering uses an iframe at configured userContentRendererUrl with sandbox allow-scripts/allow-same-origin, fullscreen/clipboard-write allowance, and no-referrer. Renderer query includes parentOrigin and optional parent error reporting.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 12450,
+          "byte_length": 34,
+          "anchor": "let{userContentRendererUrl:E}=oe()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 10585,
+          "byte_length": 14,
+          "anchor": "function At(e,",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 32903,
+          "byte_length": 41,
+          "anchor": "sandbox:\"allow-scripts allow-same-origin\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "Actual renderer origin/configuration, response headers/CSP, and renderer implementation were not obtained."
+    },
+    {
+      "id": "W06",
+      "finding": "The communicator sends a MessageChannel handshake; window messages must match the configured origin and exact iframe contentWindow. Port messages are parsed without an origin field, after the port is transferred through that window boundary.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 32977,
+          "byte_length": 26,
+          "anchor": "li=\"__sandbox_handshake__\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 33912,
+          "byte_length": 23,
+          "anchor": "sendHandshakeWithPort()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 35367,
+          "byte_length": 39,
+          "anchor": "if(e.origin!==this.allowedOrigin)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 35439,
+          "byte_length": 32,
+          "anchor": "if(t===null||e.source!==t)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 34042,
+          "byte_length": 20,
+          "anchor": "handlePortMessage(e)",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W07",
+      "finding": "Both ingress paths enforce a 30-message/5-second counter excluding recognized pending responses, parse envelope and method/payload schemas, reject duplicate tracked IDs, check permission, and map handler failures to a response.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 33330,
+          "byte_length": 33,
+          "anchor": "this.MAX_MESSAGES_PER_INTERVAL=30",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 34190,
+          "byte_length": 51,
+          "anchor": "this.isPendingResponse(e.data)||this.messageCount++",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 36998,
+          "byte_length": 24,
+          "anchor": "r=Re.safeParse(t.method)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37104,
+          "byte_length": 30,
+          "anchor": "let i=r.data,a=Pe.safeParse(t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37324,
+          "byte_length": 28,
+          "anchor": "Request ID already processed",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37566,
+          "byte_length": 25,
+          "anchor": "Error checking permission",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W08",
+      "finding": "Processed-request memory holds at most 1000 IDs; IDs longer than 256 characters are not stored in the de-duplication set. Capability promises are launched after awaited permission checks rather than serially awaited to completion.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 32963,
+          "byte_length": 13,
+          "anchor": "si=1e3,ci=256",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38208,
+          "byte_length": 29,
+          "anchor": "rememberProcessedRequestId(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37688,
+          "byte_length": 55,
+          "anchor": "this.onCapabilityAction(o,this.boundSendRequest,n).then",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "This bounded set is not unlimited replay prevention; separate schema limits must be evaluated independently."
+    },
+    {
+      "id": "W09",
+      "finding": "The generic sendRequest path has no timer in the inspected implementation. A disconnected iframe early-returns within the promise executor. Cleanup closes the port, removes listeners, and clears queued messages, without visibly settling every in-flight promise.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38426,
+          "byte_length": 25,
+          "anchor": "cleanup(){this.hostWindow",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38798,
+          "byte_length": 34,
+          "anchor": "if(!this.iframe.isConnected)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38939,
+          "byte_length": 31,
+          "anchor": "this.inFlightRequests.set(a,e=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c180af5e0-BOkaYDLm.js",
+          "utf8_byte_offset": 521,
+          "byte_length": 4,
+          "anchor": "C<20",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c180af5e0-BOkaYDLm.js",
+          "utf8_byte_offset": 558,
+          "byte_length": 6,
+          "anchor": "},500)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "This identifies a local missing completion edge, not proof that every caller hangs; individual callers may impose deadlines."
+    },
+    {
+      "id": "W10",
+      "finding": "Content state distinguishes initial undefined, an unacked sentinel, and an acknowledged type/content object. Content posts advance the sequence and invalidate acknowledgement unless the same type/body is already acknowledged. Only a successful current-sequence response restores acknowledgement. Inbound receipts snapshot sequence and content state, including undefined; an older receipt cannot inherit a later acknowledgement.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 9997,
+          "byte_length": 19,
+          "anchor": "O=Symbol(\"unacked\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 10017,
+          "byte_length": 18,
+          "anchor": "function St(e,t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 31355,
+          "byte_length": 45,
+          "anchor": "St(A.current,e,n)||(A.current=O,j.current+=1)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 18926,
+          "byte_length": 19,
+          "anchor": "Yn=c(async(t,r,i)=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 27537,
+          "byte_length": 35,
+          "anchor": "Zn=c(e=>({[Ct]:!0,postSeq:j.current",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 31605,
+          "byte_length": 30,
+          "anchor": "a&&r===j.current&&(A.current=t",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W11",
+      "finding": "ReadyForContent sets the renderer-ready state. SetContent is posted only after readiness and nonempty content/type, while content delivery, DOMContentLoaded, and first-paint timing are separate signals.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 19064,
+          "byte_length": 42,
+          "anchor": "t.method===v.ReadyForContent)return mt(!0)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 31243,
+          "byte_length": 20,
+          "anchor": "if(!D||!e||!n)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 24427,
+          "byte_length": 29,
+          "anchor": "t.method===v.DOMContentLoaded",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 25565,
+          "byte_length": 31,
+          "anchor": "t.method===v.ReportRenderTiming",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 9158,
+          "byte_length": 23,
+          "anchor": "e.phase===\"first_paint\"",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W12",
+      "finding": "Capabilities require their supplied handlers and method-specific content/consent checks. GetFile, SendConversationMessage and StorageGet/Set/Delete/List reject the unacked sentinel at their content gate, not undefined. ClaudeCompletion and ProxyFetch also reject unacked and apply separate consent/account/budget logic. External open/download uses the type/content matcher. Project/shared-data permissions can involve dialogs. Capture-only instances remove capability props and proxy fetch.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 12697,
+          "byte_length": 23,
+          "anchor": "F=P?void 0:ie,Jt=ae&&!P",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 19134,
+          "byte_length": 20,
+          "anchor": "t.method===v.GetFile",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 20295,
+          "byte_length": 36,
+          "anchor": "t.method===v.SendConversationMessage",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 20491,
+          "byte_length": 29,
+          "anchor": "t.method===v.ClaudeCompletion",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 21664,
+          "byte_length": 23,
+          "anchor": "t.method===v.StorageSet",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 26140,
+          "byte_length": 23,
+          "anchor": "t.method===v.ProxyFetch",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "Presence of a protocol method does not imply implementation or permission in every caller. RunCode exists in schemas but not this handler branch."
+    },
+    {
+      "id": "W13",
+      "finding": "External opens and downloads are separately mediated, require the shown content acknowledgement and reject capture-only use. Downloads strip control/bidi/path characters from filenames. UI asks before trusted download/open flows.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 24492,
+          "byte_length": 25,
+          "anchor": "t.method===v.OpenExternal",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 25090,
+          "byte_length": 25,
+          "anchor": "t.method===v.DownloadFile",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 9568,
+          "byte_length": 14,
+          "anchor": "function vt(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 1475,
+          "byte_length": 20,
+          "anchor": "function Ze({isOpen:",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W14",
+      "finding": "Proxy fetch accepts only the configured Anthropic hostname in this branch, forwards a small header allowlist, strips selected credential response headers, uses manual redirects, and streams with a 10 MiB body ceiling. At queue flush, fetch compares artifactIdentityKey; storage compares consentKey only when shared is true. Non-shared storage invokes the captured operation without that flush-time identity rejection. A separate enqueue path can reject the existing storage queue when a newly enqueued request has a different artifact UUID; this is not unconditional identity-change cleanup.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 4962,
+          "byte_length": 24,
+          "anchor": "st=[\"api.anthropic.com\"]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 4820,
+          "byte_length": 37,
+          "anchor": "T=new Set([\"accept\",\"accept-language\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 6461,
+          "byte_length": 27,
+          "anchor": "async function pt(e,r,i,a,o",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 7466,
+          "byte_length": 17,
+          "anchor": "redirect:\"manual\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 7969,
+          "byte_length": 18,
+          "anchor": "let i=0,a=10485760",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 27125,
+          "byte_length": 54,
+          "anchor": "fetch request cancelled: artifact changed while queued",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "Describes declared client dispatch; no endpoint was called and backend enforcement was not inspected."
+    },
+    {
+      "id": "W15",
+      "finding": "Renderer error schemas distinguish unsupported imports, runtime errors, missing files, completion errors, and storage errors. Error state records artifact ID/version/posted content; content changes and refresh clear stale errors.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-4-1vKV8QN9.js",
+          "utf8_byte_offset": 94919,
+          "byte_length": 28,
+          "anchor": "type:g(\"UnsupportedImports\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 8269,
+          "byte_length": 53,
+          "anchor": "J({error:e,artifactId:T,artifactVersion:D,content:q})",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c8d13a287-DgonFoFm.js",
+          "utf8_byte_offset": 9254,
+          "byte_length": 54,
+          "anchor": "e.artifactId!==T||e.artifactVersion!==D||e.content!==q",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2879f9ce-B3f0Ohnm.js",
+          "utf8_byte_offset": 961,
+          "byte_length": 24,
+          "anchor": "case\"UnsupportedImports\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2879f9ce-B3f0Ohnm.js",
+          "utf8_byte_offset": 3388,
+          "byte_length": 20,
+          "anchor": "disabled:u,loading:d",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W16",
+      "finding": "The local import-name list is used to classify unsupported-import errors for telemetry; it is not a recovered runtime module loader or definitive import allowlist.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c44cebf16-DwIc7pgO.js",
+          "utf8_byte_offset": 651,
+          "byte_length": 13,
+          "anchor": "function u(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c44cebf16-DwIc7pgO.js",
+          "utf8_byte_offset": 1247,
+          "byte_length": 13,
+          "anchor": "function d(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c44cebf16-DwIc7pgO.js",
+          "utf8_byte_offset": 1184,
+          "byte_length": 17,
+          "anchor": "subpath_of_listed",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "Actual React transformation, library versions/resolution, and Mermaid compiler remain renderer-side unknowns."
+    },
+    {
+      "id": "W17",
+      "finding": "A screenshot request requires capture-only mode, the credentialless property, and no observed private-data touch; it is bounded to 15 seconds and validates returned image size/type. Live-frame capture is deliberately rejected.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29532,
+          "byte_length": 21,
+          "anchor": "screenshot_live_frame",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29595,
+          "byte_length": 29,
+          "anchor": "screenshot_not_credentialless",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29708,
+          "byte_length": 41,
+          "anchor": "new Promise(e=>setTimeout(()=>e(r),15e3))",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 30052,
+          "byte_length": 32,
+          "anchor": "if(i.screenshot.length>10485760)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29479,
+          "byte_length": 23,
+          "anchor": "screenshot_private_data",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W18",
+      "finding": "The separate Mermaid diagram component also waits for ReadyForContent before SetContent; it denies requested non-always-permitted capabilities and shows the source with an error message on rejected render.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c368fdb57-DkgPnN-m.js",
+          "utf8_byte_offset": 157357,
+          "byte_length": 14,
+          "anchor": "tr(Ot.Mermaid)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c368fdb57-DkgPnN-m.js",
+          "utf8_byte_offset": 157830,
+          "byte_length": 33,
+          "anchor": "y=m(()=>Promise.resolve(\"denied\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c368fdb57-DkgPnN-m.js",
+          "utf8_byte_offset": 158359,
+          "byte_length": 25,
+          "anchor": "Unable to render diagram.",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "This distinct transcript-diagram component must not be confused with the full artifact pane."
+    },
+    {
+      "id": "W19",
+      "finding": "Frame workspace messages use a different same-origin chrome protocol. Version reports validate marker/state/UUID/availability, match source window and artifact UUID, and carry preview/live version state.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 28341,
+          "byte_length": 14,
+          "anchor": "function cn(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 28738,
+          "byte_length": 20,
+          "anchor": "function ln(e,t,n,r)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 28021,
+          "byte_length": 19,
+          "anchor": "cmd:\"preview\",ver:t",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W20",
+      "finding": "Embedded frame version-preview commands are accepted only when owner/writer preview support is available; the receiver checks same-origin parent or permitted opener source, validates the command, and applies a 250 ms floor.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/frame-shell-chrome-B45f-YAC.js",
+          "utf8_byte_offset": 1534832,
+          "byte_length": 14,
+          "anchor": "function vJ(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/frame-shell-chrome-B45f-YAC.js",
+          "utf8_byte_offset": 1545872,
+          "byte_length": 39,
+          "anchor": "Mt=At||kt===\"writer\",Nt=d&&Mt?i.preview",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/frame-shell-chrome-B45f-YAC.js",
+          "utf8_byte_offset": 1546038,
+          "byte_length": 16,
+          "anchor": "n-Pt.current<250",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/frame-shell-chrome-B45f-YAC.js",
+          "utf8_byte_offset": 1546310,
+          "byte_length": 32,
+          "anchor": "state:\"version\",uuid:i.frameUuid",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "This exposes an editor boundary; it does not recover a collaborative editing algorithm or server persistence guarantee."
+    },
+    {
+      "id": "W21",
+      "finding": "Page chrome validates a versioned object containing save state, action/export descriptors, comment count, optional layout/background values, and leaveLosesWork. The host renders a save indicator and optional save-now action from this reported state.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 58148,
+          "byte_length": 66,
+          "anchor": "Kr=new Set([\"saved\",\"saving\",\"unsaved\",\"reconnecting\",\"readonly\"])",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 59169,
+          "byte_length": 14,
+          "anchor": "function $r(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 75692,
+          "byte_length": 20,
+          "anchor": "function zi({saved:t",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 58372,
+          "byte_length": 11,
+          "anchor": "e.length>18",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 58244,
+          "byte_length": 4,
+          "anchor": "Jr=8",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "A saved indicator is a reported editor state, not independent evidence of durable server storage."
+    },
+    {
+      "id": "W22",
+      "finding": "Workspace dialog/fullscreen/minimized modes are scoped in memory; minimizing preserves the previous visible mode, and scope teardown forgets it. A switcher changes artifact keys, separately from selecting artifact version.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c10f0af0c-CwfaDzac.js",
+          "utf8_byte_offset": 25825,
+          "byte_length": 43,
+          "anchor": "var iN={mode:\"dialog\",restoreMode:\"dialog\"}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c10f0af0c-CwfaDzac.js",
+          "utf8_byte_offset": 547812,
+          "byte_length": 22,
+          "anchor": "S(()=>()=>cN(Wt),[Wt])",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 6940,
+          "byte_length": 45,
+          "anchor": "function ht({frames:t,currentKey:i,onSelect:a",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 9429,
+          "byte_length": 11,
+          "anchor": "closeTab:fe",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c3cbaca16-BL3UuVuE.js",
+          "utf8_byte_offset": 4365,
+          "byte_length": 34,
+          "anchor": "e.setMode(c?\"dialog\":\"fullscreen\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c3cbaca16-BL3UuVuE.js",
+          "utf8_byte_offset": 23489,
+          "byte_length": 30,
+          "anchor": "yr=new Set([\"cr\",\"pr\",\"gdrive\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c3cbaca16-BL3UuVuE.js",
+          "utf8_byte_offset": 27799,
+          "byte_length": 16,
+          "anchor": "qt=N.offered&&!M",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "No claim that this viewer mode, complete tab arrangement, or full version history persists across process restart."
+    },
+    {
+      "id": "W23",
+      "finding": "Chat artifact Escape closes only if relevant overlays/menus are absent; HTML comment mode consumes Escape first. Close restores the remembered trigger focus or composer fallback. Frame minimize controls also implement focus restoration.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 20105,
+          "byte_length": 44,
+          "anchor": "t.key===\"Escape\"&&V&&!Ye&&!_t&&!se&&!$t&&!Hn",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 20151,
+          "byte_length": 26,
+          "anchor": "if(t.stopPropagation(),Nn)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js",
+          "utf8_byte_offset": 20206,
+          "byte_length": 39,
+          "anchor": "restoreFocusToTrigger({elseComposer:G})",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c3cbaca16-BL3UuVuE.js",
+          "utf8_byte_offset": 27456,
+          "byte_length": 35,
+          "anchor": "[data-artifact-viewer-mode-control]",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W24",
+      "finding": "The supplied schemas include strings for HTML, React, Mermaid, SVG, Markdown, Code and text artifact types; the chat body and sandbox split follow those tags.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-104-lA7EKODn.js",
+          "utf8_byte_offset": 283402,
+          "byte_length": 46,
+          "anchor": "e.Text=\"text/plain\",e.Markdown=\"text/markdown\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-4-1vKV8QN9.js",
+          "utf8_byte_offset": 96239,
+          "byte_length": 36,
+          "anchor": "tailwindStylesEnabled:s().optional()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "An optional schema field is not proof that a particular renderer enables that feature."
+    }
+  ],
+  "files": {
+    "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js": {
+      "size_bytes": 38917,
+      "sha256": "95a1c25c4b469b2848ca0b5da51594f26f13a0659c603a2e8572ad42a5306987"
+    },
+    "ion-dist/assets/v1/c8d13a287-DgonFoFm.js": {
+      "size_bytes": 12678,
+      "sha256": "a8ebc3b2de2b5a79a760188d83a94327058fb6ee7c5663cf40ef5ae6cadf6f00"
+    },
+    "ion-dist/assets/v1/cc61d0d63-CISU76WY.js": {
+      "size_bytes": 35385,
+      "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+    },
+    "ion-dist/assets/v1/shared-15-J8PhW4f7.js": {
+      "size_bytes": 66948,
+      "sha256": "a3c20215d932fba2c281ab081fe06b9d077d2248df481650d3de4d206cb7502d"
+    },
+    "ion-dist/assets/v1/c180af5e0-BOkaYDLm.js": {
+      "size_bytes": 1470,
+      "sha256": "e62a431731aa8b7f39a15b9a49cef980537075dd6bd45df675ab978c49d9cae8"
+    },
+    "ion-dist/assets/v1/shared-4-1vKV8QN9.js": {
+      "size_bytes": 259727,
+      "sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852"
+    },
+    "ion-dist/assets/v1/c2879f9ce-B3f0Ohnm.js": {
+      "size_bytes": 3624,
+      "sha256": "940d73397634010e230759a485eb9931ca782641d39ccb69d98d4232d2f415c1"
+    },
+    "ion-dist/assets/v1/c44cebf16-DwIc7pgO.js": {
+      "size_bytes": 2021,
+      "sha256": "d8fd9400d9eb6f3cc21c9dace3dc3d4b0317fdca30f92c2355f12d43fda654ee"
+    },
+    "ion-dist/assets/v1/c368fdb57-DkgPnN-m.js": {
+      "size_bytes": 362039,
+      "sha256": "987019f27a79225ff5d7e8d2dafc78bf51b55cc2ec87f4b7fc40824f787a3732"
+    },
+    "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js": {
+      "size_bytes": 77695,
+      "sha256": "3b14985e56448bb2d74dcd16682f0a2972f50c25f00f7ac4f0416a67a5908697"
+    },
+    "ion-dist/assets/v1/frame-shell-chrome-B45f-YAC.js": {
+      "size_bytes": 1562073,
+      "sha256": "4a887d2bbc385c43100b324800bda5a9afe6655ccff36e162727169c8620fb03"
+    },
+    "ion-dist/assets/v1/c10f0af0c-CwfaDzac.js": {
+      "size_bytes": 613634,
+      "sha256": "e6cf4d335764c0d2f540a06ce3c46e409eb885fc9f2981971aa4173959ee9e68"
+    },
+    "ion-dist/assets/v1/c3cbaca16-BL3UuVuE.js": {
+      "size_bytes": 38869,
+      "sha256": "62411b53d16698b0377991374eb0258c469a74acc4b627da35f342445fa20495"
+    },
+    "ion-dist/assets/v1/shared-104-lA7EKODn.js": {
+      "size_bytes": 348029,
+      "sha256": "60a441eeb9086024face5a823bce2cc9a1129d592aafb58db615f72f57398983"
+    }
+  },
+  "unknown_edges": [
+    "Configured renderer deployment bytes and HTTP CSP",
+    "React compile/transform and library resolution implementation",
+    "SVG and Mermaid renderer sanitization/configuration",
+    "Collaborative editor transaction/merge behavior",
+    "Server version write, persistence, permission, and conflict algorithms",
+    "Current production flags and hosted-page equivalence",
+    "Universal tab and selected-version restoration across reloads"
+  ],
+  "original_model": {
+    "file": "../../core-code-lab/workspace-core/workspaces-model.mjs",
+    "test_file": "../../core-code-lab/workspace-core/workspaces-model.test.mjs",
+    "test_command": "node --test ../../core-code-lab/workspace-core/workspaces-model.test.mjs",
+    "tests_passed": 12,
+    "runtime_scope": "Only original pure JavaScript model was run. No Claude code was imported or executed.",
+    "important_differences": [
+      "Simplified ContentEpoch not wire-compatible",
+      "inspectInbound omits the real MessagePort, schema, rate, and permission machinery",
+      "withDeadline is an explicit design improvement; generic observed sendRequest has no timer"
+    ]
+  },
+  "applied_review_corrections": [
+    {
+      "review_id": "NVA-AR-01",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 12563,
+          "anchor": "A=r(void 0),j=r(0)",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 10017,
+          "anchor": "function St(e,t,n)",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 18946,
+          "anchor": "let a=!wt(i)||A.current===O?A.current:i.postSeq===j.current?i.acked:O",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 19343,
+          "anchor": "if(a===O)return N.current=o,s(null)",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 21352,
+          "anchor": "if(!F?.storage?.get||a===O)",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        }
+      ]
+    },
+    {
+      "review_id": "NVA-AR-02",
+      "review": "book-corrections.json",
+      "source_evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 18481,
+          "anchor": "let Gn=c((e,t,n)=>T?new Promise",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 28207,
+          "anchor": "if(i!==U)",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 28639,
+          "anchor": "if(r.shared===!0&&i!==W)",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 28812,
+          "anchor": "try{t(await e())}catch(e){n(e)}",
+          "occurrence_zero_based": 0,
+          "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+        }
+      ]
+    }
+  ],
+  "publication_note": {
+    "source_paths": "Product-source paths are package-relative identifiers; original product files are not distributed. Teaching-model paths are relative to this ledger directory.",
+    "review_summary": "book-corrections.json",
+    "published_material": "Reviewed claims, source hashes, compact literal anchors and analysis limits; no full modules, raw graphs or research-computer paths."
+  }
+}

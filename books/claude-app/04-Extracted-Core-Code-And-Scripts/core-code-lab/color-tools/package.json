@@ -1,0 +1,8 @@
+{
+  "name": "portable-color-catalog-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optional simulated-DOM checks; the catalog tools themselves only need Python.",
+  "engines": { "node": ">=18" },
+  "devDependencies": { "jsdom": "26.1.0" }
+}

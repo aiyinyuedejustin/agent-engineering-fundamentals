@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1250" viewBox="0 0 1440 1250" role="img" aria-labelledby="title desc">
+<title id="title">同一棵消息树上的编辑分支与重试分支</title><desc id="desc">左右绘制相同消息树。左边选中 Root H1 A1 H2b A2b，右边选中 Root H1 A1b H3。下方分别显示对应 transcript。编辑 human 在原父节点下新建 human 兄弟及 assistant，重试 assistant 在同一 human 下新建 assistant 兄弟，旧分支均保留。</desc>
+<style>text{font-family:"Noto Sans CJK SC",system-ui,sans-serif} .mono{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace}</style>
+<defs><marker id="arrow-muted" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#67645c"/></marker><marker id="arrow-rust" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#a65539"/></marker><marker id="arrow-sage" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#466957"/></marker></defs>
+<rect x="0" y="0" width="1440" height="1250" rx="0" fill="#f5f3ec"/>
+<text x="60" y="56" font-size="18" fill="#a65539" font-weight="600" text-anchor="start">卷 08 · CONVERSATION TREE / 原创学习图</text>
+<text x="60" y="110" font-size="37" fill="#25231e" font-weight="700" text-anchor="start">一棵消息树，两条可见历史</text>
+<text x="60" y="148" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">编辑与重试会增加兄弟节点；显示哪条历史，由各层选中的子节点共同决定。</text>
+<rect x="60" y="181" width="640" height="655" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="85" y="221" font-size="23" fill="#a65539" font-weight="650" text-anchor="start">A · 选择编辑分支的叶子 A2b</text>
+<text x="85" y="254" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">H2b 与 H2 是 A1 下的 human 兄弟</text>
+<path d="M375 422 V446.0 H555 V470" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M270 516 V544.0 H175 V572" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M175 618 V646.0 H175 V674" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M555 516 V544.0 H555 V572" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M375 340 V358.0 H375 V376" fill="none" stroke="#a65539" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M375 422 V446.0 H270 V470" fill="none" stroke="#a65539" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M270 516 V544.0 H375 V572" fill="none" stroke="#a65539" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M375 618 V646.0 H375 V674" fill="none" stroke="#a65539" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="314.0" y="294" width="122" height="46" rx="10" fill="#a65539"/>
+<text x="375" y="325" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">Root</text>
+<rect x="322.0" y="376" width="106" height="46" rx="10" fill="#a65539"/>
+<text x="375" y="407" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">H1</text>
+<rect x="217.0" y="470" width="106" height="46" rx="10" fill="#a65539"/>
+<text x="270" y="501" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">A1</text>
+<rect x="502.0" y="470" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="555" y="501" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">A1b</text>
+<rect x="122.0" y="572" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="175" y="603" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">H2</text>
+<rect x="322.0" y="572" width="106" height="46" rx="10" fill="#a65539"/>
+<text x="375" y="603" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">H2b</text>
+<rect x="502.0" y="572" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="555" y="603" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">H3</text>
+<rect x="122.0" y="674" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="175" y="705" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">A2</text>
+<rect x="322.0" y="674" width="106" height="46" rx="10" fill="#a65539"/>
+<text x="375" y="705" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">A2b</text>
+<rect x="85" y="747" width="590" height="64" rx="10" fill="#f2e2d7"/>
+<text x="103" y="771" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">可见 transcript（不含 Root）</text>
+<text x="103" y="800" font-size="24" fill="#a65539" font-weight="600" text-anchor="start">H1 → A1 → H2b → A2b</text>
+<rect x="740" y="181" width="640" height="655" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="765" y="221" font-size="23" fill="#466957" font-weight="650" text-anchor="start">B · 选择重试分支中的 H3</text>
+<text x="765" y="254" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">A1b 与 A1 是 H1 下的 assistant 兄弟</text>
+<path d="M1055 422 V446.0 H950 V470" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M950 516 V544.0 H855 V572" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M950 516 V544.0 H1055 V572" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M855 618 V646.0 H855 V674" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1055 618 V646.0 H1055 V674" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1055 340 V358.0 H1055 V376" fill="none" stroke="#466957" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1055 422 V446.0 H1235 V470" fill="none" stroke="#466957" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1235 516 V544.0 H1235 V572" fill="none" stroke="#466957" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="994.0" y="294" width="122" height="46" rx="10" fill="#466957"/>
+<text x="1055" y="325" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">Root</text>
+<rect x="1002.0" y="376" width="106" height="46" rx="10" fill="#466957"/>
+<text x="1055" y="407" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">H1</text>
+<rect x="897.0" y="470" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="950" y="501" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">A1</text>
+<rect x="1182.0" y="470" width="106" height="46" rx="10" fill="#466957"/>
+<text x="1235" y="501" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">A1b</text>
+<rect x="802.0" y="572" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="855" y="603" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">H2</text>
+<rect x="1002.0" y="572" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="1055" y="603" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">H2b</text>
+<rect x="1182.0" y="572" width="106" height="46" rx="10" fill="#466957"/>
+<text x="1235" y="603" font-size="23" fill="#fcfcfa" font-weight="650" text-anchor="middle">H3</text>
+<rect x="802.0" y="674" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="855" y="705" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">A2</text>
+<rect x="1002.0" y="674" width="106" height="46" rx="10" fill="#eeeae1"/>
+<text x="1055" y="705" font-size="23" fill="#67645c" font-weight="400" text-anchor="middle">A2b</text>
+<rect x="765" y="747" width="590" height="64" rx="10" fill="#e7ece7"/>
+<text x="783" y="771" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">可见 transcript（不含 Root）</text>
+<text x="783" y="800" font-size="24" fill="#466957" font-weight="600" text-anchor="start">H1 → A1b → H3</text>
+<path d="M85 869L130 869" fill="none" stroke="#a65539" stroke-width="5" stroke-linecap="round"/>
+<text x="144" y="877" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">粗线 + 实心节点：选中路径</text>
+<path d="M535 869L580 869" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linecap="round"/>
+<text x="594" y="877" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">浅线 + 浅底节点：保留的其他分支</text>
+<text x="1375" y="877" font-size="18" fill="#67645c" font-weight="400" text-anchor="end">H = human；A = assistant</text>
+<rect x="60" y="912" width="640" height="244" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="85" y="951" font-size="22" fill="#25231e" font-weight="650" text-anchor="start">编辑 human：复用原 parent，新增 H + A</text>
+<rect x="740" y="912" width="640" height="244" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="765" y="951" font-size="22" fill="#25231e" font-weight="650" text-anchor="start">重试 assistant：同一 H 下新增 A</text>
+<rect x="90" y="1020" width="100" height="44" rx="9" fill="#eeeae1"/>
+<text x="140.0" y="1049" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">A1</text>
+<path d="M190 1042 H224 V1008 H255" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="255" y="986" width="105" height="44" rx="9" fill="#eeeae1"/>
+<text x="307.5" y="1015" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">H2</text>
+<path d="M360 1008L405 1008" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linecap="round"/>
+<rect x="405" y="986" width="105" height="44" rx="9" fill="#eeeae1"/>
+<text x="457.5" y="1015" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">A2</text>
+<text x="530" y="1015" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">保留</text>
+<path d="M190 1042 H224 V1083 H255" fill="none" stroke="#a65539" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="255" y="1061" width="105" height="44" rx="9" fill="#f2e2d7"/>
+<text x="307.5" y="1090" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">H2b</text>
+<path d="M360 1083L405 1083" fill="none" stroke="#a65539" stroke-width="3" stroke-linecap="round"/>
+<rect x="405" y="1061" width="105" height="44" rx="9" fill="#f2e2d7"/>
+<text x="457.5" y="1090" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">A2b</text>
+<text x="530" y="1090" font-size="18" fill="#a65539" font-weight="400" text-anchor="start">新增</text>
+<text x="90" y="1134" font-size="18" fill="#67645c" font-weight="400" text-anchor="start" class="mono">H2b.parent = H2.parent = A1</text>
+<rect x="770" y="1020" width="100" height="44" rx="9" fill="#eeeae1"/>
+<text x="820.0" y="1049" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">H1</text>
+<path d="M870 1042 H915 V1008 H960" fill="none" stroke="#d9d5cb" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="960" y="986" width="110" height="44" rx="9" fill="#eeeae1"/>
+<text x="1015.0" y="1015" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">A1</text>
+<text x="1100" y="1015" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">保留原回复及后代</text>
+<path d="M870 1042 H915 V1083 H960" fill="none" stroke="#466957" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="960" y="1061" width="110" height="44" rx="9" fill="#e7ece7"/>
+<text x="1015.0" y="1090" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">A1b</text>
+<text x="1100" y="1090" font-size="18" fill="#466957" font-weight="400" text-anchor="start">新增回复版本</text>
+<text x="770" y="1134" font-size="18" fill="#67645c" font-weight="400" text-anchor="start" class="mono">A1b.parent = A1.parent = H1</text>
+<text x="60" y="1202" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">连线表示 parent → child；同一节点只有一个 parent。切换分支只改变选中路径，不必新增或删除节点。</text>
+</svg>

@@ -1,0 +1,13 @@
+%% Original explanatory diagram for the book.
+flowchart LR
+    UI["对话页面"] -->|"LocalAgentModeSessions IPC"| SM["主进程会话管理器"]
+    SM -->|"query: prompt stream + options"| SDK["Agent SDK"]
+    SDK <-->|"stream-json 与 control RPC"| CLI["Claude Code 进程"]
+    CLI --> INF["推理服务：本卷证据边界之外"]
+    CLI --> BUILTIN["CLI 内建工具"]
+    CLI -->|"mcp_message"| SDK
+    SDK --> HOSTMCP["主进程 SDK-hosted MCP"]
+    HOSTMCP --> VM["workspace VM"]
+    HOSTMCP --> CU["主机 computer-use executor"]
+    SDK -->|"SDK messages"| SM
+    SM -->|"消息与会话事件"| UI

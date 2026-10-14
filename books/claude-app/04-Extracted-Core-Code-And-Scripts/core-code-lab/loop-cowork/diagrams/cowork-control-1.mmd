@@ -1,0 +1,12 @@
+%% Original explanatory diagram for the book.
+flowchart TB
+    CALL["模型产生工具调用"] --> OWNER{"工具执行 owner"}
+    OWNER -->|"Read / Write，host-loop"| FILE["主机 CLI + 路径/策略检查"]
+    OWNER -->|"Bash alias"| MCP["workspace MCP"]
+    MCP --> VM["VM：bash -c + 本次 mounts"]
+    OWNER -->|"computer-use"| BIND["session binder：grants / locks / screenshot frame"]
+    BIND --> PLATFORM{"host platform"}
+    PLATFORM --> X11["Linux X11 native adapter"]
+    PLATFORM --> WAYLAND["Wayland portal adapter"]
+    PLATFORM --> MAC["macOS Swift/native adapter"]
+    PLATFORM --> WIN["Windows native adapter"]

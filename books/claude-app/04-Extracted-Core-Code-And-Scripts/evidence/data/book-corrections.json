@@ -1,0 +1,236 @@
+{
+  "schema": "claude-book-corrections/v1",
+  "status": "applied_and_verified_in_source_review_then_integrated",
+  "review_completed_at_utc": "2026-10-14T23:20:49.192502+00:00",
+  "summary": {
+    "findings_applied": 20,
+    "draft_findings": 19,
+    "ledger_only_findings": 1,
+    "review_verified_source_anchor_entries": 54,
+    "review_verified_unique_source_files": 16
+  },
+  "scope": "Eight corrected book volumes and five corresponding source-evidence ledgers; publication changes only normalize links and add navigation. The mobile supplemental chapter is outside this correction set.",
+  "findings": [
+    {
+      "id": "NVA-AR-01",
+      "severity": "high",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md",
+        "workspaces-deep-dive.json"
+      ],
+      "review_source_checks": 5,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "NVA-AR-02",
+      "severity": "high",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md",
+        "workspaces-deep-dive.json"
+      ],
+      "review_source_checks": 4,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "NVA-CU-04",
+      "severity": "high",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+        "agent-loop-cowork.json"
+      ],
+      "review_source_checks": 4,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "NVA-CU-01",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+        "agent-loop-cowork.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "NVA-CU-02",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+        "agent-loop-cowork.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "NVA-CU-03",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+        "agent-loop-cowork.json"
+      ],
+      "review_source_checks": 1,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "PI-A01",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md",
+        "input-pipeline.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "PI-A02",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md",
+        "input-pipeline.json"
+      ],
+      "review_source_checks": 1,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-01",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-02",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-03",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-05",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 5,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-06",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 4,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-07",
+      "severity": "medium",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 3,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "PI-A03",
+      "severity": "low",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md",
+        "input-pipeline.json"
+      ],
+      "review_source_checks": 1,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "PI-A04",
+      "severity": "low",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md",
+        "protocol-tree-streaming.json"
+      ],
+      "review_source_checks": 2,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "PI-A05",
+      "severity": "low",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md",
+        "protocol-tree-streaming.json"
+      ],
+      "review_source_checks": 1,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "PI-A06",
+      "severity": "low",
+      "status": "applied",
+      "affected_publication_paths": [
+        "input-pipeline.json"
+      ],
+      "review_source_checks": 2,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-04",
+      "severity": "low",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 2,
+      "source_anchors_and_hashes_verified": true
+    },
+    {
+      "id": "MFADV-08",
+      "severity": "low",
+      "status": "applied",
+      "affected_publication_paths": [
+        "../../../02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+        "memory-flags.json"
+      ],
+      "review_source_checks": 1,
+      "source_anchors_and_hashes_verified": true
+    }
+  ],
+  "verification_scope": "Verified all 20 review corrections against inert source bytes and original source hashes; checked exact draft replacements and JSON validity. No application execution, endpoint requests or target-module imports. Original executable teaching blocks are preserved; only the JPEG pseudocode comparison and explanatory comments/diagrams were corrected.",
+  "publication_policy": "Only review identifiers, scope, outcomes and source-identity metadata are included here; detailed corrected claims and compact anchors remain in each chapter evidence ledger."
+}

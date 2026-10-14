@@ -6,6 +6,25 @@
 
 本章以官方 Claude Desktop Linux x64 2.37337.1 为静态样本，结合截至 2026-10-14 读取的官方文档。重点是扩展宿主如何管理可变状态，以及本地 MCP、账户远程连接器、插件和 Claude Code 为什么不能混用配置与权限结论。
 
+## 一张图：安装到调用的五道门
+
+```mermaid
+flowchart LR
+    Package[扩展包与清单] --> Installed[已安装]
+    Installed --> Enable{用户或策略启用?}
+    Enable --> Config{配置有效?}
+    Config --> Runtime[选择运行时并启动]
+    Runtime --> Connection{协议连接就绪?}
+    Connection --> Permission{具体工具调用获准?}
+    Permission --> Call[执行调用并返回结果]
+    Config --> Repair[修正配置]
+    Connection --> Failure[连接失败或等待恢复]
+    Permission --> Denied[拒绝或等待确认]
+```
+
+图中每个判断负责不同的契约；“包存在”“进程已启动”和“动作可执行”不是同一个布尔值。重启工具只能处理运行与连接问题，不能自动修复错误配置或取得用户授权。
+
+
 ## 本章地图
 
 [01 集成的四个坐标](#01-集成的四个坐标) · [02 清单与配置](#02-清单与配置) · [03 本地进程生命周期](#03-本地进程生命周期) · [04 权限与隔离](#04-权限与隔离) · [05 Desktop 与 Code](#05-desktop-与-code) · [06 原创例子与验证](#06-原创例子与验证)

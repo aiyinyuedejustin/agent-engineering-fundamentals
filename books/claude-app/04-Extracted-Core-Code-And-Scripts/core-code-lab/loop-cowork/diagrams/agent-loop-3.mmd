@@ -1,0 +1,17 @@
+%% Original explanatory diagram for the book.
+sequenceDiagram
+    participant CLI as Claude Code
+    participant SDK as Agent SDK
+    participant HOST as 主进程权限路由
+    participant UI as 用户界面
+    CLI->>SDK: control_request(can_use_tool, request_id)
+    SDK->>HOST: canUseTool(name, input, context)
+    alt 前置规则可决定
+        HOST-->>SDK: allow / deny
+    else 需要用户决定
+        HOST->>UI: tool_permission_request(card requestId)
+        UI->>HOST: respondToToolPermission(requestId, decision, input?)
+        HOST-->>SDK: allow / deny + updatedInput / permissions?
+    end
+    SDK-->>CLI: control_response(same protocol request_id)
+    Note over CLI,HOST: 权限回答完成后，实际执行仍由对应工具拥有者负责

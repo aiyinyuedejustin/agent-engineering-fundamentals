@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1390" viewBox="0 0 1440 1390" role="img" aria-labelledby="title desc">
+<title id="title">从 UTF-8 字节到 SSE 事件、内容块与界面绘制</title><desc id="desc">原创文本你好用 UTF-8 编码。第一块在你的 E4 BD 与 A0 之间切开，第二块在数据行 CR 与 LF 之间切开。行解析保留状态，空行闭帧。JSON 中 index 为零，text_delta 追加你好到已打开的文本块，再经合并交付与绘制显示。</desc>
+<style>text{font-family:"Noto Sans CJK SC",system-ui,sans-serif} .mono{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace}</style>
+<defs><marker id="arrow-muted" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#67645c"/></marker><marker id="arrow-rust" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#a65539"/></marker><marker id="arrow-sage" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8Z" fill="#466957"/></marker></defs>
+<rect x="0" y="0" width="1440" height="1390" rx="0" fill="#f5f3ec"/>
+<text x="60" y="56" font-size="18" fill="#a65539" font-weight="600" text-anchor="start">卷 04 → 卷 08 · STREAMING / 原创学习图</text>
+<text x="60" y="110" font-size="37" fill="#25231e" font-weight="700" text-anchor="start">从被切开的汉字，到一条可见回复</text>
+<text x="60" y="148" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">网络 chunk、SSE 事件、内容块状态和界面绘制，各有自己的边界。</text>
+<rect x="60" y="180" width="1320" height="413" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="90" y="222" font-size="25" fill="#25231e" font-weight="650" text-anchor="start">① 原始输入：一帧 SSE，文本是「你好」</text>
+<text x="90" y="255" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">本图自造测试数据；CR = 0D，LF = 0A；方括号显示换行字节，不是正文字符。</text>
+<rect x="90" y="278" width="1260" height="100" rx="10" fill="#eeeae1"/>
+<text x="110" y="312" font-size="20" fill="#25231e" font-weight="400" text-anchor="start" class="mono">event: content_block_delta [CR][LF]</text>
+<text x="110" y="344" font-size="19" fill="#25231e" font-weight="400" text-anchor="start" class="mono">data: {&quot;type&quot;:&quot;content_block_delta&quot;,&quot;index&quot;:0,&quot;delta&quot;:{&quot;type&quot;:&quot;text_delta&quot;,&quot;text&quot;:&quot;你好&quot;}} [CR][LF]</text>
+<text x="110" y="369" font-size="18" fill="#a65539" font-weight="400" text-anchor="start" class="mono">[CR][LF]  ← 空行结束这一帧</text>
+<rect x="90" y="410" width="420" height="130" rx="12" fill="#f2e2d7"/>
+<text x="108" y="440" font-size="21" fill="#25231e" font-weight="650" text-anchor="start">chunk 1</text>
+<text x="492" y="440" font-size="17" fill="#67645c" font-weight="400" text-anchor="end">113 字节</text>
+<text x="108" y="481" font-size="22" fill="#a65539" font-weight="600" text-anchor="start" class="mono">… 22 E4 BD</text>
+<text x="108" y="518" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">行前缀省略；“你”只到前 2 字节</text>
+<rect x="530" y="410" width="540" height="130" rx="12" fill="#f2e2d7"/>
+<text x="548" y="440" font-size="21" fill="#25231e" font-weight="650" text-anchor="start">chunk 2</text>
+<text x="1052" y="440" font-size="17" fill="#67645c" font-weight="400" text-anchor="end">8 字节</text>
+<text x="548" y="481" font-size="22" fill="#a65539" font-weight="600" text-anchor="start" class="mono">A0 E5 A5 BD 22 7D 7D 0D</text>
+<text x="548" y="518" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">补齐“你”与“好”，停在数据行 CR</text>
+<rect x="1090" y="410" width="260" height="130" rx="12" fill="#e7ece7"/>
+<text x="1108" y="440" font-size="21" fill="#25231e" font-weight="650" text-anchor="start">chunk 3</text>
+<text x="1332" y="440" font-size="17" fill="#67645c" font-weight="400" text-anchor="end">3 字节</text>
+<text x="1108" y="481" font-size="22" fill="#466957" font-weight="600" text-anchor="start" class="mono">0A 0D 0A</text>
+<text x="1108" y="518" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">LF + 空行 CRLF</text>
+<text x="90" y="574" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">“你” = E4 BD A0；“好” = E5 A5 BD。chunk 1 / 2 切开一个汉字，chunk 2 / 3 切开 CRLF。</text>
+<path d="M720 602L720 625" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="60" y="636" width="1320" height="236" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="90" y="679" font-size="25" fill="#25231e" font-weight="650" text-anchor="start">② 先还原行与帧，再解析 JSON</text>
+<text x="90" y="722" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">保留不完整行与 CRLF 状态。</text>
+<text x="90" y="754" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">完整 data 行才解码并处理字段。</text>
+<text x="90" y="786" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">数据行结尾只结束行；随后空行交付帧。</text>
+<path d="M594 760L635 760" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="655" y="707" width="320" height="132" rx="10" fill="#e7ece7"/>
+<text x="675" y="739" font-size="21" fill="#466957" font-weight="650" text-anchor="start">完整 SSE frame</text>
+<text x="675" y="775" font-size="16" fill="#25231e" font-weight="400" text-anchor="start" class="mono">event: content_block_delta</text>
+<text x="675" y="811" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">data: 完整 JSON 字符串</text>
+<path d="M983 760L1022 760" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="1042" y="707" width="308" height="132" rx="10" fill="#eeeae1"/>
+<text x="1062" y="739" font-size="20" fill="#25231e" font-weight="650" text-anchor="start" class="mono">JSON.parse(data)</text>
+<text x="1062" y="775" font-size="20" fill="#67645c" font-weight="400" text-anchor="start" class="mono">index: 0</text>
+<text x="1062" y="811" font-size="20" fill="#a65539" font-weight="400" text-anchor="start">text_delta: “你好”</text>
+<path d="M720 881L720 904" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="60" y="915" width="1320" height="171" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="90" y="958" font-size="25" fill="#25231e" font-weight="650" text-anchor="start">③ reducer：按 index 更新已打开的内容块</text>
+<text x="90" y="998" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">此前已收到 index = 0 的 content_block_start；本例只演示 text_delta 的追加语义。</text>
+<rect x="90" y="1021" width="390" height="34" rx="17" fill="#e7ece7"/>
+<text x="285.0" y="1045" font-size="20" fill="#466957" font-weight="600" text-anchor="middle">blocks[0] = { text: &quot;&quot; }</text>
+<text x="526" y="1046" font-size="25" fill="#a65539" font-weight="600" text-anchor="start">+ “你好”</text>
+<path d="M674 1038L730 1038" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="765" y="1021" width="555" height="34" rx="17" fill="#e7ece7"/>
+<text x="1042.5" y="1045" font-size="19" fill="#466957" font-weight="600" text-anchor="middle">blocks[0] = { type: &quot;text&quot;, text: &quot;你好&quot; }</text>
+<path d="M720 1095L720 1118" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="60" y="1129" width="1320" height="166" rx="16" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text x="90" y="1172" font-size="25" fill="#25231e" font-weight="650" text-anchor="start">④ 交付最新快照，然后由界面绘制</text>
+<rect x="90" y="1193" width="340" height="77" rx="10" fill="#e7ece7"/>
+<text x="108" y="1225" font-size="22" fill="#466957" font-weight="600" text-anchor="start">内容块最新状态</text>
+<text x="108" y="1254" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">同一批可已消费多帧</text>
+<rect x="500" y="1193" width="390" height="77" rx="10" fill="#e7ece7"/>
+<text x="518" y="1225" font-size="22" fill="#466957" font-weight="600" text-anchor="start">合并交付 / 边界 flush</text>
+<text x="518" y="1254" font-size="17" fill="#67645c" font-weight="400" text-anchor="start">classic：微任务合并，smooth=false</text>
+<path d="M442 1231L484 1231" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<path d="M903 1231L945 1231" fill="none" stroke="#67645c" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<rect x="965" y="1193" width="385" height="77" rx="10" fill="#f2e2d7"/>
+<text x="989" y="1243" font-size="30" fill="#a65539" font-weight="650" text-anchor="start">你好</text>
+<text x="1105" y="1235" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">提交与 paint 在后</text>
+<text x="60" y="1343" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">没有一一对应：一次 chunk ≠ 一帧 event ≠ 一个 token ≠ 一次 paint。此图不推断服务端 token 生成时刻。</text>
+</svg>
