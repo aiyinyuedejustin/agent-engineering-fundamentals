@@ -1,0 +1,727 @@
+{
+  "schema_version": 1,
+  "research_date_utc": "2026-10-14",
+  "target": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux x64",
+    "inspection": "static only; target application and extensions never executed"
+  },
+  "scope": "Extension packaging, configuration ownership, local process lifecycle, permission UI and local/remote/Code distinctions. No private endpoints, real configuration, credentials, security bypass, or proprietary-code publication.",
+  "method": {
+    "main_bundle_and_ion": "Targeted inert byte reads; anchors independently revalidated. Not all such files were selected for REA parsing.",
+    "rea": {
+      "version": "6.5.0",
+      "evidence_id": "ev_6f5c90548cc49678a59ca9438d6d3851e6b0cbe3417367afeb161f8d145cf3d3",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 10000,
+        "max_semantic_nodes_per_file": 3000,
+        "source_paths": [
+          ".vite/build/mcp-runtime/nodeHost.js",
+          ".vite/build/localExecConsent.js",
+          ".vite/build/index.chunk-BiVdGFDB.js",
+          ".vite/renderer/local_exec_consent/assets/main-DPJQPbbt.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "integrity_contradictions": [],
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 22098,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 4,
+        "visited_ast_nodes": 5669,
+        "findings": 39,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 433 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_evidence_is_private": true
+    }
+  },
+  "claims": [
+    {
+      "id": "X01",
+      "finding": "MCPB is a ZIP-based package and manifest contract for shipping a local MCP server; packaging is distinct from the MCP wire protocol.",
+      "evidence_kind": "official-documentation",
+      "evidence": [],
+      "official_source_ids": [
+        "D01",
+        "D02",
+        "D10"
+      ]
+    },
+    {
+      "id": "X02",
+      "finding": "This Desktop bundle contains manifest schemas for 0.1 through 0.4, with legacy dxt_version compatibility, plus the 0.4 uv runtime type.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1505596,
+          "anchor": "Rrt={.1:qnt,.2:irt,.3:brt,.4:Irt}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2007118,
+          "anchor": "supportedLatestMcpbManifestVersion:\"0.4\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1503658,
+          "anchor": "type:Hh([\"python\",\"node\",\"binary\",\"uv\"])",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [
+        "D02"
+      ],
+      "caveat": "Static parser/runtime declarations do not establish successful installation of every package or platform."
+    },
+    {
+      "id": "X03",
+      "finding": "The host resolves platform overrides, installation/system-directory variables and user configuration into launch configuration; missing required user values prevent config generation.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1506480,
+          "anchor": "async function Hrt(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1507323,
+          "anchor": "function Wrt(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4431801,
+          "anchor": "async function u3r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4419460,
+          "anchor": "not enabling automatically",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [
+        "D01",
+        "D02"
+      ]
+    },
+    {
+      "id": "X04",
+      "finding": "The host separates extension files, per-extension settings and installation metadata, rather than treating the manifest as the sole mutable user-state store.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2038776,
+          "anchor": "\"Claude Extensions\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2038860,
+          "anchor": "\"Claude Extensions Settings\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4411356,
+          "anchor": "\"extensions-installations.json\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [],
+      "caveat": "Only packaged path-construction code was read; no actual user files or settings were accessed."
+    },
+    {
+      "id": "X05",
+      "finding": "The observed chat MCP configuration builder filters disabled or organization-blocked extensions and merges generated extension entries with user-authored entries; same-name user entries win in this merge.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4432096,
+          "anchor": "async function d3r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4433429,
+          "anchor": "Object.assign(Object.create(null),t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4433546,
+          "anchor": "async function m3r(",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [],
+      "caveat": "This precedence claim concerns this builder only; it is not a universal rule for Cowork, Code, remote account connectors or managed configuration."
+    },
+    {
+      "id": "X06",
+      "finding": "Extension availability, local installation permission, enabled state, configuration and connection status are separate concepts in the observed host APIs and bundled ion-dist UI.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1556042,
+          "anchor": "[\"isLocalExtensionInstallAllowed\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1556199,
+          "anchor": "[\"getInstalledExtensionsWithState\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1555911,
+          "anchor": "[\"mcpStatusChanged\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c51dd312d-BWDcKsrq.js",
+          "utf8_byte_offset": 797,
+          "anchor": "policyLoaded:!1",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [
+        "D03",
+        "D04"
+      ],
+      "caveat": "A static API/UI split does not prove all active policies or runtime enforcement. The UI evidence is shipped ion-dist code, not the current standard hosted claude.ai page; actual account activation is unknown."
+    },
+    {
+      "id": "X07",
+      "finding": "Sensitive-marked extension values that are not null/undefined are encrypted through Electron safeStorage only when they are strings or string members of arrays; other types pass through. If encryption is unavailable or throws, fallback values can reach the settings writer unchanged. Encrypted fields that cannot be read are represented as degraded. The same Linux bundle also contains a conditional keyring-unavailable notice explaining that extension secrets are not encrypted.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4391132,
+          "anchor": "function D2r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4391316,
+          "anchor": "safeStorage encryption unavailable",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4391860,
+          "anchor": "function O2r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4393111,
+          "anchor": "function A2r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4395171,
+          "anchor": "async function _Y(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4396853,
+          "anchor": "await Yr(n,i),mY.delete(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6283614,
+          "anchor": "function mEa()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6284441,
+          "anchor": "function hEa()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6674344,
+          "anchor": "await oEa(),lEa(),hEa()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [
+        "D01",
+        "D03"
+      ],
+      "caveat": "Conditional shipped-code observation, not a finding about a user machine, a secret leak, or a full security audit. The Linux notice depends on startup unavailability, an authenticated account, non-CI execution, no prior shown flag and no pending notice. It is scheduled after about five seconds; the shown flag is recorded only after dispatcher acceptance. It is not a promise that every field-level encryption exception causes a visible notice or that successful safeStorage calls establish every backend security property."
+    },
+    {
+      "id": "X08",
+      "finding": "Local MCP launch is selected by runtime compatibility/configuration, including a built-in Node utility-process adapter and external-process paths; 0.4 also has a dynamic-UV branch.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2007226,
+          "anchor": "async function wLt(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2076782,
+          "anchor": "async function MVt(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2007642,
+          "anchor": "\"dynamic-uv\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1403591,
+          "anchor": "\"mcp-runtime\",\"nodeHost.js\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [],
+      "caveat": "The runtime that an actual installed extension uses remains unknown without execution; built-in runtime does not imply a filesystem sandbox."
+    },
+    {
+      "id": "X09",
+      "finding": "The built-in Node adapter bridges stdin, stdout and stderr through a MessagePort, loads a chosen entry point, and reports fatal startup/process errors back to its parent.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/mcp-runtime/nodeHost.js",
+          "utf8_byte_offset": 4331,
+          "anchor": "process.parentPort.once(\"message\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mcp-runtime/nodeHost.js",
+          "utf8_byte_offset": 4568,
+          "anchor": "type:\"stdout\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mcp-runtime/nodeHost.js",
+          "utf8_byte_offset": 4792,
+          "anchor": "type:\"stderr\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mcp-runtime/nodeHost.js",
+          "utf8_byte_offset": 3897,
+          "anchor": "type:\"fatal-error\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mcp-runtime/nodeHost.js",
+          "utf8_byte_offset": 5710,
+          "anchor": "M(\"import-failed\",e)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [
+        "D10"
+      ],
+      "caveat": "Target code was read as bytes and never imported or executed by the research tools."
+    },
+    {
+      "id": "X10",
+      "finding": "The chat-side local MCP manager serializes per-server operations, closes old transports before relaunch, distinguishes initializing/running/failed states, and closes transports when the renderer releases its port or the app shuts down.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4380585,
+          "anchor": "async function u2r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4380740,
+          "anchor": "async function d2r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4381916,
+          "anchor": "async function y2r(",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4387212,
+          "anchor": "renderer released port",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4389131,
+          "anchor": "name:\"mcp-shutdown\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [],
+      "caveat": "Pool and session-specific paths also exist. Do not apply one transport shutdown timer or reconnect behavior to every runtime."
+    },
+    {
+      "id": "X11",
+      "finding": "The bundled ion-dist connector-permission UI groups tools by interaction/read/write/other categories, offers allow/ask/blocked choices, and constrains choices according to organization policy.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js",
+          "utf8_byte_offset": 5606,
+          "anchor": "Read-only tools",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js",
+          "utf8_byte_offset": 5855,
+          "anchor": "Write/delete tools",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js",
+          "utf8_byte_offset": 15718,
+          "anchor": "allow:{defaultMessage:",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js",
+          "utf8_byte_offset": 15772,
+          "anchor": "ask:{defaultMessage:",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js",
+          "utf8_byte_offset": 15826,
+          "anchor": "blocked:{defaultMessage:",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js",
+          "utf8_byte_offset": 10746,
+          "anchor": "Your admin requires approval",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [
+        "D06"
+      ],
+      "caveat": "These are shipped UI states, not proof of the active user policy or the safety of every tool labeled read-only. This does not establish that the standard hosted claude.ai UI currently uses the same implementation or that these states are enabled for an account."
+    },
+    {
+      "id": "X12",
+      "finding": "A separate local consent surface handles organization-provisioned connector connect/disconnect, chat grant and configuration-apply actions, with explicit allowed/cancelled/timeout/error outcomes.",
+      "evidence_kind": "observed-source",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/renderer/local_exec_consent/assets/main-DPJQPbbt.js",
+          "utf8_byte_offset": 2804,
+          "anchor": "case\"chat-grant\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/local_exec_consent/assets/main-DPJQPbbt.js",
+          "utf8_byte_offset": 3191,
+          "anchor": "case\"connect\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/local_exec_consent/assets/main-DPJQPbbt.js",
+          "utf8_byte_offset": 3376,
+          "anchor": "case\"apply\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-BiVdGFDB.js",
+          "utf8_byte_offset": 5100,
+          "anchor": "case\"cancelled\":case\"timeout\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-BiVdGFDB.js",
+          "utf8_byte_offset": 5604,
+          "anchor": "case\"not-found\":case\"error\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "official_source_ids": [],
+      "caveat": "This is a specific organization/direct-MCP route. It is not evidence that every MCP installation or call uses this window."
+    },
+    {
+      "id": "X13",
+      "finding": "Ordinary claude.ai-account remote custom connectors are brokered from Anthropic cloud, whereas Desktop-local MCP launch is a separate mechanism. A plugin is a packaging/composition concept and may include local or remote MCP.",
+      "evidence_kind": "official-documentation",
+      "evidence": [],
+      "official_source_ids": [
+        "D05",
+        "D06"
+      ],
+      "caveat": "Keep account remote connectors distinct from special deployment/direct-MCP paths shipped in the binary. Do not infer the route from whether the visible app is Desktop."
+    },
+    {
+      "id": "X14",
+      "finding": "Claude Code has distinct MCP scopes and permission behavior. Desktop-config import is explicit; connector delivery also depends on whether a session is terminal, cloud-hosted or Desktop-hosted.",
+      "evidence_kind": "official-documentation",
+      "evidence": [],
+      "official_source_ids": [
+        "D07"
+      ],
+      "caveat": "Current docs, not a reverse-engineering result for a pinned Claude Code binary. Desktop and Code shutdown policies or permission rules must not be interchanged."
+    },
+    {
+      "id": "X15",
+      "finding": "Local MCP servers execute with the permissions of an ordinary local program. A configuration field such as allowed_directories or a readOnlyHint is not by itself proof of OS-enforced isolation or authorization.",
+      "evidence_kind": "documented-fact-and-engineering-inference",
+      "evidence": [],
+      "official_source_ids": [
+        "D02",
+        "D08",
+        "D09"
+      ],
+      "caveat": "Ordinary process authority is not the same as administrator/root authority. Server implementation and independent sandboxing require separate evidence."
+    },
+    {
+      "id": "X16",
+      "finding": "A safe tool integration requires independent checks for installation trust, configuration scope, connection/authentication, tool-call permission and resource-side authorization; tool metadata is not an authorization source.",
+      "evidence_kind": "original-engineering-lesson",
+      "evidence": [],
+      "official_source_ids": [
+        "D09",
+        "D04",
+        "D06"
+      ],
+      "caveat": "Recommended architecture abstracted from evidence; not claimed as a complete description or security guarantee of Claude."
+    }
+  ],
+  "files": {
+    "app.asar/.vite/build/index.chunk-ny8j26BQ.js": {
+      "size_bytes": 6956732,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    "ion-dist/assets/v1/c51dd312d-BWDcKsrq.js": {
+      "size_bytes": 2965,
+      "sha256": "69d5748ff861b93bb6c227876494ed69b58dec05880943dc574da80d945a15b7"
+    },
+    "app.asar/.vite/build/mcp-runtime/nodeHost.js": {
+      "size_bytes": 5853,
+      "sha256": "61dee6621d5fb36df79dcf297241544e4112d4031ce822732edbc4b83bec414d"
+    },
+    "ion-dist/assets/v1/c4ac4d9d6-DS8ot0kw.js": {
+      "size_bytes": 16108,
+      "sha256": "08891abca312b064f4e127e2c12dfae47effcf92172229f0d557bca3bdbb7bb2"
+    },
+    "app.asar/.vite/renderer/local_exec_consent/assets/main-DPJQPbbt.js": {
+      "size_bytes": 5061,
+      "sha256": "f7d2a34e08dad971bacbd207e23e9958561de44509f7ec1a9dbaf5073b2ad421"
+    },
+    "app.asar/.vite/build/index.chunk-BiVdGFDB.js": {
+      "size_bytes": 9818,
+      "sha256": "b361b456b8d984648d97fdbcf7242984628547f3d1605b48688bb951d7e5a8a4"
+    }
+  },
+  "official_sources": [
+    {
+      "id": "D01",
+      "title": "Desktop Extensions engineering overview",
+      "url": "https://www.anthropic.com/engineering/desktop-extensions",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Public packaging architecture; published 2025-06-26 and rename update 2025-09-11. Historical example spelling differs from current manifest schema."
+    },
+    {
+      "id": "D02",
+      "title": "MCPB manifest specification",
+      "url": "https://github.com/modelcontextprotocol/mcpb/blob/main/MANIFEST.md",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Read raw document. Mutable main, retrieved 2026-10-14; header says 0.3 while body documents 0.4 UV. No claim that header is authoritative for current release."
+    },
+    {
+      "id": "D03",
+      "title": "Local MCP getting started",
+      "url": "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Public UI installation and configuration workflow; secure-storage overview."
+    },
+    {
+      "id": "D04",
+      "title": "Desktop extension allowlist",
+      "url": "https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Machine policy precedence, approved-install governance and stated limitation on post-install file tampering."
+    },
+    {
+      "id": "D05",
+      "title": "Desktop versus web connectors",
+      "url": "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Public taxonomy of local extensions, account remote connectors and plugins; surface support may change."
+    },
+    {
+      "id": "D06",
+      "title": "Custom connectors using remote MCP",
+      "url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Ordinary account custom-connector traffic originates from Anthropic cloud; authorization and per-conversation/tool controls."
+    },
+    {
+      "id": "D07",
+      "title": "Claude Code MCP reference",
+      "url": "https://code.claude.com/docs/en/mcp",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Distinct installation scopes, Desktop import, host-dependent delivery of claude.ai connectors, MCP-server mode confirmation responsibility."
+    },
+    {
+      "id": "D08",
+      "title": "Use Claude Cowork safely",
+      "url": "https://support.claude.com/en/articles/13364135-use-claude-cowork-safely",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Local MCP servers have ordinary locally-run-program permissions; does not mean root privileges."
+    },
+    {
+      "id": "D09",
+      "title": "MCP tools specification 2025-06-18",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Fixed-version protocol source for discovery, calls, metadata distrust and client/server safety responsibilities; not asserted as latest protocol."
+    },
+    {
+      "id": "D10",
+      "title": "MCP transports specification 2025-06-18",
+      "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/transports",
+      "retrieved_date_utc": "2026-10-14",
+      "notes": "Fixed-version stdio and Streamable HTTP definitions; not asserted as latest protocol."
+    }
+  ],
+  "contradictions_and_qualifications": [
+    {
+      "topic": "manifest version",
+      "resolution": "Use package schema evidence and per-section version qualifiers. Public MANIFEST header 0.3 and 0.4 UV body are inconsistent; historical engineering blog uses an older field spelling."
+    },
+    {
+      "topic": "sensitive config storage",
+      "resolution": "Public secure-storage summaries need the inspected value-type and failure-path conditions. Fallback values reach the settings writer, while a separate conditional Linux startup notice also exists. Neither actual fallback activation nor notice delivery was observed."
+    },
+    {
+      "topic": "local/remote availability",
+      "resolution": "Surface summary pages are coarse. Separate ordinary account custom connectors, local MCP, plugin-provided MCP and specific Desktop-hosted/Code session delivery paths."
+    },
+    {
+      "topic": "bundled UI attribution",
+      "resolution": "X06 and X11 UI evidence comes from shipped ion-dist assets. Do not promote it into a claim about the current standard hosted page or active account policy."
+    }
+  ],
+  "runtime_unknowns": [
+    "actual extension inventory and user configurations",
+    "active feature flags and organization policies",
+    "runtime selected for any installed server",
+    "actual filesystem/network authority and sandbox behavior",
+    "whether secure-storage fallback is reachable or active on any user machine",
+    "current hosted UI and rollout",
+    "effective tool decision or server-side enforcement",
+    "process timing, restart frequency, concurrent races and cancellation behavior under execution"
+  ],
+  "publication_boundary": "Publish only original narrative, compact factual identifiers, file hashes, short anchors and verified official URLs. Keep downloaded/extracted code, complete REA output, real config and credentials private.",
+  "revision_history": [
+    {
+      "recorded_at_utc": "2026-10-14T17:21:00Z",
+      "reason": "Applied seven independently verified semantic conditions/provenance corrections from risk-directed static audit; original observations and REA provenance retained.",
+      "prior_evidence_sha256": "56cd15bf728d3651cf4648f26aaaac824570b462f2c62edf2e01737745f56dba",
+      "scope": "Original analysis only; target artifacts unchanged and not executed. No private user state accessed.",
+      "changes": [
+        {
+          "claim_id": "X06",
+          "wording_changes": {
+            "finding": {
+              "before": "Extension availability, local installation permission, enabled state, configuration and connection status are separate host/UI concepts.",
+              "after": "Extension availability, local installation permission, enabled state, configuration and connection status are separate concepts in the observed host APIs and bundled ion-dist UI."
+            },
+            "caveat": {
+              "before": "A static API/UI split does not prove all active policies or runtime enforcement.",
+              "after": "A static API/UI split does not prove all active policies or runtime enforcement. The UI evidence is shipped ion-dist code, not the current standard hosted claude.ai page; actual account activation is unknown."
+            }
+          },
+          "anchors_added": 0
+        },
+        {
+          "claim_id": "X07",
+          "wording_changes": {
+            "finding": {
+              "before": "Sensitive extension fields use Electron safeStorage when available, but inspected fallback branches can persist original values if encryption is unavailable or fails. Unreadable encrypted config is also represented as degraded.",
+              "after": "Sensitive-marked extension values that are not null/undefined are encrypted through Electron safeStorage only when they are strings or string members of arrays; other types pass through. If encryption is unavailable or throws, fallback values can reach the settings writer unchanged. Encrypted fields that cannot be read are represented as degraded. The same Linux bundle also contains a conditional keyring-unavailable notice explaining that extension secrets are not encrypted."
+            },
+            "caveat": {
+              "before": "Conditional shipped-code observation, not a finding about a user machine, a secret leak, or a full security audit. Public secure-storage summaries must be qualified for this version.",
+              "after": "Conditional shipped-code observation, not a finding about a user machine, a secret leak, or a full security audit. The Linux notice depends on startup unavailability, an authenticated account, non-CI execution, no prior shown flag and no pending notice. It is scheduled after about five seconds; the shown flag is recorded only after dispatcher acceptance. It is not a promise that every field-level encryption exception causes a visible notice or that successful safeStorage calls establish every backend security property."
+            }
+          },
+          "anchors_added": 5
+        },
+        {
+          "claim_id": "X11",
+          "wording_changes": {
+            "finding": {
+              "before": "The packaged connector permission UI groups tools by interaction/read/write/other categories, offers allow/ask/blocked choices, and constrains choices according to organization policy.",
+              "after": "The bundled ion-dist connector-permission UI groups tools by interaction/read/write/other categories, offers allow/ask/blocked choices, and constrains choices according to organization policy."
+            },
+            "caveat": {
+              "before": "These are shipped UI states, not proof of the active user policy or the safety of every tool labeled read-only.",
+              "after": "These are shipped UI states, not proof of the active user policy or the safety of every tool labeled read-only. This does not establish that the standard hosted claude.ai UI currently uses the same implementation or that these states are enabled for an account."
+            }
+          },
+          "anchors_added": 0
+        }
+      ],
+      "anchor_count_before": 46,
+      "anchor_count_after": 51,
+      "prior_validation": null,
+      "post_edit_validation": {
+        "file_records_verified": 6,
+        "anchors_verified": 51,
+        "mismatches": 0
+      }
+    }
+  ],
+  "verification": {
+    "anchors_checked": 51,
+    "file_hashes_checked": 6,
+    "mismatches": 0,
+    "checked_at_utc": "2026-10-14T17:21:00Z",
+    "scope": "All source hashes and exact UTF-8 anchor offsets; semantics reviewed only for the risk-directed subset."
+  }
+}

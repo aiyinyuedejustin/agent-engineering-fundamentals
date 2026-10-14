@@ -1,0 +1,3100 @@
+{
+  "title": "Claude Desktop 设置、持久化、更新与恢复：静态证据",
+  "recorded_at": "2026-10-14T17:10:00Z",
+  "scope": {
+    "application_version": "2.37337.1",
+    "platform": "Linux amd64",
+    "analysis_mode": "inert source inspection; no target execution, authentication, local profile or credential access",
+    "runtime_observation": false,
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "app_asar_sha256": "3d4aea62ccf045ea88d3e92ce728e23aa01c965f25eda450f6369e7557848395",
+    "asar_inventory_evidence_id": "ev_4ae82fb85264b715e7fa5467893928d4b5e45495acb73c6c26225fdc142a32e6",
+    "source_urls": [
+      "https://downloads.claude.ai/claude-desktop/apt/stable/dists/stable/main/binary-amd64/Packages",
+      "https://code.claude.com/docs/en/desktop-linux"
+    ]
+  },
+  "source_files": {
+    ".vite/build/index.chunk-ny8j26BQ.js": {
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512",
+      "bytes": 6956732
+    },
+    ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js": {
+      "sha256": "af9df62d141687ee1638cc9090deee26e65551b37f0bbff84fd7f2eac5d92272",
+      "bytes": 11683
+    },
+    ".vite/build/index.chunk-C7oQk54t.js": {
+      "sha256": "5ecd1a148bdcdc6b46a25463e963e4cb305eb61634ce2feb6172d25a76aeb57d",
+      "bytes": 2866
+    },
+    "package.json": {
+      "sha256": "941d1f329539cd083461f2e35da52b87694bf87806c89d06a6f3876e170342ed",
+      "bytes": 5036
+    }
+  },
+  "rea": {
+    "tool_version": "6.5.0",
+    "successful_focused_run": {
+      "status": "completed",
+      "error_code": null,
+      "evidence_id": "ev_3c6038a524519772bfabe0689aa6dbcbbd19aa3dd88e22cc5bab5e79f178f340",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 2500,
+        "max_semantic_nodes_per_file": 1000,
+        "source_paths": [
+          ".vite/build/index.chunk-C7oQk54t.js",
+          ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 14549,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 2,
+        "visited_ast_nodes": 3134,
+        "findings": 23,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "summary": {
+        "browser_windows": 0,
+        "explicit_web_preferences": 0,
+        "preload_entrypoints": 0,
+        "context_bridge_apis": 0,
+        "exposed_api_members": 0,
+        "ipc": {
+          "operations": 0,
+          "literal_channels": 0,
+          "dynamic_channel_operations": 0,
+          "renderer_transmissions": 0,
+          "renderer_listeners": 0,
+          "main_handlers": 0,
+          "paired_renderer_transmissions": 0,
+          "ambiguous_renderer_transmissions": 0,
+          "unpaired_literal_renderer_transmissions": 0
+        },
+        "sender_validation_observations": 0,
+        "utility_processes": 0,
+        "resolved_utility_entrypoints": 0,
+        "native_addon_bindings": 0,
+        "resolved_native_addon_bindings": 0
+      },
+      "limitations": [
+        "Caller-selected source analysis leaves 435 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "result_sha256": "d99e8a3c24f89720e8b1aa6c5ef7d841aab571fcf8dd2847b1c71be263081fef",
+      "raw_result_publication": "excluded; may contain target source and local absolute paths"
+    },
+    "main_chunk_bounded_attempt": {
+      "status": "partial_timeout",
+      "error_code": "provider_timeout",
+      "evidence_id": "ev_4431a6fc73309aecf05ca18d601744911ceb15909e87293363ec60cbf27bfe84",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 3000,
+        "max_semantic_nodes_per_file": 1500,
+        "source_paths": [
+          ".vite/build/index.chunk-ny8j26BQ.js",
+          ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js"
+        ],
+        "max_heap_mb": 1024,
+        "analysis_timeout_ms": 60000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 6968415,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 1,
+        "visited_ast_nodes": 1711284,
+        "findings": 642,
+        "modules": 6,
+        "parse_failures": 0
+      },
+      "summary": {
+        "browser_windows": 11,
+        "explicit_web_preferences": 29,
+        "preload_entrypoints": 0,
+        "context_bridge_apis": 0,
+        "exposed_api_members": 0,
+        "ipc": {
+          "operations": 4,
+          "literal_channels": 1,
+          "dynamic_channel_operations": 2,
+          "renderer_transmissions": 1,
+          "renderer_listeners": 0,
+          "main_handlers": 3,
+          "paired_renderer_transmissions": 1,
+          "ambiguous_renderer_transmissions": 0,
+          "unpaired_literal_renderer_transmissions": 0
+        },
+        "sender_validation_observations": 7,
+        "utility_processes": 3,
+        "resolved_utility_entrypoints": 0,
+        "native_addon_bindings": 0,
+        "resolved_native_addon_bindings": 0
+      },
+      "limitations": [
+        ".vite/build/index.chunk-ny8j26BQ.js: Analysis operation timed out after 60000ms: analyze_javascript_application",
+        "Caller-selected source analysis leaves 435 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Sender, frame, URL, and origin checks are observations only; REA does not claim that they enforce a complete authorization policy.",
+        "Source analysis was interrupted: Analysis operation timed out after 60000ms: analyze_javascript_application",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "result_sha256": "08d2070db19c1719bb876f3b3d62333b2a4b1a75ae8cf0717af3dde330c9dec0",
+      "raw_result_publication": "excluded; may contain target source and local absolute paths"
+    },
+    "manual_claims_provenance": "All claims grounded in exact inert text inspection of original files; not inferred from completed whole-program REA analysis."
+  },
+  "locale_catalog_inventory": {
+    "catalog_count": 43,
+    "catalogs": [
+      {
+        "relative_to_resources": "am.json",
+        "sha256": "7870664cf5510697e76430faf63cb4b392e86479703a30c05ba1143a5377c62e",
+        "bytes": 65944
+      },
+      {
+        "relative_to_resources": "bho.json",
+        "sha256": "b390f3635751bd7811c449a1a90b8ad8725be48371cbd8dafa9505d32b5ac8b8",
+        "bytes": 85108
+      },
+      {
+        "relative_to_resources": "bn.json",
+        "sha256": "d4617144796bb58fe8547061a22a13a7a880f70183ea485a0978a087fde1ccaa",
+        "bytes": 90322
+      },
+      {
+        "relative_to_resources": "da.json",
+        "sha256": "7a803b5c522e5a4565c7ed78816a6afd745f9d5d48d4e818e8f599314ca80c3f",
+        "bytes": 44097
+      },
+      {
+        "relative_to_resources": "de-DE.json",
+        "sha256": "3c1d14ed972ce19c97d0066d2d0302f3610aee5bcc9d993169f4256fb6687e60",
+        "bytes": 68190
+      },
+      {
+        "relative_to_resources": "en-US.json",
+        "sha256": "38394f24554628af59c24df0cc6f11cf7337765976879dee460d449b8e603d38",
+        "bytes": 56121
+      },
+      {
+        "relative_to_resources": "es-419.json",
+        "sha256": "f8a1be00e41195f8d3b09c379e9afc722c4d702e9c1ac0d6288eaa765f500e70",
+        "bytes": 65794
+      },
+      {
+        "relative_to_resources": "es-ES.json",
+        "sha256": "ef4589d209576d2e1c7c2401ef2de5c9f61098b5a7c55753ea9b783c75695687",
+        "bytes": 66501
+      },
+      {
+        "relative_to_resources": "fi.json",
+        "sha256": "33fdb9b279bd3c4890635749eb544d5cea9fbe7adcc094cb51270e75be7a9a73",
+        "bytes": 47460
+      },
+      {
+        "relative_to_resources": "fil.json",
+        "sha256": "5a7622cba7a67d5ce8e92d8817359694e272c9a00778ccc333dab1dab885f079",
+        "bytes": 48132
+      },
+      {
+        "relative_to_resources": "fr-FR.json",
+        "sha256": "8b17c2fd9ff549522bf6d93492cd63a5f7709ba10ca90209a88b77a10ff7b19a",
+        "bytes": 71421
+      },
+      {
+        "relative_to_resources": "gu.json",
+        "sha256": "62783d4f206dba052cf0c58e0b2556d44f24050594e5a85058abba3020bba0f5",
+        "bytes": 86435
+      },
+      {
+        "relative_to_resources": "ha.json",
+        "sha256": "86afd60f415f2c3545b782d04c7ad0a63ce8e2ba22ab16f5a6e5497df5caac7f",
+        "bytes": 45812
+      },
+      {
+        "relative_to_resources": "hi-IN.json",
+        "sha256": "68f6c27ef539b353ab618788644490503450e42e73ed744927c0af484abf4b29",
+        "bytes": 122456
+      },
+      {
+        "relative_to_resources": "id-ID.json",
+        "sha256": "f4f8f15f7954b1f7e440d1203e4c40a2fa239f1332f2af6b3e987b56ba75b612",
+        "bytes": 60895
+      },
+      {
+        "relative_to_resources": "ig.json",
+        "sha256": "b9e73d9a025b54033ab6a36b972884bb22fe97a6391de7a4ea1aa6d669a44d32",
+        "bytes": 46730
+      },
+      {
+        "relative_to_resources": "it-IT.json",
+        "sha256": "3c026ed941428c4d2f224f1bfa25b46e42ddb2328143a86900e822e403871f24",
+        "bytes": 66738
+      },
+      {
+        "relative_to_resources": "ja-JP.json",
+        "sha256": "de78dafa3a31ff3c85eb8d2b5a64ed6d5a56eccd6e8040c605068d5f12938127",
+        "bytes": 79226
+      },
+      {
+        "relative_to_resources": "kn.json",
+        "sha256": "5238f7881e3ba117bde4a715b39718659d17fed347b2f687eeae894629384419",
+        "bytes": 101345
+      },
+      {
+        "relative_to_resources": "ko-KR.json",
+        "sha256": "107e3a706d0c85614a393f9cd78dcd2bc99df8a638bc9890ea4eadb7ad41bca8",
+        "bytes": 68803
+      },
+      {
+        "relative_to_resources": "ml.json",
+        "sha256": "4f253daf54d33c4988900d1ef86a6d778bc4945593b9b5d04d89c61e8733e855",
+        "bytes": 108519
+      },
+      {
+        "relative_to_resources": "mr.json",
+        "sha256": "31bdb03ef3f7ae14d17bcb596b84f5807a1c0b5b6987091bc7b8d366091691cf",
+        "bytes": 89403
+      },
+      {
+        "relative_to_resources": "nb.json",
+        "sha256": "102d4d0ebca817a5d1960db5b4fdad12404090d9de422689e9b489d4d87a0144",
+        "bytes": 43889
+      },
+      {
+        "relative_to_resources": "nl.json",
+        "sha256": "6ecb3e19120fdfb184dcd702ca3a9ac2cc039453d85925a98d884ce9e9223209",
+        "bytes": 45943
+      },
+      {
+        "relative_to_resources": "ny.json",
+        "sha256": "f06ce70a21bb5c8076b937ac31876985109926020d3f7de2b9683c2db48ff4b9",
+        "bytes": 47696
+      },
+      {
+        "relative_to_resources": "om.json",
+        "sha256": "cf8c9c1564403810bb30217daadb47bfedda8ef5be7991499a9bf5a150645b02",
+        "bytes": 49167
+      },
+      {
+        "relative_to_resources": "pt-BR.json",
+        "sha256": "90ec829b53b7303d720d9411ed40d8d8460c20b20da0be8291d157f017fc50e5",
+        "bytes": 65670
+      },
+      {
+        "relative_to_resources": "rn.json",
+        "sha256": "5d65a0698823e65ea9b33d644063848142b39213dc91dfa428f1a2aa07e4074d",
+        "bytes": 47470
+      },
+      {
+        "relative_to_resources": "ru.json",
+        "sha256": "a2524be71942d82dfb0322f46ab261b0232a755013d12e706e311b57ea01f729",
+        "bytes": 72953
+      },
+      {
+        "relative_to_resources": "rw.json",
+        "sha256": "4cbe8b2db92f965b35edc12bd8d86121d3efcb964ece98ebffe41aef3a43466c",
+        "bytes": 46975
+      },
+      {
+        "relative_to_resources": "so.json",
+        "sha256": "6f66b71540b7e77a49b7c3c7a22cb11a1dfd1495bb7f766929ae1dc11ab8352c",
+        "bytes": 47216
+      },
+      {
+        "relative_to_resources": "sv.json",
+        "sha256": "ad0ad2ee0c631d408ebd0059ae1c80aab1d58c5d9b6a33a6c4e86e926f19f8b9",
+        "bytes": 44870
+      },
+      {
+        "relative_to_resources": "sw.json",
+        "sha256": "36ebb58714068acf97223e0803d8adfe1b2636c7335c37676682c6c5bcd05aa1",
+        "bytes": 46073
+      },
+      {
+        "relative_to_resources": "ta.json",
+        "sha256": "a233dd2a5a20d27cfa150574c92db70289fedd7056cf311d995b4a770fc333d3",
+        "bytes": 105451
+      },
+      {
+        "relative_to_resources": "te.json",
+        "sha256": "96d3d3284b0812988a4d37e4939337db6d23da72f66965ad54a1aee83e1d65ea",
+        "bytes": 99920
+      },
+      {
+        "relative_to_resources": "th.json",
+        "sha256": "7c16dc326169712e4b02fba484e5dcaa8a240f3342b0412dd9629230968a0c71",
+        "bytes": 86017
+      },
+      {
+        "relative_to_resources": "tr.json",
+        "sha256": "f3dcc909efec061eb8414fe202bc63102f493baa2459032ec393492e8f1ae1ca",
+        "bytes": 47948
+      },
+      {
+        "relative_to_resources": "uk.json",
+        "sha256": "32a3fbe9b8094a5d7bacfbfd08aec33bf4d1c879a8897cfce82db556c6846618",
+        "bytes": 73122
+      },
+      {
+        "relative_to_resources": "vi.json",
+        "sha256": "ef3edd9a15ec80275a3642c523572c8d6fab729a0d392e5c1ba53d6ea48da75e",
+        "bytes": 52572
+      },
+      {
+        "relative_to_resources": "wo.json",
+        "sha256": "73e01ab89621f39532417951be363d0a5e945c906951d6ea7997300149a15e92",
+        "bytes": 42361
+      },
+      {
+        "relative_to_resources": "yo.json",
+        "sha256": "fb670b7e15e7a1662e3a0bb63dabc2de8baf440d5b7aa8a46a754f0e509fdbbd",
+        "bytes": 55816
+      },
+      {
+        "relative_to_resources": "zh-Hans.json",
+        "sha256": "7f0a3549bc2bbfad7290a0c3941d0ac9fb3fb524de5ee85e8f26d9fb591cebff",
+        "bytes": 39842
+      },
+      {
+        "relative_to_resources": "zh-Hant.json",
+        "sha256": "4c012f7ac6053dde31d98ea9ba9c77827cd20344797edb45869ffea3fd52ff45",
+        "bytes": 41342
+      }
+    ],
+    "system_auto_selection_candidates_in_this_build": [
+      "de-DE",
+      "en-US",
+      "es-ES",
+      "fr-FR",
+      "hi-IN",
+      "id-ID",
+      "it-IT",
+      "ja-JP",
+      "ko-KR",
+      "pt-BR"
+    ],
+    "caveat": "Static implementation candidate set, not a product supported-language statement or UI exposure claim."
+  },
+  "claims": [
+    {
+      "claim_id": "SET-01",
+      "title_zh": "设置的多个所有者",
+      "evidence_kind": "observed-source",
+      "observation_zh": "启动包的主进程创建默认名为 config 的 electron-store 派生实例；另一个应用配置加载器读取 claude_desktop_config.json，preferences 是后者的 schema 字段。窗口几何另有 window-state.json。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "e={name:\"config\",...e}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            501183,
+            501205
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            501183,
+            501205
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 65635
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Fa=class extends ybe.default",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            501999,
+            502027
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            501999,
+            502027
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 66451
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "var lo=kSe()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            536023,
+            536035
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            536023,
+            536035
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 100475
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "var Ize=\"claude_desktop_config.json\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            836543,
+            836579
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            836543,
+            836579
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 400995
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "preferences:Jh.optional()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1644661,
+            1644686
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1644661,
+            1644686
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 413087
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "var Ixe=\"window-state.json\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            525951,
+            525978
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            525951,
+            525978
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 90403
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "只识别应用代码引用的存储契约；未打开任何用户配置文件，不能断言这三者覆盖所有远程或本地状态。",
+      "transferable_lesson_zh": "按状态生命周期和信任边界分开存储。"
+    },
+    {
+      "claim_id": "SET-02",
+      "title_zh": "主题由主进程接入原生外壳",
+      "evidence_kind": "observed-source",
+      "observation_zh": "setThemeMode 同时更改 nativeTheme.themeSource 和 userThemeMode；启动只接受 system/light/dark，nativeTheme 的 updated 事件更新外壳背景及菜单/窗口处理。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "setThemeMode(e){a.nativeTheme.themeSource=e",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            5299766,
+            5299809
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            5299766,
+            5299809
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 4068192
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "var xYa=lo.get(\"userThemeMode\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6660484,
+            6660515
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6660484,
+            6660515
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5428910
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "a.nativeTheme.on(\"updated\",(()=>{io?",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6694194,
+            6694230
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6694194,
+            6694230
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5462620
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "var CVn={light:\"#fcfcfb\",dark:\"#151515\"}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3142072,
+            3142112
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3142072,
+            3142112
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1910498
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "这是桌面壳层证据，不能推出远程聊天页面所有 CSS 的主题实现或实际用户主题。"
+    },
+    {
+      "claim_id": "SET-03",
+      "title_zh": "语言目录、回退与 IPC 广播",
+      "evidence_kind": "observed-source",
+      "observation_zh": "语言初始化先准备 en-US 回退，再尝试保存的 locale 或系统语言；显式切换校验文件名形状和目录存在性。语言成功载入后经可订阅流向渲染器广播。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Dut=mlt(),Eg=\"en-US\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1640216,
+            1640236
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1640216,
+            1640236
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 408642
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Nut()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1640453,
+            1640467
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1640453,
+            1640467
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 408879
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Put()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1640624,
+            1640638
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1640624,
+            1640638
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 409050
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function zut(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1641505,
+            1641520
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1641505,
+            1641520
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 409931
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function But()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1641904,
+            1641918
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1641904,
+            1641918
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 410330
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "requestLocaleChange(e){zut(e)}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1642436,
+            1642466
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1642436,
+            1642466
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 410862
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "dispatchLocaleChanged(t.locale,t.messages)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1642549,
+            1642591
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1642549,
+            1642591
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 410975
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "资源目录有 43 个 JSON 语言目录；自动选择 Nut 另有较窄白名单。目录存在不证明菜单会提供该语言或译文完备。",
+      "transferable_lesson_zh": "将默认语言、系统语言候选、显式语言请求和页面订阅分成独立契约。"
+    },
+    {
+      "claim_id": "SET-04",
+      "title_zh": "偏好写入边界和投影",
+      "evidence_kind": "observed-source",
+      "observation_zh": "渲染器偏好入口先校验 key，再拒绝主进程专用 key，再逐字段校验 value。读取及变更广播经过投影，部分授权状态替换为空。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Yh=Jh.required()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1527503,
+            1527519
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1527503,
+            1527519
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 295929
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "MAIN_ONLY_PREFERENCE_KEYS:()=>Cqa",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6630585,
+            6630618
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6630585,
+            6630618
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5399011
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function Tqa(e,t)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6631881,
+            6631904
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6631881,
+            6631904
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5400307
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Yh.keyof().safeParse(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6631933,
+            6631956
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6631933,
+            6631956
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5400359
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Yh.shape[n.data].safeParse(t)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6632176,
+            6632205
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6632176,
+            6632205
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5400602
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "fNt=e=>({...e,launchPreviewPrivateNetworkReadOrigins:[]",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1960271,
+            1960326
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1960271,
+            1960326
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 728697
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "getPreferences(){return fNt(Yv(Lg().preferences??{}))}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6635349,
+            6635403
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6635349,
+            6635403
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5403775
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "字段元数据与 main-only 检查是可见防线，不能据此证明整个 IPC 身份验证或权限系统安全。",
+      "transferable_lesson_zh": "renderer preferences 不是任意键值写入能力；给敏感改变独立的受验证通道。"
+    },
+    {
+      "claim_id": "SET-05",
+      "title_zh": "用户配置损坏时防止回写默认值",
+      "evidence_kind": "observed-source",
+      "observation_zh": "加载器区分 missing/read_error/json_error/schema_error；可过滤无效 MCP 条目，schema 整体失败时仅保留某些图形恢复字段。只有被判为降级读取并设置 Pg 时，writer 才拒绝持久化并返回 parked。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Wut()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1644805,
+            1644819
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1644805,
+            1644819
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 413231
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Jut(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1646454,
+            1646469
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1646454,
+            1646469
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 414880
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Hut(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1642753,
+            1642768
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1642753,
+            1642768
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 411179
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function zg(e){return Pg?",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1649207,
+            1649232
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1649207,
+            1649232
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 417633
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Promise.resolve(\"parked\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1649426,
+            1649451
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1649426,
+            1649451
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 417852
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "\"ok_mcp_filtered\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1645434,
+            1645451
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1645434,
+            1645451
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 413860
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "if(n)Pg=nBe(n)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1645055,
+            1645069
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1645055,
+            1645069
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 413481
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function nBe(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            840109,
+            840124
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            840109,
+            840124
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 404561
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Gut(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1645543,
+            1645558
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1645543,
+            1645558
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 413969
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Ig(\"ok_mcp_filtered\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1645431,
+            1645452
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1645431,
+            1645452
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 413857
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "不是所有配置文件都采用此策略；config.json 有另一条重置路径。不得把返回 parked 表述成保存成功。 是否停放不能只看错误类别：文件缺失；仅空白、控制字符或替代字符的空内容；被实现视为空值的 JSON（null、布尔、数字、空字符串、空数组、空对象）；以及剔除无效 MCP 条目后整体校验通过的配置，都不会因此设置降级标记。不能据此保证被过滤的条目永不受后续保存影响。",
+      "transferable_lesson_zh": "读失败时默认值可用于活下去，却不能未经区分覆盖用户原文件。"
+    },
+    {
+      "claim_id": "SET-06",
+      "title_zh": "持久化结果和内存广播并非同一事实",
+      "evidence_kind": "observed-source",
+      "observation_zh": "用户配置写入有互斥锁，返回 written/parked/write-failed。偏好先改内存、尝试落盘，再通知订阅者；Jv 包装器未向此 IPC 调用者转发落盘结果。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "ndt.runExclusive((async()=>{let t=Mg()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1649453,
+            1649491
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1649453,
+            1649491
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 417879
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "\"write-failed\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 3,
+          "char_range_0_based_half_open": [
+            1649616,
+            1649630
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1649616,
+            1649630
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 418042
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function Vg(e,t)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1651287,
+            1651309
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1651287,
+            1651309
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 419713
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "pNt=async(e,t)=>",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1961058,
+            1961074
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1961058,
+            1961074
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 729484
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Jv=async(e,t)=>{await pNt(e,t)}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1961327,
+            1961358
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1961327,
+            1961358
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 729753
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "局部静态链显示状态分层，未观察到 UI 误报保存成功；不能直接定性为用户可见 bug。",
+      "transferable_lesson_zh": "把应用内生效和已持久化分开建模，并让重要恢复路径检查写入结果。"
+    },
+    {
+      "claim_id": "SET-07",
+      "title_zh": "临时文件写入和非原子回退",
+      "evidence_kind": "observed-source",
+      "observation_zh": "应用配置 JSON writer 调用 private-file writer，使用按路径互斥、临时文件、rename；某些 rename 错误会回退直接写入。默认权限参数是 384（八进制 0600）。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function Yr(e,t){await Kr(e,JSON.stringify(t,null,2))}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            265728,
+            265788
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            265728,
+            265788
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 265728
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Kr(e,t,r=384,i)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            262848,
+            262872
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            262848,
+            262872
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 262848
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "a??`${e}.tmp`",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            263027,
+            263040
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            263027,
+            263040
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 263027
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "if(i?.noInPlaceFallback)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            263786,
+            263810
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            263786,
+            263810
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 263786
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "falling back to direct write",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            263976,
+            264004
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            263976,
+            264004
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 263976
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "存在原子替换优先路径不等于所有错误路径均为原子或掉电安全；未做文件系统故障注入。"
+    },
+    {
+      "claim_id": "SET-08",
+      "title_zh": "electron-store 路径的恢复日志",
+      "evidence_kind": "observed-source",
+      "observation_zh": "打包进来的 store 实现使用 .journal、内容 SHA-256、目标文件摘要和提交中摘要；启动校验残留 journal 再恢复，退出调用 quiesce 等待提交。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "throw Error(\"torn journal\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            491432,
+            491459
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            491432,
+            491459
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 55884
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "throw Error(\"journal was not written over this store file\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            491478,
+            491537
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            491478,
+            491537
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 55930
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "_journalPath(){return`${this.path}.journal`}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            497613,
+            497657
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            497613,
+            497657
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 62065
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "_commitLeftoverJournal(){",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            497657,
+            497682
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            497657,
+            497682
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 62109
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "static quiesce(){",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            498838,
+            498855
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            498838,
+            498855
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 63290
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "await Dm(Fa.quiesce(),5e3",
+          "occurrence_0_based": 0,
+          "total_occurrences": 2,
+          "char_range_0_based_half_open": [
+            2982592,
+            2982617
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            2982592,
+            2982617
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1751018
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "这是该分发包中的具体实现，不可泛化为所有上游 electron-store 版本。哈希匹配不等于恶意篡改认证。没有实际掉电恢复实验。",
+      "transferable_lesson_zh": "恢复日志必须同时证明内容完整和前序版本适配。"
+    },
+    {
+      "claim_id": "SET-09",
+      "title_zh": "config.json 的重置、重试与告知",
+      "evidence_kind": "observed-source",
+      "observation_zh": "通用 config store 的 SyntaxError 路径重置为空并标记损坏；UNKNOWN/EBUSY/EIO 开启失败有 250/500ms 两次延迟重试；EISDIR/ELOOP/ENOTDIR 尝试改名 corrupt-timestamp，再重新创建；之后有 Settings Reset 警告。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "CSe={configFileMode:384",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            534887,
+            534910
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            534887,
+            534910
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 99339
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "TSe=new Set([\"UNKNOWN\",\"EBUSY\",\"EIO\"])",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            535112,
+            535150
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            535112,
+            535150
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 99564
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "ESe=[250,500]",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            535151,
+            535164
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            535151,
+            535164
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 99603
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "o.renameSync(r,`${r}.corrupt-${Date.now()}`)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            535777,
+            535821
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            535777,
+            535821
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 100229
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "defaultMessage:\"Settings Reset\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6680224,
+            6680255
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6680224,
+            6680255
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5448650
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "SyntaxError 路径与结构性文件错误路径不同；不可笼统宣称一切损坏都会先备份。"
+    },
+    {
+      "claim_id": "SET-10",
+      "title_zh": "迁移能力与应用兼容清理",
+      "evidence_kind": "observed-source",
+      "observation_zh": "store 库实现版本迁移与失败回滚；本次追踪的 CSe 配置只提供 mode/deserialize，没有注册迁移表。应用配置另有 qut 在 schema 校验前清理旧 sidebar 值和不合法枚举。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "ge=`${he}.migrations.version`",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            492058,
+            492087
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            492058,
+            492087
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 56510
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "_migrate(e,t,n){",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            499548,
+            499564
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            499548,
+            499564
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 64000
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "CSe={configFileMode:384",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            534887,
+            534910
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            534887,
+            534910
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 99339
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function qut(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1646062,
+            1646077
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1646062,
+            1646077
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 414488
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "n.sidebarMode===\"operon\"&&delete n.sidebarMode",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1646172,
+            1646218
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1646172,
+            1646218
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 414598
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "不能因为依赖包含 migrations 就断言主设置已经采用完整版本迁移体系；仅核对已追踪构造路径。"
+    },
+    {
+      "claim_id": "SET-11",
+      "title_zh": "窗口状态有独立保存节奏",
+      "evidence_kind": "observed-source",
+      "observation_zh": "窗口几何写入以 1000ms debounce、串行 promise 链和关闭时 flush 组织；跳过最小化状态，校验尺寸，并按当前显示器 workArea 重新安置失效位置。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Lxe=1e3",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            525979,
+            525986
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            525979,
+            525986
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 90431
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function zxe(e,t=",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            526073,
+            526096
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            526073,
+            526096
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 90525
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "t.writeJsonAtomic(Ixe,e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            526306,
+            526330
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            526306,
+            526330
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 90758
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Vxe(e,t)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            527818,
+            527835
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            527818,
+            527835
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 92270
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Wxe(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            528391,
+            528406
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            528391,
+            528406
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 92843
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "flush(){return f(),c}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            527437,
+            527458
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            527437,
+            527458
+          ],
+          "line_1_based": 7,
+          "column_codepoints_0_based": 91889
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "let e=zxe(sqn)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6674085,
+            6674099
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6674085,
+            6674099
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5442511
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "name:\"persist-main-window-state\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6679068,
+            6679100
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6679068,
+            6679100
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5447494
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "另有旧窗口状态依赖代码在包内；本结论基于当前 zxe 实现及其已追踪主窗口调用路径，不证明所有窗口都用同一实现。"
+    },
+    {
+      "claim_id": "RES-01",
+      "title_zh": "故障 UI 属于独立壳层",
+      "evidence_kind": "observed-source",
+      "observation_zh": "主窗口 renderer 订阅 onShowLoadError/onHideLoadError，通过 preload 的 MainWindowTitleBar 调用 reload/restart/menu；主进程为远程 main view 注册恢复处理。",
+      "anchors": [
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "onShowLoadError",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            11095,
+            11110
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            11095,
+            11110
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 10950
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "data-load-error-overlay",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            8208,
+            8231
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            8208,
+            8231
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 8063
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "requestReloadMainView",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            10834,
+            10855
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            10834,
+            10855
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 10689
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "requestRestartApp",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            10871,
+            10888
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            10871,
+            10888
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 10726
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "requestReloadMainView(){u((()=>YHn()))}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6661759,
+            6661798
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6661759,
+            6661798
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5430185
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "aUn(p.webContents,{offersOfflineGame:",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6662277,
+            6662314
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6662277,
+            6662314
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5430703
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "只静态验证本地壳层可表达的状态；没有运行错误页面或确认远程服务行为。",
+      "transferable_lesson_zh": "保持修复入口在故障的远程页面之外。"
+    },
+    {
+      "claim_id": "RES-02",
+      "title_zh": "网络自动重试是有界状态机",
+      "evidence_kind": "observed-source",
+      "observation_zh": "首次 load_failed 的基准等待为 0ms，之后 15s/30s，施加 ±20% 抖动；http_error 从较晚一档开始。在线预算基准为 180s，持续离线时延长预算；连续 HTTP 错误超过 3 次会停止自动重试。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "DHn=18e4,OHn=[0,15e3,3e4],kHn=.2",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3150240,
+            3150272
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3150240,
+            3150272
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1918666
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function RHn(e,t)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3150434,
+            3150451
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3150434,
+            3150451
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1918860
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "LI+=AHn,KI(AHn,e,t)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3151746,
+            3151765
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3151746,
+            3151765
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1920172
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "II>NHn?\"origin keeps failing\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3152497,
+            3152526
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3152497,
+            3152526
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1920923
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function qI(e,t){",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3152328,
+            3152345
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3152328,
+            3152345
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1920754
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "desktop_main_view_load_retry_exhausted",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3152046,
+            3152084
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3152046,
+            3152084
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1920472
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "这些是控制流常量及静态推导，不是实测 SLA；离线延长预算意味着不能简单称为三分钟墙钟超时。"
+    },
+    {
+      "claim_id": "RES-03",
+      "title_zh": "重试先检查活动状态并可重置网络栈",
+      "evidence_kind": "observed-source",
+      "observation_zh": "首次成功页面加载前的重试可关闭连接、清 DNS 缓存并重新加载代理配置。仅当当前错误 overlay 身份一致、没有其它 load/reset 活动时发起重试；focus/show/resume/unlock 可早触发，带 10s 节流。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function HHn(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3150822,
+            3150837
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3150822,
+            3150837
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1919248
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "closeAllConnections\",(()=>n.closeAllConnections())",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3151137,
+            3151187
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3151137,
+            3151187
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1919563
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "clearHostResolverCache\",(()=>n.clearHostResolverCache())",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3151198,
+            3151254
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3151198,
+            3151254
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1919624
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "forceReloadProxyConfig\",(()=>n.forceReloadProxyConfig())",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3151265,
+            3151321
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3151265,
+            3151321
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1919691
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function WI(){return zI!==void 0&&_o===zI}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3151338,
+            3151380
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3151338,
+            3151380
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1919764
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function JI(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3153142,
+            3153156
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3153142,
+            3153156
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1921568
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "JI(\"resume\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6675072,
+            6675084
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6675072,
+            6675084
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5443498
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "停止自动重试后的唤醒还带 60s 离线等待边界；初始 timer 的离线等待则可继续延长原预算。因此不能承诺所有离线等待都有统一的墙钟截止。未做并发或网络故障实验。",
+      "transferable_lesson_zh": "用 generation/identity 或状态所有权防止过期回调重试新页面。"
+    },
+    {
+      "claim_id": "RES-04",
+      "title_zh": "renderer 崩溃使用独立预算",
+      "evidence_kind": "observed-source",
+      "observation_zh": "render-process-gone 路径在 5 分钟安静间隔后重置尝试计数，普通计数分支上限为 3；launch-failed 延迟为 1s/5s/20s。达到上限转为本地重启/帮助提示；受保护的 print 流程有单独处理。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "_Hn=3,vHn=3e5,yHn=[1e3,5e3,2e4]",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3149811,
+            3149842
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3149811,
+            3149842
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1918237
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Render process gone reload cap reached",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3158361,
+            3158399
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3158361,
+            3158399
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1926787
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function EVn(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3142127,
+            3142142
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3142127,
+            3142142
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1910553
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Main webview is unresponsive during a print() call",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3157171,
+            3157221
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3157171,
+            3157221
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1925597
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "存在主动 kill、pending reload 等特殊分支；不要表述成所有 renderer 死亡永远恰好重试三次。"
+    },
+    {
+      "claim_id": "RES-05",
+      "title_zh": "GPU 故障跨启动恢复并保留写入失败信息",
+      "evidence_kind": "observed-source",
+      "observation_zh": "GPU 恢复使用 gpu-crash-streak 文件，通常连续 3 次达到关闭硬件加速路径；相邻崩溃间隔超过 5 分钟重置计数。另有 60s 内 20 次死亡的终止循环保护。写配置不是 written 时保留标记，下一次启动继续恢复。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "UCr=\"gpu-crash-streak\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3886696,
+            3886718
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3886696,
+            3886718
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2655122
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "GCr=6e4",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3886791,
+            3886798
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3886791,
+            3886798
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2655217
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "n-qCr>3e5",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3889532,
+            3889541
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3889532,
+            3889541
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2657958
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "FG.length>=20",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3889686,
+            3889699
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3889686,
+            3889699
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2658112
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "if(!(NG<3))",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3890131,
+            3890142
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3890131,
+            3890142
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2658557
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function nwr(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3887856,
+            3887877
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3887856,
+            3887877
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2656282
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function awr()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            3890667,
+            3890681
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            3890667,
+            3890681
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 2659093
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "a.app.disableHardwareAcceleration()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6658760,
+            6658795
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6658760,
+            6658795
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5427186
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "自动关闭和终止路径各有动态 feature gate；数字是本包静态默认，不证明某账号的 gate 为开。未触发任何 GPU 故障。",
+      "transferable_lesson_zh": "持久化失败不能让恢复标记提前消失，否则下次启动会再次进入同一故障。"
+    },
+    {
+      "claim_id": "RES-06",
+      "title_zh": "错误页的可访问状态和可选离线内容",
+      "evidence_kind": "observed-source",
+      "observation_zh": "本地错误页有标题、可选描述、Reload、可选 Restart；重试提示使用 role=status，图标为 aria-hidden。离线小游戏仅当主进程提供 offlineGame 时懒加载，读取 prefers-reduced-motion，失败则返回空。",
+      "anchors": [
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "role:\"status\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            9413,
+            9426
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            9413,
+            9426
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 9268
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "Retrying automatically",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            9735,
+            9757
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            9735,
+            9757
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 9590
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "e.offerRestart",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            10020,
+            10034
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            10020,
+            10034
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 9875
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "e.hideReload",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            9861,
+            9873
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            9861,
+            9873
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 9716
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "prefers-reduced-motion: reduce",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6797,
+            6827
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6797,
+            6827
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 6652
+        },
+        {
+          "path": ".vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "anchor": "shellBoot:\"offline-game\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            7007,
+            7031
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            7007,
+            7031
+          ],
+          "line_1_based": 2,
+          "column_codepoints_0_based": 6862
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "offersOfflineGame:()=>My(\"543332958\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6662296,
+            6662333
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6662296,
+            6662333
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5430722
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "没有运行页面；不能称为已验证屏幕阅读器体验或默认开启小游戏。小游戏 Map 存储是该渲染器内存，不是离线聊天持久层。"
+    },
+    {
+      "claim_id": "UPD-01",
+      "title_zh": "Linux 更新责任在包管理器",
+      "evidence_kind": "observed-source",
+      "observation_zh": "Linux enableUpdates 明确关闭 in-app updater。相关检查未被 autoUpdate.disabled 禁用时，仍定时读取 apt Packages 比较版本，并通过 /proc/self/exe 的 deleted 标识及当前 exe 存在性检测外部替换。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function G$r(){",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4349841,
+            4349862
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4349841,
+            4349862
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3118267
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Linux: in-app updater off (updates via apt)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4349904,
+            4349947
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4349904,
+            4349947
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3118330
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "reason:\"managed_by_package_manager\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4349979,
+            4350014
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4349979,
+            4350014
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3118405
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function U$r(){",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4349191,
+            4349212
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4349191,
+            4349212
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3117617
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "readlink(\"/proc/self/exe\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4349651,
+            4349677
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4349651,
+            4349677
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3118077
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "platformUnsupported:!0",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4357507,
+            4357529
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4357507,
+            4357529
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3125933
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function B$r()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4348306,
+            4348320
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4348306,
+            4348320
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3116732
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "K().autoUpdate.disabled||W$r()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4348383,
+            4348413
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4348383,
+            4348413
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3116809
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "静态 Linux 默认路径；不得把包内 Squirrel/macOS 下载与安装函数当成 Linux 的默认运行事实。 autoUpdate.disabled 为真时，周期分支可把非 idle 状态退回 idle 并跳过版本与替换检查；focus/unlock/resume 触发的替换检查同样受此条件限制。"
+    },
+    {
+      "claim_id": "UPD-02",
+      "title_zh": "内部更新状态与对页面的投影",
+      "evidence_kind": "observed-source",
+      "observation_zh": "通用 updater tracker 有 idle/checking/downloading/ready/error，Linux 另驱动 available/replaced。页面投影把 replaced 映射 Ready；restartToUpdate 对 replaced 调用保留导航的 relaunch，checkForUpdates 的显式用户入口可打开下载页。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "R$r={idle:\"other\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4344690,
+            4344707
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4344690,
+            4344707
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3113116
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "a.autoUpdater.on(\"checking-for-update\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4346506,
+            4346544
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4346506,
+            4346544
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3114932
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "a.autoUpdater.on(\"update-downloaded\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4347306,
+            4347342
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4347306,
+            4347342
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3115732
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "var bxa=()=>",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6197099,
+            6197111
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6197099,
+            6197111
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 4965525
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "case\"replaced\":return{status:t_.Ready}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6197659,
+            6197697
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6197659,
+            6197697
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 4966085
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "getInitialUpdaterStateState:bxa",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6216963,
+            6216994
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6216963,
+            6216994
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 4985389
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "checkForUpdates:e=>{e===!0&&Gv(gRe)}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6217338,
+            6217374
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6217338,
+            6217374
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 4985764
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "UJ.on(\"change\",(()=>{let e=O7()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            6470980,
+            6471011
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            6470980,
+            6471011
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 5239406
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "事件注册和公共状态协议不证明 Linux 下载状态会被使用；页面具体 banner 外观由远端 UI 决定，未验证。"
+    },
+    {
+      "claim_id": "UPD-03",
+      "title_zh": "更新交付证据不止下载成功",
+      "evidence_kind": "observed-source",
+      "observation_zh": "包内有 update-attempt、记录 from/to version、当前版本比较及 updaterFailedInstall 计数，退出流程可等待 store quiesce；这是跨启动验证安装是否真的生效的设计。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "pEn=\"update-attempt\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            2969963,
+            2969983
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            2969963,
+            2969983
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1738389
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "x$r=\"updaterFailedInstall\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4341281,
+            4341307
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4341281,
+            4341307
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3109707
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function M$r()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4343124,
+            4343144
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4343124,
+            4343144
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3111550
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Previous update install did not apply",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4343851,
+            4343888
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4343851,
+            4343888
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3112277
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "desktop_update_applied",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            4348042,
+            4348064
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            4348042,
+            4348064
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3116468
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "await Dm(Fa.quiesce(),5e3",
+          "occurrence_0_based": 0,
+          "total_occurrences": 2,
+          "char_range_0_based_half_open": [
+            2982592,
+            2982617
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            2982592,
+            2982617
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 1751018
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "该包包括其它平台的更新路径；只把 marker/版本核对作为源代码机制。未验证安装、自动回滚或原子切换，更不能声称已经支持回滚。"
+    },
+    {
+      "claim_id": "UPD-04",
+      "title_zh": "组织更新要求的对话框重视前台上下文",
+      "evidence_kind": "observed-source",
+      "observation_zh": "独立更新要求模块检查可见、未最小化的窗口；无合适窗口时等待焦点事件，提供 dismiss 或 update，组织禁用自动更新时改为管理员说明。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-C7oQk54t.js",
+          "anchor": "autoUpdatesDisabled",
+          "occurrence_0_based": 0,
+          "total_occurrences": 2,
+          "char_range_0_based_half_open": [
+            929,
+            948
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            929,
+            948
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 929
+        },
+        {
+          "path": ".vite/build/index.chunk-C7oQk54t.js",
+          "anchor": "browser-window-focus",
+          "occurrence_0_based": 0,
+          "total_occurrences": 2,
+          "char_range_0_based_half_open": [
+            1872,
+            1892
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1872,
+            1892
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 1872
+        },
+        {
+          "path": ".vite/build/index.chunk-C7oQk54t.js",
+          "anchor": "defaultId:o.indexOf(\"dismiss\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            1305,
+            1335
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            1305,
+            1335
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 1305
+        },
+        {
+          "path": ".vite/build/index.chunk-C7oQk54t.js",
+          "anchor": "exports.showUpdateRequiredDialog=u",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            2781,
+            2815
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            2781,
+            2815
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 2781
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "模块可被调用不代表当前组织策略要求更新；REA 对此模块完成了静态分析。"
+    },
+    {
+      "claim_id": "LOG-01",
+      "title_zh": "分层日志与有界轮转",
+      "evidence_kind": "observed-source",
+      "observation_zh": "主日志采用 timestamp/level/message/metadata，打包默认 info，开发默认 debug；文件 transport 默认 10MiB/5 个文件，renderer 类别日志为 warning/error、单文件 5MiB，仍继承默认 maxFiles。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "process.env.DESKTOP_LOG_LEVEL??(a.app.isPackaged?\"info\":\"debug\")",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            285264,
+            285328
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            285264,
+            285328
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 285264
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "maxsize:t.maxsize??10485760,maxFiles:t.maxFiles??5",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            286118,
+            286168
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            286118,
+            286168
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 286118
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "`${n} [${e}] ${t}${vi(r)}`",
+          "occurrence_0_based": 0,
+          "total_occurrences": 2,
+          "char_range_0_based_half_open": [
+            286960,
+            286986
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            286960,
+            286986
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 286960
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function Fme(e)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            288699,
+            288714
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            288699,
+            288714
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 288699
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "{maxsize:5242880}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            289034,
+            289051
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            289034,
+            289051
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 289034
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "e.frame!==t.mainFrame",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            289203,
+            289224
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            289203,
+            289224
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 289203
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "这是默认构造值，不等于所有日志文件共享该容量，未读取任何实际日志或测量磁盘使用。"
+    },
+    {
+      "claim_id": "LOG-02",
+      "title_zh": "日志降级与隐私处理是条件化防线",
+      "evidence_kind": "observed-source",
+      "observation_zh": "初始化先缓冲，日志目录异常尝试搬移再创建，失败可关闭文件日志。元数据 spawnargs 被红化；受限合规模式才对完整日志行做 scrub，scrubber 不可用时写固定 redacted 占位。浏览器类别还限制 4096 字符和裁去查询/片段。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "spawnargs.length} arg(s) redacted",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            285584,
+            285617
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            285584,
+            285617
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 285584
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "vme=\"<redacted: log scrub unavailable>\"",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            285868,
+            285907
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            285868,
+            285907
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 285868
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "transform:e=>(yr()&&(e[_me]=yme(e[_me]))",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            286016,
+            286056
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            286016,
+            286056
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 286016
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Logs directory unavailable, file logging disabled",
+          "occurrence_0_based": 0,
+          "total_occurrences": 2,
+          "char_range_0_based_half_open": [
+            287257,
+            287306
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            287257,
+            287306
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 287257
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Pme=4096",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            288690,
+            288698
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            288690,
+            288698
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 288690
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "function yr(){return Jde.__complianceSinkRestricted===!0}",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            247884,
+            247941
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            247884,
+            247941
+          ],
+          "line_1_based": 1,
+          "column_codepoints_0_based": 247884
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "不能承诺所有模式的每条日志都去标识化；局部 scrub 防线不等于完整隐私审计。"
+    },
+    {
+      "claim_id": "LOG-03",
+      "title_zh": "显示日志入口实际生成支持包",
+      "evidence_kind": "observed-source",
+      "observation_zh": "showLogsInFileManager 的实现可收集调试信息、会话诊断、堆/VM 等材料，生成下载目录 ZIP，再在文件管理器揭示；并使用筛选和 transform。",
+      "anchors": [
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "async function KTi()",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            5044256,
+            5044276
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            5044256,
+            5044276
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3812682
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Debug info written",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            5044520,
+            5044538
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            5044520,
+            5044538
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3812946
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "Heap diagnostics written",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            5044715,
+            5044739
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            5044715,
+            5044739
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3813141
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "`${a.app.getName()}-logs-${n}.zip`",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            5045186,
+            5045220
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            5045186,
+            5045220
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3813612
+        },
+        {
+          "path": ".vite/build/index.chunk-ny8j26BQ.js",
+          "anchor": "transform:(e,t)=>Rce(e,t,jf)",
+          "occurrence_0_based": 0,
+          "total_occurrences": 1,
+          "char_range_0_based_half_open": [
+            5045257,
+            5045285
+          ],
+          "utf8_byte_range_0_based_half_open": [
+            5045257,
+            5045285
+          ],
+          "line_1_based": 13,
+          "column_codepoints_0_based": 3813683
+        }
+      ],
+      "runtime_activation": "not_observed",
+      "limitations_zh": "这里只描述分发代码；没有点击该操作、读用户日志、生成用户支持包或验证脱敏完整性。入口名称不能被解读为纯浏览目录。",
+      "transferable_lesson_zh": "支持包应作为可能含敏感诊断信息的独立共享对象，由用户审阅并授权分享。"
+    }
+  ],
+  "verification": {
+    "anchors_checked": 149,
+    "all_anchor_ranges_readback_match": true,
+    "offset_definition": "0-based half-open; both Python Unicode codepoint and UTF-8 byte ranges recorded. Line is 1-based, column is codepoint count from line start.",
+    "publication_contains": "Original analysis, source hashes, short anchors and locations; excludes full proprietary bundles, private logs and user configuration.",
+    "checked_at_utc": "2026-10-14T17:21:00Z",
+    "source_file_hashes_checked": 4,
+    "locale_catalog_hashes_checked": 43
+  },
+  "revision_history": [
+    {
+      "recorded_at_utc": "2026-10-14T17:21:00Z",
+      "reason": "Applied seven independently verified semantic conditions/provenance corrections from risk-directed static audit; original observations and REA provenance retained.",
+      "prior_evidence_sha256": "397f26981fc959666b9540f1d02d50d7e27ca11fbdd33a22dd1aaebf4b10b74c",
+      "scope": "Original analysis only; target artifacts unchanged and not executed. No private user state accessed.",
+      "changes": [
+        {
+          "claim_id": "SET-05",
+          "wording_changes": {
+            "observation_zh": {
+              "before": "加载器区分 missing/read_error/json_error/schema_error；可过滤无效 MCP 条目，schema 整体失败时仅保留某些图形恢复字段。降级读取设置 Pg 后拒绝持久化并返回 parked。",
+              "after": "加载器区分 missing/read_error/json_error/schema_error；可过滤无效 MCP 条目，schema 整体失败时仅保留某些图形恢复字段。只有被判为降级读取并设置 Pg 时，writer 才拒绝持久化并返回 parked。"
+            },
+            "limitations_zh": {
+              "before": "不是所有配置文件都采用此策略；config.json 有另一条重置路径。不得把返回 parked 表述成保存成功。",
+              "after": "不是所有配置文件都采用此策略；config.json 有另一条重置路径。不得把返回 parked 表述成保存成功。 是否停放不能只看错误类别：文件缺失；仅空白、控制字符或替代字符的空内容；被实现视为空值的 JSON（null、布尔、数字、空字符串、空数组、空对象）；以及剔除无效 MCP 条目后整体校验通过的配置，都不会因此设置降级标记。不能据此保证被过滤的条目永不受后续保存影响。"
+            }
+          },
+          "anchors_added": 4
+        },
+        {
+          "claim_id": "UPD-01",
+          "wording_changes": {
+            "observation_zh": {
+              "before": "Linux enableUpdates 明确关闭 in-app updater；仍定时读取 apt Packages 比较版本，并通过 /proc/self/exe 的 deleted 标识及当前 exe 存在性检测外部替换。",
+              "after": "Linux enableUpdates 明确关闭 in-app updater。相关检查未被 autoUpdate.disabled 禁用时，仍定时读取 apt Packages 比较版本，并通过 /proc/self/exe 的 deleted 标识及当前 exe 存在性检测外部替换。"
+            },
+            "limitations_zh": {
+              "before": "静态 Linux 默认路径；不得把包内 Squirrel/macOS 下载与安装函数当成 Linux 的默认运行事实。",
+              "after": "静态 Linux 默认路径；不得把包内 Squirrel/macOS 下载与安装函数当成 Linux 的默认运行事实。 autoUpdate.disabled 为真时，周期分支可把非 idle 状态退回 idle 并跳过版本与替换检查；focus/unlock/resume 触发的替换检查同样受此条件限制。"
+            }
+          },
+          "anchors_added": 2
+        }
+      ],
+      "anchor_count_before": 143,
+      "anchor_count_after": 149,
+      "prior_validation": {
+        "anchors_checked": 143,
+        "all_anchor_ranges_readback_match": true,
+        "offset_definition": "0-based half-open; both Python Unicode codepoint and UTF-8 byte ranges recorded. Line is 1-based, column is codepoint count from line start.",
+        "publication_contains": "Original analysis, source hashes, short anchors and locations; excludes full proprietary bundles, private logs and user configuration."
+      },
+      "post_edit_validation": {
+        "file_records_verified": 4,
+        "anchors_verified": 149,
+        "mismatches": 0,
+        "locale_catalog_records_verified": 43
+      }
+    }
+  ]
+}

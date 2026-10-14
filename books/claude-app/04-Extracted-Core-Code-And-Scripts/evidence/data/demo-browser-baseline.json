@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-14",
+  "source_commit": "520db1bcb49ecfd39e0f4cf5b2160bf81bedb380",
+  "subject": "Original study demo, not Claude",
+  "method": "Cloud Chromium via htmlpreview.github.io serving the public immutable GitHub commit; preview service rewrites resource loading. Normal UI actions, DOM observations and actual screenshots.",
+  "viewport": {
+    "width": 1188,
+    "height": 761
+  },
+  "checks": [
+    {
+      "id": "BR-01",
+      "result": "pass",
+      "observation": "Page rendered with expected three-column desktop composition and original seeded transcript."
+    },
+    {
+      "id": "BR-02",
+      "result": "pass",
+      "observation": "Light/dark button changed root theme and actual body background to rgb(249,249,247) / rgb(11,11,11)."
+    },
+    {
+      "id": "BR-03",
+      "result": "pass",
+      "observation": "About opens native dialog matching :modal and focuses its acknowledgement button; Escape closes and restores focus to trigger."
+    },
+    {
+      "id": "BR-04",
+      "result": "pass",
+      "observation": "Enter submitted one message, visible generation progressed to a completed prewritten reply."
+    },
+    {
+      "id": "BR-05",
+      "result": "finding",
+      "observation": "Immediate Stop ended generation but focus fell to body as the button became disabled; pending-placeholder text retained a copy action."
+    },
+    {
+      "id": "BR-06",
+      "result": "pass",
+      "observation": "Gallery validation preserved short input, set aria-invalid true, showed recovery text and focused the field."
+    },
+    {
+      "id": "BR-07",
+      "result": "pass-with-finding",
+      "observation": "Simulated failure preserved input and showed role=alert plus retry; retry restarted generation. Explicit simulation/retry triggers lost focus to body when disabled or hidden."
+    },
+    {
+      "id": "BR-08",
+      "result": "pass",
+      "observation": "Observed document had no horizontal overflow at1188x761; this does not cover narrow widths or zoom."
+    }
+  ],
+  "limitations": [
+    "Not file:// or offline-load validation; browser preview fetches public static resources.",
+    "Not a complete accessibility, screen-reader, native app, cross-browser or cross-platform test.",
+    "No actual IME, forced-colors, OS reduced-motion or narrow-width testing in this pass.",
+    "Phase2 changes are not covered by this baseline commit report."
+  ],
+  "findings_status": "Reported to demo author; fixes under development and require browser retest."
+}

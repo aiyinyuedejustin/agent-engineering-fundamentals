@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "tested_at": "2026-10-14T17:30:59.459Z",
+  "environment": {
+    "node": "v24.19.0",
+    "jsdom": "26.1.0",
+    "browser": null
+  },
+  "scope": "Phase-2 original density, independent message reading and in-page Quick Entry. Deterministic simulated DOM only; no product/runtime/browser claim.",
+  "files_sha256": {
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/index.html": "e1fcb6178b9723900c55222878e7e3398508dfcc47c39af3f451bf31ada68ba0",
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/demo.js": "884e054861bcbb477eb255b120ceefc5794350448f637375c77f12b984384015",
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/demo.css": "5ef9db9f0db44dd863221aa5ce8a488f543c9777816c9be8596c1d1c37eb2f98",
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/evidence.js": "d89b002c6fd99262000918bcafd7b5f4e4abe810b0ada9f22f3a40f3edf6b7e4",
+    "01-Frontend-Design-And-HTML-Templates/styles/tokens.css": "ad246c391b0dffbd245adc5f1e3cedc5a11d6b402344cd1687570965b2fe52e8",
+    "01-Frontend-Design-And-HTML-Templates/styles/components.css": "b47f40b115712e2a1995d1c5539d4fe17094b44ad885e09df00f658e6bcda717"
+  },
+  "sources_unchanged_during_run": true,
+  "limitations": [
+    "Reuses all baseline harness fixtures and limitations.",
+    "No CSS variable cascade/layout measurements, rendered size or reflow checks.",
+    "Synthetic input/composition/scroll heights do not validate real IME or native editing.",
+    "No native Quick Entry window, system shortcuts, account, backend or persistence."
+  ],
+  "summary": {
+    "pass": 32,
+    "fail": 0,
+    "total": 32
+  },
+  "results": [
+    {
+      "id": "P01",
+      "title": "Initial independent dimensions and accessible selected state",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P02",
+      "title": "Density changes the specimen attribute without changing the reading axis",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P03",
+      "title": "All six density/reading combinations keep the other axis and draft",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P04",
+      "title": "Theme, navigation and conversation reset retain in-page display preferences",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P05",
+      "title": "Display preferences are page-only even when storage is unavailable",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P06",
+      "title": "Malformed button choices cannot set unsupported attributes or text",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P07",
+      "title": "Quick Entry starts closed, empty and independent from the full composer",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P08",
+      "title": "Open focuses the text target and exposes the correct controlled region",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P09",
+      "title": "Plain Enter captures locally with selected context and leaves the conversation unchanged",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P10",
+      "title": "Native form submission is intercepted; repeat/empty submission does not overwrite",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P11",
+      "title": "Modified Enter combinations never submit and leave native editing unhandled",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P12",
+      "title": "Composition state suppresses Enter, submit and Escape until compositionend",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P13",
+      "title": "isComposing and legacy keyCode 229 each protect quick input independently",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P14",
+      "title": "Escape retains draft/context, restores opener, and reopens without data loss",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P15",
+      "title": "Dismiss button and keyboard Escape on context both preserve drafts",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P16",
+      "title": "Quick Entry markup-looking input is a literal text sink",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P17",
+      "title": "Only latest capture is retained and context snapshots do not mutate retroactively",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P18",
+      "title": "Clear removes only the last record, retains draft and restores an available focus target",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P19",
+      "title": "New observation clears capture/draft and restores the full composer focus",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P20",
+      "title": "Quick capture does not cancel or duplicate an active full-composer generation",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P21",
+      "title": "Overlength programmatic input is rejected, retained, and recoverable",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P22",
+      "title": "Auto-height algorithm clamps synthetic scroll heights without resizing the composer",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P23",
+      "title": "Hidden-panel programmatic submit cannot capture its retained draft",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P24",
+      "title": "New display and quick-entry interactions remain independent in a narrow media fixture",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P25",
+      "title": "User Stop before first chunk restores composer focus and does not offer placeholder copying",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P26",
+      "title": "User Stop after a chunk retains real text and copy action",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P27",
+      "title": "Passive generation completion does not take focus from another input",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P28",
+      "title": "Stop in narrow inspector releases inert background before restoring composer focus",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P29",
+      "title": "Explicit inspector simulation starts focus the composer before their trigger disables",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P30",
+      "title": "Explicit narrow inspector starts close overlay and release background focus",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P31",
+      "title": "Explicit retry restores composer focus after its error banner disappears",
+      "status": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "id": "P32",
+      "title": "Passive failure preserves focus on a different active input",
+      "status": "pass",
+      "method": "simulated DOM"
+    }
+  ]
+}

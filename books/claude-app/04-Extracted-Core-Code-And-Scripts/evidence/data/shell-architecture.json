@@ -1,0 +1,1587 @@
+{
+  "schema": "original-static-shell-study/v1",
+  "recorded_at": "2026-10-14T17:09:00Z",
+  "subject": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "app_asar_sha256": "3d4aea62ccf045ea88d3e92ce728e23aa01c965f25eda450f6369e7557848395"
+  },
+  "method": {
+    "target_executed": false,
+    "authenticated": false,
+    "user_private_data_read": false,
+    "source_execution": false,
+    "analysis": "REA bounded exact source selection plus inert byte searches and manual cross-reference tracing",
+    "offsets": "zero-based UTF-8 byte offsets; end exclusive; literal anchors intentionally short",
+    "security_scope": "architecture observation, not an audit or proof of enforcement"
+  },
+  "files": [
+    {
+      "path": "app.asar/package.json",
+      "sha256": "941d1f329539cd083461f2e35da52b87694bf87806c89d06a6f3876e170342ed",
+      "bytes": 5036,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/build/index.pre.js",
+      "sha256": "f45e07ae009e0156a05a8976fb42c1b0e0020d5024a10910229d15aeb383ad32",
+      "bytes": 903038,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/build/index.js",
+      "sha256": "f20848248e60ec046c97186812dbe5d0fe79c57f2fc200684f59d40ff911d3bb",
+      "bytes": 638,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512",
+      "bytes": 6956732,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/renderer/main_window/index.html",
+      "sha256": "b5559a29891b664f0015da2d8def0e841176b73ca086ae27a1fc8508a63653ee",
+      "bytes": 9165,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/build/mainWindow.js",
+      "sha256": "15974d98b0873d1a721cebf6348017805247ebdf88e0e64d401466e16f0a767d",
+      "bytes": 88143,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "resources/ion-dist/index.html",
+      "sha256": "e757e765d773c64c5282bf1d051a236f525887dc9a574d2bed2771413625f8cd",
+      "bytes": 46671,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+      "sha256": "af9df62d141687ee1638cc9090deee26e65551b37f0bbff84fd7f2eac5d92272",
+      "bytes": 11683,
+      "encoding": "UTF-8"
+    },
+    {
+      "path": "app.asar/.vite/build/mainView.js",
+      "sha256": "ad65b0048b6251c77b68e19e183c4c85cd74d23cb86bfbb43bef72833643ba38",
+      "bytes": 168708,
+      "encoding": "UTF-8"
+    }
+  ],
+  "rea_runs": [
+    {
+      "run": "rea-shell-selection",
+      "status": "completed",
+      "error_code": null,
+      "tool": "rea-agents@6.5.0",
+      "evidence_id": "ev_f0ea92b8613c9193b4ca947f73442288081f5e5d0988186fbcff84e1fa0b248f",
+      "raw_sha256": "b0defe03903f8f6566286e8c492a6c6725d7db5cdfd6befcf7c12a362e98b2d5",
+      "raw_bytes": 93065352,
+      "parameters": {
+        "format": "directory",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 30000,
+        "max_semantic_nodes_per_file": 8000,
+        "source_paths": [
+          "package.json",
+          ".vite/build/index.pre.js",
+          ".vite/build/mainWindow.js",
+          ".vite/build/mainView.js",
+          ".vite/build/quickWindow.js",
+          ".vite/renderer/main_window/index.html"
+        ],
+        "max_heap_mb": 1024,
+        "analysis_timeout_ms": 45000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 1261117,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 4,
+        "visited_ast_nodes": 322785,
+        "findings": 1610,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "summary": {
+        "browser_windows": 0,
+        "explicit_web_preferences": 0,
+        "preload_entrypoints": 0,
+        "context_bridge_apis": 31,
+        "exposed_api_members": 29,
+        "ipc": {
+          "operations": 1384,
+          "literal_channels": 7,
+          "dynamic_channel_operations": 1377,
+          "renderer_transmissions": 1201,
+          "renderer_listeners": 183,
+          "main_handlers": 0,
+          "paired_renderer_transmissions": 0,
+          "ambiguous_renderer_transmissions": 0,
+          "unpaired_literal_renderer_transmissions": 6
+        },
+        "sender_validation_observations": 0,
+        "utility_processes": 0,
+        "resolved_utility_entrypoints": 0,
+        "native_addon_bindings": 0,
+        "resolved_native_addon_bindings": 0
+      },
+      "source_selection": {
+        "requested_paths": [
+          "package.json",
+          ".vite/build/index.pre.js",
+          ".vite/build/mainWindow.js",
+          ".vite/build/mainView.js",
+          ".vite/build/quickWindow.js",
+          ".vite/renderer/main_window/index.html"
+        ],
+        "unselected_files": 431
+      },
+      "limitations": [
+        ".vite/renderer/main_window/index.html has 2 inline JavaScript bodies starting at lines 16, 196 that were not analyzed; endpoints, storage, imports and other facts in them are absent from the evidence.",
+        "Caller-selected source analysis leaves 431 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_publication": "not included; contains proprietary source-derived material"
+    },
+    {
+      "run": "rea-main-selection",
+      "status": "partial-timeout",
+      "error_code": "provider_timeout",
+      "tool": "rea-agents@6.5.0",
+      "evidence_id": "ev_834907c3907d270e002eb694437796f90e01ea1665c134fd3f9ef2996c283254",
+      "raw_sha256": "e8fad217056c19618f2567f8bf826422c3082977311526aa21bab0a48cbd9a3a",
+      "raw_bytes": 8424157,
+      "parameters": {
+        "format": "directory",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 6000,
+        "max_semantic_nodes_per_file": 5000,
+        "source_paths": [
+          "package.json",
+          ".vite/build/index.js",
+          ".vite/build/index.chunk-ny8j26BQ.js"
+        ],
+        "max_heap_mb": 1536,
+        "analysis_timeout_ms": 90000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 6962406,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 2,
+        "visited_ast_nodes": 1711410,
+        "findings": 646,
+        "modules": 6,
+        "parse_failures": 0
+      },
+      "summary": {
+        "browser_windows": 11,
+        "explicit_web_preferences": 29,
+        "preload_entrypoints": 0,
+        "context_bridge_apis": 0,
+        "exposed_api_members": 0,
+        "ipc": {
+          "operations": 4,
+          "literal_channels": 1,
+          "dynamic_channel_operations": 2,
+          "renderer_transmissions": 1,
+          "renderer_listeners": 0,
+          "main_handlers": 3,
+          "paired_renderer_transmissions": 1,
+          "ambiguous_renderer_transmissions": 0,
+          "unpaired_literal_renderer_transmissions": 0
+        },
+        "sender_validation_observations": 7,
+        "utility_processes": 3,
+        "resolved_utility_entrypoints": 0,
+        "native_addon_bindings": 0,
+        "resolved_native_addon_bindings": 0
+      },
+      "source_selection": {
+        "requested_paths": [
+          "package.json",
+          ".vite/build/index.js",
+          ".vite/build/index.chunk-ny8j26BQ.js"
+        ],
+        "unselected_files": 434
+      },
+      "limitations": [
+        ".vite/build/index.chunk-ny8j26BQ.js: Analysis operation timed out after 90000ms: analyze_javascript_application",
+        "Caller-selected source analysis leaves 434 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Sender, frame, URL, and origin checks are observations only; REA does not claim that they enforce a complete authorization policy.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ],
+      "raw_publication": "not included; contains proprietary source-derived material"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "SH-01",
+      "claim_zh": "package.json 的 main 入口先进入 index.pre.js，再 require index.js；后者载入主 chunk。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/package.json",
+          "literal": "\"main\": \".vite/build/index.pre.js\"",
+          "byte_start": 215,
+          "byte_end_exclusive": 249,
+          "line_1_based": 8,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.pre.js",
+          "literal": "require(\"./index.js\")",
+          "byte_start": 902686,
+          "byte_end_exclusive": 902707,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.js",
+          "literal": "require(\"./index.chunk-ny8j26BQ.js\")",
+          "byte_start": 601,
+          "byte_end_exclusive": 637,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-02",
+      "claim_zh": "主 bundle 在 ready 前请求单实例锁，第二实例参数通过 second-instance 路由；ready 回调再次检查锁。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.app.requestSingleInstanceLock()",
+          "byte_start": 6672638,
+          "byte_end_exclusive": 6672671,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.app.on(\"second-instance\"",
+          "byte_start": 6672754,
+          "byte_end_exclusive": 6672780,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.app.hasSingleInstanceLock()",
+          "byte_start": 3961064,
+          "byte_end_exclusive": 3961093,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "未启动两个实例验证去重、激活或各类 deep link。"
+      ]
+    },
+    {
+      "claim_id": "SH-03",
+      "claim_zh": "主窗口和核心内容是两个对象：BrowserWindow + WebContentsView，并通过 contentView.addChildView 组合。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function PSe(e){return io=new a.BrowserWindow(e)",
+          "byte_start": 536517,
+          "byte_end_exclusive": 536565,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function FSe(e){return V=new a.WebContentsView(e)",
+          "byte_start": 536611,
+          "byte_end_exclusive": 536660,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "l.contentView.addChildView(p)",
+          "byte_start": 6663015,
+          "byte_end_exclusive": 6663044,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-04",
+      "claim_zh": "主窗口外壳加载本地 main_window/index.html；该 HTML 载入自己独立的模块入口。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "l.loadFile(n.default.join(a.app.getAppPath(),\".vite/renderer/main_window/index.html\"))",
+          "byte_start": 6669912,
+          "byte_end_exclusive": 6669998,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/index.html",
+          "literal": "src=\"./assets/main-Dn-pSvvy.js\"",
+          "byte_start": 4359,
+          "byte_end_exclusive": 4390,
+          "line_1_based": 128,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "HTML 注释关于所有其他内容来自 claude.ai 的描述不能覆盖独立的 3P 本地分支。"
+      ]
+    },
+    {
+      "claim_id": "SH-05",
+      "claim_zh": "mainWindow.js 与 mainView.js 是外壳和核心内容的独立 preload 入口。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "preload:n.default.join(a.app.getAppPath(),\".vite/build/mainWindow.js\")",
+          "byte_start": 6661409,
+          "byte_end_exclusive": 6661479,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "preload:n.default.join(a.app.getAppPath(),\".vite/build/mainView.js\")",
+          "byte_start": 6662059,
+          "byte_end_exclusive": 6662127,
+          "line_1_based": 13,
+          "occurrence_0_based": 1
+        },
+        {
+          "file": "app.asar/.vite/build/mainWindow.js",
+          "literal": "e.contextBridge.exposeInMainWorld(\"desktopBootPlaceholder\",Cc)",
+          "byte_start": 88041,
+          "byte_end_exclusive": 88103,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-06",
+      "claim_zh": "标准部署 getMainWindowUrl 使用注入的 anthropicOriginUrl，生产默认 https://claude.ai。",
+      "evidence_kind": "observed-source",
+      "scope": "标准 1P 部署默认路径；开发或获批准 override 可改变 URL。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "getMainWindowUrl(){return this.deps.anthropicOriginUrl()}",
+          "byte_start": 2843906,
+          "byte_end_exclusive": 2843963,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "ogn({anthropicOriginUrl:Rg",
+          "byte_start": 6656907,
+          "byte_end_exclusive": 6656933,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function Rg(){let e=ng(),t=\"https://claude.ai\"",
+          "byte_start": 1648948,
+          "byte_end_exclusive": 1648994,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "p.webContents.loadURL(e.toString())",
+          "byte_start": 6670145,
+          "byte_end_exclusive": 6670180,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-07",
+      "claim_zh": "第三方推理部署主地址为 app://localhost；app 协议绑定资源目录的 ion-dist。",
+      "evidence_kind": "observed-source",
+      "scope": "第三方推理部署代码路径；该安装包确实随附 resources/ion-dist/index.html。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "getMainWindowUrl(){return Au}",
+          "byte_start": 2798307,
+          "byte_end_exclusive": 2798336,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Au=\"app://localhost\"",
+          "byte_start": 849495,
+          "byte_end_exclusive": 849515,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "xZr(n.default.join(W8(),\"ion-dist\")",
+          "byte_start": 6676654,
+          "byte_end_exclusive": 6676689,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.protocol.handle(\"app\"",
+          "byte_start": 4319444,
+          "byte_end_exclusive": 4319467,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function W8(){return a.app.isPackaged?process.resourcesPath:",
+          "byte_start": 6281918,
+          "byte_end_exclusive": 6281978,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "未运行 3P 配置；不宣称该路径对当前用户启用或全功能离线可用。"
+      ]
+    },
+    {
+      "claim_id": "SH-08",
+      "claim_zh": "本地 app 协议要求 hostname 为 localhost；Origin 存在且非空时要求其等于 app://localhost，缺少 Origin 不会被这一条件拒绝。随后进入 API 或静态资源路由，静态 HTML 响应加 CSP。",
+      "evidence_kind": "observed-source",
+      "scope": "app://localhost handler 的所见静态实现。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "if(t.hostname!==\"localhost\")return new Response(null,{status:404})",
+          "byte_start": 4319500,
+          "byte_end_exclusive": 4319566,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "i&&i!==Au?new Response(null,{status:403})",
+          "byte_start": 4319604,
+          "byte_end_exclusive": 4319645,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "t.set(\"Content-Security-Policy\",(await o()).csp)",
+          "byte_start": 4313218,
+          "byte_end_exclusive": 4313266,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "未全面审计 CSP、资源路径或所有 API 路由，不得称为已证明安全。",
+        "Origin 分支的条件化接受不构成漏洞或下游缺少授权的证明。"
+      ]
+    },
+    {
+      "claim_id": "SH-09",
+      "claim_zh": "核心视图冷启动路径根据 sidebar mode 与 3P 模式计算，可恢复保存的导航历史；失败分支回默认 URL。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function TXn(e,{storedSidebarMode:t,isCustom3p:n})",
+          "byte_start": 3255245,
+          "byte_end_exclusive": 3255295,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "i.pathname=\"/epitaxy\"",
+          "byte_start": 3255360,
+          "byte_end_exclusive": 3255381,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "i.pathname=\"/task/new\"",
+          "byte_start": 3255472,
+          "byte_end_exclusive": 3255494,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "e.webContents.navigationHistory.restore({entries:o,index:s})",
+          "byte_start": 3259254,
+          "byte_end_exclusive": 3259314,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "stealth-relaunch fallback",
+          "byte_start": 3258816,
+          "byte_end_exclusive": 3258841,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "未读取真实用户导航、偏好或恢复标记。"
+      ]
+    },
+    {
+      "claim_id": "SH-10",
+      "claim_zh": "外壳 preload 接收 boot placeholder 数据，HTML 在 head 阶段应用，主进程随内容导航/DOM-ready 更新拖拽区。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/mainWindow.js",
+          "literal": "\"desktopBootPlaceholder\",Cc",
+          "byte_start": 88075,
+          "byte_end_exclusive": 88102,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/index.html",
+          "literal": "})(globalThis.desktopBootPlaceholder, \"head\")",
+          "byte_start": 3093,
+          "byte_end_exclusive": 3138,
+          "line_1_based": 89,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function RXn(e,t){let n=!0",
+          "byte_start": 3260453,
+          "byte_end_exclusive": 3260479,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "t.on(\"dom-ready\",(()=>{n=!1,r()}))",
+          "byte_start": 3260722,
+          "byte_end_exclusive": 3260756,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "静态顺序不等于已测首帧延迟或真实可见绘制结果。"
+      ]
+    },
+    {
+      "claim_id": "SH-11",
+      "claim_zh": "外壳 renderer 通过 MainWindowTitleBar 订阅标题/错误事件，并发送 ready、reload 与 restart 请求。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/mainWindow.js",
+          "literal": "MainWindowTitleBar_$_titleBarReady",
+          "byte_start": 1704,
+          "byte_end_exclusive": 1738,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mainWindow.js",
+          "literal": "MainWindowTitleBar_$_showLoadError",
+          "byte_start": 2227,
+          "byte_end_exclusive": 2261,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "literal": "d?.onShowLoadError?.",
+          "byte_start": 11092,
+          "byte_end_exclusive": 11112,
+          "line_1_based": 2,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "literal": "d?.requestReloadMainView?.()",
+          "byte_start": 10831,
+          "byte_end_exclusive": 10859,
+          "line_1_based": 2,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "literal": "d?.requestRestartApp?.()",
+          "byte_start": 10868,
+          "byte_end_exclusive": 10892,
+          "line_1_based": 2,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-12",
+      "claim_zh": "主 preload 以具名接口经 contextBridge 暴露 IPC 包装；claude.web 先检查顶层 frame 与允许的 origin。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "e.contextBridge.exposeInMainWorld(t,n)",
+          "byte_start": 155645,
+          "byte_end_exclusive": 155683,
+          "line_1_based": 1,
+          "occurrence_0_based": 6
+        },
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "e[\"claude.web\"].WindowControl=A",
+          "byte_start": 39126,
+          "byte_end_exclusive": 39157,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "function j(){let e;try{e=new URL(window.location.href)}",
+          "byte_start": 150333,
+          "byte_end_exclusive": 150388,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "t.webFrame.top.frameToken===t.webFrame.frameToken",
+          "byte_start": 150486,
+          "byte_end_exclusive": 150535,
+          "line_1_based": 1,
+          "occurrence_0_based": 7
+        }
+      ],
+      "limitations": [
+        "接口暴露不证明服务端实现对全部页面可用。"
+      ]
+    },
+    {
+      "claim_id": "SH-13",
+      "claim_zh": "主进程 IPC 工厂绑定到具体 webContents.ipc，调用前验证 sender 与参数，部分返回值有校验。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function no(e,t,n,r)",
+          "byte_start": 531519,
+          "byte_end_exclusive": 531539,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "if(!n(e))throw eSe(t,e,r)",
+          "byte_start": 531765,
+          "byte_end_exclusive": 531790,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "aSe(t,\"method\",r,a,i)",
+          "byte_start": 531807,
+          "byte_end_exclusive": 531828,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "e.ipc.handle(i,l)",
+          "byte_start": 531955,
+          "byte_end_exclusive": 531972,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "if(!r[o][1](s))throw tSe(e,t,n,r[o][0],o)",
+          "byte_start": 531319,
+          "byte_end_exclusive": 531360,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "不等于完整权限审计；动态接口与业务授权需要逐项研究。"
+      ]
+    },
+    {
+      "claim_id": "SH-14",
+      "claim_zh": "claude.web 主进程 sender predicate 限制顶层 frame 与 origin；localhost/.ant.dev 额外要求 developer-approved 开关。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function Nv(e){if(!e.senderFrame||!e.senderFrame.url)return!1",
+          "byte_start": 1933736,
+          "byte_end_exclusive": 1933797,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "e.senderFrame?.parent===null",
+          "byte_start": 1933861,
+          "byte_end_exclusive": 1933889,
+          "line_1_based": 13,
+          "occurrence_0_based": 4
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "globalThis.isDeveloperApprovedDevUrlOverrideEnabled&&t.hostname===\"localhost\"",
+          "byte_start": 1934294,
+          "byte_end_exclusive": 1934371,
+          "line_1_based": 13,
+          "occurrence_0_based": 2
+        }
+      ],
+      "limitations": [
+        "preload 侧与主进程侧 predicate 并非字面完全相同；真正操作还经过具体实现。"
+      ]
+    },
+    {
+      "claim_id": "SH-15",
+      "claim_zh": "本地 UI 使用另一组 IPC namespace；main process 层 cSe 检查顶层 senderFrame。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function cSe(e){return e.senderFrame?.parent===null}",
+          "byte_start": 532627,
+          "byte_end_exclusive": 532679,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mainWindow.js",
+          "literal": "claude.internal.ui",
+          "byte_start": 682,
+          "byte_end_exclusive": 700,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "uSe=no(sSe,\"QuickWindow\",cSe",
+          "byte_start": 532831,
+          "byte_end_exclusive": 532859,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "dSe=no(sSe,\"MainWindowTitleBar\",cSe",
+          "byte_start": 532975,
+          "byte_end_exclusive": 533010,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "这里只展示各边界的已见差异，不把顶层 frame 检查视为独立的完整授权。"
+      ]
+    },
+    {
+      "claim_id": "SH-16",
+      "claim_zh": "主内容导航、重定向与 window.open 分别路由；子窗口创建时核对 opener 为主 frame。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "p.webContents.on(\"will-navigate\",kYa)",
+          "byte_start": 6664723,
+          "byte_end_exclusive": 6664760,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "p.webContents.setWindowOpenHandler(w)",
+          "byte_start": 6669750,
+          "byte_end_exclusive": 6669787,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "if(n!==p.webContents.mainFrame)",
+          "byte_start": 6666569,
+          "byte_end_exclusive": 6666600,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "mainView did-create-window: opener not main frame",
+          "byte_start": 6666661,
+          "byte_end_exclusive": 6666710,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "未穷举链接/弹窗行为；部分分支由 feature/deployment/URL 决定。"
+      ]
+    },
+    {
+      "claim_id": "SH-17",
+      "claim_zh": "Quick Entry 有本地 Electron fallback，首次创建 606×470 透明无边框窗口，加载自己的 preload 与 HTML。",
+      "evidence_kind": "observed-source",
+      "scope": "Electron Quick Entry 分支中的声明值；不是屏幕测量或所有平台尺寸。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "var TQr=606,EQr=470,DQr=30",
+          "byte_start": 4331691,
+          "byte_end_exclusive": 4331717,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "preload:n.default.join(a.app.getAppPath(),\".vite/build/quickWindow.js\")",
+          "byte_start": 4332917,
+          "byte_end_exclusive": 4332988,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "IJ.loadFile(n.default.join(a.app.getAppPath(),\".vite/renderer/quick_window/quick-window.html\"))",
+          "byte_start": 4333712,
+          "byte_end_exclusive": 4333807,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "IJ.setAlwaysOnTop(!0,\"pop-up-menu\")",
+          "byte_start": 4333061,
+          "byte_end_exclusive": 4333096,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-18",
+      "claim_zh": "Quick Entry 缓存窗口实例，等待 ready-to-show，已可见时切换为隐藏；blur 请求 dismiss。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "xQr=jOn(IJ,\"ready-to-show\").then((()=>SQr=!0))",
+          "byte_start": 4334239,
+          "byte_end_exclusive": 4334285,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "SQr&&IJ.isVisible())NQr(null)",
+          "byte_start": 4334287,
+          "byte_end_exclusive": 4334316,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "IJ.on(\"blur\",(()=>{NQr(null)}))",
+          "byte_start": 4334171,
+          "byte_end_exclusive": 4334202,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-19",
+      "claim_zh": "Quick Entry 保存位置及显示器相对坐标，显示器变化时按匹配/比例回落；提交经 payload 路由进入主内容。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "lo.set(\"quickWindowPosition\",r)",
+          "byte_start": 4334031,
+          "byte_end_exclusive": 4334062,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function jQr(){let e=lo.get(\"quickWindowPosition\",null)",
+          "byte_start": 4334507,
+          "byte_end_exclusive": 4334562,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "async function FQr(e,t,n)",
+          "byte_start": 4335454,
+          "byte_end_exclusive": 4335479,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "QuickEntry_$_onQuickEntrySubmit",
+          "byte_start": 39297,
+          "byte_end_exclusive": 39328,
+          "line_1_based": 1,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "没有读取或记录用户的实际窗口位置、文本、图像或聊天 ID。"
+      ]
+    },
+    {
+      "claim_id": "SH-20",
+      "claim_zh": "Quick Entry 存在 native overlay 能力分支；激活不成功会显示并聚焦主窗口。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "if(Q(\"desktop_quick_entry_show\",null),Nvr())",
+          "byte_start": 4332476,
+          "byte_end_exclusive": 4332520,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Using native Quick Entry overlay",
+          "byte_start": 4332542,
+          "byte_end_exclusive": 4332574,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "async function QYa(){try{await Avr(),!await AQr()",
+          "byte_start": 6697503,
+          "byte_end_exclusive": 6697552,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "u.nativeQuickEntry?.status!==\"supported\"",
+          "byte_start": 6677760,
+          "byte_end_exclusive": 6677800,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "包内有跨平台分支，不能据此证明 Linux 实际启用 Swift overlay。"
+      ]
+    },
+    {
+      "claim_id": "SH-21",
+      "claim_zh": "Linux build 中默认 global shortcut 常量为 Ctrl+Alt+Space，注册受 supported 与 legacyQuickEntryEnabled 条件控制。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "SRe=\"Ctrl+Alt+Space\"",
+          "byte_start": 827329,
+          "byte_end_exclusive": 827349,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "var vVn=SRe",
+          "byte_start": 3140497,
+          "byte_end_exclusive": 3140508,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "u.quickEntryGlobalShortcut?.status===\"supported\"",
+          "byte_start": 6677808,
+          "byte_end_exclusive": 6677856,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "e&&Kv(\"legacyQuickEntryEnabled\")",
+          "byte_start": 6677860,
+          "byte_end_exclusive": 6677892,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "未验证桌面环境或系统冲突是否允许注册，也未读取用户 override。"
+      ]
+    },
+    {
+      "claim_id": "SH-22",
+      "claim_zh": "关闭主窗口通常拦截 close；托盘偏好关闭或检查返回 unsupported 时请求退出，检查未判为 unsupported 时隐藏主窗。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "l.on(\"close\",(e=>{if(xA())return",
+          "byte_start": 6663746,
+          "byte_end_exclusive": 6663778,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Quitting app on main window close since tray is disabled",
+          "byte_start": 6663832,
+          "byte_end_exclusive": 6663888,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Quitting app on main window close since this desktop shows no tray icon",
+          "byte_start": 6664089,
+          "byte_end_exclusive": 6664160,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "let t=()=>{UOi(),C8(l,!0),l.hide()}",
+          "byte_start": 6663904,
+          "byte_end_exclusive": 6663939,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function DW()",
+          "byte_start": 3775504,
+          "byte_end_exclusive": 3775517,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function Nbn()",
+          "byte_start": 2912807,
+          "byte_end_exclusive": 2912821,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "async function Ugr()",
+          "byte_start": 3777460,
+          "byte_end_exclusive": 3777480,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "检查结果不证明真实可见托盘存在。所见 Wayland 探测只有明确 false 才判 unsupported；500ms 超时或不确定结果可能返回 null，随后仍被归为 supported 并走隐藏分支。退出请求还受应用退出协调器约束。"
+      ]
+    },
+    {
+      "claim_id": "SH-23",
+      "claim_zh": "activate 可在窗口不存在时重建主窗；window-all-closed 交给退出协调逻辑而非简单写死所有平台行为。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.app.on(\"window-all-closed\",(()=>{ADn()}))",
+          "byte_start": 6693093,
+          "byte_end_exclusive": 6693136,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function ADn(){ODn||bA()}",
+          "byte_start": 2981242,
+          "byte_end_exclusive": 2981267,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.app.on(\"activate\",(async(e,t)=>{",
+          "byte_start": 6693918,
+          "byte_end_exclusive": 6693952,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "let{mainWindow:e,loadAll:t}=OYa(DYa)",
+          "byte_start": 6694059,
+          "byte_end_exclusive": 6694095,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-24",
+      "claim_zh": "退出清理注册具名任务；before-quit/will-quit 拦截后并发 allSettled，设 75 秒总等待，再 flush store。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "var XWe=75e3",
+          "byte_start": 893247,
+          "byte_end_exclusive": 893259,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function Nd(e){ZWe.push(e)",
+          "byte_start": 893281,
+          "byte_end_exclusive": 893307,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Promise.allSettled(t.map((async e=>{",
+          "byte_start": 2982103,
+          "byte_end_exclusive": 2982139,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "await Dm(Fa.quiesce(),5e3,\"store writes did not land\")",
+          "byte_start": 2982592,
+          "byte_end_exclusive": 2982646,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "a.app.on(\"before-quit\",e(\"beforeQuit\"))",
+          "byte_start": 2983767,
+          "byte_end_exclusive": 2983806,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "超时 Promise 结束等待，不保证每个清理函数实际响应取消或所有资源已释放。"
+      ]
+    },
+    {
+      "claim_id": "SH-25",
+      "claim_zh": "退出任务覆盖主窗口状态、WebContentsView、Quick Entry 与子进程；打包模式退出 watchdog 为 15 秒。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "name:\"persist-main-window-state\"",
+          "byte_start": 6679068,
+          "byte_end_exclusive": 6679100,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "name:\"webcontentsview-cleanup\"",
+          "byte_start": 6693141,
+          "byte_end_exclusive": 6693171,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "name:\"quick-entry-cleanup\"",
+          "byte_start": 4331722,
+          "byte_end_exclusive": 4331748,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "name:\"direct-mcp-host-shutdown\",stopsChildProcesses:!0",
+          "byte_start": 6693769,
+          "byte_end_exclusive": 6693823,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "let r=a.app.isPackaged?15e3:5e3",
+          "byte_start": 2982770,
+          "byte_end_exclusive": 2982801,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "watchdog 位于清理等待之后，不能将 15 秒理解为整个退出流程上限。"
+      ]
+    },
+    {
+      "claim_id": "SH-26",
+      "claim_zh": "主内容加载错误显示在独立外壳，并有带预算的重试：初始窗口为 180 秒，0/15/30 秒基础延迟及 20% 抖动；离线等待会延长预算，HTTP 连续错误单独计数。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "DHn=18e4,OHn=[0,15e3,3e4],kHn=.2",
+          "byte_start": 3150240,
+          "byte_end_exclusive": 3150272,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "NHn=3,PI",
+          "byte_start": 3150297,
+          "byte_end_exclusive": 3150305,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function qI(e,t)",
+          "byte_start": 3152328,
+          "byte_end_exclusive": 3152344,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "II>NHn?\"origin keeps failing\"",
+          "byte_start": 3152497,
+          "byte_end_exclusive": 3152526,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/assets/MainWindowPage-BmUYSHtA.js",
+          "literal": "e.retrying&&",
+          "byte_start": 9385,
+          "byte_end_exclusive": 9397,
+          "line_1_based": 2,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function KI(e,t,n=1/0)",
+          "byte_start": 3151485,
+          "byte_end_exclusive": 3151507,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "LI+=AHn,KI(AHn,e,t)",
+          "byte_start": 3151746,
+          "byte_end_exclusive": 3151765,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "KI(0,e,RI?t+MHn:1/0)",
+          "byte_start": 3153272,
+          "byte_end_exclusive": 3153292,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "这些是代码参数，不是实测 SLA；HTTP 错误的序列起点有偏移。",
+        "初始 timer 路径的离线等待没有统一墙钟截止；自动重试耗尽后的 focus/show/resume/unlock 唤醒另有约 60 秒离线等待边界。不得将 180 秒描述为整个故障过程的硬截止。"
+      ]
+    },
+    {
+      "claim_id": "SH-27",
+      "claim_zh": "恢复动作监听 focus/show/resume/unlock；主 renderer 无响应或退出另有恢复路径。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "JI(\"focus\")",
+          "byte_start": 6663528,
+          "byte_end_exclusive": 6663539,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "JI(\"show\")",
+          "byte_start": 6664236,
+          "byte_end_exclusive": 6664246,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Id([\"resume\"],(()=>JI(\"resume\")))",
+          "byte_start": 6675053,
+          "byte_end_exclusive": 6675086,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "Id([\"unlock\"],(()=>JI(\"unlock-screen\")))",
+          "byte_start": 6675087,
+          "byte_end_exclusive": 6675127,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "e.forcefullyCrashRenderer(),iUn(e)",
+          "byte_start": 3156810,
+          "byte_end_exclusive": 3156844,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "有 print() 特殊保护及其他条件；不能声称所有 hang 都立即被杀掉。"
+      ]
+    },
+    {
+      "claim_id": "SH-28",
+      "claim_zh": "Find in Page 是子 WebContentsView 加本地 HTML；About 是独立 BrowserWindow 加本地 HTML。",
+      "evidence_kind": "observed-source",
+      "scope": "Linux amd64 2.37337.1 shipped source; not runtime verified",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function ISe(e){return ao=new a.WebContentsView(e)",
+          "byte_start": 537353,
+          "byte_end_exclusive": 537403,
+          "line_1_based": 7,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "\".vite/renderer/find_in_page/find-in-page.html\"",
+          "byte_start": 4055572,
+          "byte_end_exclusive": 4055619,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "\".vite/renderer/about_window/about.html\"",
+          "byte_start": 4358473,
+          "byte_end_exclusive": 4358513,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "preload:n.default.join(a.app.getAppPath(),\".vite/build/aboutWindow.js\")",
+          "byte_start": 4358297,
+          "byte_end_exclusive": 4358368,
+          "line_1_based": 13,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "claim_id": "SH-29",
+      "claim_zh": "源文件带 sourceMappingURL 提示，但所提取 app.asar 目录没有 .map 文件。",
+      "evidence_kind": "observed-source",
+      "scope": "本次 app.asar 提取目录所有后缀 .map 的文件清点结果为 0。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "//# sourceMappingURL=mainView.js.map",
+          "byte_start": 168672,
+          "byte_end_exclusive": 168708,
+          "line_1_based": 25,
+          "occurrence_0_based": 0
+        }
+      ],
+      "limitations": [
+        "提示并不意味着已取得原始源码或 source map；其他未研究分发渠道不在范围内。"
+      ]
+    }
+  ],
+  "global_unknowns": [
+    "runtime execution and feature gates",
+    "effective Electron defaults for primary windows",
+    "actual window bounds/first paint timings",
+    "all 3P configuration combinations",
+    "actual OS global shortcut/tray behavior",
+    "security completeness and reachability",
+    "main hosted UI version and rendered/computed styles"
+  ],
+  "publication_boundary": [
+    "Original Chinese analysis, structural diagrams and short anchors only",
+    "Do not publish raw REA outputs, bundles, fonts, executable code, installed app or user profile data"
+  ],
+  "validation": {
+    "file_hashes_checked": 9,
+    "literal_anchor_slices_checked": 118,
+    "mismatches": 0,
+    "scope": "Static file identity and exact UTF-8 offsets; not semantic or runtime proof",
+    "checked_at_utc": "2026-10-14T17:21:00Z"
+  },
+  "revision_history": [
+    {
+      "recorded_at_utc": "2026-10-14T17:21:00Z",
+      "reason": "Applied seven independently verified semantic conditions/provenance corrections from risk-directed static audit; original observations and REA provenance retained.",
+      "prior_evidence_sha256": "8ae68d876a94bf4ad3781f723b0bd5862aedf9ee25c43ed2f422d98e5a24fffa",
+      "scope": "Original analysis only; target artifacts unchanged and not executed. No private user state accessed.",
+      "changes": [
+        {
+          "claim_id": "SH-08",
+          "wording_changes": {
+            "claim_zh": {
+              "before": "本地 app 协议检查 hostname 和 Origin，再进入 API 或静态资源路由；静态 HTML 响应加 CSP。",
+              "after": "本地 app 协议要求 hostname 为 localhost；Origin 存在且非空时要求其等于 app://localhost，缺少 Origin 不会被这一条件拒绝。随后进入 API 或静态资源路由，静态 HTML 响应加 CSP。"
+            },
+            "limitations": {
+              "before": [
+                "未全面审计 CSP、资源路径或所有 API 路由，不得称为已证明安全。"
+              ],
+              "after": [
+                "未全面审计 CSP、资源路径或所有 API 路由，不得称为已证明安全。",
+                "Origin 分支的条件化接受不构成漏洞或下游缺少授权的证明。"
+              ]
+            }
+          },
+          "anchors_added": 0
+        },
+        {
+          "claim_id": "SH-22",
+          "wording_changes": {
+            "claim_zh": {
+              "before": "关闭主窗口通常拦截 close；托盘关闭或平台无托盘时退出，托盘可用时隐藏，形成后台驻留。",
+              "after": "关闭主窗口通常拦截 close；托盘偏好关闭或检查返回 unsupported 时请求退出，检查未判为 unsupported 时隐藏主窗。"
+            },
+            "limitations": {
+              "before": [],
+              "after": [
+                "检查结果不证明真实可见托盘存在。所见 Wayland 探测只有明确 false 才判 unsupported；500ms 超时或不确定结果可能返回 null，随后仍被归为 supported 并走隐藏分支。退出请求还受应用退出协调器约束。"
+              ]
+            }
+          },
+          "anchors_added": 3
+        },
+        {
+          "claim_id": "SH-26",
+          "wording_changes": {
+            "claim_zh": {
+              "before": "主内容加载错误显示在独立外壳，并有有界重试：180 秒窗口、0/15/30 秒基础延迟和 20% 抖动，HTTP 连续错误单独计数。",
+              "after": "主内容加载错误显示在独立外壳，并有带预算的重试：初始窗口为 180 秒，0/15/30 秒基础延迟及 20% 抖动；离线等待会延长预算，HTTP 连续错误单独计数。"
+            },
+            "limitations": {
+              "before": [
+                "这些是代码参数，不是实测 SLA；HTTP 错误的序列起点有偏移。"
+              ],
+              "after": [
+                "这些是代码参数，不是实测 SLA；HTTP 错误的序列起点有偏移。",
+                "初始 timer 路径的离线等待没有统一墙钟截止；自动重试耗尽后的 focus/show/resume/unlock 唤醒另有约 60 秒离线等待边界。不得将 180 秒描述为整个故障过程的硬截止。"
+              ]
+            }
+          },
+          "anchors_added": 3
+        }
+      ],
+      "anchor_count_before": 112,
+      "anchor_count_after": 118,
+      "prior_validation": {
+        "file_hashes_checked": 9,
+        "literal_anchor_slices_checked": 112,
+        "mismatches": 0,
+        "scope": "Static file identity and exact UTF-8 offsets; not semantic or runtime proof"
+      },
+      "post_edit_validation": {
+        "file_records_verified": 9,
+        "anchors_verified": 118,
+        "mismatches": 0
+      }
+    }
+  ]
+}

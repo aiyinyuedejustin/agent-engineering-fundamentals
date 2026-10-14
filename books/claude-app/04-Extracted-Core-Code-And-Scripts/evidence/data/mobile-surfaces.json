@@ -1,0 +1,1066 @@
+{
+  "title": "Claude iOS/Android 移动界面与交互证据账本",
+  "as_of": "2026-10-14",
+  "collection_status": "closed",
+  "collection_closed_at": "2026-10-14T17:21:05Z",
+  "primary_question": "哪些移动端视觉及交互可以由官方公共材料证实，哪些桌面结论不能迁移？",
+  "scope": [
+    "standard Claude iOS app",
+    "standard Claude Android app",
+    "phone surfaces",
+    "public screenshots and official help"
+  ],
+  "excluded": [
+    "authenticated runtime",
+    "installation",
+    "IPA/APK extraction",
+    "unofficial app packages",
+    "iPad and foldable runtime",
+    "implementation-language inference",
+    "exact CSS/font/color inference"
+  ],
+  "clock_note": "Use session UTC date, not host filesystem timestamp. Current store version, article publication date, retrieval date, and screenshot capture date are separate.",
+  "sources": [
+    {
+      "id": "MS-S01",
+      "title": "Claude by Anthropic — App Store",
+      "canonical_url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "platform": "iOS / iPadOS",
+      "kind": "current_listing",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Version 1.261012.20 displayed; screenshot build unknown.",
+      "private_snapshot_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "snapshot_sha256": "5fe2ea0f73953bfe99051e52543eef02e42b277ad946af436bbc0727b4a07e9d",
+      "snapshot_bytes": 767845
+    },
+    {
+      "id": "MS-S02",
+      "title": "Claude by Anthropic — Google Play",
+      "canonical_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "kind": "current_listing",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Updated on Oct 13, 2026 in opened page; no verified Android version code.",
+      "private_snapshot_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "snapshot_sha256": "6ec7d00bc5cec7d50a70029a23478708371894e1412425720172bf74d6f20b16",
+      "snapshot_bytes": 1305962
+    },
+    {
+      "id": "MS-S03",
+      "title": "Install Claude for iOS",
+      "canonical_url": "https://support.claude.com/en/articles/9266462-install-claude-for-ios",
+      "platform": "iOS / iPadOS",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Current standard app and Intune app distinction; iOS/iPadOS 18+."
+    },
+    {
+      "id": "MS-S04",
+      "title": "Install Claude for Android",
+      "canonical_url": "https://support.claude.com/en/articles/9612887-install-claude-for-android",
+      "platform": "Android",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Android 8+ requirement."
+    },
+    {
+      "id": "MS-S05",
+      "title": "Use voice mode",
+      "canonical_url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "platform": "iOS / Android / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Separate dictation and voice; mode switching; mobile settings crop."
+    },
+    {
+      "id": "MS-S06",
+      "title": "Use Claude with iOS apps",
+      "canonical_url": "https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps",
+      "platform": "iOS",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Native handoffs, reminders, permission and plan boundaries."
+    },
+    {
+      "id": "MS-S07",
+      "title": "Use Claude with Android apps",
+      "canonical_url": "https://support.claude.com/en/articles/11869629-use-claude-with-android-apps",
+      "platform": "Android",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Native handoffs, alarms/timers, permission and plan boundaries."
+    },
+    {
+      "id": "MS-S08",
+      "title": "Use Claude app intents, shortcuts, and widgets on iOS",
+      "canonical_url": "https://support.claude.com/en/articles/10263469-use-claude-app-intents-shortcuts-and-widgets-on-ios",
+      "platform": "iOS",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "OS entry points: intent/share/shortcut/widget/camera control."
+    },
+    {
+      "id": "MS-S09",
+      "title": "Use the Claude widget on Android",
+      "canonical_url": "https://support.claude.com/en/articles/10534883-use-the-claude-widget-on-android",
+      "platform": "Android",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Home widget chat/camera/dictation entries; resizable widget."
+    },
+    {
+      "id": "MS-S10",
+      "title": "Create and edit files with Claude",
+      "canonical_url": "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+      "platform": "iOS / Android / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Mobile settings via sidebar initials; Download opens system preview or another app."
+    },
+    {
+      "id": "MS-S11",
+      "title": "Open the Claude mobile app with a link",
+      "canonical_url": "https://support.claude.com/en/articles/14898120-open-the-claude-mobile-app-with-a-link",
+      "platform": "iOS / Android",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Code routes and URL parameters; desktop folder/file parameters ignored."
+    },
+    {
+      "id": "MS-S12",
+      "title": "Claude Cowork and chat are one Claude",
+      "canonical_url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
+      "platform": "mobile / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Gradual account rollout; phone task continuation; cloud versus desktop dependencies."
+    },
+    {
+      "id": "MS-S13",
+      "title": "Use enterprise search",
+      "canonical_url": "https://support.claude.com/en/articles/12489464-use-enterprise-search",
+      "platform": "mobile / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Enterprise search project unavailable on mobile; not a blanket connector restriction."
+    },
+    {
+      "id": "MS-S14",
+      "title": "Share a chat with specific people",
+      "canonical_url": "https://support.claude.com/en/articles/16762496-share-a-chat-with-specific-people",
+      "platform": "mobile / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Initiating named-person chat sharing requires web; receiving links works across devices."
+    },
+    {
+      "id": "MS-S15",
+      "title": "Use connectors to extend Claude’s capabilities",
+      "canonical_url": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities",
+      "platform": "mobile / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Mobile connector installation beta; desktop extensions desktop-only."
+    },
+    {
+      "id": "MS-S16",
+      "title": "Manage custom roles on Enterprise plans",
+      "canonical_url": "https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans",
+      "platform": "mobile / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Mobile blocked tools may visually look active even when server rejects calls."
+    },
+    {
+      "id": "MS-S17",
+      "title": "Get started with Claude Design",
+      "canonical_url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "platform": "iOS / Android / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "Mobile full-screen artifact viewing/editing; sharing settings web/desktop."
+    },
+    {
+      "id": "MS-S18",
+      "title": "Release notes",
+      "canonical_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "platform": "mobile / desktop / web",
+      "kind": "official_help",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "2026-09-16 dated unified-experience rollout; not screenshot date."
+    },
+    {
+      "id": "MS-S19",
+      "title": "Introducing the Claude Team plan and iOS app",
+      "canonical_url": "https://claude.com/resources/articles/team-plan-and-ios",
+      "platform": "iOS",
+      "kind": "historical_official_announcement",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "2024-05-01 historical cross-device chat and photos/files statement, not current pixel evidence."
+    },
+    {
+      "id": "MS-S20",
+      "title": "Claude Android app",
+      "canonical_url": "https://claude.com/resources/articles/android-app",
+      "platform": "Android",
+      "kind": "historical_official_announcement",
+      "observed_date": "2026-10-14",
+      "read_status": "underlying_official_page_opened_and_read",
+      "boundaries": "2024-07-16 historical cross-device and camera/files statement, not current pixel evidence."
+    }
+  ],
+  "images": [
+    {
+      "id": "MS-IOS-01",
+      "source_url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "platform": "iOS",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "e94b95bc2bf842e51b69865821ac66a654bd6b293570e65925bace13a426ece1",
+      "bytes": 53896,
+      "dimensions_px": [
+        600,
+        1300
+      ],
+      "format": "WEBP",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "地图结果宣传合成图",
+      "observed": [
+        "聊天切片左上有菜单图标，右上有两个操作图标。",
+        "用户提问使用浅色圆角块；回答文字直接排在浅色面上。",
+        "地图与场所卡片跨越聊天切片边界，是宣传拼贴。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-IOS-02",
+      "source_url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "platform": "iOS",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "c71f1f528969de008b7e64857de5f8ce0925b43c34b9212c2123a922d82ec81e",
+      "bytes": 51546,
+      "dimensions_px": [
+        600,
+        1300
+      ],
+      "format": "WEBP",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "语音宣传图",
+      "observed": [
+        "人物持手机照片、宣传文字与独立波形符号；没有可核验的完整语音界面。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-IOS-03",
+      "source_url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "platform": "iOS",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "53c93f0230783a3bf65067f95e69236d1a859952036462bc1baaba1d0bceca45",
+      "bytes": 28204,
+      "dimensions_px": [
+        600,
+        1300
+      ],
+      "format": "WEBP",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "连接工具宣传图",
+      "observed": [
+        "多种服务标识按大圆角方块排列；没有设置页、授权页或连接器目录界面。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-IOS-04",
+      "source_url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "platform": "iOS",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "c2bb149d4819265dfb45a4b4b64fe8366bd0b604958bcc2826818f929c9cd4d3",
+      "bytes": 37764,
+      "dimensions_px": [
+        600,
+        1300
+      ],
+      "format": "WEBP",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "交互作品宣传合成图",
+      "observed": [
+        "底层为浅色聊天切片，上层为带关闭与更多按钮的作品切片。",
+        "深色闪卡、进度与紫色按钮属于示例作品内容，不是 Claude 全局主题证据。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-IOS-05",
+      "source_url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684",
+      "platform": "iOS",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "ea6c38258bf1d12676eb8bd832c178f37377e66478fc60ebd55364202eb3a8b0",
+      "bytes": 46722,
+      "dimensions_px": [
+        600,
+        1300
+      ],
+      "format": "WEBP",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "附件与文件输出宣传合成图",
+      "observed": [
+        "照片、DOC、PDF 三个附件缩略项横向排列。",
+        "PPTX 输出卡片显示文件标题与类型，并跨越聊天框边界。",
+        "底部输入切片分文字行与控件行；控件行可见加号、Opus 胶囊、麦克风与暖色圆形上箭头。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-01",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "837d1e611b1b048b82958bb88ec92f6620539d918e6c69e92285e4c9796f6bd7",
+      "bytes": 272492,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "品牌宣传图",
+      "observed": [
+        "人物照片、品牌标识及口号；不含可检验的应用界面。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-02",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "8442a8f4a0664db2408c265fc2148a4d1f5fc84dc6148b929c9d9b93ee7b9427",
+      "bytes": 172390,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "地图结果宣传合成图",
+      "observed": [
+        "与 MS-IOS-01 的内容与构图相近，使用不同纵横比例及裁切。",
+        "不能据此证明 Android 原生地图、状态栏或导航实现。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-03",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "d4b1ecd52c9015d7408d7159f3da812b7f0788ef67e86b5d2e350ee6299f5091",
+      "bytes": 301908,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "语音宣传图",
+      "observed": [
+        "与 MS-IOS-02 的人物、波形与宣传主题相近；不显示语音交互状态。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-04",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "3cca94a107ccf4fb1ec0c9867ee451b98673d7eb5aee0988bd7680521db66f26",
+      "bytes": 184810,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "连接工具宣传图",
+      "observed": [
+        "与 MS-IOS-03 的服务标识排列相近；不是原生连接器菜单证据。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-05",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "1a1095b0048b3800c07367bae5da543a463fb5a390fce2ff9e04c780852b2a9c",
+      "bytes": 126706,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "交互作品宣传合成图",
+      "observed": [
+        "与 MS-IOS-04 的浅色聊天和深色闪卡示例相近；作品下半部分被宣传画幅裁切。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-06",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "90522476564efad1b67ead111aae973871b252ca951cf514a9e44ff38f8dc1a3",
+      "bytes": 173384,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "附件与文件输出宣传合成图",
+      "observed": [
+        "与 MS-IOS-05 的照片、两份文档、输出卡片与输入控件相近。",
+        "没有键盘或 Android 系统导航区域。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-07",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "c0e530980ac23396f3e546e7185255b3bf10e9e5eb5ace32356515b2d77999b3",
+      "bytes": 301396,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "任务通知宣传图",
+      "observed": [
+        "照片中的手机显示顶部胶囊形开孔、锁屏通知、底部手电筒与相机图标以及细长底部指示条。",
+        "这些是 iPhone 风格设备与锁屏线索，虽然图片来源是 Google Play。",
+        "宣传图包含多个 Claude 通知，但不证明 Android 通知布局或实时后台执行。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-AND-08",
+      "source_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US",
+      "platform": "Android",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "eba851b74769614be4987f8b94027fdc2392985176536990bbcb7a060f5b9e2c",
+      "bytes": 63286,
+      "dimensions_px": [
+        333,
+        592
+      ],
+      "format": "PNG",
+      "retrieved_at": "2026-10-14T17:15:45Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_store_promotional_screenshot",
+      "label": "任务列表与审批宣传合成图",
+      "observed": [
+        "顶部为 All、Blocked、In progress、Done 状态筛选胶囊；部分项目带计数。",
+        "任务行显示标题、时间、来源及连接状态；突出卡片含 Approve 按钮。",
+        "审批卡片跨越底层列表边界；不是同一运行帧或已验证交互流程。"
+      ],
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "platform_boundary": "Store listing platform only; depicted UI and device OS are not authenticated runtime evidence.",
+      "not_established": [
+        "截图拍摄日期",
+        "截图所对应的应用版本",
+        "真实布局尺寸、字体名、颜色 token",
+        "实时触摸、滚动、键盘与动画行为"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes.",
+      "retrieved_date": "2026-10-14",
+      "timestamp_precision_note": "UTC session clock; collection timestamp rounded to collection batch, not server capture time."
+    },
+    {
+      "id": "MS-VOICE-01",
+      "reused_evidence_id": "OV08-IMG3",
+      "label": "Mobile 深色 composer",
+      "source_url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "platform": "Mobile; iOS versus Android not identified by article crop",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "036a31f1c7f44c6dc87a4bb2129b774debcf2f8171a734051c6b73837d789613",
+      "bytes": 80185,
+      "dimensions_px": [
+        1320,
+        415
+      ],
+      "format": "PNG",
+      "retrieved_date": "2026-10-14",
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_help_mobile_ui_crop",
+      "observed": [
+        "深灰输入面在更暗背景之上，浅色提示位于上部。",
+        "底部左组为加号和滑杆；右组为麦克风和强对比白色圆形波形按钮。",
+        "麦克风与波形是同时可见的不同控件。"
+      ],
+      "not_established": [
+        "Desktop 暗色 token。",
+        "Desktop 按钮圆形规范或尺寸。",
+        "底部安全区的布局数值",
+        "具体操作系统身份或应用 build"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes."
+    },
+    {
+      "id": "MS-VOICE-02",
+      "reused_evidence_id": "OV08-IMG4",
+      "label": "Mobile Voice/Pace 底部设置面板",
+      "source_url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "platform": "Mobile; iOS versus Android not identified by article crop",
+      "private_path": "[private workspace location omitted; use the recorded relative source identity]",
+      "sha256": "f5287cfe4196fbf00bddd9eec1bcc16d090f851aa926196bf34cdbd2b88121db",
+      "bytes": 30396,
+      "dimensions_px": [
+        958,
+        682
+      ],
+      "format": "JPEG",
+      "retrieved_date": "2026-10-14",
+      "inspected_at": "2026-10-14T17:16:54Z",
+      "capture_date": null,
+      "screenshot_app_version": null,
+      "inspection_status": "viewed_original_with_view_image",
+      "source_type": "official_help_mobile_ui_crop",
+      "observed": [
+        "顶端中央拖动条和底部 home indicator 可见。",
+        "Voice、Pace 分组下有大型圆角矩形选项。",
+        "选中项通过亮边框、亮文字与未选中项区分。",
+        "第一组最右选项部分被截，第二组可见三项。"
+      ],
+      "not_established": [
+        "横向滚动行为。",
+        "Desktop 设置网格。",
+        "底部安全区的布局数值",
+        "具体操作系统身份或应用 build"
+      ],
+      "redistribution": "Private verification only; publish observations and original diagrams, not source image bytes."
+    }
+  ],
+  "claims": [
+    {
+      "id": "MS-C01",
+      "evidence_level": "observed",
+      "platform": "mobile_marketing",
+      "claim": "宣传聊天切片保留紧凑顶部入口与单列会话；导航展开状态未展示。",
+      "sources": [
+        "MS-IOS-01",
+        "MS-IOS-05",
+        "MS-AND-02",
+        "MS-AND-06"
+      ]
+    },
+    {
+      "id": "MS-C02",
+      "evidence_level": "observed",
+      "platform": "mobile_marketing",
+      "claim": "浅色输入切片的文字行与工具行分层；工具行包含附件、模型、听写和发送。",
+      "sources": [
+        "MS-IOS-05",
+        "MS-AND-06"
+      ]
+    },
+    {
+      "id": "MS-C03",
+      "evidence_level": "observed",
+      "platform": "mobile_unspecified_os",
+      "claim": "官方移动端暗色输入裁切同时显示麦克风与波形按钮。",
+      "sources": [
+        "MS-VOICE-01"
+      ]
+    },
+    {
+      "id": "MS-C04",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "听写生成文字；语音模式提供双向语音，可在同一会话中与文字模式切换。",
+      "sources": [
+        "MS-S05"
+      ]
+    },
+    {
+      "id": "MS-C05",
+      "evidence_level": "observed",
+      "platform": "mobile_unspecified_os",
+      "claim": "语音设置裁切含顶部拖动条、Voice/Pace 选项和底部指示条；不能量化安全区。",
+      "sources": [
+        "MS-VOICE-02"
+      ]
+    },
+    {
+      "id": "MS-C06",
+      "evidence_level": "unknown",
+      "platform": "iOS_Android",
+      "claim": "没有已查看证据展示当前键盘弹出、IME 组合、Enter 键或键盘避让。",
+      "sources": []
+    },
+    {
+      "id": "MS-C07",
+      "evidence_level": "observed",
+      "platform": "mobile_marketing",
+      "claim": "附件缩略项和文件输出卡将输入上下文与可打开交付物分开。",
+      "sources": [
+        "MS-IOS-05",
+        "MS-AND-06"
+      ]
+    },
+    {
+      "id": "MS-C08",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "移动端文件 Download 会打开系统预览或另一应用。",
+      "sources": [
+        "MS-S10"
+      ]
+    },
+    {
+      "id": "MS-C09",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "手机可查看并编辑 Design，Artifacts 中可全屏查看；修改共享设置要到 web/desktop。",
+      "sources": [
+        "MS-S17"
+      ]
+    },
+    {
+      "id": "MS-C10",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "统一 Chat/Cowork 体验分批向账户推出；不能用安装包版本判断账户是否已获得。",
+      "sources": [
+        "MS-S12",
+        "MS-S18"
+      ]
+    },
+    {
+      "id": "MS-C11",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "手机可以继续或发起云端任务；本地电脑文件、浏览器和 computer use 仍依赖运行中的 Desktop。",
+      "sources": [
+        "MS-S12"
+      ]
+    },
+    {
+      "id": "MS-C12",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "Code 深链接可以预填问题、仓库、分支和模式；不支持桌面的 folder/file 参数。",
+      "sources": [
+        "MS-S11"
+      ]
+    },
+    {
+      "id": "MS-C13",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "本地短信/邮件体验通过系统分享或 intent 打开目标应用，由用户检查并发送。",
+      "sources": [
+        "MS-S06",
+        "MS-S07"
+      ]
+    },
+    {
+      "id": "MS-C14",
+      "evidence_level": "documented",
+      "platform": "iOS",
+      "claim": "iOS 支持提醒事项；支持 Ask Claude intents、Shortcuts 及系统相机入口。",
+      "sources": [
+        "MS-S06",
+        "MS-S08"
+      ]
+    },
+    {
+      "id": "MS-C15",
+      "evidence_level": "documented",
+      "platform": "Android",
+      "claim": "Android 文档列出闹钟和计时器；提醒事项只在 iOS 提供。",
+      "sources": [
+        "MS-S07"
+      ]
+    },
+    {
+      "id": "MS-C16",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "两端均有新聊天、相机、听写 widget 入口；不能将听写入口写成双向 voice mode。",
+      "sources": [
+        "MS-S08",
+        "MS-S09"
+      ]
+    },
+    {
+      "id": "MS-C17",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "Enterprise search 专用项目不可在 mobile 使用。",
+      "sources": [
+        "MS-S13"
+      ]
+    },
+    {
+      "id": "MS-C18",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "面向指定人的聊天共享发起功能限 web；移动端可打开收到的分享。",
+      "sources": [
+        "MS-S14"
+      ]
+    },
+    {
+      "id": "MS-C19",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "web connectors 可在 mobile 使用，移动端安装为 beta；desktop extensions 不能据此移植到手机。",
+      "sources": [
+        "MS-S15"
+      ]
+    },
+    {
+      "id": "MS-C20",
+      "evidence_level": "documented",
+      "platform": "iOS_Android",
+      "claim": "组织策略会在服务端拒绝被屏蔽的 connector tool，即使手机界面暂时仍显示它可用。",
+      "sources": [
+        "MS-S16"
+      ]
+    },
+    {
+      "id": "MS-C21",
+      "evidence_level": "observed",
+      "platform": "Android_store_marketing",
+      "claim": "Google Play 上的任务通知宣传图具有 iPhone 风格锁屏线索；分发平台不是截图操作系统证明。",
+      "sources": [
+        "MS-AND-07"
+      ]
+    },
+    {
+      "id": "MS-C22",
+      "evidence_level": "observed",
+      "platform": "Android_store_marketing",
+      "claim": "任务卡宣传图显示状态筛选与 Approve，但不证明实时审批行为。",
+      "sources": [
+        "MS-AND-08"
+      ]
+    },
+    {
+      "id": "MS-C23",
+      "evidence_level": "inference",
+      "platform": "cross_platform",
+      "claim": "可迁移的是会话层级、工具分组与交付物语义；不可从桌面 CSS 推得手机原生几何、字体、手势与安全区。",
+      "sources": [
+        "MS-IOS-05",
+        "MS-AND-06",
+        "MS-VOICE-01",
+        "MS-VOICE-02"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "question": "官方移动应用身份及最低系统版本",
+      "status": "answered",
+      "sources": [
+        "MS-S01",
+        "MS-S02",
+        "MS-S03",
+        "MS-S04"
+      ]
+    },
+    {
+      "question": "当前商店视觉材料是否独立原生运行证据",
+      "status": "answered_with_boundary",
+      "sources": [
+        "MS-IOS-01",
+        "MS-AND-02",
+        "MS-AND-07"
+      ]
+    },
+    {
+      "question": "导航与 workspace 如何区分",
+      "status": "partly_documented_runtime_unverified",
+      "sources": [
+        "MS-S10",
+        "MS-S11",
+        "MS-S12",
+        "MS-S17"
+      ]
+    },
+    {
+      "question": "输入框和 voice 的可见/文档状态",
+      "status": "answered_with_boundary",
+      "sources": [
+        "MS-C02",
+        "MS-C03",
+        "MS-C04",
+        "MS-C05"
+      ]
+    },
+    {
+      "question": "键盘、IME 和安全区真实行为",
+      "status": "explicit_gap",
+      "sources": [
+        "MS-C06"
+      ]
+    },
+    {
+      "question": "附件输出和系统交接",
+      "status": "answered_documentarily",
+      "sources": [
+        "MS-S06",
+        "MS-S07",
+        "MS-S10"
+      ]
+    },
+    {
+      "question": "iOS/Android 重要差异及移动端限制",
+      "status": "answered_documentarily",
+      "sources": [
+        "MS-S06",
+        "MS-S07",
+        "MS-S08",
+        "MS-S09",
+        "MS-S13",
+        "MS-S14",
+        "MS-S15",
+        "MS-S16"
+      ]
+    }
+  ],
+  "unresolved": [
+    "当前 iOS/Android 真机导航抽屉与账户/项目切换布局",
+    "键盘弹出时可视区变化、输入法组合、滚动锚定、返回键行为",
+    "系统字体缩放、读屏焦点、触摸目标及无障碍对比测试",
+    "横屏、iPad、平板、折叠屏布局",
+    "截图版本及账户 rollout 身份"
+  ],
+  "source_conflicts": [
+    {
+      "issue": "Store imagery contains shared composites and iPhone-like device imagery on Android listing",
+      "resolution": "Do not infer native platform implementation from marketplace placement."
+    },
+    {
+      "issue": "Light marketing composer shows model pill while mobile dark help crop shows sliders",
+      "resolution": "Keep states and sources separate; do not invent one current layout or attribute difference to OS."
+    },
+    {
+      "issue": "Historical release descriptions and current help differ across time",
+      "resolution": "Historical 2024 pages only establish dated capability context; use opened current docs for availability with rollout caveat."
+    }
+  ],
+  "failed_optional_acquisition": [
+    {
+      "source": "https://claude.com/resources/articles/team-plan-and-ios",
+      "asset": "https://assets.claude.com/7b0cddf40ac0d7e32c74e86be07a9df438834121.png",
+      "status": "HTTP 403",
+      "action": "Stopped; no bypass attempted; image not inspected or cited as pixel evidence."
+    },
+    {
+      "source": "https://claude.com/resources/articles/android-app",
+      "asset": "https://assets.claude.com/5e700de1c74ae3846f527c5917066a59bcd9dcf7.png",
+      "status": "Not downloaded after first assets.claude.com failure",
+      "action": "Historical page text only; not visual evidence."
+    }
+  ],
+  "publication_rule": "Original screenshots and store HTML stay private. Publish authored observations, citations, hashes/dimensions, and original schematic diagrams only."
+}

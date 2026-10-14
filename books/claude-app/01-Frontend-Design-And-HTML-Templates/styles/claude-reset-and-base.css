@@ -1,0 +1,21 @@
+/* 有边界的 reset 与基础样式。仅作用于 data-ui="atelier" 容器及其子树。
+ * 组件复用：导入 tokens 后导入本文件。它不全局重置第三方页面。
+ * 原生语义优先：button、details、dialog、input 保留浏览器键盘行为。
+ * focus-visible 是必要状态，不通过 outline:none 隐藏焦点。
+ */
+:where([data-ui="atelier"], [data-ui="atelier"] *) { box-sizing: border-box; }
+:where([data-ui="atelier"]) { margin: 0; color: var(--ui-ink); background: var(--ui-canvas); font: var(--ui-text)/1.6 var(--ui-font); accent-color: var(--ui-accent); }
+:where([data-ui="atelier"]) :where(body) { margin: 0; }
+:where([data-ui="atelier"]) :where(button,input,textarea,select) { font: inherit; color: inherit; }
+:where([data-ui="atelier"]) :where(button,select,summary) { cursor: pointer; }
+:where([data-ui="atelier"]) :where(button) { touch-action: manipulation; }
+:where([data-ui="atelier"]) :where(button:disabled) { opacity: .44; cursor: not-allowed; }
+:where([data-ui="atelier"]) :where(input,textarea,select) { max-width: 100%; }
+:where([data-ui="atelier"]) :where(p,h1,h2,h3) { margin-top: 0; }
+:where([data-ui="atelier"]) :where(a) { color: inherit; text-underline-offset: 4px; }
+:where([data-ui="atelier"]) :where(svg) { display: block; }
+:where([data-ui="atelier"]) :where(:focus-visible) { outline: 2px solid var(--ui-accent); outline-offset: 4px; }
+:where([data-ui="atelier"]) :where([hidden]) { display: none !important; }
+:where([data-ui="atelier"]) .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+@media (prefers-reduced-motion: reduce) { :where([data-ui="atelier"]) *, :where([data-ui="atelier"]) *::before, :where([data-ui="atelier"]) *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
+@media (forced-colors: active) { :where([data-ui="atelier"]) :where(button,input,select,textarea,.card,.badge) { border:1px solid ButtonText; } }

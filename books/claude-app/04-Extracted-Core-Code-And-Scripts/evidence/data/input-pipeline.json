@@ -1,0 +1,1541 @@
+{
+  "schema": "claude.input-context-pipeline.v1",
+  "target": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux x64",
+    "artifact": "official packaged ion-dist"
+  },
+  "scope": "Static selected-client analysis. Target not executed; no upload, microphone permission, account access or endpoint probing. Packaged client does not establish current hosted UI or server internals.",
+  "sources": [
+    {
+      "id": "IP-S01",
+      "path": "ion-dist/assets/v1/shared-3-DJJeaAOk.js",
+      "sha256": "0e0ba9d4992495c31b0ce12e17528088eb642a1c263825cb1201de5e400c74bc",
+      "bytes": 483660
+    },
+    {
+      "id": "IP-S02",
+      "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+      "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+      "bytes": 421033
+    },
+    {
+      "id": "IP-S03",
+      "path": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+      "bytes": 411479
+    },
+    {
+      "id": "IP-S04",
+      "path": "ion-dist/assets/v1/shared-9-DabxsIKR.js",
+      "sha256": "54ccd61cd5b324fbb425768077287436ff9b31d332a5b93693165373d49b1a48",
+      "bytes": 231540
+    },
+    {
+      "id": "IP-S05",
+      "path": "ion-dist/assets/v1/shared-7-CKXU4enr.js",
+      "sha256": "11c0371ca8c8c07c148a223063f9218770f8e0243ad7732d34c0c928c9e2c27d",
+      "bytes": 306345
+    },
+    {
+      "id": "IP-S06",
+      "path": "ion-dist/assets/v1/shared-2-SYzsATg-.js",
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc",
+      "bytes": 440042
+    },
+    {
+      "id": "IP-S07",
+      "path": "ion-dist/assets/v1/shared-28-DGrBzvHd.js",
+      "sha256": "2712645ae3bce4cef02045068dd2e738469e5207c56c159ee65b485e2f4dda24",
+      "bytes": 337693
+    },
+    {
+      "id": "IP-S08",
+      "path": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+      "sha256": "83ef8632d361e4b938e82005ecb3a46b2a5c81da3c016ca7fbc46cf69a49d2e8",
+      "bytes": 282051
+    },
+    {
+      "id": "IP-S09",
+      "path": "ion-dist/assets/v1/cbc9f9e27-Cd2G_MtE.js",
+      "sha256": "b32af0968a78324bf58c1537507e3d28828a307ce9cfc062c97e2c8bbbe7d9f3",
+      "bytes": 6778
+    },
+    {
+      "id": "IP-S10",
+      "path": "ion-dist/assets/v1/ca288e1f2-N6ARlm-b.js",
+      "sha256": "02b24d7d384cb12561382343ea9c4e14fc39642988fe9e255e2bb08f539ffa3c",
+      "bytes": 5735
+    },
+    {
+      "id": "IP-S11",
+      "path": "ion-dist/assets/v1/ca80fca8d-vl1ck1Sv.js",
+      "sha256": "12697e2768bfd3f7a01b580e2e4655b3f84e98345228a2155e48f598d286a0ec",
+      "bytes": 569145
+    },
+    {
+      "id": "IP-S12",
+      "path": "ion-dist/assets/v1/c0315458b-DZFr6C0D.js",
+      "sha256": "e6f358d1de88ca8ff8f1b3ff1536b5b75aeb3da831a977d43f23a4df9839cbdf",
+      "bytes": 1965
+    }
+  ],
+  "rea": {
+    "tool_version": "6.5.0",
+    "analyses": [
+      {
+        "evidence_id": "ev_56265a75d829df875922c1376e05fe0a37784938155661ae8658dfe0adfda21d",
+        "private_output": "private-downloads/input-pipeline-work/rea-input.json",
+        "output_sha256": "665b49547d6f54448c4151f8aeb69d9400bf874d99c2a76e82fca029536b5a3c",
+        "parameters": {
+          "format": "auto",
+          "integrity_policy": "fail",
+          "max_semantic_nodes": 6000,
+          "max_semantic_nodes_per_file": 2000,
+          "source_paths": [
+            "assets/v1/shared-9-DabxsIKR.js",
+            "assets/v1/shared-3-DJJeaAOk.js",
+            "assets/v1/shared-4-1vKV8QN9.js"
+          ],
+          "max_heap_mb": 512,
+          "analysis_timeout_ms": 60000
+        },
+        "source_selection": {
+          "requested_paths": [
+            "assets/v1/shared-9-DabxsIKR.js",
+            "assets/v1/shared-3-DJJeaAOk.js",
+            "assets/v1/shared-4-1vKV8QN9.js"
+          ],
+          "unselected_files": 3493
+        },
+        "statistics": {
+          "relevant_files": 3496,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 974927,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 3,
+          "visited_ast_nodes": 256468,
+          "findings": 3642,
+          "modules": 0,
+          "parse_failures": 0
+        },
+        "integrity_contradictions": [],
+        "limitations": [
+          "Caller-selected source analysis leaves 3493 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+          "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+          "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+          "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+          "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+          "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+          "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+        ]
+      },
+      {
+        "evidence_id": "ev_e9d3d5c725174d6a888a92c8ad84bbe7102bb4789787ef042b56539ec9429891",
+        "private_output": "private-downloads/input-pipeline-work/rea-lifecycle.json",
+        "output_sha256": "e18d796d48e0c37bc3cb72695ac87229f649fb3457833256c4f587687838c78f",
+        "parameters": {
+          "format": "auto",
+          "integrity_policy": "fail",
+          "max_semantic_nodes": 4500,
+          "max_semantic_nodes_per_file": 1500,
+          "source_paths": [
+            "assets/v1/shared-7-CKXU4enr.js",
+            "assets/v1/shared-2-SYzsATg-.js",
+            "assets/v1/ca288e1f2-N6ARlm-b.js"
+          ],
+          "max_heap_mb": 512,
+          "analysis_timeout_ms": 60000
+        },
+        "source_selection": {
+          "requested_paths": [
+            "assets/v1/shared-7-CKXU4enr.js",
+            "assets/v1/shared-2-SYzsATg-.js",
+            "assets/v1/ca288e1f2-N6ARlm-b.js"
+          ],
+          "unselected_files": 3493
+        },
+        "statistics": {
+          "relevant_files": 3496,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 752122,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 3,
+          "visited_ast_nodes": 211299,
+          "findings": 2894,
+          "modules": 0,
+          "parse_failures": 0
+        },
+        "integrity_contradictions": [],
+        "limitations": [
+          "Caller-selected source analysis leaves 3493 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+          "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+          "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+          "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+          "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+          "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+          "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+        ]
+      },
+      {
+        "evidence_id": "ev_a79cc51fb5d23b7f0b2fc130ed594bf3d83bce393de50a13476ab9d510a1a3e5",
+        "private_output": "private-downloads/input-pipeline-work/rea-preprocess.json",
+        "output_sha256": "b4be208d7ccaa977547d9b12c68655a0591d610bf8be6fc0cdd9e41f72a289b1",
+        "parameters": {
+          "format": "auto",
+          "integrity_policy": "fail",
+          "max_semantic_nodes": 4000,
+          "max_semantic_nodes_per_file": 2000,
+          "source_paths": [
+            "assets/v1/shared-182-CW7gYT2d.js",
+            "assets/v1/cbc9f9e27-Cd2G_MtE.js"
+          ],
+          "max_heap_mb": 512,
+          "analysis_timeout_ms": 60000
+        },
+        "source_selection": {
+          "requested_paths": [
+            "assets/v1/shared-182-CW7gYT2d.js",
+            "assets/v1/cbc9f9e27-Cd2G_MtE.js"
+          ],
+          "unselected_files": 3494
+        },
+        "statistics": {
+          "relevant_files": 3496,
+          "nested_asar_containers": 0,
+          "text_bytes_read": 427811,
+          "invalid_utf8_files": 0,
+          "parsed_javascript_files": 2,
+          "visited_ast_nodes": 123243,
+          "findings": 1574,
+          "modules": 0,
+          "parse_failures": 0
+        },
+        "integrity_contradictions": [],
+        "limitations": [
+          "Caller-selected source analysis leaves 3494 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+          "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+          "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+          "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+          "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+          "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+          "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+        ]
+      }
+    ],
+    "raw_outputs_private": true
+  },
+  "claims": [
+    {
+      "id": "IP01",
+      "title": "Two attachment representations",
+      "finding": "Composer state separates inline attachments with extracted_content from file records with client identity, nativeFile, localPath, upload promise, abort control, server identity, and error state.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 147111,
+          "byte_length": 42,
+          "anchor": "attachments:[],files:[],syncSourceUuids:[]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 144882,
+          "byte_length": 33,
+          "anchor": "cloudRefPromise:h,cloudRefAbort:u",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 144632,
+          "byte_length": 30,
+          "anchor": "serverFileUuid:a.ref.file_uuid",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP02",
+      "title": "Admission and model-aware file picker",
+      "finding": "Picker accept list depends on image support, out-of-context support, accept-all branches, and extension breakers. Count checks combine current attachments, files, sync sources, new candidates and conditional conversation file/image counts.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Image and PDF capabilities are looked up from model definitions; fallback differs by capability.",
+        "Conversation cap checks are feature-gated and may be disabled for certain hosts."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 164697,
+          "byte_length": 30,
+          "anchor": "numNewPotentialAttachments:o=0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 157430,
+          "byte_length": 25,
+          "anchor": "accept:$d({acceptAll:u||y",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 146172,
+          "byte_length": 22,
+          "anchor": "capabilities?.[t]!==!1",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP03",
+      "title": "Shared ingress",
+      "finding": "Picker, paste and drag-drop eventually call the upload handler with source metadata; picker clears input value after processing. Directory handling keeps native folders only where supported and otherwise flattens entries.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 155173,
+          "byte_length": 25,
+          "anchor": "via:\"drag_drop\",pathMap:t",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 157178,
+          "byte_length": 11,
+          "anchor": "via:\"paste\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 157283,
+          "byte_length": 17,
+          "anchor": "e.target.value=\"\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 99689,
+          "byte_length": 30,
+          "anchor": "let u=n&&mc()?\"keep\":\"flatten\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP04",
+      "title": "Drop ownership",
+      "finding": "The newer file ingress carries a target snapshot; a folder-containing result from a changed target is discarded with an explicit chat-changed notice. Unresolved native folder paths are surfaced separately.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Observed mismatch guard in this selected adapter is specifically conditioned on a nonempty folders array; it is not proof that every plain-file ingress uses this exact guard."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 99735,
+          "byte_length": 34,
+          "anchor": "a.folders.length>0&&u.snapshot!==c",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 99882,
+          "byte_length": 21,
+          "anchor": "\"drop-target-changed\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 100313,
+          "byte_length": 24,
+          "anchor": "\"folder-path-unreadable\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP05",
+      "title": "Long paste policy",
+      "finding": "The classic paste adapter uses a 4096 UTF-8-byte threshold; ordinary long text can become an attachment, while Shift, empty text, a disabling option or a short paste preserves editor insertion. Office-like HTML plus image clipboard data can prefer text.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Threshold belongs to the inspected paste adapter, not a universal service limit.",
+        "A paste can be promoted to a file by the injected attachPasteAsFile callback."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S07",
+          "utf8_byte_offset": 162042,
+          "byte_length": 11,
+          "anchor": "var Vw=4096",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S07",
+          "utf8_byte_offset": 162054,
+          "byte_length": 41,
+          "anchor": "function Hw(e){return new Blob([e]).size}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S07",
+          "utf8_byte_offset": 164342,
+          "byte_length": 18,
+          "anchor": "if(a||!p||_<Vw||f)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S07",
+          "utf8_byte_offset": 162211,
+          "byte_length": 14,
+          "anchor": "function Ww(e)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP06",
+      "title": "Pasted content hygiene",
+      "finding": "The editor has a hidden-character paste extension with text/HTML transforms, VS Code clipboard handling, and removal of listeners when the editor view is destroyed.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Cleaning is gated in the extension; internal editor drags are distinguished from external paste/drop."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S04",
+          "utf8_byte_offset": 143028,
+          "byte_length": 28,
+          "anchor": "name:\"hiddenCharactersPaste\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S04",
+          "utf8_byte_offset": 144454,
+          "byte_length": 20,
+          "anchor": "\"vscode-editor-data\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S04",
+          "utf8_byte_offset": 144042,
+          "byte_length": 36,
+          "anchor": "o.dom.removeEventListener(\"paste\",l)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP07",
+      "title": "Immediate staging",
+      "finding": "Placeholder mode attempts a bounded local inline-text fast path and otherwise creates local Blob records with UUID, filename, size, nativeFile and optional localPath before derivation resolves.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Fast path depends on target store and extension/size support."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 164500,
+          "byte_length": 18,
+          "anchor": "placeholderMode:!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 160456,
+          "byte_length": 31,
+          "anchor": "file_kind:H.Blob,file_uuid:Nn()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 148584,
+          "byte_length": 20,
+          "anchor": "async function ET(e)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP08",
+      "title": "Handler chain",
+      "finding": "First matching handler wins. Registration order is unsupported guard, direct large-file route, size guard, PDF, image, document conversion, out-of-context files, text, and a final session file-store route.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 223034,
+          "byte_length": 51,
+          "anchor": "e.registerHandler(new pA),e.registerHandler(new jk)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 187063,
+          "byte_length": 37,
+          "anchor": "this.handlers.find(n=>n.matches(e,t))",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP09",
+      "title": "Batch scheduling and stable order",
+      "finding": "Matching and validation precede concurrent preprocessing. Process/upload execution is limited to four jobs; preprocessing results are stored by original index, and Promise.all preserves result order.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "The four-slot limit applies to this processor; an outer upload pacing mechanism is separate."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 186815,
+          "byte_length": 21,
+          "anchor": "var kD=4,AD=54e4,jD=8",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 188406,
+          "byte_length": 30,
+          "anchor": "async preProcessFiles(e,t,n,r)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 188816,
+          "byte_length": 20,
+          "anchor": "i[s]={originalFile:e",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 189225,
+          "byte_length": 35,
+          "anchor": "async processFilesInternal(e,t,n,r)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP10",
+      "title": "Batch refusal propagation",
+      "finding": "After a server refusal known to apply to the batch, remaining always-upload handlers are skipped. After the last successful process, eight failures lasting at least 540000 ms each can stop launching later uploads.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "This is a guarded slow-failure breaker, not an overall nine-minute upload timeout."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 190117,
+          "byte_length": 29,
+          "anchor": "\"skipped_after_batch_refusal\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 189773,
+          "byte_length": 29,
+          "anchor": "\"skipped_after_slow_failures\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 190442,
+          "byte_length": 26,
+          "anchor": "h&&performance.now()-m>=AD",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP11",
+      "title": "Local text decoding",
+      "finding": "Plain/code-like text can be decoded from arrayBuffer with encoding detection and fatal TextDecoder. An undecodable buffer produces an encoding-pending path; nontext binary detection samples up to 8000 bytes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 191514,
+          "byte_length": 20,
+          "anchor": "async function zD(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 192706,
+          "byte_length": 39,
+          "anchor": "new TextDecoder(n,{fatal:!0}).decode(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 192765,
+          "byte_length": 10,
+          "anchor": "var GD=8e3",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 153179,
+          "byte_length": 33,
+          "anchor": "encodingPending:{buffer:t.buffer}",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP12",
+      "title": "Text normalization",
+      "finding": "Extracted text/file metadata have NUL characters removed. Upload filename normalization uses NFC with compatibility-ideograph exclusions. This is not language parsing or semantic code analysis.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 104787,
+          "byte_length": 42,
+          "anchor": "function Xv(e){return e.replace(/\\0/g,\"\")}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 104586,
+          "byte_length": 33,
+          "anchor": "function qv(e){return e.split(Kv)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP13",
+      "title": "Byte-based inline budget",
+      "finding": "Inline attachment size is counted as UTF-8 bytes and memoized per object. A reservation ledger includes existing attachments and in-flight reservations to avoid concurrent over-admission; release is idempotent.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "This is byte budgeting, not model tokenization."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 98205,
+          "byte_length": 14,
+          "anchor": "function G_(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 98415,
+          "byte_length": 14,
+          "anchor": "function K_(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 98507,
+          "byte_length": 14,
+          "anchor": "function q_(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 182194,
+          "byte_length": 30,
+          "anchor": "maxInlineAttachmentsTotalBytes",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP14",
+      "title": "Inline-to-file promotion",
+      "finding": "Text that exceeds an individual or combined inline budget can be uploaded as a text/plain file when the active host permits files. Otherwise a specific single-item/aggregate error is returned.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Legacy branches without an out-of-context route can still return an inline attachment after the budget helper declines it; do not claim every path hard-blocks."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 182519,
+          "byte_length": 35,
+          "anchor": "new File([l],p,{type:\"text/plain\"})",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 184610,
+          "byte_length": 32,
+          "anchor": "\"connector_attachment_too_large\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 184643,
+          "byte_length": 39,
+          "anchor": "\"connector_attachments_total_too_large\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 200738,
+          "byte_length": 20,
+          "anchor": "textOverInlineCap:!0",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP15",
+      "title": "PDF conversion boundary",
+      "finding": "PDF rasterization is requested when both the feature and model PDF capability are active. The fallbackToTextExtraction method calls server document conversion, not a local PDF parser.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 217068,
+          "byte_length": 22,
+          "anchor": "this.name=\"PdfHandler\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 217215,
+          "byte_length": 54,
+          "anchor": "e.featureGates?.janus_claude_ai&&e.modelConfig?.pdf_in",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 219774,
+          "byte_length": 67,
+          "anchor": "async fallbackToTextExtraction(e,t,n,r){return fO(e,t.orgUuid,n,r)}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 195693,
+          "byte_length": 26,
+          "anchor": "async function fO(e,t,n,r)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "Server OCR/extraction layout algorithms and model-ready page encoding are not supplied by this client branch."
+      ]
+    },
+    {
+      "id": "IP16",
+      "title": "Long and textless PDF branches",
+      "finding": "Conditional paths preserve an over-page-limit PDF as a whole file, retry as extracted text/text file, or request page images for a textless PDF. Client metadata distinguishes these outcomes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "These paths depend on document-as-file policy, long-PDF flags, route and server error codes.",
+        "The selected code does not declare one universal PDF page limit."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 216585,
+          "byte_length": 25,
+          "anchor": "keptWholeOverPageLimit:!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 216616,
+          "byte_length": 27,
+          "anchor": "clientTextUploadedAsFile:!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 216842,
+          "byte_length": 29,
+          "anchor": "noTextUploadedAsPageImages:!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 218568,
+          "byte_length": 25,
+          "anchor": "longPdfsInOneRequest===!0",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP17",
+      "title": "Table and document routing",
+      "finding": "CSV is present in both text and out-of-context extension sets; XLS/XLSX have a conversion path when out-of-context files are disabled and size permits. Supported document formats route to conversion or whole-file storage according to policy.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Handler priority and current capabilities decide the route; extension alone is insufficient."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 150403,
+          "byte_length": 22,
+          "anchor": "bw=[\"csv\",\"xls\",\"xlsx\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 151518,
+          "byte_length": 17,
+          "anchor": "Ow=[\"xlsx\",\"xls\"]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 151215,
+          "byte_length": 43,
+          "anchor": "Ew=[\"docx\",\"doc\",\"pptx\",\"rtf\",\"epub\",\"odt\"]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 201398,
+          "byte_length": 16,
+          "anchor": "function PO(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 201548,
+          "byte_length": 35,
+          "anchor": "this.name=\"ContentExtractorHandler\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "No client evidence here establishes server spreadsheet formula evaluation, table flattening rules or preservation of styles."
+      ]
+    },
+    {
+      "id": "IP18",
+      "title": "JPEG downscale parameters",
+      "finding": "Eligible non-project JPEG photos use a lazy local worker with a 2576-pixel long-edge target and 0.85 JPEG quality. Images within target keep original bytes; an output that is not smaller is discarded.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "This photo path is conditional on JPEG matching and non-project use.",
+        "The bundled constants are upload preprocessing choices, not model vision-resolution limits."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 149584,
+          "byte_length": 14,
+          "anchor": "dw=2576,fw=.85",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 214207,
+          "byte_length": 25,
+          "anchor": "async downscalePhoto(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S09",
+          "utf8_byte_offset": 5893,
+          "byte_length": 18,
+          "anchor": "a<=n.maxLongEdgePx",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S09",
+          "utf8_byte_offset": 6281,
+          "byte_length": 19,
+          "anchor": "o.blob.size>=t.size",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP19",
+      "title": "Worker safety and orientation",
+      "finding": "The JPEG worker path checks encoded dimensions, refuses >80000000 decoded pixels, requires bitmap/offscreen-canvas support, probes EXIF orientation, serializes work, and closes bitmaps. Queue timeout is 10000 ms; job timeout 15000 ms; repeated worker failure causes a 600000 ms cooldown.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Failure outcomes retain the original file; the upload pipeline may then apply its other image branch."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S09",
+          "utf8_byte_offset": 99,
+          "byte_length": 50,
+          "anchor": "var r=8e7,i=1048576,a=65536,o=15e3,s=1e4,c=2,l=6e5",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S09",
+          "utf8_byte_offset": 2162,
+          "byte_length": 26,
+          "anchor": "ExifOrientationUnsupported",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S09",
+          "utf8_byte_offset": 3082,
+          "byte_length": 14,
+          "anchor": "bitmap.close()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S09",
+          "utf8_byte_offset": 5315,
+          "byte_length": 23,
+          "anchor": "v=v.then(f,f).then(p,p)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP20",
+      "title": "General canvas and format conversion",
+      "finding": "The general image handler has a separate canvas resize branch capped at 8000 by 8000. BMP/HEIC/HEIF conversion uses JPEG; its helper default is 4096 and the eligible non-project HEIC path uses the photo long-edge target. The canvas helper revokes object URLs and removes the canvas.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Platform decode and smoothing support can force original-file fallback.",
+        "An 8000 cap is a client branch declaration, not a product-wide upload or context limit."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 155667,
+          "byte_length": 6,
+          "anchor": "wT=8e3",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 212380,
+          "byte_length": 7,
+          "anchor": "Pk=4096",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 214093,
+          "byte_length": 15,
+          "anchor": "Ga(e,ba,ba,1/0)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 156409,
+          "byte_length": 22,
+          "anchor": "URL.revokeObjectURL(s)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S03",
+          "utf8_byte_offset": 156853,
+          "byte_length": 28,
+          "anchor": "document.body.removeChild(g)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP21",
+      "title": "Large-file two-stage upload",
+      "finding": "A higher-capability conversation-bound path can precede the ordinary 30 MiB guard. It first prepares a server filename/path and identity, then submits bytes to file storage, checks source/stored size agreement, and conditionally cleans up failed partial results.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Requires conversation identity and a higher configured upload cap.",
+        "Cleanup avoids deleting paths that may still be shared or held."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 208480,
+          "byte_length": 40,
+          "anchor": "this.name=\"DirectFilestoreUploadHandler\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 208604,
+          "byte_length": 26,
+          "anchor": "e.size>31457280&&e.size<=n",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 209125,
+          "byte_length": 11,
+          "anchor": "l=\"prepare\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 209247,
+          "byte_length": 15,
+          "anchor": "l=\"create_file\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 209393,
+          "byte_length": 27,
+          "anchor": "e.size!==a||d!==null&&d!==a",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "Maximum account cap and server retention behavior are not established."
+      ]
+    },
+    {
+      "id": "IP22",
+      "title": "Held derivation and rerouting",
+      "finding": "Derivation can wait for a send/ceiling hold or unresolved document-as-file policy. It races cancellation, rejects conversation changes, and aborts/restarts a document derivation when its policy changes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 134813,
+          "byte_length": 53,
+          "anchor": "e.deriveHeld||e.uploadCeilingPending&&t.size>31457280",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 135505,
+          "byte_length": 11,
+          "anchor": "C&&T===null",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 135853,
+          "byte_length": 26,
+          "anchor": "sT(\"conversation changed\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 136206,
+          "byte_length": 41,
+          "anchor": "new DOMException(\"rerouted\",\"AbortError\")",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP23",
+      "title": "Retry taxonomy",
+      "finding": "Per-file processing retains hard error, soft error and sendBlocked states. A selected network-failure policy permits automatic retries after 1000 and 5000 ms; manual retry clears pending error state. Validation failures and intentional aborts follow separate paths.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "The retry predicate requires online/not-unloading state, sufficient elapsed attempt time and a classified transport failure.",
+        "These delays are not a blanket policy for every upload or every server error."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 120821,
+          "byte_length": 16,
+          "anchor": "var YC=[1e3,5e3]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 121060,
+          "byte_length": 23,
+          "anchor": "function QC(e,t,n=yr())",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 145461,
+          "byte_length": 28,
+          "anchor": "cloudRefSoftError:s?r:void 0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 145786,
+          "byte_length": 24,
+          "anchor": "sendBlocked:\"unreadable\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 120794,
+          "byte_length": 27,
+          "anchor": "function JC(e,t){qC([e],t)}",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP24",
+      "title": "Preview and error rendering",
+      "finding": "Attachment tiles branch by image, Blob, sanitized document, session file and inline text. A native image can supply a preview before server preview_asset arrives; hard error or blocked files use a diagnostic tile.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 135102,
+          "byte_length": 19,
+          "anchor": "function MC({file:e",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 135180,
+          "byte_length": 30,
+          "anchor": "e.cloudRefError||e.sendBlocked",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 136077,
+          "byte_length": 16,
+          "anchor": "g=f?NC(n):void 0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 139649,
+          "byte_length": 18,
+          "anchor": "\"Missing encoding\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP25",
+      "title": "Removal ownership",
+      "finding": "Removing a file aborts its task, drops the staged record and records explicit user removal. Session-backed deletion checks other holders and same-path/same-name staged files before deciding whether to delete remote bytes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Removing a tile is not proof that the remote object is deleted immediately."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 198806,
+          "byte_length": 37,
+          "anchor": "t.cloudRefAbort?.abort(tu(\"removed\"))",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 199337,
+          "byte_length": 17,
+          "anchor": "\"staged_namesake\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 199377,
+          "byte_length": 32,
+          "anchor": "\"chat.composer_file_delete_kept\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP26",
+      "title": "Draft persistence split",
+      "finding": "Draft persistence stores editor JSON, filtered attachments, stable file metadata, sync sources and queued/held drafts. Native File bytes are persisted separately; promises, AbortControllers and transient errors are stripped. Hydration stitches blobs back and can mark an unrecoverable reference unavailable.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Persistence is disabled/suppressed in selected new-chat, temporary, session-mismatch and URL-seeded contexts."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 171883,
+          "byte_length": 14,
+          "anchor": "partialize:e=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 172000,
+          "byte_length": 46,
+          "anchor": "nativeFile:n,cloudRefPromise:r,cloudRefAbort:i",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 175332,
+          "byte_length": 42,
+          "anchor": "\"claudeai.chat.draft.attachments_stitched\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 175282,
+          "byte_length": 25,
+          "anchor": "sendBlocked:\"unavailable\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP27",
+      "title": "Hydration and cleanup",
+      "finding": "Hydration tracks text readiness separately from attachment-blob readiness, can retain temporary text/attachment placeholders, and folds restored queued input around the draft in defined order. Cleanup flushes pending pastes/writes and uses ownership-aware delayed blob release.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 171468,
+          "byte_length": 26,
+          "anchor": "_attachmentBlobsSettled:!1",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 171495,
+          "byte_length": 48,
+          "anchor": "attachmentPlaceholderCount:T,draftTextReserve:ie",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 168038,
+          "byte_length": 35,
+          "anchor": "content:[...r(i),...s?[]:o,...r(a)]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 177552,
+          "byte_length": 33,
+          "anchor": "E.getState().flushPendingPastes()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP28",
+      "title": "Navigation handover",
+      "finding": "A selected new-composer handover uses an in-memory snapshot with account, draft key and a 5000 ms freshness window; teardown aborts pending file tasks unless the store still owns a held, awaiting-acceptance or active send.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "This is a narrow handover branch, not a universal draft-retention timeout."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S06",
+          "utf8_byte_offset": 75846,
+          "byte_length": 10,
+          "anchor": "var vy=5e3",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S06",
+          "utf8_byte_offset": 78262,
+          "byte_length": 25,
+          "anchor": "performance.now()-o.at<vy",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S06",
+          "utf8_byte_offset": 78887,
+          "byte_length": 46,
+          "anchor": "new DOMException(\"composer gone\",\"AbortError\")",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP29",
+      "title": "Dictation ownership and capability",
+      "finding": "Dictation state has owner identity, status, final/interim transcripts, microphone state, drain state and failure details. Capability combines platform support, desktop-provided availability or web feature flags, surface and responsive conditions.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S06",
+          "utf8_byte_offset": 371438,
+          "byte_length": 50,
+          "anchor": "status:\"idle\",transcript:\"\",dictationBaseline:null",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 284597,
+          "byte_length": 14,
+          "anchor": "function KM(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 284451,
+          "byte_length": 23,
+          "anchor": "dictationAvailable===!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 294268,
+          "byte_length": 21,
+          "anchor": "function rP({isBusy:e",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP30",
+      "title": "Dictation lifecycle",
+      "finding": "The composer-owned dictation adapter stops on busy state, gate removal, hiding, unmount, conversation change or draft generation change. Enter normally commits; Escape cancels; a held shortcut switches to push-to-talk after 500 ms. Transcript reconciliation preserves prefix/suffix and can preserve edits made while recording.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Enter passthrough exists in a separate host configuration.",
+        "Full voice conversation is a separate state machine from short dictation."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 295248,
+          "byte_length": 20,
+          "anchor": "Ru.stop(\"auto_busy\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 295761,
+          "byte_length": 23,
+          "anchor": "Ru.stop(\"auto_unmount\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 295879,
+          "byte_length": 35,
+          "anchor": "Ru.stop(\"auto_conversation_change\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 289806,
+          "byte_length": 16,
+          "anchor": "e.key===\"Escape\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 297509,
+          "byte_length": 30,
+          "anchor": "preserveMidRecordingEdits:l=!1",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP31",
+      "title": "Voice navigation handoff",
+      "finding": "An active full-voice session can hand off its first interim transcript to a newly created conversation, with an explicit user-message identity; the effect unsubscribes and clears handed-off interim text on cleanup.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S12",
+          "utf8_byte_offset": 1096,
+          "byte_length": 26,
+          "anchor": "handOffInterimTranscript()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S12",
+          "utf8_byte_offset": 1347,
+          "byte_length": 20,
+          "anchor": "voice_mode_active:!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S12",
+          "utf8_byte_offset": 1863,
+          "byte_length": 26,
+          "anchor": "interimTranscriptHandedOff",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP32",
+      "title": "Ordering is route-specific",
+      "finding": "The selected session message builder emits images before text in its ordinary branch; recording-frame mode interleaves frame-related text with images. Draft queue restoration uses before-draft and after-draft groups and deduplicates file UUIDs/sync-source identifiers.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S06",
+          "utf8_byte_offset": 219156,
+          "byte_length": 20,
+          "anchor": "return[...i,...r(e)]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S06",
+          "utf8_byte_offset": 219268,
+          "byte_length": 25,
+          "anchor": "textUpToEachFrame.flatMap",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 168169,
+          "byte_length": 42,
+          "anchor": "let l=new Set(n.files.map(e=>e.file_uuid))",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "These client array orders do not reveal final server system/tool/project/history prompt ordering."
+      ]
+    },
+    {
+      "id": "IP33",
+      "title": "Estimates versus token accounting",
+      "finding": "Project knowledge has a byte/4 heuristic. A separate coding-session attribution helper estimates text with ceil(length/4) and uses 1600 for image/document blocks. Neither is verified as the main chat model tokenizer.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "The latter appears in attribution/usage processing, not attachment admission."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 158505,
+          "byte_length": 38,
+          "anchor": "new Blob([a.extracted_content]).size/4",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S10",
+          "utf8_byte_offset": 297,
+          "byte_length": 10,
+          "anchor": "var r=1600",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S10",
+          "utf8_byte_offset": 351,
+          "byte_length": 21,
+          "anchor": "Math.ceil(e.length/4)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP34",
+      "title": "Cache observation boundary",
+      "finding": "Coding-session accounting consumes cache_read_input_tokens and cache_creation_input_tokens; another client view derives a context total and cache age from reported usage/timestamps. This demonstrates observation, not cache-placement control.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S10",
+          "utf8_byte_offset": 1301,
+          "byte_length": 55,
+          "anchor": "\"cache_read_input_tokens\",\"cache_creation_input_tokens\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S11",
+          "utf8_byte_offset": 413751,
+          "byte_length": 14,
+          "anchor": "function cJ(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S11",
+          "utf8_byte_offset": 414339,
+          "byte_length": 26,
+          "anchor": "cacheAgeMs:Math.max(0,t-s)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "No placement, TTL, hit eligibility, server cache key, or model prompt prefix policy is established by these counters."
+      ]
+    },
+    {
+      "id": "IP35",
+      "title": "Local preview resource ownership",
+      "finding": "Native image previews share an object URL per File with a subscriber set; removing the final subscriber revokes the URL and removes the cache entry.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 132271,
+          "byte_length": 31,
+          "anchor": "var lC=new Map;function uC(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 132451,
+          "byte_length": 65,
+          "anchor": "r.subscribers.size===0&&(URL.revokeObjectURL(r.url),lC.delete(e))",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    }
+  ],
+  "negative_scope": {
+    "searched_in": "All 3426 assets/v1 JavaScript files in packaged ion-dist",
+    "literal_searches_without_hits": [
+      "cache_control",
+      "prompt_cache",
+      "token_estimate",
+      "tokenEstimate"
+    ],
+    "interpretation": "Literal absence is only a bounded search result, not proof that no cache or estimation implementation exists."
+  },
+  "reproduction_policy": "Publish original explanations, diagrams and compact anchors only; do not distribute extracted bundles or raw REA graphs."
+}

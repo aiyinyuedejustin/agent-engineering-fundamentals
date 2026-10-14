@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "tested_at": "2026-10-14T17:30:20.821Z",
+  "method": "Static source/DOM/CSSOM declarations, not computed browser style.",
+  "files_sha256": {
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/index.html": "e1fcb6178b9723900c55222878e7e3398508dfcc47c39af3f451bf31ada68ba0",
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/demo.js": "884e054861bcbb477eb255b120ceefc5794350448f637375c77f12b984384015",
+    "01-Frontend-Design-And-HTML-Templates/styles/tokens.css": "ad246c391b0dffbd245adc5f1e3cedc5a11d6b402344cd1687570965b2fe52e8",
+    "01-Frontend-Design-And-HTML-Templates/styles/components.css": "b47f40b115712e2a1995d1c5539d4fe17094b44ad885e09df00f658e6bcda717",
+    "01-Frontend-Design-And-HTML-Templates/interactive-study/demo.css": "5ef9db9f0db44dd863221aa5ce8a488f543c9777816c9be8596c1d1c37eb2f98"
+  },
+  "limitations": [
+    "CSSOM parsing records declarations, not their computed cascade, layout or actual contrast.",
+    "No screenshot, accessibility tree, real keyboard/IME, actual pointer target or offline-browser test."
+  ],
+  "summary": {
+    "pass": 10,
+    "fail": 0,
+    "total": 10
+  },
+  "results": [
+    {
+      "id": "PS01",
+      "title": "New control IDs are unique and all ARIA/label references resolve",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS02",
+      "title": "Original density declarations and visible metrics agree on two distinct geometries",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS03",
+      "title": "Reading declarations change only a message-size variable and density does not set it",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS04",
+      "title": "Messages consume the reading axis while tools have explicit UI typography",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS05",
+      "title": "Density consumers declare grouped control, icon, spacing and radius variables",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS06",
+      "title": "Quick Entry has a distinct horizontal form and documented original geometry",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS07",
+      "title": "New form controls have real labels, explicit submit types and a length ceiling",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS08",
+      "title": "Reading/density controls have labelled groups and forced-color selection treatment",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS09",
+      "title": "New examples introduce no remote assets, network APIs, imports or stored input",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    },
+    {
+      "id": "PS10",
+      "title": "Documentation distinguishes original specimen values and unverified browser behavior",
+      "status": "pass",
+      "method": "static source/DOM/CSSOM declarations"
+    }
+  ]
+}

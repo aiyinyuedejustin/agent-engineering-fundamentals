@@ -1,0 +1,177 @@
+/* 原创前端模板语义令牌 | 2026-10-14
+ * 来源范围：视觉研究的暖中性色、文字分工与分层关系；不是官方主题表。
+ * 五套 palette 均为本模板原创配色，含可成对切换的浅深主题。
+ * 安装：为容器加 data-ui="atelier"；data-palette 选择 paper/sage/ocean/plum/graphite；
+ * data-theme 选择 light/dark。属性放在同一容器上，避免覆盖别处的 CSS。
+ * 数值与角色分开维护：改 --ui-accent 不会顺带改变主按钮。
+ * 字体全部是设备系统回退，不下载也不分发专有字体。
+ */
+
+/* 纸与陶 · 浅色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"]),
+:where([data-ui="atelier"][data-palette="paper"][data-theme="light"]) {
+  color-scheme: light;
+  --ui-canvas: #f8f7f3;
+  --ui-sidebar: #f0eee7;
+  --ui-surface: #ffffff;
+  --ui-ink: #26251f;
+  --ui-muted: #656258;
+  --ui-line: #d9d6cc;
+  --ui-line-strong: #8f8a7c;
+  --ui-accent: #a54f35;
+  --ui-accent-soft: #f3e3da;
+  --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
+}
+
+/* 纸与陶 · 深色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="paper"][data-theme="dark"]) {
+  color-scheme: dark;
+  --ui-canvas: #1b1b18;
+  --ui-sidebar: #23231f;
+  --ui-surface: #2b2b26;
+  --ui-ink: #eeede6;
+  --ui-muted: #b8b5a8;
+  --ui-line: #44443b;
+  --ui-line-strong: #817e70;
+  --ui-accent: #e2a68b;
+  --ui-accent-soft: #3b2b24;
+  --ui-action: #eeede6; --ui-on-action: #24241f; --ui-danger: #f1ada5; --ui-danger-soft: #422c29; --ui-success: #a9d1b0; --ui-success-soft: #283e2c; --ui-scrim: #00000080;
+}
+
+/* 苔绿 · 浅色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="sage"][data-theme="light"]) {
+  color-scheme: light;
+  --ui-canvas: #f4f6ef;
+  --ui-sidebar: #e8ede1;
+  --ui-surface: #fdfef9;
+  --ui-ink: #253028;
+  --ui-muted: #596656;
+  --ui-line: #d1d9c9;
+  --ui-line-strong: #7c8975;
+  --ui-accent: #41664a;
+  --ui-accent-soft: #e1eddf;
+  --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
+}
+
+/* 苔绿 · 深色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="sage"][data-theme="dark"]) {
+  color-scheme: dark;
+  --ui-canvas: #19201a;
+  --ui-sidebar: #202a22;
+  --ui-surface: #29342b;
+  --ui-ink: #e9eee5;
+  --ui-muted: #b0beac;
+  --ui-line: #3c4d3e;
+  --ui-line-strong: #7e947d;
+  --ui-accent: #a8c7a1;
+  --ui-accent-soft: #2b402e;
+  --ui-action: #eeede6; --ui-on-action: #24241f; --ui-danger: #f1ada5; --ui-danger-soft: #422c29; --ui-success: #a9d1b0; --ui-success-soft: #283e2c; --ui-scrim: #00000080;
+}
+
+/* 雾蓝 · 浅色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="ocean"][data-theme="light"]) {
+  color-scheme: light;
+  --ui-canvas: #f3f6f7;
+  --ui-sidebar: #e6eef1;
+  --ui-surface: #fdfefe;
+  --ui-ink: #22323a;
+  --ui-muted: #536875;
+  --ui-line: #cddbe0;
+  --ui-line-strong: #7a949f;
+  --ui-accent: #326780;
+  --ui-accent-soft: #deedf3;
+  --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
+}
+
+/* 雾蓝 · 深色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="ocean"][data-theme="dark"]) {
+  color-scheme: dark;
+  --ui-canvas: #172127;
+  --ui-sidebar: #1f2b32;
+  --ui-surface: #29373e;
+  --ui-ink: #e7eff2;
+  --ui-muted: #a8bdc7;
+  --ui-line: #3b515e;
+  --ui-line-strong: #7f9aa8;
+  --ui-accent: #9cc5d8;
+  --ui-accent-soft: #28404d;
+  --ui-action: #eeede6; --ui-on-action: #24241f; --ui-danger: #f1ada5; --ui-danger-soft: #422c29; --ui-success: #a9d1b0; --ui-success-soft: #283e2c; --ui-scrim: #00000080;
+}
+
+/* 梅灰 · 浅色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="plum"][data-theme="light"]) {
+  color-scheme: light;
+  --ui-canvas: #f8f4f6;
+  --ui-sidebar: #efe7ed;
+  --ui-surface: #fffdfd;
+  --ui-ink: #392b36;
+  --ui-muted: #74606e;
+  --ui-line: #dfd1dc;
+  --ui-line-strong: #a08a99;
+  --ui-accent: #895577;
+  --ui-accent-soft: #f0e1ec;
+  --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
+}
+
+/* 梅灰 · 深色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="plum"][data-theme="dark"]) {
+  color-scheme: dark;
+  --ui-canvas: #261c24;
+  --ui-sidebar: #30242d;
+  --ui-surface: #3c2e38;
+  --ui-ink: #f1e8ef;
+  --ui-muted: #c8afc0;
+  --ui-line: #594451;
+  --ui-line-strong: #a18599;
+  --ui-accent: #d7adc9;
+  --ui-accent-soft: #4b3143;
+  --ui-action: #eeede6; --ui-on-action: #24241f; --ui-danger: #f1ada5; --ui-danger-soft: #422c29; --ui-success: #a9d1b0; --ui-success-soft: #283e2c; --ui-scrim: #00000080;
+}
+
+/* 石墨 · 浅色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="graphite"][data-theme="light"]) {
+  color-scheme: light;
+  --ui-canvas: #f5f5f4;
+  --ui-sidebar: #eaeae8;
+  --ui-surface: #ffffff;
+  --ui-ink: #242627;
+  --ui-muted: #626566;
+  --ui-line: #d6d8d8;
+  --ui-line-strong: #898d8f;
+  --ui-accent: #4f6069;
+  --ui-accent-soft: #e5ebed;
+  --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
+}
+
+/* 石墨 · 深色：画布 / 导航 / 抬升面 / 必要文字 / 辅助文字 / 两级边界 / 点缀。 */
+:where([data-ui="atelier"][data-palette="graphite"][data-theme="dark"]) {
+  color-scheme: dark;
+  --ui-canvas: #191b1d;
+  --ui-sidebar: #232629;
+  --ui-surface: #2c3034;
+  --ui-ink: #eaedef;
+  --ui-muted: #b4bdc2;
+  --ui-line: #42494e;
+  --ui-line-strong: #84929b;
+  --ui-accent: #b0c6d3;
+  --ui-accent-soft: #32424d;
+  --ui-action: #eeede6; --ui-on-action: #24241f; --ui-danger: #f1ada5; --ui-danger-soft: #422c29; --ui-success: #a9d1b0; --ui-success-soft: #283e2c; --ui-scrim: #00000080;
+}
+
+:where([data-ui="atelier"]) {
+  /* 原创尺寸档，不是对包内 CDS 默认/comfortable 数值的转录。正文与控件密度独立。 */
+  --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --ui-reading: Georgia, "Times New Roman", "Songti SC", "STSong", serif;
+  --ui-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --ui-text: 14px; --ui-reading-size: 18px; --ui-leading: 1.85;
+  --ui-control: 40px; --ui-radius: 8px; --ui-card-radius: 14px; --ui-composer-radius: 20px;
+  --ui-space-1: 4px; --ui-space-2: 8px; --ui-space-3: 12px; --ui-space-4: 16px;
+  --ui-space-5: 24px; --ui-space-6: 32px; --ui-space-7: 48px; --ui-space-8: 72px;
+  --ui-fast: 140ms; --ui-ease: cubic-bezier(.2,.7,.3,1);
+  --ui-shadow: 0 12px 40px #0000000c, 0 2px 5px #00000006;
+}
+:where([data-ui="atelier"][data-theme="dark"]) { --ui-shadow: 0 12px 40px #00000040, 0 2px 5px #00000030; }
+:where([data-ui="atelier"][data-density="compact"]) { --ui-control: 36px; --ui-text: 13px; }
+:where([data-ui="atelier"][data-density="comfortable"]) { --ui-control: 44px; --ui-text: 14px; }
+:where([data-ui="atelier"][data-reading="large"]) { --ui-reading-size: 21px; }
+@media (prefers-reduced-motion: reduce) { :where([data-ui="atelier"]) { --ui-fast: 0ms; } }

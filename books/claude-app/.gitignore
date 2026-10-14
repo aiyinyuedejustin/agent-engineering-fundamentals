@@ -1,9 +1,11 @@
 node_modules/
-private-downloads/
-rea-source/
+__pycache__/
+*.pyc
+.env*
+/04-Extracted-Core-Code-And-Scripts/tests/results/
 *.asar
 *.deb
 *.woff*
 *.ttf
-.env*
+
 /tests/results/
