@@ -78,14 +78,14 @@ preload 是页面与主进程之间的桥接脚本。把一个方法暴露给页
 ```mermaid
 flowchart LR
     Page[页面调用] --> Exposure{接口是否暴露?}
-    Exposure --> Sender{发送方是否正确?}
-    Sender --> Schema{参数是否有效?}
-    Schema --> Policy{当前动作是否获准?}
-    Policy --> Execute[执行并返回结果]
-    Exposure --> Reject[明确拒绝]
-    Sender --> Reject
-    Schema --> Reject
-    Policy --> Reject
+    Exposure -->|是| Sender{发送方是否正确?}
+    Sender -->|是| Schema{参数是否有效?}
+    Schema -->|是| Policy{当前动作是否获准?}
+    Policy -->|是| Execute[执行并返回结果]
+    Exposure -->|否| Reject[明确拒绝]
+    Sender -->|否| Reject
+    Schema -->|否| Reject
+    Policy -->|否| Reject
 ```
 
 - 来源身份约束“谁在调用”；参数校验约束“消息长什么样”。

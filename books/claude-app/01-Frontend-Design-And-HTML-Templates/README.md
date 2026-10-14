@@ -29,6 +29,12 @@ Claude 的视觉识别由几种关系共同组成：接近纸张的浅色大面�
 
 本章的产品参数取自 2.37337.1 随包前端；历史图像按其来源年代解释。图谱和示例代码是供独立开发使用的工程化表达。每节保留影响实现的主题、密度、平台和变体条件，详细定位统一放在[资料附录](../04-Extracted-Core-Code-And-Scripts/evidence/README.md)。
 
+## 直接拿来做网站
+
+[五套浅深配色配方](palette-recipes/README.md) · [六套 HTML 模板与实景](templates/README.md) · [完整产品色表](color-catalog/README.md)
+
+![五套原创配方](palette-recipes/swatches/overview.svg)
+
 ## 证据图例
 
 S：包内静态值；V：官方画面观察；A：本书原创示意或实现。三者各自说明参数来源，不能互换。

@@ -1,0 +1,249 @@
+{
+  "commit": "d63d0f49ff9bd34a74e93b949605b74fc271d4bc",
+  "reviewedAt": "2026-10-14T23:26:00Z",
+  "environment": "Cloud Chrome via HTTPS htmlpreview.github.io; not file://",
+  "method": "UI-only actions through cua_repl; read-only DOM inspection; screenshot pixel review",
+  "pages": [
+    {
+      "name": "gallery",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html",
+      "dom": {
+        "documentWidth": 1173,
+        "theme": "light",
+        "title": "组件图谱 · 留白",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": []
+    },
+    {
+      "name": "chat",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html",
+      "dom": {
+        "documentWidth": 1188,
+        "theme": "light",
+        "title": "对话工作区 · 留白",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": []
+    },
+    {
+      "name": "ide",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html",
+      "dom": {
+        "documentWidth": 1188,
+        "theme": "light",
+        "title": "作品与代码工作区 · 留白",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": []
+    },
+    {
+      "name": "editorial",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/04-editorial-blog-and-doc-template.html",
+      "dom": {
+        "documentWidth": 1173,
+        "theme": "light",
+        "title": "编辑式博客与文档 · 留白",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": []
+    },
+    {
+      "name": "settings",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html",
+      "dom": {
+        "documentWidth": 1173,
+        "theme": "light",
+        "title": "设置与概览 · 留白",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": []
+    },
+    {
+      "name": "launcher",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html",
+      "dom": {
+        "documentWidth": 1173,
+        "theme": "light",
+        "title": "浮动轻入口 · 留白",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": []
+    },
+    {
+      "name": "color-catalog",
+      "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/color-catalog/index.html",
+      "dom": {
+        "documentWidth": 1173,
+        "theme": null,
+        "title": "颜色索引 · Claude 前端设计研究",
+        "viewport": {
+          "height": 761,
+          "width": 1188
+        }
+      },
+      "observedNonExtensionErrors": [
+        {
+          "level": "error",
+          "message": "SyntaxError: Failed to execute 'appendChild' on 'Node': Unexpected token ':'\n    at loadJS (https://htmlpreview.github.io/htmlpreview.js:86:18)\n    at https://htmlpreview.github.io/htmlpreview.js:56:5",
+          "timestamp": "2026-10-14T23:24:27.378Z",
+          "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/d63d0f49ff9bd34a74e93b949605b74fc271d4bc/books/claude-app/01-Frontend-Design-And-HTML-Templates/color-catalog/index.html"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "All six templates render",
+      "result": "pass",
+      "evidence": "Fresh final-commit screenshots reviewed at 1188x761; no horizontal document overflow."
+    },
+    {
+      "name": "Gallery theme",
+      "result": "pass",
+      "evidence": "Dark and light controls visibly render; toggle state and DOM theme change."
+    },
+    {
+      "name": "Gallery modal Escape and focus",
+      "result": "pass",
+      "evidence": "Open focuses cancel/review action; Escape closes and focus returns to #open-dialog."
+    },
+    {
+      "name": "Strict cyclic dialog focus trap",
+      "result": "not asserted",
+      "evidence": "Native dialog excludes background from AX; baseline boundary Tab can reach browser chrome (activeElement BODY). Final strict cyclic trap not retested."
+    },
+    {
+      "name": "Chat submission",
+      "result": "pass",
+      "evidence": "Local user message appears; deterministic reply finishes with completed status."
+    },
+    {
+      "name": "Chat stop and draft preservation",
+      "result": "inconclusive",
+      "evidence": "Rapid UI attempt observes stop label and a draft, but response finishes before click lands and reused button submits draft as next message. No hidden state/timer mutation used; cancellation not verified."
+    },
+    {
+      "name": "IDE H1 edit",
+      "result": "pass",
+      "evidence": "Local instruction changes visible iframe heading to Browser verified preview."
+    },
+    {
+      "name": "IDE static isolation",
+      "result": "pass for inspected attributes",
+      "evidence": "sandbox empty; srcdoc CSP denies default/script/connect/img/media/font/frame/object; permits inline style; denies base-uri/form-action. No network interception or adversarial script execution test performed."
+    },
+    {
+      "name": "Editorial documentation mode",
+      "result": "pass",
+      "evidence": "Clicking 使用文档 switches selected state and visible documentation sections."
+    },
+    {
+      "name": "Settings save/reload",
+      "result": "pass",
+      "evidence": "Name 浏览器验证 and compact density remain after reload."
+    },
+    {
+      "name": "Settings reset/reload",
+      "result": "pass",
+      "evidence": "Confirm reset restores 留白的朋友 and comfortable density; both remain after reload."
+    },
+    {
+      "name": "Launcher Escape/draft/focus",
+      "result": "pass",
+      "evidence": "Draft 保留未提交的浏览器测试草稿 survives Escape and reopen; input focused; subsequent Escape returns focus to #open-launcher."
+    },
+    {
+      "name": "Catalog data counts",
+      "result": "pass",
+      "evidence": "Default raw profile shows 315/315. UI profile counts are 315,349,349,50,50,50,50,128; sum 1341 across profiles, not unique colors."
+    },
+    {
+      "name": "Catalog search",
+      "result": "pass",
+      "evidence": "gray-500 yields 1/315 and #6D6B67."
+    },
+    {
+      "name": "Catalog family filter",
+      "result": "pass",
+      "evidence": "Green yields 35/315."
+    },
+    {
+      "name": "Catalog dark/light",
+      "result": "pass",
+      "evidence": "Theme control changes label and visible canvas; both screenshots reviewed."
+    }
+  ],
+  "limitations": [
+    "HTTPS viewer adds hosting/base-URL behavior and all viewed files share its origin. This does not verify direct file:// or offline operation.",
+    "Desktop viewport only: 1188x761. No mobile viewport, native IME, screen-reader session, cross-browser, or clipboard permission validation.",
+    "No Claude login, actual Claude application, external personal data, or repository mutation involved.",
+    "Screenshots are native JPEG viewport captures; not full-page captures."
+  ],
+  "screenshots": [
+    {
+      "name": "01-gallery-dark-d63d0f4.jpg",
+      "bytes": 60504,
+      "sha256": "f788a0228c4268c9fc53e5e751a9200e6715529451f58c87f26a556dabeccdac"
+    },
+    {
+      "name": "01-gallery-light-d63d0f4.jpg",
+      "bytes": 54551,
+      "sha256": "6a1f04a24f5f1b3d328564eea7c74e741531f3877419474663d5945fe41594bd"
+    },
+    {
+      "name": "02-chat-d63d0f4.jpg",
+      "bytes": 58302,
+      "sha256": "bcd53dbf2d270247dafd47cfd9b6551f450b7dfcf14ce03c28e857cda566c92e"
+    },
+    {
+      "name": "03-ide-d63d0f4.jpg",
+      "bytes": 68626,
+      "sha256": "43f2e1d133d5f75ca2a4138bf316a3cf68758fe37e59f0c252b785756c874a32"
+    },
+    {
+      "name": "04-editorial-d63d0f4.jpg",
+      "bytes": 56681,
+      "sha256": "adc13acaf32c1ca31aa28ceed6c693576396074e2acc2f2603df73506a731dc4"
+    },
+    {
+      "name": "05-settings-d63d0f4.jpg",
+      "bytes": 55886,
+      "sha256": "a356aa6606a57944f9e601a5bfcf0c2708200d2d1c31d76131f6ed19546d68ec"
+    },
+    {
+      "name": "06-launcher-d63d0f4.jpg",
+      "bytes": 37388,
+      "sha256": "ff811ba3c1b007ef3c6e97c5de30e422346b07059e377efa43a8f2bc87124ea2"
+    },
+    {
+      "name": "07-color-catalog-dark-green-d63d0f4.jpg",
+      "bytes": 72665,
+      "sha256": "ea2af6709c019eca2e00e1fdf02d09630455d2dc52310aee6100f6265bc886d9"
+    },
+    {
+      "name": "07-color-catalog-light-d63d0f4.jpg",
+      "bytes": 65732,
+      "sha256": "43e15cae63df44055f3e6eb6a14fdc94fb772edc683d598f69bf79170228b79f"
+    }
+  ],
+  "viewerCaveat": "Catalog emitted Unexpected token colon from htmlpreview.js loadJS. The rendered viewer DOM contains the embedded color JSON as classic script blocks. Catalog UI still rendered and search/filter/theme checks passed. This is consistent with viewer transformation; direct file behavior was not tested."
+}

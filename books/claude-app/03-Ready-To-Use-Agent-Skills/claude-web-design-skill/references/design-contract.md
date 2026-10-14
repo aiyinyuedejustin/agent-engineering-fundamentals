@@ -62,6 +62,8 @@ assets/tokens.css 的命名、排列与代码为原创。它借用部分已观�
 
 以语义变量改造已有产品：canvas 对页面；surface 对输入容器；raised 对预览；text 对主文；muted 对仍须可读的辅助信息；line 对装饰分隔；control-border 对必须辨认的边界；focus 对键盘焦点。一个角色不要同时承担选择、错误与品牌。
 
+需要紧凑设置或模态窗口时，按 [原创交互契约](interaction-contracts.md) 区分正文、控件和命中区域；其中的密度与交互配方不改变上面的静态证据口径。
+
 ## 复核入口
 
 - [设计工作室的 Anthropic 品牌案例](https://geist.co/work/anthropic)

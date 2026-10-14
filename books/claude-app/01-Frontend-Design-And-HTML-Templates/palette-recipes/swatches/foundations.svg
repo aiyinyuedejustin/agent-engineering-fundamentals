@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="950" viewBox="0 0 1380 950" role="img" aria-labelledby="title desc">
+<title id="title">字、间距、圆角与焦点环</title><desc id="desc">展示实际字体回退、字号、间距阶梯、圆角和焦点环。</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1380" height="950" rx="0" fill="#f8f7f3"/>
+<text x="40" y="56" font-size="30" fill="#26251f" font-weight="700">字、间距、圆角与焦点环</text>
+<text x="40" y="90" font-size="17" fill="#656258" font-weight="400">以下尺寸来自模板共享变量与基础样式。</text>
+<rect x="40" y="124" width="1300" height="103" rx="14" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<text x="60" y="155" font-size="15" fill="#656258" font-weight="400">界面工具字</text>
+<text x="60" y="196" font-size="28" fill="#26251f" font-weight="400" style="font-family:-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Microsoft YaHei&quot;, sans-serif">Clear controls · 清楚的控件</text>
+<text x="700" y="189" font-size="18" fill="#26251f" font-weight="400">14px / 1.6 · 紧凑 13px</text>
+<rect x="40" y="244" width="1300" height="103" rx="14" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<text x="60" y="275" font-size="15" fill="#656258" font-weight="400">长文阅读字</text>
+<text x="60" y="316" font-size="28" fill="#26251f" font-weight="400" style="font-family:Georgia, &quot;Times New Roman&quot;, &quot;Songti SC&quot;, &quot;STSong&quot;, serif">Ideas deserve room · 给文字留出呼吸</text>
+<text x="700" y="309" font-size="18" fill="#26251f" font-weight="400">18px / 1.85 · 大字 21px</text>
+<rect x="40" y="364" width="1300" height="103" rx="14" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<text x="60" y="395" font-size="15" fill="#656258" font-weight="400">代码与数字</text>
+<text x="60" y="436" font-size="28" fill="#26251f" font-weight="400" style="font-family:&quot;SFMono-Regular&quot;, Consolas, &quot;Liberation Mono&quot;, monospace">const scale = [4, 8, 12, 16];</text>
+<text x="700" y="429" font-size="18" fill="#26251f" font-weight="400">SFMono-Regular → Consolas → Liberation Mono</text>
+<text x="40" y="535" font-size="22" fill="#26251f" font-weight="600">间距阶梯</text>
+<rect x="40" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="50" y="574" width="4" height="54" rx="3" fill="#a24b33"/>
+<text x="50" y="643" font-size="13" fill="#26251f" font-weight="400">4px  ·  space-1</text>
+<rect x="200" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="210" y="574" width="8" height="54" rx="3" fill="#a24b33"/>
+<text x="210" y="643" font-size="13" fill="#26251f" font-weight="400">8px  ·  space-2</text>
+<rect x="360" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="370" y="574" width="12" height="54" rx="3" fill="#a24b33"/>
+<text x="370" y="643" font-size="13" fill="#26251f" font-weight="400">12px  ·  space-3</text>
+<rect x="520" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="530" y="574" width="16" height="54" rx="3" fill="#a24b33"/>
+<text x="530" y="643" font-size="13" fill="#26251f" font-weight="400">16px  ·  space-4</text>
+<rect x="680" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="690" y="574" width="24" height="54" rx="3" fill="#a24b33"/>
+<text x="690" y="643" font-size="13" fill="#26251f" font-weight="400">24px  ·  space-5</text>
+<rect x="840" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="850" y="574" width="32" height="54" rx="3" fill="#a24b33"/>
+<text x="850" y="643" font-size="13" fill="#26251f" font-weight="400">32px  ·  space-6</text>
+<rect x="1000" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="1010" y="574" width="48" height="54" rx="3" fill="#a24b33"/>
+<text x="1010" y="643" font-size="13" fill="#26251f" font-weight="400">48px  ·  space-7</text>
+<rect x="1160" y="562" width="128" height="90" rx="8" fill="#ffffff" stroke="#d9d6cc" stroke-width="1"/>
+<rect x="1170" y="574" width="72" height="54" rx="3" fill="#a24b33"/>
+<text x="1170" y="643" font-size="13" fill="#26251f" font-weight="400">72px  ·  space-8</text>
+<text x="40" y="706" font-size="22" fill="#26251f" font-weight="600">三个圆角</text>
+<rect x="40" y="738" width="184" height="100" rx="8" fill="#ffffff" stroke="#878273" stroke-width="1"/>
+<text x="56" y="785" font-size="18" fill="#26251f" font-weight="600">control</text>
+<text x="56" y="815" font-size="16" fill="#656258" font-weight="400">8px</text>
+<rect x="260" y="738" width="184" height="100" rx="14" fill="#ffffff" stroke="#878273" stroke-width="1"/>
+<text x="276" y="785" font-size="18" fill="#26251f" font-weight="600">card</text>
+<text x="276" y="815" font-size="16" fill="#656258" font-weight="400">14px</text>
+<rect x="480" y="738" width="184" height="100" rx="20" fill="#ffffff" stroke="#878273" stroke-width="1"/>
+<text x="496" y="785" font-size="18" fill="#26251f" font-weight="600">composer</text>
+<text x="496" y="815" font-size="16" fill="#656258" font-weight="400">20px</text>
+<text x="750" y="706" font-size="22" fill="#26251f" font-weight="600">可见的键盘焦点</text>
+<rect x="750" y="743" width="194" height="54" rx="13" fill="none" stroke="#a24b33" stroke-width="2"/>
+<rect x="755" y="748" width="184" height="44" rx="8" fill="#ffffff" stroke="#878273" stroke-width="1"/>
+<text x="775" y="777" font-size="17" fill="#26251f" font-weight="400">Tab 聚焦</text>
+<text x="970" y="768" font-size="17" fill="#26251f" font-weight="400">2px accent 外轮廓</text>
+<text x="970" y="798" font-size="17" fill="#26251f" font-weight="400">与边界保持 4px 间隔</text>
+<text x="40" y="900" font-size="15" fill="#656258" font-weight="400">字体只使用本机回退；未打包专有字体。图示字形受查看设备字体影响。</text>
+</svg>

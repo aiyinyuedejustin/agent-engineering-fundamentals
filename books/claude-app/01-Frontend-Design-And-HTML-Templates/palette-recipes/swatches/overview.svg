@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="1230" viewBox="0 0 1380 1230" role="img" aria-labelledby="title desc">
+<title id="title">五套原创配方总览</title><desc id="desc">每套含浅色和深色，以及页面背景、卡片、文字、边界、强调色五个可见色块。</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1380" height="1230" rx="0" fill="#f0eee7"/>
+<text x="36" y="52" font-size="30" fill="#26251f" font-weight="700">五套原创配方，一套语义接口</text>
+<text x="36" y="85" font-size="17" fill="#656258" font-weight="400">背景 → 卡片 → 文字 → 边界 → 强调色。更换 data-palette，保留布局和组件。</text>
+<rect x="36" y="114" width="638" height="196" rx="18" fill="#f8f7f3" stroke="#d9d6cc" stroke-width="1"/>
+<text x="56" y="146" font-size="19" fill="#26251f" font-weight="600">纸与陶 · paper · 浅色</text>
+<rect x="56" y="166" width="108" height="72" rx="8" fill="#f8f7f3" stroke="#878273" stroke-width="1"/>
+<text x="56" y="261" font-size="13" fill="#26251f" font-weight="400">页面背景</text>
+<text x="56" y="284" font-size="13" fill="#656258" font-weight="400">#F8F7F3</text>
+<rect x="177" y="166" width="108" height="72" rx="8" fill="#ffffff" stroke="#878273" stroke-width="1"/>
+<text x="177" y="261" font-size="13" fill="#26251f" font-weight="400">卡片表面</text>
+<text x="177" y="284" font-size="13" fill="#656258" font-weight="400">#FFFFFF</text>
+<rect x="298" y="166" width="108" height="72" rx="8" fill="#26251f" stroke="#878273" stroke-width="1"/>
+<text x="298" y="261" font-size="13" fill="#26251f" font-weight="400">正文文字</text>
+<text x="298" y="284" font-size="13" fill="#656258" font-weight="400">#26251F</text>
+<rect x="419" y="166" width="108" height="72" rx="8" fill="#d9d6cc" stroke="#878273" stroke-width="1"/>
+<text x="419" y="261" font-size="13" fill="#26251f" font-weight="400">轻分隔线</text>
+<text x="419" y="284" font-size="13" fill="#656258" font-weight="400">#D9D6CC</text>
+<rect x="540" y="166" width="108" height="72" rx="8" fill="#a24b33" stroke="#878273" stroke-width="1"/>
+<text x="540" y="261" font-size="13" fill="#26251f" font-weight="400">强调色</text>
+<text x="540" y="284" font-size="13" fill="#656258" font-weight="400">#A24B33</text>
+<rect x="706" y="114" width="638" height="196" rx="18" fill="#1b1b18" stroke="#44443b" stroke-width="1"/>
+<text x="726" y="146" font-size="19" fill="#eeede6" font-weight="600">纸与陶 · paper · 深色</text>
+<rect x="726" y="166" width="108" height="72" rx="8" fill="#1b1b18" stroke="#817e70" stroke-width="1"/>
+<text x="726" y="261" font-size="13" fill="#eeede6" font-weight="400">页面背景</text>
+<text x="726" y="284" font-size="13" fill="#b8b5a8" font-weight="400">#1B1B18</text>
+<rect x="847" y="166" width="108" height="72" rx="8" fill="#2b2b26" stroke="#817e70" stroke-width="1"/>
+<text x="847" y="261" font-size="13" fill="#eeede6" font-weight="400">卡片表面</text>
+<text x="847" y="284" font-size="13" fill="#b8b5a8" font-weight="400">#2B2B26</text>
+<rect x="968" y="166" width="108" height="72" rx="8" fill="#eeede6" stroke="#817e70" stroke-width="1"/>
+<text x="968" y="261" font-size="13" fill="#eeede6" font-weight="400">正文文字</text>
+<text x="968" y="284" font-size="13" fill="#b8b5a8" font-weight="400">#EEEDE6</text>
+<rect x="1089" y="166" width="108" height="72" rx="8" fill="#44443b" stroke="#817e70" stroke-width="1"/>
+<text x="1089" y="261" font-size="13" fill="#eeede6" font-weight="400">轻分隔线</text>
+<text x="1089" y="284" font-size="13" fill="#b8b5a8" font-weight="400">#44443B</text>
+<rect x="1210" y="166" width="108" height="72" rx="8" fill="#e2a68b" stroke="#817e70" stroke-width="1"/>
+<text x="1210" y="261" font-size="13" fill="#eeede6" font-weight="400">强调色</text>
+<text x="1210" y="284" font-size="13" fill="#b8b5a8" font-weight="400">#E2A68B</text>
+<rect x="36" y="332" width="638" height="196" rx="18" fill="#f4f6ef" stroke="#d1d9c9" stroke-width="1"/>
+<text x="56" y="364" font-size="19" fill="#253028" font-weight="600">苔绿 · sage · 浅色</text>
+<rect x="56" y="384" width="108" height="72" rx="8" fill="#f4f6ef" stroke="#7c8975" stroke-width="1"/>
+<text x="56" y="479" font-size="13" fill="#253028" font-weight="400">页面背景</text>
+<text x="56" y="502" font-size="13" fill="#596656" font-weight="400">#F4F6EF</text>
+<rect x="177" y="384" width="108" height="72" rx="8" fill="#fdfef9" stroke="#7c8975" stroke-width="1"/>
+<text x="177" y="479" font-size="13" fill="#253028" font-weight="400">卡片表面</text>
+<text x="177" y="502" font-size="13" fill="#596656" font-weight="400">#FDFEF9</text>
+<rect x="298" y="384" width="108" height="72" rx="8" fill="#253028" stroke="#7c8975" stroke-width="1"/>
+<text x="298" y="479" font-size="13" fill="#253028" font-weight="400">正文文字</text>
+<text x="298" y="502" font-size="13" fill="#596656" font-weight="400">#253028</text>
+<rect x="419" y="384" width="108" height="72" rx="8" fill="#d1d9c9" stroke="#7c8975" stroke-width="1"/>
+<text x="419" y="479" font-size="13" fill="#253028" font-weight="400">轻分隔线</text>
+<text x="419" y="502" font-size="13" fill="#596656" font-weight="400">#D1D9C9</text>
+<rect x="540" y="384" width="108" height="72" rx="8" fill="#41664a" stroke="#7c8975" stroke-width="1"/>
+<text x="540" y="479" font-size="13" fill="#253028" font-weight="400">强调色</text>
+<text x="540" y="502" font-size="13" fill="#596656" font-weight="400">#41664A</text>
+<rect x="706" y="332" width="638" height="196" rx="18" fill="#19201a" stroke="#3c4d3e" stroke-width="1"/>
+<text x="726" y="364" font-size="19" fill="#e9eee5" font-weight="600">苔绿 · sage · 深色</text>
+<rect x="726" y="384" width="108" height="72" rx="8" fill="#19201a" stroke="#7e947d" stroke-width="1"/>
+<text x="726" y="479" font-size="13" fill="#e9eee5" font-weight="400">页面背景</text>
+<text x="726" y="502" font-size="13" fill="#b0beac" font-weight="400">#19201A</text>
+<rect x="847" y="384" width="108" height="72" rx="8" fill="#29342b" stroke="#7e947d" stroke-width="1"/>
+<text x="847" y="479" font-size="13" fill="#e9eee5" font-weight="400">卡片表面</text>
+<text x="847" y="502" font-size="13" fill="#b0beac" font-weight="400">#29342B</text>
+<rect x="968" y="384" width="108" height="72" rx="8" fill="#e9eee5" stroke="#7e947d" stroke-width="1"/>
+<text x="968" y="479" font-size="13" fill="#e9eee5" font-weight="400">正文文字</text>
+<text x="968" y="502" font-size="13" fill="#b0beac" font-weight="400">#E9EEE5</text>
+<rect x="1089" y="384" width="108" height="72" rx="8" fill="#3c4d3e" stroke="#7e947d" stroke-width="1"/>
+<text x="1089" y="479" font-size="13" fill="#e9eee5" font-weight="400">轻分隔线</text>
+<text x="1089" y="502" font-size="13" fill="#b0beac" font-weight="400">#3C4D3E</text>
+<rect x="1210" y="384" width="108" height="72" rx="8" fill="#a8c7a1" stroke="#7e947d" stroke-width="1"/>
+<text x="1210" y="479" font-size="13" fill="#e9eee5" font-weight="400">强调色</text>
+<text x="1210" y="502" font-size="13" fill="#b0beac" font-weight="400">#A8C7A1</text>
+<rect x="36" y="550" width="638" height="196" rx="18" fill="#f3f6f7" stroke="#cddbe0" stroke-width="1"/>
+<text x="56" y="582" font-size="19" fill="#22323a" font-weight="600">雾蓝 · ocean · 浅色</text>
+<rect x="56" y="602" width="108" height="72" rx="8" fill="#f3f6f7" stroke="#708995" stroke-width="1"/>
+<text x="56" y="697" font-size="13" fill="#22323a" font-weight="400">页面背景</text>
+<text x="56" y="720" font-size="13" fill="#536875" font-weight="400">#F3F6F7</text>
+<rect x="177" y="602" width="108" height="72" rx="8" fill="#fdfefe" stroke="#708995" stroke-width="1"/>
+<text x="177" y="697" font-size="13" fill="#22323a" font-weight="400">卡片表面</text>
+<text x="177" y="720" font-size="13" fill="#536875" font-weight="400">#FDFEFE</text>
+<rect x="298" y="602" width="108" height="72" rx="8" fill="#22323a" stroke="#708995" stroke-width="1"/>
+<text x="298" y="697" font-size="13" fill="#22323a" font-weight="400">正文文字</text>
+<text x="298" y="720" font-size="13" fill="#536875" font-weight="400">#22323A</text>
+<rect x="419" y="602" width="108" height="72" rx="8" fill="#cddbe0" stroke="#708995" stroke-width="1"/>
+<text x="419" y="697" font-size="13" fill="#22323a" font-weight="400">轻分隔线</text>
+<text x="419" y="720" font-size="13" fill="#536875" font-weight="400">#CDDBE0</text>
+<rect x="540" y="602" width="108" height="72" rx="8" fill="#326780" stroke="#708995" stroke-width="1"/>
+<text x="540" y="697" font-size="13" fill="#22323a" font-weight="400">强调色</text>
+<text x="540" y="720" font-size="13" fill="#536875" font-weight="400">#326780</text>
+<rect x="706" y="550" width="638" height="196" rx="18" fill="#172127" stroke="#3b515e" stroke-width="1"/>
+<text x="726" y="582" font-size="19" fill="#e7eff2" font-weight="600">雾蓝 · ocean · 深色</text>
+<rect x="726" y="602" width="108" height="72" rx="8" fill="#172127" stroke="#7f9aa8" stroke-width="1"/>
+<text x="726" y="697" font-size="13" fill="#e7eff2" font-weight="400">页面背景</text>
+<text x="726" y="720" font-size="13" fill="#a8bdc7" font-weight="400">#172127</text>
+<rect x="847" y="602" width="108" height="72" rx="8" fill="#29373e" stroke="#7f9aa8" stroke-width="1"/>
+<text x="847" y="697" font-size="13" fill="#e7eff2" font-weight="400">卡片表面</text>
+<text x="847" y="720" font-size="13" fill="#a8bdc7" font-weight="400">#29373E</text>
+<rect x="968" y="602" width="108" height="72" rx="8" fill="#e7eff2" stroke="#7f9aa8" stroke-width="1"/>
+<text x="968" y="697" font-size="13" fill="#e7eff2" font-weight="400">正文文字</text>
+<text x="968" y="720" font-size="13" fill="#a8bdc7" font-weight="400">#E7EFF2</text>
+<rect x="1089" y="602" width="108" height="72" rx="8" fill="#3b515e" stroke="#7f9aa8" stroke-width="1"/>
+<text x="1089" y="697" font-size="13" fill="#e7eff2" font-weight="400">轻分隔线</text>
+<text x="1089" y="720" font-size="13" fill="#a8bdc7" font-weight="400">#3B515E</text>
+<rect x="1210" y="602" width="108" height="72" rx="8" fill="#9cc5d8" stroke="#7f9aa8" stroke-width="1"/>
+<text x="1210" y="697" font-size="13" fill="#e7eff2" font-weight="400">强调色</text>
+<text x="1210" y="720" font-size="13" fill="#a8bdc7" font-weight="400">#9CC5D8</text>
+<rect x="36" y="768" width="638" height="196" rx="18" fill="#f8f4f6" stroke="#dfd1dc" stroke-width="1"/>
+<text x="56" y="800" font-size="19" fill="#392b36" font-weight="600">梅灰 · plum · 浅色</text>
+<rect x="56" y="820" width="108" height="72" rx="8" fill="#f8f4f6" stroke="#947c8b" stroke-width="1"/>
+<text x="56" y="915" font-size="13" fill="#392b36" font-weight="400">页面背景</text>
+<text x="56" y="938" font-size="13" fill="#74606e" font-weight="400">#F8F4F6</text>
+<rect x="177" y="820" width="108" height="72" rx="8" fill="#fffdfd" stroke="#947c8b" stroke-width="1"/>
+<text x="177" y="915" font-size="13" fill="#392b36" font-weight="400">卡片表面</text>
+<text x="177" y="938" font-size="13" fill="#74606e" font-weight="400">#FFFDFD</text>
+<rect x="298" y="820" width="108" height="72" rx="8" fill="#392b36" stroke="#947c8b" stroke-width="1"/>
+<text x="298" y="915" font-size="13" fill="#392b36" font-weight="400">正文文字</text>
+<text x="298" y="938" font-size="13" fill="#74606e" font-weight="400">#392B36</text>
+<rect x="419" y="820" width="108" height="72" rx="8" fill="#dfd1dc" stroke="#947c8b" stroke-width="1"/>
+<text x="419" y="915" font-size="13" fill="#392b36" font-weight="400">轻分隔线</text>
+<text x="419" y="938" font-size="13" fill="#74606e" font-weight="400">#DFD1DC</text>
+<rect x="540" y="820" width="108" height="72" rx="8" fill="#895577" stroke="#947c8b" stroke-width="1"/>
+<text x="540" y="915" font-size="13" fill="#392b36" font-weight="400">强调色</text>
+<text x="540" y="938" font-size="13" fill="#74606e" font-weight="400">#895577</text>
+<rect x="706" y="768" width="638" height="196" rx="18" fill="#261c24" stroke="#594451" stroke-width="1"/>
+<text x="726" y="800" font-size="19" fill="#f1e8ef" font-weight="600">梅灰 · plum · 深色</text>
+<rect x="726" y="820" width="108" height="72" rx="8" fill="#261c24" stroke="#a18599" stroke-width="1"/>
+<text x="726" y="915" font-size="13" fill="#f1e8ef" font-weight="400">页面背景</text>
+<text x="726" y="938" font-size="13" fill="#c8afc0" font-weight="400">#261C24</text>
+<rect x="847" y="820" width="108" height="72" rx="8" fill="#3c2e38" stroke="#a18599" stroke-width="1"/>
+<text x="847" y="915" font-size="13" fill="#f1e8ef" font-weight="400">卡片表面</text>
+<text x="847" y="938" font-size="13" fill="#c8afc0" font-weight="400">#3C2E38</text>
+<rect x="968" y="820" width="108" height="72" rx="8" fill="#f1e8ef" stroke="#a18599" stroke-width="1"/>
+<text x="968" y="915" font-size="13" fill="#f1e8ef" font-weight="400">正文文字</text>
+<text x="968" y="938" font-size="13" fill="#c8afc0" font-weight="400">#F1E8EF</text>
+<rect x="1089" y="820" width="108" height="72" rx="8" fill="#594451" stroke="#a18599" stroke-width="1"/>
+<text x="1089" y="915" font-size="13" fill="#f1e8ef" font-weight="400">轻分隔线</text>
+<text x="1089" y="938" font-size="13" fill="#c8afc0" font-weight="400">#594451</text>
+<rect x="1210" y="820" width="108" height="72" rx="8" fill="#d7adc9" stroke="#a18599" stroke-width="1"/>
+<text x="1210" y="915" font-size="13" fill="#f1e8ef" font-weight="400">强调色</text>
+<text x="1210" y="938" font-size="13" fill="#c8afc0" font-weight="400">#D7ADC9</text>
+<rect x="36" y="986" width="638" height="196" rx="18" fill="#f5f5f4" stroke="#d6d8d8" stroke-width="1"/>
+<text x="56" y="1018" font-size="19" fill="#242627" font-weight="600">石墨 · graphite · 浅色</text>
+<rect x="56" y="1038" width="108" height="72" rx="8" fill="#f5f5f4" stroke="#7f8385" stroke-width="1"/>
+<text x="56" y="1133" font-size="13" fill="#242627" font-weight="400">页面背景</text>
+<text x="56" y="1156" font-size="13" fill="#626566" font-weight="400">#F5F5F4</text>
+<rect x="177" y="1038" width="108" height="72" rx="8" fill="#ffffff" stroke="#7f8385" stroke-width="1"/>
+<text x="177" y="1133" font-size="13" fill="#242627" font-weight="400">卡片表面</text>
+<text x="177" y="1156" font-size="13" fill="#626566" font-weight="400">#FFFFFF</text>
+<rect x="298" y="1038" width="108" height="72" rx="8" fill="#242627" stroke="#7f8385" stroke-width="1"/>
+<text x="298" y="1133" font-size="13" fill="#242627" font-weight="400">正文文字</text>
+<text x="298" y="1156" font-size="13" fill="#626566" font-weight="400">#242627</text>
+<rect x="419" y="1038" width="108" height="72" rx="8" fill="#d6d8d8" stroke="#7f8385" stroke-width="1"/>
+<text x="419" y="1133" font-size="13" fill="#242627" font-weight="400">轻分隔线</text>
+<text x="419" y="1156" font-size="13" fill="#626566" font-weight="400">#D6D8D8</text>
+<rect x="540" y="1038" width="108" height="72" rx="8" fill="#4f6069" stroke="#7f8385" stroke-width="1"/>
+<text x="540" y="1133" font-size="13" fill="#242627" font-weight="400">强调色</text>
+<text x="540" y="1156" font-size="13" fill="#626566" font-weight="400">#4F6069</text>
+<rect x="706" y="986" width="638" height="196" rx="18" fill="#191b1d" stroke="#42494e" stroke-width="1"/>
+<text x="726" y="1018" font-size="19" fill="#eaedef" font-weight="600">石墨 · graphite · 深色</text>
+<rect x="726" y="1038" width="108" height="72" rx="8" fill="#191b1d" stroke="#84929b" stroke-width="1"/>
+<text x="726" y="1133" font-size="13" fill="#eaedef" font-weight="400">页面背景</text>
+<text x="726" y="1156" font-size="13" fill="#b4bdc2" font-weight="400">#191B1D</text>
+<rect x="847" y="1038" width="108" height="72" rx="8" fill="#2c3034" stroke="#84929b" stroke-width="1"/>
+<text x="847" y="1133" font-size="13" fill="#eaedef" font-weight="400">卡片表面</text>
+<text x="847" y="1156" font-size="13" fill="#b4bdc2" font-weight="400">#2C3034</text>
+<rect x="968" y="1038" width="108" height="72" rx="8" fill="#eaedef" stroke="#84929b" stroke-width="1"/>
+<text x="968" y="1133" font-size="13" fill="#eaedef" font-weight="400">正文文字</text>
+<text x="968" y="1156" font-size="13" fill="#b4bdc2" font-weight="400">#EAEDEF</text>
+<rect x="1089" y="1038" width="108" height="72" rx="8" fill="#42494e" stroke="#84929b" stroke-width="1"/>
+<text x="1089" y="1133" font-size="13" fill="#eaedef" font-weight="400">轻分隔线</text>
+<text x="1089" y="1156" font-size="13" fill="#b4bdc2" font-weight="400">#42494E</text>
+<rect x="1210" y="1038" width="108" height="72" rx="8" fill="#b0c6d3" stroke="#84929b" stroke-width="1"/>
+<text x="1210" y="1133" font-size="13" fill="#eaedef" font-weight="400">强调色</text>
+<text x="1210" y="1156" font-size="13" fill="#b4bdc2" font-weight="400">#B0C6D3</text>
+<text x="36" y="1220" font-size="12" fill="#656258" font-weight="400">原创模板值；浅深主题均已在共享 CSS 中实现。</text>
+</svg>

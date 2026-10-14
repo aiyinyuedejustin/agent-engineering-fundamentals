@@ -1,4 +1,9 @@
 /** Original teaching implementation. No network endpoints or target imports. */
+function sizeLimit(value) {
+  if (!Number.isSafeInteger(value) || value < 0) throw new RangeError('Invalid size limit');
+  return value;
+}
+
 export class IncrementalSSE {
   #decoder = new TextDecoder();
   #line = '';
@@ -6,19 +11,25 @@ export class IncrementalSSE {
   #event = this.#blank();
   #eventCharacters = 0;
   #closed = false;
+  #maxLineCharacters;
+  #maxEventCharacters;
 
   constructor({ maxLineCharacters = 1_048_576, maxEventCharacters = 4_194_304 } = {}) {
-    this.maxLineCharacters = maxLineCharacters;
-    this.maxEventCharacters = maxEventCharacters;
+    this.#maxLineCharacters = sizeLimit(maxLineCharacters);
+    this.#maxEventCharacters = sizeLimit(maxEventCharacters);
     this.lastEventId = '';
     this.retryMilliseconds = undefined;
   }
+
+  get maxLineCharacters() { return this.#maxLineCharacters; }
+  get maxEventCharacters() { return this.#maxEventCharacters; }
 
   #blank() { return { event: '', data: [], id: undefined, retry: undefined }; }
 
   push(bytes) {
     if (this.#closed) throw new Error('The decoder is closed');
-    return this.#consume(this.#decoder.decode(bytes, { stream: true }));
+    try { return this.#consume(this.#decoder.decode(bytes, { stream: true })); }
+    catch (error) { this.#close(); throw error; }
   }
 
   #consume(text) {
@@ -34,6 +45,7 @@ export class IncrementalSSE {
       } else {
         this.#line += character;
         if (this.#line.length > this.maxLineCharacters) throw new RangeError('SSE line limit');
+        if (this.#eventCharacters + this.#line.length > this.maxEventCharacters) throw new RangeError('SSE event limit');
       }
     }
     return frames;
@@ -71,12 +83,17 @@ export class IncrementalSSE {
 
   finish() {
     if (this.#closed) return [];
-    const frames = this.#consume(this.#decoder.decode());
+    try { return this.#consume(this.#decoder.decode()); }
+    finally { this.#close(); }
+  }
+
+  #close() {
     this.#closed = true;
-    // An unterminated event is not silently made into a complete event at EOF.
+    // EOF and failures discard incomplete state rather than reviving it later.
     this.#line = '';
     this.#event = this.#blank();
-    return frames;
+    this.#eventCharacters = 0;
+    this.#afterCR = false;
   }
 }
 
@@ -85,19 +102,26 @@ export class IncrementalSSE {
 export async function consumeChunks(chunks, onFrame, {
   decoder = new IncrementalSSE(), afterChunk = () => {}, signal,
 } = {}) {
+  signal?.throwIfAborted();
   for await (const chunk of chunks) {
     signal?.throwIfAborted();
     for (const frame of decoder.push(chunk)) {
+      signal?.throwIfAborted();
       const result = onFrame(frame);
       // Do not create a microtask gap for a synchronous frame callback: all
       // events in this chunk can coalesce before the afterChunk boundary.
       if (result != null && typeof result.then === 'function') await result;
+      signal?.throwIfAborted();
     }
     await afterChunk();
+    signal?.throwIfAborted();
   }
+  signal?.throwIfAborted();
   for (const frame of decoder.finish()) {
+    signal?.throwIfAborted();
     const result = onFrame(frame);
     if (result != null && typeof result.then === 'function') await result;
+    signal?.throwIfAborted();
   }
 }
 

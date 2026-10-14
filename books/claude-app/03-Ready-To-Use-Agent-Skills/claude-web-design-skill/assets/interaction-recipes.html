@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN" data-density="comfortable">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>纸页 · 原创模态与紧凑配方</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+/* Original density recipe. Reading, control targets and layout are independent. */
+:root {
+  --reading-size: 1rem; --reading-leading: 1.75; --control-min: 44px;
+  --chrome-gap: .75rem; --chrome-pad: 1rem; --section-pad: 2rem;
+}
+:root[data-density="compact"] {
+  --chrome-gap: .5rem; --chrome-pad: .75rem; --section-pad: 1.5rem;
+}
+@media (any-pointer: coarse) {
+  :root { --control-min: 48px; }
+  :root[data-density="compact"] { --chrome-gap: .75rem; }
+}
+button { min-width: var(--control-min); min-height: var(--control-min); }
+.recipe-toolbar { display: flex; flex-wrap: wrap; gap: var(--chrome-gap); padding: var(--chrome-pad); border-bottom: 1px solid var(--line); }
+.reading { max-width: 48rem; margin-inline: auto; padding: var(--section-pad) 1rem; font-size: var(--reading-size); line-height: var(--reading-leading); }
+.reading h1 { font-size: 1.5rem; }
+#notes { overflow-wrap: anywhere; }
+dialog { width: min(32rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); overflow: auto; padding: var(--chrome-pad); color: var(--text); background: var(--raised); border: 1px solid var(--control-border); border-radius: var(--radius); }
+dialog::backdrop { background: rgb(0 0 0 / .45); }
+dialog form { display: grid; gap: var(--chrome-gap); }
+dialog h2, dialog p { margin: 0; }
+dialog textarea { width: 100%; min-height: 7rem; padding: .75rem; border: 1px solid var(--control-border); border-radius: var(--radius); background: var(--surface); color: var(--text); resize: vertical; }
+.dialog-actions { display: flex; flex-wrap: wrap; gap: var(--chrome-gap); }
+#note-error { color: var(--danger); }
+</style>
+</head>
+<body>
+<header class="recipe-toolbar" aria-label="阅读设置">
+  <button id="density-toggle" type="button" aria-pressed="false">紧凑布局</button>
+  <button id="theme-toggle" type="button" aria-pressed="false">深色主题</button>
+</header>
+<main class="reading">
+  <h1 id="page-title" tabindex="-1">给阅读留下空间</h1>
+  <p>紧凑布局只调整周边空白。正文尺寸、行高和阅读宽度保持不变，操作按钮仍有足够大的命中区域。</p>
+  <p class="hint">原创本地演示。设置、草稿和记录只存在当前页，刷新即清除。</p>
+  <button id="open-note" type="button">记录想法</button>
+  <ul id="notes" aria-label="本页记录"></ul>
+  <p id="status" role="status" aria-live="polite"></p>
+</main>
+<dialog id="note-dialog" aria-labelledby="note-title" aria-describedby="note-help">
+  <form id="note-form" novalidate>
+    <h2 id="note-title">记录想法</h2>
+    <p id="note-help">关闭或按 Escape 保留草稿；添加后只保存到本页。</p>
+    <label for="note-text">想法内容</label>
+    <textarea id="note-text" name="note" rows="4" autofocus required aria-describedby="note-error"></textarea>
+    <p id="note-error"></p>
+    <div class="dialog-actions">
+      <button id="cancel-note" type="button">关闭并保留草稿</button>
+      <button class="primary" type="submit">添加到本页</button>
+    </div>
+  </form>
+</dialog>
+<script>
+const $ = id => document.getElementById(id);
+const root = document.documentElement;
+const dialog = $('note-dialog');
+const input = $('note-text');
+let returnTarget = null;
+$('density-toggle').addEventListener('click', () => {
+  const compact = root.dataset.density !== 'compact';
+  root.dataset.density = compact ? 'compact' : 'comfortable';
+  $('density-toggle').setAttribute('aria-pressed', String(compact));
+});
+$('theme-toggle').addEventListener('click', () => {
+  const dark = root.dataset.theme !== 'dark';
+  root.dataset.theme = dark ? 'dark' : 'light';
+  $('theme-toggle').setAttribute('aria-pressed', String(dark));
+});
+$('open-note').addEventListener('click', event => {
+  if (dialog.open) return;
+  if (typeof dialog.showModal !== 'function') {
+    $('status').textContent = '此浏览器不支持本例的原生模态窗口。';
+    return;
+  }
+  returnTarget = event.currentTarget;
+  dialog.returnValue = '';
+  dialog.showModal(); // Native modal/background behavior; autofocus chooses the field.
+});
+$('cancel-note').addEventListener('click', () => dialog.close('cancel'));
+// Escape's native cancel default closes the dialog. Do not prevent it or add a global key handler.
+dialog.addEventListener('cancel', () => { dialog.returnValue = 'cancel'; });
+dialog.addEventListener('close', () => {
+  // A rapid programmatic reopen may happen before the queued close event.
+  if (dialog.open || !returnTarget) return;
+  const target = returnTarget;
+  returnTarget = null;
+  if (target?.isConnected && !target.disabled && !target.closest('[hidden], [inert]') && target.getClientRects().length) {
+    target.focus({ preventScroll: true });
+  } else {
+    $('page-title').focus({ preventScroll: true });
+  }
+});
+input.addEventListener('input', () => {
+  input.removeAttribute('aria-invalid');
+  $('note-error').textContent = '';
+});
+$('note-form').addEventListener('submit', event => {
+  event.preventDefault();
+  const value = input.value.trim();
+  if (!value) {
+    input.setAttribute('aria-invalid', 'true');
+    $('note-error').textContent = '请先写下想法。';
+    input.focus();
+    return;
+  }
+  const item = document.createElement('li');
+  item.textContent = value;
+  $('notes').append(item);
+  input.value = '';
+  input.removeAttribute('aria-invalid');
+  $('note-error').textContent = '';
+  $('status').textContent = '已添加到本页；刷新即清除。';
+  dialog.close('saved');
+});
+</script>
+</body>
+</html>

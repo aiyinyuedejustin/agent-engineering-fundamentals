@@ -1,0 +1,414 @@
+{
+  "parser": "12.2.0",
+  "summary": {
+    "blocks": 33,
+    "parse_pass": 33,
+    "parse_fail": 0,
+    "render_pass": 0,
+    "render_fail": 0,
+    "render_not_run": 33,
+    "semantic_findings": 2
+  },
+  "clarity_corrections_applied": [
+    "MMD-001",
+    "MMD-002"
+  ],
+  "blocks": [
+    {
+      "file": "01-System-Architecture/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "01-System-Architecture/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "01-System-Architecture/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "01-System-Architecture/README.md",
+      "block": 4,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "stateDiagram"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "01-System-Architecture/README.md",
+      "block": 5,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "02-Agent-Loop-Engine/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "02-Agent-Loop-Engine/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "stateDiagram"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "02-Agent-Loop-Engine/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "03-Computer-Use-And-Cowork/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "03-Computer-Use-And-Cowork/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "04-Prompts-And-Protocols/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "04-Prompts-And-Protocols/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "stateDiagram"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "05-Context-And-File-Pipeline/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "05-Context-And-File-Pipeline/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "05-Context-And-File-Pipeline/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "05-Context-And-File-Pipeline/README.md",
+      "block": 4,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "stateDiagram"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "05-Context-And-File-Pipeline/README.md",
+      "block": 5,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "06-MCP-Host-Internals/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "07-Artifacts-And-Sandbox/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "07-Artifacts-And-Sandbox/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "07-Artifacts-And-Sandbox/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "stateDiagram"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "07-Artifacts-And-Sandbox/README.md",
+      "block": 4,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "stateDiagram"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "08-Conversation-Tree-And-Streaming/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "08-Conversation-Tree-And-Streaming/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "08-Conversation-Tree-And-Streaming/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "08-Conversation-Tree-And-Streaming/README.md",
+      "block": 4,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "09-Memory-Projects-And-Styles/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "09-Memory-Projects-And-Styles/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "sequence"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "09-Memory-Projects-And-Styles/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "09-Memory-Projects-And-Styles/README.md",
+      "block": 4,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "10-Feature-Flags-And-Evolution/README.md",
+      "block": 1,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "10-Feature-Flags-And-Evolution/README.md",
+      "block": 2,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    },
+    {
+      "file": "10-Feature-Flags-And-Evolution/README.md",
+      "block": 3,
+      "parse": {
+        "status": "pass",
+        "diagram_type": "flowchart-v2"
+      },
+      "render": {
+        "status": "not_run",
+        "reason": "Local Chromium startup blocked: process_singleton_posix.cc socket() failed: Operation not permitted. No render/SVG/layout claim is made."
+      }
+    }
+  ]
+}

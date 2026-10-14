@@ -12,14 +12,15 @@
 flowchart LR
     Package[扩展包与清单] --> Installed[已安装]
     Installed --> Enable{用户或策略启用?}
-    Enable --> Config{配置有效?}
-    Config --> Runtime[选择运行时并启动]
+    Enable -->|是| Config{配置有效?}
+    Enable -->|否| Disabled[已安装但未启用]
+    Config -->|是| Runtime[选择运行时并启动]
     Runtime --> Connection{协议连接就绪?}
-    Connection --> Permission{具体工具调用获准?}
-    Permission --> Call[执行调用并返回结果]
-    Config --> Repair[修正配置]
-    Connection --> Failure[连接失败或等待恢复]
-    Permission --> Denied[拒绝或等待确认]
+    Connection -->|是| Permission{具体工具调用获准?}
+    Permission -->|是| Call[执行调用并返回结果]
+    Config -->|否| Repair[修正配置]
+    Connection -->|否| Failure[连接失败或等待恢复]
+    Permission -->|否或待定| Denied[拒绝或等待确认]
 ```
 
 图中每个判断负责不同的契约；“包存在”“进程已启动”和“动作可执行”不是同一个布尔值。重启工具只能处理运行与连接问题，不能自动修复错误配置或取得用户授权。

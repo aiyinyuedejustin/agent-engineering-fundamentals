@@ -14,9 +14,9 @@ description: Build or refine calm, reading-first chat and knowledge interfaces i
 1. 明确当前主要活动：阅读、输入、导航、检查作品。先以灰度建立四者的层级，再上色。确认目标语言、窄屏行为、主题与实际内容长度。
 2. 阅读 [参数与来源边界](references/design-contract.md)。表内参数属于指定版本和选择器；不要把旧 HSL、v2、CDS 和桌面框架混成一个「官方统一值」。需要复核精确来源时再读 [静态令牌记录](references/observed-tokens.json)。
 3. 用 [原创 tokens.css](assets/tokens.css) 与 [skeleton.html](assets/skeleton.html) 起步；二者可一同复制到项目。本地字体、无外部依赖，不需要本书其他文件。若接入已有组件库，映射语义令牌而非整份覆盖全局 CSS。
-4. 先落实阅读宽度、正文/操作字体、composer 状态与 focus-visible，再做装饰。中文正文单独决定黑体或宋体；不要以 Latin serif 名称推断中文字形。
-5. 实现空态、长内容、附件处理中、失败可重试、生成中、取消后等真实状态。骨架只示范布局与本地交互，接模型前清楚区分本地提交和实际完成。
-6. 在 375、768、1280px、200% 缩放、两种主题下检查长中文标题、长路径、代码块、键盘和触屏。对比度检查实际前景/背景组合，不仅检查色板。运行 `node assets/tokens.test.mjs`；它只验证原创颜色配对和关键结构，不能代替浏览器视觉与辅助技术测试。
+4. 先落实阅读宽度、正文/操作字体、composer 状态与 focus-visible，再做装饰。中文正文单独决定黑体或宋体；不要以 Latin serif 名称推断中文字形。需要模态窗口或紧凑设置时，再读 [交互与密度契约](references/interaction-contracts.md) 和 [原创可运行小例](assets/interaction-recipes.html)。
+5. 实现空态、长内容、附件处理中、失败可重试、生成中、取消后等真实状态。只实现当前产品确实存在的状态，不为清单虚构模型、附件或网络流程。骨架只示范布局与本地交互，接模型前清楚区分本地提交和实际完成。
+6. 在 375、768、1280px、200% 缩放、两种主题下检查长中文标题、长路径、代码块、键盘和触屏。对比度检查实际前景/背景组合，不仅检查色板。运行 `node --test assets/*.test.mjs`；它们只检查包内颜色、结构与模拟 DOM 逻辑，不能代替浏览器视觉与辅助技术测试。修改或内嵌到新页面后，对最终产物重做同类检查。
 7. 交付可运行页面、令牌选择说明和真实测试结果。指出哪些数值是观察事实，哪些是为该产品作出的原创决定。
 
 ## Ten Anti-Slop Rules
@@ -36,6 +36,8 @@ description: Build or refine calm, reading-first chat and knowledge interfaces i
 
 - 声称骨架就是 Claude 当前生产界面，或把静态包值称为已登录页面实测。
 - 所有文本都使用一个 serif 栈；所有 24px 视觉控件都当成足够大的触控目标。
+- 用 `open` 属性或 `show()` 假装模态；把原生 dialog 当作未经实测的严格首尾焦点循环。
+- 紧凑模式直接缩小正文、根字号或触达区域，混淆观察到的 CDS 控件尺寸与原创布局选择。
 - 深色模式仅反色；全局 `overflow:hidden` 隐藏溢出；全局强制断词破坏代码。
 - 为复刻观感移除焦点环，或未经验证直接用白色小字覆盖陶土填充。
 

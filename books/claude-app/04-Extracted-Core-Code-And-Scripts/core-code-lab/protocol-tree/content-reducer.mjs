@@ -100,6 +100,7 @@ export class ContentReducer {
         break;
       }
       case 'content_block_retract': {
+        if (!Number.isInteger(event.from_index) || event.from_index < 0) throw new Error('Invalid retraction');
         const local = this.#local(event.from_index);
         if (local < 0 || local > this.blocks.length) throw new Error('Invalid retraction');
         this.blocks = this.blocks.slice(0, local);

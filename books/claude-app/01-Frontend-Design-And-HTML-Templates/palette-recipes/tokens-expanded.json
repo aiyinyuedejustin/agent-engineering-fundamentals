@@ -1,0 +1,2117 @@
+{
+  "schemaVersion": 1,
+  "provenance": "original adaptation; actual frontend template tokens",
+  "precision": "HEX/RGB/alpha and hslExact are exact. hslCss is rounded to six decimal places.",
+  "palettes": {
+    "paper": {
+      "name": "纸与陶",
+      "light": {
+        "canvas": {
+          "hex": "#f8f7f3",
+          "rgb": [
+            248,
+            247,
+            243
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(248 247 243)",
+          "hslCss": "hsl(48 26.315789% 96.27451%)",
+          "hslExact": {
+            "h": "48",
+            "sPercent": "500/19",
+            "lPercent": "4910/51"
+          },
+          "hslExactCss": "hsl(48 calc(500% / 19) calc(4910% / 51))"
+        },
+        "sidebar": {
+          "hex": "#f0eee7",
+          "rgb": [
+            240,
+            238,
+            231
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(240 238 231)",
+          "hslCss": "hsl(46.666667 23.076923% 92.352941%)",
+          "hslExact": {
+            "h": "140/3",
+            "sPercent": "300/13",
+            "lPercent": "1570/17"
+          },
+          "hslExactCss": "hsl(calc(140 / 3) calc(300% / 13) calc(1570% / 17))"
+        },
+        "surface": {
+          "hex": "#ffffff",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(255 255 255)",
+          "hslCss": "hsl(0 0% 100%)",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "0",
+            "lPercent": "100"
+          },
+          "hslExactCss": "hsl(0 0% 100%)"
+        },
+        "ink": {
+          "hex": "#26251f",
+          "rgb": [
+            38,
+            37,
+            31
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(38 37 31)",
+          "hslCss": "hsl(51.428571 10.144928% 13.529412%)",
+          "hslExact": {
+            "h": "360/7",
+            "sPercent": "700/69",
+            "lPercent": "230/17"
+          },
+          "hslExactCss": "hsl(calc(360 / 7) calc(700% / 69) calc(230% / 17))"
+        },
+        "muted": {
+          "hex": "#656258",
+          "rgb": [
+            101,
+            98,
+            88
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(101 98 88)",
+          "hslCss": "hsl(46.153846 6.878307% 37.058824%)",
+          "hslExact": {
+            "h": "600/13",
+            "sPercent": "1300/189",
+            "lPercent": "630/17"
+          },
+          "hslExactCss": "hsl(calc(600 / 13) calc(1300% / 189) calc(630% / 17))"
+        },
+        "line": {
+          "hex": "#d9d6cc",
+          "rgb": [
+            217,
+            214,
+            204
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(217 214 204)",
+          "hslCss": "hsl(46.153846 14.606742% 82.54902%)",
+          "hslExact": {
+            "h": "600/13",
+            "sPercent": "1300/89",
+            "lPercent": "4210/51"
+          },
+          "hslExactCss": "hsl(calc(600 / 13) calc(1300% / 89) calc(4210% / 51))"
+        },
+        "line-strong": {
+          "hex": "#878273",
+          "rgb": [
+            135,
+            130,
+            115
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(135 130 115)",
+          "hslCss": "hsl(45 8% 49.019608%)",
+          "hslExact": {
+            "h": "45",
+            "sPercent": "8",
+            "lPercent": "2500/51"
+          },
+          "hslExactCss": "hsl(45 8% calc(2500% / 51))"
+        },
+        "accent": {
+          "hex": "#a24b33",
+          "rgb": [
+            162,
+            75,
+            51
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(162 75 51)",
+          "hslCss": "hsl(12.972973 52.112676% 41.764706%)",
+          "hslExact": {
+            "h": "480/37",
+            "sPercent": "3700/71",
+            "lPercent": "710/17"
+          },
+          "hslExactCss": "hsl(calc(480 / 37) calc(3700% / 71) calc(710% / 17))"
+        },
+        "accent-soft": {
+          "hex": "#f3e3da",
+          "rgb": [
+            243,
+            227,
+            218
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(243 227 218)",
+          "hslCss": "hsl(21.6 51.020408% 90.392157%)",
+          "hslExact": {
+            "h": "108/5",
+            "sPercent": "2500/49",
+            "lPercent": "4610/51"
+          },
+          "hslExactCss": "hsl(calc(108 / 5) calc(2500% / 49) calc(4610% / 51))"
+        }
+      },
+      "dark": {
+        "canvas": {
+          "hex": "#1b1b18",
+          "rgb": [
+            27,
+            27,
+            24
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(27 27 24)",
+          "hslCss": "hsl(60 5.882353% 10%)",
+          "hslExact": {
+            "h": "60",
+            "sPercent": "100/17",
+            "lPercent": "10"
+          },
+          "hslExactCss": "hsl(60 calc(100% / 17) 10%)"
+        },
+        "sidebar": {
+          "hex": "#23231f",
+          "rgb": [
+            35,
+            35,
+            31
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(35 35 31)",
+          "hslCss": "hsl(60 6.060606% 12.941176%)",
+          "hslExact": {
+            "h": "60",
+            "sPercent": "200/33",
+            "lPercent": "220/17"
+          },
+          "hslExactCss": "hsl(60 calc(200% / 33) calc(220% / 17))"
+        },
+        "surface": {
+          "hex": "#2b2b26",
+          "rgb": [
+            43,
+            43,
+            38
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(43 43 38)",
+          "hslCss": "hsl(60 6.17284% 15.882353%)",
+          "hslExact": {
+            "h": "60",
+            "sPercent": "500/81",
+            "lPercent": "270/17"
+          },
+          "hslExactCss": "hsl(60 calc(500% / 81) calc(270% / 17))"
+        },
+        "ink": {
+          "hex": "#eeede6",
+          "rgb": [
+            238,
+            237,
+            230
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(238 237 230)",
+          "hslCss": "hsl(52.5 19.047619% 91.764706%)",
+          "hslExact": {
+            "h": "105/2",
+            "sPercent": "400/21",
+            "lPercent": "1560/17"
+          },
+          "hslExactCss": "hsl(calc(105 / 2) calc(400% / 21) calc(1560% / 17))"
+        },
+        "muted": {
+          "hex": "#b8b5a8",
+          "rgb": [
+            184,
+            181,
+            168
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(184 181 168)",
+          "hslCss": "hsl(48.75 10.126582% 69.019608%)",
+          "hslExact": {
+            "h": "195/4",
+            "sPercent": "800/79",
+            "lPercent": "3520/51"
+          },
+          "hslExactCss": "hsl(calc(195 / 4) calc(800% / 79) calc(3520% / 51))"
+        },
+        "line": {
+          "hex": "#44443b",
+          "rgb": [
+            68,
+            68,
+            59
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(68 68 59)",
+          "hslCss": "hsl(60 7.086614% 24.901961%)",
+          "hslExact": {
+            "h": "60",
+            "sPercent": "900/127",
+            "lPercent": "1270/51"
+          },
+          "hslExactCss": "hsl(60 calc(900% / 127) calc(1270% / 51))"
+        },
+        "line-strong": {
+          "hex": "#817e70",
+          "rgb": [
+            129,
+            126,
+            112
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(129 126 112)",
+          "hslCss": "hsl(49.411765 7.053942% 47.254902%)",
+          "hslExact": {
+            "h": "840/17",
+            "sPercent": "1700/241",
+            "lPercent": "2410/51"
+          },
+          "hslExactCss": "hsl(calc(840 / 17) calc(1700% / 241) calc(2410% / 51))"
+        },
+        "accent": {
+          "hex": "#e2a68b",
+          "rgb": [
+            226,
+            166,
+            139
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(226 166 139)",
+          "hslCss": "hsl(18.62069 60% 71.568627%)",
+          "hslExact": {
+            "h": "540/29",
+            "sPercent": "60",
+            "lPercent": "3650/51"
+          },
+          "hslExactCss": "hsl(calc(540 / 29) 60% calc(3650% / 51))"
+        },
+        "accent-soft": {
+          "hex": "#3b2b24",
+          "rgb": [
+            59,
+            43,
+            36
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(59 43 36)",
+          "hslCss": "hsl(18.26087 24.210526% 18.627451%)",
+          "hslExact": {
+            "h": "420/23",
+            "sPercent": "460/19",
+            "lPercent": "950/51"
+          },
+          "hslExactCss": "hsl(calc(420 / 23) calc(460% / 19) calc(950% / 51))"
+        }
+      }
+    },
+    "sage": {
+      "name": "苔绿",
+      "light": {
+        "canvas": {
+          "hex": "#f4f6ef",
+          "rgb": [
+            244,
+            246,
+            239
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(244 246 239)",
+          "hslCss": "hsl(77.142857 28% 95.098039%)",
+          "hslExact": {
+            "h": "540/7",
+            "sPercent": "28",
+            "lPercent": "4850/51"
+          },
+          "hslExactCss": "hsl(calc(540 / 7) 28% calc(4850% / 51))"
+        },
+        "sidebar": {
+          "hex": "#e8ede1",
+          "rgb": [
+            232,
+            237,
+            225
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(232 237 225)",
+          "hslCss": "hsl(85 25% 90.588235%)",
+          "hslExact": {
+            "h": "85",
+            "sPercent": "25",
+            "lPercent": "1540/17"
+          },
+          "hslExactCss": "hsl(85 25% calc(1540% / 17))"
+        },
+        "surface": {
+          "hex": "#fdfef9",
+          "rgb": [
+            253,
+            254,
+            249
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(253 254 249)",
+          "hslCss": "hsl(72 71.428571% 98.627451%)",
+          "hslExact": {
+            "h": "72",
+            "sPercent": "500/7",
+            "lPercent": "5030/51"
+          },
+          "hslExactCss": "hsl(72 calc(500% / 7) calc(5030% / 51))"
+        },
+        "ink": {
+          "hex": "#253028",
+          "rgb": [
+            37,
+            48,
+            40
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(37 48 40)",
+          "hslCss": "hsl(136.363636 12.941176% 16.666667%)",
+          "hslExact": {
+            "h": "1500/11",
+            "sPercent": "220/17",
+            "lPercent": "50/3"
+          },
+          "hslExactCss": "hsl(calc(1500 / 11) calc(220% / 17) calc(50% / 3))"
+        },
+        "muted": {
+          "hex": "#596656",
+          "rgb": [
+            89,
+            102,
+            86
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(89 102 86)",
+          "hslCss": "hsl(108.75 8.510638% 36.862745%)",
+          "hslExact": {
+            "h": "435/4",
+            "sPercent": "400/47",
+            "lPercent": "1880/51"
+          },
+          "hslExactCss": "hsl(calc(435 / 4) calc(400% / 47) calc(1880% / 51))"
+        },
+        "line": {
+          "hex": "#d1d9c9",
+          "rgb": [
+            209,
+            217,
+            201
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(209 217 201)",
+          "hslCss": "hsl(90 17.391304% 81.960784%)",
+          "hslExact": {
+            "h": "90",
+            "sPercent": "400/23",
+            "lPercent": "4180/51"
+          },
+          "hslExactCss": "hsl(90 calc(400% / 23) calc(4180% / 51))"
+        },
+        "line-strong": {
+          "hex": "#7c8975",
+          "rgb": [
+            124,
+            137,
+            117
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(124 137 117)",
+          "hslCss": "hsl(99 7.874016% 49.803922%)",
+          "hslExact": {
+            "h": "99",
+            "sPercent": "1000/127",
+            "lPercent": "2540/51"
+          },
+          "hslExactCss": "hsl(99 calc(1000% / 127) calc(2540% / 51))"
+        },
+        "accent": {
+          "hex": "#41664a",
+          "rgb": [
+            65,
+            102,
+            74
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(65 102 74)",
+          "hslCss": "hsl(134.594595 22.155689% 32.745098%)",
+          "hslExact": {
+            "h": "4980/37",
+            "sPercent": "3700/167",
+            "lPercent": "1670/51"
+          },
+          "hslExactCss": "hsl(calc(4980 / 37) calc(3700% / 167) calc(1670% / 51))"
+        },
+        "accent-soft": {
+          "hex": "#e1eddf",
+          "rgb": [
+            225,
+            237,
+            223
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(225 237 223)",
+          "hslCss": "hsl(111.428571 28% 90.196078%)",
+          "hslExact": {
+            "h": "780/7",
+            "sPercent": "28",
+            "lPercent": "4600/51"
+          },
+          "hslExactCss": "hsl(calc(780 / 7) 28% calc(4600% / 51))"
+        }
+      },
+      "dark": {
+        "canvas": {
+          "hex": "#19201a",
+          "rgb": [
+            25,
+            32,
+            26
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(25 32 26)",
+          "hslCss": "hsl(128.571429 12.280702% 11.176471%)",
+          "hslExact": {
+            "h": "900/7",
+            "sPercent": "700/57",
+            "lPercent": "190/17"
+          },
+          "hslExactCss": "hsl(calc(900 / 7) calc(700% / 57) calc(190% / 17))"
+        },
+        "sidebar": {
+          "hex": "#202a22",
+          "rgb": [
+            32,
+            42,
+            34
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(32 42 34)",
+          "hslCss": "hsl(132 13.513514% 14.509804%)",
+          "hslExact": {
+            "h": "132",
+            "sPercent": "500/37",
+            "lPercent": "740/51"
+          },
+          "hslExactCss": "hsl(132 calc(500% / 37) calc(740% / 51))"
+        },
+        "surface": {
+          "hex": "#29342b",
+          "rgb": [
+            41,
+            52,
+            43
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(41 52 43)",
+          "hslCss": "hsl(130.909091 11.827957% 18.235294%)",
+          "hslExact": {
+            "h": "1440/11",
+            "sPercent": "1100/93",
+            "lPercent": "310/17"
+          },
+          "hslExactCss": "hsl(calc(1440 / 11) calc(1100% / 93) calc(310% / 17))"
+        },
+        "ink": {
+          "hex": "#e9eee5",
+          "rgb": [
+            233,
+            238,
+            229
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(233 238 229)",
+          "hslCss": "hsl(93.333333 20.930233% 91.568627%)",
+          "hslExact": {
+            "h": "280/3",
+            "sPercent": "900/43",
+            "lPercent": "4670/51"
+          },
+          "hslExactCss": "hsl(calc(280 / 3) calc(900% / 43) calc(4670% / 51))"
+        },
+        "muted": {
+          "hex": "#b0beac",
+          "rgb": [
+            176,
+            190,
+            172
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(176 190 172)",
+          "hslCss": "hsl(106.666667 12.162162% 70.980392%)",
+          "hslExact": {
+            "h": "320/3",
+            "sPercent": "450/37",
+            "lPercent": "3620/51"
+          },
+          "hslExactCss": "hsl(calc(320 / 3) calc(450% / 37) calc(3620% / 51))"
+        },
+        "line": {
+          "hex": "#3c4d3e",
+          "rgb": [
+            60,
+            77,
+            62
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(60 77 62)",
+          "hslCss": "hsl(127.058824 12.408759% 26.862745%)",
+          "hslExact": {
+            "h": "2160/17",
+            "sPercent": "1700/137",
+            "lPercent": "1370/51"
+          },
+          "hslExactCss": "hsl(calc(2160 / 17) calc(1700% / 137) calc(1370% / 51))"
+        },
+        "line-strong": {
+          "hex": "#7e947d",
+          "rgb": [
+            126,
+            148,
+            125
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(126 148 125)",
+          "hslCss": "hsl(117.391304 9.704641% 53.529412%)",
+          "hslExact": {
+            "h": "2700/23",
+            "sPercent": "2300/237",
+            "lPercent": "910/17"
+          },
+          "hslExactCss": "hsl(calc(2700 / 23) calc(2300% / 237) calc(910% / 17))"
+        },
+        "accent": {
+          "hex": "#a8c7a1",
+          "rgb": [
+            168,
+            199,
+            161
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(168 199 161)",
+          "hslCss": "hsl(108.947368 25.333333% 70.588235%)",
+          "hslExact": {
+            "h": "2070/19",
+            "sPercent": "76/3",
+            "lPercent": "1200/17"
+          },
+          "hslExactCss": "hsl(calc(2070 / 19) calc(76% / 3) calc(1200% / 17))"
+        },
+        "accent-soft": {
+          "hex": "#2b402e",
+          "rgb": [
+            43,
+            64,
+            46
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(43 64 46)",
+          "hslCss": "hsl(128.571429 19.626168% 20.980392%)",
+          "hslExact": {
+            "h": "900/7",
+            "sPercent": "2100/107",
+            "lPercent": "1070/51"
+          },
+          "hslExactCss": "hsl(calc(900 / 7) calc(2100% / 107) calc(1070% / 51))"
+        }
+      }
+    },
+    "ocean": {
+      "name": "雾蓝",
+      "light": {
+        "canvas": {
+          "hex": "#f3f6f7",
+          "rgb": [
+            243,
+            246,
+            247
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(243 246 247)",
+          "hslCss": "hsl(195 20% 96.078431%)",
+          "hslExact": {
+            "h": "195",
+            "sPercent": "20",
+            "lPercent": "4900/51"
+          },
+          "hslExactCss": "hsl(195 20% calc(4900% / 51))"
+        },
+        "sidebar": {
+          "hex": "#e6eef1",
+          "rgb": [
+            230,
+            238,
+            241
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(230 238 241)",
+          "hslCss": "hsl(196.363636 28.205128% 92.352941%)",
+          "hslExact": {
+            "h": "2160/11",
+            "sPercent": "1100/39",
+            "lPercent": "1570/17"
+          },
+          "hslExactCss": "hsl(calc(2160 / 11) calc(1100% / 39) calc(1570% / 17))"
+        },
+        "surface": {
+          "hex": "#fdfefe",
+          "rgb": [
+            253,
+            254,
+            254
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(253 254 254)",
+          "hslCss": "hsl(180 33.333333% 99.411765%)",
+          "hslExact": {
+            "h": "180",
+            "sPercent": "100/3",
+            "lPercent": "1690/17"
+          },
+          "hslExactCss": "hsl(180 calc(100% / 3) calc(1690% / 17))"
+        },
+        "ink": {
+          "hex": "#22323a",
+          "rgb": [
+            34,
+            50,
+            58
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(34 50 58)",
+          "hslCss": "hsl(200 26.086957% 18.039216%)",
+          "hslExact": {
+            "h": "200",
+            "sPercent": "600/23",
+            "lPercent": "920/51"
+          },
+          "hslExactCss": "hsl(200 calc(600% / 23) calc(920% / 51))"
+        },
+        "muted": {
+          "hex": "#536875",
+          "rgb": [
+            83,
+            104,
+            117
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(83 104 117)",
+          "hslCss": "hsl(202.941176 17% 39.215686%)",
+          "hslExact": {
+            "h": "3450/17",
+            "sPercent": "17",
+            "lPercent": "2000/51"
+          },
+          "hslExactCss": "hsl(calc(3450 / 17) 17% calc(2000% / 51))"
+        },
+        "line": {
+          "hex": "#cddbe0",
+          "rgb": [
+            205,
+            219,
+            224
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(205 219 224)",
+          "hslCss": "hsl(195.789474 23.45679% 84.117647%)",
+          "hslExact": {
+            "h": "3720/19",
+            "sPercent": "1900/81",
+            "lPercent": "1430/17"
+          },
+          "hslExactCss": "hsl(calc(3720 / 19) calc(1900% / 81) calc(1430% / 17))"
+        },
+        "line-strong": {
+          "hex": "#708995",
+          "rgb": [
+            112,
+            137,
+            149
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(112 137 149)",
+          "hslCss": "hsl(199.459459 14.859438% 51.176471%)",
+          "hslExact": {
+            "h": "7380/37",
+            "sPercent": "3700/249",
+            "lPercent": "870/17"
+          },
+          "hslExactCss": "hsl(calc(7380 / 37) calc(3700% / 249) calc(870% / 17))"
+        },
+        "accent": {
+          "hex": "#326780",
+          "rgb": [
+            50,
+            103,
+            128
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(50 103 128)",
+          "hslCss": "hsl(199.230769 43.820225% 34.901961%)",
+          "hslExact": {
+            "h": "2590/13",
+            "sPercent": "3900/89",
+            "lPercent": "1780/51"
+          },
+          "hslExactCss": "hsl(calc(2590 / 13) calc(3900% / 89) calc(1780% / 51))"
+        },
+        "accent-soft": {
+          "hex": "#deedf3",
+          "rgb": [
+            222,
+            237,
+            243
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(222 237 243)",
+          "hslCss": "hsl(197.142857 46.666667% 91.176471%)",
+          "hslExact": {
+            "h": "1380/7",
+            "sPercent": "140/3",
+            "lPercent": "1550/17"
+          },
+          "hslExactCss": "hsl(calc(1380 / 7) calc(140% / 3) calc(1550% / 17))"
+        }
+      },
+      "dark": {
+        "canvas": {
+          "hex": "#172127",
+          "rgb": [
+            23,
+            33,
+            39
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(23 33 39)",
+          "hslCss": "hsl(202.5 25.806452% 12.156863%)",
+          "hslExact": {
+            "h": "405/2",
+            "sPercent": "800/31",
+            "lPercent": "620/51"
+          },
+          "hslExactCss": "hsl(calc(405 / 2) calc(800% / 31) calc(620% / 51))"
+        },
+        "sidebar": {
+          "hex": "#1f2b32",
+          "rgb": [
+            31,
+            43,
+            50
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(31 43 50)",
+          "hslCss": "hsl(202.105263 23.45679% 15.882353%)",
+          "hslExact": {
+            "h": "3840/19",
+            "sPercent": "1900/81",
+            "lPercent": "270/17"
+          },
+          "hslExactCss": "hsl(calc(3840 / 19) calc(1900% / 81) calc(270% / 17))"
+        },
+        "surface": {
+          "hex": "#29373e",
+          "rgb": [
+            41,
+            55,
+            62
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(41 55 62)",
+          "hslCss": "hsl(200 20.38835% 20.196078%)",
+          "hslExact": {
+            "h": "200",
+            "sPercent": "2100/103",
+            "lPercent": "1030/51"
+          },
+          "hslExactCss": "hsl(200 calc(2100% / 103) calc(1030% / 51))"
+        },
+        "ink": {
+          "hex": "#e7eff2",
+          "rgb": [
+            231,
+            239,
+            242
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(231 239 242)",
+          "hslCss": "hsl(196.363636 29.72973% 92.745098%)",
+          "hslExact": {
+            "h": "2160/11",
+            "sPercent": "1100/37",
+            "lPercent": "4730/51"
+          },
+          "hslExactCss": "hsl(calc(2160 / 11) calc(1100% / 37) calc(4730% / 51))"
+        },
+        "muted": {
+          "hex": "#a8bdc7",
+          "rgb": [
+            168,
+            189,
+            199
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(168 189 199)",
+          "hslCss": "hsl(199.354839 21.678322% 71.960784%)",
+          "hslExact": {
+            "h": "6180/31",
+            "sPercent": "3100/143",
+            "lPercent": "3670/51"
+          },
+          "hslExactCss": "hsl(calc(6180 / 31) calc(3100% / 143) calc(3670% / 51))"
+        },
+        "line": {
+          "hex": "#3b515e",
+          "rgb": [
+            59,
+            81,
+            94
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(59 81 94)",
+          "hslCss": "hsl(202.285714 22.875817% 30%)",
+          "hslExact": {
+            "h": "1416/7",
+            "sPercent": "3500/153",
+            "lPercent": "30"
+          },
+          "hslExactCss": "hsl(calc(1416 / 7) calc(3500% / 153) 30%)"
+        },
+        "line-strong": {
+          "hex": "#7f9aa8",
+          "rgb": [
+            127,
+            154,
+            168
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(127 154 168)",
+          "hslCss": "hsl(200.487805 19.069767% 57.843137%)",
+          "hslExact": {
+            "h": "8220/41",
+            "sPercent": "820/43",
+            "lPercent": "2950/51"
+          },
+          "hslExactCss": "hsl(calc(8220 / 41) calc(820% / 43) calc(2950% / 51))"
+        },
+        "accent": {
+          "hex": "#9cc5d8",
+          "rgb": [
+            156,
+            197,
+            216
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(156 197 216)",
+          "hslCss": "hsl(199 43.478261% 72.941176%)",
+          "hslExact": {
+            "h": "199",
+            "sPercent": "1000/23",
+            "lPercent": "1240/17"
+          },
+          "hslExactCss": "hsl(199 calc(1000% / 23) calc(1240% / 17))"
+        },
+        "accent-soft": {
+          "hex": "#28404d",
+          "rgb": [
+            40,
+            64,
+            77
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(40 64 77)",
+          "hslCss": "hsl(201.081081 31.623932% 22.941176%)",
+          "hslExact": {
+            "h": "7440/37",
+            "sPercent": "3700/117",
+            "lPercent": "390/17"
+          },
+          "hslExactCss": "hsl(calc(7440 / 37) calc(3700% / 117) calc(390% / 17))"
+        }
+      }
+    },
+    "plum": {
+      "name": "梅灰",
+      "light": {
+        "canvas": {
+          "hex": "#f8f4f6",
+          "rgb": [
+            248,
+            244,
+            246
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(248 244 246)",
+          "hslCss": "hsl(330 22.222222% 96.470588%)",
+          "hslExact": {
+            "h": "330",
+            "sPercent": "200/9",
+            "lPercent": "1640/17"
+          },
+          "hslExactCss": "hsl(330 calc(200% / 9) calc(1640% / 17))"
+        },
+        "sidebar": {
+          "hex": "#efe7ed",
+          "rgb": [
+            239,
+            231,
+            237
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(239 231 237)",
+          "hslCss": "hsl(315 20% 92.156863%)",
+          "hslExact": {
+            "h": "315",
+            "sPercent": "20",
+            "lPercent": "4700/51"
+          },
+          "hslExactCss": "hsl(315 20% calc(4700% / 51))"
+        },
+        "surface": {
+          "hex": "#fffdfd",
+          "rgb": [
+            255,
+            253,
+            253
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(255 253 253)",
+          "hslCss": "hsl(0 100% 99.607843%)",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "100",
+            "lPercent": "5080/51"
+          },
+          "hslExactCss": "hsl(0 100% calc(5080% / 51))"
+        },
+        "ink": {
+          "hex": "#392b36",
+          "rgb": [
+            57,
+            43,
+            54
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(57 43 54)",
+          "hslCss": "hsl(312.857143 14% 19.607843%)",
+          "hslExact": {
+            "h": "2190/7",
+            "sPercent": "14",
+            "lPercent": "1000/51"
+          },
+          "hslExactCss": "hsl(calc(2190 / 7) 14% calc(1000% / 51))"
+        },
+        "muted": {
+          "hex": "#74606e",
+          "rgb": [
+            116,
+            96,
+            110
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(116 96 110)",
+          "hslCss": "hsl(318 9.433962% 41.568627%)",
+          "hslExact": {
+            "h": "318",
+            "sPercent": "500/53",
+            "lPercent": "2120/51"
+          },
+          "hslExactCss": "hsl(318 calc(500% / 53) calc(2120% / 51))"
+        },
+        "line": {
+          "hex": "#dfd1dc",
+          "rgb": [
+            223,
+            209,
+            220
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(223 209 220)",
+          "hslCss": "hsl(312.857143 17.948718% 84.705882%)",
+          "hslExact": {
+            "h": "2190/7",
+            "sPercent": "700/39",
+            "lPercent": "1440/17"
+          },
+          "hslExactCss": "hsl(calc(2190 / 7) calc(700% / 39) calc(1440% / 17))"
+        },
+        "line-strong": {
+          "hex": "#947c8b",
+          "rgb": [
+            148,
+            124,
+            139
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(148 124 139)",
+          "hslCss": "hsl(322.5 10.084034% 53.333333%)",
+          "hslExact": {
+            "h": "645/2",
+            "sPercent": "1200/119",
+            "lPercent": "160/3"
+          },
+          "hslExactCss": "hsl(calc(645 / 2) calc(1200% / 119) calc(160% / 3))"
+        },
+        "accent": {
+          "hex": "#895577",
+          "rgb": [
+            137,
+            85,
+            119
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(137 85 119)",
+          "hslCss": "hsl(320.769231 23.423423% 43.529412%)",
+          "hslExact": {
+            "h": "4170/13",
+            "sPercent": "2600/111",
+            "lPercent": "740/17"
+          },
+          "hslExactCss": "hsl(calc(4170 / 13) calc(2600% / 111) calc(740% / 17))"
+        },
+        "accent-soft": {
+          "hex": "#f0e1ec",
+          "rgb": [
+            240,
+            225,
+            236
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(240 225 236)",
+          "hslCss": "hsl(316 33.333333% 91.176471%)",
+          "hslExact": {
+            "h": "316",
+            "sPercent": "100/3",
+            "lPercent": "1550/17"
+          },
+          "hslExactCss": "hsl(316 calc(100% / 3) calc(1550% / 17))"
+        }
+      },
+      "dark": {
+        "canvas": {
+          "hex": "#261c24",
+          "rgb": [
+            38,
+            28,
+            36
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(38 28 36)",
+          "hslCss": "hsl(312 15.151515% 12.941176%)",
+          "hslExact": {
+            "h": "312",
+            "sPercent": "500/33",
+            "lPercent": "220/17"
+          },
+          "hslExactCss": "hsl(312 calc(500% / 33) calc(220% / 17))"
+        },
+        "sidebar": {
+          "hex": "#30242d",
+          "rgb": [
+            48,
+            36,
+            45
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(48 36 45)",
+          "hslCss": "hsl(315 14.285714% 16.470588%)",
+          "hslExact": {
+            "h": "315",
+            "sPercent": "100/7",
+            "lPercent": "280/17"
+          },
+          "hslExactCss": "hsl(315 calc(100% / 7) calc(280% / 17))"
+        },
+        "surface": {
+          "hex": "#3c2e38",
+          "rgb": [
+            60,
+            46,
+            56
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(60 46 56)",
+          "hslCss": "hsl(317.142857 13.207547% 20.784314%)",
+          "hslExact": {
+            "h": "2220/7",
+            "sPercent": "700/53",
+            "lPercent": "1060/51"
+          },
+          "hslExactCss": "hsl(calc(2220 / 7) calc(700% / 53) calc(1060% / 51))"
+        },
+        "ink": {
+          "hex": "#f1e8ef",
+          "rgb": [
+            241,
+            232,
+            239
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(241 232 239)",
+          "hslCss": "hsl(313.333333 24.324324% 92.745098%)",
+          "hslExact": {
+            "h": "940/3",
+            "sPercent": "900/37",
+            "lPercent": "4730/51"
+          },
+          "hslExactCss": "hsl(calc(940 / 3) calc(900% / 37) calc(4730% / 51))"
+        },
+        "muted": {
+          "hex": "#c8afc0",
+          "rgb": [
+            200,
+            175,
+            192
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(200 175 192)",
+          "hslCss": "hsl(319.2 18.518519% 73.529412%)",
+          "hslExact": {
+            "h": "1596/5",
+            "sPercent": "500/27",
+            "lPercent": "1250/17"
+          },
+          "hslExactCss": "hsl(calc(1596 / 5) calc(500% / 27) calc(1250% / 17))"
+        },
+        "line": {
+          "hex": "#594451",
+          "rgb": [
+            89,
+            68,
+            81
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(89 68 81)",
+          "hslCss": "hsl(322.857143 13.375796% 30.784314%)",
+          "hslExact": {
+            "h": "2260/7",
+            "sPercent": "2100/157",
+            "lPercent": "1570/51"
+          },
+          "hslExactCss": "hsl(calc(2260 / 7) calc(2100% / 157) calc(1570% / 51))"
+        },
+        "line-strong": {
+          "hex": "#a18599",
+          "rgb": [
+            161,
+            133,
+            153
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(161 133 153)",
+          "hslCss": "hsl(317.142857 12.962963% 57.647059%)",
+          "hslExact": {
+            "h": "2220/7",
+            "sPercent": "350/27",
+            "lPercent": "980/17"
+          },
+          "hslExactCss": "hsl(calc(2220 / 7) calc(350% / 27) calc(980% / 17))"
+        },
+        "accent": {
+          "hex": "#d7adc9",
+          "rgb": [
+            215,
+            173,
+            201
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(215 173 201)",
+          "hslCss": "hsl(320 34.42623% 76.078431%)",
+          "hslExact": {
+            "h": "320",
+            "sPercent": "2100/61",
+            "lPercent": "3880/51"
+          },
+          "hslExactCss": "hsl(320 calc(2100% / 61) calc(3880% / 51))"
+        },
+        "accent-soft": {
+          "hex": "#4b3143",
+          "rgb": [
+            75,
+            49,
+            67
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(75 49 67)",
+          "hslCss": "hsl(318.461538 20.967742% 24.313725%)",
+          "hslExact": {
+            "h": "4140/13",
+            "sPercent": "650/31",
+            "lPercent": "1240/51"
+          },
+          "hslExactCss": "hsl(calc(4140 / 13) calc(650% / 31) calc(1240% / 51))"
+        }
+      }
+    },
+    "graphite": {
+      "name": "石墨",
+      "light": {
+        "canvas": {
+          "hex": "#f5f5f4",
+          "rgb": [
+            245,
+            245,
+            244
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(245 245 244)",
+          "hslCss": "hsl(60 4.761905% 95.882353%)",
+          "hslExact": {
+            "h": "60",
+            "sPercent": "100/21",
+            "lPercent": "1630/17"
+          },
+          "hslExactCss": "hsl(60 calc(100% / 21) calc(1630% / 17))"
+        },
+        "sidebar": {
+          "hex": "#eaeae8",
+          "rgb": [
+            234,
+            234,
+            232
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(234 234 232)",
+          "hslCss": "hsl(60 4.545455% 91.372549%)",
+          "hslExact": {
+            "h": "60",
+            "sPercent": "50/11",
+            "lPercent": "4660/51"
+          },
+          "hslExactCss": "hsl(60 calc(50% / 11) calc(4660% / 51))"
+        },
+        "surface": {
+          "hex": "#ffffff",
+          "rgb": [
+            255,
+            255,
+            255
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(255 255 255)",
+          "hslCss": "hsl(0 0% 100%)",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "0",
+            "lPercent": "100"
+          },
+          "hslExactCss": "hsl(0 0% 100%)"
+        },
+        "ink": {
+          "hex": "#242627",
+          "rgb": [
+            36,
+            38,
+            39
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(36 38 39)",
+          "hslCss": "hsl(200 4% 14.705882%)",
+          "hslExact": {
+            "h": "200",
+            "sPercent": "4",
+            "lPercent": "250/17"
+          },
+          "hslExactCss": "hsl(200 4% calc(250% / 17))"
+        },
+        "muted": {
+          "hex": "#626566",
+          "rgb": [
+            98,
+            101,
+            102
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(98 101 102)",
+          "hslCss": "hsl(195 2% 39.215686%)",
+          "hslExact": {
+            "h": "195",
+            "sPercent": "2",
+            "lPercent": "2000/51"
+          },
+          "hslExactCss": "hsl(195 2% calc(2000% / 51))"
+        },
+        "line": {
+          "hex": "#d6d8d8",
+          "rgb": [
+            214,
+            216,
+            216
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(214 216 216)",
+          "hslCss": "hsl(180 2.5% 84.313725%)",
+          "hslExact": {
+            "h": "180",
+            "sPercent": "5/2",
+            "lPercent": "4300/51"
+          },
+          "hslExactCss": "hsl(180 calc(5% / 2) calc(4300% / 51))"
+        },
+        "line-strong": {
+          "hex": "#7f8385",
+          "rgb": [
+            127,
+            131,
+            133
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(127 131 133)",
+          "hslCss": "hsl(200 2.4% 50.980392%)",
+          "hslExact": {
+            "h": "200",
+            "sPercent": "12/5",
+            "lPercent": "2600/51"
+          },
+          "hslExactCss": "hsl(200 calc(12% / 5) calc(2600% / 51))"
+        },
+        "accent": {
+          "hex": "#4f6069",
+          "rgb": [
+            79,
+            96,
+            105
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(79 96 105)",
+          "hslCss": "hsl(200.769231 14.130435% 36.078431%)",
+          "hslExact": {
+            "h": "2610/13",
+            "sPercent": "325/23",
+            "lPercent": "1840/51"
+          },
+          "hslExactCss": "hsl(calc(2610 / 13) calc(325% / 23) calc(1840% / 51))"
+        },
+        "accent-soft": {
+          "hex": "#e5ebed",
+          "rgb": [
+            229,
+            235,
+            237
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(229 235 237)",
+          "hslCss": "hsl(195 18.181818% 91.372549%)",
+          "hslExact": {
+            "h": "195",
+            "sPercent": "200/11",
+            "lPercent": "4660/51"
+          },
+          "hslExactCss": "hsl(195 calc(200% / 11) calc(4660% / 51))"
+        }
+      },
+      "dark": {
+        "canvas": {
+          "hex": "#191b1d",
+          "rgb": [
+            25,
+            27,
+            29
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(25 27 29)",
+          "hslCss": "hsl(210 7.407407% 10.588235%)",
+          "hslExact": {
+            "h": "210",
+            "sPercent": "200/27",
+            "lPercent": "180/17"
+          },
+          "hslExactCss": "hsl(210 calc(200% / 27) calc(180% / 17))"
+        },
+        "sidebar": {
+          "hex": "#232629",
+          "rgb": [
+            35,
+            38,
+            41
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(35 38 41)",
+          "hslCss": "hsl(210 7.894737% 14.901961%)",
+          "hslExact": {
+            "h": "210",
+            "sPercent": "150/19",
+            "lPercent": "760/51"
+          },
+          "hslExactCss": "hsl(210 calc(150% / 19) calc(760% / 51))"
+        },
+        "surface": {
+          "hex": "#2c3034",
+          "rgb": [
+            44,
+            48,
+            52
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(44 48 52)",
+          "hslCss": "hsl(210 8.333333% 18.823529%)",
+          "hslExact": {
+            "h": "210",
+            "sPercent": "25/3",
+            "lPercent": "320/17"
+          },
+          "hslExactCss": "hsl(210 calc(25% / 3) calc(320% / 17))"
+        },
+        "ink": {
+          "hex": "#eaedef",
+          "rgb": [
+            234,
+            237,
+            239
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(234 237 239)",
+          "hslCss": "hsl(204 13.513514% 92.745098%)",
+          "hslExact": {
+            "h": "204",
+            "sPercent": "500/37",
+            "lPercent": "4730/51"
+          },
+          "hslExactCss": "hsl(204 calc(500% / 37) calc(4730% / 51))"
+        },
+        "muted": {
+          "hex": "#b4bdc2",
+          "rgb": [
+            180,
+            189,
+            194
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(180 189 194)",
+          "hslCss": "hsl(201.428571 10.294118% 73.333333%)",
+          "hslExact": {
+            "h": "1410/7",
+            "sPercent": "175/17",
+            "lPercent": "220/3"
+          },
+          "hslExactCss": "hsl(calc(1410 / 7) calc(175% / 17) calc(220% / 3))"
+        },
+        "line": {
+          "hex": "#42494e",
+          "rgb": [
+            66,
+            73,
+            78
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(66 73 78)",
+          "hslCss": "hsl(205 8.333333% 28.235294%)",
+          "hslExact": {
+            "h": "205",
+            "sPercent": "25/3",
+            "lPercent": "480/17"
+          },
+          "hslExactCss": "hsl(205 calc(25% / 3) calc(480% / 17))"
+        },
+        "line-strong": {
+          "hex": "#84929b",
+          "rgb": [
+            132,
+            146,
+            155
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(132 146 155)",
+          "hslCss": "hsl(203.478261 10.313901% 56.27451%)",
+          "hslExact": {
+            "h": "4680/23",
+            "sPercent": "2300/223",
+            "lPercent": "2870/51"
+          },
+          "hslExactCss": "hsl(calc(4680 / 23) calc(2300% / 223) calc(2870% / 51))"
+        },
+        "accent": {
+          "hex": "#b0c6d3",
+          "rgb": [
+            176,
+            198,
+            211
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(176 198 211)",
+          "hslCss": "hsl(202.285714 28.455285% 75.882353%)",
+          "hslExact": {
+            "h": "1416/7",
+            "sPercent": "3500/123",
+            "lPercent": "1290/17"
+          },
+          "hslExactCss": "hsl(calc(1416 / 7) calc(3500% / 123) calc(1290% / 17))"
+        },
+        "accent-soft": {
+          "hex": "#32424d",
+          "rgb": [
+            50,
+            66,
+            77
+          ],
+          "alphaByte": 255,
+          "alphaExact": "1",
+          "alphaDecimal": "1",
+          "rgbCss": "rgb(50 66 77)",
+          "hslCss": "hsl(204.444444 21.259843% 24.901961%)",
+          "hslExact": {
+            "h": "1840/9",
+            "sPercent": "2700/127",
+            "lPercent": "1270/51"
+          },
+          "hslExactCss": "hsl(calc(1840 / 9) calc(2700% / 127) calc(1270% / 51))"
+        }
+      }
+    }
+  },
+  "common": {
+    "light": {
+      "action": {
+        "hex": "#272722",
+        "rgb": [
+          39,
+          39,
+          34
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(39 39 34)",
+        "hslCss": "hsl(60 6.849315% 14.313725%)",
+        "hslExact": {
+          "h": "60",
+          "sPercent": "500/73",
+          "lPercent": "730/51"
+        },
+        "hslExactCss": "hsl(60 calc(500% / 73) calc(730% / 51))"
+      },
+      "on-action": {
+        "hex": "#ffffff",
+        "rgb": [
+          255,
+          255,
+          255
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(255 255 255)",
+        "hslCss": "hsl(0 0% 100%)",
+        "hslExact": {
+          "h": "0",
+          "sPercent": "0",
+          "lPercent": "100"
+        },
+        "hslExactCss": "hsl(0 0% 100%)"
+      },
+      "danger": {
+        "hex": "#9c332c",
+        "rgb": [
+          156,
+          51,
+          44
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(156 51 44)",
+        "hslCss": "hsl(3.75 56% 39.215686%)",
+        "hslExact": {
+          "h": "15/4",
+          "sPercent": "56",
+          "lPercent": "2000/51"
+        },
+        "hslExactCss": "hsl(calc(15 / 4) 56% calc(2000% / 51))"
+      },
+      "danger-soft": {
+        "hex": "#fbeae5",
+        "rgb": [
+          251,
+          234,
+          229
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(251 234 229)",
+        "hslCss": "hsl(13.636364 73.333333% 94.117647%)",
+        "hslExact": {
+          "h": "150/11",
+          "sPercent": "220/3",
+          "lPercent": "1600/17"
+        },
+        "hslExactCss": "hsl(calc(150 / 11) calc(220% / 3) calc(1600% / 17))"
+      },
+      "success": {
+        "hex": "#386043",
+        "rgb": [
+          56,
+          96,
+          67
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(56 96 67)",
+        "hslCss": "hsl(136.5 26.315789% 29.803922%)",
+        "hslExact": {
+          "h": "273/2",
+          "sPercent": "500/19",
+          "lPercent": "1520/51"
+        },
+        "hslExactCss": "hsl(calc(273 / 2) calc(500% / 19) calc(1520% / 51))"
+      },
+      "success-soft": {
+        "hex": "#e4efe5",
+        "rgb": [
+          228,
+          239,
+          229
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(228 239 229)",
+        "hslCss": "hsl(125.454545 25.581395% 91.568627%)",
+        "hslExact": {
+          "h": "1380/11",
+          "sPercent": "1100/43",
+          "lPercent": "4670/51"
+        },
+        "hslExactCss": "hsl(calc(1380 / 11) calc(1100% / 43) calc(4670% / 51))"
+      },
+      "scrim": {
+        "hex": "#26251f40",
+        "rgb": [
+          38,
+          37,
+          31
+        ],
+        "alphaByte": 64,
+        "alphaExact": "64/255",
+        "alphaDecimal": "0.25098",
+        "rgbCss": "rgb(38 37 31 / calc(64 / 255))",
+        "hslCss": "hsl(51.428571 10.144928% 13.529412% / calc(64 / 255))",
+        "hslExact": {
+          "h": "360/7",
+          "sPercent": "700/69",
+          "lPercent": "230/17"
+        },
+        "hslExactCss": "hsl(calc(360 / 7) calc(700% / 69) calc(230% / 17) / calc(64 / 255))"
+      }
+    },
+    "dark": {
+      "action": {
+        "hex": "#eeede6",
+        "rgb": [
+          238,
+          237,
+          230
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(238 237 230)",
+        "hslCss": "hsl(52.5 19.047619% 91.764706%)",
+        "hslExact": {
+          "h": "105/2",
+          "sPercent": "400/21",
+          "lPercent": "1560/17"
+        },
+        "hslExactCss": "hsl(calc(105 / 2) calc(400% / 21) calc(1560% / 17))"
+      },
+      "on-action": {
+        "hex": "#24241f",
+        "rgb": [
+          36,
+          36,
+          31
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(36 36 31)",
+        "hslCss": "hsl(60 7.462687% 13.137255%)",
+        "hslExact": {
+          "h": "60",
+          "sPercent": "500/67",
+          "lPercent": "670/51"
+        },
+        "hslExactCss": "hsl(60 calc(500% / 67) calc(670% / 51))"
+      },
+      "danger": {
+        "hex": "#f1ada5",
+        "rgb": [
+          241,
+          173,
+          165
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(241 173 165)",
+        "hslCss": "hsl(6.315789 73.076923% 79.607843%)",
+        "hslExact": {
+          "h": "120/19",
+          "sPercent": "950/13",
+          "lPercent": "4060/51"
+        },
+        "hslExactCss": "hsl(calc(120 / 19) calc(950% / 13) calc(4060% / 51))"
+      },
+      "danger-soft": {
+        "hex": "#422c29",
+        "rgb": [
+          66,
+          44,
+          41
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(66 44 41)",
+        "hslCss": "hsl(7.2 23.364486% 20.980392%)",
+        "hslExact": {
+          "h": "36/5",
+          "sPercent": "2500/107",
+          "lPercent": "1070/51"
+        },
+        "hslExactCss": "hsl(calc(36 / 5) calc(2500% / 107) calc(1070% / 51))"
+      },
+      "success": {
+        "hex": "#a9d1b0",
+        "rgb": [
+          169,
+          209,
+          176
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(169 209 176)",
+        "hslCss": "hsl(130.5 30.30303% 74.117647%)",
+        "hslExact": {
+          "h": "261/2",
+          "sPercent": "1000/33",
+          "lPercent": "1260/17"
+        },
+        "hslExactCss": "hsl(calc(261 / 2) calc(1000% / 33) calc(1260% / 17))"
+      },
+      "success-soft": {
+        "hex": "#283e2c",
+        "rgb": [
+          40,
+          62,
+          44
+        ],
+        "alphaByte": 255,
+        "alphaExact": "1",
+        "alphaDecimal": "1",
+        "rgbCss": "rgb(40 62 44)",
+        "hslCss": "hsl(130.909091 21.568627% 20%)",
+        "hslExact": {
+          "h": "1440/11",
+          "sPercent": "1100/51",
+          "lPercent": "20"
+        },
+        "hslExactCss": "hsl(calc(1440 / 11) calc(1100% / 51) 20%)"
+      },
+      "scrim": {
+        "hex": "#00000080",
+        "rgb": [
+          0,
+          0,
+          0
+        ],
+        "alphaByte": 128,
+        "alphaExact": "128/255",
+        "alphaDecimal": "0.501961",
+        "rgbCss": "rgb(0 0 0 / calc(128 / 255))",
+        "hslCss": "hsl(0 0% 0% / calc(128 / 255))",
+        "hslExact": {
+          "h": "0",
+          "sPercent": "0",
+          "lPercent": "0"
+        },
+        "hslExactCss": "hsl(0 0% 0% / calc(128 / 255))"
+      }
+    }
+  },
+  "shadows": {
+    "light": {
+      "css": "0 12px 40px #0000000c, 0 2px 5px #00000006",
+      "colors": [
+        {
+          "hex": "#0000000c",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "alphaByte": 12,
+          "alphaExact": "4/85",
+          "alphaDecimal": "0.047059",
+          "rgbCss": "rgb(0 0 0 / calc(12 / 255))",
+          "hslCss": "hsl(0 0% 0% / calc(12 / 255))",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "0",
+            "lPercent": "0"
+          },
+          "hslExactCss": "hsl(0 0% 0% / calc(12 / 255))"
+        },
+        {
+          "hex": "#00000006",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "alphaByte": 6,
+          "alphaExact": "2/85",
+          "alphaDecimal": "0.023529",
+          "rgbCss": "rgb(0 0 0 / calc(6 / 255))",
+          "hslCss": "hsl(0 0% 0% / calc(6 / 255))",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "0",
+            "lPercent": "0"
+          },
+          "hslExactCss": "hsl(0 0% 0% / calc(6 / 255))"
+        }
+      ]
+    },
+    "dark": {
+      "css": "0 12px 40px #00000040, 0 2px 5px #00000030",
+      "colors": [
+        {
+          "hex": "#00000040",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "alphaByte": 64,
+          "alphaExact": "64/255",
+          "alphaDecimal": "0.25098",
+          "rgbCss": "rgb(0 0 0 / calc(64 / 255))",
+          "hslCss": "hsl(0 0% 0% / calc(64 / 255))",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "0",
+            "lPercent": "0"
+          },
+          "hslExactCss": "hsl(0 0% 0% / calc(64 / 255))"
+        },
+        {
+          "hex": "#00000030",
+          "rgb": [
+            0,
+            0,
+            0
+          ],
+          "alphaByte": 48,
+          "alphaExact": "16/85",
+          "alphaDecimal": "0.188235",
+          "rgbCss": "rgb(0 0 0 / calc(48 / 255))",
+          "hslCss": "hsl(0 0% 0% / calc(48 / 255))",
+          "hslExact": {
+            "h": "0",
+            "sPercent": "0",
+            "lPercent": "0"
+          },
+          "hslExactCss": "hsl(0 0% 0% / calc(48 / 255))"
+        }
+      ]
+    }
+  },
+  "sourceSha256": {
+    "claude-tokens.css": "6d868986a66929d48125b02f5ad528b9be306c83d978e616bce0be9f044f11c4",
+    "design-tokens.json": "a8584cc14a115d04e1c361c20270f0419c1532b82435ea0e5a4484ed3cb1e6e1",
+    "claude-reset-and-base.css": "0437056a41f662ddbbbaea9aa8ea8b4cc0853f73729726cc828704439ee47e7e"
+  }
+}

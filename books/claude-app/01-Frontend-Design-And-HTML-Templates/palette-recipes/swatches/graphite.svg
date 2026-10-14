@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="1320" viewBox="0 0 1380 1320" role="img" aria-labelledby="title desc">
+<title id="title">石墨 浅深配色色卡</title><desc id="desc">原创配色 graphite，包含浅色和深色的九个实际语义令牌与 HEX、RGB、HSL、Alpha。</desc>
+<style>text{font-family:"Noto Sans CJK SC","PingFang SC","Microsoft YaHei",sans-serif} .mono{font-family:Consolas,monospace}</style>
+<rect x="0" y="0" width="1380" height="1320" rx="0" fill="#f0eee7"/>
+<text x="40" y="50" font-size="30" fill="#26251f" font-weight="700">石墨</text>
+<text x="40" y="82" font-size="16" fill="#26251f" font-weight="400">graphite · 原创复用配方 · 克制灰阶与蓝灰点缀，适合代码、设置页和通用工作台。</text>
+<text x="40" y="111" font-size="14" fill="#656258" font-weight="400">HEX/RGB 为源值；HSL 显示到小数后 6 位；本图九个角色的 Alpha 均为 1。</text>
+<rect x="40" y="138" width="630" height="1140" rx="20" fill="#f5f5f4" stroke="#d6d8d8" stroke-width="1"/>
+<text x="64" y="178" font-size="22" fill="#242627" font-weight="700">浅色 Light</text>
+<rect x="64" y="200" width="582" height="202" rx="14" fill="#ffffff" stroke="#d6d8d8" stroke-width="1"/>
+<text x="84" y="238" font-size="22" fill="#242627" font-weight="600">界面应让内容先被看见</text>
+<text x="84" y="268" font-size="15" fill="#626566" font-weight="400">正文、说明、边界和强调色各有自己的职责。</text>
+<rect x="84" y="291" width="332" height="40" rx="8" fill="#ffffff" stroke="#7f8385" stroke-width="1"/>
+<text x="96" y="317" font-size="14" fill="#626566" font-weight="400">可辨认的输入框边界</text>
+<rect x="79" y="348" width="144" height="44" rx="12" fill="none" stroke="#4f6069" stroke-width="2"/>
+<rect x="84" y="353" width="134" height="34" rx="8" fill="#272722"/>
+<text x="110" y="376" font-size="14" fill="#ffffff" font-weight="600">继续阅读</text>
+<rect x="245" y="353" width="160" height="34" rx="8" fill="#e5ebed"/>
+<text x="265" y="376" font-size="13" fill="#4f6069" font-weight="500">强调色与柔和底色</text>
+<rect x="64" y="428" width="76" height="64" rx="10" fill="#f5f5f4" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="442" font-size="15" fill="#242627" font-weight="600">页面背景  --ui-canvas</text>
+<text x="156" y="464" font-size="13" fill="#626566" font-weight="400">#F5F5F4  |  rgb(245 245 244)  |  A=1</text>
+<text x="156" y="485" font-size="13" fill="#626566" font-weight="400">hsl(60 4.761905% 95.882353%)</text>
+<rect x="64" y="519" width="76" height="64" rx="10" fill="#eaeae8" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="533" font-size="15" fill="#242627" font-weight="600">导航背景  --ui-sidebar</text>
+<text x="156" y="555" font-size="13" fill="#626566" font-weight="400">#EAEAE8  |  rgb(234 234 232)  |  A=1</text>
+<text x="156" y="576" font-size="13" fill="#626566" font-weight="400">hsl(60 4.545455% 91.372549%)</text>
+<rect x="64" y="610" width="76" height="64" rx="10" fill="#ffffff" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="624" font-size="15" fill="#242627" font-weight="600">卡片表面  --ui-surface</text>
+<text x="156" y="646" font-size="13" fill="#626566" font-weight="400">#FFFFFF  |  rgb(255 255 255)  |  A=1</text>
+<text x="156" y="667" font-size="13" fill="#626566" font-weight="400">hsl(0 0% 100%)</text>
+<rect x="64" y="701" width="76" height="64" rx="10" fill="#242627" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="715" font-size="15" fill="#242627" font-weight="600">正文文字  --ui-ink</text>
+<text x="156" y="737" font-size="13" fill="#626566" font-weight="400">#242627  |  rgb(36 38 39)  |  A=1</text>
+<text x="156" y="758" font-size="13" fill="#626566" font-weight="400">hsl(200 4% 14.705882%)</text>
+<rect x="64" y="792" width="76" height="64" rx="10" fill="#626566" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="806" font-size="15" fill="#242627" font-weight="600">辅助文字  --ui-muted</text>
+<text x="156" y="828" font-size="13" fill="#626566" font-weight="400">#626566  |  rgb(98 101 102)  |  A=1</text>
+<text x="156" y="849" font-size="13" fill="#626566" font-weight="400">hsl(195 2% 39.215686%)</text>
+<rect x="64" y="883" width="76" height="64" rx="10" fill="#d6d8d8" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="897" font-size="15" fill="#242627" font-weight="600">轻分隔线  --ui-line</text>
+<text x="156" y="919" font-size="13" fill="#626566" font-weight="400">#D6D8D8  |  rgb(214 216 216)  |  A=1</text>
+<text x="156" y="940" font-size="13" fill="#626566" font-weight="400">hsl(180 2.5% 84.313725%)</text>
+<rect x="64" y="974" width="76" height="64" rx="10" fill="#7f8385" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="988" font-size="15" fill="#242627" font-weight="600">控件边界  --ui-line-strong</text>
+<text x="156" y="1010" font-size="13" fill="#626566" font-weight="400">#7F8385  |  rgb(127 131 133)  |  A=1</text>
+<text x="156" y="1031" font-size="13" fill="#626566" font-weight="400">hsl(200 2.4% 50.980392%)</text>
+<rect x="64" y="1065" width="76" height="64" rx="10" fill="#4f6069" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="1079" font-size="15" fill="#242627" font-weight="600">强调色  --ui-accent</text>
+<text x="156" y="1101" font-size="13" fill="#626566" font-weight="400">#4F6069  |  rgb(79 96 105)  |  A=1</text>
+<text x="156" y="1122" font-size="13" fill="#626566" font-weight="400">hsl(200.769231 14.130435% 36.078431%)</text>
+<rect x="64" y="1156" width="76" height="64" rx="10" fill="#e5ebed" stroke="#7f8385" stroke-width="1"/>
+<text x="156" y="1170" font-size="15" fill="#242627" font-weight="600">强调底色  --ui-accent-soft</text>
+<text x="156" y="1192" font-size="13" fill="#626566" font-weight="400">#E5EBED  |  rgb(229 235 237)  |  A=1</text>
+<text x="156" y="1213" font-size="13" fill="#626566" font-weight="400">hsl(195 18.181818% 91.372549%)</text>
+<rect x="710" y="138" width="630" height="1140" rx="20" fill="#191b1d" stroke="#42494e" stroke-width="1"/>
+<text x="734" y="178" font-size="22" fill="#eaedef" font-weight="700">深色 Dark</text>
+<rect x="734" y="200" width="582" height="202" rx="14" fill="#2c3034" stroke="#42494e" stroke-width="1"/>
+<text x="754" y="238" font-size="22" fill="#eaedef" font-weight="600">界面应让内容先被看见</text>
+<text x="754" y="268" font-size="15" fill="#b4bdc2" font-weight="400">正文、说明、边界和强调色各有自己的职责。</text>
+<rect x="754" y="291" width="332" height="40" rx="8" fill="#2c3034" stroke="#84929b" stroke-width="1"/>
+<text x="766" y="317" font-size="14" fill="#b4bdc2" font-weight="400">可辨认的输入框边界</text>
+<rect x="749" y="348" width="144" height="44" rx="12" fill="none" stroke="#b0c6d3" stroke-width="2"/>
+<rect x="754" y="353" width="134" height="34" rx="8" fill="#eeede6"/>
+<text x="780" y="376" font-size="14" fill="#24241f" font-weight="600">继续阅读</text>
+<rect x="915" y="353" width="160" height="34" rx="8" fill="#32424d"/>
+<text x="935" y="376" font-size="13" fill="#b0c6d3" font-weight="500">强调色与柔和底色</text>
+<rect x="734" y="428" width="76" height="64" rx="10" fill="#191b1d" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="442" font-size="15" fill="#eaedef" font-weight="600">页面背景  --ui-canvas</text>
+<text x="826" y="464" font-size="13" fill="#b4bdc2" font-weight="400">#191B1D  |  rgb(25 27 29)  |  A=1</text>
+<text x="826" y="485" font-size="13" fill="#b4bdc2" font-weight="400">hsl(210 7.407407% 10.588235%)</text>
+<rect x="734" y="519" width="76" height="64" rx="10" fill="#232629" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="533" font-size="15" fill="#eaedef" font-weight="600">导航背景  --ui-sidebar</text>
+<text x="826" y="555" font-size="13" fill="#b4bdc2" font-weight="400">#232629  |  rgb(35 38 41)  |  A=1</text>
+<text x="826" y="576" font-size="13" fill="#b4bdc2" font-weight="400">hsl(210 7.894737% 14.901961%)</text>
+<rect x="734" y="610" width="76" height="64" rx="10" fill="#2c3034" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="624" font-size="15" fill="#eaedef" font-weight="600">卡片表面  --ui-surface</text>
+<text x="826" y="646" font-size="13" fill="#b4bdc2" font-weight="400">#2C3034  |  rgb(44 48 52)  |  A=1</text>
+<text x="826" y="667" font-size="13" fill="#b4bdc2" font-weight="400">hsl(210 8.333333% 18.823529%)</text>
+<rect x="734" y="701" width="76" height="64" rx="10" fill="#eaedef" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="715" font-size="15" fill="#eaedef" font-weight="600">正文文字  --ui-ink</text>
+<text x="826" y="737" font-size="13" fill="#b4bdc2" font-weight="400">#EAEDEF  |  rgb(234 237 239)  |  A=1</text>
+<text x="826" y="758" font-size="13" fill="#b4bdc2" font-weight="400">hsl(204 13.513514% 92.745098%)</text>
+<rect x="734" y="792" width="76" height="64" rx="10" fill="#b4bdc2" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="806" font-size="15" fill="#eaedef" font-weight="600">辅助文字  --ui-muted</text>
+<text x="826" y="828" font-size="13" fill="#b4bdc2" font-weight="400">#B4BDC2  |  rgb(180 189 194)  |  A=1</text>
+<text x="826" y="849" font-size="13" fill="#b4bdc2" font-weight="400">hsl(201.428571 10.294118% 73.333333%)</text>
+<rect x="734" y="883" width="76" height="64" rx="10" fill="#42494e" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="897" font-size="15" fill="#eaedef" font-weight="600">轻分隔线  --ui-line</text>
+<text x="826" y="919" font-size="13" fill="#b4bdc2" font-weight="400">#42494E  |  rgb(66 73 78)  |  A=1</text>
+<text x="826" y="940" font-size="13" fill="#b4bdc2" font-weight="400">hsl(205 8.333333% 28.235294%)</text>
+<rect x="734" y="974" width="76" height="64" rx="10" fill="#84929b" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="988" font-size="15" fill="#eaedef" font-weight="600">控件边界  --ui-line-strong</text>
+<text x="826" y="1010" font-size="13" fill="#b4bdc2" font-weight="400">#84929B  |  rgb(132 146 155)  |  A=1</text>
+<text x="826" y="1031" font-size="13" fill="#b4bdc2" font-weight="400">hsl(203.478261 10.313901% 56.27451%)</text>
+<rect x="734" y="1065" width="76" height="64" rx="10" fill="#b0c6d3" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="1079" font-size="15" fill="#eaedef" font-weight="600">强调色  --ui-accent</text>
+<text x="826" y="1101" font-size="13" fill="#b4bdc2" font-weight="400">#B0C6D3  |  rgb(176 198 211)  |  A=1</text>
+<text x="826" y="1122" font-size="13" fill="#b4bdc2" font-weight="400">hsl(202.285714 28.455285% 75.882353%)</text>
+<rect x="734" y="1156" width="76" height="64" rx="10" fill="#32424d" stroke="#84929b" stroke-width="1"/>
+<text x="826" y="1170" font-size="15" fill="#eaedef" font-weight="600">强调底色  --ui-accent-soft</text>
+<text x="826" y="1192" font-size="13" fill="#b4bdc2" font-weight="400">#32424D  |  rgb(50 66 77)  |  A=1</text>
+<text x="826" y="1213" font-size="13" fill="#b4bdc2" font-weight="400">hsl(204.444444 21.259843% 24.901961%)</text>
+<text x="40" y="1302" font-size="12" fill="#656258" font-weight="400">颜色来源：同目录生成器读取共享 CSS，并逐值核对 design-tokens.json。五套配方均为原创，不标作 CDS 官方值。</text>
+</svg>

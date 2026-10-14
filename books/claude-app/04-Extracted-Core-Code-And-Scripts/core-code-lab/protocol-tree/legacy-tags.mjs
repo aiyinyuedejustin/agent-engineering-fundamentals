@@ -5,12 +5,41 @@ export class LegacyTagStream {
   #mode = 'text';
   #attributes = {};
   #body = '';
-  constructor({ maxBufferedCharacters = 1_048_576 } = {}) { this.limit = maxBufferedCharacters; }
+  #closed = false;
+  #limit;
+  #headerScan = 12;
+  #headerQuoted = false;
+  constructor({ maxBufferedCharacters = 1_048_576 } = {}) {
+    if (!Number.isSafeInteger(maxBufferedCharacters) || maxBufferedCharacters < 0) throw new RangeError('Invalid size limit');
+    this.#limit = maxBufferedCharacters;
+  }
+  get limit() { return this.#limit; }
 
   push(text, { final = false } = {}) {
-    this.#buffer += text;
+    if (this.#closed) throw new Error('Tag parser closed');
+    if (typeof text !== 'string') throw new TypeError('Expected decoded text');
     const output = [];
-    const emitText = value => { if (value) output.push({ type: 'text', text: value }); };
+    try {
+      // Admit retained state one UTF-16 code unit at a time. Chunk size must not
+      // decide whether otherwise identical content exceeds the state budget.
+      for (let i = 0; i < text.length; i++) {
+        this.#buffer += text[i];
+        this.#consume(output, false);
+      }
+      if (final) { this.#consume(output, true); this.#closed = true; }
+      return output;
+    } catch (error) {
+      this.#closed = true; this.#buffer = ''; this.#body = ''; this.#attributes = {};
+      throw error;
+    }
+  }
+
+  #consume(output, final) {
+    const emitText = value => {
+      if (!value) return;
+      if (output.at(-1)?.type === 'text') output.at(-1).text += value;
+      else output.push({ type: 'text', text: value });
+    };
     while (this.#buffer) {
       if (this.#buffer.length + this.#body.length > this.limit) throw new RangeError('Tag buffer limit');
       if (this.#mode !== 'text') {
@@ -42,12 +71,20 @@ export class LegacyTagStream {
         continue;
       }
       if (/^<antArtifact(?:\s|>)/.test(this.#buffer)) {
-        const end = this.#buffer.indexOf('>');
+        let end = -1;
+        for (let i = this.#headerScan; i < this.#buffer.length; i++) {
+          const character = this.#buffer[i];
+          if (character === '"') this.#headerQuoted = !this.#headerQuoted;
+          else if (character === '>' && !this.#headerQuoted) { end = i; break; }
+        }
+        this.#headerScan = this.#buffer.length;
         if (end < 0 && !final) break;
         if (end >= 0) {
           this.#attributes = {};
           const header = this.#buffer.slice(0, end);
           for (const match of header.matchAll(/([A-Za-z_]+)="([^"]*)"/g)) this.#attributes[match[1]] = match[2];
+          this.#headerScan = 12;
+          this.#headerQuoted = false;
           this.#mode = 'artifact';
           this.#buffer = this.#buffer.slice(end + 1);
           continue;
@@ -58,7 +95,6 @@ export class LegacyTagStream {
       this.#buffer = this.#buffer.slice(1);
     }
     if (final && this.#mode !== 'text') this.#finish(output, false);
-    return output;
   }
 
   #finish(output, closed) {

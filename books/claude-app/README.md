@@ -24,6 +24,7 @@
 
 - [色块与边界](assets/figures/color-block-anatomy.svg)：阅读画布、消息、输入区与临时浮层，各自承担什么。
 - [密度与文字](assets/figures/density-comparison.svg)：控件密度与长文阅读不必绑在一起。
+- [五套原创配色配方](01-Frontend-Design-And-HTML-Templates/palette-recipes/README.md)：直接看到浅深色搭配、精确色值与排版参数。
 - [基础样式](01-Frontend-Design-And-HTML-Templates/styles/README.md)：变量、组件与页面布局的三层分工。
 
 [完整交互色表](01-Frontend-Design-And-HTML-Templates/color-catalog/index.html)已可使用：315 个原始色阶，连同主题与桥接记录共 1,341 项。六套零依赖 HTML 模板可直接下载打开；模板内嵌 CSS 和 JavaScript，交互只使用本地演示数据。

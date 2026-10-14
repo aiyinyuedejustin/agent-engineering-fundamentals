@@ -4,7 +4,7 @@
 
 ## 随仓即可运行
 
-- [原创机制实验室](core-code-lab/README.md)：流式协议、对话树、执行循环、预览状态、记忆与配置；106 项离线测试。
+- [原创机制实验室](core-code-lab/README.md)：流式协议、对话树、执行循环、预览状态、记忆与配置；123 项离线测试。
 - [三张学习图生成器](scripts/build_learning_figures.py)：Python 标准库生成坐标、UTF-8/SSE 与分支阅读图。
 
 ## 需要本地产品样本的工具

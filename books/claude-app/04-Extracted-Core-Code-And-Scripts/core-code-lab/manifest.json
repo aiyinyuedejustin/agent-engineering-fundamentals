@@ -167,25 +167,32 @@
       "copy": "unchanged"
     },
     {
+      "path": "protocol-tree/ADVERSARIAL.md",
+      "source": "original-regression-guide",
+      "copy": "new",
+      "bytes": 3133,
+      "sha256": "faa6411b31fe207773760ba6935230768ead42314cf214648471e0acea54318c"
+    },
+    {
       "path": "protocol-tree/README.md",
-      "bytes": 1545,
-      "sha256": "e5b3740db7a6352f970f31f3508618cc5f1bccd93ba070e7e8e9efd016681b25",
+      "bytes": 4574,
+      "sha256": "dcd9edd552412c6884e59a7d2e6b15f84d7f9847fd41b399db123ed6819cc033",
       "source": "staging/protocol-tree/README.md",
-      "copy": "unchanged"
+      "copy": "updated-after-adversarial-tests"
     },
     {
       "path": "protocol-tree/branch-manager.mjs",
-      "bytes": 6582,
-      "sha256": "6c4f7f19374b51b439876e3dc1e725361297b261c78473f80378dc94900216e4",
+      "bytes": 7522,
+      "sha256": "e58f07a26125f2b6b5b44cffdec2c57076121c351a341ffc09a8c350801b53b9",
       "source": "staging/protocol-tree/branch-manager.mjs",
-      "copy": "unchanged"
+      "copy": "updated-after-adversarial-tests"
     },
     {
       "path": "protocol-tree/content-reducer.mjs",
-      "bytes": 5736,
-      "sha256": "b156d78dd725dba7d78b8b68d2f61349aef6f5cd72e0ff7717a91540e58b82a2",
+      "bytes": 5848,
+      "sha256": "f4f97d1dc9f21c0ce7c9ef586d5ab99360ec2847b1a31e105f71ebf4bbdfa7c0",
       "source": "staging/protocol-tree/content-reducer.mjs",
-      "copy": "unchanged"
+      "copy": "updated-after-adversarial-tests"
     },
     {
       "path": "protocol-tree/demo.mjs",
@@ -196,17 +203,17 @@
     },
     {
       "path": "protocol-tree/incremental-sse.mjs",
-      "bytes": 3946,
-      "sha256": "ad6c33ee9c002b445da4f4007b8044e8cc6b6e9ca35ad439fcf7cc4f01b8b21a",
+      "bytes": 4760,
+      "sha256": "8c9f44274188e11b85ca99c8c906a659f12d9afdcb4952b8de7a13db1ac0a17b",
       "source": "staging/protocol-tree/incremental-sse.mjs",
-      "copy": "unchanged"
+      "copy": "updated-after-adversarial-tests"
     },
     {
       "path": "protocol-tree/legacy-tags.mjs",
-      "bytes": 3058,
-      "sha256": "3ea1e3aaec2106a1abebaf048cea8dd8f7d78039c935f1ffa616063ce6eb236b",
+      "bytes": 4429,
+      "sha256": "ec8956aae8c67de5bc83caf742e3517f4e62630da9c54fbbf37114eb585aa23e",
       "source": "staging/protocol-tree/legacy-tags.mjs",
-      "copy": "unchanged"
+      "copy": "updated-after-adversarial-tests"
     },
     {
       "path": "protocol-tree/package.json",
@@ -214,6 +221,13 @@
       "sha256": "fecc44a3177d2ad758569bfb62e721f19b5fcac91ef0bdef7580900c83678ca6",
       "source": "staging/protocol-tree/package.json",
       "copy": "unchanged"
+    },
+    {
+      "path": "protocol-tree/test/adversarial.test.mjs",
+      "source": "original-adversarial-regression",
+      "copy": "new",
+      "bytes": 10609,
+      "sha256": "8b7f25384772109789407fa06aee7de0a94c099e93f96fc3a39358c0b790ca5d"
     },
     {
       "path": "protocol-tree/test/branches.test.mjs",

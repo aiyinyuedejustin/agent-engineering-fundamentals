@@ -12,9 +12,31 @@ export class ConversationBranches {
 
   constructor(messages = [], { currentLeaf, includeDanglingHumans = false } = {}) {
     const records = messages.map(clone);
-    const byIndex = new Map(records.map(message => [message.index, message.uuid]));
+    for (const message of records) {
+      if (message.index !== undefined && (!Number.isSafeInteger(message.index) || message.index < 0)) {
+        throw new Error('Invalid message index');
+      }
+    }
+    const byIndex = new Map(records.filter(m => m.index !== undefined).map(message => [message.index, message.uuid]));
+    const indices = [...byIndex.keys()].sort((a, b) => a - b);
+    const precedingUuid = index => {
+      let low = 0, high = indices.length;
+      while (low < high) {
+        const mid = Math.floor((low + high) / 2);
+        if (indices[mid] < index) low = mid + 1;
+        else high = mid;
+      }
+      return low ? byIndex.get(indices[low - 1]) : undefined;
+    };
+    const normalized = records.map(message => ({
+      ...message, parent_message_uuid: message.parent_message_uuid || precedingUuid(message.index) || ROOT,
+      content: message.content ?? [{ type: 'text', text: message.text ?? '', citations: [] }],
+    }));
+    // Validate the entire supplied graph before display filtering can hide an
+    // invalid dangling-only component. Validation performs no mutations.
+    this.#prepareBatch(normalized);
     const answered = new Set(records.filter(m => m.sender === 'assistant').map(m => m.parent_message_uuid));
-    const byId = new Map(records.map(message => [message.uuid, message]));
+    const byId = new Map(normalized.map(message => [message.uuid, message]));
     if (byId.size !== records.length) throw new Error('Duplicate message UUID');
     const retained = new Set(records.filter(m => includeDanglingHumans || m.sender === 'assistant' ||
       answered.has(m.uuid) || m.parent_message_uuid === undefined).map(m => m.uuid));
@@ -30,20 +52,15 @@ export class ConversationBranches {
       }
     }
     this.danglingHumanMessages = records.filter(m => !retained.has(m.uuid) && m.sender === 'human');
-    const normalized = records.filter(m => retained.has(m.uuid)).map(message => {
-      let parent = message.parent_message_uuid;
-      if (!parent) {
-        for (let index = message.index - 1; index >= 0 && !parent; index--) parent = byIndex.get(index);
-      }
-      return { ...message, parent_message_uuid: parent ?? ROOT,
-        content: message.content ?? [{ type: 'text', text: message.text ?? '', citations: [] }] };
-    });
-    this.#insertBatch(normalized);
+    this.#insertBatch(normalized.filter(m => retained.has(m.uuid)));
     if (currentLeaf && this.messageByUuid.has(currentLeaf)) this.selectLeaf(currentLeaf);
     else this.currentLeaf = this.visiblePath().at(-1)?.uuid;
   }
 
-  #insertBatch(messages) {
+  #prepareBatch(messages) {
+    // Clone every record before touching any index. A later DataCloneError must
+    // not leave earlier records partially committed.
+    messages = messages.map(clone);
     // Atomic validation is an intentional hardening in this teaching version.
     const proposed = new Map(this.messageByUuid);
     for (const message of messages) {
@@ -62,8 +79,12 @@ export class ConversationBranches {
         parent = ancestor.parent_message_uuid;
       }
     }
-    for (const source of messages) {
-      const message = clone(source);
+    return messages;
+  }
+
+  #insertBatch(messages) {
+    const prepared = this.#prepareBatch(messages);
+    for (const message of prepared) {
       const parent = message.parent_message_uuid;
       this.messageByUuid.set(message.uuid, message);
       this.parentByChildUuid.set(message.uuid, parent);
@@ -72,16 +93,17 @@ export class ConversationBranches {
       this.childrenByParentUuid.set(parent, siblings);
       this.selectedChildByUuid.set(parent, this.selectedChildByUuid.get(parent) ?? 0);
     }
+    return prepared;
   }
 
   append(messages) {
     if (!messages.length) return;
-    this.#insertBatch(messages);
-    for (const message of messages) {
+    const prepared = this.#insertBatch(messages);
+    for (const message of prepared) {
       const siblings = this.childrenByParentUuid.get(message.parent_message_uuid);
       this.selectedChildByUuid.set(message.parent_message_uuid, siblings.indexOf(message.uuid));
     }
-    this.selectLeaf(messages.at(-1).uuid);
+    this.selectLeaf(prepared.at(-1).uuid);
   }
 
   selectLeaf(uuid) {
