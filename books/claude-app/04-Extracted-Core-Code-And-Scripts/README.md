@@ -22,3 +22,5 @@
 [方法附录](evidence/README.md) · [来源索引](evidence/sources.md) · [设计参数](evidence/data/design-token-summary.json) · [跨平台对照](evidence/data/platform-comparison.json)
 
 算法模块随对应章节提供。书中的“实现示例”与产品中的“实现事实”通过标题和引用分别标明，便于直接改写而不混淆归属。
+
+- [导航与退出实验](shell-lifecycle/README.md)：导航代际、晚到回调、具名清理与落盘结算；7 项离线测试。

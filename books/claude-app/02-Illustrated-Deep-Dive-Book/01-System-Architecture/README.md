@@ -135,7 +135,77 @@ flowchart LR
 
 所见实现中的清理协调等待与后段退出 watchdog 分属不同阶段。等待期限到了，只说明协调者不再等待，不能推出每项任务都已经取消或释放资源。
 
-## 6. 开发时直接使用的检查表
+## 6. 把“桌面壳”拆成可定位的对象
+
+同一个应用图标下面，至少要区分容器、文档、preload 和能力端点。它们之间并非一一对应：一个窗口可以拥有多个内容视图，一个内容视图的导航又可以替换文档而保留容器。
+
+| 对象 | 固定样本中的关系 | 开发时容易误判的地方 |
+|---|---|---|
+| 主窗口外壳 | BrowserWindow 加载本地 HTML，并使用自己的 preload | 主窗出现不代表聊天页面已经可用 |
+| 主内容视图 | WebContentsView 加入主窗口 contentView；使用另一份 preload | 把外壳与内容当成同一个 DOM 或同一组桥接能力 |
+| 页内查找 | 独立子 WebContentsView 加本地 HTML | 误以为它只是聊天页面中的一个浮层 |
+| About | 独立 BrowserWindow 加本地 HTML | 把小窗口生命周期绑在一次聊天导航上 |
+| Quick Entry | Electron 路线有独立窗口、preload、HTML；另有原生覆盖层路线 | 将一个平台的窗口参数当作所有平台的统一规格 |
+
+关系来自 [SH-03–05、17–20、28](../../04-Extracted-Core-Code-And-Scripts/evidence/data/shell-architecture.json)。这些对象名解释所有权，不用于推算实际 renderer 进程数量；站点隔离与 Chromium 的进程分配是另一层问题。
+
+### 两种内容来源，改变的是部署边界
+
+标准路线的内容地址来自注入的 origin，生产默认指向 claude.ai；第三方推理部署路线使用 app://localhost，并把本地协议绑定到 ion-dist。外壳仍可负责窗口与恢复，但内容从哪里加载、何时更新、使用哪组资源，已经不同。[SH-06–08](../../04-Extracted-Core-Code-And-Scripts/evidence/data/shell-architecture.json)
+
+```mermaid
+flowchart TD
+    Deploy{内容部署路线} -->|标准| Hosted[托管 origin 的文档]
+    Deploy -->|第三方推理部署| Local[app://localhost]
+    Local --> Host{hostname 是 localhost?}
+    Host -->|否| Deny[拒绝]
+    Host -->|是| Origin{存在非空 Origin?}
+    Origin -->|是| Match{等于 app://localhost?}
+    Match -->|否| Deny
+    Match -->|是| Route[API 或静态资源路由]
+    Origin -->|否| Route
+    Route --> Resource[ion-dist 资源 / 后续处理]
+```
+
+图中的 Origin 判断保留了一个重要条件：缺少该 header 不会被这一条件拒绝。它既不是“所有请求都通过同源认证”，也不能单独说明下游缺少授权。静态 HTML 响应另有内容安全策略；协议入口、资源寻址、接口权限仍应分别检查。
+
+这也解释了为什么升级安装包与更新托管页面是两个不同动作。排查样式或接口变化时，需要记录“壳版本 + 内容来源 + 页面版本”，仅保留桌面版本号会把不同实验对象混在一起。
+
+### 身份校验应落到真正收消息的位置
+
+包内的具名桥接经 contextBridge 暴露；claude.web 路线在 preload 检查顶层 frame 和允许的 origin。主进程端又把 IPC 工厂绑定到具体 webContents.ipc，并检查 sender 与参数。部分返回值也经过校验。本地 UI 有另一组 namespace 与顶层 senderFrame 检查。[SH-12–15](../../04-Extracted-Core-Code-And-Scripts/evidence/data/shell-architecture.json)
+
+把身份检查只写在页面按钮旁边，页面一旦被替换或绕过按钮就失去约束。这里更有价值的结构是：接收端知道请求属于哪个 WebContents；参数规则与业务授权继续在后面执行。开发环境允许 localhost 或开发域名还要满足对应开关，不能把域名字符串出现解释成默认放行。
+
+导航也有三条入口：普通导航、重定向和 window.open。样本分别路由这些行为，创建子窗口时核对 opener 为主 frame。[SH-16](../../04-Extracted-Core-Code-And-Scripts/evidence/data/shell-architecture.json) 外链打开策略没有自动赋予新页面主窗的本地能力。
+
+## 7. 两个小实验，抓住生命周期的硬边界
+
+[导航与退出实验](../../04-Extracted-Core-Code-And-Scripts/shell-lifecycle/README.md)提供可直接运行的原创模型与 7 项测试。它们把本章的原则变成明确的输入、状态和验收结果。
+
+### 实验 A：旧页面成功晚于新页面失败
+
+先导航 A，再导航 B。B 先失败并显示恢复入口，随后 A 的成功回调才到。若只有一个全局 loading 布尔值，A 可能把 B 的错误清掉。模型让每次导航持有自己的 ticket，结算时核对 ticket 的对象身份；旧 ticket、伪造同值 ticket、重复结算和销毁后的回调全部失效。
+
+```js
+const page = new NavigationOwner();
+const old = page.begin('page-a');
+const current = page.begin('page-b');
+page.settle(current, { ok: false, error: 'offline' });
+page.settle(old, { ok: true }); // false：不能改写 page-b 的失败状态
+```
+
+实际接入 Electron 时，ticket 需要与导航事件、监听取消和窗口销毁一起管理。只检查 URL 不够：两次导航到同一 URL 也可能属于不同文档。
+
+### 实验 B：退出到期与资源释放分开
+
+一个清理项成功、一个抛错、一个永不返回。协调者需要继续记录前两者，并在期限到达后明确列出仍 pending 的任务。不能把 pending 改成 fulfilled，也不能让一个 rejection 跳过 store flush。
+
+所见产品先并发结算具名任务，设置约 75 秒协调等待，再进行 store 收尾；打包模式的后段 watchdog 为约 15 秒，两者处于不同阶段。[SH-24–25](../../04-Extracted-Core-Code-And-Scripts/evidence/data/shell-architecture.json) 因此它不是“整个退出流程最多 15 秒”的承诺。
+
+原创模型返回独立快照：报告交付以后，晚完成任务不会悄悄改写报告中的 pending；持久化结果单独记录。它还特意让 flush 成为独立阶段，便于测试“清理期限已经到达，但落盘仍未结束”。真正强制停止进程应由外层监督机制承担，不能由 Promise.race 的获胜分支代替。
+
+## 8. 开发时直接使用的检查表
 
 | 设计问题 | 应写入契约 | 回归测试 |
 |---|---|---|
