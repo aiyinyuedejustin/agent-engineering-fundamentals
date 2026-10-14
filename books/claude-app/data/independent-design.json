@@ -1,0 +1,396 @@
+{
+  "research_date": "2026-10-14",
+  "collection_status": "closed",
+  "scope": "Independent first-hand design evidence for Claude Desktop and app; historical brand provenance; no login/install/patching",
+  "sources": [
+    {
+      "id": "I01",
+      "title": "Geist: Anthropic case study",
+      "url": "https://geist.co/work/anthropic",
+      "author": "Geist",
+      "date": "Undated; work spans prelaunch to mid-2023 Claude launch",
+      "surface": "Brand foundations and web/product component language",
+      "kind": "Original design studio account",
+      "confidence": "high for historical intent; low for current app measurements",
+      "finding": "The original designers describe pairing Styrene with Tiempos, a warm color system, human-centered illustration, and function-led components across web and product. This establishes historical rationale, not October 2026 UI specifications."
+    },
+    {
+      "id": "I02",
+      "title": "Work by Everett: Anthropic",
+      "url": "https://byeverett.com/anthropic",
+      "author": "Everett Katigbak",
+      "date": "Portfolio labels role June 2023–Present; publication undated",
+      "surface": "Brand strategy",
+      "kind": "Original creative director portfolio",
+      "confidence": "high for stated creative principles",
+      "finding": "The creative director says the brand deliberately favors warmth, accessibility, and restraint. His account attributes visual/art direction to Geist and Tim Belonax. It supports the emotional brief, not exact token values."
+    },
+    {
+      "id": "I03",
+      "title": "Kyle Turman: Designing Claude and collaborating with AI",
+      "url": "https://www.youtube.com/watch?v=EwtCO5jwvQs",
+      "author": "Dive Club interview with Kyle Turman",
+      "date": "2025-04-25",
+      "surface": "Early Claude web app",
+      "kind": "First-hand product designer interview",
+      "confidence": "high for historical intent",
+      "finding": "Turman directly explains the warmer beige canvas and serif response text as decisions made with the brand team to make Claude feel human and suited to long reading. He also says many microdecisions were pragmatic and later refined; avoid inventing a grand rationale for every pixel.",
+      "companion_url": "https://www.dive.club/deep-dives/kyle-turman",
+      "access": "Original video transcript read with Exa; publisher episode page has no extractable body."
+    },
+    {
+      "id": "I04",
+      "title": "Anthropic Brand Team Interview",
+      "url": "https://www.thesubtext.online/all/anthropic-interview",
+      "author": "Carissa Justice interviewing Tim Belonax and Chelsea Larsson",
+      "date": "2025-06-30",
+      "surface": "Brand language",
+      "kind": "Primary interview",
+      "confidence": "high for first-person principles",
+      "finding": "Belonax links the serif to bookish humanity, the sans to synthetic technology, and the palette to unfired clay. The team describes an unvarnished, collaborative voice that informs illustration and motion. Treat this as rationale, not proof of accessibility compliance."
+    },
+    {
+      "id": "I05",
+      "title": "My Styrene Soul: A Short Affair with Claude.ai",
+      "url": "https://www.andrewboardman.com/newsletter/my-styrene-soul-a-short-affair-with/",
+      "author": "Andrew Boardman",
+      "date": "2024-12-16",
+      "surface": "Claude web app, 2024",
+      "kind": "Named designer first-hand critique",
+      "confidence": "medium; historical visual inspection",
+      "finding": "Boardman observes a warm beige frame, rounded composer, soft shadow and quiet gray controls; he would separate controls more. His font identification names Galaxie Copernicus, Styrene B and Tiempos Text. Useful historical evidence of perceived calm; the names and estimated dimensions must not become current specifications."
+    },
+    {
+      "id": "I06",
+      "title": "Claude Design System: repository and provenance",
+      "url": "https://github.com/5j54d93/Claude-Design-System",
+      "author": "5j54d93",
+      "date": "References production bundles from 2025-11 through 2026-06",
+      "surface": "claude.ai app versus claude.com marketing",
+      "kind": "Independent reverse-engineering project",
+      "confidence": "medium for measured snapshots, not official",
+      "finding": "This project explicitly separates app and marketing tokens and provides raw archives, themed samples and implementation documentation. Its MIT notice covers documentation/CSS but excludes Anthropic logos, wordmark and fonts. A useful reference, not an official or current Anthropic design-system release."
+    },
+    {
+      "id": "I07",
+      "title": "Claude Design System: June color capture",
+      "url": "https://raw.githubusercontent.com/5j54d93/Claude-Design-System/main/raw/live-2026-06/tokens-and-svgs.json",
+      "author": "5j54d93",
+      "date": "Repository folder labels capture 2026-06; no day/build in payload",
+      "surface": "https://claude.ai/new",
+      "kind": "Published first-hand token dump",
+      "confidence": "medium-high for contents of capture; medium for production provenance",
+      "finding": "Parsed 317 color primitives plus light/dark semantic mappings. Light canvas resolves to #f8f8f6, elevated surface #ffffff, user-message surface #efeeeb; dark canvas #1f1f1e and raised surface #2c2c2a. Brand clay is #d97757. These are snapshot values, not October 2026 measurements."
+    },
+    {
+      "id": "I08",
+      "title": "Claude Design System: color system",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/02-color-system.md",
+      "author": "5j54d93",
+      "date": "2026-06 section plus 2026-01 archive",
+      "surface": "App and marketing",
+      "kind": "Independent inspection documentation",
+      "confidence": "medium",
+      "finding": "The author reports a shift from old ivory #faf9f5 to app #f8f8f6 and renames old orange/blue token families to brand-* and accent-*. The chapter explicitly preserves historical values. A document containing a hex does not establish that hex as the current app canvas."
+    },
+    {
+      "id": "I09",
+      "title": "Claude Design System: typography",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/03-typography.md",
+      "author": "5j54d93",
+      "date": "2026-06 and historical 2026-01",
+      "surface": "Claude app",
+      "kind": "Independent inspection documentation",
+      "confidence": "medium; exact line-height unresolved",
+      "finding": "Reports Anthropic Sans for UI/user messages, Anthropic Serif for responses, and Anthropic Mono replacing earlier JetBrains Mono. Dark-mode weights are lighter, including bold 600→530. It warns the custom fonts are proprietary. Its response line-height claims conflict: 24px versus a 1.65rem class, so that measurement is unverified."
+    },
+    {
+      "id": "I10",
+      "title": "Claude Design System: layout",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/04-layout.md",
+      "author": "5j54d93",
+      "date": "Mixed historical and 2026-06 documentation",
+      "surface": "App, with separately marked marketing section",
+      "kind": "Independent inspection documentation",
+      "confidence": "medium",
+      "finding": "Documents a 4px spacing base with 6px and 8px gaps, plus separate z-index roles for headers, sidebar, modal, popovers and toast. App fixed-rem rules and marketing fluid grids are distinct. Avoid importing marketing section padding or hero sizes into a desktop workbench."
+    },
+    {
+      "id": "I11",
+      "title": "Claude Design System: components",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/07-components.md",
+      "author": "5j54d93",
+      "date": "2026-06 app component section",
+      "surface": "Claude web/chat app",
+      "kind": "Independent inspection documentation",
+      "confidence": "medium; not independently live-measured",
+      "finding": "Reports 288px sidebar, 20px composer radius, 12px user-message radius with 10×16px padding, 32px icon controls and 12px menu radius. Composer uses a faint ring plus soft shadow; responses are unboxed. Buttons include hover, pressed, focus and disabled states. These are attributed starting points, not a current desktop pixel-perfect specification."
+    },
+    {
+      "id": "I12",
+      "title": "Claude Design System: shape and elevation",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/05-shape-elevation.md",
+      "author": "5j54d93",
+      "date": "Documentation includes 2026-06 app patterns",
+      "surface": "App and separately marked marketing",
+      "kind": "Independent inspection documentation",
+      "confidence": "medium",
+      "finding": "The component language uses graded radii and very faint boundaries. Menu elevation combines a 1px ring with two soft shadows; composer uses a half-pixel ring and much lighter shadow. The chapter distinguishes normal surfaces from floating overlays. Its catalog mixes dates and contexts, so select by component rather than applying one global radius."
+    },
+    {
+      "id": "I13",
+      "title": "Claude Design System: motion",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/06-motion.md",
+      "author": "5j54d93",
+      "date": "Documentation includes 2026-06 app patterns",
+      "surface": "App; separate marketing motion stack",
+      "kind": "Independent inspection documentation",
+      "confidence": "medium",
+      "finding": "Documents short interaction durations, a 0.985 pressed scale, fade/zoom popovers, and shimmer/pulse loading feedback. Marketing motion uses a different stack. Claims of universal reduced-motion coverage were not independently tested. Use the quiet motion vocabulary but provide a real reduced-motion implementation in original code."
+    },
+    {
+      "id": "I14",
+      "title": "Claude Design System: design playbook",
+      "url": "https://github.com/5j54d93/Claude-Design-System/blob/main/docs/12-design-playbook.md",
+      "author": "5j54d93",
+      "date": "Undated current main branch",
+      "surface": "Author's derived design guidance",
+      "kind": "Independent synthesis, not observed spec",
+      "confidence": "high as author's advice; low as official claim",
+      "finding": "Recommends choosing the surface and task density before components, using one primary action, restrained layering, and a complete default/hover/pressed/focus/disabled/loading/empty/error state matrix. Useful implementation methodology, but its inferred rules must be labeled as recommendations rather than Anthropic requirements."
+    },
+    {
+      "id": "I15",
+      "title": "Claude Desktop theming token map",
+      "url": "https://github.com/patrickjaja/claude-desktop-extra/blob/master/baseline/THEME_TOKEN_MAP.md",
+      "author": "patrickjaja",
+      "date": "v1.15962.0 capture 2026-06-26; section 7 v1.49585.0 2026-09-09",
+      "surface": "Desktop Cowork/epitaxy, desktop frame, CDS",
+      "kind": "Maintainer first-hand live/bundle inspection",
+      "confidence": "medium-high with explicit provenance; internal contradictions noted",
+      "finding": "Documents coexisting legacy, v2 semantic, CDS and desktop-frame layers. Desktop frame uses df-* rather than chat bg-* tokens. Records 288px sidebar, 48px header and 26px rows. September additions describe CDS-backed pills, chips and row states. Several v1/v2-equality statements contradict its own numeric tables; use scoped resolved values, never merge them blindly."
+    },
+    {
+      "id": "I16",
+      "title": "Claude Desktop Extra themes reference",
+      "url": "https://github.com/patrickjaja/claude-desktop-extra/blob/master/themes/README.md",
+      "author": "patrickjaja",
+      "date": "Reference corrected for v1.15962; current branch accessed 2026-10-14",
+      "surface": "Third-party Linux desktop repackaging/theme layer",
+      "kind": "Maintainer implementation documentation",
+      "confidence": "high for its own implementation; medium for upstream behavior",
+      "finding": "Explains why text, borders, filled-control text, CDS and frame surfaces need coordinated theme mapping. Low-alpha borders need a contrasting base token; pastel fills may need dark text. Its contrast claims apply to its custom themes, not an audit of stock Claude. No theme software was installed."
+    },
+    {
+      "id": "I17",
+      "title": "Claude Desktop Bin custom themes",
+      "url": "https://github.com/vinnymeller/claude-desktop-bin/blob/master/themes/README.md",
+      "author": "vinnymeller",
+      "date": "Undated master branch, accessed 2026-10-14",
+      "surface": "Third-party Linux Claude Desktop packaging",
+      "kind": "Maintainer first-hand implementation",
+      "confidence": "medium",
+      "finding": "Separates main claude.ai conversation content from local Quick Entry, search and About windows, and documents HSL semantic versus legacy hex chrome variables. This supports testing multiple desktop windows instead of assuming one chat stylesheet covers every surface. Its theme-modification instructions are research only here."
+    },
+    {
+      "id": "I18",
+      "title": "Claude Desktop Skin",
+      "url": "https://github.com/mohannad789/claude-desktop-skin",
+      "author": "mohannad789",
+      "date": "Undated current main branch; retrieved 2026-10-14",
+      "surface": "Desktop Code tab",
+      "kind": "Original third-party modification project",
+      "confidence": "high for author's own changes",
+      "finding": "The author deliberately adds a two-column sidebar, project colors/tags and a wider chat to reduce wasted space. This is useful counter-evidence to assuming Claude's density suits every work pattern. Its dimensions and visuals are modifications, not stock reference material; nothing was run."
+    },
+    {
+      "id": "I19",
+      "title": "Claude AI Clone engineering showcase",
+      "url": "https://github.com/JonniTech/Claude-Clone",
+      "author": "JonniTech",
+      "date": "Undated current main branch; retrieved 2026-10-14",
+      "surface": "Unofficial web recreation",
+      "kind": "Original clone project",
+      "confidence": "high for stated project choices; low for fidelity",
+      "finding": "The author calls it pixel-perfect but states it uses Inter and #F4F3EE, which diverge from the measured snapshot's custom families and #f8f8f6. Keep as a reconstruction example; exclude from official typography, exact palette and security claims. No install, login or API-key entry was performed."
+    },
+    {
+      "id": "I20",
+      "title": "Claude on Claude: a Design Study",
+      "url": "https://michael.design/claude/",
+      "author": "Michael Higgins",
+      "date": "Undated; page footer 2025",
+      "surface": "Speculative redesign",
+      "kind": "Original designer concept",
+      "confidence": "high for concept; excluded as stock evidence",
+      "finding": "An explicitly reimagined interface uses blue/sage, Inter, GT Alpina and JetBrains Mono plus new motion. It is valuable as a contrasting interpretation. Its precise colors and timing are proposed design decisions, not evidence of Claude's shipped interface."
+    },
+    {
+      "id": "I21",
+      "title": "Dark-blue-on-black desktop readability report",
+      "url": "https://github.com/anthropics/claude-code/issues/49056",
+      "author": "mcbain and first-hand commenters",
+      "date": "Opened 2026-04-16; comments through 2026-06-05",
+      "surface": "Claude Code desktop, macOS/Windows/Linux reports",
+      "kind": "Primary issue report and user observations",
+      "confidence": "medium for historical regression; current status unverified",
+      "finding": "Users reported low-contrast Code messages and a mismatch with Chat/Cowork. A May 7 comment reported partial improvement; closure was inactivity-based, with a June 5 report that the problem remained. Neither closure nor complaint proves October 2026 state. Use as a regression-test warning."
+    },
+    {
+      "id": "I22",
+      "title": "Windows RTL/font rendering report",
+      "url": "https://github.com/anthropics/claude-code/issues/85945",
+      "author": "omidazg",
+      "date": "2026-08-11; Desktop 1.26832.0.0, bundled Code 2.1.222",
+      "surface": "Windows ARM64 Claude Desktop Code renderer",
+      "kind": "First-hand measured bug report",
+      "confidence": "medium-high for reported environment; not independently reproduced",
+      "finding": "The reporter provides rendered-width tests and bundle inspection for script fallback and mixed-direction failures. Closed as duplicate, not demonstrated fixed. Reusable UI should test Arabic/Persian/Hebrew mixed with Latin code and numbers, logical alignment, correct font fallback and per-block text direction."
+    },
+    {
+      "id": "I23",
+      "title": "RTL text direction support tracker",
+      "url": "https://github.com/anthropics/claude-code/issues/37183",
+      "author": "eitan-kir and first-hand commenters",
+      "date": "Opened 2026-03-21; relevant comments through 2026-10-09",
+      "surface": "Multiple renderers, including desktop reports",
+      "kind": "Primary issue discussion",
+      "confidence": "medium for lived experience; no app-wide audit",
+      "finding": "Desktop users describe mixed Hebrew/English ordering failures. October 9's terminal-plugin author explicitly says the workaround does not cover Desktop or the VS Code panel. Keep renderer distinctions: a terminal workaround is not evidence that desktop text rendering is fixed."
+    },
+    {
+      "id": "I24",
+      "title": "Design Critique: Claude Mobile App",
+      "url": "https://ixd.prattsi.org/2026/02/design-critique-claude-mobile-app/",
+      "author": "Kali Birdsall",
+      "date": "2026-02-08",
+      "surface": "Mobile app, comparator only",
+      "kind": "Named first-hand design critique",
+      "confidence": "medium for mobile observations; no desktop measurement",
+      "finding": "Observes a hierarchy from orange mark to greeting to input, with grouped communication controls. Critiques ambiguous microphone/waveform and model-choice signifiers. Useful cross-surface lesson: visual quiet needs accessible names and explanations; do not use the mobile layout as a desktop sizing source."
+    }
+  ],
+  "selected_app_snapshot_tokens": {
+    "light": {
+      "bg-000": {
+        "primitive": "_gray-0",
+        "hsl": "0 0% 100%",
+        "hex": "#ffffff"
+      },
+      "bg-100": {
+        "primitive": "_gray-20",
+        "hsl": "60 14% 97%",
+        "hex": "#f8f8f6"
+      },
+      "bg-200": {
+        "primitive": "_gray-40",
+        "hsl": "60 11% 95%",
+        "hex": "#f4f4f1"
+      },
+      "bg-300": {
+        "primitive": "_gray-50",
+        "hsl": "45 12% 93%",
+        "hex": "#efeeeb"
+      },
+      "text-000": {
+        "primitive": "_gray-860",
+        "hsl": "0 0% 7%",
+        "hex": "#121212"
+      },
+      "text-200": {
+        "primitive": "_gray-700",
+        "hsl": "60 3% 21%",
+        "hex": "#373734"
+      },
+      "text-400": {
+        "primitive": "_gray-450",
+        "hsl": "43 3% 47%",
+        "hex": "#7b7974"
+      },
+      "accent-brand": {
+        "primitive": "_brand-clay",
+        "hsl": "14.8 63.1% 59.6%",
+        "hex": "#d97757"
+      },
+      "brand-000": {
+        "primitive": "_brand-clay-emphasized",
+        "hsl": "15.1 54.2% 51.2%",
+        "hex": "#c6613f"
+      },
+      "accent-000": {
+        "primitive": "_blue-600",
+        "hsl": "214 72% 34%",
+        "hex": "#184e95"
+      },
+      "accent-100": {
+        "primitive": "_blue-500",
+        "hsl": "213 68% 45%",
+        "hex": "#256bc1"
+      }
+    },
+    "dark": {
+      "bg-000": {
+        "primitive": "_gray-750",
+        "hsl": "60 2% 17%",
+        "hex": "#2c2c2a"
+      },
+      "bg-100": {
+        "primitive": "_gray-800",
+        "hsl": "60 2% 12%",
+        "hex": "#1f1f1e"
+      },
+      "bg-200": {
+        "primitive": "_gray-840",
+        "hsl": "60 2% 9%",
+        "hex": "#171716"
+      },
+      "bg-300": {
+        "primitive": "_gray-860",
+        "hsl": "0 0% 7%",
+        "hex": "#121212"
+      },
+      "text-000": {
+        "primitive": "_gray-20",
+        "hsl": "60 14% 97%",
+        "hex": "#f8f8f6"
+      },
+      "text-200": {
+        "primitive": "_gray-200",
+        "hsl": "55 9% 74%",
+        "hex": "#c3c2b7"
+      },
+      "text-400": {
+        "primitive": "_gray-350",
+        "hsl": "48 5% 57%",
+        "hex": "#97958c"
+      },
+      "accent-brand": {
+        "primitive": "_brand-clay",
+        "hsl": "14.8 63.1% 59.6%",
+        "hex": "#d97757"
+      },
+      "brand-000": {
+        "primitive": "_brand-clay-emphasized",
+        "hsl": "15.1 54.2% 51.2%",
+        "hex": "#c6613f"
+      },
+      "accent-000": {
+        "primitive": "_blue-200",
+        "hsl": "213 80% 79%",
+        "hex": "#9fc5f4"
+      },
+      "accent-100": {
+        "primitive": "_blue-350",
+        "hsl": "212 75% 62%",
+        "hex": "#5599e7"
+      }
+    }
+  },
+  "token_provenance": "I07; HSL-to-sRGB HEX conversions computed here, rounded to 8-bit. Snapshot only, no original fonts/logos/code redistributed.",
+  "known_gaps": [
+    "No authenticated current native-desktop visual audit in this subtask.",
+    "No October 2026 authoritative full state/token matrix.",
+    "Exact response line-height unresolved in I09.",
+    "BSPK portfolio page readable only as title; no type-designer attribution concluded from it."
+  ]
+}

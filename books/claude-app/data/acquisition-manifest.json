@@ -1,0 +1,95 @@
+{
+  "recorded_at": "2026-10-14T16:33:00Z",
+  "rea": {
+    "version": "6.5.0",
+    "resolved": "https://registry.npmjs.org/rea-agents/-/rea-agents-6.5.0.tgz",
+    "integrity": "sha512-C6BG7LyrAdR74mSjertM6PrxJkcNZ2bfQNOJornPo9erDEp2tyPRVYPnV5Yodr+1RqewCQla68WulXlVnveD+A==",
+    "license": "MIT",
+    "dependencies": {
+      "@babel/parser": "8.0.4",
+      "@babel/types": "8.0.4",
+      "@clack/prompts": "1.7.0",
+      "@electron/asar": "4.2.0",
+      "@jridgewell/trace-mapping": "0.3.31",
+      "@lydell/node-pty": "1.1.0",
+      "@modelcontextprotocol/client": "2.3.1",
+      "@modelcontextprotocol/server": "2.3.1",
+      "@xmldom/xmldom": "0.9.12",
+      "@xterm/addon-serialize": "0.14.0",
+      "@xterm/headless": "6.0.0",
+      "@zip.js/zip.js": "2.15.0",
+      "ajv": "8.20.0",
+      "ajv-formats": "3.0.1",
+      "canonicalize": "3.0.0",
+      "cborg": "6.1.3",
+      "cross-spawn": "7.0.6",
+      "diff": "9.0.0",
+      "evmole": "0.9.3",
+      "har-schema": "2.0.0",
+      "ignore": "7.0.6",
+      "incur": "0.6.1",
+      "isomorphic-git": "1.38.7",
+      "jsonc-parser": "3.3.1",
+      "lossless-json": "4.3.1",
+      "parse5": "8.0.1",
+      "pino": "10.4.0",
+      "playwright-core": "1.58.2",
+      "plist": "5.0.0",
+      "saxes": "6.0.0",
+      "semver": "7.8.5",
+      "smol-toml": "1.9.0",
+      "stream-chain": "4.2.6",
+      "stream-json": "3.7.0",
+      "tokenx": "1.3.0",
+      "write-file-atomic": "7.0.0",
+      "ws": "8.21.0",
+      "yaml": "2.9.0",
+      "zod": "4.4.3"
+    },
+    "bin": {
+      "rea": "scripts/rea.mjs",
+      "rea-agents": "scripts/rea.mjs"
+    },
+    "engines": {
+      "node": "^22.19.0 || ^24.11.0 || >=26.0.0"
+    },
+    "optionalDependencies": {
+      "frida": "17.23.2"
+    }
+  },
+  "claude_package": {
+    "Package": "claude-desktop",
+    "Version": "2.37337.1",
+    "Architecture": "amd64",
+    "Maintainer": "Anthropic PBC <support@anthropic.com>",
+    "Installed-Size": "597746",
+    "Depends": "libgtk-3-0, libnotify4, libnss3, xdg-utils, libatspi2.0-0, libdrm2, libgbm1, libxcb-dri3-0, libsecret-1-0, kde-cli-tools | kde-runtime | trash-cli | libglib2.0-bin | gvfs, libc6 (>= 2.34), libxtst6, libuuid1, libpipewire-0.3-0, xdg-desktop-portal, xdg-desktop-portal-gtk | xdg-desktop-portal-gnome | xdg-desktop-portal-kde",
+    "Recommends": "libasound2t64 | libasound2 | pulseaudio, libayatana-appindicator3-1 | libappindicator3-1, ca-certificates, gnome-keyring | plasma-workspace, bubblewrap, socat, openssh-client, qemu-system-x86, ovmf, virtiofsd",
+    "Suggests": "gnome-keyring, lsb-release",
+    "Filename": "pool/main/c/claude-desktop/claude-desktop_2.37337.1_amd64.deb",
+    "Size": "182483892",
+    "MD5sum": "d30ca33c6c7385a2b12ed6c57acd1485",
+    "SHA1": "f30e73386cd7ba582def4340e9ca30e08495e399",
+    "SHA256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "Section": "utils",
+    "Priority": "optional",
+    "Homepage": "https://claude.ai",
+    "Description": "Desktop application for Claude.ai"
+  },
+  "source_urls": [
+    "https://github.com/morluto/rea",
+    "https://code.claude.com/docs/en/desktop-linux",
+    "https://downloads.claude.ai/claude-desktop/apt/stable/dists/stable/main/binary-amd64/Packages"
+  ],
+  "package_sha256_verified": true,
+  "rea_install": "isolated local npm installation, lifecycle scripts disabled",
+  "app_execution": "not run",
+  "signature_verification": {
+    "status": "good",
+    "fingerprint": "31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE",
+    "fingerprint_source": "https://code.claude.com/docs/en/desktop-linux",
+    "verification_keyring": "isolated workspace only; no OS trust modified",
+    "Packages_sha256": "0f30928df65f247ed47a2d87d3fd539abdceb2f033e4fad4aa1ec28ea3cdc76c",
+    "Packages_matches_signed_InRelease": true
+  }
+}

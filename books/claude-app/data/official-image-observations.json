@@ -1,0 +1,446 @@
+{
+  "title": "Claude 官方截图像素观察账本",
+  "asOf": "2026-10-14",
+  "collection": "closed; 11/11 listed assets downloaded and visually inspected",
+  "method": "Ordinary HTTPS retrieval from already-verified official-article CDN URLs, original bytes preserved; dimensions and SHA-256 checked; visual inspection via view_image. No login, browser session, installation, Claude execution or external writes.",
+  "clockNote": "Dates use conversation clock UTC; host filesystem timestamps are not capture dates.",
+  "corrections": [
+    {
+      "id": "OV05-IMG1",
+      "previousLabel": "mac_quick_entry_shortcuts",
+      "corrected": "Actual image depicts single-line Quick Entry, not shortcut settings."
+    }
+  ],
+  "globalLimits": [
+    "Current official page retrieval does not establish current screenshot capture date or uniform account rollout.",
+    "Current full desktop window and current desktop dark theme were not in the asset corpus.",
+    "No exact hex value, font identity, CSS geometry, animation or accessibility compliance inferred from screenshots.",
+    "2024 promotional composite framing and generated-code content colors are not app design tokens."
+  ],
+  "images": [
+    {
+      "id": "OV08-IMG1",
+      "source_id": "OV08",
+      "label": "Web/Desktop 语音入口与 tooltip",
+      "sourceURL": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "sourceTitle": "Use voice mode",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "2132e8083b0d431c7d5d9793bb964bc4c544146137ea97b8273d82dedbd73b4f"
+      },
+      "dimensions": {
+        "width": 474,
+        "height": 232,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 16572,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "web_and_desktop_shared_composer_crop",
+      "observed": [
+        "模型 Opus 4.6 与下拉箭头靠近圆角方形波形按钮。",
+        "波形按钮具有暖浅灰底，tooltip 为深灰底白字并带小阴影。",
+        "tooltip 悬于按钮上方，视觉层独立于输入容器边框。"
+      ],
+      "inferred": [
+        "临时文字提示补充纯图标语义。"
+      ],
+      "notEstablished": [
+        "tooltip 的触发机制。",
+        "完整输入框。",
+        "与 Opus 4.5 图属于同一版本。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV08-IMG2",
+      "source_id": "OV08",
+      "label": "Web/Desktop 活跃语音停止控件",
+      "sourceURL": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "sourceTitle": "Use voice mode",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "04ae88fe4e4f29fb7b8cfd7c3f49aed35dd3612c16417ca9963ac5689699e25f"
+      },
+      "dimensions": {
+        "width": 247,
+        "height": 108,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 4920,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "web_and_desktop_voice_active_crop",
+      "observed": [
+        "独立麦克风轮廓在左，浅蓝色圆角矩形 Stop 控件在右。",
+        "Stop 同时使用三个蓝点和蓝色文字。"
+      ],
+      "inferred": [
+        "活跃态通过文字显露明确终止动作。"
+      ],
+      "notEstablished": [
+        "三点动画。",
+        "全应用蓝色状态 token。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV08-IMG3",
+      "source_id": "OV08",
+      "label": "Mobile 深色 composer",
+      "sourceURL": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "sourceTitle": "Use voice mode",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "036a31f1c7f44c6dc87a4bb2129b774debcf2f8171a734051c6b73837d789613"
+      },
+      "dimensions": {
+        "width": 1320,
+        "height": 415,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 80185,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "mobile_only",
+      "observed": [
+        "深灰输入面在更暗背景之上，浅色提示位于上部。",
+        "底部左组为加号和滑杆；右组为麦克风和强对比白色圆形波形按钮。",
+        "麦克风与波形是同时可见的不同控件。"
+      ],
+      "inferred": [
+        "与桌面有相似的左右功能分组。"
+      ],
+      "notEstablished": [
+        "Desktop 暗色 token。",
+        "Desktop 按钮圆形规范或尺寸。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV08-IMG4",
+      "source_id": "OV08",
+      "label": "Mobile Voice/Pace 底部设置面板",
+      "sourceURL": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "sourceTitle": "Use voice mode",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "f5287cfe4196fbf00bddd9eec1bcc16d090f851aa926196bf34cdbd2b88121db"
+      },
+      "dimensions": {
+        "width": 958,
+        "height": 682,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "JPEG",
+      "bytes": 30396,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "mobile_only",
+      "observed": [
+        "顶端中央拖动条和底部 home indicator 可见。",
+        "Voice、Pace 分组下有大型圆角矩形选项。",
+        "选中项通过亮边框、亮文字与未选中项区分。",
+        "第一组最右选项部分被截，第二组可见三项。"
+      ],
+      "inferred": [
+        "选中表达依赖边框与字色，组间留白建立层级。"
+      ],
+      "notEstablished": [
+        "横向滚动行为。",
+        "Desktop 设置网格。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV06-IMG1",
+      "source_id": "OV06",
+      "label": "通用 composer 裁切",
+      "sourceURL": "https://support.claude.com/en/articles/8114491-get-started-with-claude",
+      "sourceTitle": "Get started with Claude",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "未知；2026-10-14 从当前官方帮助页链接取得，不代表当天 UI",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "dfcf533748614d183e2cd8add8c9bb904521c22d772bc8bd77321bb7af6dec49"
+      },
+      "dimensions": {
+        "width": 1442,
+        "height": 334,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 29301,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "web_and_desktop_documented_shared_crop",
+      "observed": [
+        "白色圆角输入容器、细边框、柔和外阴影置于微暖浅色背景。",
+        "输入提示在左上，主要空白输入区在上，工具操作另居底部。",
+        "底部左侧为加号及浅蓝底时钟形线性图标；右侧为模型选择、下拉箭头、暖橙色发送按钮。",
+        "左右操作组之间保留显著空白，模型和发送按钮处于同一水平带。",
+        "模型标签为 Opus 4.5。"
+      ],
+      "inferred": [
+        "上下分层与左右分组可作为内容优先的布局借鉴。",
+        "暖橙用于这张图的发送动作，不能外推全应用主按钮。"
+      ],
+      "notEstablished": [
+        "时钟图标精确功能。",
+        "发送按钮是否 disabled。",
+        "CSS 尺寸、缩放、字体家族、实时版本。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV05-IMG1",
+      "source_id": "OV05",
+      "label": "Mac Quick Entry 单行悬浮条",
+      "sourceURL": "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac",
+      "sourceTitle": "Use quick entry with Claude Desktop on Mac",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "文件名含 2025-12-18，仅为未独立确认的拍摄日期线索",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "a98d7442d2b3ed4af92f11ef41f71a16bc2befd9b99eebc603edf838ef016700"
+      },
+      "dimensions": {
+        "width": 1702,
+        "height": 302,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 99019,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "macos_quick_entry",
+      "observed": [
+        "实际是单行 Quick Entry，不是快捷键设置页。",
+        "左端品牌符号和输入，中间大量可输入宽度；右侧为 New Chat 下拉与暖橙发送按钮。",
+        "所有可见控件位于同一居中水平轴。",
+        "白色大圆角浮层与灰背景间有宽而柔的阴影，发送按钮有较紧小阴影。"
+      ],
+      "inferred": [
+        "单行结构适合短输入，浮层阴影强化临时位于工作上方的层级。"
+      ],
+      "notEstablished": [
+        "always-on-top 行为及快捷键，需文字文档佐证。",
+        "展开、附件、错误状态。",
+        "完整 Desktop 应用外壳。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV12-IMG1",
+      "source_id": "OV12",
+      "label": "Cowork instructions 编辑设置裁切",
+      "sourceURL": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+      "sourceTitle": "Get started with Claude Cowork",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "拍摄日期未知；源文档存在合并迁移提示",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "ed68f726552f82e180230c819e1be169e946b326dbae24ee41dadd427702a566"
+      },
+      "dimensions": {
+        "width": 1500,
+        "height": 750,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 75458,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "cowork_instructions_settings_crop",
+      "observed": [
+        "灰色说明位于大 textarea 上方，主要左边界对齐。",
+        "textarea 为细浅灰边框、温和圆角，右下可见 resize affordance。",
+        "输入占位文案呈等宽外观，说明呈比例字宽外观。",
+        "右下操作行为白底细边框 Cancel 与黑底白字 Save。",
+        "绝大部分面积属于编辑区域。"
+      ],
+      "inferred": [
+        "说明、编辑、确认形成三层内容优先的设置结构。",
+        "保存动作强调可用中性色，与聊天发送按钮的暖橙并不统一。"
+      ],
+      "notEstablished": [
+        "字体家族。",
+        "整个 Settings 导航与分栏。",
+        "图片是否对应迁移后账户。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV21-document_upload",
+      "source_id": "OV21",
+      "label": "2024 Project knowledge 文件拖放宣传示意",
+      "sourceURL": "https://www.anthropic.com/news/projects",
+      "sourceTitle": "Collaborate with Claude on Projects",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "文章发布 2024-06-25；资产本身拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "0c306c998340db21dfc4f9e950550d5bf83e81573c1fda864133099fbd284037"
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 308207,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "historical_web_2024_promotional_composite",
+      "observed": [
+        "右侧知识面板有标题、右置 Add 与大蓝边淡蓝投放区。",
+        "左侧项目内容被裁切。",
+        "画面有文件拖拽浮标、放大光标、数量徽记。",
+        "紫色纹理背景包围应用示意。"
+      ],
+      "inferred": [
+        "知识与对话分区、蓝色拖放反馈可作历史交互参考。"
+      ],
+      "notEstablished": [
+        "拖拽浮标全部由 Claude 实现。",
+        "紫色纹理属于应用背景。",
+        "当前 Desktop 外观。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV21-custom_instructions",
+      "source_id": "OV21",
+      "label": "2024 自定义项目 instructions 宣传示意",
+      "sourceURL": "https://www.anthropic.com/news/projects",
+      "sourceTitle": "Collaborate with Claude on Projects",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "文章发布 2024-06-25；资产本身拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "581d9847c53ca24bbcc5a04c746ded774e12986404a1f5a71a0baabeff993b47"
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 290954,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "historical_web_2024_promotional_composite",
+      "observed": [
+        "知识面板按标题、虚线入口、文件列表组织。",
+        "文件行有类型图标、名称与日期，图标和文本各自对齐。",
+        "深色说明浮层与放大手形光标位于入口旁。",
+        "左侧可见衬线标题与右侧无衬线工具标签。"
+      ],
+      "inferred": [
+        "同一历史样本用字体视觉类别区分内容和工具。"
+      ],
+      "notEstablished": [
+        "当前字体家族与授权。",
+        "当前 Desktop 项目设置。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV21-artifact_and_chat",
+      "source_id": "OV21",
+      "label": "2024 对话与 Artifact 并排宣传示意",
+      "sourceURL": "https://www.anthropic.com/news/projects",
+      "sourceTitle": "Collaborate with Claude on Projects",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "文章发布 2024-06-25；资产本身拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "803b848dfce01a1b3daa92c8cded7469fa67bc9b8c1c97902ac31c49e84a717d"
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 403987,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "historical_web_2024_promotional_composite",
+      "observed": [
+        "左边对话，右边 Artifact，顶部共享路径和操作区。",
+        "对话有用户底色面、助手回复框、嵌入卡片、小操作条，输入位于底部。",
+        "Artifact 自带标题栏、Preview/Code、关闭、底部状态与工具。",
+        "深色代码内容面与浅色应用外壳明显分开。",
+        "正文部分呈衬线，工具及代码另有不同字体角色。"
+      ],
+      "inferred": [
+        "2024 样本已经以相邻面板分离对话上下文与结果操作。"
+      ],
+      "notEstablished": [
+        "当前 Desktop 默认栏宽。",
+        "拖拽和缩放行为。",
+        "代码语法色属于全局 UI 色板。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    },
+    {
+      "id": "OV21-shared_project_chats",
+      "source_id": "OV21",
+      "label": "2024 共享项目聊天宣传示意",
+      "sourceURL": "https://www.anthropic.com/news/projects",
+      "sourceTitle": "Collaborate with Claude on Projects",
+      "retrievedDate": "2026-10-14",
+      "inspectedAt": "2026-10-14T16:45:18Z",
+      "date": "文章发布 2024-06-25；资产本身拍摄日期未知",
+      "imagehash": {
+        "algorithm": "SHA-256",
+        "value": "542be10396f4e9a6234b31c2d181aa8b26f6aca978c59148aca02f4636b0f499"
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080,
+        "unit": "image pixels, not CSS pixels"
+      },
+      "format": "PNG",
+      "bytes": 308892,
+      "download_status": "downloaded",
+      "inspection": "Original asset viewed with view_image",
+      "scope": "historical_web_2024_promotional_composite",
+      "observed": [
+        "左列按项目标题、说明、标签/头像、输入、聊天摘要排列；右列为知识。",
+        "标题和引用呈衬线，工具标签和文件元数据呈无衬线。",
+        "交流和资料依靠空间分列及柔和容器区分。"
+      ],
+      "inferred": [
+        "历史信息架构将交流面与知识面分开。"
+      ],
+      "notEstablished": [
+        "演示头像、名称代表真实私人信息。",
+        "当前 Desktop 布局。"
+      ],
+      "redistribution": "Private verification only. Do not publish or bundle original screenshot."
+    }
+  ]
+}

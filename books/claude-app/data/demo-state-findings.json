@@ -1,0 +1,83 @@
+{
+  "reviewed_at": "2026-10-14T16:55:39.395Z",
+  "findings": [
+    {
+      "id": "DS-01",
+      "severity": "P2",
+      "status": "resolved",
+      "title": "Narrow sidebar resize retained focus on mobile-only Close",
+      "first_observed": "2026-10-14T16:52:08Z",
+      "method": "simulated DOM plus CSS visibility source inspection",
+      "reproduce": [
+        "Set width fixture to 390.",
+        "Open navigation, which focuses its Close button.",
+        "Change width fixture to 1440."
+      ],
+      "observed_before_fix": "syncSidebar removed the drawer state but did not move focus from a Close button hidden by desktop CSS.",
+      "expected": "Focus moves to a visible logical control when the active panel control becomes hidden.",
+      "repair": "Author captured focus before media-query sync and restores the navigation toggle for hidden panels or mobile-only Close.",
+      "affected_files": [
+        "demo/demo.js"
+      ],
+      "retest_ids": [
+        "D35",
+        "D38"
+      ],
+      "retest_result": "pass in simulated DOM; real responsive browser behavior remains unverified"
+    },
+    {
+      "id": "DS-02",
+      "severity": "P2",
+      "status": "resolved",
+      "title": "Compact inspector resize retained focus on mobile-only Close",
+      "first_observed": "2026-10-14T16:52:08Z",
+      "method": "simulated DOM plus CSS visibility source inspection",
+      "reproduce": [
+        "Set width fixture to 768.",
+        "Open inspector, which focuses its Close button.",
+        "Change width fixture to 1440."
+      ],
+      "observed_before_fix": "syncInspector removed overlay state but did not move focus from a Close button hidden by desktop CSS.",
+      "expected": "Focus moves to a visible logical control when the active panel control becomes hidden.",
+      "repair": "Author captures inspector focus before sync and restores toggle when panel is hidden or the active control is mobile-only Close.",
+      "affected_files": [
+        "demo/demo.js"
+      ],
+      "retest_ids": [
+        "D36",
+        "D39",
+        "D40"
+      ],
+      "retest_result": "pass in simulated DOM; real responsive browser behavior remains unverified"
+    },
+    {
+      "id": "DS-03",
+      "severity": "P2",
+      "status": "resolved",
+      "title": "Selected light navigation numbers had a below-threshold declared text pair",
+      "first_observed": "2026-10-14T16:54:03Z",
+      "method": "source-specific opaque sRGB contrast arithmetic",
+      "reproduce": [
+        "Read .nav-item > span foreground and selected .nav-item background.",
+        "Calculate WCAG relative luminance contrast for #68665f on #e5e3db."
+      ],
+      "observed_before_fix": "4.471900105642504:1, below the 4.5:1 normal-text target. Rounding cannot turn this into a pass.",
+      "expected": "At least 4.5:1 for the declared normal text pair.",
+      "repair": "Author changed the original light muted token from #68665f to #65635c.",
+      "affected_files": [
+        "components/tokens.css"
+      ],
+      "retest_result": "4.6790495129918055:1 for #65635c on #e5e3db. Rendered state validation still required."
+    }
+  ],
+  "final_files_sha256": {
+    "demo/index.html": "9684e068018e5f27f1c775e6285bf2005107cc7fce04090332f135a05c9ce427",
+    "demo/demo.js": "c972b2f19df605e2cb05808216de6fde62875d32f0e6b89778083bd180225ab7",
+    "demo/demo.css": "e735395030e07a2ac04bd2d91e6ede4ed067456217afe0f33c40378372034c0c",
+    "demo/evidence.js": "d89b002c6fd99262000918bcafd7b5f4e4abe810b0ada9f22f3a40f3edf6b7e4",
+    "components/tokens.css": "3fc3a836ef9418ae5118c29c127e53c0144555aa95287d678e16cd6ded546f05",
+    "components/components.css": "71864685af52f195a6561f354f0bdf1a7f6a1593b255ef48c97d3d73cedaac7f"
+  },
+  "open_findings_in_executed_checks": [],
+  "limitation": "Exploratory failures are retained here. Browser-only coverage remains blocked; no claim of zero defects or WCAG conformance."
+}

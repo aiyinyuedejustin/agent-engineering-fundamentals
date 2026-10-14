@@ -1,0 +1,360 @@
+{
+  "schema": "claude.selected-component-observations.v1",
+  "sources": [
+    {
+      "id": "f014",
+      "path": "ion/assets/v1/c6a992d55-CNGsCU46.css",
+      "sha256": "e805f0daa316017c4299c79daedeb5a122d35e315b28f3a0a5f11a6e6889b12e",
+      "bytes": 1720886
+    },
+    {
+      "id": "f024",
+      "path": "ion/assets/v1/shared-styles-C6yuIsHz.css",
+      "sha256": "18853361e3131bbda1db2f4be2041989527fbe70bfae9f727b2eda04654484e5",
+      "bytes": 78856
+    }
+  ],
+  "observations": [
+    {
+      "id": "card_surface",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "卡片普通填充使用 surface-1；含 CardLink 的卡片 hover 使用 surface-2。白色层级变化非常克制，不意味着整张卡片只有一个交互目标。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=Card]>.cds-card-fill",
+          "context": [
+            "@layer cds-card"
+          ],
+          "byte_start": 11858,
+          "byte_end": 11937
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=Card]:has([data-cds=CardLink]):hover>.cds-card-fill",
+          "context": [
+            "@layer cds-card"
+          ],
+          "byte_start": 11937,
+          "byte_end": 12047
+        }
+      ]
+    },
+    {
+      "id": "card_press",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "卡片按下同时改变填充层缩放和内容裁剪；按下采用 fast，回弹采用 slow 与弹簧曲线，避免仅缩放文字的粗糙反馈。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=Card]>.cds-card-fill,.cds-root [data-cds=Card]:after",
+          "context": [],
+          "byte_start": 1535335,
+          "byte_end": 1535492
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=Card]:has([data-cds=CardLink]:active)>.cds-card-fill,.cds-root [data-cds=Card]:has([data-cds=CardLink]:active):after",
+          "context": [],
+          "byte_start": 1535492,
+          "byte_end": 1535747
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=Card]:has([data-cds=CardLink])>.cds-card-body",
+          "context": [],
+          "byte_start": 1535747,
+          "byte_end": 1535965
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=Card]:has([data-cds=CardLink]:active)>.cds-card-body",
+          "context": [],
+          "byte_start": 1535965,
+          "byte_end": 1536199
+        }
+      ]
+    },
+    {
+      "id": "message_bubble_geometry",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "用户气泡及特定助手气泡分支共享半径、内边距、宽度令牌；最大 measure 声明为 85%，半径是基础 radius 加 0.25rem×scale。不是所有助手回复都属于气泡分支。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=UserMessage],.cds-root [data-cds=AssistantMessage][data-variant=bubble],.cds-root [data-cds=AssistantMessage][data-cds-bubble-stack]",
+          "context": [],
+          "byte_start": 1539988,
+          "byte_end": 1540356
+        }
+      ]
+    },
+    {
+      "id": "message_actions_reveal",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "消息操作区以透明度与 scale 显隐；另有 always-visible 与 instant 状态。静态规则能证明状态建模，不能证明菜单已在用户当前屏幕出现。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=MessageActions][data-reveal]",
+          "context": [],
+          "byte_start": 1561621,
+          "byte_end": 1562081
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=MessageActions][data-reveal][data-always-visible]",
+          "context": [],
+          "byte_start": 1562081,
+          "byte_end": 1562172
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=MessageActions][data-reveal=instant]",
+          "context": [],
+          "byte_start": 1566842,
+          "byte_end": 1566935
+        }
+      ]
+    },
+    {
+      "id": "message_actions_touch",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "粗指针或无 hover 环境下，消息操作区改为可见并取消显隐过渡，避免关键操作只能靠 hover 发现。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=MessageActions][data-reveal]",
+          "context": [
+            "@media (pointer:coarse),(hover:none)"
+          ],
+          "byte_start": 1566972,
+          "byte_end": 1567089
+        }
+      ]
+    },
+    {
+      "id": "message_actions_reduced_motion",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "系统减少动态效果及产品 data-reduce-motion 标记均可取消消息操作区过渡与缩放。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=MessageActions][data-reveal]",
+          "context": [
+            "@media (prefers-reduced-motion:reduce)"
+          ],
+          "byte_start": 1567129,
+          "byte_end": 1567214
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root:where([data-reduce-motion=true],[data-reduce-motion=true] *) [data-cds=MessageActions][data-reveal]",
+          "context": [],
+          "byte_start": 1567215,
+          "byte_end": 1567361
+        }
+      ]
+    },
+    {
+      "id": "touch_text_entry_floor",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "仅 pointer:coarse 分支将输入文字字号下限设为 16px，再与 body 字号取最大值；不能把它泛化成所有桌面输入框的固定字号。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root",
+          "context": [
+            "@media (pointer:coarse)"
+          ],
+          "byte_start": 1567957,
+          "byte_end": 1568005
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root input:where(:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=button]):not([type=submit]):not([type=reset]):not([type=color]):not([type=file])),.cds-root textarea,.cds-root select,.cds-root .cds-text-entry-floored",
+          "context": [
+            "@media (pointer:coarse)"
+          ],
+          "byte_start": 1568005,
+          "byte_end": 1568331
+        }
+      ]
+    },
+    {
+      "id": "composer_touch_chin",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "粗指针下，编辑器底栏的 touch-size 分支继承控件尺寸令牌，并以补偿变量扩大视觉行之外的触达空间。具体最终命中区域仍需 DOM 与布局核验。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=ChatComposerChin] [data-touch-size]",
+          "context": [
+            "@media (pointer:coarse),(hover:none)"
+          ],
+          "byte_start": 1576525,
+          "byte_end": 1577040
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root [data-cds=ChatComposerChin] [data-touch-size] :is([data-cds=ButtonGroup],[data-cds=SplitDropdownButton]):not([data-size]),.cds-root [data-cds=ChatComposerChin] [data-touch-size] :is([data-cds=Button],[data-cds=ModelSelector],[data-cds=ModelSelectorEffort]):not([data-size]):not(:is([data-cds=ButtonGroup],[data-cds=SplitDropdownButton]) *)",
+          "context": [
+            "@media (pointer:coarse),(hover:none)"
+          ],
+          "byte_start": 1577040,
+          "byte_end": 1577445
+        }
+      ]
+    },
+    {
+      "id": "density_hairline",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "在 2x/3x/4x 分辨率条件下，hairline 声明为 0.5px、1px/3、1px/4。说明边框策略区分 CSS 像素与设备像素。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root",
+          "context": [
+            "@media (resolution>=2x)"
+          ],
+          "byte_start": 1642988,
+          "byte_end": 1643023
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root",
+          "context": [
+            "@media (resolution>=3x)"
+          ],
+          "byte_start": 1643048,
+          "byte_end": 1643092
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root",
+          "context": [
+            "@media (resolution>=4x)"
+          ],
+          "byte_start": 1643117,
+          "byte_end": 1643161
+        }
+      ]
+    },
+    {
+      "id": "message_text_preferences",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "消息文字大小偏好与控件尺寸分离：sm/md/lg 改写正文相关令牌，内部按钮有恢复自身字号的规则，避免偏好设置把所有工具按钮一同放大。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": ".cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size=sm]",
+          "context": [],
+          "byte_start": 1669587,
+          "byte_end": 1670425
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size=md]",
+          "context": [],
+          "byte_start": 1670425,
+          "byte_end": 1670657
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size=lg]",
+          "context": [],
+          "byte_start": 1670657,
+          "byte_end": 1671495
+        },
+        {
+          "source": "f014",
+          "selector": ".cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size] :where(button):not(:where([data-size],[data-step],[data-text-size] [data-size] *,[data-text-size] [data-step] *,[data-cds=TurnStatusStep]>*)),.cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size] :where(input):not(:where([data-size],[data-step],[data-text-size] [data-size] *,[data-text-size] [data-step] *,[data-cds=TurnStatusStep]>*)),.cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size] :where(textarea):not(:where([data-size],[data-step],[data-text-size] [data-size] *,[data-text-size] [data-step] *,[data-cds=TurnStatusStep]>*)),.cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size] :where(select):not(:where([data-size],[data-step],[data-text-size] [data-size] *,[data-text-size] [data-step] *,[data-cds=TurnStatusStep]>*)),.cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size] :where(a.cds-reset):not(:where([data-size],[data-step],[data-text-size] [data-size] *,[data-text-size] [data-step] *,[data-cds=TurnStatusStep]>*)),.cds-root :where([data-cds=AssistantMessage],[data-cds=UserMessage],[data-cds=ChatComposerQueuedMessages])[data-text-size] :where([role=toolbar]):not(:where([data-size],[data-step],[data-text-size] [data-size] *,[data-text-size] [data-step] *,[data-cds=TurnStatusStep]>*))",
+          "context": [],
+          "byte_start": 1671495,
+          "byte_end": 1673199
+        }
+      ]
+    },
+    {
+      "id": "reduced_motion_general",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "产品减少动态效果标记压缩动画时长，停止欢迎动画，图标动画轴 ANIM/ANM2 回到 0。全局片段没有统一关闭每条 transition，不能直接宣称所有动态效果均被移除。",
+      "anchors": [
+        {
+          "source": "f014",
+          "selector": "[data-reduce-motion=true] *,[data-reduce-motion=true] :before,[data-reduce-motion=true] :after",
+          "context": [
+            "@layer base"
+          ],
+          "byte_start": 35179,
+          "byte_end": 35347
+        },
+        {
+          "source": "f014",
+          "selector": "[data-reduce-motion=true] .greeting-container-animated",
+          "context": [
+            "@layer base"
+          ],
+          "byte_start": 35347,
+          "byte_end": 35460
+        },
+        {
+          "source": "f014",
+          "selector": "[data-reduce-motion=true] [data-cds-anim]",
+          "context": [],
+          "byte_start": 1720745,
+          "byte_end": 1720885
+        }
+      ]
+    },
+    {
+      "id": "frame_defaults",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "桌面框架单独拥有 df 命名空间：默认侧栏宽度 288px、header 48px、行高 26px、行字体 13px、图标 16px、卡片圆角 8px。深色分支改写背景与阴影；后续 variant、density、平台及行内值可以覆盖这些基值。",
+      "anchors": [
+        {
+          "source": "f024",
+          "selector": ".dframe-root",
+          "context": [],
+          "byte_start": 20247,
+          "byte_end": 21547
+        },
+        {
+          "source": "f024",
+          "selector": "[data-mode=dark] .dframe-root",
+          "context": [],
+          "byte_start": 23240,
+          "byte_end": 23836
+        }
+      ]
+    },
+    {
+      "id": "frame_compact_list",
+      "status": "packaged_static; runtime activation unverified",
+      "analysis_zh": "会话列表对普通、代码列表、固定列表再细分：代码 compact 行 28px；特定非 web/非 phone 的固定列表为 26px。不能把所有侧栏行概括为单一尺寸。",
+      "anchors": [
+        {
+          "source": "f024",
+          "selector": ".df-session-list",
+          "context": [],
+          "byte_start": 6116,
+          "byte_end": 6397
+        },
+        {
+          "source": "f024",
+          "selector": ".dframe-root:not([data-phone-sheet]) .dframe-sidebar[data-code-list][data-density=compact] .df-session-list",
+          "context": [],
+          "byte_start": 6572,
+          "byte_end": 6763
+        },
+        {
+          "source": "f024",
+          "selector": ".dframe-root:not([data-phone-sheet]):not([data-web]) .dframe-sidebar[data-code-list][data-density=compact] .df-session-list [data-pinned-list]",
+          "context": [],
+          "byte_start": 6763,
+          "byte_end": 7171
+        }
+      ]
+    }
+  ]
+}

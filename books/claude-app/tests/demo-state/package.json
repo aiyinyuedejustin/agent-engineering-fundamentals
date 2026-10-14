@@ -1,0 +1,12 @@
+{
+  "name": "original-demo-state-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bounded simulated-DOM and static checks of the original study demo; no real-browser validation.",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "jsdom": "26.1.0"
+  }
+}

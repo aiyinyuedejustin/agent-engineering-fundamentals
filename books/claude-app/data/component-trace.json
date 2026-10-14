@@ -1,0 +1,592 @@
+{
+  "schema_version": 1,
+  "target": {
+    "product": "Claude Desktop",
+    "platform": "Linux x64",
+    "version": "2.37337.1",
+    "inspection": "static only; target application never executed"
+  },
+  "scope": "Packaged renderer architecture and visual component semantics. Excludes security internals, credentials, and unrelated service endpoints.",
+  "provenance_note": "Official package provenance and download verification are owned by the parent research record. File hashes below identify the exact inspected bytes.",
+  "inventory": {
+    "ion_dist_total_files": 3847,
+    "ion_asset_v1_js_files": 3426,
+    "ion_asset_v1_js_total_bytes": 113600914,
+    "source_map_files_in_ion_dist": 0,
+    "source_map_files_in_asar_vite": 0,
+    "source_map_note": "Desktop build JS includes sourceMappingURL references, but referenced maps are absent. No sourceMappingURL token was found in ion-dist JS."
+  },
+  "rea": {
+    "version": "6.5.0",
+    "ok": true,
+    "evidence_id": "ev_43b5aa8c729cfe820a2470174aba9f1b8f3903fe3255e85e9f2a7c6dd8ccbccc",
+    "selected_sources": [
+      "assets/v1/shared-22-CvIPw-nB.js",
+      "assets/v1/ca2ef848d-Nso_6mDe.js",
+      "assets/v1/c6eb5f8cf-BtPCV2a_.js"
+    ],
+    "limitations": [
+      "Caller-selected source analysis leaves 3493 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code.",
+      "assets/v1/ca2ef848d-Nso_6mDe.js: Resource constraint during analyze_javascript_application: Semantic graph for assets/v1/ca2ef848d-Nso_6mDe.js exceeds the parent's remaining result budget; static and module facts were retained"
+    ],
+    "raw_evidence_is_private": true
+  },
+  "claims": [
+    {
+      "id": "B01",
+      "finding": "Desktop main window loads a local shell HTML and separately navigates the main content view.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6669899,
+          "anchor": "loadAll:()=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6669958,
+          "anchor": ".vite/renderer/main_window/index.html",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6670193,
+          "anchor": "initial mainView load",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "B02",
+      "finding": "Standard main content URL is the hosted Claude origin. A separate deployment mode uses app://localhost backed by packaged ion-dist.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 1648948,
+          "anchor": "function Rg()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2843906,
+          "anchor": "getMainWindowUrl(){return this.deps.anthropicOriginUrl()}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 2798307,
+          "anchor": "getMainWindowUrl(){return Au}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 849495,
+          "anchor": "Au=\"app://localhost\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6676678,
+          "anchor": "\"ion-dist\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "Static architecture only. This does not establish a live account mode, current hosted deployment, or whether any packaged component is enabled."
+    },
+    {
+      "id": "B03",
+      "finding": "Packaged ion-dist HTML enters a module bundle and shared chunks; it contains a full application UI rather than only desktop window chrome.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/index.html",
+          "utf8_byte_offset": 9312,
+          "anchor": "/assets/v1/index-DthvVvF0.js",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/index.html",
+          "utf8_byte_offset": 13457,
+          "anchor": "/assets/v1/shared-22-CvIPw-nB.js",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "B04",
+      "finding": "The local desktop shell has a boot placeholder with sidebar/collapsed states and a drag strip.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/renderer/main_window/index.html",
+          "utf8_byte_offset": 1585,
+          "anchor": "data-boot-placeholder-frame",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/main_window/index.html",
+          "utf8_byte_offset": 6101,
+          "anchor": "boot-placeholder-drag-strip",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "A startup placeholder is not the main interactive sidebar."
+    },
+    {
+      "id": "C01",
+      "finding": "The desktop frame composes sidebar and content regions; root state includes collapsed, density, web/desktop variant, and a variable sidebar width.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 253626,
+          "anchor": "dframe-root draggable-none",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 253847,
+          "anchor": "--df-sidebar-width",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 254167,
+          "anchor": "className:\"dframe-content\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "original_adaptation": "Separate navigation rail, content canvas, and OS chrome; expose width and density as tokens instead of repeated constants."
+    },
+    {
+      "id": "C02",
+      "finding": "Sidebar sections expose pinned items, projects, recents, loading placeholders, and hover/peek behavior.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 163031,
+          "anchor": "\"data-testid\":\"sidebar-pinned\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 167221,
+          "anchor": "\"data-testid\":\"sidebar-projects\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 211040,
+          "anchor": "\"data-testid\":\"sidebar-recents\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-22-CvIPw-nB.js",
+          "utf8_byte_offset": 212327,
+          "anchor": "\"data-testid\":\"sidebar-recents-placeholder\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "original_adaptation": "Use a stable section hierarchy, low-contrast row states, progressive disclosure, and reserved skeleton space."
+    },
+    {
+      "id": "C03",
+      "finding": "Normal transcript sizing uses a 48rem fallback custom property; desktop-frame outer width adds 2.5rem, with medium-breakpoint horizontal padding.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-2-SYzsATg-.js",
+          "utf8_byte_offset": 338169,
+          "anchor": "_H=\"--transcript-width\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-2-SYzsATg-.js",
+          "utf8_byte_offset": 338258,
+          "anchor": "bH=\"max-w-[calc(var(--transcript-width,48rem)_+_2.5rem)]\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-2-SYzsATg-.js",
+          "utf8_byte_offset": 338744,
+          "anchor": "function DH({desktopFrame:",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "The 840px class in the chat component belongs to a conditional alternate branch, not a universal default.",
+      "original_adaptation": "Keep readable text width independent from the full window; allow controls/widgets a deliberate bleed gutter."
+    },
+    {
+      "id": "C04",
+      "finding": "User and assistant messages are separate semantic components with different alignment, typography hooks, action placement, busy states, and optional variants.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-2-SYzsATg-.js",
+          "utf8_byte_offset": 420436,
+          "anchor": "\"data-cds\":\"UserMessage\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cb0c0e8c2-BYL9dR22.js",
+          "utf8_byte_offset": 835,
+          "anchor": "\"data-cds\":\"AssistantMessage\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/ca2ef848d-Nso_6mDe.js",
+          "utf8_byte_offset": 622769,
+          "anchor": "\"data-testid\":\"transcript-list\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "original_adaptation": "Keep author roles and message actions separate in the component API; do not force both roles into one universal bubble."
+    },
+    {
+      "id": "C05",
+      "finding": "ChatComposer is a compound component with Header, Attachments, Actions, PrimaryAction, Chin, Overlay, and Tray parts.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 38437,
+          "anchor": "vf={Header:",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 37475,
+          "anchor": "\"data-cds\":\"ChatComposer\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-26-DoJz9V9g.js",
+          "utf8_byte_offset": 94019,
+          "anchor": "\"data-cds\":\"ChatComposerDock\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "original_adaptation": "Build a surface with independent editor, attachment, action, and status slots, plus a separate bottom docking wrapper."
+    },
+    {
+      "id": "C06",
+      "finding": "Composer exposes new/reply form, multiline, busy, disabled, drag-over, and variant state attributes; its editor is backed by Tiptap/ProseMirror.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 37547,
+          "anchor": "\"data-form\":a===",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 37578,
+          "anchor": "\"data-multiline\":J",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 37724,
+          "anchor": "\"data-busy\":t",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 37746,
+          "anchor": "\"data-disabled\":We",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+          "utf8_byte_offset": 37773,
+          "anchor": "\"data-drag-over\":it",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-9-DabxsIKR.js",
+          "utf8_byte_offset": 181795,
+          "anchor": "tipTapEditorState:he",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "Several composer variants and feature branches coexist; presence does not establish current default rollout.",
+      "original_adaptation": "Design focus, upload, send, busy, stop, disabled, and drag-over states before polishing the empty composer."
+    },
+    {
+      "id": "C07",
+      "finding": "Cards split a rounded outer surface, decorative fill layer, padded body, and link overlay; keyboard focus is expressed at the card boundary.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 68041,
+          "anchor": "\"data-cds\":\"Card\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 68435,
+          "anchor": "\"data-cds\":\"CardLink\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 66952,
+          "anchor": "cds-card-body",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 67098,
+          "anchor": "has-[[data-cds=CardLink]:focus-visible]",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "original_adaptation": "Use an original compound card with a quiet border/ring, content padding, independent media, and an accessible whole-card link."
+    },
+    {
+      "id": "C08",
+      "finding": "Dialog and ConfirmationDialog share a centered panel/backdrop structure, explicit sizes, focus handling, and reduced-motion-aware transitions.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 132760,
+          "anchor": "\"data-cds\":\"Dialog\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 137513,
+          "anchor": "\"data-cds\":\"ConfirmationDialog\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 130414,
+          "anchor": "Xh={sm:\"max-w-[400px]\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js",
+          "utf8_byte_offset": 128850,
+          "anchor": "data-[starting-style]:scale-[0.98]",
+          "occurrence_zero_based": 1,
+          "semantic_context": "Dialog transition Bh; previous Tooltip occurrence is not evidence for this claim"
+        }
+      ],
+      "caveat": "Shipped size map: 400/520/720/880/1024/1152px maximum widths, not measured window rectangles.",
+      "original_adaptation": "Use one modal primitive with semantic heading, description, explicit cancel/action slots, and focus restoration; respect reduced motion."
+    },
+    {
+      "id": "C09",
+      "finding": "Settings/customization support both modal and page layouts, a reserved close-button region, scrollable content, and loading skeletons.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-19-SWo9Ge1k.js",
+          "utf8_byte_offset": 102483,
+          "anchor": "function ck({hideCloseButton:",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-19-SWo9Ge1k.js",
+          "utf8_byte_offset": 103851,
+          "anchor": "\"data-testid\":\"settings-content-skeleton\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-19-SWo9Ge1k.js",
+          "utf8_byte_offset": 111665,
+          "anchor": "\"data-testid\":\"customize-page-scroller\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "original_adaptation": "Build settings as sections in a reusable page shell that can also be hosted in a modal without changing content components."
+    },
+    {
+      "id": "C10",
+      "finding": "Artifact UI includes an independently named title, artifact switcher, header drag area, and cards with open/hide/share actions.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 64560,
+          "anchor": "\"data-testid\":\"frame-artifact-title\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js",
+          "utf8_byte_offset": 65060,
+          "anchor": "\"data-testid\":\"frame-artifact-switcher-button\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-9-DabxsIKR.js",
+          "utf8_byte_offset": 10199,
+          "anchor": "\"data-testid\":\"frame-artifact-header-drag\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc1aae219-_TxnVCRG.js",
+          "utf8_byte_offset": 34022,
+          "anchor": "\"data-testid\":\"frame-card-toggle\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "This proves UI affordances in the package, not live artifact rendering behavior or every supported file type.",
+      "original_adaptation": "Treat artifact preview as a sibling workspace with its own header, switching, and expansion state; keep the transcript card compact."
+    },
+    {
+      "id": "C11",
+      "finding": "Quick entry is a distinct local HTML surface with a 16px-radius capsule, 56px minimum input row, 16px text, and 150% line height.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4333759,
+          "anchor": ".vite/renderer/quick_window/quick-window.html",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/quick_window/quick-window.html",
+          "utf8_byte_offset": 230991,
+          "anchor": ".container{-webkit-app-region:drag",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/quick_window/quick-window.html",
+          "utf8_byte_offset": 231583,
+          "anchor": "min-height:56px",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/quick_window/quick-window.html",
+          "utf8_byte_offset": 231945,
+          "anchor": "font-size:16px",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/quick_window/quick-window.html",
+          "utf8_byte_offset": 239539,
+          "anchor": "id=\"prompt-input\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "Do not apply quick-entry dimensions to the main conversation composer.",
+      "original_adaptation": "A small launcher can be its own component: fast keyboard entry, restrained material, and a single obvious text target."
+    },
+    {
+      "id": "C12",
+      "finding": "Quick entry submits on plain Enter, permits modified Enter variants, dismisses on Escape/outside interaction, and resizes as text grows.",
+      "confidence": "high: static shipped-code observation",
+      "evidence": [
+        {
+          "file": "app.asar/.vite/renderer/quick_window/assets/main-BUN_UmJI.js",
+          "utf8_byte_offset": 341755,
+          "anchor": "t.key===\"Enter\"&&!t.shiftKey&&!t.altKey",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/quick_window/assets/main-BUN_UmJI.js",
+          "utf8_byte_offset": 341898,
+          "anchor": "e.key===\"Escape\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "app.asar/.vite/renderer/quick_window/assets/main-BUN_UmJI.js",
+          "utf8_byte_offset": 341532,
+          "anchor": "requestSkooch",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "caveat": "Static handlers inspected; behavior was not executed."
+    }
+  ],
+  "files": {
+    "app.asar/.vite/build/index.chunk-ny8j26BQ.js": {
+      "size_bytes": 6956732,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    "ion-dist/index.html": {
+      "size_bytes": 46671,
+      "sha256": "e757e765d773c64c5282bf1d051a236f525887dc9a574d2bed2771413625f8cd"
+    },
+    "app.asar/.vite/renderer/main_window/index.html": {
+      "size_bytes": 9165,
+      "sha256": "b5559a29891b664f0015da2d8def0e841176b73ca086ae27a1fc8508a63653ee"
+    },
+    "ion-dist/assets/v1/shared-22-CvIPw-nB.js": {
+      "size_bytes": 261614,
+      "sha256": "58fac3230b4178b0f757cc1aa6b8ad5e6b51cb54bace9a6f1753d76b464a2de2"
+    },
+    "ion-dist/assets/v1/shared-2-SYzsATg-.js": {
+      "size_bytes": 440042,
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc"
+    },
+    "ion-dist/assets/v1/cb0c0e8c2-BYL9dR22.js": {
+      "size_bytes": 1509,
+      "sha256": "071b31bf54d7c32463719b48027b0ebe80f133db5a1bb2c41f52ccdf7624f0a8"
+    },
+    "ion-dist/assets/v1/ca2ef848d-Nso_6mDe.js": {
+      "size_bytes": 623427,
+      "sha256": "e7315705ee94c5dc53fed41f0b8878f037403026965b3f26351cf728d8fbae8f"
+    },
+    "ion-dist/assets/v1/shared-5-BUdnChDq.js": {
+      "size_bytes": 282051,
+      "sha256": "83ef8632d361e4b938e82005ecb3a46b2a5c81da3c016ca7fbc46cf69a49d2e8"
+    },
+    "ion-dist/assets/v1/shared-26-DoJz9V9g.js": {
+      "size_bytes": 277276,
+      "sha256": "f3f3f26741c9214265491f22c13911ecb0300f5a40399389d339d0c81a2307c7"
+    },
+    "ion-dist/assets/v1/shared-9-DabxsIKR.js": {
+      "size_bytes": 231540,
+      "sha256": "54ccd61cd5b324fbb425768077287436ff9b31d332a5b93693165373d49b1a48"
+    },
+    "ion-dist/assets/v1/shared-frame-BjUcQ1Qc.js": {
+      "size_bytes": 395334,
+      "sha256": "775130e78d78c7c3ad05d72ed413a5e21bddf587adca6c306e7228f362b214c7"
+    },
+    "ion-dist/assets/v1/shared-19-SWo9Ge1k.js": {
+      "size_bytes": 505863,
+      "sha256": "ff57838a99f79f5e8c55f9f798559f63a431c1f8cee085a054d1aebc15959b1b"
+    },
+    "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js": {
+      "size_bytes": 77695,
+      "sha256": "3b14985e56448bb2d74dcd16682f0a2972f50c25f00f7ac4f0416a67a5908697"
+    },
+    "ion-dist/assets/v1/cc1aae219-_TxnVCRG.js": {
+      "size_bytes": 576438,
+      "sha256": "99c4cd7095acdfa231e1729882d131ac0e2bc58b847300eb165ea152a035e41c"
+    },
+    "app.asar/.vite/renderer/quick_window/quick-window.html": {
+      "size_bytes": 239704,
+      "sha256": "0abb6c76cdf8199f9b90a32d52829da95287ea91447ba9ffc227b54a0e186dba"
+    },
+    "app.asar/.vite/renderer/quick_window/assets/main-BUN_UmJI.js": {
+      "size_bytes": 342343,
+      "sha256": "977fd35bfb3fb3bc5e27afa268632f1a6f822eb2059e94139d416e0bcb55820d"
+    }
+  },
+  "publication_boundary": "Publish original prose, compact facts, and independently authored implementations. Do not publish bundle excerpts, fonts, logos, raw extraction, or the full REA graph.",
+  "runtime_unknowns": [
+    "active feature flags",
+    "computed styles",
+    "rendered element bounds",
+    "active color-version branch",
+    "current hosted UI deployment",
+    "signed-in account modes",
+    "interactive timing and behavior"
+  ]
+}

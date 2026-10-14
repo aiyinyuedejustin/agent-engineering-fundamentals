@@ -1,0 +1,84 @@
+{
+  "observed_at": "2026-10-14T16:34:00Z",
+  "scope": "unauthenticated web login; not signed-in desktop",
+  "elements": [
+    {
+      "background": "rgb(252, 252, 251)",
+      "borderRadius": "0px",
+      "boxShadow": "none",
+      "color": "rgb(11, 11, 11)",
+      "fontFamily": "anthropic-sans, system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans\", \"Apple SD Gothic Neo\", \"Kohinoor Devanagari\", \"Kohinoor Bangla\", \"Kohinoor Telugu\", \"Tamil Sangam MN\", \"Kohinoor Gujarati\", \"Malayalam Sangam MN\", \"Nirmala UI\", \"Noto Sans Devanagari UI\", \"Noto Sans Devanagari\", \"Noto Sans Bengali UI\", \"Noto Sans Bengali\", \"Noto Sans Telugu UI\", \"Noto Sans Telugu\", \"Noto Sans Tamil UI\", \"Noto Sans Tamil\", \"Noto Sans Gujarati UI\", \"Noto Sans Gujarati\", \"Noto Sans Kannada UI\", \"Noto Sans Kannada\", \"Noto Sans Malayalam UI\", \"Noto Sans Malayalam\", Thonburi, \"Leelawadee UI\", \"Noto Sans Thai UI\", \"Noto Sans Thai\", Kefa, Ebrima, \"Noto Sans Ethiopic\", \"Abyssinica SIL\", sans-serif, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans\", \"Apple SD Gothic Neo\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "padding": "0px",
+      "rect": {
+        "height": 4081.28125,
+        "width": 1178,
+        "x": 0,
+        "y": 0
+      },
+      "selector": "body"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "boxShadow": "none",
+      "color": "rgb(11, 11, 11)",
+      "fontFamily": "anthropic-serif, \"Anthropic Serif Fallback Georgia\", \"Anthropic Serif Fallback Times\", \"Anthropic Serif Fallback DejaVu\", \"Anthropic Serif Fallback Noto\", Georgia, \"Arial Hebrew\", \"Noto Sans Hebrew\", \"Times New Roman\", Times, \"PingFang SC\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", \"Hiragino Sans\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", \"Apple SD Gothic Neo\", \"Malgun Gothic\", \"Noto Sans CJK KR\", \"Kohinoor Devanagari\", \"Kohinoor Bangla\", \"Kohinoor Telugu\", \"Tamil Sangam MN\", \"Kohinoor Gujarati\", \"Malayalam Sangam MN\", \"Nirmala UI\", \"Noto Sans Devanagari UI\", \"Noto Sans Devanagari\", \"Noto Sans Bengali UI\", \"Noto Sans Bengali\", \"Noto Sans Telugu UI\", \"Noto Sans Telugu\", \"Noto Sans Tamil UI\", \"Noto Sans Tamil\", \"Noto Sans Gujarati UI\", \"Noto Sans Gujarati\", \"Noto Sans Kannada UI\", \"Noto Sans Kannada\", \"Noto Sans Malayalam UI\", \"Noto Sans Malayalam\", Thonburi, \"Leelawadee UI\", \"Noto Sans Thai UI\", \"Noto Sans Thai\", Kefa, Ebrima, \"Noto Sans Ethiopic\", \"Abyssinica SIL\", serif",
+      "fontSize": "56px",
+      "fontWeight": "330",
+      "lineHeight": "64.4px",
+      "padding": "0px",
+      "rect": {
+        "height": 64.390625,
+        "width": 529.09375,
+        "x": 324.453125,
+        "y": 160.828125
+      },
+      "selector": "h2"
+    },
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px",
+      "boxShadow": "none",
+      "color": "rgb(11, 11, 11)",
+      "fontFamily": "anthropic-serif, \"Anthropic Serif Fallback Georgia\", \"Anthropic Serif Fallback Times\", \"Anthropic Serif Fallback DejaVu\", \"Anthropic Serif Fallback Noto\", Georgia, \"Arial Hebrew\", \"Noto Sans Hebrew\", \"Times New Roman\", Times, \"PingFang SC\", \"Microsoft YaHei\", \"Noto Sans CJK SC\", \"PingFang TC\", \"Microsoft JhengHei\", \"Noto Sans CJK TC\", \"Hiragino Sans\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", \"Apple SD Gothic Neo\", \"Malgun Gothic\", \"Noto Sans CJK KR\", \"Kohinoor Devanagari\", \"Kohinoor Bangla\", \"Kohinoor Telugu\", \"Tamil Sangam MN\", \"Kohinoor Gujarati\", \"Malayalam Sangam MN\", \"Nirmala UI\", \"Noto Sans Devanagari UI\", \"Noto Sans Devanagari\", \"Noto Sans Bengali UI\", \"Noto Sans Bengali\", \"Noto Sans Telugu UI\", \"Noto Sans Telugu\", \"Noto Sans Tamil UI\", \"Noto Sans Tamil\", \"Noto Sans Gujarati UI\", \"Noto Sans Gujarati\", \"Noto Sans Kannada UI\", \"Noto Sans Kannada\", \"Noto Sans Malayalam UI\", \"Noto Sans Malayalam\", Thonburi, \"Leelawadee UI\", \"Noto Sans Thai UI\", \"Noto Sans Thai\", Kefa, Ebrima, \"Noto Sans Ethiopic\", \"Abyssinica SIL\", serif",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "lineHeight": "24.75px",
+      "padding": "0px",
+      "rect": {
+        "height": 24.75,
+        "width": 529.09375,
+        "x": 324.453125,
+        "y": 241.21875
+      },
+      "selector": "h3"
+    },
+    {
+      "background": "rgba(255, 255, 255, 0.5)",
+      "borderRadius": "10px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, color(srgb 0.0431373 0.0431373 0.0431373 / 0.1) 0px 0px 0px 1px inset",
+      "color": "rgb(11, 11, 11)",
+      "fontFamily": "anthropic-sans, system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans\", \"Apple SD Gothic Neo\", \"Kohinoor Devanagari\", \"Kohinoor Bangla\", \"Kohinoor Telugu\", \"Tamil Sangam MN\", \"Kohinoor Gujarati\", \"Malayalam Sangam MN\", \"Nirmala UI\", \"Noto Sans Devanagari UI\", \"Noto Sans Devanagari\", \"Noto Sans Bengali UI\", \"Noto Sans Bengali\", \"Noto Sans Telugu UI\", \"Noto Sans Telugu\", \"Noto Sans Tamil UI\", \"Noto Sans Tamil\", \"Noto Sans Gujarati UI\", \"Noto Sans Gujarati\", \"Noto Sans Kannada UI\", \"Noto Sans Kannada\", \"Noto Sans Malayalam UI\", \"Noto Sans Malayalam\", Thonburi, \"Leelawadee UI\", \"Noto Sans Thai UI\", \"Noto Sans Thai\", Kefa, Ebrima, \"Noto Sans Ethiopic\", \"Abyssinica SIL\", sans-serif, ui-sans-serif, system-ui, -apple-system, \"Segoe UI\", Roboto, \"PingFang SC\", \"PingFang TC\", \"Hiragino Sans\", \"Apple SD Gothic Neo\", sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "22px",
+      "padding": "0px 16px",
+      "rect": {
+        "height": 40,
+        "width": 390,
+        "x": 394,
+        "y": 459.96875
+      },
+      "selector": "input[placeholder=\"Enter your email\"]"
+    }
+  ],
+  "url": "https://claude.ai/login",
+  "viewport": {
+    "dpr": 1,
+    "height": 761,
+    "width": 1188
+  }
+}

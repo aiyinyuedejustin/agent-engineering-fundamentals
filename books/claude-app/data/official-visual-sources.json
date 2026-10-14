@@ -1,0 +1,645 @@
+{
+  "title": "Claude Desktop 优先：官方视觉与交互证据账本",
+  "as_of": "2026-10-14T16:34:00Z",
+  "phase": "collection_closed_for_documentary_scope",
+  "scope": "Official public documentary evidence; Desktop prioritized. Does not claim signed-in runtime inspection.",
+  "sources": [
+    {
+      "id": "OV01",
+      "title": "Install Claude Desktop",
+      "url": "https://support.claude.com/en/articles/10065433-install-claude-desktop",
+      "kind": "official_help",
+      "scope": "desktop_installation",
+      "time": "Current page retrieved 2026-10-14; relative update label varies by fetch",
+      "read": "read_relevant_sections",
+      "claims": [
+        "Linux beta is officially supported on Ubuntu 22.04 LTS+/Debian 12+, x64/arm64.",
+        "Official signing key and apt repository are hosted under downloads.claude.ai/claude-desktop.",
+        "Linux omits computer use and dictation; Quick Entry on native Wayland depends on GlobalShortcuts portal."
+      ],
+      "limits": [
+        "Not a signed-in UI screenshot.",
+        "Its statement that direct .deb installation does not opt into updates conflicts with OV02."
+      ]
+    },
+    {
+      "id": "OV02",
+      "title": "Claude Desktop on Linux (beta)",
+      "url": "https://code.claude.com/docs/en/desktop-linux",
+      "kind": "official_product_documentation",
+      "scope": "desktop_linux",
+      "time": "Current page retrieved 2026-10-14",
+      "read": "read_relevant_sections",
+      "claims": [
+        "Official package index path: https://downloads.claude.ai/claude-desktop/apt/stable/dists/stable/main/binary-amd64/Packages .",
+        "Key fingerprint: 31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE.",
+        "Desktop uses account/SSO sign-in and does not accept a Claude Console API key directly.",
+        "The page says direct .deb install registers the apt repo unless CLAUDE_DESKTOP_ADD_REPO=false.",
+        "Linux Cowork local VM requirements include QEMU/KVM and access to /dev/kvm and /dev/vhost-vsock."
+      ],
+      "limits": [
+        "Documentation, not a successful local install or verified package signature.",
+        "VM-based Cowork wording coexists with newer cloud-task wording elsewhere; scope and rollout need care."
+      ]
+    },
+    {
+      "id": "OV03",
+      "title": "Download Claude",
+      "url": "https://claude.com/download",
+      "kind": "official_marketing_and_distribution",
+      "scope": "desktop_mobile",
+      "time": "Live scrape 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Official download destination lists macOS, Windows, Windows arm64 and Linux documentation.",
+        "Desktop differentiators include Quick Entry and desktop extensions; ordinary conversations, projects, memory and preferences sync when signed in."
+      ],
+      "limits": [
+        "The page is a distribution/marketing surface, not the authenticated desktop UI.",
+        "Do not infer app typography or spacing from this webpage."
+      ]
+    },
+    {
+      "id": "OV04",
+      "title": "Navigating the Claude desktop app",
+      "url": "https://academy.claude.com/tutorials/navigating-the-claude-desktop-app",
+      "kind": "official_tutorial",
+      "scope": "desktop",
+      "time": "Live scrape 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Quick Entry is an always-in-front compact window above other apps.",
+        "Desktop folder access is attached below the message box.",
+        "The built-in browser is a side panel beside the task, with tabs/history separate from the user's own browser.",
+        "Mac screenshot and Caps Lock speech shortcuts are differentiated from Windows/Linux hotkey behavior."
+      ],
+      "limits": [
+        "Embedded visual material returned as Loading; no independently inspected frames.",
+        "Current text has broader shortcut support than the older Mac Quick Entry FAQ."
+      ]
+    },
+    {
+      "id": "OV05",
+      "title": "Use quick entry with Claude Desktop on Mac",
+      "url": "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac",
+      "kind": "official_help",
+      "scope": "desktop_macos",
+      "time": "Article date March 16, 2026; embedded screenshot filename dated 2025-12-18",
+      "read": "read",
+      "claims": [
+        "Mac Quick Entry opens via double Option; screenshot capture, window attachment and dictation share the compact entry flow.",
+        "Settings place shortcut controls under General / Desktop app.",
+        "The entry arrow or Enter submits a message."
+      ],
+      "limits": [
+        "Mac-specific design; not evidence of Linux feature parity.",
+        "FAQ says no Windows Quick Entry, conflicting with newer Academy and Linux docs. Screenshot age differs from page update date."
+      ]
+    },
+    {
+      "id": "OV06",
+      "title": "Get started with Claude",
+      "url": "https://support.claude.com/en/articles/8114491-get-started-with-claude",
+      "kind": "official_help",
+      "scope": "chat_composer",
+      "time": "Live scrape 2026-10-14",
+      "read": "read",
+      "claims": [
+        "The plus control at lower left and slash input expose additional options.",
+        "Model selection is documented below input on web/desktop and at screen top on mobile.",
+        "Contains a 1442×334 composer screenshot asset."
+      ],
+      "limits": [
+        "The general platform list omits Linux even though installer-specific sources include it.",
+        "Crop alone cannot establish native desktop chrome, full layout, current font identity or exact live CSS."
+      ]
+    },
+    {
+      "id": "OV07",
+      "title": "Customizing your appearance settings",
+      "url": "https://support.claude.com/en/articles/8887527-customizing-your-appearance-settings",
+      "kind": "official_help",
+      "scope": "appearance_and_navigation",
+      "time": "March 16, 2026",
+      "read": "read",
+      "claims": [
+        "Color mode options are Light, Match System and Dark.",
+        "Chat font options are Default, Match System and Dyslexic Friendly.",
+        "Sidebar can be collapsed or opened from its top-right control but cannot be completely disabled."
+      ],
+      "limits": [
+        "Confirms controls, not actual light/dark color tokens or named font families.",
+        "No screenshot measurement was performed."
+      ]
+    },
+    {
+      "id": "OV08",
+      "title": "Use voice mode",
+      "url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "kind": "official_help",
+      "scope": "desktop_web_mobile_composer",
+      "time": "Live scrape 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Desktop/web voice entry is a waveform control at lower right, replaced by a Stop action while active.",
+        "Mobile waveform entry sits next to a microphone, separating conversation voice from dictation.",
+        "Contains four screenshot crops showing those controls and mobile voice settings."
+      ],
+      "limits": [
+        "Article combines web and desktop; crop does not prove which host generated it.",
+        "Beta availability and UI may vary."
+      ]
+    },
+    {
+      "id": "OV09",
+      "title": "Use dictation on Claude Mobile",
+      "url": "https://support.claude.com/en/articles/10065434-use-dictation-on-claude-mobile",
+      "kind": "official_help",
+      "scope": "mobile",
+      "time": "July 23, 2026",
+      "read": "read_search_full_text",
+      "claims": [
+        "Microphone control on the right of input records a written prompt; arrow submits and X cancels.",
+        "This flow returns text replies and is distinct from two-way voice mode."
+      ],
+      "limits": [
+        "Mobile behavior only; Linux desktop explicitly lacks dictation."
+      ]
+    },
+    {
+      "id": "OV10",
+      "title": "Change the model, effort, and thinking settings",
+      "url": "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings",
+      "kind": "official_help",
+      "scope": "composer_and_response_states",
+      "time": "Current article updated this week; read 2026-10-14",
+      "read": "read",
+      "claims": [
+        "The model menu sits next to Send and nests model, effort and thinking controls.",
+        "Thinking is represented by a timed activity indicator and expandable section above the response.",
+        "Admin policy and model capability change which choices appear."
+      ],
+      "limits": [
+        "No screenshot images found in live HTML.",
+        "Do not report a fixed universally available menu or reconstruct pixel geometry from prose."
+      ]
+    },
+    {
+      "id": "OV11",
+      "title": "Claude Cowork and chat are one Claude",
+      "url": "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude",
+      "kind": "official_help",
+      "scope": "current_rollout",
+      "time": "Read 2026-10-14; rolling change",
+      "read": "read",
+      "claims": [
+        "New experience merges Chat and Cowork into the same conversation without choosing a mode.",
+        "Rollout starts with Pro and Max across web, desktop and mobile; same-plan accounts may receive it at different times.",
+        "Presence of Chat/Cowork choices in composer identifies an account not yet migrated; no switch back after migration."
+      ],
+      "limits": [
+        "A current screenshot from one account is not universal evidence.",
+        "Older three-tab documentation can remain valid for some accounts."
+      ]
+    },
+    {
+      "id": "OV12",
+      "title": "Get started with Claude Cowork",
+      "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
+      "kind": "official_help",
+      "scope": "desktop_tasks",
+      "time": "Live scrape 2026-10-14",
+      "read": "read_relevant_sections",
+      "claims": [
+        "Legacy/current-overlap path uses the same home and a Chat/Cowork choice in message box.",
+        "Task execution presents progress and can be steered while working.",
+        "Contains one 1500×750 screenshot near global instruction settings."
+      ],
+      "limits": [
+        "Explicit migration note means steps and images are not uniformly current.",
+        "Some platform lists and local/cloud descriptions differ across current official pages."
+      ]
+    },
+    {
+      "id": "OV13",
+      "title": "Use the built-in browser in Claude Cowork",
+      "url": "https://support.claude.com/en/articles/16607400-use-the-built-in-browser-in-claude-cowork",
+      "kind": "official_help",
+      "scope": "desktop_panel_layout",
+      "time": "Live scrape 2026-10-14; rolling release",
+      "read": "read",
+      "claims": [
+        "A browser opens in a side panel beside the task; links from transcript open in that panel.",
+        "Browser preference lives under Settings > Cowork and can choose built-in browser or Chrome extension.",
+        "Built-in browser is separate from personal browser and relies on desktop app online."
+      ],
+      "limits": [
+        "No screenshot images in retrieved HTML.",
+        "Settings naming may reflect pre-merge account state."
+      ]
+    },
+    {
+      "id": "OV14",
+      "title": "What are artifacts and how do I use them?",
+      "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them",
+      "kind": "official_help",
+      "scope": "current_artifacts",
+      "time": "Current week, read 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Artifacts created before September 16, 2026 are legacy; new creation uses the newer artifact model.",
+        "Output in composer and Artifacts sidebar gallery offer Docs, Slides, Design and gated Dashboards/Motion templates.",
+        "Artifacts open beside conversation; template outputs support direct editing.",
+        "On mobile, artifact viewing/editing is supported but sharing settings require web/desktop."
+      ],
+      "limits": [
+        "Availability varies by plan and admin; Enterprise default enablement is stated for October 15, 2026, after this research date.",
+        "This source provides workflow, not exact visual tokens."
+      ]
+    },
+    {
+      "id": "OV15",
+      "title": "Get started with Claude Design",
+      "url": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design",
+      "kind": "official_help",
+      "scope": "current_design_artifact",
+      "time": "Current week, read 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Design is available from a conversation, Output menu, Artifacts tab or Claude Code.",
+        "The editor organizes top bar, artboard canvas, properties panel and a floating selection toolbar.",
+        "Inline comments, chat and direct manipulation serve different editing scales.",
+        "Standalone claude.ai/design is scheduled to close December 14, 2026."
+      ],
+      "limits": [
+        "The product name Claude Design must not be confused with analysis of Claude's own design.",
+        "Official limitations include keyboard insertion gaps, comment persistence issues and no version history."
+      ]
+    },
+    {
+      "id": "OV16",
+      "title": "Get started with Claude Docs",
+      "url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs",
+      "kind": "official_help",
+      "scope": "current_docs_artifact",
+      "time": "Current week, read 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Docs open beside conversations on desktop and full-screen from Artifacts on mobile.",
+        "Rich text, document tabs, comments and direct editing are part of the interface.",
+        "Narrow panels show comments as margin icons; wider panels show comments beside text.",
+        "Docs can be started through Output > Docs or /docs."
+      ],
+      "limits": [
+        "Documents' own typography is not the shell's typography.",
+        "The page reports VoiceOver editing limitations in Desktop; cannot claim comprehensive accessibility conformance."
+      ]
+    },
+    {
+      "id": "OV17",
+      "title": "Use artifacts with a keyboard or screen reader",
+      "url": "https://support.claude.com/en/articles/17457950-use-artifacts-with-a-keyboard-or-screen-reader",
+      "kind": "official_help",
+      "scope": "artifact_accessibility",
+      "time": "Current week, read 2026-10-14",
+      "read": "read_relevant_sections",
+      "claims": [
+        "Artifact panel consists of header controls and content below.",
+        "Tab/Return enters the panel/content; Escape moves outward through nested editing scopes.",
+        "F6 switches editor regions; shortcuts differ by operating system."
+      ],
+      "limits": [
+        "Documented keyboard support is not a tested WCAG audit.",
+        "Another source's mobile editing availability does not establish identical keyboard behavior on mobile."
+      ]
+    },
+    {
+      "id": "OV18",
+      "title": "Desktop application — Claude Code",
+      "url": "https://code.claude.com/docs/en/desktop",
+      "kind": "official_product_documentation",
+      "scope": "desktop_code",
+      "time": "Current page read 2026-10-14",
+      "read": "read_relevant_sections",
+      "claims": [
+        "Code supports rearrangeable panes: chat, diff, browser, terminal, file, plan, tasks and subagents.",
+        "Titlebar controls and an overflow menu adapt to available width; panes can be undocked.",
+        "Transcript density modes distinguish Normal, Thinking and Verbose.",
+        "Model/permission selection, context usage ring, file references, diff review and CI status are described."
+      ],
+      "limits": [
+        "Scope is Code tab, not general Chat.",
+        "Intro still describes three tabs, unlike merged-chat rollout page.",
+        "Version thresholds are documented; do not generalize to older app builds."
+      ]
+    },
+    {
+      "id": "OV19",
+      "title": "Get started with the desktop app — Claude Code",
+      "url": "https://code.claude.com/docs/en/desktop-quickstart",
+      "kind": "official_product_documentation",
+      "scope": "desktop_code",
+      "time": "Current page read 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Code is documented at top center, with environment/folder/model/permission choices before starting.",
+        "Changes can be reviewed through a diff with accept/reject actions depending on permission mode."
+      ],
+      "limits": [
+        "Current text retains three-tab framing; actual account/build must be labeled."
+      ]
+    },
+    {
+      "id": "OV20",
+      "title": "Release notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "kind": "official_changelog",
+      "scope": "chronology",
+      "time": "Read 2026-10-14",
+      "read": "read_relevant_entries",
+      "claims": [
+        "July 7, 2026 entry: Cowork expands to web/mobile and shares one home with Chat.",
+        "September 16, 2026 entry: mode-free conversation rollout plus designs/decks/docs in any conversation.",
+        "Earlier artifacts/screenshots cannot be silently presented as the September-generation UI."
+      ],
+      "limits": [
+        "A dated launch is not proof every account has the feature that day.",
+        "Use help page for later availability updates."
+      ]
+    },
+    {
+      "id": "OV21",
+      "title": "Collaborate with Claude on Projects",
+      "url": "https://www.anthropic.com/news/projects",
+      "kind": "official_historical_announcement",
+      "scope": "web_2024",
+      "time": "June 25, 2024",
+      "read": "read",
+      "claims": [
+        "Contains official historical app screenshots of document upload, custom instructions, side-by-side artifact/chat, and shared project chats.",
+        "Side-by-side creation was already an explicit product pattern in 2024."
+      ],
+      "limits": [
+        "Historical web UI, not current desktop.",
+        "No visual measurements or pixel inspection completed in this worker."
+      ]
+    },
+    {
+      "id": "OV22",
+      "title": "Artifacts are now generally available",
+      "url": "https://www.anthropic.com/news/artifacts",
+      "kind": "official_historical_announcement",
+      "scope": "artifacts_2024",
+      "time": "August 27, 2024",
+      "read": "read_search_full_text",
+      "claims": [
+        "Artifacts moved from June preview to general availability and iOS/Android creation/viewing.",
+        "The artifact as a dedicated window dates from this earlier generation."
+      ],
+      "limits": [
+        "Availability and behavior have since changed; chronology evidence only."
+      ]
+    },
+    {
+      "id": "OV23",
+      "title": "Anthropic Brand Styling skill",
+      "url": "https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/SKILL.md",
+      "kind": "official_repository",
+      "scope": "brand_styling_for_generated_artifacts",
+      "time": "main branch read 2026-10-14; not pinned to commit",
+      "read": "read",
+      "claims": [
+        "Official public skill specifies dark #141413, light #faf9f5, mid-gray #b0aea5, light-gray #e8e6dc; orange #d97757, blue #6a9bcc and green #788c5d.",
+        "It pairs Poppins headings with Lora body for styled artifacts."
+      ],
+      "limits": [
+        "Not the implementation/design-token specification of Claude Desktop.",
+        "Do not claim these are measured app colors or its runtime fonts.",
+        "Pin a commit before final publication if citing source content as immutable."
+      ]
+    },
+    {
+      "id": "OV24",
+      "title": "Geist | Anthropic",
+      "url": "https://geist.co/work/anthropic",
+      "kind": "primary_design_agency_case_study",
+      "scope": "historical_brand_foundation",
+      "time": "Historical launch-era case study; retrieval 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Original identity used Styrene from Commercial Type and Tiempos from Klim.",
+        "Agency describes warmer colors designed to serve both product UI and marketing.",
+        "Its component-system account emphasizes function alongside brand character."
+      ],
+      "limits": [
+        "Agency primary account, not current app spec.",
+        "Avoid repeating unrelated inaccurate company-origin dates from the narrative."
+      ]
+    },
+    {
+      "id": "OV25",
+      "title": "Anthropic Brand Team Interview",
+      "url": "https://www.thesubtext.online/all/anthropic-interview",
+      "kind": "primary_interview",
+      "scope": "brand_design_intent",
+      "time": "June 30, 2025",
+      "read": "read",
+      "claims": [
+        "Tim Belonax describes the serif as bookish and the sans as synthetic, balancing human and technological associations.",
+        "Palette is associated with unfired clay; illustration with informal doodling.",
+        "Chelsea Larsson frames Claude as collaborator and distinguishes Claude's expression from Anthropic's institutional role."
+      ],
+      "limits": [
+        "Reported statements from named employees at that date; not a CSS specification or usability outcome.",
+        "Design intention does not prove measurable trust, legibility or performance gains."
+      ]
+    },
+    {
+      "id": "OV26",
+      "title": "E Chester on designing Anthropic's typefaces",
+      "url": "https://www.linkedin.com/posts/e-chester-b7202b227_i-am-very-proud-to-have-designed-anthropics-activity-7434038231979098113-MDXX",
+      "kind": "primary_designer_statement",
+      "scope": "custom_font_authorship",
+      "time": "March 2, 2026",
+      "read": "read",
+      "claims": [
+        "E Chester states he designed Anthropic's typeface suite during the preceding year, with direction from Tim Kamerer of Geist."
+      ],
+      "limits": [
+        "Does not establish current app font files, versions, licenses or exact font assignment by element.",
+        "Do not infer that proprietary Anthropic faces are merely renamed Styrene/Tiempos."
+      ]
+    },
+    {
+      "id": "OV27",
+      "title": "Anthropic — by Everett",
+      "url": "https://byeverett.com/anthropic",
+      "kind": "primary_designer_portfolio",
+      "scope": "brand_creative_direction",
+      "time": "Portfolio says June 2023–present; retrieval 2026-10-14",
+      "read": "read",
+      "claims": [
+        "Creative lead describes prioritizing warmth, accessibility and restraint, and credits Geist and Tim Belonax."
+      ],
+      "limits": [
+        "Personal portfolio assertions, not independently verified staffing/budget evidence.",
+        "Use only for attributed design intent, not proof of app implementation."
+      ]
+    },
+    {
+      "id": "OV28",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "kind": "official_historical_announcement",
+      "scope": "design_product_launch",
+      "time": "April 17, 2026",
+      "read": "read",
+      "claims": [
+        "Launch described conversation, inline comments, direct edits and generated adjustment controls.",
+        "Contains an official product image linked in the article."
+      ],
+      "limits": [
+        "April standalone Design is earlier than September integrated artifacts.",
+        "Do not conflate colors/fonts inside generated prototypes with Claude's host interface."
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "OV08-IMG1",
+      "source_id": "OV08",
+      "label": "desktop_web_waveform_entry",
+      "width": 474,
+      "height": 232,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": null
+    },
+    {
+      "id": "OV08-IMG2",
+      "source_id": "OV08",
+      "label": "desktop_web_voice_stop",
+      "width": 247,
+      "height": 108,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": null
+    },
+    {
+      "id": "OV08-IMG3",
+      "source_id": "OV08",
+      "label": "mobile_voice_entry",
+      "width": 1320,
+      "height": 415,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": null
+    },
+    {
+      "id": "OV08-IMG4",
+      "source_id": "OV08",
+      "label": "mobile_voice_settings",
+      "width": 958,
+      "height": 682,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": null
+    },
+    {
+      "id": "OV06-IMG1",
+      "source_id": "OV06",
+      "label": "composer_crop",
+      "width": 1442,
+      "height": 334,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": null
+    },
+    {
+      "id": "OV05-IMG1",
+      "source_id": "OV05",
+      "label": "mac_quick_entry_single_line",
+      "width": 1702,
+      "height": 302,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": "2025-12-18 inferred from filename, not independently confirmed",
+      "correction": "Visual inspection corrected original shortcut-settings label; see official-image-observations."
+    },
+    {
+      "id": "OV12-IMG1",
+      "source_id": "OV12",
+      "label": "cowork_instruction_settings",
+      "width": 1500,
+      "height": 750,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "URL and dimensions extracted from official HTML; image pixels not inspected",
+      "durability": "Signed Intercom URL may expire; resolve again from source page",
+      "capture_date": null
+    },
+    {
+      "id": "OV21-document_upload",
+      "source_id": "OV21",
+      "label": "document_upload",
+      "width": 1920,
+      "height": 1080,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "Linked from official June 25 2024 announcement; pixels not inspected",
+      "durability": "Static CDN asset",
+      "capture_date": "No later than June 25, 2024 publication, assuming original article asset"
+    },
+    {
+      "id": "OV21-custom_instructions",
+      "source_id": "OV21",
+      "label": "custom_instructions",
+      "width": 1920,
+      "height": 1080,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "Linked from official June 25 2024 announcement; pixels not inspected",
+      "durability": "Static CDN asset",
+      "capture_date": "No later than June 25, 2024 publication, assuming original article asset"
+    },
+    {
+      "id": "OV21-artifact_and_chat",
+      "source_id": "OV21",
+      "label": "artifact_and_chat",
+      "width": 1920,
+      "height": 1080,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "Linked from official June 25 2024 announcement; pixels not inspected",
+      "durability": "Static CDN asset",
+      "capture_date": "No later than June 25, 2024 publication, assuming original article asset"
+    },
+    {
+      "id": "OV21-shared_project_chats",
+      "source_id": "OV21",
+      "label": "shared_project_chats",
+      "width": 1920,
+      "height": 1080,
+      "retrieved_at": "2026-10-14T16:34:00Z",
+      "verification": "Linked from official June 25 2024 announcement; pixels not inspected",
+      "durability": "Static CDN asset",
+      "capture_date": "No later than June 25, 2024 publication, assuming original article asset"
+    }
+  ],
+  "unresolved": [
+    "Current authenticated desktop dark/light pixel tokens and full-screen screenshots need runtime verification.",
+    "No app font CSS or installed-bundle font metadata examined by this worker.",
+    "Rollout creates multiple simultaneously valid navigation/composer versions.",
+    "Official Linux direct .deb repository registration instructions conflict.",
+    "Old Mac Quick Entry FAQ conflicts with newer Windows/Linux hotkey coverage.",
+    "Legacy/local Cowork descriptions coexist with newer cloud execution descriptions."
+  ],
+  "excluded": [
+    "Third-party clone DESIGN.md token sets were discovery leads only and not accepted as implementation evidence.",
+    "Marketing-site CSS was not treated as authenticated app CSS.",
+    "Search snippets were not used for findings unless the complete short article text appeared and was marked as such.",
+    "No proprietary fonts, app binary, or source screenshot pixels were redistributed by this worker."
+  ]
+}

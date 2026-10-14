@@ -1,0 +1,92 @@
+/*
+ * Independent interface study. Original semantic aliases and implementation.
+ * Selected color literals match observed CDS static declarations in the
+ * inspected Linux package; they are NOT verified runtime/default styles.
+ * See ../demo/README.md for observation-versus-proposal boundaries.
+ * No proprietary font, icon, source stylesheet or application code is bundled.
+ */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  /* Observed color literals, assigned to original semantic roles. */
+  --study-canvas: #f9f9f7;
+  --study-surface: #fcfcfb;
+  --study-raised: #ffffff;
+  --study-ink: #0b0b0b;
+  --study-ink-secondary: #52514e;
+  --study-clay: #d97757;
+  --study-focus: #2a78d6;
+  /* Original choices for this study, not attributed to the inspected product. */
+  --study-sidebar: #f0efec;
+  --study-ink-muted: #65635c;
+  --study-line: #deddd6;
+  --study-line-strong: #b6b4aa;
+  --study-field-border: #8b8981;
+  --study-hover: #eeede7;
+  --study-selected: #e5e3db;
+  --study-action: #272722;
+  --study-on-action: #ffffff;
+  --study-clay-soft: #f6e7df;
+  --study-clay-ink: #85432f;
+  --study-success: #41634d;
+  --study-success-soft: #edf3eb;
+  --study-error: #a8392f;
+  --study-error-soft: #f9ece8;
+  --study-scrim: rgb(11 11 11 / 24%);
+  --study-shadow: 0 12px 38px rgb(28 27 20 / 7%), 0 1px 4px rgb(28 27 20 / 4%);
+  --study-shadow-small: 0 2px 8px rgb(28 27 20 / 4%);
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+  --study-canvas: #0b0b0b;
+  --study-surface: #151515;
+  --study-raised: #1a1a19;
+  --study-ink: #f0efec;
+  --study-ink-secondary: #c3c2b7;
+  --study-sidebar: #151515;
+  --study-ink-muted: #a6a49b;
+  --study-line: #33332e;
+  --study-line-strong: #65645b;
+  --study-field-border: #77766d;
+  --study-hover: #24241f;
+  --study-selected: #30302a;
+  --study-action: #e9e7df;
+  --study-on-action: #171714;
+  --study-clay-soft: #33251e;
+  --study-clay-ink: #efb39b;
+  --study-success: #a3c6a7;
+  --study-success-soft: #1c2b20;
+  --study-error: #f0aaa0;
+  --study-error-soft: #31201d;
+  --study-scrim: rgb(0 0 0 / 62%);
+  --study-shadow: 0 12px 38px rgb(0 0 0 / 28%), 0 1px 4px rgb(0 0 0 / 20%);
+  --study-shadow-small: 0 2px 8px rgb(0 0 0 / 14%);
+}
+:root {
+  /* System fonts only; availability and rendering vary by operating system. */
+  --study-font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  --study-font-reading: Georgia, "Times New Roman", "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+  --study-font-code: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --study-size-small: 12px;
+  --study-size-label: 13px;
+  --study-size-body: 14px;
+  --study-size-reading: 16px;
+  --study-space-1: 4px;
+  --study-space-2: 8px;
+  --study-space-3: 12px;
+  --study-space-4: 16px;
+  --study-space-5: 20px;
+  --study-space-6: 28px;
+  --study-space-7: 40px;
+  --study-radius-small: 6px;
+  --study-radius-control: 8px;
+  --study-radius-card: 12px;
+  --study-radius-composer: 14px;
+  --study-control-height: 40px;
+  --study-duration-fast: 120ms;
+  --study-duration-base: 200ms;
+  --study-ease: cubic-bezier(.2, .7, .3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --study-duration-fast: 0ms; --study-duration-base: 0ms; }
+}

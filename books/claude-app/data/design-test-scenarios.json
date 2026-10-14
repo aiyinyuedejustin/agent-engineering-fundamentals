@@ -1,0 +1,1799 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Adversarial review scenarios for evidence-grounded visual research and an original offline demo",
+  "created_at": "2026-10-14T16:43:00Z",
+  "language": "en",
+  "execution_status": "Scenario specification only. Browser interaction was prohibited for this reviewer; no runtime scenario has been executed.",
+  "review_scope": "Independent review of derived evidence and original publication code. No new product claims.",
+  "status_enum": [
+    "not_run",
+    "pass",
+    "fail",
+    "blocked",
+    "not_applicable"
+  ],
+  "severity_definitions": {
+    "P0": "Stop publication: truth, rights/privacy, hidden transmission, injection.",
+    "P1": "Fix before calling the artifact usable or explain a reduced scope explicitly.",
+    "P2": "Repair or disclose bounded lower-impact limitation.",
+    "P3": "Optional refinement."
+  },
+  "execution_policy": {
+    "applicability": "Mark not_applicable only with a reason tied to actual supported features. Do not fail a feature that was never promised solely for being absent.",
+    "release_gate": "No unresolved P0/P1 in promised scope. A missing result never counts as pass.",
+    "mutation_scope": "Test only the original local demo and a disposable test profile/context. Do not interact with external accounts or transmit fixture input.",
+    "assistive_technology": "Record real OS/browser/screen-reader/IME identities. Emulation is not proof of real assistive-technology or IME behavior.",
+    "retest": "After a code change, re-hash files and rerun affected scenarios and the core flow."
+  },
+  "snapshot_sha256": {
+    "evidence/acquisition-manifest.json": "46dd23b510014a181bac06df3490bb66fe78f136a06ba2061c47741f218cd616",
+    "evidence/design-token-extraction-summary.json": "63682b558d2bded41005cabc3aae1679ffe8116d0e74e4420cc64af9f30457e1",
+    "evidence/independent-design.json": "87e49d265575e614f20a76870de641606a72152ff6423b455f76303a3284c9b8",
+    "evidence/official-visual-sources.json": "63349d671811aa5e07ff04c29f5f8d5cd6092210c8ed2c09acd41a4fd17a5cdb",
+    "evidence/web-login-observation.json": "2ffa46a282ea4ecf22344d3bbcad68c9f6d4842487fdcce41b6e895b9a057b9d",
+    "components/tokens.css": "aefe6989380ef10376820d52b7e8c99e410ea912bb916935b9793366cfeb1cb4",
+    "components/components.css": "71864685af52f195a6561f354f0bdf1a7f6a1593b255ef48c97d3d73cedaac7f"
+  },
+  "first_css_snapshot": {
+    "components/tokens.css": "f729b4ab9174a4b9e9b0fa7bc0e5004313397299251ef8238c65d5af68091ae7",
+    "components/components.css": "063106779e319c4a6670327e5f0d9590e950d34300c8de2dfd67ce1f56447399"
+  },
+  "static_calculations": [
+    {
+      "foreground": "#b6b4aa",
+      "background": "#ffffff",
+      "contrast_ratio": 2.0796246918455004,
+      "interpretation": "Potential required field-boundary risk, not a browser-verified failure."
+    },
+    {
+      "foreground": "#65645b",
+      "background": "#1a1a19",
+      "contrast_ratio": 2.9254569922115605,
+      "interpretation": "Potential required field-boundary risk, not a browser-verified failure."
+    },
+    {
+      "foreground": "#d97757",
+      "background": "#f9f9f7",
+      "contrast_ratio": 2.9615277869456382,
+      "interpretation": "Do not use as normal text or round into a 3:1 pass."
+    },
+    {
+      "foreground": "#8b8981",
+      "background": "#ffffff",
+      "contrast_ratio": 3.5040568639945504,
+      "interpretation": "New field-border literal resolves original light boundary arithmetic risk; rendered state tests pending."
+    },
+    {
+      "foreground": "#77766d",
+      "background": "#1a1a19",
+      "contrast_ratio": 3.8123240968091103,
+      "interpretation": "New field-border literal resolves original dark boundary arithmetic risk; rendered state tests pending."
+    }
+  ],
+  "recommended_profiles": [
+    {
+      "id": "desktop-light",
+      "viewport_css_px": [
+        1440,
+        900
+      ],
+      "theme": "light",
+      "zoom_percent": 100,
+      "input": "keyboard and pointer"
+    },
+    {
+      "id": "desktop-dark",
+      "viewport_css_px": [
+        1440,
+        900
+      ],
+      "theme": "dark",
+      "zoom_percent": 100,
+      "input": "keyboard and pointer"
+    },
+    {
+      "id": "narrow",
+      "viewport_css_px": [
+        320,
+        700
+      ],
+      "theme": "both",
+      "zoom_percent": 100,
+      "input": "keyboard and pointer"
+    },
+    {
+      "id": "enlarged",
+      "viewport_css_px": "record actual",
+      "theme": "both",
+      "zoom_percent": 200,
+      "input": "keyboard"
+    },
+    {
+      "id": "forced-colors",
+      "viewport_css_px": [
+        1280,
+        800
+      ],
+      "forced_colors": "active",
+      "input": "keyboard"
+    },
+    {
+      "id": "reduced-motion",
+      "viewport_css_px": [
+        1280,
+        800
+      ],
+      "reduced_motion": "reduce",
+      "input": "keyboard and pointer"
+    },
+    {
+      "id": "ime",
+      "viewport_css_px": [
+        1280,
+        800
+      ],
+      "ime": "record actual CJK IME",
+      "input": "real composition"
+    },
+    {
+      "id": "screen-reader",
+      "viewport_css_px": [
+        1280,
+        800
+      ],
+      "assistive_technology": "record actual platform and version",
+      "input": "screen reader and keyboard"
+    }
+  ],
+  "result_record_template": {
+    "test_id": null,
+    "artifact_revision_or_hash": null,
+    "tested_at": null,
+    "browser_and_version": null,
+    "os": null,
+    "delivery_mode": null,
+    "viewport_css_px": null,
+    "dpr": null,
+    "zoom_percent": null,
+    "effective_theme": null,
+    "stored_preference": null,
+    "input_method": null,
+    "status": "not_run",
+    "actual": null,
+    "evidence_paths": [],
+    "reviewer": null,
+    "limitations": [],
+    "not_applicable_reason": null
+  },
+  "references": {
+    "cascade": "https://www.w3.org/TR/css-cascade-5/#cascade-sort",
+    "variables": "https://www.w3.org/TR/css-variables-1/#invalid-variables",
+    "alpha": "https://www.w3.org/TR/compositing-1/#simplealphacompositing",
+    "text_contrast": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html#success-criterion",
+    "control_contrast": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html#user-interface-components",
+    "font_fallback": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family#description",
+    "dialog": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/#keyboardinteraction",
+    "tabs": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/#keyboardinteraction",
+    "storage": "https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage#exceptions",
+    "clipboard": "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText#security_considerations",
+    "ime": "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/isComposing#value",
+    "keyboard": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
+    "name_role_value": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html",
+    "focus": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+    "focus_obscured": "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html",
+    "resize": "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html",
+    "reflow": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
+    "spacing": "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html",
+    "target": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "color": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+    "labels": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html",
+    "status": "https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html",
+    "forced_colors": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/forced-colors#properties_affected_by_forced-color_mode",
+    "reduced_motion": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion#syntax",
+    "conformance": "https://www.w3.org/TR/WCAG22/#conformance-reqs"
+  },
+  "scenarios": [
+    {
+      "id": "E01",
+      "category": "evidence",
+      "title": "Trace every headline to evidence of the same type",
+      "severity_on_failure": "P0",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "List material headlines, numeric specifications and default/current claims.",
+        "For each, follow source, date, surface and observation method."
+      ],
+      "expected": [
+        "No static declaration or screenshot estimate is labeled an authenticated runtime measurement.",
+        "Unverified defaults and unsupported causal explanations are bounded or removed."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E02",
+      "category": "evidence",
+      "title": "Keep source identity and acquisition distinct from UI proof",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Compare package version, architecture, hash and acquisition provenance across the report.",
+        "Inspect whether package validation is used to imply active feature/layout correctness."
+      ],
+      "expected": [
+        "The exact acquisition snapshot is identified consistently.",
+        "Signing or hashing is not treated as proof of runtime activation."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E03",
+      "category": "evidence",
+      "title": "Reject one-palette collapse of repeated declarations",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Sample --bg-000 and --cds-text-primary in the derived taxonomy.",
+        "Verify every cited value keeps its source, selector, context and byte position."
+      ],
+      "expected": [
+        "Conflicting scopes and local overrides remain distinguishable.",
+        "First/last occurrence or frequency is not treated as a global resolved value."
+      ],
+      "reference_ids": [
+        "cascade"
+      ],
+      "result": null
+    },
+    {
+      "id": "E04",
+      "category": "evidence",
+      "title": "Audit extracted counts and taxonomy labels",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Compare source entries, distinct CSS hashes, token names, declarations, font files and named component patterns.",
+        "Check each statistic has a unit and limitations."
+      ],
+      "expected": [
+        "Counts of declarations are not counts of colors; files are not families; names are not public component APIs.",
+        "Activation labels are described as classification, not observed matches."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E05",
+      "category": "evidence",
+      "title": "Separate surface and chronological evidence",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Review captions and source dates for all images and claims.",
+        "Check desktop versus web, app versus marketing, main conversation versus embedded editor, and historical versus current."
+      ],
+      "expected": [
+        "Unknown surface/date stays unknown.",
+        "Old captures and help-page updates are not silently relabeled as the inspected build."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E06",
+      "category": "evidence",
+      "title": "Retain feature and account conditions",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Find claims based on feature attributes, bundled components or documentation rollout notes.",
+        "Check whether active account, plan/admin and build conditions were observed."
+      ],
+      "expected": [
+        "Presence in a bundle is not described as universal availability.",
+        "Contradictory official pages are contextualized rather than silently reconciled by guessing."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E07",
+      "category": "evidence",
+      "title": "Mark original adaptation at the point of use",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Compare palette/typography tables, demo comments and README.",
+        "Identify original semantic aliases and changed contrast/spacing/font decisions."
+      ],
+      "expected": [
+        "Readers can distinguish measured literals from original roles and new design choices.",
+        "Changes are not attributed to the product."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E08",
+      "category": "evidence",
+      "title": "Protect publication boundaries and attribution",
+      "severity_on_failure": "P0",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "List every release file, including hidden files, archives and source maps.",
+        "Compare against the allowed original-content manifest and asset rights."
+      ],
+      "expected": [
+        "No installer, ASAR, proprietary source bundle, font, logo, raw extraction envelope, credential or private chat is shipped.",
+        "A third-party repository license is not presented as blanket rights to brand assets."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E09",
+      "category": "evidence",
+      "title": "Avoid official-product or live-AI impersonation",
+      "severity_on_failure": "P0",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Read entry-page title, screenshot captions, visible badges and interaction feedback."
+      ],
+      "expected": [
+        "The artifact is clearly an independent original study.",
+        "Simulated replies and local behavior are disclosed; no fake login/account/product capability claim is made."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "E10",
+      "category": "evidence",
+      "title": "Keep validation language proportional",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Read QA summaries and conformance wording.",
+        "Check revision, environment, executed cases and blocked coverage against recorded results."
+      ],
+      "expected": [
+        "Static arithmetic and automated checks are not described as full runtime or screen-reader testing.",
+        "No unsupported WCAG conformance or all-browser claim appears."
+      ],
+      "reference_ids": [
+        "conformance"
+      ],
+      "result": null
+    },
+    {
+      "id": "T01",
+      "category": "tokens",
+      "title": "Resolve aliases in component scope",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect representative computed foreground/background properties in main content, card, input and dialog.",
+        "Compare with their scoped custom-property dependency paths."
+      ],
+      "expected": [
+        "The demo has no unintended unresolved variables, cycles or invalid computed-value fallback.",
+        "Properties agree with documented original semantic roles."
+      ],
+      "reference_ids": [
+        "variables"
+      ],
+      "result": null
+    },
+    {
+      "id": "T02",
+      "category": "tokens",
+      "title": "Verify explicit theme precedence over system",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Set OS dark and choose explicit light. Reload.",
+        "Set OS light and choose explicit dark. Reload."
+      ],
+      "expected": [
+        "Explicit selection consistently controls demo surfaces, text and native controls.",
+        "Reload does not flash a materially illegible intermediate theme or lose unrelated input by design surprise."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "T03",
+      "category": "tokens",
+      "title": "Verify system mode and live preference changes",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "A system theme option is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Select system mode and change emulated/actual OS color preference.",
+        "Repeat while a dialog is open."
+      ],
+      "expected": [
+        "Effective theme changes in system mode, including dialog and controls.",
+        "Explicit modes ignore later OS changes."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "T04",
+      "category": "tokens",
+      "title": "Check nested theme and overlay scope",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "Nested themed specimens or portal-like overlays are supported.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Place/open the implemented light/dark specimen and its menu/dialog in an opposite-themed parent.",
+        "Inspect inherited tokens and overlay placement."
+      ],
+      "expected": [
+        "The declared specimen boundary holds; overlays use the intended theme.",
+        "If nested theme support is excluded, documentation does not promise it."
+      ],
+      "reference_ids": [
+        "cascade"
+      ],
+      "result": null
+    },
+    {
+      "id": "T05",
+      "category": "tokens",
+      "title": "Measure composited pairs rather than raw swatches",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Identify translucent borders, overlays and opacity-based disabled/hover states.",
+        "Record actual backdrop and layer opacity, then compute final colors."
+      ],
+      "expected": [
+        "Contrast reports use final visible pairs with stated compositing assumptions.",
+        "Nested opacity and background opacity are not conflated."
+      ],
+      "reference_ids": [
+        "alpha"
+      ],
+      "result": null
+    },
+    {
+      "id": "T06",
+      "category": "tokens",
+      "title": "Compare role continuity across light and dark",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Capture main/secondary/muted text, surface hierarchy, destructive state and focus in both modes."
+      ],
+      "expected": [
+        "Hierarchy remains legible and meanings remain consistent.",
+        "No image inversion or stale light-only foreground produces unusable dark UI."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "T07",
+      "category": "tokens",
+      "title": "Complete the relevant interaction-state grid",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect default, hover, focus, active, selected, disabled, pending and error states where implemented.",
+        "Combine keyboard focus with invalid input and dark mode."
+      ],
+      "expected": [
+        "Relevant states have visible and semantic distinction.",
+        "No generic hover rule destroys primary-action or error legibility."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "T08",
+      "category": "tokens",
+      "title": "Keep field-boundary contrast separate from separators",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_1_4_11",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "For empty fields, identify the visual feature needed to recognize the field.",
+        "Measure it against adjacent colors in both themes and default/error/focus states."
+      ],
+      "expected": [
+        "Necessary identification boundaries/cues meet the applicable 3:1 requirement.",
+        "Decorative separators are not incorrectly required to use the same stronger token."
+      ],
+      "reference_ids": [
+        "control_contrast"
+      ],
+      "result": null
+    },
+    {
+      "id": "T09",
+      "category": "tokens",
+      "title": "Check all real text/background pairs",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_1_4_3",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Measure headings, body, helper, placeholder, buttons, chips and status text in actual states.",
+        "Use unrounded contrast values and actual computed size/weight."
+      ],
+      "expected": [
+        "Normal text reaches 4.5:1; qualifying large text reaches 3:1 unless an actual exception applies.",
+        "Inactive exceptions are recorded; clay accents are not assumed safe for text."
+      ],
+      "reference_ids": [
+        "text_contrast"
+      ],
+      "result": null
+    },
+    {
+      "id": "T10",
+      "category": "tokens",
+      "title": "Calibrate screenshot dimensions",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": false,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "For any image-derived dimension, locate viewport, DPR, zoom and crop/scaling record.",
+        "Compare one known CSS measurement with image pixels."
+      ],
+      "expected": [
+        "Uncalibrated screenshot measurements are labeled estimates.",
+        "Icon paint bounds are not reported as control hit targets."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "Y01",
+      "category": "typography",
+      "title": "Test mixed-script fallback",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Render all fixture strings in UI, reading area and composer.",
+        "Inspect glyph coverage, punctuation, baseline and line clipping on each tested OS."
+      ],
+      "expected": [
+        "Content is readable with no missing glyphs or clipping.",
+        "Rendered font observations are distinguished from the CSS family list."
+      ],
+      "reference_ids": [
+        "font_fallback"
+      ],
+      "result": null,
+      "test_data": [
+        "中文阅读与 Claude Desktop 2026，字重 400/600。",
+        "繁體中文：這是一段測試。",
+        "日本語の句読点「確認」。 한국어 읽기 테스트.",
+        "ABC xyz 0123456789 → € ¥ 👩🏽‍💻"
+      ]
+    },
+    {
+      "id": "Y02",
+      "category": "typography",
+      "title": "Test fallback without preferred fonts",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Use an environment lacking optional named system fonts or temporarily override only the local test font stack.",
+        "Check long labels, paragraphs and dialog headers."
+      ],
+      "expected": [
+        "System fallback remains usable without a download.",
+        "The README does not promise cross-platform pixel identity."
+      ],
+      "reference_ids": [
+        "font_fallback"
+      ],
+      "result": null
+    },
+    {
+      "id": "Y03",
+      "category": "typography",
+      "title": "Test long content and unbroken runs",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Enter a long Chinese paragraph, long URL and long code-like identifier.",
+        "Inspect sidebar rows, chips, transcript and composer at narrow and wide sizes."
+      ],
+      "expected": [
+        "Content wraps, truncates with an accessible full route, or scrolls within the appropriate region.",
+        "The entire page does not acquire avoidable horizontal overflow."
+      ],
+      "reference_ids": [],
+      "result": null,
+      "test_data": {
+        "long_url": "https://example.invalid/longsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegmentlongsegment",
+        "long_identifier": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "paragraph": "这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。这是用来检查长文本换行、行高和输入框自适应的内容。"
+      }
+    },
+    {
+      "id": "Y04",
+      "category": "typography",
+      "title": "Verify weights and reading-font switching",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "Always; preference-specific steps apply only if a reading-font setting exists.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect regular/emphasis/control styles and any reading-font preference.",
+        "Toggle the preference with existing content."
+      ],
+      "expected": [
+        "Weights and metrics remain usable; synthetic/fallback behavior is acknowledged where relevant.",
+        "Only intended reading/UI regions change and typed text is retained."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F01",
+      "category": "function",
+      "title": "Submit one local prompt end to end",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Open the documented entry point and enter a short prompt.",
+        "Activate Send once and wait for the documented simulated result."
+      ],
+      "expected": [
+        "One user entry and one coherent local result appear.",
+        "Pending/completed state, button state and focus remain consistent."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F02",
+      "category": "function",
+      "title": "Reject empty and whitespace-only submissions",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Submit empty content, spaces and newlines by both button and keyboard."
+      ],
+      "expected": [
+        "No empty transcript items or pending jobs are created.",
+        "Disabled or validation behavior is understandable and consistent."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F03",
+      "category": "function",
+      "title": "Respect IME composition during Enter handling",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Use a real Chinese/Japanese/Korean IME to select a candidate with Enter.",
+        "After composition ends, use the documented submit command."
+      ],
+      "expected": [
+        "Candidate confirmation does not submit partial text.",
+        "Completed text submits exactly once. Synthetic composition events alone are not a full real-IME pass."
+      ],
+      "reference_ids": [
+        "ime"
+      ],
+      "result": null
+    },
+    {
+      "id": "F04",
+      "category": "function",
+      "title": "Verify Enter and Shift+Enter behavior",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Type two lines using the documented newline command.",
+        "Submit using the documented shortcut and using Send."
+      ],
+      "expected": [
+        "Newline and submit behavior match visible instructions.",
+        "Keyboard handling does not cause default form double submission."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F05",
+      "category": "function",
+      "title": "Prevent duplicate submissions",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Double-click Send rapidly.",
+        "Press Enter repeatedly while pending."
+      ],
+      "expected": [
+        "No duplicate simulated job or duplicated result is produced.",
+        "UI disabled/busy semantics reflect the actual guard."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F06",
+      "category": "function",
+      "title": "Cancel pending work safely",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "A stop/cancel action is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Start a simulated response and activate Stop.",
+        "Wait longer than the original completion delay, then start another response."
+      ],
+      "expected": [
+        "Stopped work never appends a late completion.",
+        "A fresh submission remains possible and is not canceled by old state."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F07",
+      "category": "function",
+      "title": "Reset or navigate during pending work",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "Reset/new conversation/navigation is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Start pending work, then use New conversation/Reset or switch to another implemented view.",
+        "Wait for the original pending callback time."
+      ],
+      "expected": [
+        "No stale response is appended to a newer session.",
+        "Reset leaves valid button, timer, focus and status state."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F08",
+      "category": "function",
+      "title": "Recover from a simulated error",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "A simulated error path is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Trigger the documented demo error path, if present.",
+        "Read feedback, edit/retry, then return to success."
+      ],
+      "expected": [
+        "Error is clear, non-color-only and recoverable.",
+        "Input is not lost unexpectedly; no permanently disabled button remains."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F09",
+      "category": "function",
+      "title": "Render user input as inert text",
+      "severity_on_failure": "P0",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Enter fixture strings and submit.",
+        "Inspect resulting DOM and network log without enabling any external action."
+      ],
+      "expected": [
+        "Strings remain inert text; no event handler or markup executes.",
+        "No prompt-derived external request occurs."
+      ],
+      "reference_ids": [],
+      "result": null,
+      "test_data": [
+        "<img src=x onerror=\"window.__studyInjected=true\">",
+        "<script>window.__studyInjected=true</script>",
+        "<a href=\"javascript:alert(1)\">click</a>",
+        "& < > \" '"
+      ]
+    },
+    {
+      "id": "F10",
+      "category": "function",
+      "title": "Preserve draft across unrelated settings changes",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Enter an unsent multiline prompt.",
+        "Change theme, reading font, sidebar state and selected specimen where available."
+      ],
+      "expected": [
+        "Draft is preserved unless an explicitly labeled reset operation is used.",
+        "Caret/focus behavior is predictable."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F11",
+      "category": "function",
+      "title": "Open and dismiss the dialog repeatedly",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "A dialog is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Open settings/details dialog, close it with each supported mechanism, and repeat three times.",
+        "Try Escape, close button and backdrop only if intended."
+      ],
+      "expected": [
+        "One dialog/overlay exists at a time.",
+        "No stale scroll lock, inert background or event-listener multiplication remains."
+      ],
+      "reference_ids": [
+        "dialog"
+      ],
+      "result": null
+    },
+    {
+      "id": "F12",
+      "category": "function",
+      "title": "Distinguish apply from cancel",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "Settings include an apply/cancel model.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Change settings in a dialog and cancel. Reopen.",
+        "Change settings and apply/save. Reopen or reload as documented."
+      ],
+      "expected": [
+        "State changes match the stated immediate/apply/cancel model.",
+        "Cancel does not falsely promise to undo changes already persisted."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F13",
+      "category": "function",
+      "title": "Check search/no-results/clear behavior",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "Search/filter UI is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Filter with a matching query and an impossible query.",
+        "Clear the query and navigate the restored items."
+      ],
+      "expected": [
+        "Empty results are understandable.",
+        "Clear restores content and keyboard focus stays usable."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F14",
+      "category": "function",
+      "title": "Check navigation collapse at narrow width",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "Collapsible navigation exists.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Collapse/expand navigation using keyboard and pointer.",
+        "Resize between desktop and narrow layout while it is open."
+      ],
+      "expected": [
+        "Current content remains reachable.",
+        "No hidden focusable controls, trapped focus or invisible scrim remain."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "F15",
+      "category": "function",
+      "title": "Verify copy feedback and fallback",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "A copy control is implemented.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Copy normal content and verify successful content in a local scratch field.",
+        "Simulate unavailable/denied Clipboard API."
+      ],
+      "expected": [
+        "Success feedback follows actual fulfillment.",
+        "Failure gives a manual selection/copy path and no uncaught rejection."
+      ],
+      "reference_ids": [
+        "clipboard"
+      ],
+      "result": null
+    },
+    {
+      "id": "F16",
+      "category": "function",
+      "title": "Exercise every visible interactive control",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inventory visible buttons, links, switches and menu items.",
+        "Activate each under its normal preconditions."
+      ],
+      "expected": [
+        "Every control has a meaningful documented outcome or is clearly disabled.",
+        "Static specimen controls do not misleadingly promise live product functionality."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "A01",
+      "category": "accessibility",
+      "title": "Complete primary flow with keyboard only",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_2_1_1",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "From a fresh load, reach composer, submit, change theme, navigate and open/close dialog without a pointer."
+      ],
+      "expected": [
+        "All implemented functionality is keyboard operable.",
+        "No unreachable controls or unintended keyboard traps occur."
+      ],
+      "reference_ids": [
+        "keyboard"
+      ],
+      "result": null
+    },
+    {
+      "id": "A02",
+      "category": "accessibility",
+      "title": "Inspect accessible names and native semantics",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_4_1_2_and_3_3_2",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect the accessibility tree for icon buttons, inputs, settings and navigation.",
+        "Compare names/roles/values to actual behavior and visible labels."
+      ],
+      "expected": [
+        "Controls have meaningful names and correct roles/states.",
+        "Decorative icons are not announced as duplicate content."
+      ],
+      "reference_ids": [
+        "name_role_value",
+        "labels"
+      ],
+      "result": null
+    },
+    {
+      "id": "A03",
+      "category": "accessibility",
+      "title": "Verify modal focus containment and return",
+      "severity_on_failure": "P1",
+      "requirement_basis": "apg_pattern_guidance",
+      "applies_when": "A modal dialog exists.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Open dialog with the keyboard and inspect initial focus.",
+        "Tab/Shift+Tab at boundaries, close, and inspect focus return."
+      ],
+      "expected": [
+        "Focus stays inside the active modal; background is inoperable.",
+        "Closing restores focus to the trigger or a logical successor."
+      ],
+      "reference_ids": [
+        "dialog"
+      ],
+      "result": null
+    },
+    {
+      "id": "A04",
+      "category": "accessibility",
+      "title": "Verify segment semantics match its purpose",
+      "severity_on_failure": "P1",
+      "requirement_basis": "apg_pattern_guidance",
+      "applies_when": "Segmented controls exist.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect any segmented control for radio, toggle or tab semantics.",
+        "Use its documented keyboard pattern and observe selected/pressed state."
+      ],
+      "expected": [
+        "A theme chooser is not mislabeled as tabs unless it genuinely selects associated panels.",
+        "Actual tabs provide panel relationships and arrow-key navigation."
+      ],
+      "reference_ids": [
+        "tabs",
+        "name_role_value"
+      ],
+      "result": null
+    },
+    {
+      "id": "A05",
+      "category": "accessibility",
+      "title": "Keep focus visible and unobscured",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_2_4_7_and_2_4_11",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Tab through all views, including bottom controls behind a sticky composer and narrow dialog.",
+        "Test in light/dark themes."
+      ],
+      "expected": [
+        "A visible indicator persists while keyboard focus is present.",
+        "Author-created content never entirely hides the focused control; the project aims to keep it fully visible."
+      ],
+      "reference_ids": [
+        "focus",
+        "focus_obscured"
+      ],
+      "result": null
+    },
+    {
+      "id": "A06",
+      "category": "accessibility",
+      "title": "Announce relevant dynamic status",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_4_1_3",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "With a real screen reader where available, submit, copy, trigger error and complete a simulated response.",
+        "Observe announcements without moving focus."
+      ],
+      "expected": [
+        "Relevant status is available programmatically without interrupting every incremental character.",
+        "No duplicate or excessively chatty live-region output occurs."
+      ],
+      "reference_ids": [
+        "status"
+      ],
+      "result": null
+    },
+    {
+      "id": "A07",
+      "category": "accessibility",
+      "title": "Associate input label and errors",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_3_3_2_and_4_1_2",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect the composer and any settings fields before and after invalid input.",
+        "Review visible label, accessible name, helper/error relationships and invalid state."
+      ],
+      "expected": [
+        "Input purpose remains understandable after placeholder disappears.",
+        "Error text is associated with the relevant input and is not color-only."
+      ],
+      "reference_ids": [
+        "labels",
+        "name_role_value",
+        "color"
+      ],
+      "result": null
+    },
+    {
+      "id": "A08",
+      "category": "accessibility",
+      "title": "Test 200 percent text enlargement",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_1_4_4",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Enlarge text to 200 percent using a supported browser method.",
+        "Exercise the main flow and dialog."
+      ],
+      "expected": [
+        "Essential text and controls remain available without clipping or lost functionality.",
+        "Fixed heights do not cut off larger text."
+      ],
+      "reference_ids": [
+        "resize"
+      ],
+      "result": null
+    },
+    {
+      "id": "A09",
+      "category": "accessibility",
+      "title": "Test 320 CSS-pixel reflow",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_1_4_10",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Use a 320 CSS-pixel-wide viewport, or equivalent zoomed desktop width.",
+        "Read all ordinary content and operate controls."
+      ],
+      "expected": [
+        "Ordinary vertical content does not require two-dimensional scrolling.",
+        "Any essential two-dimensional region is contained and its exception documented."
+      ],
+      "reference_ids": [
+        "reflow"
+      ],
+      "result": null
+    },
+    {
+      "id": "A10",
+      "category": "accessibility",
+      "title": "Apply text-spacing resilience overrides",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_1_4_12",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Together override line height to 1.5, paragraph spacing to 2em, letter spacing to .12em and word spacing to .16em where applicable.",
+        "Exercise labels, composer, buttons and dialog."
+      ],
+      "expected": [
+        "No essential content clips, overlaps or disappears.",
+        "Language/script-specific applicability is recorded; these are test values, not mandated defaults."
+      ],
+      "reference_ids": [
+        "spacing"
+      ],
+      "result": null
+    },
+    {
+      "id": "A11",
+      "category": "accessibility",
+      "title": "Measure actual pointer targets",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_2_5_8",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Measure target rectangles, including label activation area for switches.",
+        "Inspect adjacent target spacing at narrow width."
+      ],
+      "expected": [
+        "Targets meet 24 by 24 CSS pixels or a documented applicable SC exception.",
+        "Icon glyph size is not confused with hit area."
+      ],
+      "reference_ids": [
+        "target"
+      ],
+      "result": null
+    },
+    {
+      "id": "A12",
+      "category": "accessibility",
+      "title": "Preserve non-color meaning",
+      "severity_on_failure": "P1",
+      "requirement_basis": "wcag_2_2_sc_1_4_1",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect error, active selection, success and progress without relying on hue."
+      ],
+      "expected": [
+        "Text, shape, position or another non-color cue conveys necessary meaning.",
+        "Selected semantics are exposed programmatically."
+      ],
+      "reference_ids": [
+        "color"
+      ],
+      "result": null
+    },
+    {
+      "id": "A13",
+      "category": "accessibility",
+      "title": "Check forced-colors controls and focus",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Enable forced colors in a supported environment.",
+        "Toggle custom switches, selected segments and focus; inspect SVG icons and dialog boundaries."
+      ],
+      "expected": [
+        "Controls and states remain identifiable when backgrounds/shadows are changed or removed.",
+        "The custom switch thumb/state is not dependent solely on suppressed paint."
+      ],
+      "reference_ids": [
+        "forced_colors"
+      ],
+      "result": null
+    },
+    {
+      "id": "A14",
+      "category": "accessibility",
+      "title": "Respect reduced motion throughout",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Enable reduced motion before load and while the demo is running.",
+        "Trigger transitions, pending animations and auto-scrolling."
+      ],
+      "expected": [
+        "Nonessential motion is suppressed or substantially reduced across CSS and JS paths.",
+        "Meaningful status remains available without motion."
+      ],
+      "reference_ids": [
+        "reduced_motion"
+      ],
+      "result": null
+    },
+    {
+      "id": "A15",
+      "category": "accessibility",
+      "title": "Check document language and structure",
+      "severity_on_failure": "P2",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect page title, primary language, headings, landmarks and reading order.",
+        "Navigate headings/landmarks with assistive technology when available."
+      ],
+      "expected": [
+        "Structure reflects the content and does not duplicate hidden decorative content.",
+        "Mixed-language content remains understandable."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O01",
+      "category": "offline",
+      "title": "Open the documented local entry point",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Use the exact README instructions in a clean profile.",
+        "If double-click opening is promised, open the actual file:/// entry point without an HTTP server."
+      ],
+      "expected": [
+        "The promised delivery mode loads CSS and JS and supports the core interaction.",
+        "No module/fetch/security restriction silently breaks file opening."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O02",
+      "category": "offline",
+      "title": "Verify cold-cache offline operation",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Clear cache for the test context, block network, and reopen the demo.",
+        "Exercise theme, composer and dialog while inspecting requests."
+      ],
+      "expected": [
+        "All essential assets and data are local.",
+        "External reference links are optional navigation; no hidden CDN, font or telemetry dependency exists."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O03",
+      "category": "offline",
+      "title": "Recover from blocked storage",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Make localStorage access/get/set throw in a test context, or use a profile with storage blocked.",
+        "Load and use the demo; change theme and reload."
+      ],
+      "expected": [
+        "Essential controls remain functional.",
+        "Persistence failure degrades gracefully; no unhandled startup exception occurs."
+      ],
+      "reference_ids": [
+        "storage"
+      ],
+      "result": null
+    },
+    {
+      "id": "O04",
+      "category": "offline",
+      "title": "Validate stale and malformed stored values",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Set unknown theme values, malformed JSON and wrong data types in demo-owned storage keys.",
+        "Reload, then change settings."
+      ],
+      "expected": [
+        "Values are validated against supported options and safe defaults.",
+        "No executable content or corrupted UI is produced."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O05",
+      "category": "offline",
+      "title": "Avoid destructive storage reset",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "A storage reset action exists.",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Place an unrelated sentinel key in the test origin.",
+        "Use any demo reset/clear action and inspect storage."
+      ],
+      "expected": [
+        "Only demo-owned documented keys are removed.",
+        "The implementation does not use localStorage.clear() to reset one demo."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O06",
+      "category": "offline",
+      "title": "Verify no hidden input transmission",
+      "severity_on_failure": "P0",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Inspect source for fetch, XHR, sockets, beacons, analytics, forms and dynamic remote assets.",
+        "Type a unique harmless sentinel and exercise the demo with network logging."
+      ],
+      "expected": [
+        "No typed content leaves the local demo.",
+        "Source inspection and observed requests agree with the local/offline promise."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O07",
+      "category": "offline",
+      "title": "Check console and asynchronous cleanup",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Repeat open/close/reset/submit sequences and inspect console errors and unhandled rejections.",
+        "Reload or navigate away during pending work."
+      ],
+      "expected": [
+        "No accumulating listener, timer or promise failure corrupts behavior.",
+        "Completion callbacks cannot mutate a superseded session."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "O08",
+      "category": "offline",
+      "title": "Verify final release manifest and relative paths",
+      "severity_on_failure": "P1",
+      "requirement_basis": "project_acceptance",
+      "applies_when": "always",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "steps": [
+        "Copy only allowed publication files into a fresh directory with a different name/path.",
+        "Open using documented instructions and check all local links/assets."
+      ],
+      "expected": [
+        "No accidental dependency on the research workspace or private assets exists.",
+        "Final hashes identify the reviewed artifact, not an earlier candidate."
+      ],
+      "reference_ids": [],
+      "result": null
+    },
+    {
+      "id": "A16",
+      "category": "accessibility",
+      "title": "Prevent focus behind a narrow inspector overlay",
+      "steps": [
+        "At 320 and 800 CSS-pixel widths, open the inspector.",
+        "Tab forward and backward through the resulting interface and dismiss the panel."
+      ],
+      "expected": [
+        "No focused control is entirely hidden behind the inspector.",
+        "Its modal or disclosure model is consistent with focus management, semantics and background operability."
+      ],
+      "reference_ids": [
+        "focus_obscured",
+        "dialog"
+      ],
+      "applies_when": "An inspector overlays main content at narrow widths.",
+      "requirement_basis": "wcag_2_2_sc_2_4_11_and_project_acceptance",
+      "severity_on_failure": "P1",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "result": null
+    },
+    {
+      "id": "O09",
+      "category": "offline",
+      "title": "Keep essential controls reachable at short heights",
+      "steps": [
+        "Use 800 by 350 and 320 by 400 CSS-pixel viewports; repeat with enlarged text.",
+        "Enter multiline content, trigger an error and reach sidebar bottom actions."
+      ],
+      "expected": [
+        "Composer, error recovery and bottom navigation remain reachable through intended scrolling.",
+        "A fixed minimum height combined with body overflow does not strand essential controls."
+      ],
+      "reference_ids": [
+        "reflow",
+        "resize"
+      ],
+      "applies_when": "always",
+      "requirement_basis": "project_acceptance",
+      "severity_on_failure": "P1",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "result": null
+    },
+    {
+      "id": "A17",
+      "category": "accessibility",
+      "title": "Reconcile navigation drawer semantics with modality",
+      "steps": [
+        "Open the mobile drawer and traverse using Tab and a real screen reader where available.",
+        "Try background interaction, Escape and the close control."
+      ],
+      "expected": [
+        "Visible scrim, background operability, focus containment and accessibility semantics express one coherent interaction model.",
+        "Closing restores usable focus without leaving inert or hidden content behind."
+      ],
+      "reference_ids": [
+        "dialog",
+        "name_role_value"
+      ],
+      "applies_when": "A scrim-backed navigation drawer is implemented.",
+      "requirement_basis": "project_acceptance",
+      "severity_on_failure": "P1",
+      "runtime_required": true,
+      "status": "not_run",
+      "preconditions": [
+        "Final artifact is available."
+      ],
+      "result": null
+    }
+  ],
+  "updated_at": "2026-10-14T16:47:30Z",
+  "static_review_snapshot": "static-review-snapshot.json",
+  "publication_note": "This is the historical reviewer scenario specification, not an execution ledger. Many scenarios remain unrun. The separate data/demo-state-test.json and data/demo-state-static.json cover only the documented simulated-DOM and static checks; their scenario mappings do not establish full browser scenario passes.",
+  "snapshot_note": "snapshot_sha256 and first_css_snapshot are historical reviewer inputs, including pre-repair files. evidence/* identifies original research inputs, not files promised in this downloadable book. These values must not be used to verify the current package. Current six demo/component hashes are in data/demo-state-test.json and data/demo-state-static.json."
+}
