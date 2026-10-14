@@ -1,0 +1,284 @@
+{
+  "scope": "Selected static-client observations, Claude Desktop Linux 2.37337.1; research date 2026-10-14; runtime activation and server implementation unverified. Short facts and anchors only; no target implementation included.",
+  "source_ledger": "protocol-tree-streaming.json",
+  "claims": [
+    {
+      "id": "PT-02",
+      "claim": "The line decoder retains incomplete bytes, recognizes CR/LF, and suppresses the LF following CR.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/vendor-all-0-GGdiWMtM.js",
+      "anchor": "function tt(e){let t,n,r,i=!1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 22216,
+        "end": 22245,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 22216,
+        "end": 22245,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-03",
+      "claim": "Blank lines dispatch frames; fields include data, event, id and retry; data lines concatenate with a newline.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/vendor-all-0-GGdiWMtM.js",
+      "anchor": "function nt(e,t,n){let r=it(),i=new TextDecoder",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 22549,
+        "end": 22596,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 22549,
+        "end": 22596,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 1
+    },
+    {
+      "id": "PT-15",
+      "claim": "Classic completion enforces active-block index matching, with late exceptions for thinking summaries and tool-use block updates.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "e.index!==Ze&&e.delta.type!==\"thinking_summary_delta\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 273106,
+        "end": 273159,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 273106,
+        "end": 273159,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-17",
+      "claim": "Tool-use partial JSON is appended as text instead of parsing every delta as a complete object.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "partial_json:(r.partial_json??\"\")+n.delta.partial_json",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 222027,
+        "end": 222081,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 222027,
+        "end": 222081,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-19",
+      "claim": "Partial tool input parsing tokenizes, closes unmatched containers and can drop an incomplete trailing property.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-25-BQdcIBNa.js",
+      "anchor": "function Sj(e){let t=xj(e),n=[]",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 244135,
+        "end": 244166,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 244135,
+        "end": 244166,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-20",
+      "claim": "A populated input object takes precedence over partial_json; partial parse results are weakly cached; failures fall back to an empty object.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-25-BQdcIBNa.js",
+      "anchor": "function Dj(e){if(e.input&&Object.keys(e.input).length>0)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 245009,
+        "end": 245066,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 245009,
+        "end": 245066,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PT-21",
+      "claim": "The exact legacy artifact tag is antArtifact, with prefix suppression, open-ended body matching and attribute parsing.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "var EN=\"antArtifact\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 290381,
+        "end": 290401,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 290381,
+        "end": 290401,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-22",
+      "claim": "The exact antThinking legacy region and incomplete opening prefixes are removed by a dedicated text helper.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "var QN=\"antThinking\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 294555,
+        "end": 294575,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 294555,
+        "end": 294575,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-23",
+      "claim": "Artifact extraction additionally consumes a structured tool_use named artifacts, with cancelled result filtering.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "t.name===\"artifacts\"&&t.input",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 293410,
+        "end": 293439,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 293410,
+        "end": 293439,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PT-26",
+      "claim": "Legacy artifact detection keeps a short suffix across adjacent text blocks so a tag opener can straddle blocks.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "function YN(e){if(!e)return!1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 292634,
+        "end": 292663,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 292634,
+        "end": 292663,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    }
+  ],
+  "files": {
+    "assets/v1/vendor-all-0-GGdiWMtM.js": {
+      "sha256": "d04d27c59c211c9cba794ead9ac0fd0604f0d000eb93d4c71333bceed43aeb47",
+      "bytes": 33503
+    },
+    "assets/v1/shared-156-BeTC6pHT.js": {
+      "sha256": "b0e9ec9ce4efa5474d12098f0c7811b3d47a5f83bc1c71e9cec34462d0cceee9",
+      "bytes": 448220
+    },
+    "assets/v1/shared-25-BQdcIBNa.js": {
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "bytes": 374355
+    },
+    "assets/v1/shared-104-lA7EKODn.js": {
+      "sha256": "60a441eeb9086024face5a823bce2cc9a1129d592aafb58db615f72f57398983",
+      "bytes": 348029
+    },
+    "assets/v1/shared-1-7J3IM-U8.js": {
+      "sha256": "574dfbd5228bfbb92236000f4c73d603c7bcf32a0086a6888665bd5665640f58",
+      "bytes": 337733
+    },
+    "assets/v1/c71860c77-DfqilKcH.js": {
+      "sha256": "cb4dba315739c8c75d90ef4c5dccdf1cc80fa5f67cbdf91c2b0a40ccbce10d69",
+      "bytes": 1544
+    },
+    "assets/v1/c46686c0b-DmFpsCbb.js": {
+      "sha256": "e2dcaf9631249dc2104ab668907e98c7d762cddfe15470483b916ff6da15d9a3",
+      "bytes": 962
+    },
+    "assets/v1/cff3d66ec-Co47hx_b.js": {
+      "sha256": "95e3ce8db63024f2b94d67080a4ec3f75e4a817b350d616cdb5a4e86b004b93a",
+      "bytes": 1106
+    },
+    "assets/v1/cc6b8c296-BeLC7y8K.js": {
+      "sha256": "933bc4bef9023a54513d6e7c0b9047ca691ca8d4cd042b3d8e003743845ee999",
+      "bytes": 8190
+    },
+    "assets/v1/shared-130-CGEumh8Q.js": {
+      "sha256": "ccee249b4f0203b0a462e6c1d488905fec77b03fe7aee3f0390a470016795e10",
+      "bytes": 463843
+    },
+    "assets/v1/shared-2-SYzsATg-.js": {
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc",
+      "bytes": 440042
+    },
+    "assets/v1/cce741025-CALYDt2I.js": {
+      "sha256": "8a2b47256451494209ccf588a6cbb39595012ecce9f6d167a4a8b9c42bfaea95",
+      "bytes": 60046
+    },
+    "assets/v1/shared-4-1vKV8QN9.js": {
+      "sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852",
+      "bytes": 259727
+    },
+    "assets/v1/c93371e43-DFq5zXvj.js": {
+      "sha256": "8ab1c9669d7e04a1acd927f36ffc675a69f49f384a226673d14474412e1e01be",
+      "bytes": 7791
+    },
+    "assets/v1/c06cf64bb-BfbQ1i62.js": {
+      "sha256": "e5abf89f900c1b8677df72a1ce223cad85e2293ebc9e29b4782f6caa6c6421c0",
+      "bytes": 205565
+    },
+    "assets/v1/c1373296b-Cbh7XFq2.js": {
+      "sha256": "f7d54c8718e1c456753effb6cedcd0e0adb9def349db2f95eaf54ce48cab8236",
+      "bytes": 35305
+    },
+    "assets/v1/cc1aae219-_TxnVCRG.js": {
+      "sha256": "99c4cd7095acdfa231e1729882d131ac0e2bc58b847300eb165ea152a035e41c",
+      "bytes": 576438
+    },
+    "assets/v1/c3e61dd2f-DanJU2NC.js": {
+      "sha256": "9677ab70e09dd6b6f5073abc63972875e391548c85d6a669e7c2ccf5ae654758",
+      "bytes": 12370
+    },
+    "assets/v1/ccc68ce7f-D2Vyaff-.js": {
+      "sha256": "7d5ca5a0e92bb931724f1115c9ebbdc9fa234c29a65943e28f421c4f411905e0",
+      "bytes": 344167
+    }
+  }
+}

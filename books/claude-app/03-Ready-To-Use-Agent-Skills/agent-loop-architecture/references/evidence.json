@@ -1,0 +1,421 @@
+{
+  "scope": "Selected static-client observations, Claude Desktop Linux 2.37337.1; research date 2026-10-14; runtime activation and server implementation unverified. Short facts and anchors only; no target implementation included.",
+  "source_ledger": "agent-loop-cowork.json",
+  "claims": [
+    {
+      "id": "AL-01",
+      "finding_zh": "AgentLoopEngine 是本书对协作层的命名；可见实现包含 LocalAgentModeSessions IPC、会话管理器、SDK query 消费器和 CLI transport。",
+      "activation_condition_zh": "本次 Linux 分发包中的静态结构。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/mainView.js",
+          "literal": "LocalAgentModeSessions_$_start",
+          "utf8_byte_start": 63302,
+          "utf8_byte_end_exclusive": 63332,
+          "character_start": 63302,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-DMXnzgNn.js",
+          "literal": "async start(r)",
+          "utf8_byte_start": 49304,
+          "utf8_byte_end_exclusive": 49318,
+          "character_start": 49304,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "setupQueryHandlers(e,t)",
+          "utf8_byte_start": 577678,
+          "utf8_byte_end_exclusive": 577701,
+          "character_start": 577678,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "function ZSe({prompt:e,options:t})",
+          "utf8_byte_start": 1179253,
+          "utf8_byte_end_exclusive": 1179287,
+          "character_start": 1179253,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不将章节标题说成恢复出的原始类名，也不等同于服务器端模型循环。"
+    },
+    {
+      "id": "AL-03",
+      "finding_zh": "生命周期有 idle、initializing、running、stopping、archived 五态，转移需通过显式合法转移表。",
+      "activation_condition_zh": "会话管理器 transitionTo。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.VALID_TRANSITIONS={idle:new Set",
+          "utf8_byte_start": 504058,
+          "utf8_byte_end_exclusive": 504094,
+          "character_start": 504058,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "transitionTo(n,r,i)",
+          "utf8_byte_start": 506153,
+          "utf8_byte_end_exclusive": 506172,
+          "character_start": 506153,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Invalid transition ${a}",
+          "utf8_byte_start": 506270,
+          "utf8_byte_end_exclusive": 506293,
+          "character_start": 506270,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-04",
+      "finding_zh": "initGen 与会话对象身份一起防止过时初始化结果重新挂接查询；停止时递增 initGen。",
+      "activation_condition_zh": "初始化已创建 query、准备写回当前会话；或 stopSession。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Q!==d||Q.initGen!==a",
+          "utf8_byte_start": 407185,
+          "utf8_byte_end_exclusive": 407205,
+          "character_start": 407185,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "Abandoning init for ${i}",
+          "utf8_byte_start": 407230,
+          "utf8_byte_end_exclusive": 407254,
+          "character_start": 407230,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "r.initGen=(r.initGen??0)+1",
+          "utf8_byte_start": 546712,
+          "utf8_byte_end_exclusive": 546738,
+          "character_start": 546712,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-11",
+      "finding_zh": "can_use_tool 是授权回调请求，回传行为与工具输入；不是主进程直接执行任意工具的入口。",
+      "activation_condition_zh": "SDK 收到对应 control_request subtype。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "if(e.request.subtype===\"can_use_tool\")",
+          "utf8_byte_start": 1128316,
+          "utf8_byte_end_exclusive": 1128354,
+          "character_start": 1128316,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "this.canUseTool(e.request.tool_name,e.request.input",
+          "utf8_byte_start": 1128467,
+          "utf8_byte_end_exclusive": 1128518,
+          "character_start": 1128467,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "toolUseID:e.request.tool_use_id",
+          "utf8_byte_start": 1129151,
+          "utf8_byte_end_exclusive": 1129182,
+          "character_start": 1129151,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 3
+        }
+      ],
+      "qualification_zh": "CLI 内建工具执行与 SDK-hosted MCP dispatch 必须分开画。"
+    },
+    {
+      "id": "AL-15",
+      "finding_zh": "SDK 忽略关闭后的控制请求与同 ID 的在途重复请求；cancel 请求触发对应 AbortController。",
+      "activation_condition_zh": "control_request/control_cancel_request 处理。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "Duplicate delivery of in-flight request",
+          "utf8_byte_start": 1127188,
+          "utf8_byte_end_exclusive": 1127227,
+          "character_start": 1127188,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "handleControlCancelRequest(e)",
+          "utf8_byte_start": 1127948,
+          "utf8_byte_end_exclusive": 1127977,
+          "character_start": 1127948,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "t.abort(),this.cancelControllers.delete(e.request_id)",
+          "utf8_byte_start": 1128029,
+          "utf8_byte_end_exclusive": 1128082,
+          "character_start": 1128029,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-17",
+      "finding_zh": "result 的 success 与 is_error 共同判断一次 turn；有排队消息时继续，否则可经过 5 秒 suggestion wait 或进入 idle。",
+      "activation_condition_zh": "onResult 的成功分支。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "a=e.is_error||i!==\"success\"",
+          "utf8_byte_start": 195790,
+          "utf8_byte_end_exclusive": 195817,
+          "character_start": 195790,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "n.inputStream?.hasPending()",
+          "utf8_byte_start": 201331,
+          "utf8_byte_end_exclusive": 201358,
+          "character_start": 201331,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.delegate.transitionTo(n,\"idle\")}),5e3)",
+          "utf8_byte_start": 202021,
+          "utf8_byte_end_exclusive": 202064,
+          "character_start": 202021,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "result 不等于进程已经退出；子工具、后台任务与自唤醒消息另有分支。"
+    },
+    {
+      "id": "AL-19",
+      "finding_zh": "迭代器没有结果就结束不视为成功；错误处理区分 stale query、intentional stop、warm-grace error 与运行故障。",
+      "activation_condition_zh": "query loop complete/catch。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "stream_ended_no_result",
+          "utf8_byte_start": 202999,
+          "utf8_byte_end_exclusive": 203021,
+          "character_start": 202999,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "this.exitPath=\"error-stale\"",
+          "utf8_byte_start": 204584,
+          "utf8_byte_end_exclusive": 204611,
+          "character_start": 204584,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "query interrupted by user (intentional stop)",
+          "utf8_byte_start": 205173,
+          "utf8_byte_end_exclusive": 205217,
+          "character_start": 205173,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": null
+    },
+    {
+      "id": "AL-20",
+      "finding_zh": "UI stop 走 stopSession；interruptTurn 是另一个控制动作。stop 递增代次、结束输入流、清队列、转 stopping/idle；interrupt 发送 SDK interrupt。",
+      "activation_condition_zh": "对应 IPC stop 或桥接 interrupt。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-DMXnzgNn.js",
+          "literal": "await n.stopSession(e)",
+          "utf8_byte_start": 52592,
+          "utf8_byte_end_exclusive": 52614,
+          "character_start": 52592,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async stopSession(e,n=!1)",
+          "utf8_byte_start": 546646,
+          "utf8_byte_end_exclusive": 546671,
+          "character_start": 546646,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "async interruptTurn(e)",
+          "utf8_byte_start": 540415,
+          "utf8_byte_end_exclusive": 540437,
+          "character_start": 540415,
+          "line_1_based": 1,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "subtype:\"interrupt\"",
+          "utf8_byte_start": 1138532,
+          "utf8_byte_end_exclusive": 1138551,
+          "character_start": 1138532,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "不把 UI 停止按钮描述为仅暂停当前模型输出。"
+    },
+    {
+      "id": "AL-24",
+      "finding_zh": "SDK ProcessTransport close 先结束 stdin，再给 2 秒宽限；非 Windows 路径发 SIGTERM，再保留 5 秒升级 SIGKILL；Query cleanup 另清空与拒绝 pending RPC。",
+      "activation_condition_zh": "此 SDK 的本地进程 transport close，进程仍活着时。",
+      "evidence_kind": "observed-source",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "var Nxe=2e3",
+          "utf8_byte_start": 1101114,
+          "utf8_byte_end_exclusive": 1101125,
+          "character_start": 1101114,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "e.kill(\"SIGTERM\")",
+          "utf8_byte_start": 1101546,
+          "utf8_byte_end_exclusive": 1101563,
+          "character_start": 1101546,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "async performCleanup(e)",
+          "utf8_byte_start": 1122517,
+          "utf8_byte_end_exclusive": 1122540,
+          "character_start": 1122517,
+          "line_1_based": 7,
+          "occurrence_zero_based": 0,
+          "total_occurrences": 1
+        }
+      ],
+      "qualification_zh": "VM 的自定义 process adapter 与平台分支应各按其实现解释，不能把 Node child-process 路线泛化为所有后端。"
+    }
+  ],
+  "files": [
+    {
+      "key": "loop",
+      "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+      "bytes": 595508,
+      "sha256": "e1d802b46c6d6f648ab2d918fe9b509a92c7a6d302c4d9f37895761d59ac69f9"
+    },
+    {
+      "key": "control",
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "bytes": 229134,
+      "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+    },
+    {
+      "key": "sdk",
+      "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+      "bytes": 1199908,
+      "sha256": "622b069ec0b06b9ad1e8320dc0471496ad89a9289dfd2cd50e068336d25af8cc"
+    },
+    {
+      "key": "main",
+      "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+      "bytes": 6956732,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "key": "ipc",
+      "file": "app.asar/.vite/build/index.chunk-DMXnzgNn.js",
+      "bytes": 98926,
+      "sha256": "8e8b68462a64e77bf1a1fd3c95c6901ba79cb930043e2b60388b758b520b95d2"
+    },
+    {
+      "key": "preload",
+      "file": "app.asar/.vite/build/mainView.js",
+      "bytes": 168708,
+      "sha256": "ad65b0048b6251c77b68e19e183c4c85cd74d23cb86bfbb43bef72833643ba38"
+    },
+    {
+      "key": "tools",
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "bytes": 729748,
+      "sha256": "6c68132d14051ad2f503d18db364fdf1f39e4c27e956c485cf90d667b1e30c87"
+    }
+  ]
+}

@@ -21,8 +21,8 @@
   --ui-ink: #26251f;
   --ui-muted: #656258;
   --ui-line: #d9d6cc;
-  --ui-line-strong: #8f8a7c;
-  --ui-accent: #a54f35;
+  --ui-line-strong: #878273;
+  --ui-accent: #a24b33;
   --ui-accent-soft: #f3e3da;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
 }
@@ -81,7 +81,7 @@
   --ui-ink: #22323a;
   --ui-muted: #536875;
   --ui-line: #cddbe0;
-  --ui-line-strong: #7a949f;
+  --ui-line-strong: #708995;
   --ui-accent: #326780;
   --ui-accent-soft: #deedf3;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -111,7 +111,7 @@
   --ui-ink: #392b36;
   --ui-muted: #74606e;
   --ui-line: #dfd1dc;
-  --ui-line-strong: #a08a99;
+  --ui-line-strong: #947c8b;
   --ui-accent: #895577;
   --ui-accent-soft: #f0e1ec;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -141,7 +141,7 @@
   --ui-ink: #242627;
   --ui-muted: #626566;
   --ui-line: #d6d8d8;
-  --ui-line-strong: #898d8f;
+  --ui-line-strong: #7f8385;
   --ui-accent: #4f6069;
   --ui-accent-soft: #e5ebed;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -252,14 +252,15 @@ function autoSize(el,max=180) { el.style.height='auto'; el.style.height=Math.min
 function openDialog(dialog, opener) { dialog._opener=opener||document.activeElement; if(!dialog.open)dialog.showModal(); }
 $$('dialog').forEach(dialog=>{dialog.addEventListener('close',()=>dialog._opener?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});});
 $$('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-async function copyText(text) { try { if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('已复制。');return;} } catch {} const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.append(ta);ta.select();let copied=false;try { copied=document.execCommand('copy'); } catch {}ta.remove();toast(copied?'已复制。':'浏览器未允许复制，请选中文字后手动复制。'); }
+async function copyText(text) { const previous=document.activeElement;try { if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('已复制。');return;} } catch {} const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.append(ta);ta.select();let copied=false;try { copied=document.execCommand('copy'); } catch {}ta.remove();previous?.focus();toast(copied?'已复制。':'浏览器未允许复制，请选中文字后手动复制。'); }
 
 $('#density').addEventListener('change',e=>root.dataset.density=e.target.value);
 $('#save-demo').addEventListener('click',e=>{const b=e.currentTarget;b.disabled=true;b.textContent='保存中…';setTimeout(()=>{b.disabled=false;b.textContent='保存更改';toast('示例更改已保存到本页。');},650);});
 $('#secondary-demo').addEventListener('click',()=>toast('组件使用系统字体与独立语义令牌。'));
 $('#quiet-demo').addEventListener('click',()=>toast('已保留当前草稿。'));
 $('#danger-demo').addEventListener('click',()=>{const field=$('#project-name');field.value='';field.setAttribute('aria-invalid','false');$('#name-help').textContent='草稿已清除；可以重新输入。';field.focus();});
-$('#field-form').addEventListener('submit',e=>{e.preventDefault();const f=$('#project-name');const valid=f.value.trim().length>=2;f.setAttribute('aria-invalid',String(!valid));$('#name-help').textContent=valid?'名称可用：'+f.value.trim():'请至少输入 2 个字符。';$('#name-help').style.color=valid?'var(--ui-success)':'var(--ui-danger)';if(!valid)f.focus();});
+const galleryIme=imeGuard($('#project-name'));
+$('#field-form').addEventListener('submit',e=>{e.preventDefault();if(galleryIme())return;const f=$('#project-name');const valid=f.value.trim().length>=2;f.setAttribute('aria-invalid',String(!valid));$('#name-help').textContent=valid?'名称可用：'+f.value.trim():'请至少输入 2 个字符。';$('#name-help').style.color=valid?'var(--ui-success)':'var(--ui-danger)';if(!valid)f.focus();});
 for(const id of ['quiet-switch','organize-switch'])$('#'+id).addEventListener('change',()=>$('#switch-status').textContent='安静模式'+($('#quiet-switch').checked?'开启':'关闭')+' · 自动整理'+($('#organize-switch').checked?'开启':'关闭'));
 $('#open-dialog').addEventListener('click',()=>openDialog($('#publish-dialog')));
 $('#confirm-publish').addEventListener('click',()=>{$('#publish-status').textContent='已标记为发布 · 本地示例';$('#publish-dialog').close();toast('状态标记已更新。');});

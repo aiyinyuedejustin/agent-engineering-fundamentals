@@ -1,0 +1,1414 @@
+{
+  "scope": [
+    "Selected facts, not a complete reproduction of source CSS.",
+    "Full inventory was privately analyzed across 41 CSS paths (33 unique hashes), 1849 custom property names and 8293 declarations.",
+    "Profiles select plain root plus .cds-root defaults and one explicit dark/comfortable override. They do not simulate all cascade layers, nested overrides, cross-file order, system preferences, or DOM activation.",
+    "CDS palette, legacy v1 HSL, and legacy v2 bridge are distinct contexts. Numeric shades are not interchangeable semantic roles.",
+    "Pixel conversions assume root font-size 16px and --cds-rem-scale=1. No observed desktop screen dimensions are inferred."
+  ],
+  "product": "Claude Desktop Linux",
+  "version": "2.37337.1",
+  "evidence_status": "packaged_static; runtime activation unverified",
+  "sources": [
+    {
+      "id": "f014",
+      "path": "ion/assets/v1/c6a992d55-CNGsCU46.css",
+      "sha256": "e805f0daa316017c4299c79daedeb5a122d35e315b28f3a0a5f11a6e6889b12e",
+      "bytes": 1720886
+    }
+  ],
+  "font_faces_selected": [
+    {
+      "font-family": "anthropic-sans",
+      "font-weight": "300 800",
+      "font-style": "normal",
+      "font-display": "swap",
+      "block": "b00176"
+    },
+    {
+      "font-family": "anthropic-serif",
+      "font-weight": "300 800",
+      "font-style": "normal",
+      "font-display": "swap",
+      "block": "b00178"
+    },
+    {
+      "font-family": "anthropic-mono",
+      "font-weight": "300 800",
+      "font-style": "normal",
+      "font-display": "swap",
+      "block": "b00184"
+    },
+    {
+      "font-family": "Anthropicons-Variable",
+      "font-weight": "400 700",
+      "font-display": "block",
+      "block": "b00186"
+    },
+    {
+      "font-family": "OpenDyslexic",
+      "font-weight": "400",
+      "font-style": "normal",
+      "font-display": "swap",
+      "block": "b00161"
+    },
+    {
+      "font-family": "Atkinson Hyperlegible Next",
+      "font-weight": "1 450",
+      "font-style": "normal",
+      "font-display": "swap",
+      "block": "b00166"
+    }
+  ],
+  "font_metadata_selected": [
+    {
+      "path": "ion/assets/v1/c0f671921-cvFTkbeX.woff2",
+      "sha256": "35ad223d8dd4a8d4e9c2b8503ae9aca977f93bb52a5bd64c365cb9110d24e2cf",
+      "bytes": 102544,
+      "names": {
+        "1": "Anthropicons RVRN",
+        "2": "Regular"
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 700.0
+        },
+        {
+          "tag": "opsz",
+          "min": 12.0,
+          "default": 20.0,
+          "max": 32.0
+        },
+        {
+          "tag": "ANIM",
+          "min": 0.0,
+          "default": 0.0,
+          "max": 100.0
+        },
+        {
+          "tag": "ANM2",
+          "min": 0.0,
+          "default": 0.0,
+          "max": 100.0
+        }
+      ],
+      "units_per_em": 1000,
+      "mapped_codepoints": 395,
+      "sample_coverage": {
+        "A": false,
+        "中": false,
+        "日": false,
+        "한": false
+      },
+      "cjk_unified_ideographs_count": 0
+    },
+    {
+      "path": "ion/assets/v1/c5dbe0935-CQcSkHaI.woff2",
+      "sha256": "42665616155d0d21b2db5e75cf59378ff509e543e10d24d39cbfcf99a3b1949e",
+      "bytes": 65620,
+      "names": {
+        "1": "Anthropic Mono Web",
+        "2": "Regular",
+        "6": "AnthropicMonoWebWeb-Regular",
+        "16": "Anthropic Mono Web",
+        "17": "Regular"
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300.0,
+          "default": 400.0,
+          "max": 800.0
+        }
+      ],
+      "units_per_em": 2000,
+      "mapped_codepoints": 655,
+      "sample_coverage": {
+        "A": true,
+        "中": false,
+        "日": false,
+        "한": false
+      },
+      "cjk_unified_ideographs_count": 0
+    },
+    {
+      "path": "ion/assets/v1/c66fc489e-2VcCjn5t.woff2",
+      "sha256": "ac9c19c70558c5152b92119f83ca37dded627b524d75552a26fcda015d4106be",
+      "bytes": 165536,
+      "names": {
+        "1": "Anthropic Serif Variable Text",
+        "2": "Regular",
+        "6": "AnthropicSerifVariable-TextRegular",
+        "16": "Anthropic Serif Variable",
+        "17": "Text Regular"
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300.0,
+          "default": 400.0,
+          "max": 800.0
+        },
+        {
+          "tag": "opsz",
+          "min": 16.0,
+          "default": 16.0,
+          "max": 48.0
+        }
+      ],
+      "units_per_em": 2000,
+      "mapped_codepoints": 633,
+      "sample_coverage": {
+        "A": true,
+        "中": false,
+        "日": false,
+        "한": false
+      },
+      "cjk_unified_ideographs_count": 0
+    },
+    {
+      "path": "ion/assets/v1/cc27851ad-DDVos-BJ.woff2",
+      "sha256": "542f0e8bf7a27f2300f4cfb4b8ad168bc4cf7dc1eeeb8471cac66802f58e137c",
+      "bytes": 118172,
+      "names": {
+        "1": "Anthropic Sans Variable Text",
+        "2": "Regular",
+        "6": "AnthropicSansVariable-TextRegular",
+        "16": "Anthropic Sans Variable",
+        "17": "Text Regular"
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 300.0,
+          "default": 400.0,
+          "max": 800.0
+        },
+        {
+          "tag": "opsz",
+          "min": 16.0,
+          "default": 16.0,
+          "max": 48.0
+        }
+      ],
+      "units_per_em": 2000,
+      "mapped_codepoints": 625,
+      "sample_coverage": {
+        "A": true,
+        "中": false,
+        "日": false,
+        "한": false
+      },
+      "cjk_unified_ideographs_count": 0
+    }
+  ],
+  "selected_tokens": {
+    "colors": {
+      "cds_light": {
+        "--cds-surface-0": {
+          "declared": "var(--cds-gray-20)",
+          "ref": [
+            "b02221",
+            1610173,
+            1610207
+          ],
+          "resolved_srgb": "#f9f9f7",
+          "alpha": 1.0
+        },
+        "--cds-surface-1": {
+          "declared": "var(--cds-gray-10)",
+          "ref": [
+            "b02221",
+            1610208,
+            1610242
+          ],
+          "resolved_srgb": "#fcfcfb",
+          "alpha": 1.0
+        },
+        "--cds-surface-2": {
+          "declared": "var(--cds-gray-0)",
+          "ref": [
+            "b02221",
+            1610243,
+            1610276
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-surface-3": {
+          "declared": "var(--cds-gray-0)",
+          "ref": [
+            "b02221",
+            1610277,
+            1610310
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-surface-panel": {
+          "declared": "var(--cds-surface-2)",
+          "ref": [
+            "b02221",
+            1610354,
+            1610394
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-surface-popover": {
+          "declared": "var(--cds-surface-3)",
+          "ref": [
+            "b02221",
+            1610311,
+            1610353
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-page-bg": {
+          "declared": "var(--cds-surface-0)",
+          "ref": [
+            "b02221",
+            1610395,
+            1610429
+          ],
+          "resolved_srgb": "#f9f9f7",
+          "alpha": 1.0
+        },
+        "--cds-text-primary": {
+          "declared": "var(--cds-neutral-900)",
+          "ref": [
+            "b02221",
+            1617035,
+            1617076
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 1.0
+        },
+        "--cds-text-secondary": {
+          "declared": "var(--cds-neutral-600)",
+          "ref": [
+            "b02221",
+            1617077,
+            1617120
+          ],
+          "resolved_srgb": "#52514e",
+          "alpha": 1.0
+        },
+        "--cds-text-muted": {
+          "declared": "var(--cds-neutral-400)",
+          "ref": [
+            "b02221",
+            1617121,
+            1617160
+          ],
+          "resolved_srgb": "#898781",
+          "alpha": 1.0
+        },
+        "--cds-text-accent": {
+          "declared": "var(--cds-role-accent-600)",
+          "ref": [
+            "b02221",
+            1616308,
+            1616352
+          ],
+          "resolved_srgb": "#184f95",
+          "alpha": 1.0
+        },
+        "--cds-fill-accent": {
+          "declared": "var(--cds-role-accent-fill)",
+          "ref": [
+            "b02221",
+            1610430,
+            1610475
+          ],
+          "resolved_srgb": "#2a78d6",
+          "alpha": 1.0
+        },
+        "--cds-fill-accent-hover": {
+          "declared": "var(--cds-role-accent-fill-hover)",
+          "ref": [
+            "b02221",
+            1610476,
+            1610533
+          ],
+          "resolved_srgb": "#3987e5",
+          "alpha": 1.0
+        },
+        "--cds-on-accent": {
+          "declared": "var(--cds-role-accent-on)",
+          "ref": [
+            "b02221",
+            1618746,
+            1618787
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-fill-primary": {
+          "declared": "var(--cds-neutral-900)",
+          "ref": [
+            "b02221",
+            1611349,
+            1611390
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 1.0
+        },
+        "--cds-on-primary": {
+          "declared": "var(--cds-neutral-0)",
+          "ref": [
+            "b02221",
+            1618708,
+            1618745
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-fill-brand": {
+          "declared": "var(--cds-clay-emphasized)",
+          "ref": [
+            "b02221",
+            1611266,
+            1611309
+          ],
+          "resolved_srgb": "#c6613f",
+          "alpha": 1.0
+        },
+        "--cds-on-brand": {
+          "declared": "#fff",
+          "ref": [
+            "b02221",
+            1619317,
+            1619336
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-clay": {
+          "declared": "#d97757",
+          "ref": [
+            "b02221",
+            1607954,
+            1607972
+          ],
+          "resolved_srgb": "#d97757",
+          "alpha": 1.0
+        },
+        "--cds-clay-emphasized": {
+          "declared": "#c6613f",
+          "ref": [
+            "b02221",
+            1607973,
+            1608002
+          ],
+          "resolved_srgb": "#c6613f",
+          "alpha": 1.0
+        },
+        "--cds-border": {
+          "declared": "var(--cds-alpha-2)",
+          "ref": [
+            "b02221",
+            1604641,
+            1604672
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 0.1
+        },
+        "--cds-border-strong": {
+          "declared": "var(--cds-alpha-3)",
+          "ref": [
+            "b02221",
+            1605829,
+            1605867
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 0.2
+        },
+        "--cds-fill-ghost-hover": {
+          "declared": "var(--cds-alpha-1)",
+          "ref": [
+            "b02221",
+            1611679,
+            1611720
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 0.05
+        },
+        "--cds-fill-ghost-selected": {
+          "declared": "var(--cds-alpha-2)",
+          "ref": [
+            "b02221",
+            1611721,
+            1611765
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 0.1
+        },
+        "--cds-bg-user-message": {
+          "declared": "var(--cds-bg-neutral)",
+          "ref": [
+            "b02221",
+            1616188,
+            1616231
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 0.05
+        },
+        "--cds-text-danger": {
+          "declared": "var(--cds-role-danger-600)",
+          "ref": [
+            "b02221",
+            1616353,
+            1616397
+          ],
+          "resolved_srgb": "#8e2626",
+          "alpha": 1.0
+        },
+        "--cds-bg-danger": {
+          "declared": "var(--cds-role-danger-100)",
+          "ref": [
+            "b02221",
+            1612054,
+            1612096
+          ],
+          "resolved_srgb": "#fad6d6",
+          "alpha": 1.0
+        },
+        "--cds-text-success": {
+          "declared": "var(--cds-role-success-600)",
+          "ref": [
+            "b02221",
+            1616398,
+            1616444
+          ],
+          "resolved_srgb": "#006300",
+          "alpha": 1.0
+        },
+        "--cds-bg-success": {
+          "declared": "var(--cds-role-success-100)",
+          "ref": [
+            "b02221",
+            1612139,
+            1612183
+          ],
+          "resolved_srgb": "#caeac7",
+          "alpha": 1.0
+        },
+        "--cds-text-warning": {
+          "declared": "var(--cds-role-warning-600)",
+          "ref": [
+            "b02221",
+            1616445,
+            1616491
+          ],
+          "resolved_srgb": "#734500",
+          "alpha": 1.0
+        },
+        "--cds-bg-warning": {
+          "declared": "var(--cds-role-warning-100)",
+          "ref": [
+            "b02221",
+            1612228,
+            1612272
+          ],
+          "resolved_srgb": "#f9dca4",
+          "alpha": 1.0
+        },
+        "--cds-backdrop": {
+          "declared": "#0006",
+          "ref": [
+            "b02221",
+            1616287,
+            1616307
+          ],
+          "resolved_srgb": "#000000",
+          "alpha": 0.4
+        }
+      },
+      "cds_dark": {
+        "--cds-surface-0": {
+          "declared": "var(--cds-gray-900)",
+          "ref": [
+            "b02222",
+            1626185,
+            1626220
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 1.0
+        },
+        "--cds-surface-1": {
+          "declared": "var(--cds-gray-850)",
+          "ref": [
+            "b02222",
+            1626221,
+            1626256
+          ],
+          "resolved_srgb": "#151515",
+          "alpha": 1.0
+        },
+        "--cds-surface-2": {
+          "declared": "var(--cds-gray-830)",
+          "ref": [
+            "b02222",
+            1626257,
+            1626292
+          ],
+          "resolved_srgb": "#1a1a19",
+          "alpha": 1.0
+        },
+        "--cds-surface-3": {
+          "declared": "var(--cds-gray-800)",
+          "ref": [
+            "b02222",
+            1626293,
+            1626328
+          ],
+          "resolved_srgb": "#20201f",
+          "alpha": 1.0
+        },
+        "--cds-surface-panel": {
+          "declared": "var(--cds-surface-2)",
+          "ref": [
+            "b02221",
+            1610354,
+            1610394
+          ],
+          "resolved_srgb": "#1a1a19",
+          "alpha": 1.0
+        },
+        "--cds-surface-popover": {
+          "declared": "var(--cds-surface-3)",
+          "ref": [
+            "b02221",
+            1610311,
+            1610353
+          ],
+          "resolved_srgb": "#20201f",
+          "alpha": 1.0
+        },
+        "--cds-page-bg": {
+          "declared": "var(--cds-surface-0)",
+          "ref": [
+            "b02221",
+            1610395,
+            1610429
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 1.0
+        },
+        "--cds-text-primary": {
+          "declared": "var(--cds-gray-50)",
+          "ref": [
+            "b02222",
+            1628903,
+            1628940
+          ],
+          "resolved_srgb": "#f0efec",
+          "alpha": 1.0
+        },
+        "--cds-text-secondary": {
+          "declared": "var(--cds-gray-200)",
+          "ref": [
+            "b02222",
+            1628941,
+            1628981
+          ],
+          "resolved_srgb": "#c3c2b7",
+          "alpha": 1.0
+        },
+        "--cds-text-muted": {
+          "declared": "var(--cds-gray-400)",
+          "ref": [
+            "b02222",
+            1628982,
+            1629018
+          ],
+          "resolved_srgb": "#898781",
+          "alpha": 1.0
+        },
+        "--cds-text-accent": {
+          "declared": "var(--cds-role-accent-300)",
+          "ref": [
+            "b02222",
+            1628334,
+            1628378
+          ],
+          "resolved_srgb": "#6da7ec",
+          "alpha": 1.0
+        },
+        "--cds-fill-accent": {
+          "declared": "var(--cds-role-accent-fill)",
+          "ref": [
+            "b02221",
+            1610430,
+            1610475
+          ],
+          "resolved_srgb": "#2a78d6",
+          "alpha": 1.0
+        },
+        "--cds-fill-accent-hover": {
+          "declared": "var(--cds-role-accent-fill-hover)",
+          "ref": [
+            "b02221",
+            1610476,
+            1610533
+          ],
+          "resolved_srgb": "#3987e5",
+          "alpha": 1.0
+        },
+        "--cds-on-accent": {
+          "declared": "var(--cds-role-accent-on)",
+          "ref": [
+            "b02221",
+            1618746,
+            1618787
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-fill-primary": {
+          "declared": "var(--cds-neutral-900)",
+          "ref": [
+            "b02221",
+            1611349,
+            1611390
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-on-primary": {
+          "declared": "var(--cds-neutral-0)",
+          "ref": [
+            "b02221",
+            1618708,
+            1618745
+          ],
+          "resolved_srgb": "#0b0b0b",
+          "alpha": 1.0
+        },
+        "--cds-fill-brand": {
+          "declared": "var(--cds-clay-emphasized)",
+          "ref": [
+            "b02221",
+            1611266,
+            1611309
+          ],
+          "resolved_srgb": "#c6613f",
+          "alpha": 1.0
+        },
+        "--cds-on-brand": {
+          "declared": "#fff",
+          "ref": [
+            "b02221",
+            1619317,
+            1619336
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 1.0
+        },
+        "--cds-clay": {
+          "declared": "#d97757",
+          "ref": [
+            "b02221",
+            1607954,
+            1607972
+          ],
+          "resolved_srgb": "#d97757",
+          "alpha": 1.0
+        },
+        "--cds-clay-emphasized": {
+          "declared": "#c6613f",
+          "ref": [
+            "b02221",
+            1607973,
+            1608002
+          ],
+          "resolved_srgb": "#c6613f",
+          "alpha": 1.0
+        },
+        "--cds-border": {
+          "declared": "var(--cds-alpha-2)",
+          "ref": [
+            "b02221",
+            1604641,
+            1604672
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 0.1
+        },
+        "--cds-border-strong": {
+          "declared": "var(--cds-alpha-3)",
+          "ref": [
+            "b02221",
+            1605829,
+            1605867
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 0.2
+        },
+        "--cds-fill-ghost-hover": {
+          "declared": "hsl(from var(--cds-neutral-900) h s l / 7.5%)",
+          "ref": [
+            "b02222",
+            1626560,
+            1626628
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 0.075
+        },
+        "--cds-fill-ghost-selected": {
+          "declared": "hsl(from var(--cds-neutral-900) h s l / 15%)",
+          "ref": [
+            "b02222",
+            1626629,
+            1626699
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 0.15
+        },
+        "--cds-bg-user-message": {
+          "declared": "var(--cds-bg-neutral)",
+          "ref": [
+            "b02221",
+            1616188,
+            1616231
+          ],
+          "resolved_srgb": "#ffffff",
+          "alpha": 0.05
+        },
+        "--cds-text-danger": {
+          "declared": "var(--cds-role-danger-300)",
+          "ref": [
+            "b02222",
+            1628379,
+            1628423
+          ],
+          "resolved_srgb": "#ec7e7e",
+          "alpha": 1.0
+        },
+        "--cds-bg-danger": {
+          "declared": "var(--cds-role-danger-800)",
+          "ref": [
+            "b02222",
+            1626743,
+            1626785
+          ],
+          "resolved_srgb": "#3c0e0e",
+          "alpha": 1.0
+        },
+        "--cds-text-success": {
+          "declared": "var(--cds-role-success-400)",
+          "ref": [
+            "b02222",
+            1628424,
+            1628470
+          ],
+          "resolved_srgb": "#0ca30c",
+          "alpha": 1.0
+        },
+        "--cds-bg-success": {
+          "declared": "var(--cds-role-success-800)",
+          "ref": [
+            "b02222",
+            1626786,
+            1626830
+          ],
+          "resolved_srgb": "#11260f",
+          "alpha": 1.0
+        },
+        "--cds-text-warning": {
+          "declared": "var(--cds-role-warning-300)",
+          "ref": [
+            "b02222",
+            1628471,
+            1628517
+          ],
+          "resolved_srgb": "#db9300",
+          "alpha": 1.0
+        },
+        "--cds-bg-warning": {
+          "declared": "var(--cds-role-warning-800)",
+          "ref": [
+            "b02222",
+            1626831,
+            1626875
+          ],
+          "resolved_srgb": "#311a00",
+          "alpha": 1.0
+        },
+        "--cds-backdrop": {
+          "declared": "#00000080",
+          "ref": [
+            "b02222",
+            1628309,
+            1628333
+          ],
+          "resolved_srgb": "#000000",
+          "alpha": 0.501961
+        }
+      }
+    },
+    "density": {
+      "cds_light": {
+        "--cds-h-control": {
+          "declared": "calc(1.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1603967,
+            1604020
+          ],
+          "px_at_rem16_scale1": 24.0
+        },
+        "--cds-h-control-nested": {
+          "declared": "calc(1.125rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604021,
+            1604083
+          ],
+          "px_at_rem16_scale1": 18.0
+        },
+        "--cds-icon": {
+          "declared": "calc(1rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604084,
+            1604130
+          ],
+          "px_at_rem16_scale1": 16.0
+        },
+        "--cds-radius": {
+          "declared": "calc(.375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1603855,
+            1603906
+          ],
+          "px_at_rem16_scale1": 6.0
+        },
+        "--cds-radius-composer": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1603907,
+            1603966
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-panel-radius": {
+          "declared": "calc(.625rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1622132,
+            1622189
+          ],
+          "px_at_rem16_scale1": 10.0
+        },
+        "--cds-pad-xs": {
+          "declared": "calc(.25rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604131,
+            1604181
+          ],
+          "px_at_rem16_scale1": 4.0
+        },
+        "--cds-pad-sm": {
+          "declared": "calc(.375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604182,
+            1604233
+          ],
+          "px_at_rem16_scale1": 6.0
+        },
+        "--cds-pad-md": {
+          "declared": "calc(.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604234,
+            1604283
+          ],
+          "px_at_rem16_scale1": 8.0
+        },
+        "--cds-pad-lg": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604284,
+            1604334
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-pad-xl": {
+          "declared": "calc(1.25rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604335,
+            1604386
+          ],
+          "px_at_rem16_scale1": 20.0
+        },
+        "--cds-gap-xs": {
+          "declared": "calc(.375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604387,
+            1604438
+          ],
+          "px_at_rem16_scale1": 6.0
+        },
+        "--cds-gap-sm": {
+          "declared": "calc(.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604439,
+            1604488
+          ],
+          "px_at_rem16_scale1": 8.0
+        },
+        "--cds-gap-md": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604489,
+            1604539
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-gap-lg": {
+          "declared": "calc(1.25rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604540,
+            1604591
+          ],
+          "px_at_rem16_scale1": 20.0
+        },
+        "--cds-gap-xl": {
+          "declared": "calc(2rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1604592,
+            1604640
+          ],
+          "px_at_rem16_scale1": 32.0
+        },
+        "--cds-font-size-caption": {
+          "declared": "calc(.6875rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1617200,
+            1617263
+          ],
+          "px_at_rem16_scale1": 11.0
+        },
+        "--cds-font-size-footnote": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1617264,
+            1617326
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-font-size-code": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1617327,
+            1617385
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-font-size-body": {
+          "declared": "calc(.8125rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1617386,
+            1617446
+          ],
+          "px_at_rem16_scale1": 13.0
+        },
+        "--cds-font-size-prose": {
+          "declared": ".875rem",
+          "ref": [
+            "b02221",
+            1617447,
+            1617476
+          ],
+          "px_at_rem16_scale1": 14.0
+        },
+        "--cds-font-size-heading": {
+          "declared": "calc(.875rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1617477,
+            1617539
+          ],
+          "px_at_rem16_scale1": 14.0
+        },
+        "--cds-font-size-title": {
+          "declared": "calc(1.25rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1617540,
+            1617600
+          ],
+          "px_at_rem16_scale1": 20.0
+        },
+        "--cds-leading-caption": {
+          "declared": "calc(1.0625rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1618311,
+            1618373
+          ],
+          "px_at_rem16_scale1": 17.0
+        },
+        "--cds-leading-body": {
+          "declared": "calc(1.1875rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1618497,
+            1618556
+          ],
+          "px_at_rem16_scale1": 19.0
+        },
+        "--cds-leading-prose": {
+          "declared": "1.25rem",
+          "ref": [
+            "b02221",
+            1618557,
+            1618584
+          ],
+          "px_at_rem16_scale1": 20.0
+        },
+        "--cds-leading-title": {
+          "declared": "calc(1.5625rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02221",
+            1618647,
+            1618707
+          ],
+          "px_at_rem16_scale1": 25.0
+        }
+      },
+      "cds_comfortable": {
+        "--cds-h-control": {
+          "declared": "calc(2rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1640940,
+            1640991
+          ],
+          "px_at_rem16_scale1": 32.0
+        },
+        "--cds-h-control-nested": {
+          "declared": "calc(1.375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1640992,
+            1641054
+          ],
+          "px_at_rem16_scale1": 22.0
+        },
+        "--cds-icon": {
+          "declared": "calc(1.25rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641055,
+            1641104
+          ],
+          "px_at_rem16_scale1": 20.0
+        },
+        "--cds-radius": {
+          "declared": "calc(.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1640829,
+            1640878
+          ],
+          "px_at_rem16_scale1": 8.0
+        },
+        "--cds-radius-composer": {
+          "declared": "calc(.875rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1640879,
+            1640939
+          ],
+          "px_at_rem16_scale1": 14.0
+        },
+        "--cds-panel-radius": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1642853,
+            1642909
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-pad-xs": {
+          "declared": "calc(.375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641105,
+            1641156
+          ],
+          "px_at_rem16_scale1": 6.0
+        },
+        "--cds-pad-sm": {
+          "declared": "calc(.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641157,
+            1641206
+          ],
+          "px_at_rem16_scale1": 8.0
+        },
+        "--cds-pad-md": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641207,
+            1641257
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-pad-lg": {
+          "declared": "calc(1rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641258,
+            1641306
+          ],
+          "px_at_rem16_scale1": 16.0
+        },
+        "--cds-pad-xl": {
+          "declared": "calc(1.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641307,
+            1641357
+          ],
+          "px_at_rem16_scale1": 24.0
+        },
+        "--cds-gap-xs": {
+          "declared": "calc(.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641358,
+            1641407
+          ],
+          "px_at_rem16_scale1": 8.0
+        },
+        "--cds-gap-sm": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641408,
+            1641458
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-gap-md": {
+          "declared": "calc(1rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641459,
+            1641507
+          ],
+          "px_at_rem16_scale1": 16.0
+        },
+        "--cds-gap-lg": {
+          "declared": "calc(1.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641508,
+            1641559
+          ],
+          "px_at_rem16_scale1": 28.0
+        },
+        "--cds-gap-xl": {
+          "declared": "calc(2.5rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641560,
+            1641610
+          ],
+          "px_at_rem16_scale1": 40.0
+        },
+        "--cds-font-size-caption": {
+          "declared": "calc(.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641611,
+            1641672
+          ],
+          "px_at_rem16_scale1": 12.0
+        },
+        "--cds-font-size-footnote": {
+          "declared": "calc(.8125rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641673,
+            1641737
+          ],
+          "px_at_rem16_scale1": 13.0
+        },
+        "--cds-font-size-code": {
+          "declared": "calc(.8125rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641738,
+            1641798
+          ],
+          "px_at_rem16_scale1": 13.0
+        },
+        "--cds-font-size-body": {
+          "declared": "calc(.875rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641799,
+            1641858
+          ],
+          "px_at_rem16_scale1": 14.0
+        },
+        "--cds-font-size-prose": {
+          "declared": "1rem",
+          "ref": [
+            "b02226",
+            1641859,
+            1641885
+          ],
+          "px_at_rem16_scale1": 16.0
+        },
+        "--cds-font-size-heading": {
+          "declared": "calc(.9375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641886,
+            1641949
+          ],
+          "px_at_rem16_scale1": 15.0
+        },
+        "--cds-font-size-title": {
+          "declared": "calc(1.375rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1641950,
+            1642011
+          ],
+          "px_at_rem16_scale1": 22.0
+        },
+        "--cds-leading-caption": {
+          "declared": "calc(1.0625rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1642012,
+            1642074
+          ],
+          "px_at_rem16_scale1": 17.0
+        },
+        "--cds-leading-body": {
+          "declared": "calc(1.25rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1642199,
+            1642256
+          ],
+          "px_at_rem16_scale1": 20.0
+        },
+        "--cds-leading-prose": {
+          "declared": "1.5rem",
+          "ref": [
+            "b02226",
+            1642257,
+            1642283
+          ],
+          "px_at_rem16_scale1": 24.0
+        },
+        "--cds-leading-title": {
+          "declared": "calc(1.75rem * var(--cds-rem-scale,1))",
+          "ref": [
+            "b02226",
+            1642345,
+            1642403
+          ],
+          "px_at_rem16_scale1": 28.0
+        }
+      }
+    },
+    "motion": {
+      "--cds-dur-fast": {
+        "declared": "60ms",
+        "ref": [
+          "b02221",
+          1607729,
+          1607748
+        ]
+      },
+      "--cds-dur-snap": {
+        "declared": ".12s",
+        "ref": [
+          "b02221",
+          1607749,
+          1607768
+        ]
+      },
+      "--cds-dur-base": {
+        "declared": ".2s",
+        "ref": [
+          "b02221",
+          1607769,
+          1607787
+        ]
+      },
+      "--cds-dur-sheet": {
+        "declared": ".3s",
+        "ref": [
+          "b02221",
+          1607788,
+          1607807
+        ]
+      },
+      "--cds-dur-slow": {
+        "declared": ".45s",
+        "ref": [
+          "b02221",
+          1607808,
+          1607827
+        ]
+      },
+      "--cds-ease-out": {
+        "declared": "cubic-bezier(.165, .84, .44, 1)",
+        "ref": [
+          "b02221",
+          1607585,
+          1607631
+        ]
+      },
+      "--cds-ease-snap": {
+        "declared": "cubic-bezier(.32, .72, 0, 1)",
+        "ref": [
+          "b02221",
+          1607632,
+          1607676
+        ]
+      },
+      "--cds-ease-overshoot": {
+        "declared": "cubic-bezier(.34, 1.3, .64, 1)",
+        "ref": [
+          "b02221",
+          1607677,
+          1607728
+        ]
+      }
+    }
+  }
+}

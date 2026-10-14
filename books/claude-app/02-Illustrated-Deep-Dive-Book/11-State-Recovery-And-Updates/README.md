@@ -1,4 +1,4 @@
-# 第三章 设置与状态恢复
+# 恢复专题 设置与状态恢复
 
 让偏好能够保存，让失败能够结束，让更新真正生效
 
@@ -14,7 +14,7 @@
 
 **S 静态**表示官方 Linux amd64 2.37337.1 包中的声明与控制流；**A 原创**表示本书的状态图、解释与测试建议。研究截点为 2026-10-14，没有启动 Claude、登录、读取真实配置或日志，也没有故障注入。代码参数不等于实测时限；当前功能开关、组织策略与远程页面行为仍未知。
 
-[设置与恢复台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)保存 SET、RES、UPD、LOG 共 24 条证据及位置。窗口与 IPC 归属见[第二章](../01-System-Architecture/README.md)；扩展配置的专门安全边界见[第五章](../06-MCP-Host-Internals/README.md)。
+[设置与恢复台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)保存 SET、RES、UPD、LOG 共 24 条证据及位置。窗口与 IPC 归属见[第 1 卷](../01-System-Architecture/README.md)；扩展配置的专门安全边界见[第 6 卷](../06-MCP-Host-Internals/README.md)。
 
 ## 01 状态所有权
 
@@ -54,7 +54,7 @@ store 是主进程持有的持久化键值存储；schema 是约束字段与类�
 
 AppPreferences 写入先验证 key 属于 schema，再拒绝主进程专用字段，随后校验 value。快捷键另有合法性检查；部分授权相关结构只允许普通偏好入口删除条目，不允许从这里增加授权。读取与广播也经过投影，将部分授权、目录访问集合替换为空值。[SET-04](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
-因此，磁盘对象、主进程对象和页面可见对象具有不同形状。一个可借鉴的分工是：普通偏好走字段校验；授权和信任变更走专门入口；页面只接收展示所需的投影。这些字段防线仍须与第二章的 IPC 调用者检查配合。
+因此，磁盘对象、主进程对象和页面可见对象具有不同形状。一个可借鉴的分工是：普通偏好走字段校验；授权和信任变更走专门入口；页面只接收展示所需的投影。这些字段防线仍须与第 1 卷的 IPC 调用者检查配合。
 
 ### 配置损坏按损失成本处理
 
@@ -105,7 +105,7 @@ journal 是写入过程留下的恢复记录。本包 store 的 `.journal` 同�
 
 ### 错误入口留在本地外壳
 
-主内容失败后，主进程将错误交给本地外壳；外壳表达标题、说明、Reload、可选 Restart 与重试状态。这样，恢复 UI 不必依靠失败的远程文档加载。具体容器关系见第二章。[RES-01](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
+主内容失败后，主进程将错误交给本地外壳；外壳表达标题、说明、Reload、可选 Restart 与重试状态。这样，恢复 UI 不必依靠失败的远程文档加载。具体容器关系见第 1 卷。[RES-01](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
 ### 自动重试有预算 但不是三分钟墙钟截止
 

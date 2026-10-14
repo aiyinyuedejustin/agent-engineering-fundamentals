@@ -1,7 +1,12 @@
-# 给 Agent 的可执行知识
+# 可直接交给 agents 的六套 skills
 
-Skill 要提供做决定的依据，而不是一串口号。每个技能围绕一个开发任务组织：何时使用、读哪些参数、如何实现、哪些反例会让方案失效，以及怎样验证结果。
+每个文件夹可以独立复制，包含使用条件、反例、配套原创代码和测试。
 
-当前可用：[研究书阅读与版本核验](claude-app-study/SKILL.md)。前端设计、Agent Loop、文件与缓存、增量解析、MCP 集成、安全预览六个专用技能随对应代码维护。
+- [claude-web-design-skill](claude-web-design-skill/SKILL.md)
+- [agent-loop-architecture](agent-loop-architecture/SKILL.md)
+- [context-file-cache](context-file-cache/SKILL.md)
+- [streaming-tag-parser](streaming-tag-parser/SKILL.md)
+- [mcp-tool-integration](mcp-tool-integration/SKILL.md)
+- [secure-preview-sandbox](secure-preview-sandbox/SKILL.md)
 
-[资料使用约定](AGENTS.md) · [全仓导航](../README.md)
+[返回总目录](../README.md)

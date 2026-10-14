@@ -1,4 +1,4 @@
-# 第五章 扩展配置与工具权限
+# 第 6 卷 扩展配置与工具权限
 
 从安装包到进程连接 再到一次获准的调用
 
@@ -14,7 +14,7 @@
 
 **S 静态**证明本包存在某项声明或处理分支；**D 官方文档**按文档日期与适用产品解释；**A 原创**表示工程推导与示例。本次没有启动 Claude、安装扩展、执行目标代码、读取真实配置或凭据。配置路径、权限 UI 和运行时分支的存在，不等于某个账户已启用或执行结果已验证。
 
-[X01–X16 台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)保存文件摘要、短锚点、UTF-8 位置和 D01–D10 官方来源。主进程 IPC 边界见[第二章](../01-System-Architecture/README.md)，通用配置持久化见[第三章](../11-State-Recovery-And-Updates/README.md)。
+[X01–X16 台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)保存文件摘要、短锚点、UTF-8 位置和 D01–D10 官方来源。主进程 IPC 边界见[第 1 卷](../01-System-Architecture/README.md)，通用配置持久化见[恢复专题](../11-State-Recovery-And-Updates/README.md)。
 
 ## 01 集成的四个坐标
 

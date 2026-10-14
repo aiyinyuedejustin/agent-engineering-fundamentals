@@ -1,0 +1,571 @@
+{
+  "scope": "Selected static-client observations, Claude Desktop Linux 2.37337.1; research date 2026-10-14; runtime activation and server implementation unverified. Short facts and anchors only; no target implementation included.",
+  "source_ledger": "input-pipeline.json",
+  "claims": [
+    {
+      "id": "IP01",
+      "title": "Two attachment representations",
+      "finding": "Composer state separates inline attachments with extracted_content from file records with client identity, nativeFile, localPath, upload promise, abort control, server identity, and error state.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 147111,
+          "byte_length": 42,
+          "anchor": "attachments:[],files:[],syncSourceUuids:[]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 144882,
+          "byte_length": 33,
+          "anchor": "cloudRefPromise:h,cloudRefAbort:u",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 144632,
+          "byte_length": 30,
+          "anchor": "serverFileUuid:a.ref.file_uuid",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP11",
+      "title": "Local text decoding",
+      "finding": "Plain/code-like text can be decoded from arrayBuffer with encoding detection and fatal TextDecoder. An undecodable buffer produces an encoding-pending path; nontext binary detection samples up to 8000 bytes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 191514,
+          "byte_length": 20,
+          "anchor": "async function zD(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 192706,
+          "byte_length": 39,
+          "anchor": "new TextDecoder(n,{fatal:!0}).decode(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 192765,
+          "byte_length": 10,
+          "anchor": "var GD=8e3",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 153179,
+          "byte_length": 33,
+          "anchor": "encodingPending:{buffer:t.buffer}",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP13",
+      "title": "Byte-based inline budget",
+      "finding": "Inline attachment size is counted as UTF-8 bytes and memoized per object. A reservation ledger includes existing attachments and in-flight reservations to avoid concurrent over-admission; release is idempotent.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "This is byte budgeting, not model tokenization."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 98205,
+          "byte_length": 14,
+          "anchor": "function G_(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 98415,
+          "byte_length": 14,
+          "anchor": "function K_(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 98507,
+          "byte_length": 14,
+          "anchor": "function q_(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 182194,
+          "byte_length": 30,
+          "anchor": "maxInlineAttachmentsTotalBytes",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP14",
+      "title": "Inline-to-file promotion",
+      "finding": "Text that exceeds an individual or combined inline budget can be uploaded as a text/plain file when the active host permits files. Otherwise a specific single-item/aggregate error is returned.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Legacy branches without an out-of-context route can still return an inline attachment after the budget helper declines it; do not claim every path hard-blocks."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 182519,
+          "byte_length": 35,
+          "anchor": "new File([l],p,{type:\"text/plain\"})",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 184610,
+          "byte_length": 32,
+          "anchor": "\"connector_attachment_too_large\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 184643,
+          "byte_length": 39,
+          "anchor": "\"connector_attachments_total_too_large\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 200738,
+          "byte_length": 20,
+          "anchor": "textOverInlineCap:!0",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP21",
+      "title": "Large-file two-stage upload",
+      "finding": "A higher-capability conversation-bound path can precede the ordinary 30 MiB guard. It first prepares a server filename/path and identity, then submits bytes to file storage, checks source/stored size agreement, and conditionally cleans up failed partial results.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Requires conversation identity and a higher configured upload cap.",
+        "Cleanup avoids deleting paths that may still be shared or held."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 208480,
+          "byte_length": 40,
+          "anchor": "this.name=\"DirectFilestoreUploadHandler\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 208604,
+          "byte_length": 26,
+          "anchor": "e.size>31457280&&e.size<=n",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 209125,
+          "byte_length": 11,
+          "anchor": "l=\"prepare\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 209247,
+          "byte_length": 15,
+          "anchor": "l=\"create_file\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 209393,
+          "byte_length": 27,
+          "anchor": "e.size!==a||d!==null&&d!==a",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "Maximum account cap and server retention behavior are not established."
+      ]
+    },
+    {
+      "id": "IP22",
+      "title": "Held derivation and rerouting",
+      "finding": "Derivation can wait for a send/ceiling hold or unresolved document-as-file policy. It races cancellation, rejects conversation changes, and aborts/restarts a document derivation when its policy changes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 134813,
+          "byte_length": 53,
+          "anchor": "e.deriveHeld||e.uploadCeilingPending&&t.size>31457280",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 135505,
+          "byte_length": 11,
+          "anchor": "C&&T===null",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 135853,
+          "byte_length": 26,
+          "anchor": "sT(\"conversation changed\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 136206,
+          "byte_length": 41,
+          "anchor": "new DOMException(\"rerouted\",\"AbortError\")",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP23",
+      "title": "Retry taxonomy",
+      "finding": "Per-file processing retains hard error, soft error and sendBlocked states. A selected network-failure policy permits automatic retries after 1000 and 5000 ms; manual retry clears pending error state. Validation failures and intentional aborts follow separate paths.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "The retry predicate requires online/not-unloading state, sufficient elapsed attempt time and a classified transport failure.",
+        "These delays are not a blanket policy for every upload or every server error."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 120821,
+          "byte_length": 16,
+          "anchor": "var YC=[1e3,5e3]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 121060,
+          "byte_length": 23,
+          "anchor": "function QC(e,t,n=yr())",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 145461,
+          "byte_length": 28,
+          "anchor": "cloudRefSoftError:s?r:void 0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 145786,
+          "byte_length": 24,
+          "anchor": "sendBlocked:\"unreadable\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S01",
+          "utf8_byte_offset": 120794,
+          "byte_length": 27,
+          "anchor": "function JC(e,t){qC([e],t)}",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP24",
+      "title": "Preview and error rendering",
+      "finding": "Attachment tiles branch by image, Blob, sanitized document, session file and inline text. A native image can supply a preview before server preview_asset arrives; hard error or blocked files use a diagnostic tile.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 135102,
+          "byte_length": 19,
+          "anchor": "function MC({file:e",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 135180,
+          "byte_length": 30,
+          "anchor": "e.cloudRefError||e.sendBlocked",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 136077,
+          "byte_length": 16,
+          "anchor": "g=f?NC(n):void 0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 139649,
+          "byte_length": 18,
+          "anchor": "\"Missing encoding\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP25",
+      "title": "Removal ownership",
+      "finding": "Removing a file aborts its task, drops the staged record and records explicit user removal. Session-backed deletion checks other holders and same-path/same-name staged files before deciding whether to delete remote bytes.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Removing a tile is not proof that the remote object is deleted immediately."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 198806,
+          "byte_length": 37,
+          "anchor": "t.cloudRefAbort?.abort(tu(\"removed\"))",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 199337,
+          "byte_length": 17,
+          "anchor": "\"staged_namesake\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 199377,
+          "byte_length": 32,
+          "anchor": "\"chat.composer_file_delete_kept\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP26",
+      "title": "Draft persistence split",
+      "finding": "Draft persistence stores editor JSON, filtered attachments, stable file metadata, sync sources and queued/held drafts. Native File bytes are persisted separately; promises, AbortControllers and transient errors are stripped. Hydration stitches blobs back and can mark an unrecoverable reference unavailable.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [
+        "Persistence is disabled/suppressed in selected new-chat, temporary, session-mismatch and URL-seeded contexts."
+      ],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 171883,
+          "byte_length": 14,
+          "anchor": "partialize:e=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 172000,
+          "byte_length": 46,
+          "anchor": "nativeFile:n,cloudRefPromise:r,cloudRefAbort:i",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 175332,
+          "byte_length": 42,
+          "anchor": "\"claudeai.chat.draft.attachments_stitched\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 175282,
+          "byte_length": 25,
+          "anchor": "sendBlocked:\"unavailable\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP27",
+      "title": "Hydration and cleanup",
+      "finding": "Hydration tracks text readiness separately from attachment-blob readiness, can retain temporary text/attachment placeholders, and folds restored queued input around the draft in defined order. Cleanup flushes pending pastes/writes and uses ownership-aware delayed blob release.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 171468,
+          "byte_length": 26,
+          "anchor": "_attachmentBlobsSettled:!1",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 171495,
+          "byte_length": 48,
+          "anchor": "attachmentPlaceholderCount:T,draftTextReserve:ie",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 168038,
+          "byte_length": 35,
+          "anchor": "content:[...r(i),...s?[]:o,...r(a)]",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S02",
+          "utf8_byte_offset": 177552,
+          "byte_length": 33,
+          "anchor": "E.getState().flushPendingPastes()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    },
+    {
+      "id": "IP34",
+      "title": "Cache observation boundary",
+      "finding": "Coding-session accounting consumes cache_read_input_tokens and cache_creation_input_tokens; another client view derives a context total and cache age from reported usage/timestamps. This demonstrates observation, not cache-placement control.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S10",
+          "utf8_byte_offset": 1301,
+          "byte_length": 55,
+          "anchor": "\"cache_read_input_tokens\",\"cache_creation_input_tokens\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S11",
+          "utf8_byte_offset": 413751,
+          "byte_length": 14,
+          "anchor": "function cJ(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S11",
+          "utf8_byte_offset": 414339,
+          "byte_length": 26,
+          "anchor": "cacheAgeMs:Math.max(0,t-s)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": [
+        "No placement, TTL, hit eligibility, server cache key, or model prompt prefix policy is established by these counters."
+      ]
+    },
+    {
+      "id": "IP35",
+      "title": "Local preview resource ownership",
+      "finding": "Native image previews share an object URL per File with a subscriber set; removing the final subscriber revokes the URL and removes the cache entry.",
+      "classification": "observed_packaged_client_control_flow",
+      "conditions": [],
+      "evidence": [
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 132271,
+          "byte_length": 31,
+          "anchor": "var lC=new Map;function uC(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "source": "IP-S05",
+          "utf8_byte_offset": 132451,
+          "byte_length": 65,
+          "anchor": "r.subscribers.size===0&&(URL.revokeObjectURL(r.url),lC.delete(e))",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "unknowns": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "IP-S01",
+      "path": "ion-dist/assets/v1/shared-3-DJJeaAOk.js",
+      "sha256": "0e0ba9d4992495c31b0ce12e17528088eb642a1c263825cb1201de5e400c74bc",
+      "bytes": 483660
+    },
+    {
+      "id": "IP-S02",
+      "path": "ion-dist/assets/v1/shared-182-CW7gYT2d.js",
+      "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280",
+      "bytes": 421033
+    },
+    {
+      "id": "IP-S03",
+      "path": "ion-dist/assets/v1/shared-52-DOMr1cuc.js",
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+      "bytes": 411479
+    },
+    {
+      "id": "IP-S04",
+      "path": "ion-dist/assets/v1/shared-9-DabxsIKR.js",
+      "sha256": "54ccd61cd5b324fbb425768077287436ff9b31d332a5b93693165373d49b1a48",
+      "bytes": 231540
+    },
+    {
+      "id": "IP-S05",
+      "path": "ion-dist/assets/v1/shared-7-CKXU4enr.js",
+      "sha256": "11c0371ca8c8c07c148a223063f9218770f8e0243ad7732d34c0c928c9e2c27d",
+      "bytes": 306345
+    },
+    {
+      "id": "IP-S06",
+      "path": "ion-dist/assets/v1/shared-2-SYzsATg-.js",
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc",
+      "bytes": 440042
+    },
+    {
+      "id": "IP-S07",
+      "path": "ion-dist/assets/v1/shared-28-DGrBzvHd.js",
+      "sha256": "2712645ae3bce4cef02045068dd2e738469e5207c56c159ee65b485e2f4dda24",
+      "bytes": 337693
+    },
+    {
+      "id": "IP-S08",
+      "path": "ion-dist/assets/v1/shared-5-BUdnChDq.js",
+      "sha256": "83ef8632d361e4b938e82005ecb3a46b2a5c81da3c016ca7fbc46cf69a49d2e8",
+      "bytes": 282051
+    },
+    {
+      "id": "IP-S09",
+      "path": "ion-dist/assets/v1/cbc9f9e27-Cd2G_MtE.js",
+      "sha256": "b32af0968a78324bf58c1537507e3d28828a307ce9cfc062c97e2c8bbbe7d9f3",
+      "bytes": 6778
+    },
+    {
+      "id": "IP-S10",
+      "path": "ion-dist/assets/v1/ca288e1f2-N6ARlm-b.js",
+      "sha256": "02b24d7d384cb12561382343ea9c4e14fc39642988fe9e255e2bb08f539ffa3c",
+      "bytes": 5735
+    },
+    {
+      "id": "IP-S11",
+      "path": "ion-dist/assets/v1/ca80fca8d-vl1ck1Sv.js",
+      "sha256": "12697e2768bfd3f7a01b580e2e4655b3f84e98345228a2155e48f598d286a0ec",
+      "bytes": 569145
+    },
+    {
+      "id": "IP-S12",
+      "path": "ion-dist/assets/v1/c0315458b-DZFr6C0D.js",
+      "sha256": "e6f358d1de88ca8ff8f1b3ff1536b5b75aeb3da831a977d43f23a4df9839cbdf",
+      "bytes": 1965
+    }
+  ]
+}

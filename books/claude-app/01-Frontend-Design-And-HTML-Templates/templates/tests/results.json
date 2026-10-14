@@ -1,0 +1,504 @@
+{
+  "generatedAt": "2026-10-14T19:55:28.691Z",
+  "runner": {
+    "node": "v24.19.0",
+    "jsdom": "26.1.0",
+    "realBrowser": false
+  },
+  "scope": "Static and simulated DOM only; not a real-browser layout, CSP-enforcement, native-IME or assistive-technology test.",
+  "summary": {
+    "total": 80,
+    "passed": 80,
+    "failed": 0
+  },
+  "sha256": {
+    "01-component-gallery.html": "63e105c6031be008738a039693cc680b06595e9df8f6c75a54dd799f84870821",
+    "02-chat-workspace-template.html": "7f9454fd2554303c82424d049a769dd7d0bf0f3afb7ed3c29a6519e44d74b638",
+    "03-split-artifact-ide-template.html": "287ef8f1e8c2d2ca737b312ff77f9ecdc3960e700571aac519462d97e3176f89",
+    "04-editorial-blog-and-doc-template.html": "4ca18ed62dd2d09c192118fdf6bf90d5681b8372c94b50c125800e7a0f91df78",
+    "05-settings-and-dashboard-template.html": "2e98b60c953e978b285cc3fa8ad2436a5e593153f9393b38cc528e0186a25e4a",
+    "06-floating-launcher-template.html": "c8827ffc2d8493870ef01ef1ed6a65f6693e703310ea060975cd3cf40828b7fd"
+  },
+  "results": [
+    {
+      "file": "01-component-gallery.html",
+      "title": "inline assets, unique IDs, script parse, language and focus styles",
+      "result": "pass",
+      "method": "static"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "boots in file:// with storage denied",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "theme toggles and five palettes apply",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "write failure leaves UI operable",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "inline assets, unique IDs, script parse, language and focus styles",
+      "result": "pass",
+      "method": "static"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "boots in file:// with storage denied",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "theme toggles and five palettes apply",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "write failure leaves UI operable",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "inline assets, unique IDs, script parse, language and focus styles",
+      "result": "pass",
+      "method": "static"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "boots in file:// with storage denied",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "theme toggles and five palettes apply",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "write failure leaves UI operable",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "inline assets, unique IDs, script parse, language and focus styles",
+      "result": "pass",
+      "method": "static"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "boots in file:// with storage denied",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "theme toggles and five palettes apply",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "write failure leaves UI operable",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "inline assets, unique IDs, script parse, language and focus styles",
+      "result": "pass",
+      "method": "static"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "boots in file:// with storage denied",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "theme toggles and five palettes apply",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "write failure leaves UI operable",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "inline assets, unique IDs, script parse, language and focus styles",
+      "result": "pass",
+      "method": "static"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "boots in file:// with storage denied",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "theme toggles and five palettes apply",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "write failure leaves UI operable",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "button loading returns to enabled state",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "field required validation and recovery",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "dialog opens confirms closes and restores opener",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "switches expose checked state and report actual values",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "table sorting updates order and aria-sort",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "density changes only declared control profile",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "copy gracefully reports unavailable clipboard",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "message submitted as text and finishes locally",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "stop cancels response and restores draft",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "new conversation cancels pending response",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "IME blocks Enter and direct submit",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "isComposing/keyCode 229 and modified Enter protected",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "desktop sidebar collapse updates expanded/inert",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "mobile sidebar close and Escape restore toggle",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "context add and remove changes real state",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "new conversation rebinds original card controls",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "initial static preview has empty sandbox and strict CSP",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "untrusted scripts URLs embeds and event attributes removed",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "empty input preserves last successful preview",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "script-only error recovers without executing",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "tabs support ArrowLeft Home End and selected state",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "separator keyboard clamps min max",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "title instruction escapes user input and updates preview",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "IDE composition blocks submit",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "maximum preview size rejected",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "local search finds matching sections and opens real content",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "empty and no-result search states",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "docs tab replaces content and local navigation",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "focus reading toggles state and ARIA",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "search renders markup as text and IME waits",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "period changes all example metrics",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "settings controls preview and save real values",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "empty display name validation prevents save",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "reset dialog restores defaults and persists",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "activity filter filters actual rows",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "save handles storage denial without false persistence claim",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "malformed stored settings recover to validated enums",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "launcher starts open and arrow keys expose active descendant",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "free-text capture saves context and closes dialog",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "search filters command list then executes theme change",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "keyboard shortcut toggles and preserves draft",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "IME blocks keyboard, form submission and native cancel",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "capture is literal text, not markup",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "capture keeps latest eight and removal works",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "storage denial still captures and explains limitation",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "malformed stored captures are ignored safely",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "composition blocks input form submission until commit",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "01-component-gallery.html",
+      "title": "clipboard fallback returns focus to initiating button",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "stopping response preserves a newer typed draft",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "mobile drawer contains tab focus and disables background",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "malformed stored draft is discarded",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "02-chat-workspace-template.html",
+      "title": "composition guards global new-chat shortcut",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "title replacement keeps dollar replacement tokens literal",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "03-split-artifact-ide-template.html",
+      "title": "missing title target reports a useful error",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "composition prevents settings save",
+      "result": "pass",
+      "method": "simulated DOM"
+    },
+    {
+      "file": "06-floating-launcher-template.html",
+      "title": "legacy and modern composition flags protect Enter",
+      "result": "pass",
+      "method": "simulated DOM"
+    }
+  ]
+}

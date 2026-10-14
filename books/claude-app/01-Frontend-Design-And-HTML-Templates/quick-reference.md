@@ -42,7 +42,7 @@ Quick Entry：输入、会话上下文、提交同轴；所检独立窗口声明
 | 控件 / 图标 | 24 / 16px | 32 / 20px |
 | 普通 / composer 圆角 | 6 / 12px | 8 / 14px |
 
-换算前提：根字号 16px、rem-scale=1。prose 为普通 rem，许多工具值还乘 scale。消息 sm / md / lg 可以改正文，而内部按钮恢复自身字号。demo 的 `.study-button` 最小高度为原创的 40px，尚无上述密度切换。[字体与密度](README.md#03-字体与密度)
+换算前提：根字号 16px、rem-scale=1。prose 为普通 rem，许多工具值还乘 scale。消息 sm / md / lg 可以改正文，而内部按钮恢复自身字号。demo 提供原创 40 / 48px 密度与独立 14 / 16 / 18px 阅读字号；它没有复刻包内 24 / 32px 参数。[字体与密度](README.md#03-字体与密度)
 
 中文也有独立判断：所检 Sans / Serif / Mono 文件没有 CJK 统一表意字形；中文依赖回退。demo 的系统衬线阅读是原创适配，不能当作 Claude 中文默认字体。
 

@@ -1,0 +1,361 @@
+{
+  "scope": "Selected static-client observations, Claude Desktop Linux 2.37337.1; research date 2026-10-14; runtime activation and server implementation unverified. Short facts and anchors only; no target implementation included.",
+  "source_ledger": "workspaces-deep-dive.json",
+  "claims": [
+    {
+      "id": "W05",
+      "finding": "Rich rendering uses an iframe at configured userContentRendererUrl with sandbox allow-scripts/allow-same-origin, fullscreen/clipboard-write allowance, and no-referrer. Renderer query includes parentOrigin and optional parent error reporting.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 12450,
+          "byte_length": 34,
+          "anchor": "let{userContentRendererUrl:E}=oe()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 10585,
+          "byte_length": 14,
+          "anchor": "function At(e,",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 32903,
+          "byte_length": 41,
+          "anchor": "sandbox:\"allow-scripts allow-same-origin\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "Actual renderer origin/configuration, response headers/CSP, and renderer implementation were not obtained."
+    },
+    {
+      "id": "W06",
+      "finding": "The communicator sends a MessageChannel handshake; window messages must match the configured origin and exact iframe contentWindow. Port messages are parsed without an origin field, after the port is transferred through that window boundary.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 32977,
+          "byte_length": 26,
+          "anchor": "li=\"__sandbox_handshake__\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 33912,
+          "byte_length": 23,
+          "anchor": "sendHandshakeWithPort()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 35367,
+          "byte_length": 39,
+          "anchor": "if(e.origin!==this.allowedOrigin)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 35439,
+          "byte_length": 32,
+          "anchor": "if(t===null||e.source!==t)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 34042,
+          "byte_length": 20,
+          "anchor": "handlePortMessage(e)",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W07",
+      "finding": "Both ingress paths enforce a 30-message/5-second counter excluding recognized pending responses, parse envelope and method/payload schemas, reject duplicate tracked IDs, check permission, and map handler failures to a response.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 33330,
+          "byte_length": 33,
+          "anchor": "this.MAX_MESSAGES_PER_INTERVAL=30",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 34190,
+          "byte_length": 51,
+          "anchor": "this.isPendingResponse(e.data)||this.messageCount++",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 36998,
+          "byte_length": 24,
+          "anchor": "r=Re.safeParse(t.method)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37104,
+          "byte_length": 30,
+          "anchor": "let i=r.data,a=Pe.safeParse(t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37324,
+          "byte_length": 28,
+          "anchor": "Request ID already processed",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 37566,
+          "byte_length": 25,
+          "anchor": "Error checking permission",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W09",
+      "finding": "The generic sendRequest path has no timer in the inspected implementation. A disconnected iframe early-returns within the promise executor. Cleanup closes the port, removes listeners, and clears queued messages, without visibly settling every in-flight promise.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38426,
+          "byte_length": 25,
+          "anchor": "cleanup(){this.hostWindow",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38798,
+          "byte_length": 34,
+          "anchor": "if(!this.iframe.isConnected)return",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_offset": 38939,
+          "byte_length": 31,
+          "anchor": "this.inFlightRequests.set(a,e=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c180af5e0-BOkaYDLm.js",
+          "utf8_byte_offset": 521,
+          "byte_length": 4,
+          "anchor": "C<20",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/c180af5e0-BOkaYDLm.js",
+          "utf8_byte_offset": 558,
+          "byte_length": 6,
+          "anchor": "},500)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "This identifies a local missing completion edge, not proof that every caller hangs; individual callers may impose deadlines."
+    },
+    {
+      "id": "W10",
+      "finding": "Content posts invalidate acknowledgement and advance a sequence. Only a successful response for the current sequence restores acknowledgement. Inbound receipts snapshot that sequence/ack state and stale receipts cannot inherit a newer grant.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 9997,
+          "byte_length": 19,
+          "anchor": "O=Symbol(\"unacked\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 10017,
+          "byte_length": 18,
+          "anchor": "function St(e,t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 18926,
+          "byte_length": 19,
+          "anchor": "Yn=c(async(t,r,i)=>",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 27537,
+          "byte_length": 35,
+          "anchor": "Zn=c(e=>({[Ct]:!0,postSeq:j.current",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 31605,
+          "byte_length": 30,
+          "anchor": "a&&r===j.current&&(A.current=t",
+          "occurrence_zero_based": 0
+        }
+      ]
+    },
+    {
+      "id": "W12",
+      "finding": "The capability layer gates file access, conversation sends, completion, storage, and proxy fetch on supplied capabilities and current-content acknowledgement; project/shared-data permissions can involve dialogs. Capture-only instances remove capability props and proxy fetch.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 12697,
+          "byte_length": 23,
+          "anchor": "F=P?void 0:ie,Jt=ae&&!P",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 19134,
+          "byte_length": 20,
+          "anchor": "t.method===v.GetFile",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 20295,
+          "byte_length": 36,
+          "anchor": "t.method===v.SendConversationMessage",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 20491,
+          "byte_length": 29,
+          "anchor": "t.method===v.ClaudeCompletion",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 21664,
+          "byte_length": 23,
+          "anchor": "t.method===v.StorageSet",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 26140,
+          "byte_length": 23,
+          "anchor": "t.method===v.ProxyFetch",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "limit": "Presence of a protocol method does not imply implementation or permission in every caller. RunCode exists in schemas but not this handler branch."
+    },
+    {
+      "id": "W17",
+      "finding": "A screenshot request requires capture-only mode, the credentialless property, and no observed private-data touch; it is bounded to 15 seconds and validates returned image size/type. Live-frame capture is deliberately rejected.",
+      "authority": "static shipped client code",
+      "evidence": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29532,
+          "byte_length": 21,
+          "anchor": "screenshot_live_frame",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29595,
+          "byte_length": 29,
+          "anchor": "screenshot_not_credentialless",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29708,
+          "byte_length": 41,
+          "anchor": "new Promise(e=>setTimeout(()=>e(r),15e3))",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 30052,
+          "byte_length": 32,
+          "anchor": "if(i.screenshot.length>10485760)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_offset": 29479,
+          "byte_length": 23,
+          "anchor": "screenshot_private_data",
+          "occurrence_zero_based": 0
+        }
+      ]
+    }
+  ],
+  "files": {
+    "ion-dist/assets/v1/cbaae0d6d-Dzpx-jTX.js": {
+      "size_bytes": 38917,
+      "sha256": "95a1c25c4b469b2848ca0b5da51594f26f13a0659c603a2e8572ad42a5306987"
+    },
+    "ion-dist/assets/v1/c8d13a287-DgonFoFm.js": {
+      "size_bytes": 12678,
+      "sha256": "a8ebc3b2de2b5a79a760188d83a94327058fb6ee7c5663cf40ef5ae6cadf6f00"
+    },
+    "ion-dist/assets/v1/cc61d0d63-CISU76WY.js": {
+      "size_bytes": 35385,
+      "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33"
+    },
+    "ion-dist/assets/v1/shared-15-J8PhW4f7.js": {
+      "size_bytes": 66948,
+      "sha256": "a3c20215d932fba2c281ab081fe06b9d077d2248df481650d3de4d206cb7502d"
+    },
+    "ion-dist/assets/v1/c180af5e0-BOkaYDLm.js": {
+      "size_bytes": 1470,
+      "sha256": "e62a431731aa8b7f39a15b9a49cef980537075dd6bd45df675ab978c49d9cae8"
+    },
+    "ion-dist/assets/v1/shared-4-1vKV8QN9.js": {
+      "size_bytes": 259727,
+      "sha256": "e597be93e89f602d03526e8e45973ec88b3e7d179e420516cc2c580c37d6a852"
+    },
+    "ion-dist/assets/v1/c2879f9ce-B3f0Ohnm.js": {
+      "size_bytes": 3624,
+      "sha256": "940d73397634010e230759a485eb9931ca782641d39ccb69d98d4232d2f415c1"
+    },
+    "ion-dist/assets/v1/c44cebf16-DwIc7pgO.js": {
+      "size_bytes": 2021,
+      "sha256": "d8fd9400d9eb6f3cc21c9dace3dc3d4b0317fdca30f92c2355f12d43fda654ee"
+    },
+    "ion-dist/assets/v1/c368fdb57-DkgPnN-m.js": {
+      "size_bytes": 362039,
+      "sha256": "987019f27a79225ff5d7e8d2dafc78bf51b55cc2ec87f4b7fc40824f787a3732"
+    },
+    "ion-dist/assets/v1/c2bb74286-B_U3Ykl2.js": {
+      "size_bytes": 77695,
+      "sha256": "3b14985e56448bb2d74dcd16682f0a2972f50c25f00f7ac4f0416a67a5908697"
+    },
+    "ion-dist/assets/v1/frame-shell-chrome-B45f-YAC.js": {
+      "size_bytes": 1562073,
+      "sha256": "4a887d2bbc385c43100b324800bda5a9afe6655ccff36e162727169c8620fb03"
+    },
+    "ion-dist/assets/v1/c10f0af0c-CwfaDzac.js": {
+      "size_bytes": 613634,
+      "sha256": "e6cf4d335764c0d2f540a06ce3c46e409eb885fc9f2981971aa4173959ee9e68"
+    },
+    "ion-dist/assets/v1/c3cbaca16-BL3UuVuE.js": {
+      "size_bytes": 38869,
+      "sha256": "62411b53d16698b0377991374eb0258c469a74acc4b627da35f342445fa20495"
+    },
+    "ion-dist/assets/v1/shared-104-lA7EKODn.js": {
+      "size_bytes": 348029,
+      "sha256": "60a441eeb9086024face5a823bce2cc9a1129d592aafb58db615f72f57398983"
+    }
+  }
+}

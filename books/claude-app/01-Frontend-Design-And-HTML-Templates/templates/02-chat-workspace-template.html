@@ -21,8 +21,8 @@
   --ui-ink: #26251f;
   --ui-muted: #656258;
   --ui-line: #d9d6cc;
-  --ui-line-strong: #8f8a7c;
-  --ui-accent: #a54f35;
+  --ui-line-strong: #878273;
+  --ui-accent: #a24b33;
   --ui-accent-soft: #f3e3da;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
 }
@@ -81,7 +81,7 @@
   --ui-ink: #22323a;
   --ui-muted: #536875;
   --ui-line: #cddbe0;
-  --ui-line-strong: #7a949f;
+  --ui-line-strong: #708995;
   --ui-accent: #326780;
   --ui-accent-soft: #deedf3;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -111,7 +111,7 @@
   --ui-ink: #392b36;
   --ui-muted: #74606e;
   --ui-line: #dfd1dc;
-  --ui-line-strong: #a08a99;
+  --ui-line-strong: #947c8b;
   --ui-accent: #895577;
   --ui-accent-soft: #f0e1ec;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -141,7 +141,7 @@
   --ui-ink: #242627;
   --ui-muted: #626566;
   --ui-line: #d6d8d8;
-  --ui-line-strong: #898d8f;
+  --ui-line-strong: #7f8385;
   --ui-accent: #4f6069;
   --ui-accent-soft: #e5ebed;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -236,22 +236,22 @@ function autoSize(el,max=180) { el.style.height='auto'; el.style.height=Math.min
 function openDialog(dialog, opener) { dialog._opener=opener||document.activeElement; if(!dialog.open)dialog.showModal(); }
 $$('dialog').forEach(dialog=>{dialog.addEventListener('close',()=>dialog._opener?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});});
 $$('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-async function copyText(text) { try { if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('已复制。');return;} } catch {} const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.append(ta);ta.select();let copied=false;try { copied=document.execCommand('copy'); } catch {}ta.remove();toast(copied?'已复制。':'浏览器未允许复制，请选中文字后手动复制。'); }
+async function copyText(text) { const previous=document.activeElement;try { if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('已复制。');return;} } catch {} const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.append(ta);ta.select();let copied=false;try { copied=document.execCommand('copy'); } catch {}ta.remove();previous?.focus();toast(copied?'已复制。':'浏览器未允许复制，请选中文字后手动复制。'); }
 
 const chatInput=$('#chat-input'), chatForm=$('#chat-form'), chatSend=$('#send-chat'), chatIme=imeGuard(chatInput);let busy=false,pendingTimer,lastText='',context=false;
 const initialMessages=$('#messages').innerHTML;
 const mq=matchMedia('(max-width:760px)');let desktopClosed=false;
-function sidebar(open){const mobile=mq.matches;$('#chat-shell').classList.toggle('sidebar-open',mobile&&open);$('#chat-shell').classList.toggle('collapsed',!mobile&&!open);$('#sidebar-scrim').hidden=!(mobile&&open);$('#sidebar').inert=!open;$('#sidebar-toggle').setAttribute('aria-expanded',String(open));$('#sidebar-toggle').setAttribute('aria-label',open?'收起导航':'展开导航');if(!mobile)desktopClosed=!open;}
+function sidebar(open){const mobile=mq.matches;$('#chat-shell').classList.toggle('sidebar-open',mobile&&open);$('#chat-shell').classList.toggle('collapsed',!mobile&&!open);$('#sidebar-scrim').hidden=!(mobile&&open);$('#sidebar').inert=!open;$('.chat-main').inert=mobile&&open;$('#sidebar').setAttribute('role',mobile&&open?'dialog':'complementary');if(mobile&&open){$('#sidebar').setAttribute('aria-modal','true');$('#sidebar-close').focus();}else{$('#sidebar').removeAttribute('aria-modal');}$('#sidebar-toggle').setAttribute('aria-expanded',String(open));$('#sidebar-toggle').setAttribute('aria-label',open?'收起导航':'展开导航');if(!mobile)desktopClosed=!open;}
 sidebar(!mq.matches);mq.addEventListener('change',()=>sidebar(mq.matches?false:!desktopClosed));
 $('#sidebar-toggle').addEventListener('click',()=>sidebar($('#sidebar-toggle').getAttribute('aria-expanded')!=='true'));
 for(const id of ['sidebar-close','sidebar-scrim'])$('#'+id).addEventListener('click',()=>{sidebar(false);$('#sidebar-toggle').focus();});
-document.addEventListener('keydown',e=>{if(e.isComposing||e.keyCode===229)return;if(e.key==='Escape'&&$('#chat-shell').classList.contains('sidebar-open')){sidebar(false);$('#sidebar-toggle').focus();}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#new-chat').click();}});
+document.addEventListener('keydown',e=>{if(chatIme(e))return;if(e.key==='Tab'&&$('#chat-shell').classList.contains('sidebar-open')){const list=$$('button,a[href],input,select,textarea', $('#sidebar')).filter(el=>!el.disabled&&!el.hidden);const first=list[0],last=list[list.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}if(e.key==='Escape'&&$('#chat-shell').classList.contains('sidebar-open')){sidebar(false);$('#sidebar-toggle').focus();}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#new-chat').click();}});
 function syncComposer(){chatSend.disabled=!busy&&(!chatInput.value.trim()||chatIme());chatSend.setAttribute('aria-label',busy?'停止生成':'发送消息');chatSend.innerHTML=busy?'<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>':'<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>';autoSize(chatInput);}
-chatInput.value=storage.read('chat-draft','');if(typeof chatInput.value!=='string')chatInput.value='';
+const restoredDraft=storage.read('chat-draft','');chatInput.value=typeof restoredDraft==='string'?restoredDraft.slice(0,4000):'';
 chatInput.addEventListener('input',()=>{syncComposer();storage.write('chat-draft',chatInput.value);});chatInput.addEventListener('compositionstart',syncComposer);chatInput.addEventListener('compositionend',syncComposer);
 function scrollChat(){const el=$('#chat-scroll');el.scrollTop=el.scrollHeight;}
 function appendMessage(text,role){const article=document.createElement('article');article.className='message '+role;const p=document.createElement('p');p.textContent=text;if(role==='assistant')p.className='reading';article.append(p);$('#messages').append(article);return article;}
-function stopChat(){clearTimeout(pendingTimer);$('#pending-response')?.remove();busy=false;chatInput.value=lastText;$('#chat-status').textContent='已停止；原输入已恢复';syncComposer();chatInput.focus();}
+function stopChat(){clearTimeout(pendingTimer);$('#pending-response')?.remove();busy=false;const hasNextDraft=Boolean(chatInput.value.trim());if(!hasNextDraft)chatInput.value=lastText;storage.write('chat-draft',chatInput.value);$('#chat-status').textContent=hasNextDraft?'已停止；下一条草稿已保留':'已停止；原输入已恢复';syncComposer();chatInput.focus();}
 function sendChat(){if(chatIme())return;if(busy){stopChat();return;}const text=chatInput.value.trim();if(!text)return;lastText=text;appendMessage(text,'user');chatInput.value='';storage.write('chat-draft','');busy=true;$('#chat-error').hidden=true;const pending=document.createElement('div');pending.id='pending-response';pending.className='thinking-status';pending.textContent='正在整理这个想法…';$('#messages').append(pending);$('#chat-status').textContent='正在生成本地示例';syncComposer();scrollChat();pendingTimer=setTimeout(()=>{pending.remove();busy=false;const concise=$('#chat-mode').value==='concise';appendMessage(concise?'先明确目标，再安排层级，最后验证每一个交互状态。这是预设的本地回复。':'可以把这个想法拆成三个步骤：先用一句话描述目标；再把必要信息放在最容易看到的位置；最后检查键盘、窄屏和错误恢复。你刚才的输入已保留在上方。这是确定性的本地示例回复。','assistant');$('#chat-status').textContent='示例已完成 · 没有网络请求';syncComposer();scrollChat();},900);}
 chatForm.addEventListener('submit',e=>{e.preventDefault();sendChat();});chatInput.addEventListener('keydown',e=>{if(chatIme(e))return;if(e.key==='Enter'&&!e.shiftKey&&!e.altKey&&!e.ctrlKey&&!e.metaKey){e.preventDefault();sendChat();}});
 $('#new-chat').addEventListener('click',()=>{clearTimeout(pendingTimer);busy=false;$('#messages').innerHTML=initialMessages;bindMessageActions();chatInput.value='';storage.write('chat-draft','');$('#chat-error').hidden=true;$('#chat-status').textContent='新对话已就绪';syncComposer();if(mq.matches)sidebar(false);chatInput.focus();});

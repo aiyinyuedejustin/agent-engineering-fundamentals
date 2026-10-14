@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>纸页 · 原创对话界面骨架</title>
+<link rel="stylesheet" href="tokens.css">
+<body>
+<a class="skip" href="#prompt">跳到输入框</a>
+<div class="app">
+  <aside class="sidebar" aria-label="导航">
+    <p class="brand">纸页 / Papernote</p>
+    <nav aria-label="示例会话"><button id="current" type="button" aria-current="page">下一代搜索基础设施设计评审</button></nav>
+    <p class="hint">原创静态起点。所有输入仅留在本页，刷新即清除。</p>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <h1>阅读、讨论与作品</h1>
+      <div class="tools"><button id="theme" type="button" aria-pressed="false">深色主题</button><button id="preview-toggle" type="button" aria-expanded="false" aria-controls="preview">查看作品示例</button></div>
+    </header>
+    <div class="split">
+      <main class="conversation" aria-label="对话">
+        <section id="transcript" class="transcript" aria-label="消息记录">
+          <article class="message user"><h2>你 · 示例内容</h2><p>怎样让信息密集的界面更适合持续阅读？</p></article>
+          <article class="message"><h2>示例回答</h2><p>先让正文成为主角。把导航、消息操作和作品预览放在稳定位置，给它们不同的视觉重量。</p><p lang="en">A quiet interface still needs clear boundaries, visible focus, and honest state.</p></article>
+        </section>
+        <form id="composer" class="composer">
+          <label for="prompt">继续讨论</label>
+          <textarea id="prompt" name="prompt" rows="3" placeholder="写下你的问题……" required></textarea>
+          <div class="composer-footer"><span class="hint">本地演示，不连接模型</span><button class="primary" type="submit">添加到演示</button></div>
+        </form>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </main>
+      <aside id="preview" class="preview" aria-label="作品示例" hidden>
+        <h2 tabindex="-1">作品拥有自己的空间</h2>
+        <p>这是受信任的静态内容。若接入生成的 HTML，请另行建立隔离来源和能力边界，不能直接写入这里。</p>
+        <pre><code>const state = { selected: "draft", saved: false };</code></pre>
+        <button id="close-preview" type="button">关闭作品示例</button>
+      </aside>
+    </div>
+  </div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+$('theme').addEventListener('click', () => {
+  const dark = document.documentElement.dataset.theme !== 'dark';
+  document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+  $('theme').setAttribute('aria-pressed', String(dark));
+});
+function setPreview(open) {
+  $('preview').hidden = !open;
+  $('preview-toggle').setAttribute('aria-expanded', String(open));
+  if (open) $('preview').querySelector('h2').focus();
+  else $('preview-toggle').focus();
+}
+$('preview-toggle').addEventListener('click', () => setPreview($('preview').hidden));
+$('close-preview').addEventListener('click', () => setPreview(false));
+$('preview').addEventListener('keydown', event => { if (event.key === 'Escape') setPreview(false); });
+$('current').addEventListener('click', () => $('prompt').focus());
+$('composer').addEventListener('submit', event => {
+  event.preventDefault();
+  const value = $('prompt').value.trim();
+  if (!value) { $('status').textContent = '请先输入内容。'; return; }
+  const article = document.createElement('article'); article.className = 'message user';
+  const heading = document.createElement('h2'); heading.textContent = '你 · 本地演示';
+  const body = document.createElement('p'); body.textContent = value;
+  article.append(heading, body); $('transcript').append(article);
+  $('prompt').value = ''; $('status').textContent = '已添加到本地演示；没有向模型发送。'; $('prompt').focus();
+});
+</script>
+</body>
+</html>

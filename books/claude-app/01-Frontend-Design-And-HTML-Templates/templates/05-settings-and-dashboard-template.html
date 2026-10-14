@@ -21,8 +21,8 @@
   --ui-ink: #26251f;
   --ui-muted: #656258;
   --ui-line: #d9d6cc;
-  --ui-line-strong: #8f8a7c;
-  --ui-accent: #a54f35;
+  --ui-line-strong: #878273;
+  --ui-accent: #a24b33;
   --ui-accent-soft: #f3e3da;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
 }
@@ -81,7 +81,7 @@
   --ui-ink: #22323a;
   --ui-muted: #536875;
   --ui-line: #cddbe0;
-  --ui-line-strong: #7a949f;
+  --ui-line-strong: #708995;
   --ui-accent: #326780;
   --ui-accent-soft: #deedf3;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -111,7 +111,7 @@
   --ui-ink: #392b36;
   --ui-muted: #74606e;
   --ui-line: #dfd1dc;
-  --ui-line-strong: #a08a99;
+  --ui-line-strong: #947c8b;
   --ui-accent: #895577;
   --ui-accent-soft: #f0e1ec;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -141,7 +141,7 @@
   --ui-ink: #242627;
   --ui-muted: #626566;
   --ui-line: #d6d8d8;
-  --ui-line-strong: #898d8f;
+  --ui-line-strong: #7f8385;
   --ui-accent: #4f6069;
   --ui-accent-soft: #e5ebed;
   --ui-action: #272722; --ui-on-action: #ffffff; --ui-danger: #9c332c; --ui-danger-soft: #fbeae5; --ui-success: #386043; --ui-success-soft: #e4efe5; --ui-scrim: #26251f40;
@@ -235,15 +235,15 @@ function autoSize(el,max=180) { el.style.height='auto'; el.style.height=Math.min
 function openDialog(dialog, opener) { dialog._opener=opener||document.activeElement; if(!dialog.open)dialog.showModal(); }
 $$('dialog').forEach(dialog=>{dialog.addEventListener('close',()=>dialog._opener?.focus());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});});
 $$('[data-close-dialog]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-async function copyText(text) { try { if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('已复制。');return;} } catch {} const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.append(ta);ta.select();let copied=false;try { copied=document.execCommand('copy'); } catch {}ta.remove();toast(copied?'已复制。':'浏览器未允许复制，请选中文字后手动复制。'); }
+async function copyText(text) { const previous=document.activeElement;try { if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);toast('已复制。');return;} } catch {} const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';document.body.append(ta);ta.select();let copied=false;try { copied=document.execCommand('copy'); } catch {}ta.remove();previous?.focus();toast(copied?'已复制。':'浏览器未允许复制，请选中文字后手动复制。'); }
 
-const defaults={theme:'light',density:'comfortable',reading:'default',notice:true,activity:true,motion:false,name:'留白的朋友',bio:'在日常工作里，寻找清晰与秩序。'};let saved={...defaults};const stored=storage.read('settings',null);if(stored&&typeof stored==='object'){for(const key of Object.keys(defaults)){if(typeof stored[key]===typeof defaults[key])saved[key]=stored[key];}}if(!['light','dark'].includes(saved.theme))saved.theme='light';if(!['compact','comfortable'].includes(saved.density))saved.density='comfortable';if(!['default','large'].includes(saved.reading))saved.reading='default';
+const defaults={theme:'light',density:'comfortable',reading:'default',notice:true,activity:true,motion:false,name:'留白的朋友',bio:'在日常工作里，寻找清晰与秩序。'};let saved={...defaults};const stored=storage.read('settings',null);if(stored&&typeof stored==='object'){for(const key of Object.keys(defaults)){if(typeof stored[key]===typeof defaults[key])saved[key]=stored[key];}}if(!['light','dark'].includes(saved.theme))saved.theme='light';if(!['compact','comfortable'].includes(saved.density))saved.density='comfortable';if(!['default','large'].includes(saved.reading))saved.reading='default';saved.name=saved.name.slice(0,40);saved.bio=saved.bio.slice(0,160);const profileIme=imeGuard($('#display-name')),bioIme=imeGuard($('#bio'));
 function collect(){return {theme:$('input[name=appearance]:checked')?.value||'light',density:$('#control-density').value,reading:$('#reading-size').value,notice:$('#completion-notice').checked,activity:$('#show-activity').checked,motion:$('#reduce-motion').checked,name:$('#display-name').value.trim(),bio:$('#bio').value};}
 function apply(){const s=collect();setTheme(s.theme,false);root.dataset.density=s.density;root.dataset.reading=s.reading;root.classList.toggle('user-reduced-motion',s.motion);$('#activity-card').hidden=!s.activity;$('#bio-count').textContent=s.bio.length+' / 160';$('#save-status').textContent=JSON.stringify(s)===JSON.stringify(saved)?'所有更改已保存':'有尚未保存的更改';}
 function fill(s){$('input[name=appearance][value="'+s.theme+'"]').checked=true;$('#control-density').value=s.density;$('#reading-size').value=s.reading;$('#completion-notice').checked=s.notice;$('#show-activity').checked=s.activity;$('#reduce-motion').checked=s.motion;$('#display-name').value=s.name;$('#bio').value=s.bio;apply();}
 $('#settings-form').addEventListener('input',apply);$('#settings-form').addEventListener('change',apply);$('#theme-toggle').addEventListener('click',()=>{$('input[name=appearance][value="'+root.dataset.theme+'"]').checked=true;apply();});
-$('#settings-form').addEventListener('submit',e=>{e.preventDefault();const s=collect();if(!s.name||s.name.length>40){$('#display-name').setAttribute('aria-invalid','true');$('#profile-help').textContent='请填写 1–40 个字符的显示名称。';$('#display-name').focus();return;}$('#display-name').setAttribute('aria-invalid','false');$('#profile-help').textContent='1–40 个字符。不会发送到任何服务。';saved={...s};const ok=storage.write('settings',saved);storage.write('theme',saved.theme);$('#save-status').textContent=ok?'已保存到当前浏览器':'已在本页应用，未能持久保存';$('#storage-note').textContent=ok?'偏好已保存到当前浏览器。关闭或刷新后可继续使用。':'浏览器拒绝了本地存储。更改已在本页生效，刷新后可能恢复默认。';if(s.notice)toast(ok?'偏好已保存。':'设置已应用；本地存储不可用。');});
-$('#reset-settings').addEventListener('click',()=>openDialog($('#reset-dialog')));$('#confirm-reset').addEventListener('click',()=>{saved={...defaults};fill(saved);const ok=storage.write('settings',saved);storage.write('theme','light');$('#save-status').textContent=ok?'已恢复并保存默认设置':'默认设置已应用，未能持久保存';$('#reset-dialog').close();toast('已恢复默认设置。');});
+$('#settings-form').addEventListener('submit',e=>{e.preventDefault();if(profileIme()||bioIme())return;const s=collect();if(!s.name||s.name.length>40){$('#display-name').setAttribute('aria-invalid','true');$('#profile-help').textContent='请填写 1–40 个字符的显示名称。';$('#display-name').focus();return;}$('#display-name').setAttribute('aria-invalid','false');$('#profile-help').textContent='1–40 个字符。不会发送到任何服务。';saved={...s};const ok=storage.write('settings',saved);storage.write('theme',saved.theme);$('#save-status').textContent=ok?'已保存到当前浏览器':'已在本页应用，未能持久保存';$('#storage-note').textContent=ok?'偏好已保存到当前浏览器。关闭或刷新后可继续使用。':'浏览器拒绝了本地存储。更改已在本页生效，刷新后可能恢复默认。';if(s.notice)toast(ok?'偏好已保存。':'设置已应用；本地存储不可用。');});
+$('#reset-settings').addEventListener('click',()=>openDialog($('#reset-dialog')));$('#confirm-reset').addEventListener('click',()=>{saved={...defaults};fill(saved);const ok=storage.write('settings',saved);storage.write('theme','light');$('#save-status').textContent=ok?'已恢复并保存默认设置':'默认设置已应用，未能持久保存';$('#storage-note').textContent=ok?'默认设置已保存到当前浏览器。':'默认设置已在本页生效；浏览器拒绝存储，刷新后可能保留旧设置。';$('#reset-dialog').close();toast('已恢复默认设置。');});
 const activities=[{kind:'note',title:'阅读界面的三个关系',time:'今天 · 10:24'},{kind:'project',title:'更新项目提纲',time:'今天 · 09:40'},{kind:'note',title:'把灵感写下来',time:'昨天 · 16:30'}];function renderActivity(){const filtered=activities.filter(a=>$('#activity-filter').value==='all'||a.kind===$('#activity-filter').value);$('#activity-list').replaceChildren();for(const a of filtered){const row=document.createElement('div');row.className='activity';const icon=document.createElement('span');icon.className='activity-icon';icon.textContent=a.kind==='note'?'≡':'▢';icon.setAttribute('aria-hidden','true');const content=document.createElement('div');const title=document.createElement('strong');title.textContent=a.title;const time=document.createElement('small');time.textContent=a.time;content.append(title,time);row.append(icon,content);$('#activity-list').append(row);}}$('#activity-filter').addEventListener('change',renderActivity);
 $('#period').addEventListener('change',e=>{const month=e.target.value==='month';$('#metric-notes').innerHTML=(month?'92':'24')+'<span>篇</span>';$('#metric-projects').innerHTML=(month?'7':'3')+'<span>个</span>';$('#metric-complete').innerHTML=(month?'91':'86')+'<span>%</span>';$('#metric-growth').textContent=month?'+18 较上一周期':'+6 较上一周期';});
 $$('.settings-nav').forEach(a=>a.addEventListener('click',()=>{$$('.settings-nav').forEach(n=>n.classList.toggle('active',n===a));}));fill(saved);renderActivity();

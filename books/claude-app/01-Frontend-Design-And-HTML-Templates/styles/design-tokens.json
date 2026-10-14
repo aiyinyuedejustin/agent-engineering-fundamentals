@@ -4,8 +4,8 @@
   "researchBaseline": "2026-10-14",
   "scope": "[data-ui=\"atelier\"]",
   "sources": [
-    "../../book/01-visual-design/README.md",
-    "../../book/01-visual-design/quick-reference.md"
+    "../README.md",
+    "../../04-Extracted-Core-Code-And-Scripts/evidence/data/design-token-summary.json"
   ],
   "palettes": {
     "paper": {
@@ -18,8 +18,8 @@
         "ink": "#26251f",
         "muted": "#656258",
         "line": "#d9d6cc",
-        "line-strong": "#8f8a7c",
-        "accent": "#a54f35",
+        "line-strong": "#878273",
+        "accent": "#a24b33",
         "accent-soft": "#f3e3da"
       },
       "dark": {
@@ -70,7 +70,7 @@
         "ink": "#22323a",
         "muted": "#536875",
         "line": "#cddbe0",
-        "line-strong": "#7a949f",
+        "line-strong": "#708995",
         "accent": "#326780",
         "accent-soft": "#deedf3"
       },
@@ -96,7 +96,7 @@
         "ink": "#392b36",
         "muted": "#74606e",
         "line": "#dfd1dc",
-        "line-strong": "#a08a99",
+        "line-strong": "#947c8b",
         "accent": "#895577",
         "accent-soft": "#f0e1ec"
       },
@@ -122,7 +122,7 @@
         "ink": "#242627",
         "muted": "#626566",
         "line": "#d6d8d8",
-        "line-strong": "#898d8f",
+        "line-strong": "#7f8385",
         "accent": "#4f6069",
         "accent-soft": "#e5ebed"
       },

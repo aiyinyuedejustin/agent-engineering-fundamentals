@@ -1,0 +1,15 @@
+{
+  "name": "atelier-single-file-template-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static and simulated DOM checks for six original offline templates",
+  "scripts": {
+    "test": "node run.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

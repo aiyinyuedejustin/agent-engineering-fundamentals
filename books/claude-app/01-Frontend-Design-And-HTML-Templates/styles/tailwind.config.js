@@ -3,6 +3,8 @@
  * 此配置无插件依赖，先在应用根容器加载 claude-tokens.css。
  * 使用例：<main data-ui="atelier" data-palette="sage" data-theme="dark">。
  * 五套配色由 CSS 自定义属性驱动；切换 data-palette 不必重新生成工具类。
+ * content 路径相对于本配置；移植到项目根目录时，请按实际源码位置修改。
+ * 语义色为完整 CSS 颜色变量；不要假定 bg-accent/50 等透明度修饰直接兼容。
  * 2026-10-14 核验官方升级指南：v4 采用 CSS-first；JS 配置不再自动发现，
  * 必须用 @config "./tailwind.config.js" 显式加载；v4 dark 变体请单独配置。
  * 参考 https://tailwindcss.com/docs/upgrade-guide#using-a-javascript-config-file
@@ -10,7 +12,7 @@
  * HTML 模板不依赖此配置、不加载 Tailwind CDN，也不需要构建。
  */
 module.exports = {
-  content: ["./*.html", "./src/**/*.{html,js,ts,jsx,tsx}"],
+  content: { relative: true, files: ["../templates/*.html", "../src/**/*.{html,js,ts,jsx,tsx}"] },
   darkMode: ["selector", '[data-theme="dark"]'],
   corePlugins: { preflight: false }, // 使用有作用域的独立 reset，避免全局污染。
   theme: { extend: {
