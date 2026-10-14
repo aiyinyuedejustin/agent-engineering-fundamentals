@@ -23,7 +23,7 @@ references/evidence.json 保留 2026-10-14 对 Claude Desktop Linux 2.37337.1 �
 
 本例只有 read.text，且授权回调默认为拒绝。readText 与 authorize 是受信任宿主适配器，不提供给不可信内容。成功的内容 acknowledgement 只证明协议中收到匹配响应；恶意 renderer 可能撒谎，不能把它当成安全审查或真实像素已完成的证明。
 
-入站 receipt 在任何 await 之前取得且被冻结。guard 检查会话仍 active、请求未超时/取消、内容 generation/sequence 未变。它不会替代外部资源 ACL、租户身份或组织策略。实际 readText 应在读取与交付前核对当前资源授权，并在策略撤销时销毁会话或使用自身的策略版本栅栏。不要仅在 authorize 开始时检查一次后长期缓存其结果。
+入站 receipt 在任何 await 之前取得且被冻结。guard 检查会话仍 active、请求未超时/取消、内容 generation/sequence 未变。 本地 handler 结算与实际发送响应之间仍可能执行内容替换，因此发送成功数据前再次核对原始 receipt；已从在途集合移除的任务也不能绕过这道检查。它不会替代外部资源 ACL、租户身份或组织策略。实际 readText 应在读取与交付前核对当前资源授权，并在策略撤销时销毁会话或使用自身的策略版本栅栏。不要仅在 authorize 开始时检查一次后长期缓存其结果。
 
 handler 必须尊重 signal，且对可能产生副作用的步骤在提交前调用 context.guard() 并重新检查真实授权。即使 handler 忽略 signal，包装层也不会交付迟到结果；但模型无法停止该 handler、撤销其网络请求或回滚已经产生的副作用。示例只读内存资料，不演示外部写操作重试。
 

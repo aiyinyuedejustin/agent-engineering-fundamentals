@@ -32,7 +32,7 @@ flowchart LR
 
 ### 证据图例
 
-**S 静态**证明本包存在某项声明或处理分支；**D 官方文档**按文档日期与适用产品解释；**A 原创**表示工程推导与示例。本次没有启动 Claude、安装扩展、执行目标代码、读取真实配置或凭据。配置路径、权限 UI 和运行时分支的存在，不等于某个账户已启用或执行结果已验证。
+**S 静态**对应本包的声明与处理分支；**D 官方文档**按文档日期与适用产品解释；**A 原创**表示工程推导与示例。证据范围限于静态分析与文档：目标应用和代码未运行，扩展未安装，真实配置与凭据未读取；账户启用状态及实际执行结果仍待运行验证。
 
 [X01–X16 台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)保存文件摘要、短锚点、UTF-8 位置和 D01–D10 官方来源。主进程 IPC 边界见[第 1 卷](../01-System-Architecture/README.md)，通用配置持久化见[恢复专题](../11-State-Recovery-And-Updates/README.md)。
 
@@ -74,13 +74,13 @@ MCP 是 Model Context Protocol，即模型上下文协议，规定宿主与工�
 
 上述关系来自 [X03](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)。公开清单的 `user_config` 描述字段类型、必填、默认值、多选与敏感值，使配置表单和校验可以共用输入合同。[MCPB 清单规范](https://github.com/modelcontextprotocol/mcpb/blob/main/MANIFEST.md)
 
-版本依据也应保留：本次读取的规范页页首仍写 0.3，正文已介绍 0.4 的 uv；历史工程文章的字段拼写又与当前规范不同。本书将历史说明、可变文档与固定包的解析行为分别引用，不拿教程版本号代替二进制证据。
+规范页在观察时的页首仍写 0.3，正文已介绍 0.4 的 uv；历史工程文章的字段拼写也与当前规范不同。因此，历史说明、持续更新的文档和固定包的解析行为分别构成版本依据，解析能力以对应二进制为准。
 
 ### 包文件 设置和安装记录分别持有
 
 本包分别构造扩展安装目录、扩展设置目录及 `extensions-installations.json`。清单记录包的声明，设置记录用户如何配置它，安装元数据记录宿主认识的安装。[X04](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
 
-这样的分离为升级提供了基础：程序文件可被替换，而用户输入不必成为包的一部分；禁用状态也不需要改写作者清单。这里只是状态所有权的推导，没有验证全部升级与恢复分支。
+从状态所有权看，这种分离为升级提供了基础：程序文件可被替换，用户输入独立于包，禁用状态也无需改写作者清单。具体升级与恢复分支仍须分别验证。
 
 聊天侧本地 MCP 配置构建器先筛选禁用或组织阻止的扩展，再合并扩展生成项与手工配置。在这个合并点，同名用户条目覆盖扩展条目。[X05](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json) 这一优先级不自动适用于 Cowork、Code、远程账户连接器或其他托管配置。
 
@@ -92,7 +92,7 @@ MCP 是 Model Context Protocol，即模型上下文协议，规定宿主与工�
 
 同一 Linux 包也有启动 keyring 探测和提示。keyring 是系统密钥存储设施：当探测判为不可用、存在已登录账户、不是持续集成 CI 环境、未记录已显示且没有待发提示时，代码约 5 秒后请求主视图显示扩展密钥未加密的说明；只有消息分发器接受后才记为已提示。[X07](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
 
-这一提示不是每种单字段加密异常都会告知的保证。它也不能证明某个用户的配置已经明文落盘，或已经验证全部平台的密钥库语义。本次没有读取任何实际秘密。更准确的设计问题是：安全存储可用且成功时怎样保护；不可用时是否阻止保存、明确提示或采取降级策略。仅有“敏感字段”标签，无法回答这些失败路径。
+提示覆盖范围由上述启动条件决定，单字段加密异常未必触发告知。具体用户是否已明文落盘、各平台密钥库如何工作，均需独立验证。敏感存储的完整契约应说明：加密成功时怎样保护；不可用时是否阻止保存、明确提示或降级。字段标签只声明敏感性，失败路径由这些规则决定。
 
 ## 03 本地进程生命周期
 
@@ -100,7 +100,7 @@ MCP 是 Model Context Protocol，即模型上下文协议，规定宿主与工�
 
 宿主按扩展类型、兼容性与配置选择运行方式，包含内置 Node utility process、外部进程和动态 uv 分支。utility process 是 Electron 提供的辅助进程容器；附带运行时可以减少用户安装依赖的步骤，但本身不能证明文件系统被沙箱隔离。[X08](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
 
-被选入 REA 分析的 `nodeHost.js` 将标准输入、标准输出与错误输出接入 MessagePort，再加载所选服务入口，并向父进程报告致命错误。MessagePort 是进程或线程间传递消息的端口；研究工具只解析这个文件，没有导入执行。[X09](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
+`nodeHost.js` 的静态实现将标准输入、标准输出与错误输出接入 MessagePort，再加载所选服务入口，并向父进程报告致命错误。MessagePort 是进程或线程间传递消息的端口。[X09](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
 
 MCP 的 stdio 传输把协议消息放在 stdin/stdout，stderr 可用于诊断。服务若把普通调试文字写进协议输出，可能破坏客户端解析。因此，日志写到哪里也是集成合同的一部分。[固定版本传输规范 2025-06-18](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports)
 
@@ -133,7 +133,7 @@ MCP 的 stdio 传输把协议消息放在 stdin/stdout，stderr 可用于诊断�
 
 ### 安装 启用和调用是不同决定
 
-主进程接口区分扩展可用性、本地安装是否允许、安装状态、配置修改与连接变化。随包携带的 ion 前端也将组织策略加载与扩展列表加载分开。它们是 bundled UI 的静态实现，不能直接归属为标准 hosted 页面在当前账户上的实际显示。[X06](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
+主进程接口区分扩展可用性、本地安装是否允许、安装状态、配置修改与连接变化。随包携带的 ion 前端也将组织策略加载与扩展列表加载分开。这些结论适用于 bundled UI 的静态实现；标准 hosted 页面的实际显示仍取决于当前账户与部署。[X06](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
 
 同一类包内前端权限界面按交互、只读、写入/删除及其他类别组织工具，提供始终允许、需要批准和阻止状态，并按组织策略收窄可选项。某些场景即使显示始终允许，也提示写操作可能仍需确认。[X11](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)
 
@@ -155,15 +155,15 @@ MCP 的 stdio 传输把协议消息放在 stdin/stdout，stderr 可用于诊断�
 
 于是，允许目录表单只说明宿主或服务接收了一个范围。要声称操作系统强制限制访问，还需进程权限、沙箱配置与实际执行证据。工具的 `readOnlyHint` 同样只是元数据；MCP 工具规范提醒客户端，不可信服务的注解不能直接视作可信事实。[固定版本工具规范 2025-06-18](https://modelcontextprotocol.io/specification/2025-06-18/server/tools)
 
-这五项控制解决不同问题：安装来源决定信任哪个发布物；配置范围决定期望访问什么；连接与认证确认双方身份；调用批准针对本次动作；资源侧授权决定服务真正能访问什么。[X16](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json) 它们构成本书的工程分解，不是对 Claude 完整安全策略的认证。
+这五项控制解决不同问题：安装来源决定信任哪个发布物；配置范围决定期望访问什么；连接与认证确认双方身份；调用批准针对本次动作；资源侧授权决定服务真正能访问什么。[X16](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json) 这是一组工程责任划分，证据范围未覆盖 Claude 的完整安全策略。
 
 ## 05 Desktop 与 Code
 
-Claude Code 有自己的 local、project、user 配置作用域，也提供显式 Desktop 配置导入。导入不是全部本地状态实时共享，文档中的平台限制也不能因为本书研究 Linux Desktop 就被省略。公开文档还按终端、云宿主与 Desktop 宿主区分账户连接器交付。[X14](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)，[Claude Code MCP 文档](https://code.claude.com/docs/en/mcp)
+Claude Code 有自己的 local、project、user 配置作用域，也提供显式 Desktop 配置导入。导入是显式配置转移，不是全部本地状态的实时共享；适用平台以 Code 文档的条件为准。公开文档还按终端、云宿主与 Desktop 宿主区分账户连接器交付。[X14](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)，[Claude Code MCP 文档](https://code.claude.com/docs/en/mcp)
 
 尤其当 Claude Code 作为 MCP 服务提供工具时，文档将逐次调用的用户确认责任交给调用它的客户端。工具实现被复用，不会自动带上原产品的每个交互保护。
 
-写下某项集成结论时，给它附上产品、会话类型、配置来源和执行位置，就能避免常见误读。例如“从 Desktop 导入”应继续问导入到哪个 Code 作用域；“已经批准这个工具”应继续问是哪一客户端、哪一动作及哪组参数。此处是文档对照，不是固定 Code 二进制的逆向结论。
+写下某项集成结论时，给它附上产品、会话类型、配置来源和执行位置，就能避免常见误读。例如“从 Desktop 导入”应继续问导入到哪个 Code 作用域；“已经批准这个工具”应继续问是哪一客户端、哪一动作及哪组参数。上述 Code 行为依据公开文档，固定二进制实现仍在验证范围之外。
 
 ## 06 原创例子与验证
 
@@ -179,7 +179,7 @@ Claude Code 有自己的 local、project、user 配置作用域，也提供显�
 6. 服务端再次执行资源访问检查；需要系统级隔离时，另行建立和验证。
 7. 断开后清理连接，并对已经提交的外部操作确认结果。
 
-这个例子不尝试复刻 Claude；它把前述机制转成一条可实现的责任链。
+这个原创例子将前述机制组织成一条可实现的责任链。
 
 ### 有针对性的合成测试
 
@@ -193,12 +193,12 @@ Claude Code 有自己的 local、project、user 配置作用域，也提供显�
 | 工具元数据变化 | 重新识别身份与影响，不直接扩大授权 |
 | 加密不可用或单字段失败 | 保存结果、降级状态与告知条件可区分 |
 
-以上是 A 测试计划，应使用自有无害样例和合成配置。真实扩展库存、功能开关、运行时选择、操作系统权限、加密回退触发情况及竞态时序仍未知。
+以上为 A 测试计划，适用材料是自有无害样例和合成配置。待验证项包括实际扩展库存、功能开关、运行时选择、操作系统权限、加密回退触发情况及竞态时序。
 
-### REA 实际做到哪里
+### 静态分析的覆盖范围
 
-REA 6.5.0 对四个小文件做受限静态分析：Node 适配器、确认窗口 preload、确认流程控制器和确认界面脚本。使用完整性失败策略、512 MiB heap 与每文件 30 秒限额，四个文件均解析成功，未发现完整性矛盾；该选源仍留下 433 个清点文件未分析。主 bundle 与部分 ion 前端的其他结论来自定向字节阅读，不能归为 REA 完整解析所得。
+REA 6.5.0 的静态分析覆盖 Node 适配器、确认窗口 preload、确认流程控制器和确认界面脚本四个文件。完整性失败策略、512 MiB heap 与每文件 30 秒限额下，四个文件均解析成功，未发现完整性矛盾；另有 433 个清点文件不在该选源范围。主 bundle 与部分 ion 前端的其他结论依据定向字节阅读，证据类型与 REA 完整解析分开标记。
 
-原始台账有 16 条结论、6 个文件摘要和 46 个短锚点，审查补充了敏感字段的实际落盘链与 Linux keyring 提示条件。最终定位与限定以[扩展证据台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)为准。完整 REA 图、下载包、提取代码和任何用户配置不在公开交付范围。
+台账包含 16 条结论、6 个文件摘要和 46 个短锚点，并记录敏感字段的实际落盘链与 Linux keyring 提示条件。最终定位与限定以[扩展证据台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)为准。完整 REA 图、下载包、提取代码和任何用户配置不在公开交付范围。
 
-这套分析留下的核心关系是：安装决定交付，配置决定如何启动，连接决定能否通信，调用决定当前动作，资源侧控制决定实际权限。把每个关系写清楚，才有条件测试它们在失败、重连和策略变化后是否仍成立。
+安装决定交付，配置决定如何启动，连接决定能否通信，调用决定当前动作，资源侧控制决定实际权限。每项关系都有独立的验收条件，并须在失败、重连和策略变化后重新检查。

@@ -2,7 +2,7 @@
 
 让偏好能够保存，让失败能够结束，让更新真正生效
 
-桌面应用的可靠性藏在“下一次”里：下一次启动能否读到设置，下一次重试会不会刷新错页面，下一次进程启动是否真的换成新版本。本次样本把这些问题拆给不同的状态所有者，并为网络、renderer 和图形进程使用不同的恢复路径。
+桌面应用的可靠性藏在“下一次”里：下一次启动能否读到设置，下一次重试会不会刷新错页面，下一次进程启动是否真的换成新版本。本版本把这些问题拆给不同的状态所有者，并为网络、renderer 和图形进程使用不同的恢复路径。
 
 最值得带走的四个发现是：用户配置与壳层 store 采用不同损坏策略；内存生效、广播完成和磁盘确认是不同结果；离线等待会延长自动重试预算；Linux 的默认更新责任属于 apt，应用负责发现版本变化与重启接管。
 
@@ -18,7 +18,7 @@
 
 ## 01 状态所有权
 
-### 没有单一的设置对象
+### 多个状态所有者分别持久化
 
 store 是主进程持有的持久化键值存储；schema 是约束字段与类型的结构规则。同一个设置界面可能同时操作多个 store 和加载器。
 
@@ -30,7 +30,7 @@ store 是主进程持有的持久化键值存储；schema 是约束字段与类�
 | 恢复标记 | 专用文件或 store 项 | GPU 故障、更新尝试及失败次数 | 尚未解决的跨启动证据 |
 | renderer 临时状态 | 本地页面内存 | 错误层、可选小游戏状态 | 当前页面生命周期即可 |
 
-这是 [SET-01、11、RES-06](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)涉及的状态范围，不是全产品存储清单。研究读取的是路径构造与加载代码，没有打开同名用户文件。
+此表覆盖 [SET-01、11、RES-06](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)所列路径构造与加载机制；全产品存储清单不在该证据范围内。
 
 分开所有权后，一个具体决定就变得清楚：窗口拖动值得合并写入，用户手工配置损坏值得保留原件，而恢复标记必须等修复确认后才能清除。它们不适合共用“解析失败就置空”的策略。
 
@@ -89,7 +89,7 @@ AppPreferences 写入先验证 key 属于 schema，再拒绝主进程专用字�
 
 *图 1　A 局部更新链。内存采用新值、页面收到通知、磁盘写入确认，应分别记录。*
 
-writer 返回 `written`、`parked` 或 `write-failed`。本次追到的普通偏好 IPC 包装器没有向调用者继续传递落盘结果；这揭示了状态分层，但未观察到 UI 误报“保存成功”。GPU 恢复等重要路径会检查 `written` 再决定后续处理。[SET-06、RES-05](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
+writer 返回 `written`、`parked` 或 `write-failed`。所核对的普通偏好 IPC 包装器未继续向调用者传递落盘结果，因此这一接口的完成状态须与磁盘确认区分；UI 是否误报“保存成功”尚无运行观察。GPU 恢复等重要路径会检查 `written` 再决定后续处理。[SET-06、RES-05](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
 用户配置写入优先采用按路径互斥、临时文件与 rename，默认文件权限参数为十进制 384，即 POSIX 0600；某些 rename 失败又会回退直接写。因此它具有原子替换优先路径，而非所有错误路径都具有原子性或掉电保证。[SET-07](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
@@ -97,7 +97,7 @@ writer 返回 `written`、`parked` 或 `write-failed`。本次追到的普通偏
 
 journal 是写入过程留下的恢复记录。本包 store 的 `.journal` 同时携带内容摘要与目标 store 的版本摘要。启动恢复既检查记录完整性，也检查它是否适用于当前目标，避免残留记录覆盖后来已经变化的文件。退出调用 `quiesce` 等待正在提交的写入。[SET-08](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
-这些摘要用于完整性与前序版本匹配，不是有密钥的恶意篡改认证。库内另有版本迁移和失败回滚能力，但本次主 config store 构造没有注册 migrations 表；应用配置校验前清理旧枚举也只支持“兼容性归一化”的结论。[SET-10](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
+这些摘要用于完整性与前序版本匹配，不是有密钥的恶意篡改认证。库内另有版本迁移和失败回滚能力，但本版本的主 config store 构造没有注册 migrations 表；应用配置校验前清理旧枚举也只支持“兼容性归一化”的结论。[SET-10](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
 窗口几何则采用约 1 秒防抖、串行写入链与关闭时 flush，跳过最小化状态，恢复时校验尺寸并按当前显示器工作区重新安置。[SET-11](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json) 这里值得保存的是正常窗口的位置意图，而非每次临时外观；旧坐标也必须重新放回当前设备布局。
 
@@ -120,7 +120,7 @@ journal 是写入过程留下的恢复记录。本包 store 的 `.journal` 同�
 | focus / show / resume / unlock | 可提前触发，约 10 秒节流 |
 | 自动重试耗尽后的唤醒 | 另有约 60 秒离线等待边界 |
 
-[RES-02–03](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)显示，初始 timer 的离线等待没有统一墙钟截止；离线暂停会延长原预算。把它缩写为“最多重试三分钟”会丢掉这个重要条件。它也不是所有网络请求共用的重试策略。
+[RES-02–03](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)显示，此错误页的初始 timer 在离线等待时没有统一墙钟截止，离线暂停会延长原预算。因此，“三分钟”是重试预算的量级，不是统一截止时间；其他网络请求的策略须另行核对。
 
 回调执行前还检查当前错误层是否仍是原先那一个。用户已开始新导航时，旧错误的计时器不能刷新新页面。这是比延迟常量更有价值的结构：异步结果必须验证自己仍属于当前状态。
 
@@ -169,7 +169,7 @@ apt 发现并安装新包
 新进程版本与更新尝试记录核对
 ```
 
-*图 3　A Linux 默认责任分工。应用检测受更新策略约束；图示不表示本研究执行了 apt 安装或重启。*
+*图 3　A Linux 默认责任分工。应用检测受更新策略约束；图示为静态机制模型，apt 安装与重启尚待运行验证。*
 
 包里同时包含 Electron autoUpdater 的 checking、downloading、ready、error 等公共状态，不能据此说 Linux 默认在应用内下载并安装。另一组更新记账记录 from/to version、上次尝试、失败次数和实际版本，用于跨启动确认；它也不能证明存在自动回滚。[UPD-03](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
@@ -183,11 +183,11 @@ apt 发现并安装新包
 
 日志初始化前先缓冲；路径异常时尝试搬移重建，再失败可禁用文件日志。某些参数元数据始终被替换，完整行 scrub 则只在受限合规模式启用，scrubber 失败使用固定 redacted 占位。浏览器类别另会截断长行并裁去查询参数与片段。[LOG-02](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
-“有脱敏函数”不足以推出所有日志都已去标识化；本次没有审计全部覆盖率。日志不可写时可停止文件记录，则体现了另一条可靠性边界：记录故障的设施不应递归制造新的致命故障。
+脱敏覆盖率须逐条日志路径核对，现有证据未覆盖全部日志。日志不可写时可停止文件记录，体现了另一条可靠性边界：记录故障的设施不应递归制造新的致命故障。
 
 `showLogsInFileManager` 尤其值得追到实现。它会准备多类诊断材料，生成下载目录中的 ZIP，再在文件管理器显示；它并非仅打开现有日志目录。[LOG-03](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
-因此，自建支持流程应将生成支持包、检查内容和发送给接收者分成独立步骤。日志轮转限制、局部 scrub 和文件名都不能替代对最终 ZIP 的隐私检查。这里没有生成或读取任何真实用户支持包。
+自建支持流程应将生成支持包、检查内容和发送给接收者分成独立步骤。最终 ZIP 的隐私检查须核对实际内容，日志轮转限制、局部 scrub 和文件名均不足以代替。真实用户支持包未纳入本章验证。
 
 ## 06 验证入口
 
@@ -202,12 +202,12 @@ apt 发现并安装新包
 | 更新 | 文件已替换但进程仍旧 | 页面状态、重启和新版本核对分开 |
 | 诊断 | 日志目录不可写、支持包生成 | 降级运行、ZIP 内容与分享边界 |
 
-这是 A 测试建议。真正断电、磁盘满、代理异常、GPU 故障、多显示器恢复与辅助技术尚未验证；内存模拟不能替代这些实验。
+以上为 A 测试建议。断电、磁盘满、代理异常、GPU 故障、多显示器恢复与辅助技术均属待验证项目，需要环境实验补足内存模拟。
 
 ### REA 与证据核验
 
 REA 6.5.0 对更新要求模块和本地错误页完成精确选源分析，解析 2 个 JavaScript 文件、0 个解析失败。主 chunk 加错误页的另一次运行使用 1,024 MiB heap、3,000 semantic-node 上限和单文件 60 秒限额，主 chunk 超时，返回 partial observation。本章大部分机制来自原文件惰性读取与控制流人工核对，不是完整全程序调用图。
 
-初轮台账核验了 143 个短锚点，保存文件 SHA-256、字符及 UTF-8 字节区间；审查进一步补充非停放例外和更新策略条件。位置读回匹配不等于机制已运行。最终锚点、输入身份与 REA Evidence ID 均可在[结构化证据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)复查。公开内容不包含完整 bundle、原始 REA 输出或用户状态。
+台账包含 143 个已核验短锚点、文件 SHA-256、字符及 UTF-8 字节区间，以及非停放例外和更新策略条件。锚点匹配确认源码位置，运行行为仍须实验验证。最终锚点、输入身份与 REA Evidence ID 均可在[结构化证据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)复查。公开内容不包含完整 bundle、原始 REA 输出或用户状态。
 
-下一步最有价值的证据是受控故障实验：证明新状态真的落盘，旧回调真的失效，恢复标记只在修复确认后消失，以及更新后确实运行新版本。本章先把这些问题各自的责任边界固定下来。
+受控故障实验的验收目标是：新状态确实落盘，旧回调失效，恢复标记只在修复确认后消失，更新后运行新版本。各项目分别对应持久化、异步归属、跨启动恢复和更新接管的责任边界。

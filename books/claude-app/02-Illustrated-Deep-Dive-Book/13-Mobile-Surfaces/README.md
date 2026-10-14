@@ -1,26 +1,26 @@
 # 第 13 卷：Claude iOS / Android 的界面与交互边界
 
-研究观察日：2026-10-14（UTC）。本章以标准版 Claude 移动应用为对象。它补足以 Desktop 2.37337.1 为样本的研究，不能把桌面安装包分析包装成手机实现分析。没有安装或运行目标移动应用，没有登录、读取私有会话或提取 IPA/APK。
+观察日：2026-10-14（UTC）。本章讨论标准版 Claude 移动应用，以官方文档和图片补充 Desktop 2.37337.1 的静态研究。移动端证据独立于桌面实现；目标移动应用未安装或运行，账户未登录，私有会话未读取，IPA/APK 未提取。
 
 ## 先说结论
 
 移动端可以继承桌面研究中的会话层级、输入工具分组、附件与交付物的区分，但必须单独研究操作系统入口、键盘、安全区和跨应用交接。目前最可靠的移动端差异来自官方操作说明；商店图片主要说明产品表达，不能支持精确原生界面还原。
 
-本次实际查看了 13 张商店图片及 2 张官方移动语音界面裁切。13 张商店图都是宣传材料，其中五组内容在两个商店高度相近。Google Play 甚至包含一张具有 iPhone 风格锁屏线索的设备照片。把“图片出现在 Android 商店”直接解释成“这是 Android 原生 UI”，会产生错误的平台归因。
+视觉资料包括 13 张商店图片及 2 张官方移动语音界面裁切。13 张商店图均为宣传材料，其中五组内容在两个商店高度相近；Google Play 还包含具有 iPhone 风格锁屏线索的设备照片。因此，商店归属只能标记发布渠道，原生 UI 的平台归属须另行核对。
 
 [完整证据账本](../../04-Extracted-Core-Code-And-Scripts/evidence/data/mobile-surfaces.json)记录图片地址、SHA-256、尺寸和观察边界。原始图片仅作私下核验，出版物不附带原图。以下编号对应证据账本，图片尺寸均指下载文件像素，不是逻辑点、dp 或 CSS px。
 
 ## 1. 对象身份与时间不能混在一起
 
-- 标准 iOS 应用：[Claude by Anthropic，App Store ID 6473753684](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)。本次打开的页面显示版本 1.261012.20；这不是商店图片的版本。
-- Android 应用：[Claude by Anthropic，包标识 com.anthropic.claude](https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US)。本次打开的英文页面显示更新时间 2026-10-13；没有核验 Android version code。
+- 标准 iOS 应用：[Claude by Anthropic，App Store ID 6473753684](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)。观察日的页面显示版本 1.261012.20；商店图片对应的版本未标明。
+- Android 应用：[Claude by Anthropic，包标识 com.anthropic.claude](https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US)。观察日的英文页面显示更新时间 2026-10-13；Android version code 尚未核验。
 - 当前帮助文档要求 iOS/iPadOS 18+、Android 8.0+。iOS 另有组织管理用 Claude for Intune，不能混作同一分发对象。见 [iOS 安装说明](https://support.claude.com/en/articles/9266462-install-claude-for-ios) 与 [Android 安装说明](https://support.claude.com/en/articles/9612887-install-claude-for-android)。本章没有查看 iPad、Intune 或折叠屏运行界面。
 
 必须分开记录四个时间/版本字段：页面观察日、文章发布日期、商店当前版本、截图拍摄日期。这里所有图片的拍摄日期与应用 build 均未知。CDN 路径、文件修改时间、下载时间或当前版本号都不能补上这个空白。
 
-官方 2024 年 [iOS 发布文章](https://claude.com/resources/articles/team-plan-and-ios) 和 [Android 发布文章](https://claude.com/resources/articles/android-app) 可以支持“跨设备会话、拍照和文件输入在早期就存在”的历史结论。它们不能证明 2026 年的控件位置。可选历史图片下载遇到 HTTP 403 后已停止，没有把未查看图片作为视觉证据。
+官方 2024 年 [iOS 发布文章](https://claude.com/resources/articles/team-plan-and-ios) 和 [Android 发布文章](https://claude.com/resources/articles/android-app) 可以支持“跨设备会话、拍照和文件输入在早期就存在”的历史结论。它们不能证明 2026 年的控件位置。返回 HTTP 403 的历史图片未纳入视觉证据。
 
-## 2. 实际看到了什么
+## 2. 图片呈现的界面与交互
 
 ### 2.1 商店图是经过编排的产品场景
 
@@ -33,16 +33,16 @@ App Store 的五张图片为 600 × 1300；Google Play 的八张所下载图片�
 | 连接工具 | MS-IOS-03 | MS-AND-04 | 服务标识和宣传排布 | 连接器设置页、授权流程、原生网格 |
 | 交互作品 | MS-IOS-04 | MS-AND-05 | 聊天与作品分层表达、作品切片的关闭/更多入口 | 截图内闪卡的深色与紫色属于 Claude 全局主题 |
 | 附件及文件 | MS-IOS-05 | MS-AND-06 | 图片/文档缩略项、带类型的交付物卡、输入控件分组 | 完整屏幕、键盘避让、底部安全距离 |
-| 任务通知 | 未在本次 iPhone 图片架中发现 | MS-AND-07 | 设备照片中的多条通知 | Android 通知外观；图片具有 iPhone 风格线索 |
-| 任务审批 | 未在本次 iPhone 图片架中发现 | MS-AND-08 | 状态筛选、任务卡与 Approve 按钮 | Android 独占功能、真实审批状态机 |
+| 任务通知 | 所查 iPhone 图集中未出现 | MS-AND-07 | 设备照片中的多条通知 | Android 通知外观；图片具有 iPhone 风格线索 |
+| 任务审批 | 所查 iPhone 图集中未出现 | MS-AND-08 | 状态筛选、任务卡与 Approve 按钮 | Android 独占功能、真实审批状态机 |
 
-来源：[App Store](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)、[Google Play](https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US)。这里的“未发现”只描述本次图片集，不是产品能力否定。
+来源：[App Store](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684)、[Google Play](https://play.google.com/store/apps/details?id=com.anthropic.claude&hl=en_US)。表中缺项仅指所查图片集，产品能力须依据文档或运行证据判断。
 
-卡片在多张图中越出后方聊天框，背景是真实场景照片；这明确提示它们是宣传拼贴。不能把拼贴里特意放大的卡片当成浮层尺寸规范。相同构图也不能证明两端共享组件库、渲染技术或相同代码。
+多张图中的卡片越出后方聊天框，并叠在真实场景照片上，属于宣传拼贴。放大的卡片呈现产品功能而非浮层尺寸；共享构图也只支持视觉表达相近，组件库、渲染技术和代码是否共用仍待独立证据。
 
 ### 2.2 导航：保留紧凑入口，展开结构尚未验证
 
-商店的聊天切片有左上菜单图标，右上有新建样式图标及省略号。图像没有展示打开的导航抽屉、组织切换、项目列表或完整底部导航。因此只能描述入口层，不能绘制一张声称“当前完整 IA”的原生导航图。来源：MS-IOS-01/04/05、MS-AND-02/05/06。
+商店的聊天切片显示左上菜单图标，以及右上的新建样式图标和省略号，证据覆盖导航入口层。导航抽屉展开、组织切换、项目列表与完整底部导航未出现在图集中，完整原生 IA 仍待验证。来源：MS-IOS-01/04/05、MS-AND-02/05/06。
 
 另有文本证据：移动端文件能力设置从左侧栏中的姓名/首字母进入 Settings。它证明存在这条文档化路径，并不提供侧栏宽度或展开动画。见 [Create and edit files with Claude](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)。
 
@@ -60,13 +60,13 @@ MS-AND-08 的 All / Blocked / In progress / Done 胶囊与任务卡，说明官�
 
 帮助文档描述连续免手持与按住说话两种方式，同一会话可在文字和语音间切换。移动端在语音状态左下角进入设置，选择 voice 和 pace。官方设置裁切（MS-VOICE-02，原证据 OV08-IMG4）能直接看到顶部拖动条、分组圆角选项、亮边框选中项和底部指示条。见 [Use voice mode](https://support.claude.com/en/articles/11101966-use-voice-mode)。
 
-这里可以提炼的交互原则是：输入模式、语音选择与节奏分别控制，且设置靠近活动会话。不能由静态图补出拖动关闭手势、横向滚动、触觉反馈、录音动效、打断延迟或后台音频能力。文章将裁切标为 mobile，未明确区分 iOS/Android。
+可复用的交互原则是：输入模式、语音选择与节奏分别控制，且设置靠近活动会话。拖动关闭手势、横向滚动、触觉反馈、录音动效、打断延迟和后台音频能力仍需运行验证。文章仅将裁切标为 mobile，平台归属未细分到 iOS/Android。
 
-### 2.5 键盘与安全区：保留空白比伪造精确值更重要
+### 2.5 键盘与安全区的待验证边界
 
-本次图集没有显示当前系统键盘、中文输入法组合状态、焦点光标、键盘收起或 Android 返回键。语音设置图的底部指示条说明截图包含底部系统区域线索，却不能提供设备型号、屏幕比例、底部 inset 或触控命中区。
+所查图集未呈现当前系统键盘、中文输入法组合状态、焦点光标、键盘收起或 Android 返回键。语音设置图的底部指示条说明截图包含底部系统区域线索，却不能提供设备型号、屏幕比例、底部 inset 或触控命中区。
 
-因此本章不主张以下任何实现事实：
+以下实现细节仍需真机验证：
 
 - composer 是否随键盘上移、是否覆盖消息尾部；
 - Enter 发送还是换行，中文候选词确认是否误发；
@@ -82,7 +82,7 @@ MS-AND-08 的 All / Blocked / In progress / Done 胶囊与任务卡，说明官�
 
 移动端的关键差别在交接之后：官方文档明确说，点 Download 会打开系统预览或另一应用，而不是保证留在 Claude 内。Design 的移动端文档则说明可在 Artifacts 中全屏查看并编辑设计，修改共享设置需到 web/desktop。两者需要分别建模为“系统文件交接”与“应用内作品查看”。见 [文件创建](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude)、[Claude Design](https://support.claude.com/en/articles/14604416-get-started-with-claude-design)。
 
-不要把示例作品里的深色卡片、紫色反馈按钮或地图颜色吸收到 Claude 的品牌 token：这些颜色可能属于生成内容或第三方地图，而非宿主应用。
+示例作品里的深色卡片、紫色反馈按钮或地图颜色可能属于生成内容或第三方地图。品牌 token 的归属应区分宿主应用、生成作品与第三方内容。
 
 ## 4. iOS / Android 差异主要出现在系统边界
 
@@ -100,14 +100,14 @@ MS-AND-08 的 All / Blocked / In progress / Done 胶囊与任务卡，说明官�
 
 ## 5. “移动工作区”需要拆开谈
 
-不要把项目、组织账户、Code 仓库与设备上的本地目录都叫同一个 workspace。
+项目、组织账户、Code 仓库与设备本地目录分别具有不同的上下文和访问边界，需按对象区分 workspace 的含义。
 
 1. 会话与任务：2026-09-16 发布说明记录了合并 Chat/Cowork 的分批推出。当前帮助文档强调同一套餐的账户也可能处于不同阶段；手机可查看、继续或发起云端任务。涉及用户电脑文件、浏览器或 computer use 的任务仍依赖运行中的 Desktop。见 [发布说明](https://support.claude.com/en/articles/12138966-release-notes)、[统一体验](https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude)。
-2. 项目：统一体验文档将其描述为文件、指令和相关工作上下文的集合。这里没有独立核验移动项目创建、移动/归档或组织切换的运行界面。
+2. 项目：统一体验文档将其描述为文件、指令和相关工作上下文的集合。移动项目创建、移动/归档及组织切换的运行界面仍待独立核验。
 3. Code 会话：官方移动深链接支持会话列表、已有会话和新会话预填，要求账户有 Code 权限。问题、仓库、分支与模式是文档化参数；桌面的 folder/file 参数会被忽略。因此手机入口不能等同于获得手机或桌面本地目录访问权。见 [移动深链接](https://support.claude.com/en/articles/14898120-open-the-claude-mobile-app-with-a-link)。
 4. 组织能力：角色限制在服务端执行。官方特别指出，移动端被禁用的 connector tool 可能仍显示为可用，但调用会被拒绝。这是“看起来打开”不等于“确实能执行”的具体例子。见 [Enterprise 自定义角色](https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans)。
 
-这些文字证据证明功能与边界，不证明账户一定已 rollout，也不能反推 Desktop 2.37337.1 静态 bundle 里所有路径已经生效。
+这些文档描述功能与边界；实际账户的 rollout 状态，以及 Desktop 2.37337.1 静态 bundle 中各路径是否生效，仍须分别核对。
 
 ## 6. 已有明确文档的移动限制
 
@@ -129,11 +129,11 @@ MS-AND-08 的 All / Blocked / In progress / Done 胶囊与任务卡，说明官�
 | 任务状态、需要人决定的动作显著化 | 通知深链接、权限拒绝、离线及重连恢复 |
 | 账户/项目/会话的概念区分 | 手机上的具体导航层级及不同 rollout 状态 |
 
-这不是“同一网页缩小到手机”的实施方案。即使共享产品概念，移动端仍有系统拥有的界面、生命周期与权限状态。
+共享产品概念可以迁移；移动端由系统拥有的界面、生命周期与权限状态需要独立实现和验证。
 
 ## 8. 可复用的下一轮原生验证清单
 
-以下是原创验证计划，不声称已测试。取得合适授权和可用设备后，应使用合成消息、测试文件和测试账户，并记录 app build、OS、设备、语言、套餐与 rollout 状态。
+以下为待执行的原创验证计划。取得合适授权和可用设备后，应使用合成消息、测试文件和测试账户，并记录 app build、OS、设备、语言、套餐与 rollout 状态。
 
 | 场景 | 应记录的状态 | 要回答的问题 |
 |---|---|---|
@@ -146,6 +146,6 @@ MS-AND-08 的 All / Blocked / In progress / Done 胶囊与任务卡，说明官�
 | 任务审批 | 等待决定、同意、拒绝、过期、网络断开 | 是否存在重复动作或过时批准？ |
 | 访问性 | 大字、读屏、深浅主题、外接键盘 | 控件名称、焦点顺序和触摸区域是否可用？ |
 
-这些证据收齐之前，最诚实的交付物是有来源和空白项的移动交互模型，而不是一份带有虚构像素精度的原生复刻规范。
+现有证据支持带来源和待验项的移动交互模型；原生控件尺寸与精确视觉规范须在真机验证后补全。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)

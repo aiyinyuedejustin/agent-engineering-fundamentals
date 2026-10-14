@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-10-14T23:51:50.561Z",
+  "root": "/workspace/shared/claude-design-research/publication/01-Frontend-Design-And-HTML-Templates/templates",
+  "method": "jsdom with deterministic timers, media-query changes, storage exceptions and native-dialog-method stubs. No browser/layout/CSP-enforcement claim.",
+  "runner": {
+    "node": "v24.19.0",
+    "jsdom": "26.1.0"
+  },
+  "sha256": {
+    "01-component-gallery.html": "63e105c6031be008738a039693cc680b06595e9df8f6c75a54dd799f84870821",
+    "02-chat-workspace-template.html": "e9db89c56f00f50a5ba96c702cabb7135d33fb315c141bd116dd97bb95dffab7",
+    "03-split-artifact-ide-template.html": "1acaa24cad301e8dea73400385e5d6e640bd15617acca0e42b4f53f7dfa0a00a",
+    "04-editorial-blog-and-doc-template.html": "4ca18ed62dd2d09c192118fdf6bf90d5681b8372c94b50c125800e7a0f91df78",
+    "05-settings-and-dashboard-template.html": "1a87ff25d0bc238fe4064cb913afce64990f8365b4b46362459e012f4f96cd6f",
+    "06-floating-launcher-template.html": "c8827ffc2d8493870ef01ef1ed6a65f6693e703310ea060975cd3cf40828b7fd"
+  },
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "results": [
+    {
+      "id": "EDGE-01a",
+      "file": "02-chat-workspace-template.html",
+      "title": "Desktop-to-mobile resize returns focus before the sidebar becomes inert",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-01b",
+      "file": "02-chat-workspace-template.html",
+      "title": "Mobile-to-desktop resize moves focus off the now-hidden mobile close control",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-01c",
+      "file": "02-chat-workspace-template.html",
+      "title": "Mobile drawer restores collapsed desktop preference without trapping focus",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-02a",
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "Failed save remains unsaved after changing a control and restoring its value",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-02b",
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "Failed reset remains unsaved after changing a control and restoring its value",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-03",
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "Reset clears prior display-name validation error",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-04a",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "Title instruction targets real H1 rather than an HTML comment",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-04b",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "Title instruction targets real H1 rather than a STYLE raw-text comment",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-04c",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "An H1 found only in a comment reports a missing title",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-05",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "Title-only edit preserves H1 class, id, and style while keeping replacement literal",
+      "result": "pass"
+    },
+    {
+      "id": "EDGE-06",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "Static text-only HTML previews instead of being rejected as empty",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-01",
+      "file": "02-chat-workspace-template.html",
+      "title": "Stop at 899ms cancels completion and preserves newer draft",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-02",
+      "file": "02-chat-workspace-template.html",
+      "title": "Completion at 900ms preserves newer draft and later send intentionally submits it",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-03",
+      "file": "02-chat-workspace-template.html",
+      "title": "Stop, resubmit, new conversation and another submission do not leak old completions",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-04",
+      "file": "02-chat-workspace-template.html",
+      "title": "Repeated viewport switches restore inert/ARIA state and desktop preference",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-05",
+      "file": "01-component-gallery.html",
+      "title": "Gallery dialog native-cancel simulation returns opener through repeated cycles",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-06",
+      "file": "02-chat-workspace-template.html",
+      "title": "Chat dialog close does not discard a draft and returns focus to reading card",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-07",
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "Cancelled settings reset preserves unsaved values and original stored settings",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-08",
+      "file": "05-settings-and-dashboard-template.html",
+      "title": "Successful retry after failed settings save really persists latest values",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-09",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "Preview removes navigable/active constructs, preserves CSP and last success on error",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-10",
+      "file": "03-split-artifact-ide-template.html",
+      "title": "Title update changes only first real H1 and does not execute markup",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-11",
+      "file": "06-floating-launcher-template.html",
+      "title": "Composition protects selected command, capture, shortcut and native cancel",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-12",
+      "file": "06-floating-launcher-template.html",
+      "title": "Escape preserves draft and context over repeated reopen cycles",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-13",
+      "file": "06-floating-launcher-template.html",
+      "title": "Selected command resets safely when query narrows and capture remains literal",
+      "result": "pass"
+    },
+    {
+      "id": "CONTROL-14",
+      "file": "04-editorial-blog-and-doc-template.html",
+      "title": "Editorial Escape then mode switch keeps search and focus targets coherent",
+      "result": "pass"
+    }
+  ]
+}

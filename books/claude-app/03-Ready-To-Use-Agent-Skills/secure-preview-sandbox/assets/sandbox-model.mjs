@@ -231,7 +231,11 @@ export class SandboxHost {
       }
     };
     const context = Object.freeze({ receipt, signal: task.controller.signal, guard });
-    task.promise.then(result => this.#reply(data, null, result), error => this.#reply(data, error));
+    task.promise.then(result => {
+      // Settlement queues this callback. Content can change before actual delivery,
+      // after the task has already left #inbound and is no longer cancelable there.
+      this.#reply(data, this.#gate.permits(receipt) ? null : fail('STALE'), result);
+    }, error => this.#reply(data, error));
     // The wrapper is cancelable even when a supplied callback ignores AbortSignal.
     Promise.resolve().then(async () => {
       guard();

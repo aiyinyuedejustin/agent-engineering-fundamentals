@@ -359,3 +359,22 @@ test('injected ProtocolError cannot leak arbitrary text through its code', async
   await h.open(); await h.setContent(); h.read();
   assert.deepEqual((await h.take()).error, { code: 'HANDLER_FAILED' });
 });
+
+test('content replacement between read settlement and reply delivery suppresses old data', async t => {
+  let completeRead;
+  const h = harness(t, { authorize: () => true,
+    readText: () => new Promise(resolve => { completeRead = resolve; }) });
+  await h.open(); await h.setContent(); h.read('settled_old_read');
+  await waitFor(() => completeRead);
+  completeRead('synthetic private value');
+  // Await local settlement, while its queued response callback has not run yet.
+  for (let n = 0; n < 100 && h.host.inboundCount; n++) await Promise.resolve();
+  assert.equal(h.host.inboundCount, 0);
+  const newer = h.host.postContent({ format: 'html', body: 'new content' });
+  const message = await h.take(data => data.kind === 'request');
+  h.emit(reply(message)); await newer;
+  const response = await h.take(data => data.id === 'settled_old_read');
+  assert.equal(response.ok, false);
+  assert.deepEqual(response.error, { code: 'STALE' });
+  assert.equal(Object.hasOwn(response, 'payload'), false);
+});
