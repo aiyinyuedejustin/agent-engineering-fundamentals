@@ -160,6 +160,30 @@
 
 [公开原文](https://blog.atlan.com/engineering/loop-engineering-in-production-putting-ai-agents-on-call/)
 
+<a id="r3-runtime-008"></a>
+
+### r3-runtime-008 · Using load shedding to avoid overload
+
+作者／组织：David Yanacek / AWS Builders' Library。类型：作者／团队实践或研究文章。版本／日期：Migrated page published 2026-06-12, modified 2026-06-15。读取日：2026-10-14。
+
+用途：过载时仍应让已开始的工作收尾；完成与控制路径不能被新工作挤占，排队年龄也要计入剩余期限。
+
+选读范围：Prioritizing requests；Keeping an eye on the clock；Finishing what was started；Watching out for queues；Protecting against overload in lower layers。限制：AWS 系统实践；预留比例、独立控制池和 agent 退出顺序是按依赖设计的工程应用，不是统一默认。
+
+[公开原文](https://aws.amazon.com/builders-library/using-load-shedding-to-avoid-overload/)
+
+<a id="r3-runtime-011"></a>
+
+### r3-runtime-011 · Worker shutdown behavior
+
+作者／组织：Temporal。类型：官方文档／规范。版本／日期：Current public docs snapshot, 2026-10-14。读取日：2026-10-14。
+
+用途：Worker 先停止接收新任务，再限时等待已接工作；后续取消能否完成取决于任务协作及 SDK。
+
+选读范围：Opening paragraph; Graceful shutdown; Non-graceful period shutdown; General developer guidance。限制：Go 与 Core 的退出行为不同；统一 shutdown timeout 不是强杀保证，也不要求采用 Temporal。
+
+[公开原文](https://docs.temporal.io/encyclopedia/workers/worker-shutdown)
+
 <a id="runtime-boundaries-031"></a>
 
 ### runtime-boundaries-031 · Docker memory and CPU constraints

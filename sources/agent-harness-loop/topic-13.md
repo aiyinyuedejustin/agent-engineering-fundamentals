@@ -93,17 +93,17 @@
 
 ### durable-orchestration-038 · Why Do Multi-Agent LLM Systems Fail?
 
-作者／组织：Mert Cemri et al.。类型：研究论文。版本／日期：v3 2025-10-26。读取日：2026-10-13。 引用别名：traces-eval-058（本条合计 1 项，各版本复核不另计）。
+作者／组织：Mert Cemri et al.。类型：研究论文。版本／日期：v3 2025-10-26。读取日：2026-10-13。 引用别名：traces-eval-058（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：信息未被采用可能是未发送、未收到、被忽略、上下文截断等不同故障，不能笼统归为agent不聪明。
 
 选读范围：https://arxiv.org/html/2503.13657v3 sections4, appendixA, examplesN1/N3/N8/N11。限制：特定框架和任务集的1600+轨迹，不将频率作为一般故障概率；旧摘要数字已更新
 
-已读版本／别名（同一来源）：
-- durable-orchestration-038：v3 2025-10-26；范围：https://arxiv.org/html/2503.13657v3 sections4, appendixA, examplesN1/N3/N8/N11。[该版本原文](https://arxiv.org/abs/2503.13657)
-- traces-eval-058：v1, 2025-03-17；范围：3 Methodology; 4.1; 4.3; 7。[该版本原文](https://arxiv.org/html/2503.13657v1)
+已读关联文档／版本（同一计数组）：
+- durable-orchestration-038：v3 2025-10-26；范围：https://arxiv.org/html/2503.13657v3 sections4, appendixA, examplesN1/N3/N8/N11。[该记录原文](https://arxiv.org/abs/2503.13657)
+- traces-eval-058：v1, 2025-03-17；范围：3 Methodology; 4.1; 4.3; 7。[该记录原文](https://arxiv.org/html/2503.13657v1)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://arxiv.org/abs/2503.13657)
 

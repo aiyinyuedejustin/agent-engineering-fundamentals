@@ -129,17 +129,17 @@
 
 ### network-errors-015 · OpenAI Python v3.29.0 retry implementation
 
-作者／组织：OpenAI。类型：源码／仓库文档。版本／日期：v3.29.0 / 7e1643a67322956ac81fc7d0c3f0f9161e2e5482。读取日：2026-10-13。 引用别名：runtime-boundaries-002（本条合计 1 项，各版本复核不另计）。
+作者／组织：OpenAI。类型：源码／仓库文档。版本／日期：v3.29.0 / 7e1643a67322956ac81fc7d0c3f0f9161e2e5482。读取日：2026-10-13。 引用别名：runtime-boundaries-002（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：有限Retry-After超过120秒在_should_retry中拒绝重试，优先于x-should-retry；不能只读退避计算函数声称它会提前重试。数值溢出用超过上限的有限sentinel保留拒绝。
 
 选读范围：_parse_retry_after_header L812-848; _calculate_retry_timeout L861-883; _should_retry L885-927; constants MAX_RETRY_AFTER_DELAY=120。限制：限定 v3.29.0 所列重试分支；静态实现不等于所有请求路径或用户安装版本的运行证明。
 
-已读版本／别名（同一来源）：
-- network-errors-015：main as read 2026-10-13; immutable Git blob 883bed6e19b9fd05126affe1e6ced56a309db164；范围：_parse_retry_after_header；_calculate_retry_timeout；_should_retry；SyncAPIClient.request。[该版本原文](https://github.com/openai/openai-python/blob/main/src/openai/_base_client.py)
-- runtime-boundaries-002：v3.29.0 / 7e1643a67322956ac81fc7d0c3f0f9161e2e5482；范围：_parse_retry_after_header L812-848; _calculate_retry_timeout L861-883; _should_retry L885-927; constants MAX_RETRY_AFTER_DELAY=120；补充复核，不新增计数。[该版本原文](https://github.com/openai/openai-python/blob/7e1643a67322956ac81fc7d0c3f0f9161e2e5482/src/openai/_base_client.py)
+已读关联文档／版本（同一计数组）：
+- network-errors-015：main as read 2026-10-13; immutable Git blob 883bed6e19b9fd05126affe1e6ced56a309db164；范围：_parse_retry_after_header；_calculate_retry_timeout；_should_retry；SyncAPIClient.request。[该记录原文](https://github.com/openai/openai-python/blob/main/src/openai/_base_client.py)
+- runtime-boundaries-002：v3.29.0 / 7e1643a67322956ac81fc7d0c3f0f9161e2e5482；范围：_parse_retry_after_header L812-848; _calculate_retry_timeout L861-883; _should_retry L885-927; constants MAX_RETRY_AFTER_DELAY=120；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-python/blob/7e1643a67322956ac81fc7d0c3f0f9161e2e5482/src/openai/_base_client.py)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/openai/openai-python/blob/7e1643a67322956ac81fc7d0c3f0f9161e2e5482/src/openai/_base_client.py)
 
@@ -244,17 +244,17 @@
 
 ### network-errors-043 · LiteLLM reliability, retries and fallbacks
 
-作者／组织：LiteLLM maintainers。类型：官方文档／规范。版本／日期：live documentation as read 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-025（本条合计 1 项，各版本复核不另计）。
+作者／组织：LiteLLM maintainers。类型：官方文档／规范。版本／日期：live documentation as read 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-025（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：Router可以先在模型组内重试再逐级fallback；外层loop若另有重试，会乘上这一预算。
 
 选读范围：Retries/Timeout/Fallbacks; encrypted reasoning and encrypted_content_affinity; cooldown and fallback model IDs。限制：阅读前18k的重试/超时/cooldown/fallback状态段；加密状态处理是高风险实现断言，仍需固定版本代码和provider文档交叉核查。
 
-已读版本／别名（同一来源）：
-- network-errors-043：live documentation as read 2026-10-13；范围：Retries/Timeout/Fallbacks; encrypted reasoning and encrypted_content_affinity; cooldown and fallback model IDs。[该版本原文](https://docs.litellm.ai/docs/proxy/reliability)
-- protocol-audit-025：live 2026-10-13；范围：Fallback reasoning 兼容说明；补充复核，不新增计数。[该版本原文](https://docs.litellm.ai/docs/proxy/reliability)
+已读关联文档／版本（同一计数组）：
+- network-errors-043：live documentation as read 2026-10-13；范围：Retries/Timeout/Fallbacks; encrypted reasoning and encrypted_content_affinity; cooldown and fallback model IDs。[该记录原文](https://docs.litellm.ai/docs/proxy/reliability)
+- protocol-audit-025：live 2026-10-13；范围：Fallback reasoning 兼容说明；补充复核，不新增计数。[该记录原文](https://docs.litellm.ai/docs/proxy/reliability)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://docs.litellm.ai/docs/proxy/reliability)
 
@@ -263,17 +263,17 @@
 
 ### network-errors-044 · Provider selection controls
 
-作者／组织：OpenRouter。类型：官方文档／规范。版本／日期：live 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-034（本条合计 1 项，各版本复核不另计）。
+作者／组织：OpenRouter。类型：官方文档／规范。版本／日期：live 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-034（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：require_parameters默认false不保证参数强制生效；data_collection、zdr和only/ignore控制不同边界。
 
 选读范围：Provider selection：require_parameters、data_collection、ZDR 与 only/ignore。限制：Provider routing 旧地址重定向到此页；ZDR 对推理端点的筛选不自动覆盖工具后端，未审计第三方保留政策。
 
-已读版本／别名（同一来源）：
-- network-errors-044：live documentation as read 2026-10-13；范围：Provider routing parameters; allow_fallbacks; require_parameters; data_collection; zdr; latency/throughput preferences; max_price。[该版本原文](https://openrouter.ai/docs/features/provider-routing)
-- protocol-audit-034：live 2026-10-13；范围：Provider selection：require_parameters、data_collection、ZDR 与 only/ignore；补充复核，不新增计数。[该版本原文](https://openrouter.ai/docs/guides/routing/provider-selection)
+已读关联文档／版本（同一计数组）：
+- network-errors-044：live documentation as read 2026-10-13；范围：Provider routing parameters; allow_fallbacks; require_parameters; data_collection; zdr; latency/throughput preferences; max_price。[该记录原文](https://openrouter.ai/docs/features/provider-routing)
+- protocol-audit-034：live 2026-10-13；范围：Provider selection：require_parameters、data_collection、ZDR 与 only/ignore；补充复核，不新增计数。[该记录原文](https://openrouter.ai/docs/guides/routing/provider-selection)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://openrouter.ai/docs/guides/routing/provider-selection)
 
@@ -318,17 +318,17 @@
 
 ### network-errors-055 · OpenAI Agents #3852: retry rewind loses persisted user input
 
-作者／组织：OpenAI Agents issue reporters and maintainers。类型：公开问题讨论。版本／日期：openai-agents-python 0.18.1 in report。读取日：2026-10-13。 引用别名：durable-orchestration-056（本条合计 1 项，各版本复核不另计）。
+作者／组织：OpenAI Agents issue reporters and maintainers。类型：公开问题讨论。版本／日期：openai-agents-python 0.18.1 in report。读取日：2026-10-13。 引用别名：durable-orchestration-056（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：本地SQLiteSession在重试回滚时删除已保存输入，而save-once标志没有复位，最终只留下assistant回复。
 
 阅读范围：Issue body, independent reproducer, save_input-once and rewind analysis, linked PR。限制：全文与独立复现评论已读；关联修复PR #3857，不把本地session问题外推到所有后端。
 
-已读版本／别名（同一来源）：
-- durable-orchestration-056：0.18.1; opened/closed2026-07-16 via3857；范围：issue mechanism0.18.1/repro roles; completed via3857；补充复核，不新增计数。[该版本原文](https://github.com/openai/openai-agents-python/issues/3852)
-- network-errors-055：openai-agents-python 0.18.1 in report；范围：Issue body, independent reproducer, save_input-once and rewind analysis, linked PR。[该版本原文](https://github.com/openai/openai-agents-python/issues/3852)
+已读关联文档／版本（同一计数组）：
+- durable-orchestration-056：0.18.1; opened/closed2026-07-16 via3857；范围：issue mechanism0.18.1/repro roles; completed via3857；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-agents-python/issues/3852)
+- network-errors-055：openai-agents-python 0.18.1 in report；范围：Issue body, independent reproducer, save_input-once and rewind analysis, linked PR。[该记录原文](https://github.com/openai/openai-agents-python/issues/3852)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/openai/openai-agents-python/issues/3852)
 
@@ -417,14 +417,21 @@
 [公开原文](https://temporal.io/blog/the-immortal-life-of-pi-running-the-pi-coding-agent-on-temporal)
 
 <a id="protocol-010"></a>
+<a id="r3-loop-006"></a>
 
 ### protocol-010 · Stop reasons and fallback
 
-作者／组织：Anthropic。类型：官方文档／规范。版本／日期：live documentation as accessed 2026-10-13。读取日：2026-10-13。
+作者／组织：Anthropic。类型：官方文档／规范。版本／日期：live documentation as accessed 2026-10-13。读取日：2026-10-13。 引用别名：r3-loop-006（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：HTTP200仍可能是refusal、max_tokens、model_context_window_exceeded或pause_turn；stop_reason与网络异常须分层。
 
 选读范围：Quick reference; empty end_turn; tool_use; pause_turn; Streaming considerations。限制：实时文档，版本/平台相关；未验证服务端实际行为，不将厂商建议当跨模型定律。
+
+已读关联文档／版本（同一计数组）：
+- protocol-010：live documentation as accessed 2026-10-13；范围：Quick reference; empty end_turn; tool_use; pause_turn; Streaming considerations。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons)
+- r3-loop-006：Live docs accessed 2026-10-14；范围：Quick reference；Empty responses with end_turn；max_tokens 与不完整工具块；stop_sequence；tool_use 开头；补充复核，不新增计数。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons)
 

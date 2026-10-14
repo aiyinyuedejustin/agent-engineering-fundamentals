@@ -2,11 +2,11 @@
   "schema_version": "1.0",
   "title": "Agent harness 与 loop：公开来源元数据",
   "language": "zh-CN",
-  "generated_at": "2026-10-13T17:05:48+00:00",
-  "as_of_date": "2026-10-13",
+  "generated_at": "2026-10-14T03:22:19+00:00",
+  "as_of_date": "2026-10-14",
   "counts": {
-    "distinct_counted_sources": 556,
-    "supplementary_only_sources": 19
+    "distinct_counted_sources": 581,
+    "supplementary_only_sources": 23
   },
   "counting_policy": "Same article mirrors, paper formats, specification chapter versions, and repository file refs count once. Items designated as supporting checks for an existing mechanism do not increase the total; document type alone does not establish independence.",
   "reading_policy": "Substantive stated sections were read; no assertion that every source was read word for word. Independent rereading covers a risk-directed subset, including supplemental evidence.",
@@ -329,7 +329,7 @@
           "role": "source_reading"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "loop-context-006",
@@ -836,6 +836,27 @@
       "versions": []
     },
     {
+      "source_id": "r3-loop-005",
+      "aliases": [],
+      "title": "Agents - OpenAI Agents SDK",
+      "url": "https://openai.github.io/openai-agents-python/agents/",
+      "author_or_org": "OpenAI",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Live docs accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:41:30Z",
+      "primary_topic": {
+        "number": 1,
+        "title": "先看清一次动作：harness、loop 与完成条件"
+      },
+      "purpose": "持续 required 或指定工具会阻止自然结束；该 SDK 默认在一次工具调用后重设选择，也允许宿主以工具结果结束。",
+      "limitations": "默认值属于 OpenAI Agents SDK；不要求所有确定性工作流改用 auto。",
+      "reading_scope": "Dynamic instructions；Forcing tool use；Tool use behavior；reset_tool_choice；clone（正文，示例代码选读）",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-loop-005",
+      "versions": []
+    },
+    {
       "source_id": "runtime-boundaries-026",
       "aliases": [],
       "title": "S3 upload integrity",
@@ -1065,7 +1086,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-002",
@@ -1276,7 +1297,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-018",
@@ -1319,7 +1340,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-020",
@@ -1698,8 +1719,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-051",
@@ -1763,8 +1784,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-055",
@@ -1828,7 +1849,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-064",
@@ -1871,7 +1892,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-audit-001",
@@ -1934,6 +1955,48 @@
       "reading_scope": "加密 reasoning 的亲和性键与匹配实现",
       "counts_toward_total": true,
       "selected_reference_id": "protocol-audit-026",
+      "versions": []
+    },
+    {
+      "source_id": "r3-loop-004",
+      "aliases": [],
+      "title": "Running agents - OpenAI Agents SDK",
+      "url": "https://openai.github.io/openai-agents-python/running_agents/",
+      "author_or_org": "OpenAI",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Live docs accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:41:30Z",
+      "primary_topic": {
+        "number": 2,
+        "title": "Protocol 选择：模型接口与工具接入各管什么"
+      },
+      "purpose": "同一会话明确历史主责；服务端续接时输入过滤器可能只看到增量，删本地输入不等于删服务端前缀。",
+      "limitations": "当前 SDK 文档未固定发行版；其中会话选项互斥规则不能推广为所有 API。",
+      "reading_scope": "Choose a memory strategy；Server-managed conversations；Call model input filter；loop 与运行配置说明",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-loop-004",
+      "versions": []
+    },
+    {
+      "source_id": "r3-loop-017",
+      "aliases": [],
+      "title": "Troubleshooting tool use",
+      "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use",
+      "author_or_org": "Anthropic",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Live docs accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:41:30Z",
+      "primary_topic": {
+        "number": 2,
+        "title": "Protocol 选择：模型接口与工具接入各管什么"
+      },
+      "purpose": "自动工具回传、宿主控制指令和真实用户插话须显式区分；消息位置会改变混合服务器工具的续接语义。",
+      "limitations": "提供商专有条件；合法的新 user turn 或中途系统消息不被一概禁止，协议位置也不自证用户授权。",
+      "reading_scope": "完整 symptom / fix 正文：parallel results；mixed client/server tools；instruction placement；thinking preservation",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-loop-017",
       "versions": []
     },
     {
@@ -2166,7 +2229,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-034",
@@ -2272,8 +2335,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-048",
@@ -2316,8 +2379,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-053",
@@ -2486,7 +2549,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-audit-015",
@@ -2865,7 +2928,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-019",
@@ -2973,6 +3036,48 @@
       "versions": []
     },
     {
+      "source_id": "r3-literal-001",
+      "aliases": [],
+      "title": "Transaction Isolation: Read Committed and Repeatable Read",
+      "url": "https://www.postgresql.org/docs/current/transaction-iso.html#XACT-READ-COMMITTED",
+      "author_or_org": "PostgreSQL Global Development Group",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "PostgreSQL 18；读取于 2026-10-14",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 4,
+        "title": "工具契约：让下一步有据可依"
+      },
+      "purpose": "Read Committed 中连续 SELECT 可以看到不同已提交状态；各次准确只读并不自动组成同一快照。",
+      "limitations": "仅在结论要求共同状态时适用；Repeatable Read 也非所有业务一致性保证。未运行 PostgreSQL。",
+      "reading_scope": "§13.2.1 的每查询快照与连续 SELECT；§13.2.2 的稳定快照及序列化限制",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-literal-001",
+      "versions": []
+    },
+    {
+      "source_id": "r3-tools-015",
+      "aliases": [],
+      "title": "OS Command Injection Defense Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+      "author_or_org": "OWASP Cheat Sheet Series maintainers",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Live docs accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:42:30Z",
+      "primary_topic": {
+        "number": 4,
+        "title": "工具契约：让下一步有据可依"
+      },
+      "purpose": "参数分离/转义阻断 shell 语法，却仍需限制程序选项和参数含义。",
+      "limitations": "通用安全指导；是否支持 -- 和具体安全标志取决于被调用程序。",
+      "reading_scope": "Argument Injection; three primary defenses; additional defenses; ProcessBuilder comparison",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-tools-015",
+      "versions": []
+    },
+    {
       "source_id": "runtime-boundaries-040",
       "aliases": [],
       "title": "Extract apps cache logic into ConnectorRuntimeManager",
@@ -3076,8 +3181,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "tools-security-020",
@@ -3731,6 +3836,111 @@
       "versions": []
     },
     {
+      "source_id": "r3-tools-005",
+      "aliases": [],
+      "title": "How we contain Claude across products",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "author_or_org": "Max McGuinness, Mikaela Grace, Jiri De Jonghe, Jake Eaton, Abel Ribbink / Anthropic",
+      "source_type": "practitioner_blog",
+      "reading_extent": "partial",
+      "version_or_date": "2026-05-25",
+      "accessed_at": "2026-10-14T02:42:30Z",
+      "primary_topic": {
+        "number": 5,
+        "title": "权限与安全：模型提议不能自己变成授权"
+      },
+      "purpose": "项目配置在信任确认前被激活，以及同域 API 使用攻击者账户上传，都是作者报告的边界失效。",
+      "limitations": "第一方报告非独立复现；不沿用单次红队成功率推广所有模型，也不宣称代理已消灭外发风险。",
+      "reading_scope": "Article body, containment patterns and reported failures ; focus 62–65, 88–99, 106–120",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-tools-005",
+      "versions": []
+    },
+    {
+      "source_id": "r3-tools-006",
+      "aliases": [],
+      "title": "Workspace Trust",
+      "url": "https://code.visualstudio.com/docs/editing/workspaces/workspace-trust",
+      "author_or_org": "Microsoft / VS Code",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Page footer 2026-10-07",
+      "accessed_at": "2026-10-14T02:42:30Z",
+      "primary_topic": {
+        "number": 5,
+        "title": "权限与安全：模型提议不能自己变成授权"
+      },
+      "purpose": "打开终端、枚举任务、加载执行路径配置都可能间接执行项目内容。",
+      "limitations": "VS Code 行为是产品例子，不要求所有 harness 禁用所有 agent；恶意扩展可忽略受限模式。",
+      "reading_scope": "Safe code browsing; Restricted Mode; terminal/tasks/settings/extensions; trust scopes",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-tools-006",
+      "versions": []
+    },
+    {
+      "source_id": "r3-tools-010",
+      "aliases": [],
+      "title": "Safeguarding VS Code against prompt injections",
+      "url": "https://github.blog/security/vulnerability-research/safeguarding-vs-code-against-prompt-injections/",
+      "author_or_org": "Michael Stepankin / GitHub Security Lab",
+      "source_type": "practitioner_blog",
+      "reading_extent": "partial",
+      "version_or_date": "2025-08-25; updated 2026-07-06",
+      "accessed_at": "2026-10-14T02:42:30Z",
+      "primary_topic": {
+        "number": 5,
+        "title": "权限与安全：模型提议不能自己变成授权"
+      },
+      "purpose": "读取与浏览器打开就可串成外发，不能只审写工具。",
+      "limitations": "仅使用已公开历史漏洞的失效机制；未执行 payload；不把旧漏洞状态说成当前仍可利用。",
+      "reading_scope": "Agent loop/context and tool review; fetch URL parsing; Simple Browser; immediate-effect edits",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-tools-010",
+      "versions": []
+    },
+    {
+      "source_id": "r3-tools-013",
+      "aliases": [],
+      "title": "How GitHub's agentic security principles make our AI agents as secure as possible",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-githubs-agentic-security-principles-make-our-ai-agents-as-secure-as-possible/",
+      "author_or_org": "Rahul Zhade / GitHub",
+      "source_type": "practitioner_blog",
+      "reading_extent": "partial",
+      "version_or_date": "Live page accessed 2026-10-14; publication date not extracted",
+      "accessed_at": "2026-10-14T02:42:30Z",
+      "primary_topic": {
+        "number": 5,
+        "title": "权限与安全：模型提议不能自己变成授权"
+      },
+      "purpose": "issue 内容作者、指派 agent 的发起者和真正执行的 agent 是不同角色。",
+      "limitations": "历史产品文章有特定 firewall/MCP 行为；不当作今日全部产品的统一实现。",
+      "reading_scope": "Security concerns and six agentic product rules",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-tools-013",
+      "versions": []
+    },
+    {
+      "source_id": "r3-tools-016",
+      "aliases": [],
+      "title": "Policy engine",
+      "url": "https://geminicli.com/docs/reference/policy-engine/",
+      "author_or_org": "Google / Gemini CLI maintainers",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Live docs accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:42:30Z",
+      "primary_topic": {
+        "number": 5,
+        "title": "权限与安全：模型提议不能自己变成授权"
+      },
+      "purpose": "管理策略文件有独立所有权/可写性边界。",
+      "limitations": "此处不声称文档暴露了通用 bypass；仅用公开契约说明规则边界和版本成本。",
+      "reading_scope": "Admin policy provenance/security ; rule schema ; shell and MCP rules",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-tools-016",
+      "versions": []
+    },
+    {
       "source_id": "runtime-boundaries-039",
       "aliases": [],
       "title": "Avoid executing PATH helpers before workspace trust",
@@ -3792,7 +4002,7 @@
           "role": "source_reading"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "tools-security-003",
@@ -3986,6 +4196,7 @@
     {
       "source_id": "tools-security-012",
       "aliases": [
+        "r3-tools-001",
         "tools-security-063"
       ],
       "title": "Security Best Practices — Model Context Protocol (2026-07-28)",
@@ -4006,6 +4217,15 @@
       "selected_reference_id": "tools-security-063",
       "versions": [
         {
+          "reference_id": "r3-tools-001",
+          "url": "https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices",
+          "version_or_date": "2025-11-25 documentation route; live content read 2026-10-14",
+          "accessed_at": "2026-10-14T02:42:30Z",
+          "reading_scope": "Confused Deputy; Token Passthrough; SSRF; Session Hijacking; Local MCP Server Compromise; OAuth URL validation; stdio proxy security; Scope Minimization",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
           "reference_id": "tools-security-012",
           "url": "https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices",
           "version_or_date": "2025-11-25",
@@ -4024,8 +4244,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "tools-security-014",
@@ -4068,8 +4288,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "tools-security-015",
@@ -4112,8 +4332,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "tools-security-016",
@@ -4681,8 +4901,8 @@
           "role": "source_reading"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-033",
@@ -5232,7 +5452,9 @@
     },
     {
       "source_id": "runtime-boundaries-047",
-      "aliases": [],
+      "aliases": [
+        "r3-runtime-009"
+      ],
       "title": "Pod Lifecycle",
       "url": "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/",
       "author_or_org": "Kubernetes",
@@ -5249,7 +5471,27 @@
       "reading_scope": "Pod lifetime; Pod phase; container restart policy",
       "counts_toward_total": true,
       "selected_reference_id": "runtime-boundaries-047",
-      "versions": []
+      "versions": [
+        {
+          "reference_id": "r3-runtime-009",
+          "url": "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/",
+          "version_or_date": "Current docs snapshot, 2026-10-14",
+          "accessed_at": "2026-10-14T02:40:22Z",
+          "reading_scope": "Termination of Pods; Pod Termination Flow; Pod shutdown and sidecar containers",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
+          "reference_id": "runtime-boundaries-047",
+          "url": "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/",
+          "version_or_date": "current docs 2026-10-13",
+          "accessed_at": "2026-10-13T15:56:00Z",
+          "reading_scope": "Pod lifetime; Pod phase; container restart policy",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        }
+      ],
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "runtime-boundaries-048",
@@ -5985,8 +6227,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-022",
@@ -6302,8 +6544,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-059",
@@ -6324,6 +6566,48 @@
       "reading_scope": "Connectors and ownership; limiting pool/per-host connections; DNS cache/resolver; Graceful Shutdown",
       "counts_toward_total": true,
       "selected_reference_id": "network-errors-059",
+      "versions": []
+    },
+    {
+      "source_id": "r3-runtime-010",
+      "aliases": [],
+      "title": "time package: Monotonic Clocks",
+      "url": "https://pkg.go.dev/time",
+      "author_or_org": "Go authors",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Current package docs snapshot, 2026-10-14",
+      "accessed_at": "2026-10-14T02:40:22Z",
+      "primary_topic": {
+        "number": 7,
+        "title": "网络：请求究竟卡在哪一层"
+      },
+      "purpose": "Go 区分墙钟与单调耗时；序列化不保留单调部分，部分系统睡眠期间单调钟不前进。",
+      "limitations": "Go 表示细节不能推广为所有系统单调钟都不跨进程共享；持久业务截止还需明确钟域与偏差策略。",
+      "reading_scope": "Monotonic Clocks, especially serialization and computer-sleep paragraphs",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-runtime-010",
+      "versions": []
+    },
+    {
+      "source_id": "r3-runtime-018",
+      "aliases": [],
+      "title": "Deadlines",
+      "url": "https://grpc.io/docs/guides/deadlines/",
+      "author_or_org": "gRPC authors",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Current guide snapshot, 2026-10-14",
+      "accessed_at": "2026-10-14T02:40:22Z",
+      "primary_topic": {
+        "number": 7,
+        "title": "网络：请求究竟卡在哪一层"
+      },
+      "purpose": "跨服务传播剩余 deadline 时扣除已耗时；RPC 取消仍需应用停止自己派生的工作。",
+      "limitations": "传播默认随语言而异；gRPC 不替应用定义跨重启业务到期和权威时钟策略。",
+      "reading_scope": "Deadlines on the Client; Deadlines on the Server; Deadline Propagation",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-runtime-018",
       "versions": []
     },
     {
@@ -6619,8 +6903,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-018",
@@ -6831,7 +7115,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-044",
@@ -6874,8 +7158,8 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_selection_note": "采用下列已读版本／复核的元数据与要点；其他已读版本保留供对照，合计仍为同一来源。",
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-045",
@@ -6981,7 +7265,7 @@
           "role": "source_reading"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-056",
@@ -7132,7 +7416,9 @@
     },
     {
       "source_id": "protocol-010",
-      "aliases": [],
+      "aliases": [
+        "r3-loop-006"
+      ],
       "title": "Stop reasons and fallback",
       "url": "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons",
       "author_or_org": "Anthropic",
@@ -7149,7 +7435,27 @@
       "reading_scope": "Quick reference; empty end_turn; tool_use; pause_turn; Streaming considerations",
       "counts_toward_total": true,
       "selected_reference_id": "protocol-010",
-      "versions": []
+      "versions": [
+        {
+          "reference_id": "protocol-010",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons",
+          "version_or_date": "live documentation as accessed 2026-10-13",
+          "accessed_at": "2026-10-13T15:06:08Z",
+          "reading_scope": "Quick reference; empty end_turn; tool_use; pause_turn; Streaming considerations",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        },
+        {
+          "reference_id": "r3-loop-006",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons",
+          "version_or_date": "Live docs accessed 2026-10-14",
+          "accessed_at": "2026-10-14T02:41:30Z",
+          "reading_scope": "Quick reference；Empty responses with end_turn；max_tokens 与不完整工具块；stop_sequence；tool_use 开头",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        }
+      ],
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-audit-033",
@@ -8347,7 +8653,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-audit-002",
@@ -8369,6 +8675,103 @@
       "counts_toward_total": true,
       "selected_reference_id": "protocol-audit-002",
       "versions": []
+    },
+    {
+      "source_id": "r3-loop-001",
+      "aliases": [
+        "r3-audit-001",
+        "r3-loop-011"
+      ],
+      "title": "session_input_callback repeating a history item re-persists it as new session input",
+      "url": "https://github.com/openai/openai-agents-python/issues/4069",
+      "author_or_org": "hsusul",
+      "source_type": "issue",
+      "reading_extent": "partial",
+      "version_or_date": "2026-07-31; reporter baseline main@c3f1781d56e8f1249a01674f18ba1f3e44a16dce, with then-latest release tag v0.19.1 (tag not independently reproduced)",
+      "accessed_at": "2026-10-14T02:41:30Z",
+      "primary_topic": {
+        "number": 9,
+        "title": "上下文与记忆：下次模型真正看到什么"
+      },
+      "purpose": "历史项被模型输入回调重复返回时，曾被误作新用户事件保存；应按事件来源区分历史复述与内容相同的新输入。",
+      "limitations": "社区报告经维护者修复；报告基线为 main 提交，未独立运行 v0.19.1。修复见 #4181 与 v0.19.4，不代表当前仍有此缺陷。",
+      "reading_scope": "Issue body；FakeModel reproduction；Expected behavior；Hypothesis；timeline",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-loop-001",
+      "versions": [
+        {
+          "reference_id": "r3-audit-001",
+          "url": "https://github.com/openai/openai-agents-python/releases/tag/v0.19.4",
+          "version_or_date": "v0.19.4；发布条目核验于 2026-10-14",
+          "accessed_at": "2026-10-14T03:04:14+00:00",
+          "reading_scope": "v0.19.4 release 的 What’s Changed：#4181（fix(sessions)）条目",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
+          "reference_id": "r3-loop-001",
+          "url": "https://github.com/openai/openai-agents-python/issues/4069",
+          "version_or_date": "2026-07-31; reporter baseline main@c3f1781d56e8f1249a01674f18ba1f3e44a16dce, with then-latest release tag v0.19.1 (tag not independently reproduced)",
+          "accessed_at": "2026-10-14T02:41:30Z",
+          "reading_scope": "Issue body；FakeModel reproduction；Expected behavior；Hypothesis；timeline",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        },
+        {
+          "reference_id": "r3-loop-011",
+          "url": "https://github.com/openai/openai-agents-python/pull/4181",
+          "version_or_date": "2026-08-05 合并；v0.19.4 发布页明确收录",
+          "accessed_at": "2026-10-14T02:41:30Z",
+          "reading_scope": "PR Summary 与 merged timeline；v0.19.4 release 中 #4181 条目另经核验",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        }
+      ],
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
+    },
+    {
+      "source_id": "r3-loop-012",
+      "aliases": [
+        "r3-audit-002"
+      ],
+      "title": "有限窗口压缩的覆盖与过滤：OpenAI Agents SDK PR #4293",
+      "url": "https://github.com/openai/openai-agents-python/pull/4293",
+      "author_or_org": "OpenAI Agents SDK contributors",
+      "source_type": "pr",
+      "reading_extent": "partial",
+      "version_or_date": "2026-08-08 关闭，未合并，wontfix",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 9,
+        "title": "上下文与记忆：下次模型真正看到什么"
+      },
+      "purpose": "维护者确认限窗压缩的丢失机制，同时禁止绕过主动过滤补齐输入；覆盖或所有权不明时应推迟压缩。",
+      "limitations": "关闭且未合并，不采用其 patch 作为保证，也不宣称当前缺陷已修复或仍存在；同机制后续佐证，不增加总数。",
+      "reading_scope": "PR Summary；维护者对主动过滤与全历史回退的评论；旧尝试覆盖新状态、serialization 与所有权的关闭前审阅",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-audit-002",
+      "versions": [
+        {
+          "reference_id": "r3-audit-002",
+          "url": "https://github.com/openai/openai-agents-python/pull/4293",
+          "version_or_date": "2026-08-08 关闭，未合并，wontfix",
+          "accessed_at": "2026-10-14T03:04:14+00:00",
+          "reading_scope": "PR Summary；维护者对主动过滤与全历史回退的评论；旧尝试覆盖新状态、serialization 与所有权的关闭前审阅",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
+          "reference_id": "r3-loop-012",
+          "url": "https://github.com/openai/openai-agents-python/pull/3827",
+          "version_or_date": "2026-08-04 关闭且未合并；历史提案和维护者审阅",
+          "accessed_at": "2026-10-14T02:41:30Z",
+          "reading_scope": "PR What / Why；维护者关于历史覆盖、response_id 与跨 await 所有权的审阅；2026-08-04 关闭说明",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        }
+      ],
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "boundary-closure-007",
@@ -9232,6 +9635,27 @@
       "versions": []
     },
     {
+      "source_id": "r3-resume-001",
+      "aliases": [],
+      "title": "Functional API overview",
+      "url": "https://docs.langchain.com/oss/python/langgraph/functional-api",
+      "author_or_org": "LangChain",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "live documentation independently checked 2026-10-14; not release-pinned",
+      "accessed_at": "2026-10-14T03:17:41Z",
+      "primary_topic": {
+        "number": 10,
+        "title": "持久化与恢复：进程回来后，任务怎样继续"
+      },
+      "purpose": "恢复从入口重放并复用已保存的任务结果，内联副作用与非确定性值应放在可记录的任务边界。",
+      "limitations": "仅核验所列章节；依赖检查点及已保存结果，不能外推所有框架或许诺跨系统恰好一次；未进行本地运行验证。",
+      "reading_scope": "https://docs.langchain.com/oss/python/langgraph/functional-api — Example; Resuming (including Resuming after an error); When to use a task; Determinism; Idempotency; Common pitfalls > Handling side effects / Non-deterministic control flow.",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-resume-001",
+      "versions": []
+    },
+    {
       "source_id": "runtime-boundaries-010",
       "aliases": [],
       "title": "fsync durability and delayed disk-full errors",
@@ -9674,7 +10098,9 @@
     },
     {
       "source_id": "durable-orchestration-007",
-      "aliases": [],
+      "aliases": [
+        "r3-resume-002"
+      ],
       "title": "Interrupts",
       "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
       "author_or_org": "LangChain",
@@ -9691,7 +10117,27 @@
       "reading_scope": "暂停与恢复、并发 interrupt ID、中断顺序、子图恢复及中断前副作用的说明",
       "counts_toward_total": true,
       "selected_reference_id": "durable-orchestration-007",
-      "versions": []
+      "versions": [
+        {
+          "reference_id": "durable-orchestration-007",
+          "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+          "version_or_date": "accessed 2026-10-13; response_schema >=1.2.12",
+          "accessed_at": "2026-10-13T15:05:22.009225+00:00",
+          "reading_scope": "暂停与恢复、并发 interrupt ID、中断顺序、子图恢复及中断前副作用的说明",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        },
+        {
+          "reference_id": "r3-resume-002",
+          "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+          "version_or_date": "live documentation independently checked 2026-10-14; not release-pinned",
+          "accessed_at": "2026-10-14T03:17:41Z",
+          "reading_scope": "https://docs.langchain.com/oss/python/langgraph/interrupts — Rules of interrupts; Do not wrap interrupt calls in try/except; Do not reorder interrupt calls within a node; Side effects called before interrupt must be idempotent; Using with subgraphs called as functions.",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        }
+      ],
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "durable-orchestration-016",
@@ -10157,7 +10603,9 @@
     },
     {
       "source_id": "network-errors-026",
-      "aliases": [],
+      "aliases": [
+        "r3-runtime-002"
+      ],
       "title": "Python asyncio tasks and timeouts",
       "url": "https://docs.python.org/3/library/asyncio-task.html",
       "author_or_org": "Python Software Foundation",
@@ -10174,28 +10622,71 @@
       "reading_scope": "sections Task cancellation/Shielding/Timeouts/Waiting primitives",
       "counts_toward_total": true,
       "selected_reference_id": "network-errors-026",
-      "versions": []
+      "versions": [
+        {
+          "reference_id": "network-errors-026",
+          "url": "https://docs.python.org/3/library/asyncio-task.html",
+          "version_or_date": "Python 3.15 documentation as read 2026-10-13",
+          "accessed_at": "2026-10-13T15:08:30Z",
+          "reading_scope": "sections Task cancellation/Shielding/Timeouts/Waiting primitives",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        },
+        {
+          "reference_id": "r3-runtime-002",
+          "url": "https://docs.python.org/3/library/asyncio-task.html",
+          "version_or_date": "Python 3.15.0 documentation as served",
+          "accessed_at": "2026-10-14T02:40:22Z",
+          "reading_scope": "Creating tasks; Task cancellation; Task groups; Running tasks concurrently; Shielding from cancellation; Timeouts; Waiting primitives; Running in threads",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        }
+      ],
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-028",
-      "aliases": [],
-      "title": "AnyIO cancellation and timeouts",
+      "aliases": [
+        "r3-runtime-001"
+      ],
+      "title": "Cancellation and timeouts",
       "url": "https://anyio.readthedocs.io/en/stable/cancellation.html",
       "author_or_org": "AnyIO maintainers",
       "source_type": "official_doc",
       "reading_extent": "partial",
-      "version_or_date": "unknown",
-      "accessed_at": "2026-10-13T15:08:30Z",
+      "version_or_date": "stable documentation, accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:40:22Z",
       "primary_topic": {
         "number": 11,
         "title": "插话、暂停与取消：让旧任务正确让路"
       },
-      "purpose": "AnyIO level cancellation在已取消scope每个yield点重复触发，与asyncio edge语义不同；外层deadline可能更早。",
-      "limitations": "未完整读所有scope corruption示例；结论限定取消、超时、finalization部分。",
-      "reading_scope": "Differences/Timeouts/Finalization/Shielding",
+      "purpose": "AnyIO 已取消作用域内的 await 可能再次被取消；必要清理要有界保护，取消作用域按同任务、LIFO 契约退出。",
+      "limitations": "AnyIO level cancellation 不代表所有异步运行时；保护不能无限延长业务，也不能强杀不协作代码。",
+      "reading_scope": "Differences between asyncio and AnyIO cancellation semantics; Shielding; Finalization; Avoiding cancel scope stack corruption",
       "counts_toward_total": true,
-      "selected_reference_id": "network-errors-028",
-      "versions": []
+      "selected_reference_id": "r3-runtime-001",
+      "versions": [
+        {
+          "reference_id": "network-errors-028",
+          "url": "https://anyio.readthedocs.io/en/stable/cancellation.html",
+          "version_or_date": "unknown",
+          "accessed_at": "2026-10-13T15:08:30Z",
+          "reading_scope": "Differences/Timeouts/Finalization/Shielding",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        },
+        {
+          "reference_id": "r3-runtime-001",
+          "url": "https://anyio.readthedocs.io/en/stable/cancellation.html",
+          "version_or_date": "stable documentation, accessed 2026-10-14",
+          "accessed_at": "2026-10-14T02:40:22Z",
+          "reading_scope": "Differences between asyncio and AnyIO cancellation semantics; Shielding; Finalization; Avoiding cancel scope stack corruption",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        }
+      ],
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "network-errors-035",
@@ -10237,6 +10728,48 @@
       "reading_scope": "full page",
       "counts_toward_total": true,
       "selected_reference_id": "network-errors-039",
+      "versions": []
+    },
+    {
+      "source_id": "r3-resume-003",
+      "aliases": [],
+      "title": "Webhooks — authenticity, duplicate delivery, ordering and asynchronous handling",
+      "url": "https://docs.stripe.com/webhooks",
+      "author_or_org": "Stripe",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "live documentation independently checked 2026-10-14; not release-pinned",
+      "accessed_at": "2026-10-14T03:17:41Z",
+      "primary_topic": {
+        "number": 11,
+        "title": "插话、暂停与取消：让旧任务正确让路"
+      },
+      "purpose": "验签不等于去重或排序；合法重投可有新签名，事件时间戳可能相同，不能据此判重或判断先后。",
+      "limitations": "仅核验所列章节；持久接收事务、通用版本契约、业务效果键范围是工程推论，非本文完整实现或跨系统恰好一次承诺；对象 ID 加类型不可无条件泛化。",
+      "reading_scope": "Event delivery behaviors: retries and ordering; Best practices: duplicate events, asynchronous handling, verifying origin/signatures, replay attacks, and quickly returning 2xx",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-resume-003",
+      "versions": []
+    },
+    {
+      "source_id": "r3-runtime-013",
+      "aliases": [],
+      "title": "Chatbot example: clean up servers in correct order",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/pull/353",
+      "author_or_org": "clareliguori; reviewed and merged by ihrpr / MCP Python SDK",
+      "source_type": "pr",
+      "reading_extent": "partial",
+      "version_or_date": "2025-05-23 合并；未核验首个发行版",
+      "accessed_at": "2026-10-14T02:40:22Z",
+      "primary_topic": {
+        "number": 11,
+        "title": "插话、暂停与取消：让旧任务正确让路"
+      },
+      "purpose": "MCP 多服务器示例改为逆进入顺序清理上下文，避免并行退出取消作用域破坏所有权。",
+      "limitations": "2025-05-23 合并的示例修复，未核验首个发行版；不能推广为所有独立资源都须串行关闭。",
+      "reading_scope": "PR body; pagoenka 2025-03-25 confirmation; reviewer/merge timeline",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-runtime-013",
       "versions": []
     },
     {
@@ -10534,6 +11067,48 @@
       "versions": []
     },
     {
+      "source_id": "r3-runtime-008",
+      "aliases": [],
+      "title": "Using load shedding to avoid overload",
+      "url": "https://aws.amazon.com/builders-library/using-load-shedding-to-avoid-overload/",
+      "author_or_org": "David Yanacek / AWS Builders' Library",
+      "source_type": "practitioner_blog",
+      "reading_extent": "partial",
+      "version_or_date": "Migrated page published 2026-06-12, modified 2026-06-15",
+      "accessed_at": "2026-10-14T02:40:22Z",
+      "primary_topic": {
+        "number": 12,
+        "title": "并发、调度与预算：多跑几个为何更慢"
+      },
+      "purpose": "过载时仍应让已开始的工作收尾；完成与控制路径不能被新工作挤占，排队年龄也要计入剩余期限。",
+      "limitations": "AWS 系统实践；预留比例、独立控制池和 agent 退出顺序是按依赖设计的工程应用，不是统一默认。",
+      "reading_scope": "Prioritizing requests；Keeping an eye on the clock；Finishing what was started；Watching out for queues；Protecting against overload in lower layers",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-runtime-008",
+      "versions": []
+    },
+    {
+      "source_id": "r3-runtime-011",
+      "aliases": [],
+      "title": "Worker shutdown behavior",
+      "url": "https://docs.temporal.io/encyclopedia/workers/worker-shutdown",
+      "author_or_org": "Temporal",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Current public docs snapshot, 2026-10-14",
+      "accessed_at": "2026-10-14T02:40:22Z",
+      "primary_topic": {
+        "number": 12,
+        "title": "并发、调度与预算：多跑几个为何更慢"
+      },
+      "purpose": "Worker 先停止接收新任务，再限时等待已接工作；后续取消能否完成取决于任务协作及 SDK。",
+      "limitations": "Go 与 Core 的退出行为不同；统一 shutdown timeout 不是强杀保证，也不要求采用 Temporal。",
+      "reading_scope": "Opening paragraph; Graceful shutdown; Non-graceful period shutdown; General developer guidance",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-runtime-011",
+      "versions": []
+    },
+    {
       "source_id": "runtime-boundaries-031",
       "aliases": [],
       "title": "Docker memory and CPU constraints",
@@ -10763,7 +11338,7 @@
           "role": "source_reading"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "durable-orchestration-040",
@@ -11627,6 +12202,175 @@
       "versions": []
     },
     {
+      "source_id": "r3-feedback-003",
+      "aliases": [],
+      "title": "An update on recent Claude Code quality reports",
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "author_or_org": "Anthropic",
+      "source_type": "practitioner_blog",
+      "reading_extent": "partial",
+      "version_or_date": "2026-04-23; fixes through v2.1.116",
+      "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+      "primary_topic": {
+        "number": 15,
+        "title": "回放与评测：证明修复，而不是制造绿色分数"
+      },
+      "purpose": "空闲后的旧 thinking 清理标志曾持续影响后续轮次，内部实验又妨碍复现；有效配置与时间路径都影响现场。",
+      "limitations": "thinking 缺陷在 v2.1.101 修复，三项问题至 v2.1.116 解决；不是每轮清空全部聊天，也不评价当前模型质量。",
+      "reading_scope": "Three causes and caching optimization",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-feedback-003",
+      "versions": []
+    },
+    {
+      "source_id": "r3-feedback-004",
+      "aliases": [],
+      "title": "Local development & testing",
+      "url": "https://docs.langchain.com/langsmith/local-dev-testing",
+      "author_or_org": "LangChain",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Live docs accessed 2026-10-14",
+      "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+      "primary_topic": {
+        "number": 15,
+        "title": "回放与评测：证明修复，而不是制造绿色分数"
+      },
+      "purpose": "秒级热重载开发与接近生产的完整链路验证互补；本地成功不证明部署后的依赖、网络与认证正确。",
+      "limitations": "命令属于特定平台；接近生产不等于与托管生产完全相同，不要求每次运行全远端矩阵。",
+      "reading_scope": "Recommended workflow; langgraph dev/up; pre-deployment checklist; dependencies",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-feedback-004",
+      "versions": []
+    },
+    {
+      "source_id": "r3-feedback-009",
+      "aliases": [],
+      "title": "Harness engineering: leveraging Codex in an agent-first world",
+      "url": "https://openai.com/index/harness-engineering/",
+      "author_or_org": "Ryan Lopopolo / OpenAI",
+      "source_type": "practitioner_blog",
+      "reading_extent": "partial",
+      "version_or_date": "2026-02-11",
+      "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+      "primary_topic": {
+        "number": 15,
+        "title": "回放与评测：证明修复，而不是制造绿色分数"
+      },
+      "purpose": "每个 worktree 可启动的应用和可查询的局部观察，使 agent 能独立复现和验证；环境能力缺失会拖慢开发。",
+      "limitations": "一个第一方产品案例；单命令小闭环是指南综合建议，未声称通用加速比。",
+      "reading_scope": "Increasing application legibility; Agent legibility is the goal",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-feedback-009",
+      "versions": []
+    },
+    {
+      "source_id": "r3-feedback-011",
+      "aliases": [],
+      "title": "FunctionTool ignores strict_json_schema parameter #992",
+      "url": "https://github.com/openai/openai-agents-python/issues/992",
+      "author_or_org": "habema; OpenAI Agents SDK issue",
+      "source_type": "issue",
+      "reading_extent": "partial",
+      "version_or_date": "2025-07-02; SDK 0.1.0; closed",
+      "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+      "primary_topic": {
+        "number": 15,
+        "title": "回放与评测：证明修复，而不是制造绿色分数"
+      },
+      "purpose": "历史 SDK 0.1.0 手工 FunctionTool 的本地构造可成功，但生成 schema 被真实 Responses API 拒绝。",
+      "limitations": "社区已关闭报告，未独立复现，不声明当前仍失败或已核验修复发行版。",
+      "reading_scope": "Describe the bug; Debug information; Repro steps",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-feedback-011",
+      "versions": []
+    },
+    {
+      "source_id": "r3-feedback-012",
+      "aliases": [],
+      "title": "MCP Inspector CLI Client",
+      "url": "https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md",
+      "author_or_org": "Model Context Protocol maintainers",
+      "source_type": "code",
+      "reading_extent": "partial",
+      "version_or_date": "main as accessed 2026-10-14; moving branch",
+      "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+      "primary_topic": {
+        "number": 15,
+        "title": "回放与评测：证明修复，而不是制造绿色分数"
+      },
+      "purpose": "JSON Schema 合法不保证各客户端可用；可脚本化 connect/list/call 与可区分错误有助于短集成反馈。",
+      "limitations": "阅读时 main 分支，可能与固定 Inspector 发行版不同；不推断最低兼容版本。",
+      "reading_scope": "Schema portability; Exit codes and error envelopes; Why use CLI",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-feedback-012",
+      "versions": []
+    },
+    {
+      "source_id": "r3-feedback-013",
+      "aliases": [
+        "r3-audit-003",
+        "r3-audit-004",
+        "r3-feedback-016"
+      ],
+      "title": "异步检查点 conformance 覆盖：LangGraph PR #8537",
+      "url": "https://github.com/langchain-ai/langgraph/pull/8537",
+      "author_or_org": "LangGraph maintainers",
+      "source_type": "pr",
+      "reading_extent": "partial",
+      "version_or_date": "2026-08-07 合并；checkpoint-postgres 3.1.2 收录",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 15,
+        "title": "回放与评测：证明修复，而不是制造绿色分数"
+      },
+      "purpose": "维护者补齐 SQLite 依赖和 Postgres runner，揭示此前关键 conformance 静默跳过或未运行；新增范围仍主要是 async savers。",
+      "limitations": "是同一迁移/契约事故的佐证，不扩写成同步后端全覆盖或全项目无测试；不额外计数。",
+      "reading_scope": "PR description；缺失 SQLite conformance 依赖及 Postgres runner 的说明；async-only 范围；review 与 merge timeline",
+      "counts_toward_total": true,
+      "selected_reference_id": "r3-audit-003",
+      "versions": [
+        {
+          "reference_id": "r3-audit-003",
+          "url": "https://github.com/langchain-ai/langgraph/pull/8537",
+          "version_or_date": "2026-08-07 合并；checkpoint-postgres 3.1.2 收录",
+          "accessed_at": "2026-10-14T03:04:14+00:00",
+          "reading_scope": "PR description；缺失 SQLite conformance 依赖及 Postgres runner 的说明；async-only 范围；review 与 merge timeline",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
+          "reference_id": "r3-audit-004",
+          "url": "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres==3.1.2",
+          "version_or_date": "checkpoint-postgres 3.1.2；发布条目核验于 2026-10-14",
+          "accessed_at": "2026-10-14T03:04:14+00:00",
+          "reading_scope": "release What’s Changed 中 #8535 与 #8537 条目",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
+          "reference_id": "r3-feedback-013",
+          "url": "https://github.com/langchain-ai/langgraph/issues/8534",
+          "version_or_date": "2026-08-05; closed by #8535",
+          "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+          "reading_scope": "Cause; Repro; Impact; Why it went unnoticed",
+          "reading_extent": "partial",
+          "role": "source_reading"
+        },
+        {
+          "reference_id": "r3-feedback-016",
+          "url": "https://github.com/langchain-ai/langgraph/pull/8535",
+          "version_or_date": "2026-08-07 合并；checkpoint-postgres 3.1.2 收录",
+          "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+          "reading_scope": "PR review and #8537 commit excerpts",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        }
+      ],
+      "version_selection_note": "采用下列已读记录的元数据与要点；关联文档或版本保留供对照，本组仍合计一项。",
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
+    },
+    {
       "source_id": "traces-eval-004",
       "aliases": [],
       "title": "Demystifying evals for AI agents",
@@ -11649,7 +12393,9 @@
     },
     {
       "source_id": "traces-eval-010",
-      "aliases": [],
+      "aliases": [
+        "r3-feedback-006"
+      ],
       "title": "Unit testing - Pydantic AI",
       "url": "https://ai.pydantic.dev/testing/",
       "author_or_org": "Pydantic",
@@ -11666,7 +12412,27 @@
       "reading_scope": "Unit testing with TestModel; FunctionModel; fixtures",
       "counts_toward_total": true,
       "selected_reference_id": "traces-eval-010",
-      "versions": []
+      "versions": [
+        {
+          "reference_id": "r3-feedback-006",
+          "url": "https://pydantic.dev/docs/ai/guides/testing/",
+          "version_or_date": "Live docs accessed 2026-10-14",
+          "accessed_at": "2026-10-14T02:42:33.254187+00:00",
+          "reading_scope": "TestModel is not magic; FunctionModel weather counterexample",
+          "reading_extent": "partial",
+          "role": "supplementary_recheck_not_additional_source"
+        },
+        {
+          "reference_id": "traces-eval-010",
+          "url": "https://ai.pydantic.dev/testing/",
+          "version_or_date": "current 2026-10-13",
+          "accessed_at": "2026-10-13",
+          "reading_scope": "Unit testing with TestModel; FunctionModel; fixtures",
+          "reading_extent": "scope_specified",
+          "role": "source_reading"
+        }
+      ],
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "traces-eval-011",
@@ -12341,7 +13107,7 @@
           "role": "supplementary_recheck_not_additional_source"
         }
       ],
-      "version_caution": "不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。"
+      "version_caution": "关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。"
     },
     {
       "source_id": "protocol-audit-008",
@@ -12680,6 +13446,69 @@
       "versions": []
     },
     {
+      "source_id": "r3-audit-005",
+      "aliases": [],
+      "title": "time.monotonic clock contract",
+      "url": "https://docs.python.org/3/library/time.html#time.monotonic",
+      "author_or_org": "Python Software Foundation",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Python 3.15 文档；读取于 2026-10-14",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 7,
+        "title": "网络：请求究竟卡在哪一层"
+      },
+      "purpose": "Python 文档说明该单调钟在进程间共享；应核对钟域与启动纪元，不能一概断言单调读数跨进程无意义。",
+      "limitations": "短 API 契约作时钟边界佐证，不提供跨主机或重启后的可移植业务到期保证；不增加总数。",
+      "reading_scope": "time.monotonic 条目及跨进程同钟、参考原点、实现与版本变化说明",
+      "counts_toward_total": false,
+      "selected_reference_id": "r3-audit-005",
+      "versions": []
+    },
+    {
+      "source_id": "r3-literal-002",
+      "aliases": [],
+      "title": "tempfile.mkstemp permissions",
+      "url": "https://docs.python.org/3/library/tempfile.html#tempfile.mkstemp",
+      "author_or_org": "Python Software Foundation",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Python 3.15 文档；读取于 2026-10-14",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 10,
+        "title": "持久化与恢复：进程回来后，任务怎样继续"
+      },
+      "purpose": "mkstemp 在支持权限位的平台创建不可执行的临时文件；替换可执行产物前须明确所需权限。",
+      "limitations": "短 API 契约佐证，不重复计数；不要求盲复制 owner、ACL、setuid 等全部安全属性。",
+      "reading_scope": "tempfile.mkstemp：创建权限、可执行位、句柄关闭与删除责任",
+      "counts_toward_total": false,
+      "selected_reference_id": "r3-literal-002",
+      "versions": []
+    },
+    {
+      "source_id": "r3-literal-003",
+      "aliases": [],
+      "title": "os.replace atomic replacement contract",
+      "url": "https://docs.python.org/3/library/os.html#os.replace",
+      "author_or_org": "Python Software Foundation",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "Python 3.15 文档；读取于 2026-10-14",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 10,
+        "title": "持久化与恢复：进程回来后，任务怎样继续"
+      },
+      "purpose": "os.replace 以源对象替换目标路径；成功时的原子性不构成旧目标权限自动继承的承诺。",
+      "limitations": "短 API 契约作元数据边界佐证；权限故障由 API 契约与另行报告的本地演示合并解释，未在此重跑。",
+      "reading_scope": "os.replace：源到目标替换、已有目标文件、跨文件系统失败与成功时原子性",
+      "counts_toward_total": false,
+      "selected_reference_id": "r3-literal-003",
+      "versions": []
+    },
+    {
       "source_id": "network-errors-063",
       "aliases": [],
       "title": "Stream — buffering, writable.write and backpressure",
@@ -12698,6 +13527,27 @@
       "reading_scope": "Buffering; Event:drain; writable.write (lines951–979); Three states/readableFlowing (line1032); pipeline (lines3562–3595)",
       "counts_toward_total": false,
       "selected_reference_id": "network-errors-063",
+      "versions": []
+    },
+    {
+      "source_id": "r3-literal-004",
+      "aliases": [],
+      "title": "rate: concurrent admission and reservations",
+      "url": "https://pkg.go.dev/golang.org/x/time/rate",
+      "author_or_org": "Go Authors",
+      "source_type": "official_doc",
+      "reading_extent": "partial",
+      "version_or_date": "在线包文档；读取于 2026-10-14",
+      "accessed_at": "2026-10-14T03:04:14+00:00",
+      "primary_topic": {
+        "number": 12,
+        "title": "并发、调度与预算：多跑几个为何更慢"
+      },
+      "purpose": "共享 Limiter 在允许后续事件时计入已有预留；未执行动作可取消预留，体现先准入、再执行的资源约束。",
+      "limitations": "补充 API 例子，不额外计数；补充 token 的速率限制不是一次性总费用封顶，动态改限额也有既有预留边界。",
+      "reading_scope": "Limiter 并发安全与 token 消费；ReserveN；Reservation；CancelAt；SetLimitAt 的既有预留边界",
+      "counts_toward_total": false,
+      "selected_reference_id": "r3-literal-004",
       "versions": []
     },
     {
@@ -12762,6 +13612,7 @@
     "practitioner-lessons-058": "practitioner-lessons-058",
     "practitioner-lessons-061": "practitioner-lessons-061",
     "practitioner-lessons-072": "practitioner-lessons-072",
+    "r3-loop-005": "r3-loop-005",
     "runtime-boundaries-026": "runtime-boundaries-026",
     "runtime-boundaries-053": "runtime-boundaries-053",
     "runtime-boundaries-054": "runtime-boundaries-054",
@@ -12814,6 +13665,8 @@
     "protocol-audit-001": "protocol-audit-001",
     "protocol-audit-007": "protocol-audit-007",
     "protocol-audit-026": "protocol-audit-026",
+    "r3-loop-004": "r3-loop-004",
+    "r3-loop-017": "r3-loop-017",
     "tools-security-045": "tools-security-045",
     "tools-security-062": "tools-security-062",
     "protocol-006": "protocol-006",
@@ -12863,6 +13716,8 @@
     "protocol-030": "protocol-030",
     "protocol-062": "protocol-062",
     "protocol-audit-019": "protocol-audit-019",
+    "r3-literal-001": "r3-literal-001",
+    "r3-tools-015": "r3-tools-015",
     "runtime-boundaries-040": "runtime-boundaries-040",
     "tools-security-001": "tools-security-001",
     "tools-security-002": "tools-security-002",
@@ -12899,6 +13754,11 @@
     "practitioner-lessons-071": "practitioner-lessons-071",
     "practitioner-lessons-075": "practitioner-lessons-075",
     "practitioner-lessons-076": "practitioner-lessons-076",
+    "r3-tools-005": "r3-tools-005",
+    "r3-tools-006": "r3-tools-006",
+    "r3-tools-010": "r3-tools-010",
+    "r3-tools-013": "r3-tools-013",
+    "r3-tools-016": "r3-tools-016",
     "runtime-boundaries-039": "runtime-boundaries-039",
     "runtime-boundaries-062": "runtime-boundaries-062",
     "boundary-closure-002": "runtime-boundaries-062",
@@ -12912,6 +13772,7 @@
     "tools-security-010": "tools-security-010",
     "tools-security-011": "tools-security-011",
     "tools-security-012": "tools-security-012",
+    "r3-tools-001": "tools-security-012",
     "tools-security-063": "tools-security-012",
     "tools-security-014": "tools-security-014",
     "tools-security-064": "tools-security-014",
@@ -12971,6 +13832,7 @@
     "runtime-boundaries-042": "runtime-boundaries-042",
     "runtime-boundaries-046": "runtime-boundaries-046",
     "runtime-boundaries-047": "runtime-boundaries-047",
+    "r3-runtime-009": "runtime-boundaries-047",
     "runtime-boundaries-048": "runtime-boundaries-048",
     "runtime-boundaries-049": "runtime-boundaries-049",
     "runtime-boundaries-050": "runtime-boundaries-050",
@@ -13022,6 +13884,8 @@
     "network-errors-054": "network-errors-054",
     "runtime-boundaries-001": "network-errors-054",
     "network-errors-059": "network-errors-059",
+    "r3-runtime-010": "r3-runtime-010",
+    "r3-runtime-018": "r3-runtime-018",
     "runtime-boundaries-003": "runtime-boundaries-003",
     "runtime-boundaries-006": "runtime-boundaries-006",
     "boundary-closure-005": "boundary-closure-005",
@@ -13061,6 +13925,7 @@
     "network-errors-062": "network-errors-062",
     "practitioner-lessons-045": "practitioner-lessons-045",
     "protocol-010": "protocol-010",
+    "r3-loop-006": "protocol-010",
     "protocol-audit-033": "protocol-audit-033",
     "runtime-boundaries-016": "runtime-boundaries-016",
     "runtime-boundaries-036": "runtime-boundaries-036",
@@ -13119,6 +13984,11 @@
     "protocol-052": "protocol-052",
     "protocol-audit-003": "protocol-052",
     "protocol-audit-002": "protocol-audit-002",
+    "r3-loop-001": "r3-loop-001",
+    "r3-audit-001": "r3-loop-001",
+    "r3-loop-011": "r3-loop-001",
+    "r3-loop-012": "r3-loop-012",
+    "r3-audit-002": "r3-loop-012",
     "boundary-closure-007": "boundary-closure-007",
     "boundary-closure-008": "boundary-closure-008",
     "boundary-closure-009": "boundary-closure-009",
@@ -13160,6 +14030,7 @@
     "practitioner-lessons-026": "practitioner-lessons-026",
     "practitioner-lessons-027": "practitioner-lessons-027",
     "practitioner-lessons-031": "practitioner-lessons-031",
+    "r3-resume-001": "r3-resume-001",
     "runtime-boundaries-010": "runtime-boundaries-010",
     "runtime-boundaries-015": "runtime-boundaries-015",
     "runtime-boundaries-019": "runtime-boundaries-019",
@@ -13182,6 +14053,7 @@
     "runtime-boundaries-064": "runtime-boundaries-064",
     "traces-eval-064": "traces-eval-064",
     "durable-orchestration-007": "durable-orchestration-007",
+    "r3-resume-002": "durable-orchestration-007",
     "durable-orchestration-016": "durable-orchestration-016",
     "durable-orchestration-018": "durable-orchestration-018",
     "durable-orchestration-031": "durable-orchestration-031",
@@ -13205,9 +14077,13 @@
     "loop-context-018": "loop-context-018",
     "loop-context-025": "loop-context-025",
     "network-errors-026": "network-errors-026",
+    "r3-runtime-002": "network-errors-026",
     "network-errors-028": "network-errors-028",
+    "r3-runtime-001": "network-errors-028",
     "network-errors-035": "network-errors-035",
     "network-errors-039": "network-errors-039",
+    "r3-resume-003": "r3-resume-003",
+    "r3-runtime-013": "r3-runtime-013",
     "runtime-boundaries-043": "runtime-boundaries-043",
     "durable-orchestration-013": "durable-orchestration-013",
     "durable-orchestration-023": "durable-orchestration-023",
@@ -13222,6 +14098,8 @@
     "practitioner-lessons-054": "practitioner-lessons-054",
     "practitioner-lessons-055": "practitioner-lessons-055",
     "practitioner-lessons-057": "practitioner-lessons-057",
+    "r3-runtime-008": "r3-runtime-008",
+    "r3-runtime-011": "r3-runtime-011",
     "runtime-boundaries-031": "runtime-boundaries-031",
     "runtime-boundaries-059": "runtime-boundaries-059",
     "durable-orchestration-002": "durable-orchestration-002",
@@ -13274,8 +14152,18 @@
     "practitioner-lessons-062": "practitioner-lessons-062",
     "practitioner-lessons-063": "practitioner-lessons-063",
     "practitioner-lessons-073": "practitioner-lessons-073",
+    "r3-feedback-003": "r3-feedback-003",
+    "r3-feedback-004": "r3-feedback-004",
+    "r3-feedback-009": "r3-feedback-009",
+    "r3-feedback-011": "r3-feedback-011",
+    "r3-feedback-012": "r3-feedback-012",
+    "r3-feedback-013": "r3-feedback-013",
+    "r3-audit-003": "r3-feedback-013",
+    "r3-audit-004": "r3-feedback-013",
+    "r3-feedback-016": "r3-feedback-013",
     "traces-eval-004": "traces-eval-004",
     "traces-eval-010": "traces-eval-010",
+    "r3-feedback-006": "traces-eval-010",
     "traces-eval-011": "traces-eval-011",
     "traces-eval-012": "traces-eval-012",
     "traces-eval-017": "traces-eval-017",
@@ -13325,7 +14213,11 @@
     "protocol-audit-020": "protocol-audit-020",
     "protocol-audit-021": "protocol-audit-021",
     "protocol-audit-035": "protocol-audit-035",
+    "r3-audit-005": "r3-audit-005",
+    "r3-literal-002": "r3-literal-002",
+    "r3-literal-003": "r3-literal-003",
     "network-errors-063": "network-errors-063",
+    "r3-literal-004": "r3-literal-004",
     "durable-orchestration-042": "durable-orchestration-042"
   }
 }

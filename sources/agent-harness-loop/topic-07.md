@@ -141,17 +141,17 @@
 
 ### network-errors-021 · Anthropic Python v1.13.0 raw streams
 
-作者／组织：Anthropic。类型：源码／仓库文档。版本／日期：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f。读取日：2026-10-13。 引用别名：runtime-boundaries-004（本条合计 1 项，各版本复核不另计）。
+作者／组织：Anthropic。类型：源码／仓库文档。版本／日期：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f。读取日：2026-10-13。 引用别名：runtime-boundaries-004（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：发布版message_stop只是可yield事件，不立即break；底层等待transport EOF。SSE error通过_make_status_error构造，但迭代transport异常没有类似OpenAI显式包装。finally关闭，解释器finalizing时sync路径仅标记closed。
 
 选读范围：_iter_events; __stream__; message_stop allowed events; SSE error branch。限制：限定 v1.13.0 底层 stream 的所读分支；不能把底层迭代器与高层累计消息 helper 的返回时机混为一谈。
 
-已读版本／别名（同一来源）：
-- network-errors-021：main as read 2026-10-13; immutable Git blob 45db64b21dbd5d338450792e23e71e233519ce97；范围：src/anthropic/_streaming.py（第 1–230 行）。[该版本原文](https://github.com/anthropics/anthropic-sdk-python/blob/main/src/anthropic/_streaming.py)
-- runtime-boundaries-004：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f；范围：_iter_events; __stream__; message_stop allowed events; SSE error branch；补充复核，不新增计数。[该版本原文](https://github.com/anthropics/anthropic-sdk-python/blob/b4b7916deaf4e5570cd627b1ae7ee4394a4de39f/src/anthropic/_streaming.py)
+已读关联文档／版本（同一计数组）：
+- network-errors-021：main as read 2026-10-13; immutable Git blob 45db64b21dbd5d338450792e23e71e233519ce97；范围：src/anthropic/_streaming.py（第 1–230 行）。[该记录原文](https://github.com/anthropics/anthropic-sdk-python/blob/main/src/anthropic/_streaming.py)
+- runtime-boundaries-004：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f；范围：_iter_events; __stream__; message_stop allowed events; SSE error branch；补充复核，不新增计数。[该记录原文](https://github.com/anthropics/anthropic-sdk-python/blob/b4b7916deaf4e5570cd627b1ae7ee4394a4de39f/src/anthropic/_streaming.py)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/anthropics/anthropic-sdk-python/blob/b4b7916deaf4e5570cd627b1ae7ee4394a4de39f/src/anthropic/_streaming.py)
 
@@ -316,17 +316,17 @@
 
 ### network-errors-054 · PR 3510: post-DONE drain rejected
 
-作者／组织：openai/openai-python。类型：公开变更／提案。版本／日期：closed unmerged 2026-09-23。读取日：2026-10-13。 引用别名：runtime-boundaries-001（本条合计 1 项，各版本复核不另计）。
+作者／组织：openai/openai-python。类型：公开变更／提案。版本／日期：closed unmerged 2026-09-23。读取日：2026-10-13。 引用别名：runtime-boundaries-001（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：PR已关闭未合并；维护者承认排空有助连接复用，但等待开放连接及取消处理中断清理增添风险，倾向传输层优化；HTTPX2 2.13.0修复的是async generator cleanup异常，不是连接复用。
 
 选读范围：PR state + maintainer closing comment 5787052387。限制：该 PR 已关闭且未合并；维护者讨论排空与清理的取舍，不据此认定 SDK 已采用该补丁。
 
-已读版本／别名（同一来源）：
-- network-errors-054：open PR/revision discussion as read; revision c8e39cbc4abf4aaeda3c55f187569d03731a1bda；范围：PR 正文与 c8e39cbc4abf4aaeda3c55f187569d03731a1bda 修订的 review。[该版本原文](https://github.com/openai/openai-python/pull/3510)
-- runtime-boundaries-001：closed unmerged 2026-09-23；范围：PR state + maintainer closing comment 5787052387；补充复核，不新增计数。[该版本原文](https://github.com/openai/openai-python/pull/3510)
+已读关联文档／版本（同一计数组）：
+- network-errors-054：open PR/revision discussion as read; revision c8e39cbc4abf4aaeda3c55f187569d03731a1bda；范围：PR 正文与 c8e39cbc4abf4aaeda3c55f187569d03731a1bda 修订的 review。[该记录原文](https://github.com/openai/openai-python/pull/3510)
+- runtime-boundaries-001：closed unmerged 2026-09-23；范围：PR state + maintainer closing comment 5787052387；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-python/pull/3510)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/openai/openai-python/pull/3510)
 
@@ -341,6 +341,30 @@
 选读范围：Connectors and ownership; limiting pool/per-host connections; DNS cache/resolver; Graceful Shutdown。限制：只读Connectors、DNS cache、SSL和Graceful Shutdown章节；未推断所有运行时共享相同问题。
 
 [公开原文](https://docs.aiohttp.org/en/stable/client_advanced.html)
+
+<a id="r3-runtime-010"></a>
+
+### r3-runtime-010 · time package: Monotonic Clocks
+
+作者／组织：Go authors。类型：官方文档／规范。版本／日期：Current package docs snapshot, 2026-10-14。读取日：2026-10-14。
+
+用途：Go 区分墙钟与单调耗时；序列化不保留单调部分，部分系统睡眠期间单调钟不前进。
+
+选读范围：Monotonic Clocks, especially serialization and computer-sleep paragraphs。限制：Go 表示细节不能推广为所有系统单调钟都不跨进程共享；持久业务截止还需明确钟域与偏差策略。
+
+[公开原文](https://pkg.go.dev/time)
+
+<a id="r3-runtime-018"></a>
+
+### r3-runtime-018 · Deadlines
+
+作者／组织：gRPC authors。类型：官方文档／规范。版本／日期：Current guide snapshot, 2026-10-14。读取日：2026-10-14。
+
+用途：跨服务传播剩余 deadline 时扣除已耗时；RPC 取消仍需应用停止自己派生的工作。
+
+选读范围：Deadlines on the Client; Deadlines on the Server; Deadline Propagation。限制：传播默认随语言而异；gRPC 不替应用定义跨重启业务到期和权威时钟策略。
+
+[公开原文](https://grpc.io/docs/guides/deadlines/)
 
 <a id="runtime-boundaries-003"></a>
 

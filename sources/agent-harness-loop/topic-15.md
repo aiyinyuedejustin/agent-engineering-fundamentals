@@ -88,6 +88,89 @@
 
 [公开原文](https://commandline.microsoft.com/the-agent-optimization-loop-and-how-we-built-it-in-foundry/)
 
+<a id="r3-feedback-003"></a>
+
+### r3-feedback-003 · An update on recent Claude Code quality reports
+
+作者／组织：Anthropic。类型：作者／团队实践或研究文章。版本／日期：2026-04-23; fixes through v2.1.116。读取日：2026-10-14。
+
+用途：空闲后的旧 thinking 清理标志曾持续影响后续轮次，内部实验又妨碍复现；有效配置与时间路径都影响现场。
+
+选读范围：Three causes and caching optimization。限制：thinking 缺陷在 v2.1.101 修复，三项问题至 v2.1.116 解决；不是每轮清空全部聊天，也不评价当前模型质量。
+
+[公开原文](https://www.anthropic.com/engineering/april-23-postmortem)
+
+<a id="r3-feedback-004"></a>
+
+### r3-feedback-004 · Local development & testing
+
+作者／组织：LangChain。类型：官方文档／规范。版本／日期：Live docs accessed 2026-10-14。读取日：2026-10-14。
+
+用途：秒级热重载开发与接近生产的完整链路验证互补；本地成功不证明部署后的依赖、网络与认证正确。
+
+选读范围：Recommended workflow; langgraph dev/up; pre-deployment checklist; dependencies。限制：命令属于特定平台；接近生产不等于与托管生产完全相同，不要求每次运行全远端矩阵。
+
+[公开原文](https://docs.langchain.com/langsmith/local-dev-testing)
+
+<a id="r3-feedback-009"></a>
+
+### r3-feedback-009 · Harness engineering: leveraging Codex in an agent-first world
+
+作者／组织：Ryan Lopopolo / OpenAI。类型：作者／团队实践或研究文章。版本／日期：2026-02-11。读取日：2026-10-14。
+
+用途：每个 worktree 可启动的应用和可查询的局部观察，使 agent 能独立复现和验证；环境能力缺失会拖慢开发。
+
+选读范围：Increasing application legibility; Agent legibility is the goal。限制：一个第一方产品案例；单命令小闭环是指南综合建议，未声称通用加速比。
+
+[公开原文](https://openai.com/index/harness-engineering/)
+
+<a id="r3-feedback-011"></a>
+
+### r3-feedback-011 · FunctionTool ignores strict_json_schema parameter #992
+
+作者／组织：habema; OpenAI Agents SDK issue。类型：公开问题讨论。版本／日期：2025-07-02; SDK 0.1.0; closed。读取日：2026-10-14。
+
+用途：历史 SDK 0.1.0 手工 FunctionTool 的本地构造可成功，但生成 schema 被真实 Responses API 拒绝。
+
+选读范围：Describe the bug; Debug information; Repro steps。限制：社区已关闭报告，未独立复现，不声明当前仍失败或已核验修复发行版。
+
+[公开原文](https://github.com/openai/openai-agents-python/issues/992)
+
+<a id="r3-feedback-012"></a>
+
+### r3-feedback-012 · MCP Inspector CLI Client
+
+作者／组织：Model Context Protocol maintainers。类型：源码／仓库文档。版本／日期：main as accessed 2026-10-14; moving branch。读取日：2026-10-14。
+
+用途：JSON Schema 合法不保证各客户端可用；可脚本化 connect/list/call 与可区分错误有助于短集成反馈。
+
+选读范围：Schema portability; Exit codes and error envelopes; Why use CLI。限制：阅读时 main 分支，可能与固定 Inspector 发行版不同；不推断最低兼容版本。
+
+[公开原文](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md)
+
+<a id="r3-feedback-013"></a>
+<a id="r3-audit-003"></a>
+<a id="r3-audit-004"></a>
+<a id="r3-feedback-016"></a>
+
+### r3-feedback-013 · 异步检查点 conformance 覆盖：LangGraph PR #8537
+
+作者／组织：LangGraph maintainers。类型：公开变更／提案。版本／日期：2026-08-07 合并；checkpoint-postgres 3.1.2 收录。读取日：2026-10-14。 引用别名：r3-audit-003、r3-audit-004、r3-feedback-016（本组合计 1 项，关联文档与版本复核不另计）。
+
+用途：维护者补齐 SQLite 依赖和 Postgres runner，揭示此前关键 conformance 静默跳过或未运行；新增范围仍主要是 async savers。
+
+选读范围：PR description；缺失 SQLite conformance 依赖及 Postgres runner 的说明；async-only 范围；review 与 merge timeline。限制：是同一迁移/契约事故的佐证，不扩写成同步后端全覆盖或全项目无测试；不额外计数。
+
+已读关联文档／版本（同一计数组）：
+- r3-audit-003：2026-08-07 合并；checkpoint-postgres 3.1.2 收录；范围：PR description；缺失 SQLite conformance 依赖及 Postgres runner 的说明；async-only 范围；review 与 merge timeline；补充复核，不新增计数。[该记录原文](https://github.com/langchain-ai/langgraph/pull/8537)
+- r3-audit-004：checkpoint-postgres 3.1.2；发布条目核验于 2026-10-14；范围：release What’s Changed 中 #8535 与 #8537 条目；补充复核，不新增计数。[该记录原文](https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres==3.1.2)
+- r3-feedback-013：2026-08-05; closed by #8535；范围：Cause; Repro; Impact; Why it went unnoticed。[该记录原文](https://github.com/langchain-ai/langgraph/issues/8534)
+- r3-feedback-016：2026-08-07 合并；checkpoint-postgres 3.1.2 收录；范围：PR review and #8537 commit excerpts；补充复核，不新增计数。[该记录原文](https://github.com/langchain-ai/langgraph/pull/8535)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
+
+[公开原文](https://github.com/langchain-ai/langgraph/pull/8537)
+
 <a id="traces-eval-004"></a>
 
 ### traces-eval-004 · Demystifying evals for AI agents
@@ -101,14 +184,21 @@
 [公开原文](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 
 <a id="traces-eval-010"></a>
+<a id="r3-feedback-006"></a>
 
 ### traces-eval-010 · Unit testing - Pydantic AI
 
-作者／组织：Pydantic。类型：官方文档／规范。版本／日期：current 2026-10-13。读取日：2026-10-13。
+作者／组织：Pydantic。类型：官方文档／规范。版本／日期：current 2026-10-13。读取日：2026-10-13。 引用别名：r3-feedback-006（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：harness 单元测试可替换模型并硬性关闭真实模型请求，避免延迟、费用及随机性进入逻辑回归。
 
 阅读范围：Unit testing with TestModel; FunctionModel; fixtures。限制：Mock 通过仅说明脚本路径，不能证明模型会选择正确动作
+
+已读关联文档／版本（同一计数组）：
+- r3-feedback-006：Live docs accessed 2026-10-14；范围：TestModel is not magic; FunctionModel weather counterexample；补充复核，不新增计数。[该记录原文](https://pydantic.dev/docs/ai/guides/testing/)
+- traces-eval-010：current 2026-10-13；范围：Unit testing with TestModel; FunctionModel; fixtures。[该记录原文](https://ai.pydantic.dev/testing/)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://ai.pydantic.dev/testing/)
 
@@ -333,7 +423,7 @@
 
 ### traces-eval-048 · Testing if bash is all you need
 
-作者／组织：Ankur Goyal / Braintrust, Vercel guest post。类型：作者／团队实践或研究文章。版本／日期：unknown。读取日：2026-10-13。 引用别名：practitioner-lessons-019（本条合计 1 项，各版本复核不另计）。
+作者／组织：Ankur Goyal / Braintrust, Vercel guest post。类型：作者／团队实践或研究文章。版本／日期：unknown。读取日：2026-10-13。 引用别名：practitioner-lessons-019（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：SQL/bash/filesystem同问题实验中的初始大分差，部分来自harness和golden答案错误：stat六万八千文件超时、缺schema、data-loading off-by-one、五个错误或歧义标准答案。
 

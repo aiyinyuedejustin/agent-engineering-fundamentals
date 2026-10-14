@@ -165,17 +165,17 @@
 
 ### loop-context-005 · What I learned building an opinionated and minimal coding agent
 
-作者／组织：Mario Zechner。类型：作者／团队实践或研究文章。版本／日期：2025-11-30。读取日：2026-10-13。 引用别名：protocol-036（本条合计 1 项，各版本复核不另计）。
+作者／组织：Mario Zechner。类型：作者／团队实践或研究文章。版本／日期：2025-11-30。读取日：2026-10-13。 引用别名：protocol-036（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：作者的最小循环以无工具调用为退出条件，不内置max steps；这是个人工具取舍，非可无人值守部署的安全保证。
 
 阅读范围：Minimal agent scaffold; No built-in to-dos; No plan mode; No sub-agents。限制：作者个人工作流偏好，与无人值守系统要求不同；文章早于pi压缩实现。
 
-已读版本／别名（同一来源）：
-- loop-context-005：2025-11-30；范围：Minimal agent scaffold; No built-in to-dos; No plan mode; No sub-agents。[该版本原文](https://www.mariozechner.at/posts/2025-11-30-pi-coding-agent/)
-- protocol-036：2025-11-30；范围：pi-ai and pi-agent-core。[该版本原文](https://mariozechner.at/posts/2025-11-30-pi-coding-agent/)
+已读关联文档／版本（同一计数组）：
+- loop-context-005：2025-11-30；范围：Minimal agent scaffold; No built-in to-dos; No plan mode; No sub-agents。[该记录原文](https://www.mariozechner.at/posts/2025-11-30-pi-coding-agent/)
+- protocol-036：2025-11-30；范围：pi-ai and pi-agent-core。[该记录原文](https://mariozechner.at/posts/2025-11-30-pi-coding-agent/)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://www.mariozechner.at/posts/2025-11-30-pi-coding-agent/)
 
@@ -466,6 +466,18 @@
 阅读范围：Problems; composable components; graph fit。限制：全文；没有源码或性能数值，改善仅作者生产经验；线性组件仍可能内部隐藏复杂loop，不能自动获得恢复语义。
 
 [公开原文](https://dev.to/nicolaric/why-we-removed-langgraph-from-our-ai-platform-i9o)
+
+<a id="r3-loop-005"></a>
+
+### r3-loop-005 · Agents - OpenAI Agents SDK
+
+作者／组织：OpenAI。类型：官方文档／规范。版本／日期：Live docs accessed 2026-10-14。读取日：2026-10-14。
+
+用途：持续 required 或指定工具会阻止自然结束；该 SDK 默认在一次工具调用后重设选择，也允许宿主以工具结果结束。
+
+选读范围：Dynamic instructions；Forcing tool use；Tool use behavior；reset_tool_choice；clone（正文，示例代码选读）。限制：默认值属于 OpenAI Agents SDK；不要求所有确定性工作流改用 auto。
+
+[公开原文](https://openai.github.io/openai-agents-python/agents/)
 
 <a id="runtime-boundaries-026"></a>
 

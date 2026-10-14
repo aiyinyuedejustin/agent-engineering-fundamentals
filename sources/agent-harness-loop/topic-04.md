@@ -189,17 +189,17 @@
 
 ### protocol-012 · Structured outputs
 
-作者／组织：Anthropic。类型：官方文档／规范。版本／日期：live documentation as accessed 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-018（本条合计 1 项，各版本复核不另计）。
+作者／组织：Anthropic。类型：官方文档／规范。版本／日期：live documentation as accessed 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-018（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：SDK可将不支持的minimum/maxLength等约束移入description，服务端schema与原始业务schema并不相同；最终本地验证仍必要。
 
 选读范围：How SDK transformation works; JSON Schema limitations; Invalid outputs; Schema complexity limits。限制：实时文档，版本/平台相关；未验证服务端实际行为，不将厂商建议当跨模型定律。
 
-已读版本／别名（同一来源）：
-- protocol-012：live documentation as accessed 2026-10-13；范围：How SDK transformation works; JSON Schema limitations; Invalid outputs; Schema complexity limits。[该版本原文](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
-- protocol-audit-018：live 2026-10-13；范围：Schema 限制、属性名大小写与解析条件；补充复核，不新增计数。[该版本原文](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+已读关联文档／版本（同一计数组）：
+- protocol-012：live documentation as accessed 2026-10-13；范围：How SDK transformation works; JSON Schema limitations; Invalid outputs; Schema complexity limits。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+- protocol-audit-018：live 2026-10-13；范围：Schema 限制、属性名大小写与解析条件；补充复核，不新增计数。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
 
@@ -263,6 +263,30 @@
 
 [公开原文](https://github.com/anthropics/anthropic-sdk-python/blob/v1.0.0/src/anthropic/lib/_parse/_transform.py)
 
+<a id="r3-literal-001"></a>
+
+### r3-literal-001 · Transaction Isolation: Read Committed and Repeatable Read
+
+作者／组织：PostgreSQL Global Development Group。类型：官方文档／规范。版本／日期：PostgreSQL 18；读取于 2026-10-14。读取日：2026-10-14。
+
+用途：Read Committed 中连续 SELECT 可以看到不同已提交状态；各次准确只读并不自动组成同一快照。
+
+选读范围：§13.2.1 的每查询快照与连续 SELECT；§13.2.2 的稳定快照及序列化限制。限制：仅在结论要求共同状态时适用；Repeatable Read 也非所有业务一致性保证。未运行 PostgreSQL。
+
+[公开原文](https://www.postgresql.org/docs/current/transaction-iso.html#XACT-READ-COMMITTED)
+
+<a id="r3-tools-015"></a>
+
+### r3-tools-015 · OS Command Injection Defense Cheat Sheet
+
+作者／组织：OWASP Cheat Sheet Series maintainers。类型：官方文档／规范。版本／日期：Live docs accessed 2026-10-14。读取日：2026-10-14。
+
+用途：参数分离/转义阻断 shell 语法，却仍需限制程序选项和参数含义。
+
+选读范围：Argument Injection; three primary defenses; additional defenses; ProcessBuilder comparison。限制：通用安全指导；是否支持 -- 和具体安全标志取决于被调用程序。
+
+[公开原文](https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html)
+
 <a id="runtime-boundaries-040"></a>
 
 ### runtime-boundaries-040 · Extract apps cache logic into ConnectorRuntimeManager
@@ -304,17 +328,17 @@
 
 ### tools-security-013 · Tools — Model Context Protocol (2026-07-28)
 
-作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-065（本条合计 1 项，各版本复核不另计）。
+作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-065（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：同名工具跨server可冲突，serverInfo.name也不保证唯一，不能单靠显示名称作权限键。
 
 阅读范围：Capabilities; Tool Names; x-mcp-header; Stateful Tools; Error Handling。限制：同一工具规范章节新版本复核，合并013不重复计数。
 
-已读版本／别名（同一来源）：
-- tools-security-013：2025-11-25；范围：article body。[该版本原文](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
-- tools-security-065：2026-07-28；范围：Capabilities; Tool Names; x-mcp-header; Stateful Tools; Error Handling；补充复核，不新增计数。[该版本原文](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
+已读关联文档／版本（同一计数组）：
+- tools-security-013：2025-11-25；范围：article body。[该记录原文](https://modelcontextprotocol.io/specification/2025-11-25/server/tools)
+- tools-security-065：2026-07-28；范围：Capabilities; Tool Names; x-mcp-header; Stateful Tools; Error Handling；补充复核，不新增计数。[该记录原文](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
 

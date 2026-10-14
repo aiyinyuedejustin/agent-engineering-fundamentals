@@ -69,17 +69,17 @@
 
 ### network-errors-030 · subprocess — Subprocess management — Python 3.15.0 documentation
 
-作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3 docs retrieved 2026-10-13。读取日：2026-10-13。 引用别名：tools-security-024（本条合计 1 项，各版本复核不另计）。
+作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3 docs retrieved 2026-10-13。读取日：2026-10-13。 引用别名：tools-security-024（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：wait 配合未消费 stdout/stderr PIPE 可死锁；communicate 防 pipe 死锁但将输出缓存在内存，无限日志仍会耗尽资源。
 
 选读范围：subprocess Security Considerations, Popen wait/communicate/kill, process groups。限制：与具体 Python 版本、OS 有关；只读取相关段落。
 
-已读版本／别名（同一来源）：
-- network-errors-030：unknown；范围：Popen.communicate/terminate/kill/pid sections。[该版本原文](https://docs.python.org/3/library/subprocess.html)
-- tools-security-024：Python 3 docs retrieved 2026-10-13；范围：subprocess Security Considerations, Popen wait/communicate/kill, process groups。[该版本原文](https://docs.python.org/3/library/subprocess.html)
+已读关联文档／版本（同一计数组）：
+- network-errors-030：unknown；范围：Popen.communicate/terminate/kill/pid sections。[该记录原文](https://docs.python.org/3/library/subprocess.html)
+- tools-security-024：Python 3 docs retrieved 2026-10-13；范围：subprocess Security Considerations, Popen wait/communicate/kill, process groups。[该记录原文](https://docs.python.org/3/library/subprocess.html)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://docs.python.org/3/library/subprocess.html)
 
@@ -396,14 +396,21 @@
 [公开原文](https://learn.microsoft.com/en-us/windows/console/creating-a-pseudoconsole-session)
 
 <a id="runtime-boundaries-047"></a>
+<a id="r3-runtime-009"></a>
 
 ### runtime-boundaries-047 · Pod Lifecycle
 
-作者／组织：Kubernetes。类型：官方文档／规范。版本／日期：current docs 2026-10-13。读取日：2026-10-13。
+作者／组织：Kubernetes。类型：官方文档／规范。版本／日期：current docs 2026-10-13。读取日：2026-10-13。 引用别名：r3-runtime-009（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：同一个 Pod UID 不会被重新调度，替代 Pod 即便同名也是新实体；emptyDir 随原 Pod 消失。Running 是容器状态聚合，不代表 agent 成功，restartPolicy 可在旧副作用已发生后重跑进程。
 
 选读范围：Pod lifetime; Pod phase; container restart policy。限制：阅读 Pod 生命周期、phase 与容器重启策略；未覆盖全部 termination 细节。
+
+已读关联文档／版本（同一计数组）：
+- r3-runtime-009：Current docs snapshot, 2026-10-14；范围：Termination of Pods; Pod Termination Flow; Pod shutdown and sidecar containers；补充复核，不新增计数。[该记录原文](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+- runtime-boundaries-047：current docs 2026-10-13；范围：Pod lifetime; Pod phase; container restart policy。[该记录原文](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
 

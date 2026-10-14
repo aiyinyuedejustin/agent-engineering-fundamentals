@@ -93,17 +93,17 @@
 
 ### protocol-033 · feat(api): correct function argument completion event fields (openapi-545)
 
-作者／组织：markstuart-oai。类型：公开变更／提案。版本／日期：2a98f6a1dee448c6410531c89c2de0af4383c6a7。读取日：2026-10-13。 引用别名：protocol-audit-013（本条合计 1 项，各版本复核不另计）。
+作者／组织：markstuart-oai。类型：公开变更／提案。版本／日期：2a98f6a1dee448c6410531c89c2de0af4383c6a7。读取日：2026-10-13。 引用别名：protocol-audit-013（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：稳定与beta模型均删除done事件name字段；真实修复调整类型契约，不制造API未给的字段。
 
 选读范围：事件类型 diff：删除 function_call_arguments.done 中错误的 name 字段。限制：仅阅读与协议bug相关diff；release其他改动不作来源。
 
-已读版本／别名（同一来源）：
-- protocol-033：2a98f6a1dee448c6410531c89c2de0af4383c6a7；范围：事件类型 diff：删除 function_call_arguments.done 中错误的 name 字段。[该版本原文](https://github.com/openai/openai-python/pull/3801)
-- protocol-audit-013：merged commit 2a98f6a1dee448c6410531c89c2de0af4383c6a7；范围：PR 正文与实际 diff；补充复核，不新增计数。[该版本原文](https://github.com/openai/openai-python/pull/3801)
+已读关联文档／版本（同一计数组）：
+- protocol-033：2a98f6a1dee448c6410531c89c2de0af4383c6a7；范围：事件类型 diff：删除 function_call_arguments.done 中错误的 name 字段。[该记录原文](https://github.com/openai/openai-python/pull/3801)
+- protocol-audit-013：merged commit 2a98f6a1dee448c6410531c89c2de0af4383c6a7；范围：PR 正文与实际 diff；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-python/pull/3801)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/openai/openai-python/pull/3801)
 
@@ -148,17 +148,17 @@
 
 ### protocol-046 · Chat stream helper implementation
 
-作者／组织：OpenAI。类型：源码／仓库文档。版本／日期：v3.9.0; blob f9dec645b67383da62a688ce1c73eebf7607c553。读取日：2026-10-13。 引用别名：protocol-audit-012（本条合计 1 项，各版本复核不另计）。
+作者／组织：OpenAI。类型：源码／仓库文档。版本／日期：v3.9.0; blob f9dec645b67383da62a688ce1c73eebf7607c553。读取日：2026-10-13。 引用别名：protocol-audit-012（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：Chat辅助done事件从已累积tool_call.function.name构造；是SDK丰富后的事件，不是原始SSE格式。
 
 选读范围：FunctionToolCallArgumentsDoneEvent 的构造分支。限制：[protocol-046](topic-03.md#protocol-046)同文件发行版复核。
 
-已读版本／别名（同一来源）：
-- protocol-046：main accessed 2026-10-13; blob SHA 3476314f7f47a6924cad78d3176391e769233280 (not a commit)；范围：src/openai/lib/streaming/chat/_completions.py lines 343–497。[该版本原文](https://github.com/openai/openai-python/blob/main/src/openai/lib/streaming/chat/_completions.py)
-- protocol-audit-012：v3.9.0; blob f9dec645b67383da62a688ce1c73eebf7607c553；范围：FunctionToolCallArgumentsDoneEvent 的构造分支；补充复核，不新增计数。[该版本原文](https://github.com/openai/openai-python/blob/v3.9.0/src/openai/lib/streaming/chat/_completions.py)
+已读关联文档／版本（同一计数组）：
+- protocol-046：main accessed 2026-10-13; blob SHA 3476314f7f47a6924cad78d3176391e769233280 (not a commit)；范围：src/openai/lib/streaming/chat/_completions.py lines 343–497。[该记录原文](https://github.com/openai/openai-python/blob/main/src/openai/lib/streaming/chat/_completions.py)
+- protocol-audit-012：v3.9.0; blob f9dec645b67383da62a688ce1c73eebf7607c553；范围：FunctionToolCallArgumentsDoneEvent 的构造分支；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-python/blob/v3.9.0/src/openai/lib/streaming/chat/_completions.py)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/openai/openai-python/blob/v3.9.0/src/openai/lib/streaming/chat/_completions.py)
 
@@ -167,17 +167,17 @@
 
 ### protocol-048 · Anthropic Python v1.13.0 accumulated message helper
 
-作者／组织：Anthropic。类型：源码／仓库文档。版本／日期：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f。读取日：2026-10-13。 引用别名：runtime-boundaries-005（本条合计 1 项，各版本复核不另计）。
+作者／组织：Anthropic。类型：源码／仓库文档。版本／日期：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f。读取日：2026-10-13。 引用别名：runtime-boundaries-005（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：get_final_message消费到底后只assert已存在snapshot；snapshot在message_start即建立，未显式核查message_stop。因此应用不能把helper名中的final当作流完整性契约。
 
 选读范围：get_final_message; accumulate_event message_start/message_delta。限制：限定 v1.13.0 的累计消息 helper；未独立运行完整 SDK 集成测试。
 
-已读版本／别名（同一来源）：
-- protocol-048：main accessed 2026-10-13; blob SHA d036a04d1f96e0063fa9b7c7046b60750c874f11 (not a commit)；范围：src/anthropic/lib/streaming/_messages.py lines 341–537。[该版本原文](https://github.com/anthropics/anthropic-sdk-python/blob/main/src/anthropic/lib/streaming/_messages.py)
-- runtime-boundaries-005：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f；范围：get_final_message; accumulate_event message_start/message_delta；补充复核，不新增计数。[该版本原文](https://github.com/anthropics/anthropic-sdk-python/blob/b4b7916deaf4e5570cd627b1ae7ee4394a4de39f/src/anthropic/lib/streaming/_messages.py)
+已读关联文档／版本（同一计数组）：
+- protocol-048：main accessed 2026-10-13; blob SHA d036a04d1f96e0063fa9b7c7046b60750c874f11 (not a commit)；范围：src/anthropic/lib/streaming/_messages.py lines 341–537。[该记录原文](https://github.com/anthropics/anthropic-sdk-python/blob/main/src/anthropic/lib/streaming/_messages.py)
+- runtime-boundaries-005：v1.13.0 / b4b7916deaf4e5570cd627b1ae7ee4394a4de39f；范围：get_final_message; accumulate_event message_start/message_delta；补充复核，不新增计数。[该记录原文](https://github.com/anthropics/anthropic-sdk-python/blob/b4b7916deaf4e5570cd627b1ae7ee4394a4de39f/src/anthropic/lib/streaming/_messages.py)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/anthropics/anthropic-sdk-python/blob/b4b7916deaf4e5570cd627b1ae7ee4394a4de39f/src/anthropic/lib/streaming/_messages.py)
 
@@ -258,17 +258,17 @@
 
 ### protocol-061 · Prevent automatic tool execution after unsafe model finish reasons
 
-作者／组织：Vercel AI SDK。类型：公开变更／提案。版本／日期：merged a8285273ef8b4b2c36cf3cb692706da7f40077d4。读取日：2026-10-13。 引用别名：protocol-audit-014（本条合计 1 项，各版本复核不另计）。
+作者／组织：Vercel AI SDK。类型：公开变更／提案。版本／日期：merged a8285273ef8b4b2c36cf3cb692706da7f40077d4。读取日：2026-10-13。 引用别名：protocol-audit-014（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：补丁集中引入isToolExecutionAllowedFinishReason，只允许stop或tool-calls驱动自动工具执行，并用于流式和非流式路径。
 
 阅读范围：PR 19066 diff: shared helper, generateText, executeToolsFromStream and regression tests。限制：这是AI SDK的标准化终态执行策略，不是所有厂商原生枚举定义；安全授权仍是另一层。
 
-已读版本／别名（同一来源）：
-- protocol-061：merged a8285273ef8b4b2c36cf3cb692706da7f40077d4；范围：PR 19066 diff: shared helper, generateText, executeToolsFromStream and regression tests。[该版本原文](https://github.com/vercel/ai/pull/19066)
-- protocol-audit-014：merged; published ai@7.0.70；范围：PR 正文、实际 diff 与发行说明评论；补充复核，不新增计数。[该版本原文](https://github.com/vercel/ai/pull/19066)
+已读关联文档／版本（同一计数组）：
+- protocol-061：merged a8285273ef8b4b2c36cf3cb692706da7f40077d4；范围：PR 19066 diff: shared helper, generateText, executeToolsFromStream and regression tests。[该记录原文](https://github.com/vercel/ai/pull/19066)
+- protocol-audit-014：merged; published ai@7.0.70；范围：PR 正文、实际 diff 与发行说明评论；补充复核，不新增计数。[该记录原文](https://github.com/vercel/ai/pull/19066)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/vercel/ai/pull/19066)
 

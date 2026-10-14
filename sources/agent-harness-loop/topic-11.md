@@ -5,14 +5,21 @@
 ## 11. 插话、暂停与取消：让旧任务正确让路
 
 <a id="durable-orchestration-007"></a>
+<a id="r3-resume-002"></a>
 
 ### durable-orchestration-007 · Interrupts
 
-作者／组织：LangChain。类型：官方文档／规范。版本／日期：accessed 2026-10-13; response_schema &gt;=1.2.12。读取日：2026-10-13。
+作者／组织：LangChain。类型：官方文档／规范。版本／日期：accessed 2026-10-13; response_schema &gt;=1.2.12。读取日：2026-10-13。 引用别名：r3-resume-002（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：interrupt 恢复从节点开始重跑，父节点调用子图时父节点前段也重跑；原进程栈未被冻结。
 
 选读范围：暂停与恢复、并发 interrupt ID、中断顺序、子图恢复及中断前副作用的说明。限制：文中称1,2,3次重放为指数级不准确；示例只执行一次不能覆盖崩溃后重试，须另外解释提交边界
+
+已读关联文档／版本（同一计数组）：
+- durable-orchestration-007：accessed 2026-10-13; response_schema &gt;=1.2.12；范围：暂停与恢复、并发 interrupt ID、中断顺序、子图恢复及中断前副作用的说明。[该记录原文](https://docs.langchain.com/oss/python/langgraph/interrupts)
+- r3-resume-002：live documentation independently checked 2026-10-14; not release-pinned；范围：https://docs.langchain.com/oss/python/langgraph/interrupts — Rules of interrupts; Do not wrap interrupt calls in try/except; Do not reorder interrupt calls within a node; Side effects called before interrupt must be idempotent; Using with subgraphs called as functions.；补充复核，不新增计数。[该记录原文](https://docs.langchain.com/oss/python/langgraph/interrupts)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://docs.langchain.com/oss/python/langgraph/interrupts)
 
@@ -281,26 +288,40 @@
 [公开原文](https://github.com/earendil-works/pi/issues/9783)
 
 <a id="network-errors-026"></a>
+<a id="r3-runtime-002"></a>
 
 ### network-errors-026 · Python asyncio tasks and timeouts
 
-作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3.15 documentation as read 2026-10-13。读取日：2026-10-13。
+作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3.15 documentation as read 2026-10-13。读取日：2026-10-13。 引用别名：r3-runtime-002（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：asyncio.timeout通过取消当前task转换TimeoutError；wait_for等待取消真正完成，实际墙钟可能超过配置时间。
 
 选读范围：sections Task cancellation/Shielding/Timeouts/Waiting primitives。限制：读取的current页为Python3.15；timeout自3.11可用，具体TaskGroup新API不要倒推旧版本。
 
+已读关联文档／版本（同一计数组）：
+- network-errors-026：Python 3.15 documentation as read 2026-10-13；范围：sections Task cancellation/Shielding/Timeouts/Waiting primitives。[该记录原文](https://docs.python.org/3/library/asyncio-task.html)
+- r3-runtime-002：Python 3.15.0 documentation as served；范围：Creating tasks; Task cancellation; Task groups; Running tasks concurrently; Shielding from cancellation; Timeouts; Waiting primitives; Running in threads；补充复核，不新增计数。[该记录原文](https://docs.python.org/3/library/asyncio-task.html)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
+
 [公开原文](https://docs.python.org/3/library/asyncio-task.html)
 
 <a id="network-errors-028"></a>
+<a id="r3-runtime-001"></a>
 
-### network-errors-028 · AnyIO cancellation and timeouts
+### network-errors-028 · Cancellation and timeouts
 
-作者／组织：AnyIO maintainers。类型：官方文档／规范。版本／日期：unknown。读取日：2026-10-13。
+作者／组织：AnyIO maintainers。类型：官方文档／规范。版本／日期：stable documentation, accessed 2026-10-14。读取日：2026-10-14。 引用别名：r3-runtime-001（本组合计 1 项，关联文档与版本复核不另计）。
 
-用途：AnyIO level cancellation在已取消scope每个yield点重复触发，与asyncio edge语义不同；外层deadline可能更早。
+用途：AnyIO 已取消作用域内的 await 可能再次被取消；必要清理要有界保护，取消作用域按同任务、LIFO 契约退出。
 
-选读范围：Differences/Timeouts/Finalization/Shielding。限制：未完整读所有scope corruption示例；结论限定取消、超时、finalization部分。
+选读范围：Differences between asyncio and AnyIO cancellation semantics; Shielding; Finalization; Avoiding cancel scope stack corruption。限制：AnyIO level cancellation 不代表所有异步运行时；保护不能无限延长业务，也不能强杀不协作代码。
+
+已读关联文档／版本（同一计数组）：
+- network-errors-028：unknown；范围：Differences/Timeouts/Finalization/Shielding。[该记录原文](https://anyio.readthedocs.io/en/stable/cancellation.html)
+- r3-runtime-001：stable documentation, accessed 2026-10-14；范围：Differences between asyncio and AnyIO cancellation semantics; Shielding; Finalization; Avoiding cancel scope stack corruption；补充复核，不新增计数。[该记录原文](https://anyio.readthedocs.io/en/stable/cancellation.html)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://anyio.readthedocs.io/en/stable/cancellation.html)
 
@@ -327,6 +348,30 @@
 阅读范围：full page。限制：平台能力随版本变化；是该SDK的resume契约，不是所有恢复系统互斥。
 
 [公开原文](https://ai-sdk.dev/docs/advanced/stopping-streams)
+
+<a id="r3-resume-003"></a>
+
+### r3-resume-003 · Webhooks — authenticity, duplicate delivery, ordering and asynchronous handling
+
+作者／组织：Stripe。类型：官方文档／规范。版本／日期：live documentation independently checked 2026-10-14; not release-pinned。读取日：2026-10-14。
+
+用途：验签不等于去重或排序；合法重投可有新签名，事件时间戳可能相同，不能据此判重或判断先后。
+
+选读范围：Event delivery behaviors: retries and ordering; Best practices: duplicate events, asynchronous handling, verifying origin/signatures, replay attacks, and quickly returning 2xx。限制：仅核验所列章节；持久接收事务、通用版本契约、业务效果键范围是工程推论，非本文完整实现或跨系统恰好一次承诺；对象 ID 加类型不可无条件泛化。
+
+[公开原文](https://docs.stripe.com/webhooks)
+
+<a id="r3-runtime-013"></a>
+
+### r3-runtime-013 · Chatbot example: clean up servers in correct order
+
+作者／组织：clareliguori; reviewed and merged by ihrpr / MCP Python SDK。类型：公开变更／提案。版本／日期：2025-05-23 合并；未核验首个发行版。读取日：2026-10-14。
+
+用途：MCP 多服务器示例改为逆进入顺序清理上下文，避免并行退出取消作用域破坏所有权。
+
+选读范围：PR body; pagoenka 2025-03-25 confirmation; reviewer/merge timeline。限制：2025-05-23 合并的示例修复，未核验首个发行版；不能推广为所有独立资源都须串行关闭。
+
+[公开原文](https://github.com/modelcontextprotocol/python-sdk/pull/353)
 
 <a id="runtime-boundaries-043"></a>
 

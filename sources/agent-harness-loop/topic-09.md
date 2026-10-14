@@ -621,17 +621,17 @@
 
 ### protocol-052 · Mid-conversation system messages and tool changes
 
-作者／组织：Anthropic。类型：官方文档／规范。版本／日期：current docs; inline tool definitions beta 2026-09-15。读取日：2026-10-13。 引用别名：protocol-audit-003（本条合计 1 项，各版本复核不另计）。
+作者／组织：Anthropic。类型：官方文档／规范。版本／日期：current docs; inline tool definitions beta 2026-09-15。读取日：2026-10-13。 引用别名：protocol-audit-003（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：中途system有明确可插入位置，不能放在tool_use与其tool_result之间，连续system按一组检查位置。
 
 选读范围：Definitions; initial tool-change beta discussion; When to use; Limitations; Turn-scoped sections。限制：未逐行读全页中间示例；功能/模型/部署支持范围需钉版本，不作跨厂商推荐。
 
-已读版本／别名（同一来源）：
-- protocol-052：current docs; inline tool definitions beta 2026-09-15；范围：Definitions; initial tool-change beta discussion; When to use; Limitations; Turn-scoped sections。[该版本原文](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)
-- protocol-audit-003：live 2026-10-13；范围：Mid-conversation system messages：中途系统消息、工具定义与前缀规则；补充复核，不新增计数。[该版本原文](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)
+已读关联文档／版本（同一计数组）：
+- protocol-052：current docs; inline tool definitions beta 2026-09-15；范围：Definitions; initial tool-change beta discussion; When to use; Limitations; Turn-scoped sections。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)
+- protocol-audit-003：live 2026-10-13；范围：Mid-conversation system messages：中途系统消息、工具定义与前缀规则；补充复核，不新增计数。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages)
 
@@ -646,5 +646,45 @@
 选读范围：Compaction and preserved thinking：压缩块及受保护推理的关系。限制：只裁决指定路径；未调用真实模型API，也未运行整个SDK测试套件。
 
 [公开原文](https://platform.claude.com/docs/en/build-with-claude/compaction-thinking-blocks)
+
+<a id="r3-loop-001"></a>
+<a id="r3-audit-001"></a>
+<a id="r3-loop-011"></a>
+
+### r3-loop-001 · session_input_callback repeating a history item re-persists it as new session input
+
+作者／组织：hsusul。类型：公开问题讨论。版本／日期：2026-07-31; reporter baseline main@c3f1781d56e8f1249a01674f18ba1f3e44a16dce, with then-latest release tag v0.19.1 (tag not independently reproduced)。读取日：2026-10-14。 引用别名：r3-audit-001、r3-loop-011（本组合计 1 项，关联文档与版本复核不另计）。
+
+用途：历史项被模型输入回调重复返回时，曾被误作新用户事件保存；应按事件来源区分历史复述与内容相同的新输入。
+
+选读范围：Issue body；FakeModel reproduction；Expected behavior；Hypothesis；timeline。限制：社区报告经维护者修复；报告基线为 main 提交，未独立运行 v0.19.1。修复见 #4181 与 v0.19.4，不代表当前仍有此缺陷。
+
+已读关联文档／版本（同一计数组）：
+- r3-audit-001：v0.19.4；发布条目核验于 2026-10-14；范围：v0.19.4 release 的 What’s Changed：#4181（fix(sessions)）条目；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-agents-python/releases/tag/v0.19.4)
+- r3-loop-001：2026-07-31; reporter baseline main@c3f1781d56e8f1249a01674f18ba1f3e44a16dce, with then-latest release tag v0.19.1 (tag not independently reproduced)；范围：Issue body；FakeModel reproduction；Expected behavior；Hypothesis；timeline。[该记录原文](https://github.com/openai/openai-agents-python/issues/4069)
+- r3-loop-011：2026-08-05 合并；v0.19.4 发布页明确收录；范围：PR Summary 与 merged timeline；v0.19.4 release 中 #4181 条目另经核验；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-agents-python/pull/4181)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
+
+[公开原文](https://github.com/openai/openai-agents-python/issues/4069)
+
+<a id="r3-loop-012"></a>
+<a id="r3-audit-002"></a>
+
+### r3-loop-012 · 有限窗口压缩的覆盖与过滤：OpenAI Agents SDK PR #4293
+
+作者／组织：OpenAI Agents SDK contributors。类型：公开变更／提案。版本／日期：2026-08-08 关闭，未合并，wontfix。读取日：2026-10-14。 引用别名：r3-audit-002（本组合计 1 项，关联文档与版本复核不另计）。
+
+用途：维护者确认限窗压缩的丢失机制，同时禁止绕过主动过滤补齐输入；覆盖或所有权不明时应推迟压缩。
+
+选读范围：PR Summary；维护者对主动过滤与全历史回退的评论；旧尝试覆盖新状态、serialization 与所有权的关闭前审阅。限制：关闭且未合并，不采用其 patch 作为保证，也不宣称当前缺陷已修复或仍存在；同机制后续佐证，不增加总数。
+
+已读关联文档／版本（同一计数组）：
+- r3-audit-002：2026-08-08 关闭，未合并，wontfix；范围：PR Summary；维护者对主动过滤与全历史回退的评论；旧尝试覆盖新状态、serialization 与所有权的关闭前审阅；补充复核，不新增计数。[该记录原文](https://github.com/openai/openai-agents-python/pull/4293)
+- r3-loop-012：2026-08-04 关闭且未合并；历史提案和维护者审阅；范围：PR What / Why；维护者关于历史覆盖、response_id 与跨 await 所有权的审阅；2026-08-04 关闭说明。[该记录原文](https://github.com/openai/openai-agents-python/pull/3827)
+
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
+
+[公开原文](https://github.com/openai/openai-agents-python/pull/4293)
 
 [返回分类目录](README.md#topics)

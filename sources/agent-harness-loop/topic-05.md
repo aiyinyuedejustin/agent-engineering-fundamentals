@@ -304,6 +304,66 @@
 
 [公开原文](https://pbf.codes/posts/three-bugs-behind-one-symptom-oauth-postmortem/)
 
+<a id="r3-tools-005"></a>
+
+### r3-tools-005 · How we contain Claude across products
+
+作者／组织：Max McGuinness, Mikaela Grace, Jiri De Jonghe, Jake Eaton, Abel Ribbink / Anthropic。类型：作者／团队实践或研究文章。版本／日期：2026-05-25。读取日：2026-10-14。
+
+用途：项目配置在信任确认前被激活，以及同域 API 使用攻击者账户上传，都是作者报告的边界失效。
+
+选读范围：Article body, containment patterns and reported failures ; focus 62–65, 88–99, 106–120。限制：第一方报告非独立复现；不沿用单次红队成功率推广所有模型，也不宣称代理已消灭外发风险。
+
+[公开原文](https://www.anthropic.com/engineering/how-we-contain-claude)
+
+<a id="r3-tools-006"></a>
+
+### r3-tools-006 · Workspace Trust
+
+作者／组织：Microsoft / VS Code。类型：官方文档／规范。版本／日期：Page footer 2026-10-07。读取日：2026-10-14。
+
+用途：打开终端、枚举任务、加载执行路径配置都可能间接执行项目内容。
+
+选读范围：Safe code browsing; Restricted Mode; terminal/tasks/settings/extensions; trust scopes。限制：VS Code 行为是产品例子，不要求所有 harness 禁用所有 agent；恶意扩展可忽略受限模式。
+
+[公开原文](https://code.visualstudio.com/docs/editing/workspaces/workspace-trust)
+
+<a id="r3-tools-010"></a>
+
+### r3-tools-010 · Safeguarding VS Code against prompt injections
+
+作者／组织：Michael Stepankin / GitHub Security Lab。类型：作者／团队实践或研究文章。版本／日期：2025-08-25; updated 2026-07-06。读取日：2026-10-14。
+
+用途：读取与浏览器打开就可串成外发，不能只审写工具。
+
+选读范围：Agent loop/context and tool review; fetch URL parsing; Simple Browser; immediate-effect edits。限制：仅使用已公开历史漏洞的失效机制；未执行 payload；不把旧漏洞状态说成当前仍可利用。
+
+[公开原文](https://github.blog/security/vulnerability-research/safeguarding-vs-code-against-prompt-injections/)
+
+<a id="r3-tools-013"></a>
+
+### r3-tools-013 · How GitHub's agentic security principles make our AI agents as secure as possible
+
+作者／组织：Rahul Zhade / GitHub。类型：作者／团队实践或研究文章。版本／日期：Live page accessed 2026-10-14; publication date not extracted。读取日：2026-10-14。
+
+用途：issue 内容作者、指派 agent 的发起者和真正执行的 agent 是不同角色。
+
+选读范围：Security concerns and six agentic product rules。限制：历史产品文章有特定 firewall/MCP 行为；不当作今日全部产品的统一实现。
+
+[公开原文](https://github.blog/ai-and-ml/github-copilot/how-githubs-agentic-security-principles-make-our-ai-agents-as-secure-as-possible/)
+
+<a id="r3-tools-016"></a>
+
+### r3-tools-016 · Policy engine
+
+作者／组织：Google / Gemini CLI maintainers。类型：官方文档／规范。版本／日期：Live docs accessed 2026-10-14。读取日：2026-10-14。
+
+用途：管理策略文件有独立所有权/可写性边界。
+
+选读范围：Admin policy provenance/security ; rule schema ; shell and MCP rules。限制：此处不声称文档暴露了通用 bypass；仅用公开契约说明规则边界和版本成本。
+
+[公开原文](https://geminicli.com/docs/reference/policy-engine/)
+
 <a id="runtime-boundaries-039"></a>
 
 ### runtime-boundaries-039 · Avoid executing PATH helpers before workspace trust
@@ -321,17 +381,17 @@
 
 ### runtime-boundaries-062 · Request preconditions
 
-作者／组织：Google Cloud。类型：官方文档／规范。版本／日期：current2026-10-13。读取日：2026-10-13。 引用别名：boundary-closure-002（本条合计 1 项，各版本复核不另计）。
+作者／组织：Google Cloud。类型：官方文档／规范。版本／日期：current2026-10-13。读取日：2026-10-13。 引用别名：boundary-closure-002（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：延迟重试可能删掉同名新产物；generation匹配把操作绑定到对象版本，412应当冲突处理而非无条件重试。读metadata和数据分两次也需版本条件，防manifest hash对应旧版本、下载新版本。
 
 选读范围：Introduction; composition/copy preconditions; multiple request retries example; best practices。限制：相关章节静态阅读，未运行测试。
 
-已读版本／别名（同一来源）：
-- boundary-closure-002：current docs, accessed 2026-10-13；范围：Introduction；Precondition criteria；Best practices；Multiple request retries；补充复核，不新增计数。[该版本原文](https://docs.cloud.google.com/storage/docs/request-preconditions)
-- runtime-boundaries-062：current2026-10-13；范围：Introduction; composition/copy preconditions; multiple request retries example; best practices。[该版本原文](https://docs.cloud.google.com/storage/docs/request-preconditions)
+已读关联文档／版本（同一计数组）：
+- boundary-closure-002：current docs, accessed 2026-10-13；范围：Introduction；Precondition criteria；Best practices；Multiple request retries；补充复核，不新增计数。[该记录原文](https://docs.cloud.google.com/storage/docs/request-preconditions)
+- runtime-boundaries-062：current2026-10-13；范围：Introduction; composition/copy preconditions; multiple request retries example; best practices。[该记录原文](https://docs.cloud.google.com/storage/docs/request-preconditions)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://docs.cloud.google.com/storage/docs/request-preconditions)
 
@@ -444,21 +504,23 @@
 [公开原文](https://research.checkpoint.com/2025/cursor-vulnerability-mcpoison/)
 
 <a id="tools-security-012"></a>
+<a id="r3-tools-001"></a>
 <a id="tools-security-063"></a>
 
 ### tools-security-012 · Security Best Practices — Model Context Protocol (2026-07-28)
 
-作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-063（本条合计 1 项，各版本复核不另计）。
+作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：r3-tools-001、tools-security-063（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：现版将Session Hijacking改为State Handle Hijacking：所有请求验证身份，handle服务端绑定经验证主体，不能把拥有handle当认证。
 
 阅读范围：State Handle Hijacking; Mix-Up; Localhost Redirect; Scope Minimization。限制：2026-07-28 版安全章节；与旧版合为同一来源。状态句柄变化不代表所有已部署客户端都已升级。
 
-已读版本／别名（同一来源）：
-- tools-security-012：2025-11-25；范围：Security Best Practices: attacks and mitigations。[该版本原文](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
-- tools-security-063：2026-07-28；范围：State Handle Hijacking; Mix-Up; Localhost Redirect; Scope Minimization；补充复核，不新增计数。[该版本原文](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
+已读关联文档／版本（同一计数组）：
+- r3-tools-001：2025-11-25 documentation route; live content read 2026-10-14；范围：Confused Deputy; Token Passthrough; SSRF; Session Hijacking; Local MCP Server Compromise; OAuth URL validation; stdio proxy security; Scope Minimization；补充复核，不新增计数。[该记录原文](https://modelcontextprotocol.io/docs/2025-11-25/tutorials/security/security_best_practices)
+- tools-security-012：2025-11-25；范围：Security Best Practices: attacks and mitigations。[该记录原文](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
+- tools-security-063：2026-07-28；范围：State Handle Hijacking; Mix-Up; Localhost Redirect; Scope Minimization；补充复核，不新增计数。[该记录原文](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices)
 
@@ -467,17 +529,17 @@
 
 ### tools-security-014 · Authorization — Model Context Protocol (2026-07-28)
 
-作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-064（本条合计 1 项，各版本复核不另计）。
+作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-064（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：必须在给任何token endpoint发送授权码前对比已记录issuer；当metadata宣告支持iss但响应缺失时拒绝。
 
 选读范围：Authorization Response Validation; Access Token Usage; Scope Challenge Handling。限制：同一规范章节新版本复核，合并014不重复计数；没有穷尽OAuth外链。
 
-已读版本／别名（同一来源）：
-- tools-security-014：2025-11-25；范围：2025-11-25 版：Purpose 至 Token Audience Binding（正文前 22000 字符）。[该版本原文](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
-- tools-security-064：2026-07-28；范围：Authorization Response Validation; Access Token Usage; Scope Challenge Handling；补充复核，不新增计数。[该版本原文](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
+已读关联文档／版本（同一计数组）：
+- tools-security-014：2025-11-25；范围：2025-11-25 版：Purpose 至 Token Audience Binding（正文前 22000 字符）。[该记录原文](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+- tools-security-064：2026-07-28；范围：Authorization Response Validation; Access Token Usage; Scope Challenge Handling；补充复核，不新增计数。[该记录原文](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization)
 
@@ -486,17 +548,17 @@
 
 ### tools-security-015 · Elicitation — Model Context Protocol (2026-07-28)
 
-作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-066（本条合计 1 项，各版本复核不另计）。
+作者／组织：Model Context Protocol。类型：官方文档／规范。版本／日期：2026-07-28。读取日：2026-10-13。 引用别名：tools-security-066（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：accept仍只表示同意外部交互，现版用重试原请求结合requestState或服务器状态检查完成，不再依赖旧completion通知。
 
 阅读范围：URL Mode; Statefulness; Safe URL Handling; Phishing。限制：同一规范章节新版本复核，合并015不重复计数。
 
-已读版本／别名（同一来源）：
-- tools-security-015：2025-11-25；范围：Elicitation form/URL modes, user interaction and completion。[该版本原文](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation)
-- tools-security-066：2026-07-28；范围：URL Mode; Statefulness; Safe URL Handling; Phishing；补充复核，不新增计数。[该版本原文](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)
+已读关联文档／版本（同一计数组）：
+- tools-security-015：2025-11-25；范围：Elicitation form/URL modes, user interaction and completion。[该记录原文](https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation)
+- tools-security-066：2026-07-28；范围：URL Mode; Statefulness; Safe URL Handling; Phishing；补充复核，不新增计数。[该记录原文](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://modelcontextprotocol.io/specification/2026-07-28/client/elicitation)
 

@@ -17,11 +17,11 @@
 
 选读范围：Who can create / expiration / limiting capabilities / expiry while downloading。限制：签名 URL 的有效期还受签名凭证和策略约束；链接存在不等于任何接收人都能访问。
 
-已读版本／别名（同一来源）：
-- human-control-038：S3 User Guide accessed 2026-10-13；范围：Who can create / expiration / limiting capabilities / expiry while downloading；补充复核，不新增计数。[该版本原文](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html)
-- runtime-boundaries-029：live documentation 2026-10-13；范围：Who can create; expiration; FAQs；补充复核，不新增计数。[该版本原文](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html)
+已读关联文档／版本（同一计数组）：
+- human-control-038：S3 User Guide accessed 2026-10-13；范围：Who can create / expiration / limiting capabilities / expiry while downloading；补充复核，不新增计数。[该记录原文](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html)
+- runtime-boundaries-029：live documentation 2026-10-13；范围：Who can create; expiration; FAQs；补充复核，不新增计数。[该记录原文](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html)
 
@@ -217,6 +217,42 @@
 
 [公开原文](https://github.com/openai/openai-python/blob/v3.9.0/src/openai/lib/_parsing/_completions.py)
 
+<a id="r3-audit-005"></a>
+
+### r3-audit-005 · time.monotonic clock contract
+
+作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3.15 文档；读取于 2026-10-14。读取日：2026-10-14。 补充证据，不增加总数。
+
+用途：Python 文档说明该单调钟在进程间共享；应核对钟域与启动纪元，不能一概断言单调读数跨进程无意义。
+
+选读范围：time.monotonic 条目及跨进程同钟、参考原点、实现与版本变化说明。限制：短 API 契约作时钟边界佐证，不提供跨主机或重启后的可移植业务到期保证；不增加总数。
+
+[公开原文](https://docs.python.org/3/library/time.html#time.monotonic)
+
+<a id="r3-literal-002"></a>
+
+### r3-literal-002 · tempfile.mkstemp permissions
+
+作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3.15 文档；读取于 2026-10-14。读取日：2026-10-14。 补充证据，不增加总数。
+
+用途：mkstemp 在支持权限位的平台创建不可执行的临时文件；替换可执行产物前须明确所需权限。
+
+选读范围：tempfile.mkstemp：创建权限、可执行位、句柄关闭与删除责任。限制：短 API 契约佐证，不重复计数；不要求盲复制 owner、ACL、setuid 等全部安全属性。
+
+[公开原文](https://docs.python.org/3/library/tempfile.html#tempfile.mkstemp)
+
+<a id="r3-literal-003"></a>
+
+### r3-literal-003 · os.replace atomic replacement contract
+
+作者／组织：Python Software Foundation。类型：官方文档／规范。版本／日期：Python 3.15 文档；读取于 2026-10-14。读取日：2026-10-14。 补充证据，不增加总数。
+
+用途：os.replace 以源对象替换目标路径；成功时的原子性不构成旧目标权限自动继承的承诺。
+
+选读范围：os.replace：源到目标替换、已有目标文件、跨文件系统失败与成功时原子性。限制：短 API 契约作元数据边界佐证；权限故障由 API 契约与另行报告的本地演示合并解释，未在此重跑。
+
+[公开原文](https://docs.python.org/3/library/os.html#os.replace)
+
 <a id="network-errors-063"></a>
 
 ### network-errors-063 · Stream — buffering, writable.write and backpressure
@@ -228,6 +264,18 @@
 选读范围：Buffering; Event:drain; writable.write (lines951–979); Three states/readableFlowing (line1032); pipeline (lines3562–3595)。限制：只读Buffering、drain、writable.write、Readable状态与pipeline相关段落，未运行Node。作为既有流式执行机制的补充核验，不增加主计数。不能外推暂停本地流会停止远端模型生成。
 
 [公开原文](https://nodejs.org/api/stream.html)
+
+<a id="r3-literal-004"></a>
+
+### r3-literal-004 · rate: concurrent admission and reservations
+
+作者／组织：Go Authors。类型：官方文档／规范。版本／日期：在线包文档；读取于 2026-10-14。读取日：2026-10-14。 补充证据，不增加总数。
+
+用途：共享 Limiter 在允许后续事件时计入已有预留；未执行动作可取消预留，体现先准入、再执行的资源约束。
+
+选读范围：Limiter 并发安全与 token 消费；ReserveN；Reservation；CancelAt；SetLimitAt 的既有预留边界。限制：补充 API 例子，不额外计数；补充 token 的速率限制不是一次性总费用封顶，动态改限额也有既有预留边界。
+
+[公开原文](https://pkg.go.dev/golang.org/x/time/rate)
 
 <a id="durable-orchestration-042"></a>
 

@@ -496,6 +496,18 @@
 
 [公开原文](https://www.harvey.ai/blog/building-spectre-internal-collaborative-cloud-agent-platform)
 
+<a id="r3-resume-001"></a>
+
+### r3-resume-001 · Functional API overview
+
+作者／组织：LangChain。类型：官方文档／规范。版本／日期：live documentation independently checked 2026-10-14; not release-pinned。读取日：2026-10-14。
+
+用途：恢复从入口重放并复用已保存的任务结果，内联副作用与非确定性值应放在可记录的任务边界。
+
+选读范围：https://docs.langchain.com/oss/python/langgraph/functional-api — Example; Resuming (including Resuming after an error); When to use a task; Determinism; Idempotency; Common pitfalls &gt; Handling side effects / Non-deterministic control flow.。限制：仅核验所列章节；依赖检查点及已保存结果，不能外推所有框架或许诺跨系统恰好一次；未进行本地运行验证。
+
+[公开原文](https://docs.langchain.com/oss/python/langgraph/functional-api)
+
 <a id="runtime-boundaries-010"></a>
 
 ### runtime-boundaries-010 · fsync durability and delayed disk-full errors

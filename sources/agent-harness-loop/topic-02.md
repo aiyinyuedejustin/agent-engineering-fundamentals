@@ -69,17 +69,17 @@
 
 ### protocol-001 · Function calling
 
-作者／组织：OpenAI。类型：官方文档／规范。版本／日期：live documentation as accessed 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-017（本条合计 1 项，各版本复核不另计）。
+作者／组织：OpenAI。类型：官方文档／规范。版本／日期：live documentation as accessed 2026-10-13。读取日：2026-10-13。 引用别名：protocol-audit-017（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：工具调用只是模型提出的请求；执行与结果回传由应用完成，必须保留调用与结果之间的 call_id。
 
 选读范围：Handling function calls; Strict mode; Streaming。限制：动态文档，具体字段/默认值须按模型快照验证；未把厂商性能宣传作为独立测量结论。
 
-已读版本／别名（同一来源）：
-- protocol-001：live documentation as accessed 2026-10-13；范围：Handling function calls; Strict mode; Streaming。[该版本原文](https://developers.openai.com/api/docs/guides/function-calling)
-- protocol-audit-017：live 2026-10-13；范围：Strict mode 默认值与 Streaming 事件；补充复核，不新增计数。[该版本原文](https://developers.openai.com/api/docs/guides/function-calling)
+已读关联文档／版本（同一计数组）：
+- protocol-001：live documentation as accessed 2026-10-13；范围：Handling function calls; Strict mode; Streaming。[该记录原文](https://developers.openai.com/api/docs/guides/function-calling)
+- protocol-audit-017：live 2026-10-13；范围：Strict mode 默认值与 Streaming 事件；补充复核，不新增计数。[该记录原文](https://developers.openai.com/api/docs/guides/function-calling)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://developers.openai.com/api/docs/guides/function-calling)
 
@@ -184,17 +184,17 @@
 
 ### protocol-017 · Thought signatures (generateContent)
 
-作者／组织：Google。类型：官方文档／规范。版本／日期：2026-09-04。读取日：2026-10-13。 引用别名：protocol-audit-006（本条合计 1 项，各版本复核不另计）。
+作者／组织：Google。类型：官方文档／规范。版本／日期：2026-09-04。读取日：2026-10-13。 引用别名：protocol-audit-006（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：Gemini3严格验证当前turn每step的首个functionCall签名，平行调用只有第一个携带；旧turn不作同样验证。
 
 选读范围：Signatures in function calling parts; FAQs; Thought signatures for different models。限制：不同API与模型版本限制不可外推。
 
-已读版本／别名（同一来源）：
-- protocol-017：2026-09-04；范围：Signatures in function calling parts; FAQs; Thought signatures for different models。[该版本原文](https://ai.google.dev/gemini-api/docs/generate-content/thought-signatures)
-- protocol-audit-006：page updated 2026-09-04；范围：Thought signatures：签名保留与 Content 分组规则；补充复核，不新增计数。[该版本原文](https://ai.google.dev/gemini-api/docs/generate-content/thought-signatures)
+已读关联文档／版本（同一计数组）：
+- protocol-017：2026-09-04；范围：Signatures in function calling parts; FAQs; Thought signatures for different models。[该记录原文](https://ai.google.dev/gemini-api/docs/generate-content/thought-signatures)
+- protocol-audit-006：page updated 2026-09-04；范围：Thought signatures：签名保留与 Content 分组规则；补充复核，不新增计数。[该记录原文](https://ai.google.dev/gemini-api/docs/generate-content/thought-signatures)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://ai.google.dev/gemini-api/docs/generate-content/thought-signatures)
 
@@ -203,17 +203,17 @@
 
 ### protocol-018 · Function calling (generateContent)
 
-作者／组织：Google。类型：官方文档／规范。版本／日期：2026-10-09。读取日：2026-10-13。 引用别名：protocol-audit-005（本条合计 1 项，各版本复核不另计）。
+作者／组织：Google。类型：官方文档／规范。版本／日期：2026-10-09。读取日：2026-10-13。 引用别名：protocol-audit-005（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：当前接口支持按function_call id映射结果，完整Part及签名不能随意合并；扫描全部parts找调用，不能假设最后一个必为functionCall。
 
 选读范围：Managing conversation history manually; Parallel function calling; Automatic function calling; Notes and limitations。限制：同页工具结果顺序表述冲突，待实现核对；不能据此声称任意消息顺序皆可。
 
-已读版本／别名（同一来源）：
-- protocol-018：2026-10-09；范围：Managing conversation history manually; Parallel function calling; Automatic function calling; Notes and limitations。[该版本原文](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)
-- protocol-audit-005：live 2026-10-13；范围：Function calling：调用与结果匹配、并行调用；补充复核，不新增计数。[该版本原文](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)
+已读关联文档／版本（同一计数组）：
+- protocol-018：2026-10-09；范围：Managing conversation history manually; Parallel function calling; Automatic function calling; Notes and limitations。[该记录原文](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)
+- protocol-audit-005：live 2026-10-13；范围：Function calling：调用与结果匹配、并行调用；补充复核，不新增计数。[该记录原文](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://ai.google.dev/gemini-api/docs/generate-content/function-calling)
 
@@ -414,17 +414,17 @@
 
 ### protocol-050 · Mistral parallel template role validation
 
-作者／组织：vLLM maintainers。类型：源码／仓库文档。版本／日期：v0.10.0; blob 2ef4bedf862114ddba1074b0cef234e5b2a0cb91。读取日：2026-10-13。 引用别名：protocol-audit-023（本条合计 1 项，各版本复核不另计）。
+作者／组织：vLLM maintainers。类型：源码／仓库文档。版本／日期：v0.10.0; blob 2ef4bedf862114ddba1074b0cef234e5b2a0cb91。读取日：2026-10-13。 引用别名：protocol-audit-023（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：交替校验先去首system并过滤tool/tool_results和有tool_calls字段的消息；不是API通用交替公理。
 
 选读范围：角色检查与 tool ID 渲染分支。限制：[protocol-050](topic-02.md#protocol-050)同文件版本复核；未安装Jinja执行模板。
 
-已读版本／别名（同一来源）：
-- protocol-050：main accessed 2026-10-13; blob SHA 2ef4bedf862114ddba1074b0cef234e5b2a0cb91 (not a commit)；范围：examples/tool_chat_template_mistral_parallel.jinja all 94 lines。[该版本原文](https://github.com/vllm-project/vllm/blob/main/examples/tool_chat_template_mistral_parallel.jinja)
-- protocol-audit-023：v0.10.0; blob 2ef4bedf862114ddba1074b0cef234e5b2a0cb91；范围：角色检查与 tool ID 渲染分支；补充复核，不新增计数。[该版本原文](https://github.com/vllm-project/vllm/blob/v0.10.0/examples/tool_chat_template_mistral_parallel.jinja)
+已读关联文档／版本（同一计数组）：
+- protocol-050：main accessed 2026-10-13; blob SHA 2ef4bedf862114ddba1074b0cef234e5b2a0cb91 (not a commit)；范围：examples/tool_chat_template_mistral_parallel.jinja all 94 lines。[该记录原文](https://github.com/vllm-project/vllm/blob/main/examples/tool_chat_template_mistral_parallel.jinja)
+- protocol-audit-023：v0.10.0; blob 2ef4bedf862114ddba1074b0cef234e5b2a0cb91；范围：角色检查与 tool ID 渲染分支；补充复核，不新增计数。[该记录原文](https://github.com/vllm-project/vllm/blob/v0.10.0/examples/tool_chat_template_mistral_parallel.jinja)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/vllm-project/vllm/blob/v0.10.0/examples/tool_chat_template_mistral_parallel.jinja)
 
@@ -445,17 +445,17 @@
 
 ### protocol-054 · AI SDK Responses history conversion
 
-作者／组织：Vercel AI SDK maintainers。类型：源码／仓库文档。版本／日期：ai@7.0.70; blob dc6307e8fab0c0175048a41cd959b725906748a2。读取日：2026-10-13。 引用别名：protocol-audit-024（本条合计 1 项，各版本复核不另计）。
+作者／组织：Vercel AI SDK maintainers。类型：源码／仓库文档。版本／日期：ai@7.0.70; blob dc6307e8fab0c0175048a41cd959b725906748a2。读取日：2026-10-13。 引用别名：protocol-audit-024（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：会话/previous-response已知项去重、function_call与call_id、reasoning引用有不同规则。
 
 选读范围：工具调用、结果与 reasoning 的历史转换分支。限制：[protocol-054](topic-02.md#protocol-054)同文件发行版复核；不把当前main新增保护反投射到旧tag。
 
-已读版本／别名（同一来源）：
-- protocol-054：main accessed 2026-10-13; blob SHA b7585d55c45e635ede03d29223c15de81d6b0448 (not a commit)；范围：lines 710–766, 927–990, 1254–1362, 1807–1833。[该版本原文](https://github.com/vercel/ai/blob/main/packages/openai/src/responses/convert-to-openai-responses-input.ts)
-- protocol-audit-024：ai@7.0.70; blob dc6307e8fab0c0175048a41cd959b725906748a2；范围：工具调用、结果与 reasoning 的历史转换分支；补充复核，不新增计数。[该版本原文](https://github.com/vercel/ai/blob/ai%407.0.70/packages/openai/src/responses/convert-to-openai-responses-input.ts)
+已读关联文档／版本（同一计数组）：
+- protocol-054：main accessed 2026-10-13; blob SHA b7585d55c45e635ede03d29223c15de81d6b0448 (not a commit)；范围：lines 710–766, 927–990, 1254–1362, 1807–1833。[该记录原文](https://github.com/vercel/ai/blob/main/packages/openai/src/responses/convert-to-openai-responses-input.ts)
+- protocol-audit-024：ai@7.0.70; blob dc6307e8fab0c0175048a41cd959b725906748a2；范围：工具调用、结果与 reasoning 的历史转换分支；补充复核，不新增计数。[该记录原文](https://github.com/vercel/ai/blob/ai%407.0.70/packages/openai/src/responses/convert-to-openai-responses-input.ts)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/vercel/ai/blob/ai%407.0.70/packages/openai/src/responses/convert-to-openai-responses-input.ts)
 
@@ -476,17 +476,17 @@
 
 ### protocol-063 · Thinking
 
-作者／组织：Anthropic。类型：官方文档／规范。版本／日期：current docs accessed 2026-10-13; binding beta 2026-08-01。读取日：2026-10-13。 引用别名：protocol-audit-004（本条合计 1 项，各版本复核不另计）。
+作者／组织：Anthropic。类型：官方文档／规范。版本／日期：current docs accessed 2026-10-13; binding beta 2026-08-01。读取日：2026-10-13。 引用别名：protocol-audit-004（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：工具使用回合内必须保存thinking，跨回合推荐保留，而工具使用之外可以省略过去thinking；不能概括为所有块永远原样回传。
 
 选读范围：Thinking with tool use; preserving blocks; interleaved/preserved thinking; model preservation; encryption; redaction。限制：动态规则受模型与账户生效条件约束；保留、绑定及默认丢弃行为不可跨版本推断。专门规则另见 [protocol-audit-001](topic-02.md#protocol-audit-001)；未实测全部 API 组合。
 
-已读版本／别名（同一来源）：
-- protocol-063：current docs accessed 2026-10-13; binding beta 2026-08-01；范围：Thinking with tool use; preserving blocks; interleaved/preserved thinking; model preservation; encryption; redaction。[该版本原文](https://platform.claude.com/docs/en/build-with-claude/thinking)
-- protocol-audit-004：live 2026-10-13；范围：Thinking：模型、账户和功能兼容条件；补充复核，不新增计数。[该版本原文](https://platform.claude.com/docs/en/build-with-claude/thinking)
+已读关联文档／版本（同一计数组）：
+- protocol-063：current docs accessed 2026-10-13; binding beta 2026-08-01；范围：Thinking with tool use; preserving blocks; interleaved/preserved thinking; model preservation; encryption; redaction。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/thinking)
+- protocol-audit-004：live 2026-10-13；范围：Thinking：模型、账户和功能兼容条件；补充复核，不新增计数。[该记录原文](https://platform.claude.com/docs/en/build-with-claude/thinking)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://platform.claude.com/docs/en/build-with-claude/thinking)
 
@@ -495,17 +495,17 @@
 
 ### protocol-064 · Parallel function thought_signature report with author self-correction
 
-作者／组织：googleapis/js-genai reporter peterbherman and maintainers。类型：公开问题讨论。版本／日期：2026-01-23; @google/genai 1.38 Vertex Gemini 3 Flash Preview; author correction April。读取日：2026-10-13。 引用别名：protocol-audit-009（本条合计 1 项，各版本复核不另计）。
+作者／组织：googleapis/js-genai reporter peterbherman and maintainers。类型：公开问题讨论。版本／日期：2026-01-23; @google/genai 1.38 Vertex Gemini 3 Flash Preview; author correction April。读取日：2026-10-13。 引用别名：protocol-audit-009（本组合计 1 项，关联文档与版本复核不另计）。
 
 用途：作者最初归因服务端并行调用缺签名，后更正为自己把同响应的多个functionCall parts拆成独立model Content，令每一段都变成需要首签名的新步骤。
 
 阅读范围：Issue body and author correction comment 4316663989。限制：这是一个明确归因的客户侧实例，不证明所有缺签名400都是同类错误，也不能代替不同API的结果顺序规则。
 
-已读版本／别名（同一来源）：
-- protocol-064：2026-01-23; @google/genai 1.38 Vertex Gemini 3 Flash Preview; author correction April；范围：Issue body and author correction comment 4316663989。[该版本原文](https://github.com/googleapis/js-genai/issues/1275)
-- protocol-audit-009：author correction comment 4316663989；范围：原始问题与作者更正评论 4316663989；补充复核，不新增计数。[该版本原文](https://github.com/googleapis/js-genai/issues/1275)
+已读关联文档／版本（同一计数组）：
+- protocol-064：2026-01-23; @google/genai 1.38 Vertex Gemini 3 Flash Preview; author correction April；范围：Issue body and author correction comment 4316663989。[该记录原文](https://github.com/googleapis/js-genai/issues/1275)
+- protocol-audit-009：author correction comment 4316663989；范围：原始问题与作者更正评论 4316663989；补充复核，不新增计数。[该记录原文](https://github.com/googleapis/js-genai/issues/1275)
 
-不同版本的行为不可互换；版本复核不证明用户实际安装或服务端部署已升级。
+关联讨论、合并记录与发行版本不等价，不同版本的行为不可互换；复核不证明用户实际安装或服务端部署已升级。
 
 [公开原文](https://github.com/googleapis/js-genai/issues/1275)
 
@@ -544,6 +544,30 @@
 选读范围：加密 reasoning 的亲和性键与匹配实现。限制：只裁决指定路径；未调用真实模型API，也未运行整个SDK测试套件。
 
 [公开原文](https://github.com/BerriAI/litellm/blob/0976c0889a66bbdd51c77edc1876315c8e754493/litellm/router_utils/pre_call_checks/encrypted_content_affinity_check.py)
+
+<a id="r3-loop-004"></a>
+
+### r3-loop-004 · Running agents - OpenAI Agents SDK
+
+作者／组织：OpenAI。类型：官方文档／规范。版本／日期：Live docs accessed 2026-10-14。读取日：2026-10-14。
+
+用途：同一会话明确历史主责；服务端续接时输入过滤器可能只看到增量，删本地输入不等于删服务端前缀。
+
+选读范围：Choose a memory strategy；Server-managed conversations；Call model input filter；loop 与运行配置说明。限制：当前 SDK 文档未固定发行版；其中会话选项互斥规则不能推广为所有 API。
+
+[公开原文](https://openai.github.io/openai-agents-python/running_agents/)
+
+<a id="r3-loop-017"></a>
+
+### r3-loop-017 · Troubleshooting tool use
+
+作者／组织：Anthropic。类型：官方文档／规范。版本／日期：Live docs accessed 2026-10-14。读取日：2026-10-14。
+
+用途：自动工具回传、宿主控制指令和真实用户插话须显式区分；消息位置会改变混合服务器工具的续接语义。
+
+选读范围：完整 symptom / fix 正文：parallel results；mixed client/server tools；instruction placement；thinking preservation。限制：提供商专有条件；合法的新 user turn 或中途系统消息不被一概禁止，协议位置也不自证用户授权。
+
+[公开原文](https://platform.claude.com/docs/en/agents-and-tools/tool-use/troubleshooting-tool-use)
 
 <a id="tools-security-045"></a>
 
