@@ -6,16 +6,18 @@
     {
       "path": "crates/napi/src/async_work.rs",
       "blob_sha": "7a9a43e3af496e460c2806c88519aff95e8a1a5e",
-      "url": "https://github.com/napi-rs/napi-rs/blob/napi@2.16.17/crates/napi/src/async_work.rs"
+      "url": "https://github.com/napi-rs/napi-rs/blob/f2178312d0e3e07beecc19836b91716a229107d3/crates/napi/src/async_work.rs"
     },
     {
       "path": "crates/napi/src/bindgen_runtime/js_values/task.rs",
       "blob_sha": "f4facfa5067c44dc3045f36a0e2f857adecf318c",
-      "url": "https://github.com/napi-rs/napi-rs/blob/napi@2.16.17/crates/napi/src/bindgen_runtime/js_values/task.rs"
+      "url": "https://github.com/napi-rs/napi-rs/blob/f2178312d0e3e07beecc19836b91716a229107d3/crates/napi/src/bindgen_runtime/js_values/task.rs"
     }
   ],
   "sample_version_clue_count": 9,
   "sample_version_clue_dump_contiguous": true,
   "sample_source_binding": "not proven",
-  "artifact_sha256": "85549bb5418d25616d4b602c5eccd097e946825b0dfe23cb1f9d515f3d1e109b"
+  "artifact_sha256": "64b418254db77e232daffad503d965cb19f791dbcb84885b29fc1f05aca55fef",
+  "tag_object_sha": "58eea7ab69451198db398ed3117718f92ff25971",
+  "commit_sha": "f2178312d0e3e07beecc19836b91716a229107d3"
 }
