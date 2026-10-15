@@ -1,0 +1,161 @@
+{
+  "reviewedAt": "2026-10-15T09:04:55.855Z/2026-10-15T09:06:36.070Z",
+  "browser": "own cloud Chrome",
+  "surface": "HTMLPreview HTTPS",
+  "viewport": {
+    "width": 1188,
+    "height": 761,
+    "devicePixelRatio": 1
+  },
+  "commit": "f240c99f7abcbda760b12eea5dafbb0fa6b91f86",
+  "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html",
+  "source": {
+    "path": "01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html",
+    "blob": "dac03efecbcc712bbd4a614eaa99f011f551e7f9",
+    "bytes": 38177,
+    "sha256": "c03dcd318877d8693721954efe9499779ab10af2e6b12f8abbe029c570d3538a",
+    "identityVerification": "Root reviewer verified the fixed commit GitHub tree blob matches local HEAD; staging reviewer independently verified local bytes and SHA-256."
+  },
+  "method": "Ordinary UI keyboard/mouse actions and read-only DOM/geometry observations; no DevTools, network inspection, hidden-state mutation or security bypass.",
+  "checks": [
+    {
+      "id": "SPLIT-01",
+      "action": "Focus left textarea, then Tab twice",
+      "result": "pass",
+      "observation": "Separator receives focus; initial ratio 38."
+    },
+    {
+      "id": "SPLIT-02",
+      "action": "Home, ArrowLeft, ArrowRight",
+      "result": "pass",
+      "observation": "Lower clamp 25; subsequent right step 27."
+    },
+    {
+      "id": "SPLIT-03",
+      "action": "End, ArrowRight, ArrowLeft",
+      "result": "pass",
+      "observation": "Upper clamp 65; subsequent left step 63."
+    },
+    {
+      "id": "SPLIT-04",
+      "action": "Drag (747,416) to (60,416), then (299,416) to (1120,416) across preview",
+      "result": "pass",
+      "observation": "Ratios clamp at 25 then 65; dragging class false after each release. Recorded scrollWidth is 1188 at both ends."
+    },
+    {
+      "id": "SPLIT-05",
+      "action": "After release, click left textarea; open Code and append an original synthetic HTML comment",
+      "result": "pass",
+      "observation": "Ratio stays 65; dragging false; left input then code editor receives focus; synthetic suffix exists and status is 有未预览的更改."
+    }
+  ],
+  "reportedSupplement": {
+    "source": "Root browser reviewer handoff",
+    "details": [
+      "Initial 38, intermediate 27 and 63 were reported by the root browser reviewer; corresponding raw accessibility snapshots preserve focus but do not expose these numeric values.",
+      "Pointer movement after release was induced by clicking the left input, not a standalone hover test.",
+      "Original editor content restored, reload ratio 38, then test tab closed.",
+      "Final reload iframe was still loading/about:blank at a later observation; final reload preview completion is not asserted.",
+      "The earlier 9e3906298a430e098d73395789beef27d8b0c1e2 viewer attempt was blank; successful checks use f240c99f7abcbda760b12eea5dafbb0fa6b91f86."
+    ]
+  },
+  "rawObservations": [
+    {
+      "step": "tab-focus",
+      "at": "2026-10-15T09:04:55.855Z",
+      "dom": "- link \"跳到主要内容\":\n  - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n- banner:\n  - link \"留白 atelier\":\n    - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n    - generic: a\n    - text: 留白\n    - generic: atelier\n  - generic: 03 / ARTIFACT WORKSPACE\n  - generic: 原创配色\n  - combobox \"原创配色\":\n    - option \"纸与陶\" [selected]\n    - option \"苔绿\"\n    - option \"雾蓝\"\n    - option \"梅灰\"\n    - option \"石墨\"\n  - button \"切换到深色主题\":\n- main:\n  - region \"作品讨论\":\n    - text: WORKING TOGETHER\n    - heading \"从一个想法， 到一件作品。\" [level=1]:\n      - text: 从一个想法，\n      - text: 到一件作品。\n    - paragraph: 一页关于留白的小练习。\n    - log:\n      - generic: 做一个有编辑感的极简首页。暖色背景，衬线标题，再留一点绿色。\n      - generic: a留白 · 本地示例\n      - paragraph: 先从一个安静的构图开始。用大标题承接想法，让一块植物般的绿色，成为页面里的停顿。\n      - generic: 右侧是一份可以直接修改的 HTML / CSS。编辑代码，再切换到预览。\n      - generic \"› 查看实现说明\"\n    - generic: 描述本地修改\n    - textbox \"描述本地修改\":\n      - /placeholder: 试试输入：标题改为 A quieter day\n    - generic: 输入“标题改为 …”可修改 H1\n    - button \"应用本地指令\":\n  - separator \"调整讨论区宽度\" [active]\n  - region \"HTML 作品\":\n    - strong: quiet-index.html\n    - status: 预览已更新 · 静态内容\n    - button \"复制作品源代码\":\n    - button \"重置\"\n    - tablist \"作品视图\":\n      - tab \"代码\"\n      - tab \"预览\" [selected]\n    - generic: 隔离预览\n    - button \"更新预览\"\n    - tabpanel \"预览\":\n      - iframe [id=\"preview-frame\"]:\n        - main:\n          - generic: Field notes / No. 001\n          - heading \"Room for something good.\" [level=1]:\n            - text: Room for\n            - text: something good.\n          - paragraph: Leave a little space. For an unfinished thought, a different perspective, or the thing you haven't noticed yet.\n          - generic: A SMALL STUDY IN ATTENTION\n    - generic: 24 行 · 1018 字符\n    - generic: 静态预览 · 不执行脚本"
+    },
+    {
+      "step": "home-left-25",
+      "at": "2026-10-15T09:05:11.058Z",
+      "state": {
+        "active": "resizer",
+        "grid": "294.75px 9px 884.25px",
+        "scrollWidth": 1188,
+        "value": "25",
+        "viewport": [
+          1188,
+          761
+        ]
+      }
+    },
+    {
+      "step": "right-27",
+      "at": "2026-10-15T09:05:11.350Z",
+      "dom": "- link \"跳到主要内容\":\n  - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n- banner:\n  - link \"留白 atelier\":\n    - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n    - generic: a\n    - text: 留白\n    - generic: atelier\n  - generic: 03 / ARTIFACT WORKSPACE\n  - generic: 原创配色\n  - combobox \"原创配色\":\n    - option \"纸与陶\" [selected]\n    - option \"苔绿\"\n    - option \"雾蓝\"\n    - option \"梅灰\"\n    - option \"石墨\"\n  - button \"切换到深色主题\":\n- main:\n  - region \"作品讨论\":\n    - text: WORKING TOGETHER\n    - heading \"从一个想法， 到一件作品。\" [level=1]:\n      - text: 从一个想法，\n      - text: 到一件作品。\n    - paragraph: 一页关于留白的小练习。\n    - log:\n      - generic: 做一个有编辑感的极简首页。暖色背景，衬线标题，再留一点绿色。\n      - generic: a留白 · 本地示例\n      - paragraph: 先从一个安静的构图开始。用大标题承接想法，让一块植物般的绿色，成为页面里的停顿。\n      - generic: 右侧是一份可以直接修改的 HTML / CSS。编辑代码，再切换到预览。\n      - generic \"› 查看实现说明\"\n    - generic: 描述本地修改\n    - textbox \"描述本地修改\":\n      - /placeholder: 试试输入：标题改为 A quieter day\n    - generic: 输入“标题改为 …”可修改 H1\n    - button \"应用本地指令\":\n  - separator \"调整讨论区宽度\" [active]\n  - region \"HTML 作品\":\n    - strong: quiet-index.html\n    - status: 预览已更新 · 静态内容\n    - button \"复制作品源代码\":\n    - button \"重置\"\n    - tablist \"作品视图\":\n      - tab \"代码\"\n      - tab \"预览\" [selected]\n    - generic: 隔离预览\n    - button \"更新预览\"\n    - tabpanel \"预览\":\n      - iframe [id=\"preview-frame\"]:\n        - main:\n          - generic: Field notes / No. 001\n          - heading \"Room for something good.\" [level=1]:\n            - text: Room for\n            - text: something good.\n          - paragraph: Leave a little space. For an unfinished thought, a different perspective, or the thing you haven't noticed yet.\n          - generic: A SMALL STUDY IN ATTENTION\n    - generic: 24 行 · 1018 字符\n    - generic: 静态预览 · 不执行脚本"
+    },
+    {
+      "step": "end-right-65",
+      "at": "2026-10-15T09:05:11.650Z",
+      "state": {
+        "active": "resizer",
+        "grid": "766.344px 9px 412.641px",
+        "scrollWidth": 1188,
+        "value": "65"
+      }
+    },
+    {
+      "step": "left-63",
+      "at": "2026-10-15T09:05:11.987Z",
+      "dom": "- link \"跳到主要内容\":\n  - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n- banner:\n  - link \"留白 atelier\":\n    - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n    - generic: a\n    - text: 留白\n    - generic: atelier\n  - generic: 03 / ARTIFACT WORKSPACE\n  - generic: 原创配色\n  - combobox \"原创配色\":\n    - option \"纸与陶\" [selected]\n    - option \"苔绿\"\n    - option \"雾蓝\"\n    - option \"梅灰\"\n    - option \"石墨\"\n  - button \"切换到深色主题\":\n- main:\n  - region \"作品讨论\":\n    - text: WORKING TOGETHER\n    - heading \"从一个想法， 到一件作品。\" [level=1]:\n      - text: 从一个想法，\n      - text: 到一件作品。\n    - paragraph: 一页关于留白的小练习。\n    - log:\n      - generic: 做一个有编辑感的极简首页。暖色背景，衬线标题，再留一点绿色。\n      - generic: a留白 · 本地示例\n      - paragraph: 先从一个安静的构图开始。用大标题承接想法，让一块植物般的绿色，成为页面里的停顿。\n      - generic: 右侧是一份可以直接修改的 HTML / CSS。编辑代码，再切换到预览。\n      - generic \"› 查看实现说明\"\n    - generic: 描述本地修改\n    - textbox \"描述本地修改\":\n      - /placeholder: 试试输入：标题改为 A quieter day\n    - generic: 输入“标题改为 …”可修改 H1\n    - button \"应用本地指令\":\n  - separator \"调整讨论区宽度\" [active]\n  - region \"HTML 作品\":\n    - strong: quiet-index.html\n    - status: 预览已更新 · 静态内容\n    - button \"复制作品源代码\":\n    - button \"重置\"\n    - tablist \"作品视图\":\n      - tab \"代码\"\n      - tab \"预览\" [selected]\n    - generic: 隔离预览\n    - button \"更新预览\"\n    - tabpanel \"预览\":\n      - iframe [id=\"preview-frame\"]:\n        - main:\n          - generic: Field notes / No. 001\n          - heading \"Room for something good.\" [level=1]:\n            - text: Room for\n            - text: something good.\n          - paragraph: Leave a little space. For an unfinished thought, a different perspective, or the thing you haven't noticed yet.\n          - generic: A SMALL STUDY IN ATTENTION\n    - generic: 24 行 · 1018 字符\n    - generic: 静态预览 · 不执行脚本"
+    },
+    {
+      "step": "drag-left-clamp",
+      "at": "2026-10-15T09:05:29.669Z",
+      "state": {
+        "dragging": false,
+        "grid": "294.75px 9px 884.25px",
+        "scrollWidth": 1188,
+        "value": "25"
+      }
+    },
+    {
+      "step": "drag-right-over-preview-clamp",
+      "at": "2026-10-15T09:05:52.378Z",
+      "state": {
+        "dragging": false,
+        "grid": "766.344px 9px 412.641px",
+        "scrollWidth": 1188,
+        "value": "65"
+      }
+    },
+    {
+      "step": "pointer-move-left-after-release",
+      "at": "2026-10-15T09:06:12.768Z",
+      "state": {
+        "active": "ide-input",
+        "dragging": false,
+        "grid": "766.344px 9px 412.641px",
+        "value": "65"
+      }
+    },
+    {
+      "step": "edit-after-release",
+      "at": "2026-10-15T09:06:35.636Z",
+      "state": {
+        "active": "code-editor",
+        "dragging": false,
+        "hasSyntheticSuffix": true,
+        "status": "有未预览的更改",
+        "value": "65"
+      }
+    },
+    {
+      "step": "reload-default-layout",
+      "at": "2026-10-15T09:06:36.070Z",
+      "dom": "- link \"跳到主要内容\":\n  - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n- banner:\n  - link \"留白 atelier\":\n    - /url: //htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html#main\n    - generic: a\n    - text: 留白\n    - generic: atelier\n  - generic: 03 / ARTIFACT WORKSPACE\n  - generic: 原创配色\n  - combobox \"原创配色\":\n    - option \"纸与陶\" [selected]\n    - option \"苔绿\"\n    - option \"雾蓝\"\n    - option \"梅灰\"\n    - option \"石墨\"\n  - button \"切换到深色主题\":\n- main:\n  - region \"作品讨论\":\n    - text: WORKING TOGETHER\n    - heading \"从一个想法， 到一件作品。\" [level=1]:\n      - text: 从一个想法，\n      - text: 到一件作品。\n    - paragraph: 一页关于留白的小练习。\n    - log:\n      - generic: 做一个有编辑感的极简首页。暖色背景，衬线标题，再留一点绿色。\n      - generic: a留白 · 本地示例\n      - paragraph: 先从一个安静的构图开始。用大标题承接想法，让一块植物般的绿色，成为页面里的停顿。\n      - generic: 右侧是一份可以直接修改的 HTML / CSS。编辑代码，再切换到预览。\n      - generic \"› 查看实现说明\"\n    - generic: 描述本地修改\n    - textbox \"描述本地修改\":\n      - /placeholder: 试试输入：标题改为 A quieter day\n    - generic: 输入“标题改为 …”可修改 H1\n    - button \"应用本地指令\":\n  - separator \"调整讨论区宽度\"\n  - region \"HTML 作品\":\n    - strong: quiet-index.html\n    - status: 预览已更新 · 静态内容\n    - button \"复制作品源代码\":\n    - button \"重置\"\n    - tablist \"作品视图\":\n      - tab \"代码\"\n      - tab \"预览\" [selected]\n    - generic: 隔离预览\n    - button \"更新预览\"\n    - tabpanel \"预览\":\n      - iframe [id=\"preview-frame\"]:\n        - main:\n          - generic: Field notes / No. 001\n          - heading \"Room for something good.\" [level=1]:\n            - text: Room for\n            - text: something good.\n          - paragraph: Leave a little space. For an unfinished thought, a different perspective, or the thing you haven't noticed yet.\n          - generic: A SMALL STUDY IN ATTENTION\n    - generic: 24 行 · 1018 字符\n    - generic: 静态预览 · 不执行脚本"
+    }
+  ],
+  "screenshot": {
+    "path": "assets/screenshots/splitter-release-f240c99.jpg",
+    "bytes": 92162,
+    "sha256": "2576cb516b31b20aa648c57854ca360e233e9c79d3a2c47c11f225df32c32e3a",
+    "pixelReview": "Root reviewer directly inspected screenshot; staging reviewer did not independently inspect pixels."
+  },
+  "limitations": [
+    "25–65 are layout ratio values, not guaranteed percentages of total viewport width; CSS minimum column widths and the 9px divider also apply.",
+    "No independent pointercancel or lostpointercapture test, no standalone hover movement, touch, cross-browser, network or security enforcement testing.",
+    "Editing after release proves the editor remains usable; this run does not assert rendering the appended comment or final reload preview completion.",
+    "Existing preview editing, error recovery and lifecycle evidence is not rerun or replaced."
+  ]
+}

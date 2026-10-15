@@ -149,3 +149,5 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 [轻入口保存与刷新实测](launcher-browser-review.md)：保存位置、两条记录顺序、刷新恢复与移除后的再次刷新。
 
 [聊天页停止与草稿恢复实测](chat-cancel-browser-review.md)：恢复原输入、保留下一条草稿，并检查旧计时窗口后没有晚到回复。
+
+[分屏分隔条实测](splitter-browser-review.md)：键盘步长、25–65边界、跨预览拖拽与释放后的正常编辑。

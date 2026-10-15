@@ -6,19 +6,29 @@ Claude Desktop 的本地代理由四层协作：页面发起会话，主进程�
 
 ## 1. 先画执行边界，再画循环
 
+先看四层会话主链，再看工具执行路由。两图中的 Agent SDK 与 Claude Code 进程是同一组组件的两个视角，不是两套实例。
+
+**会话主链：四层之间的双向消息**
+
 ```mermaid
-flowchart LR
-    UI["对话页面"] -->|"LocalAgentModeSessions IPC"| SM["主进程会话管理器"]
-    SM -->|"query: prompt stream + options"| SDK["Agent SDK"]
-    SDK <-->|"stream-json 与 control RPC"| CLI["Claude Code 进程"]
-    CLI --> INF["推理服务：本卷证据边界之外"]
-    CLI --> BUILTIN["CLI 内建工具"]
-    CLI -->|"mcp_message"| SDK
-    SDK --> HOSTMCP["主进程 SDK-hosted MCP"]
-    HOSTMCP --> VM["workspace VM"]
-    HOSTMCP --> CU["主机 computer-use executor"]
+flowchart TB
+    UI["对话页面"] -->|"LocalAgentModeSessions<br/>IPC"| SM["主进程会话管理器"]
+    SM -->|"query: prompt stream<br/>+ options"| SDK["Agent SDK"]
+    SDK <-->|"stream-json<br/>与 control RPC"| CLI["Claude Code 进程"]
     SDK -->|"SDK messages"| SM
     SM -->|"消息与会话事件"| UI
+```
+
+**工具执行路由：CLI 内建工具与 SDK-hosted MCP**
+
+```mermaid
+flowchart TB
+    CLI["Claude Code 进程"] --> INF["推理服务<br/>本卷证据边界之外"]
+    CLI --> BUILTIN["CLI 内建工具"]
+    CLI -->|"mcp_message"| SDK["Agent SDK"]
+    SDK --> HOSTMCP["主进程<br/>SDK-hosted MCP"]
+    HOSTMCP --> VM["workspace VM"]
+    HOSTMCP --> CU["主机<br/>computer-use executor"]
 ```
 
 这里有三个容易混淆的动作。
