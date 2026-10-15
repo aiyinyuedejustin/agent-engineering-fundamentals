@@ -34,6 +34,7 @@ def commands(include_skills=False):
     if len(native_tests) != 2:
         raise RuntimeError('缺少 Linux 原生桥接教学模型的两个测试文件。')
     jobs.append(('native-callback-lifetime', native, [node, '--test', *map(str, native_tests)]))
+    jobs.append(('platform-comparison-lesson', BOOK / '02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/lab', [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', '.', '-p', 'test_*.py', '-v']))
     if include_skills:
         location = BOOK / '03-Ready-To-Use-Agent-Skills'
         files = sorted(location.rglob('*.test.mjs'))

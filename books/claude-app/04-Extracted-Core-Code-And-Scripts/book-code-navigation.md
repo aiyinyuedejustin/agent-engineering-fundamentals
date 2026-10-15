@@ -41,7 +41,7 @@ python3 -B run_book_tests.py --skills
 | [15 语音与视觉数学](../02-Illustrated-Deep-Dive-Book/15-Voice-And-Vision-Math/README.md) | [音频账本与坐标变换](native-voice-geometry/README.md) | [audio-state.mjs](native-voice-geometry/audio-state.mjs) | [models.test.mjs](native-voice-geometry/models.test.mjs) |
 | [16 恢复、限流与配额](../02-Illustrated-Deep-Dive-Book/16-Resilience-And-Quota/README.md) | [重试分类与恢复身份](resilience-quota/README.md) | [resilience-core.mjs](resilience-quota/resilience-core.mjs) | [resilience.test.mjs](resilience-quota/test/resilience.test.mjs) |
 | [17 状态、恢复与更新](../02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md) | [write / rename / commit 切点](crash-cut-recovery/README.md) | [protocol.py](crash-cut-recovery/protocol.py) | [test_crash_cuts.py](crash-cut-recovery/test_crash_cuts.py) |
-| [18 版本与跨平台](../02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md) | 正文“独立复算”：需三份有权读取的已解包 resources 目录 | [compare_ui_trees.py](scripts/compare_ui_trees.py) | 本入口是样本复算，未列入统一模型测试；检查脚本输出的路径、大小、哈希及排除项，不把执行成功当作相等或整包认证 |
+| [18 版本与跨平台](../02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md) | 路径集合、原始摘要、CRLF 与实例去重的四类结果 | [lesson.py](../02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/lab/lesson.py)，直接调用 [compare_ui_trees.py](scripts/compare_ui_trees.py) | [10 项合成测试](../02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/lab/test_lesson.py)已纳入统一入口；真实样本独立复算仍需三份已解包 resources，执行成功不代表相等或整包认证 |
 | [19 移动界面与交互边界](../02-Illustrated-Deep-Dive-Book/19-Mobile-Surfaces/README.md) | 正文“可复用的下一轮原生验证清单” | 本卷未交付原生实现 | 计划尚待授权、设备与测试账户后执行；公开文档和宣传图不替代真机测试 |
 
 ## 主线读完后的对应深入

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="940" viewBox="0 0 1100 940" role="img" aria-labelledby="title desc">
+<title id="title">先对齐路径，再保留原始和规范化摘要，最后区分声明与运行证据</title>
+<desc id="desc">原创证据流程图。三平台路径联合集先检查是否齐全。缺文件属于集合不完整；齐全时并列计算原始 SHA-256 与仅 CRLF 到 LF 的摘要。原始相同、仅规范化相同、规范化仍不同是不同结论。资源比较不证明窗口声明已执行或运行时字体一致。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#57636b"/></marker></defs>
+<rect width="1100" height="940" rx="16" fill="#f7f5ef"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,sans-serif" fill="#24323b">
+<text x="50" y="50" font-size="28" font-weight="700">同一份证据，三个不同的问题</text>
+<text x="50" y="82" font-size="17">路径是否齐全？原始字节是否相同？指定的换行映射后是否相同？</text>
+<rect x="50" y="112" width="1000" height="68" rx="12" fill="#e0e9ee"/>
+<text x="550" y="141" text-anchor="middle" font-size="21">资源层：三平台相对路径联合集</text>
+<text x="550" y="165" text-anchor="middle" font-size="16">仅纳入 ion-dist 普通文件与已校验的 packed ASAR 普通条目</text>
+<path d="M550 180 V210" stroke="#57636b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="350" y="215" width="400" height="58" rx="12" fill="#fff" stroke="#57636b"/>
+<text x="550" y="251" text-anchor="middle" font-size="21">这个路径三平台都有吗？</text>
+<path d="M750 244 H810" stroke="#57636b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="777" y="232" font-size="16">否</text>
+<rect x="820" y="210" width="230" height="78" rx="12" fill="#f3dfd4"/>
+<text x="935" y="242" text-anchor="middle" font-size="21">集合不完整</text>
+<text x="935" y="268" text-anchor="middle" font-size="15">不能将缺文件计为相同</text>
+<path d="M550 273 V311 M550 311 H290 V339" fill="none" stroke="#57636b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M550 311 H810 V339" fill="none" stroke="#57636b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="562" y="301" font-size="16">是：保留两列，绝不覆盖原件</text>
+<rect x="50" y="345" width="480" height="88" rx="12" fill="#dbe9e1"/>
+<text x="290" y="379" text-anchor="middle" font-size="22">原始视图：SHA-256(bytes)</text>
+<text x="290" y="408" text-anchor="middle" font-size="17">回答原始字节是否相同；始终保留</text>
+<rect x="570" y="345" width="480" height="88" rx="12" fill="#e9e4f1"/>
+<text x="810" y="379" text-anchor="middle" font-size="22">规范化视图：仅 CRLF → LF</text>
+<text x="810" y="408" text-anchor="middle" font-size="17">重新求摘要；不删除 BOM、空格或裸 CR</text>
+<path d="M290 433 V452 H550 M810 433 V452 H550 V474 H206 V498" fill="none" stroke="#57636b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M550 474 V498 M550 474 H893 V498" fill="none" stroke="#57636b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="505" width="313" height="110" rx="12" fill="#dbe9e1"/>
+<text x="206" y="539" text-anchor="middle" font-size="21">原始相同</text>
+<text x="206" y="571" text-anchor="middle" font-size="17">raw = true</text>
+<text x="206" y="597" text-anchor="middle" font-size="17">normalized = true</text>
+<rect x="393" y="505" width="313" height="110" rx="12" fill="#e9e4f1"/>
+<text x="549" y="539" text-anchor="middle" font-size="21">仅所定义归一化相同</text>
+<text x="549" y="571" text-anchor="middle" font-size="17">raw = false</text>
+<text x="549" y="597" text-anchor="middle" font-size="17">normalized = true</text>
+<rect x="737" y="505" width="313" height="110" rx="12" fill="#f3dfd4"/>
+<text x="893" y="539" text-anchor="middle" font-size="21">内容仍不同</text>
+<text x="893" y="571" text-anchor="middle" font-size="17">raw = false</text>
+<text x="893" y="597" text-anchor="middle" font-size="17">normalized = false</text>
+<text x="550" y="650" text-anchor="middle" font-size="18">上述三类都不直接回答“功能或像素是否相同”</text>
+<line x1="50" y1="677" x2="1050" y2="677" stroke="#8b9397" stroke-dasharray="7 7"/>
+<rect x="50" y="700" width="1000" height="80" rx="12" fill="#e0e9ee"/>
+<text x="75" y="732" font-size="22">声明层：检查平台分支、主题条件、窗口选项</text>
+<text x="75" y="760" font-size="17">有声明 ≠ 分支已运行；共有资源 ≠ 相同 app.asar 或系统窗口机制</text>
+<rect x="50" y="806" width="1000" height="90" rx="12" fill="#fff" stroke="#8b9397" stroke-dasharray="6 4"/>
+<text x="75" y="841" font-size="22">运行层：仍需原生实测</text>
+<text x="75" y="871" font-size="17">字体选择与中文回退、系统控制点、缩放与栅格化，都不能由静态摘要代证</text>
+<text x="1050" y="925" text-anchor="end" font-size="14">原创教学图 · 静态证据范围示意</text>
+</g></svg>
