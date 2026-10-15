@@ -99,7 +99,7 @@ interactive-study/
 
 这组 40 / 48 px 值是原创教学选择。所检 CDS 默认 / comfortable 控件声明换算为 24 / 32 px；本例没有照搬该几何，也没有恢复其 rem-scale、全部组件密度或运行时偏好。证据关联见 [design-token-summary.json](../../04-Extracted-Core-Code-And-Scripts/evidence/data/design-token-summary.json) 的 density 与 [design-component-rules.json](../../04-Extracted-Core-Code-And-Scripts/evidence/data/design-component-rules.json) 的 message_text_preferences；关联说明研究起点，不证明实现相同。
 
-选择只存在本页 DOM 内存，不新增 localStorage 键。切换主题、章节、重置对话不会改变这两项；刷新恢复紧凑和中号。CSS 变量和界面数值在新增静态测试中互相核对，但真实计算样式、命中区域、字体与窄屏换行仍须浏览器检查。
+选择只存在本页 DOM 内存，不新增 localStorage 键。切换主题、章节、重置对话不会改变这两项；刷新恢复紧凑和中号。CSS 变量和界面数值在静态测试中互相核对；2026-10-15 已在 Chrome 的 1188 × 761 CSS 像素视口验证六种组合的计算字号、行高、试样控件尺寸与草稿保留。窄屏换行、其他尺寸和跨平台字体仍待验证。
 
 ### Quick Entry 与完整 Composer 分开
 
@@ -107,7 +107,7 @@ interactive-study/
 
 - 原创外框最小高度 48 px、圆角 12 px、输入 16 px / 1.5；实际高度还受内容、padding 和边框影响，不宣称恒为 48 px
 - 输入最多 300 个 UTF-16 code units，和原生 maxlength 的计数方式一致；程序化超长输入也拒绝暂存，并保留原文
-- 普通 Enter 暂存；Shift / Alt / Ctrl / Meta + Enter 不触发暂存，具体编辑行为由浏览器决定。Shift + Enter 的原生换行仍需真实浏览器确认
+- 普通 Enter 暂存；Shift / Alt / Ctrl / Meta + Enter 不触发暂存，具体编辑行为由浏览器决定。Shift + Enter 的原生换行已在上述 Chrome 桌面范围验证；真实中文输入法仍待确认
 - compositionstart / compositionend、isComposing 和 keyCode 229 保护组合输入；组合期间 Esc 不收起
 - Esc 或“收起速记”保留草稿、去向并恢复打开按钮焦点；重新打开聚焦输入
 - 只显示最近一条已提交记录。改变去向不会改写旧记录；再次暂存替换最近记录。“清除这条记录”不删新草稿
@@ -122,13 +122,13 @@ Stop、右侧“模拟生成 / 模拟错误”、重试会禁用或隐藏原触�
 
 若停止发生在第一段模拟内容之前，回复明确写“已停止，尚未生成内容。”，不为等待占位文案提供复制按钮；已有部分正文时则保留正文和复制动作。
 
-这组修复来自对基线公开预览的浏览器观察。新增回归在模拟 DOM 中检查了事件和焦点调用；它们不能替代第二阶段在真实浏览器中的重新验证。
+这组修复来自对基线公开预览的浏览器观察。模拟 DOM 回归与真实浏览器记录分开解释：2026-10-15 在提交 5f7c02b 的桌面预览中检查了显式模拟、部分生成后停止、重试和异步完成的焦点；首段生成前停止及其他输入获得焦点时的异步失败仍未实测。
 
 ### 第二阶段验证范围
 
 `04-Extracted-Core-Code-And-Scripts/tests/phase2-components/` 新增独立的 32 项模拟 DOM 检查与 10 项静态检查，复用原有固定版本 jsdom；原来的 `04-Extracted-Core-Code-And-Scripts/tests/demo-state/` 文件未改。新增检查覆盖两轴独立、草稿保留、Quick Entry 的输入/提交/组合/关闭/清除/超长/文本安全，以及显式动作和异步完成的焦点区别。
 
-执行会生成独立报告，不覆盖已发布的基线参考数据。仍需真实浏览器核验新布局、font-size 级联、缩放、实际中文输入法、真实键盘默认行为、屏幕阅读器、原生焦点和 file:// 加载。公开预览正常加载静态资源不等于“网络请求为零”；本实现的限定是没有外部字体/CDN，以及输入不触发模型或业务 API。
+执行会生成独立报告，不覆盖已发布的基线参考数据。2026-10-15 已在 Chrome、1188 × 761 CSS 像素视口检查新布局、字号级联、Quick Entry 键盘编辑与焦点。提交 3166d2d 修复组件图谱的外层滚动后，六种密度／阅读组合及内部键盘滚动已复验通过。窄屏、短视口、缩放、真实中文输入法、屏幕阅读器和 file:// 加载等范围仍待验证。公开预览正常加载静态资源不等于“网络请求为零”；本实现的限定是没有外部字体/CDN，以及输入不触发模型或业务 API。
 
 ## 可访问性实现意图
 
@@ -163,3 +163,7 @@ Stop、右侧“模拟生成 / 模拟错误”、重试会禁用或隐藏原触�
 ## 权利与归属
 
 Claude 与 Anthropic 是各自权利人的名称。本示例不使用其官方商标图形，不分发商业字体、安装包、提取源码或商业资源。提及其名称仅用于指明研究对象。本目录不附带或转授 Claude 的代码、字体及品牌素材许可。
+
+## 本轮桌面实景
+
+[浏览器验证与修复前后截图](BROWSER-QA.md)展示隐藏状态节点越过滚动边界的问题，以及定位包含块修复后的结果。新增 [6 项滚动边界回归](../../04-Extracted-Core-Code-And-Scripts/tests/workspace-scroll/README.md)，连同既有 94 项检查共 100 项；浏览器结果单独按提交与视口记录。

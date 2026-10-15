@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "title": "原创交互工作台桌面浏览器验证",
+  "tested_at_utc": {
+    "initial": "2026-10-15T00:50:00Z/2026-10-15T00:56:00Z",
+    "recheck": "2026-10-15T01:02:00Z/2026-10-15T01:04:00Z"
+  },
+  "subject": "01-Frontend-Design-And-HTML-Templates/interactive-study/index.html",
+  "browser": {
+    "name": "Chrome",
+    "version": null,
+    "version_note": "未记录精确浏览器版本"
+  },
+  "viewport_css_pixels": {
+    "width": 1188,
+    "height": 761
+  },
+  "runs": [
+    {
+      "commit": "5f7c02b118c9eb55264e80fda7448a0e498c1b37",
+      "preview_url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/5f7c02b118c9eb55264e80fda7448a0e498c1b37/books/claude-app/01-Frontend-Design-And-HTML-Templates/interactive-study/index.html",
+      "scope": "完整桌面交互检查",
+      "result": "pass_with_layout_issue",
+      "passed_checks": [
+        {
+          "id": "density_reading_matrix",
+          "description": "密度与阅读六种组合独立，草稿保留",
+          "status": "pass"
+        },
+        {
+          "id": "themes_and_focus",
+          "description": "浅深主题与可见键盘焦点",
+          "status": "pass"
+        },
+        {
+          "id": "visible_conversation_typography",
+          "description": "可见对话正文18px、开篇20px，输入14px、复制操作11px",
+          "status": "pass"
+        },
+        {
+          "id": "gallery_validation",
+          "description": "错误关联、输入保留、有效输入恢复",
+          "status": "pass"
+        },
+        {
+          "id": "quick_entry_keyboard",
+          "description": "Enter暂存、Shift+Enter换行、Ctrl/Alt/Meta+Enter不暂存",
+          "status": "pass"
+        },
+        {
+          "id": "quick_entry_close_reopen",
+          "description": "Esc保留草稿和去向，恢复打开按钮焦点，重开聚焦输入",
+          "status": "pass"
+        },
+        {
+          "id": "quick_entry_records",
+          "description": "最新记录替换、去向快照、清除记录保留新草稿",
+          "status": "pass"
+        },
+        {
+          "id": "quick_entry_text_safety",
+          "description": "类似HTML的输入按字面文本显示",
+          "status": "pass"
+        },
+        {
+          "id": "quick_entry_length_recovery",
+          "description": "301字符拒绝、保留、aria-invalid与具体说明",
+          "status": "pass"
+        },
+        {
+          "id": "explicit_focus",
+          "description": "显式模拟、部分生成后停止、重试恢复输入焦点",
+          "status": "pass"
+        },
+        {
+          "id": "retry_and_passive_completion",
+          "description": "失败保留输入、重试不重复用户消息、异步完成不抢焦点",
+          "status": "pass"
+        },
+        {
+          "id": "reset_reload",
+          "description": "重置清空速记并保留显示偏好，刷新恢复默认密度与阅读",
+          "status": "pass"
+        }
+      ]
+    },
+    {
+      "commit": "3166d2d2d1fcba59909c25d5256aa5e913a27479",
+      "preview_url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/3166d2d2d1fcba59909c25d5256aa5e913a27479/books/claude-app/01-Frontend-Design-And-HTML-Templates/interactive-study/index.html",
+      "scope": "布局修复及受影响路径复验；未重复全部首次检查",
+      "result": "pass_within_tested_desktop_scope",
+      "passed_checks": [
+        {
+          "id": "density_reading_matrix",
+          "description": "六种组合几何与草稿回归",
+          "status": "pass"
+        },
+        {
+          "id": "outer_scroll_fix",
+          "description": "外层scrollHeight761、scrollY0，消除顶部裁切",
+          "status": "pass"
+        },
+        {
+          "id": "inner_keyboard_scroll",
+          "description": "原生Tab推动内部面板scrollTop0→448，Return打开速记，焦点可见",
+          "status": "pass"
+        },
+        {
+          "id": "lower_input_focus",
+          "description": "错误字段可见，内部scrollTop1514，外层scrollY0",
+          "status": "pass"
+        },
+        {
+          "id": "quick_entry_draft",
+          "description": "Shift+Enter、Esc/重开、草稿与去向保留、暂存",
+          "status": "pass"
+        },
+        {
+          "id": "dark_theme_focus",
+          "description": "深色速记可见，内部scrollTop731，外层scrollY0，两份草稿保留",
+          "status": "pass"
+        },
+        {
+          "id": "status_semantics",
+          "description": "显示偏好状态保留role=status与更新文字；未验证读屏播报",
+          "status": "pass"
+        }
+      ]
+    }
+  ],
+  "measurements": {
+    "density": {
+      "compact": {
+        "control_height_px": 40,
+        "icon_px": 16,
+        "specimen_padding_px": 12,
+        "button_gap_px": 8,
+        "radius_px": 8
+      },
+      "comfortable": {
+        "control_height_px": 48,
+        "icon_px": 20,
+        "specimen_padding_px": 20,
+        "button_gap_px": 12,
+        "radius_px": 12
+      }
+    },
+    "reading": [
+      {
+        "font_size_px": 14,
+        "line_height_px": 26.6
+      },
+      {
+        "font_size_px": 16,
+        "line_height_px": 30.4
+      },
+      {
+        "font_size_px": 18,
+        "line_height_px": 34.2
+      }
+    ],
+    "outer_document_before": {
+      "max_observed_scroll_y_px": 34,
+      "max_observed_scroll_height_px": 831
+    },
+    "outer_document_after": {
+      "scroll_y_px": 0,
+      "scroll_height_px": 761
+    },
+    "inner_gallery_scroll_top_after_px": [
+      0,
+      448,
+      731,
+      1514
+    ]
+  },
+  "issues": [
+    {
+      "id": "DW-B01",
+      "summary": "组件图谱外层滚动导致工具栏与标识顶部裁切",
+      "status": "resolved_in_tested_desktop_scope",
+      "observed_commit": "5f7c02b118c9eb55264e80fda7448a0e498c1b37",
+      "verified_fixed_commit": "3166d2d2d1fcba59909c25d5256aa5e913a27479",
+      "severity": "P2",
+      "before_images": [
+        "05-input-invalid-light.jpg",
+        "04-quick-entry-dark-record.jpg"
+      ],
+      "after_images": [
+        "09-fixed-input-invalid-light.jpg",
+        "10-fixed-quick-entry-dark.jpg"
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "filename": "../../assets/screenshots/workspace-before-scroll-5f7c02b.jpg",
+      "tested_commit": "5f7c02b118c9eb55264e80fda7448a0e498c1b37",
+      "sha256": "1ea3504194eb672dde88584f0c784c26f03e0227b2cb785e5d8aa80867f45746",
+      "width_pixels": 1188,
+      "height_pixels": 761,
+      "unedited": true
+    },
+    {
+      "filename": "../../assets/screenshots/workspace-after-scroll-3166d2d.jpg",
+      "tested_commit": "3166d2d2d1fcba59909c25d5256aa5e913a27479",
+      "sha256": "448f859f8e1de802c26fef982d62125416e55ddd7e84d6c014ceda10b0d5930d",
+      "width_pixels": 1188,
+      "height_pixels": 761,
+      "unedited": true
+    },
+    {
+      "filename": "../../assets/screenshots/workspace-dark-quick-entry-3166d2d.jpg",
+      "tested_commit": "3166d2d2d1fcba59909c25d5256aa5e913a27479",
+      "sha256": "f7c68c5372388db1ccb7072fff453adfacca1a8b83f4fe61543d78b8c92759a2",
+      "width_pixels": 1188,
+      "height_pixels": 761,
+      "unedited": true
+    }
+  ],
+  "not_verified": [
+    "narrow_or_mobile_viewports",
+    "short_viewports",
+    "200_percent_zoom",
+    "text_spacing_overrides",
+    "forced_colors",
+    "reduced_motion",
+    "real_chinese_ime",
+    "screen_reader_announcements",
+    "cross_platform_glyphs",
+    "firefox",
+    "safari",
+    "blocked_storage",
+    "clipboard_fallback",
+    "file_url_loading",
+    "cold_cache_offline",
+    "input_network_transmission_audit",
+    "stop_before_first_response_chunk",
+    "passive_failure_with_focus_in_another_input",
+    "complete_contrast_audit",
+    "full_wcag_conformance"
+  ],
+  "limitations": [
+    "浏览器精确版本未记录。",
+    "固定桌面视口通过不代表移动端、短视口或其他尺寸通过。",
+    "301字符检查验证超长内容的拒绝与保留，不证明逐键输入的原生maxlength执行。",
+    "首次检查与修复复验范围分开记录；不将未复测的交互标作修复后全量通过。",
+    "不包含六套独立HTML模板，不证明Claude官方客户端运行行为。",
+    "未作完整WCAG或对比度合规声明。"
+  ],
+  "screenshot_scope": "Three selected original screenshots published with this report; test scope is recorded independently in runs"
+}
