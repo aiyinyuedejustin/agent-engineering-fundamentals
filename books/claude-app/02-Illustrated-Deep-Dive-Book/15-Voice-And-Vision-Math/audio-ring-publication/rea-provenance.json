@@ -1,0 +1,26 @@
+{
+  "rea_version": "6.5.0",
+  "operation": "inspect_analysis_view",
+  "evidence_id": "ev_18aa8728546167a2a09ccf2c49a9a814066632ddfd34a9c4fc5b0fc8920b67eb",
+  "parent_evidence_id": "ev_8c5832cbf10ba9146a686829d8c4099b6c54df92aa8fc3c9cd51eb036bb04690",
+  "selector": {
+    "node_id": "jag_node_4816f9bcd79fca498831bdfd618147f8dfda891298425336405dcc2f348779ad"
+  },
+  "item": {
+    "node_id": "jag_node_4816f9bcd79fca498831bdfd618147f8dfda891298425336405dcc2f348779ad",
+    "kind": "javascript-asset",
+    "path": "audio/voice/audioSinkWorklet.js",
+    "identity": {
+      "strategy": "content-digest",
+      "stability": "global-exact",
+      "sha256": "f07c06f4cd830f8b9a33030855e25a12d8ded6d6f4d8d4f85d949afec09c4ffb"
+    }
+  },
+  "limitations": [
+    "Caller-selected source analysis leaves 3492 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution."
+  ],
+  "note": "REA 6.5.0 inspect-analysis-view selected the exact node_id from the existing Linux static analysis. No target execution or new package analysis."
+}

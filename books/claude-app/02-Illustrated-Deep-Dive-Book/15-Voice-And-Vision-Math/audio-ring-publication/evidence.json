@@ -1,0 +1,229 @@
+{
+  "scope": "Linux Claude Desktop 2.37337.1 existing ion-dist; two files only",
+  "observation_date_utc": "2026-10-15",
+  "target_executed": false,
+  "files": {
+    "audio/voice/audioSinkWorklet.js": {
+      "sha256": "f07c06f4cd830f8b9a33030855e25a12d8ded6d6f4d8d4f85d949afec09c4ffb",
+      "size_bytes": 9277,
+      "matches_existing_VV_manifest": true
+    },
+    "assets/v1/ccea0620f-rFO_QU40.js": {
+      "sha256": "71263a24984b0c7591d5f59d8d65f14c068fabde1799f7a072897d1a7d2bca5c",
+      "size_bytes": 25269,
+      "matches_existing_VV_manifest": true
+    }
+  },
+  "anchors": [
+    {
+      "id": "ARP-01",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 1284,
+      "length_bytes": 11,
+      "literal": "push(input)"
+    },
+    {
+      "id": "ARP-02",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 1583,
+      "length_bytes": 43,
+      "literal": "this.storage.set(input.subarray(0, n), wr);"
+    },
+    {
+      "id": "ARP-03",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 1765,
+      "length_bytes": 58,
+      "literal": "Atomics.store(this.indices, WR, (wr + n) % this.capacity);"
+    },
+    {
+      "id": "ARP-04",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 1931,
+      "length_bytes": 11,
+      "literal": "pop(output)"
+    },
+    {
+      "id": "ARP-05",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 2430,
+      "length_bytes": 58,
+      "literal": "Atomics.store(this.indices, RD, (rd + n) % this.capacity);"
+    },
+    {
+      "id": "ARP-06",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 2785,
+      "length_bytes": 10,
+      "literal": "drainAll()"
+    },
+    {
+      "id": "ARP-07",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 2853,
+      "length_bytes": 36,
+      "literal": "Atomics.store(this.indices, RD, wr);"
+    },
+    {
+      "id": "ARP-08",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 6704,
+      "length_bytes": 24,
+      "literal": "ev.data.type === \"flush\""
+    },
+    {
+      "id": "ARP-09",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 6997,
+      "length_bytes": 27,
+      "literal": "ev.data.type === \"turn_end\""
+    },
+    {
+      "id": "ARP-10",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 7144,
+      "length_bytes": 49,
+      "literal": "this.residualSamples = this.ring.availableRead();"
+    },
+    {
+      "id": "ARP-11",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 7646,
+      "length_bytes": 29,
+      "literal": "this.residualSamples -= read;"
+    },
+    {
+      "id": "ARP-12",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 7773,
+      "length_bytes": 24,
+      "literal": "this.residualSamples < 0"
+    },
+    {
+      "id": "ARP-13",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 7893,
+      "length_bytes": 23,
+      "literal": "read === channel.length"
+    },
+    {
+      "id": "ARP-14",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 9148,
+      "length_bytes": 43,
+      "literal": "this.port.postMessage({ type: \"drained\" });"
+    },
+    {
+      "id": "ARP-15",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 593,
+      "length_bytes": 7,
+      "literal": "push(e)"
+    },
+    {
+      "id": "ARP-16",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 13143,
+      "length_bytes": 26,
+      "literal": "this.totalPushedSamples+=r"
+    },
+    {
+      "id": "ARP-17",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 13262,
+      "length_bytes": 18,
+      "literal": "dropped:e.length-r"
+    },
+    {
+      "id": "ARP-18",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 12939,
+      "length_bytes": 14,
+      "literal": "writeToSink(e)"
+    },
+    {
+      "id": "ARP-19",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 19081,
+      "length_bytes": 15,
+      "literal": "signalTurnEnd()"
+    },
+    {
+      "id": "ARP-20",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 19315,
+      "length_bytes": 28,
+      "literal": "stop(){this.isInterrupted=!0"
+    },
+    {
+      "id": "ARP-21",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 19453,
+      "length_bytes": 12,
+      "literal": "type:\"flush\""
+    },
+    {
+      "id": "ARP-22",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 19468,
+      "length_bytes": 30,
+      "literal": "this.ringBuffer?.resetPlayed()"
+    },
+    {
+      "id": "ARP-23",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 19264,
+      "length_bytes": 15,
+      "literal": "type:\"turn_end\""
+    },
+    {
+      "id": "ARP-24",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 7742,
+      "length_bytes": 24,
+      "literal": "e.data?.type===\"drained\""
+    },
+    {
+      "id": "ARP-25",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 9773,
+      "length_bytes": 35,
+      "literal": "queueAudio(e){this.isInterrupted=!1"
+    },
+    {
+      "id": "ARP-26",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 8139,
+      "length_bytes": 40,
+      "literal": "this.isInterrupted||e!==this.opusDecoder"
+    },
+    {
+      "id": "ARP-27",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 7602,
+      "length_bytes": 33,
+      "literal": "this.ring.addPlayedSamples(read);"
+    },
+    {
+      "id": "ARP-28",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 8412,
+      "length_bytes": 22,
+      "literal": "channel.fill(0, read);"
+    },
+    {
+      "id": "ARP-29",
+      "file": "audio/voice/audioSinkWorklet.js",
+      "utf8_byte_offset": 2596,
+      "length_bytes": 7,
+      "literal": "clear()"
+    },
+    {
+      "id": "ARP-30",
+      "file": "assets/v1/ccea0620f-rFO_QU40.js",
+      "utf8_byte_offset": 4870,
+      "length_bytes": 58,
+      "literal": "this.ringBuffer.playedSamples()/this.config.sampleRate*1e3"
+    }
+  ]
+}
