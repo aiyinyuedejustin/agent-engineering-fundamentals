@@ -57,6 +57,7 @@
 | 09 | [Memory、Projects 与 Styles](02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md) | 跨对话信息和当前轮输入怎样分层组织？ |
 | 10 | [Feature Flags 与配置演化](02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md) | 开关、能力与产品入口如何组合，代码能说明什么？ |
 | 11 | [流式性能与分层调度](02-Illustrated-Deep-Dive-Book/11-Performance-And-Streaming/README.md) | 稳定块、活动尾部、Worker 与图表队列怎样减少重复工作？ |
+| 14 | [安全防线与执行边界](02-Illustrated-Deep-Dive-Book/14-Security-And-Guardrails/README.md) | 内容、权限、资源身份与执行之间，哪些检查不能省？ |
 | 17 | [状态、恢复与更新](02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md) | 网络失败、配置损坏、崩溃与升级分别怎样处理？ |
 | 18 | [版本与跨平台](02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md) | 三个平台共享哪些字节，又保留哪些系统差异？ |
 

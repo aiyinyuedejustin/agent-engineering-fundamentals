@@ -1,0 +1,952 @@
+{
+  "schema": "security-guardrails-study/v1",
+  "research_date_utc": "2026-10-14",
+  "target": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14"
+  },
+  "scope": {
+    "target_executed": false,
+    "target_imported": false,
+    "endpoints_probed": false,
+    "user_secrets_read": false,
+    "hosted_site_equivalence": "not established",
+    "native_enforcement": "not recovered",
+    "publication": "original explanation/code/diagrams and bounded short anchors only"
+  },
+  "collection_closed": true,
+  "files": {
+    "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js": {
+      "sha256": "e1d802b46c6d6f648ab2d918fe9b509a92c7a6d302c4d9f37895761d59ac69f9",
+      "bytes": 595508
+    },
+    "app.asar/.vite/build/index.chunk-ny8j26BQ.js": {
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512",
+      "bytes": 6956732
+    },
+    "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js": {
+      "sha256": "06b23cdcaea585e2d894ca5919dd20731c4248b0868f7ca4f4c03900de2f6e80",
+      "bytes": 93304
+    },
+    "ion-dist/assets/v1/c82d645d5-DbyaUrmZ.js": {
+      "sha256": "8cb88afafb1baa17fbbf3a08f89dbfdcfbf3cee71028289c2af163363e3d5eb5",
+      "bytes": 3156
+    },
+    "ion-dist/assets/v1/cfdfec14c-C3ZgQr3k.js": {
+      "sha256": "879a10fedb2b05ef9d953c79fb9a48d10436733cbbb625fec5f8216309249752",
+      "bytes": 8172
+    },
+    "ion-dist/assets/v1/cc61d0d63-CISU76WY.js": {
+      "sha256": "a6a52af6f9fa628acb5b766680f2ab8c898c7b2ca3e3890dc291f9be15a2ec33",
+      "bytes": 35385
+    },
+    "ion-dist/assets/v1/shared-15-J8PhW4f7.js": {
+      "sha256": "a3c20215d932fba2c281ab081fe06b9d077d2248df481650d3de4d206cb7502d",
+      "bytes": 66948
+    }
+  },
+  "claims": [
+    {
+      "id": "SG-01",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "权限卡通过 pending request 关联本次工具、输入与会话；未知决定拒绝，允许可使用 updatedInput。",
+      "scope_zh": "主进程工具审批路由，不能推导全部调用必然弹卡。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 221287,
+          "utf8_byte_end_exclusive": 221328,
+          "literal": "async handleToolPermission(e,r,i,a,o,s,c)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 227255,
+          "utf8_byte_end_exclusive": 227285,
+          "literal": "respondToToolPermission(e,n,r)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 227946,
+          "utf8_byte_end_exclusive": 227979,
+          "literal": "this.pendingPermissions.delete(e)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 3
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 229099,
+          "utf8_byte_end_exclusive": 229153,
+          "literal": "default:s={behavior:\"deny\",message:\"Unknown decision\"}",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "具体工具可前置自动允许、阻止或升级；审批身份来自主进程入口而不是工具正文。"
+      ],
+      "prior_evidence": [
+        "AL-13",
+        "AL-14",
+        "SH-12",
+        "SH-13",
+        "SH-14"
+      ]
+    },
+    {
+      "id": "SG-02",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "workspace Bash 接收字符串并以 bash -c 运行，调用前有组织 shell 禁用与 host-only 路径提示。",
+      "scope_zh": "host-loop 的 workspace MCP 路线。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 295744,
+          "utf8_byte_end_exclusive": 295765,
+          "literal": "bashHostOnlyIntercept",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 296829,
+          "utf8_byte_end_exclusive": 296841,
+          "literal": "if(Mp(t.yK))",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 297257,
+          "utf8_byte_end_exclusive": 297280,
+          "literal": "h=o?t.aY(e.command,d,p,",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 298893,
+          "utf8_byte_end_exclusive": 298918,
+          "literal": "command:\"bash\",args:[\"-c\"",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "未恢复 CLI 完整风险解析器、远端行动筛查或内核执行边界；不判断真实命令是否安全。"
+      ],
+      "prior_evidence": [
+        "CU-17",
+        "CU-18"
+      ]
+    },
+    {
+      "id": "SG-03",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "host-only 命中辅助函数扫描路径片段及边界字符，并参考已解析文件夹和 VM 映射。",
+      "scope_zh": "只解释 SG-02 调用的诊断辅助函数。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 2032835,
+          "utf8_byte_end_exclusive": 2032857,
+          "literal": "function tzt(e,t,n=!1)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 2032982,
+          "utf8_byte_end_exclusive": 2033014,
+          "literal": "for(;(c=i.indexOf(a,c+1))!==-1;)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 2033158,
+          "utf8_byte_end_exclusive": 2033177,
+          "literal": "function nzt(e,t,n)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 2033455,
+          "utf8_byte_end_exclusive": 2033476,
+          "literal": "function izt(e,t,n,r)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "它不是完整 Bash AST 解析器；不能把这个局部启发式说成整个系统的授权算法。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-04",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "主机文件 hook 对路径字段个数、类型和对应键进行验证，并拒绝相对/歧义平台拼写。",
+      "scope_zh": "host-loop PreToolUse 中匹配的文件工具。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 325881,
+          "utf8_byte_end_exclusive": 325917,
+          "literal": "requires a single string path input.",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 326043,
+          "utf8_byte_end_exclusive": 326060,
+          "literal": "takes its path as",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 328082,
+          "utf8_byte_end_exclusive": 328109,
+          "literal": "is root- or drive-relative;",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 328367,
+          "utf8_byte_end_exclusive": 328400,
+          "literal": "uses a Windows alternate spelling",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "存在按工具与 session 类型区分的输入重写和例外；不等于所有路径统一拒绝。"
+      ],
+      "prior_evidence": [
+        "CU-22"
+      ]
+    },
+    {
+      "id": "SG-05",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "Glob 有专门的路径/模式检查；点段、brace 中绝对路径及部分 bracket 组合被拒绝或拆分检查。",
+      "scope_zh": "host-loop Glob hook。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 326756,
+          "utf8_byte_end_exclusive": 326796,
+          "literal": "Glob patterns with `..` after a wildcard",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 327297,
+          "utf8_byte_end_exclusive": 327353,
+          "literal": "Glob patterns with an absolute or `~` path inside braces",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 327540,
+          "utf8_byte_end_exclusive": 327571,
+          "literal": "for(let t of r){let n=await He(",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 2
+        }
+      ],
+      "limits_zh": [
+        "不是命令行参数解析，也不是对全部 glob 实现的规范。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-06",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "安全解析区分已有目标与允许缺失叶子的路径；尝试最近可解析祖先，拒绝部分 dangling/nonregular/UNC/automount 情况。",
+      "scope_zh": "主 bundle 的 YAn，被 host-loop t.DI 调用。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 3009232,
+          "utf8_byte_end_exclusive": 3009260,
+          "literal": "async function YAn(e,t,r=[])",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 3009328,
+          "utf8_byte_end_exclusive": 3009372,
+          "literal": "Refusing to resolve a path with dot segments",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 3010276,
+          "utf8_byte_end_exclusive": 3010316,
+          "literal": "Refusing to resolve a dangling ancestor:",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 3010129,
+          "utf8_byte_end_exclusive": 3010182,
+          "literal": "n.default.join(await(0,p.realpath)(r),...i.reverse())",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "调用者可先 normalize；字符串 realpath 检查本身不证明与最终文件打开原子绑定。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-07",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "目标解析失败拒绝；保护子路径和撤销 grant 在 hook 中检查；搜索根与写入另有专门限制。",
+      "scope_zh": "已观察 host-loop hook，不是 OS sandbox 认证。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 328776,
+          "utf8_byte_end_exclusive": 328801,
+          "literal": "PreToolUse resolve failed",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 329128,
+          "utf8_byte_end_exclusive": 329159,
+          "literal": "PreToolUse: protected location:",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 329775,
+          "utf8_byte_end_exclusive": 329829,
+          "literal": "PreToolUse: search root contains a protected location:",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 330041,
+          "utf8_byte_end_exclusive": 330077,
+          "literal": "let E=await Vp({toolName:e.tool_name",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "底层执行与竞态封闭需 native/CLI/OS 证据。"
+      ],
+      "prior_evidence": [
+        "CU-20",
+        "CU-22"
+      ]
+    },
+    {
+      "id": "SG-08",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "uploads 的某分支被解释为原文件硬链接，写入被阻止；插件、spooled 项目与管理员只读目录另有只读限制。",
+      "scope_zh": "Vp 针对所匹配的主机写工具和 session 根集合。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 303339,
+          "utf8_byte_end_exclusive": 303383,
+          "literal": "it is a hardlink to the user's original file",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 304286,
+          "utf8_byte_end_exclusive": 304307,
+          "literal": "e.readOnlyPluginPaths",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 2
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 304504,
+          "utf8_byte_end_exclusive": 304537,
+          "literal": "e.readOnlyWorkspaceRoots.length>0",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "未验证具体用户是否创建硬链接；不能将所有上传视为复制或统一硬链接。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-09",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "目录申请在弹卡前检查 canonical 路径、内部存储、保护位置与 allowedWorkspaceFolders。",
+      "scope_zh": "request_cowork_directory 的本地/cloud-sync 分支。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 366551,
+          "utf8_byte_end_exclusive": 366609,
+          "literal": "request_cowork_directory pre-prompt: internal storage path",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 367039,
+          "utf8_byte_end_exclusive": 367099,
+          "literal": "request_cowork_directory pre-prompt: protected host location",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "utf8_byte_start": 367400,
+          "utf8_byte_end_exclusive": 367468,
+          "literal": "request_cowork_directory pre-prompt: outside allowedWorkspaceFolders",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "目录显示名不是权限凭据；网络盘与云盘有其他路径。"
+      ],
+      "prior_evidence": [
+        "CU-22"
+      ]
+    },
+    {
+      "id": "SG-10",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "Markdown 的 URL transform 按 img/src 与 a/href 分支；链接另经组件路由与确认，图像另有受控加载路径。",
+      "scope_zh": "bundled ion Markdown 组件；不等价于当前 hosted 网站。",
+      "anchors": [
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 76399,
+          "utf8_byte_end_exclusive": 76417,
+          "literal": "function Us(e,t,n)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 76527,
+          "utf8_byte_end_exclusive": 76576,
+          "literal": "e.startsWith(\"computer://\")||e.startsWith(\"tel:\")",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 90901,
+          "utf8_byte_end_exclusive": 90916,
+          "literal": "urlTransform:Us",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 2
+        },
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 82306,
+          "utf8_byte_end_exclusive": 82348,
+          "literal": "unsafeAllowNavigationWithoutConfirmation:l",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 80522,
+          "utf8_byte_end_exclusive": 80552,
+          "literal": "r(n.src)?o(\"img\",{...n}):o(qc,",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "URL transform 不是完整 URL 安全策略；明确存在调用方提供的绕过确认或图源允许分支。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-11",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "链接组件区分 dead/internal/trusted-external/deep-link；普通外链点击可进入确认，按修饰键或已记忆站点另有条件直接打开。",
+      "scope_zh": "c82 链接组件的静态路由。",
+      "anchors": [
+        {
+          "file": "ion-dist/assets/v1/c82d645d5-DbyaUrmZ.js",
+          "utf8_byte_start": 1580,
+          "utf8_byte_end_exclusive": 1595,
+          "literal": "function L(e,t)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c82d645d5-DbyaUrmZ.js",
+          "utf8_byte_start": 1797,
+          "utf8_byte_end_exclusive": 1816,
+          "literal": "isTrustedExternal:s",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c82d645d5-DbyaUrmZ.js",
+          "utf8_byte_start": 2678,
+          "utf8_byte_end_exclusive": 2689,
+          "literal": "if(!(j||M))",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c82d645d5-DbyaUrmZ.js",
+          "utf8_byte_start": 2694,
+          "utf8_byte_end_exclusive": 2726,
+          "literal": "e.shiftKey||e.ctrlKey||e.metaKey",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c82d645d5-DbyaUrmZ.js",
+          "utf8_byte_start": 1958,
+          "utf8_byte_end_exclusive": 1977,
+          "literal": "allowDontAskAgain:f",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 2
+        }
+      ],
+      "limits_zh": [
+        "不能宣称所有外链必弹窗；deep link 最终 native handler 另有边界。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-12",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "外链记忆按 HTTPS host（含端口）记录并排除同源；punycode/userinfo 有警告，并阻止此处的已记忆直接通过。",
+      "scope_zh": "外链确认组件和链接信任辅助函数。",
+      "anchors": [
+        {
+          "file": "ion-dist/assets/v1/cfdfec14c-C3ZgQr3k.js",
+          "utf8_byte_start": 1817,
+          "utf8_byte_end_exclusive": 1845,
+          "literal": "external-nav-trusted-domains",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/cfdfec14c-C3ZgQr3k.js",
+          "utf8_byte_start": 2026,
+          "utf8_byte_end_exclusive": 2083,
+          "literal": "return n!==\"https:\"||r===\"\"||i===new URL(t).origin?null:r",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/cfdfec14c-C3ZgQr3k.js",
+          "utf8_byte_start": 4229,
+          "utf8_byte_end_exclusive": 4267,
+          "literal": "function se(e,t){return!Z(e)&&ne(e,t)}",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/cfdfec14c-C3ZgQr3k.js",
+          "utf8_byte_start": 6713,
+          "utf8_byte_end_exclusive": 6743,
+          "literal": "A=D.hasPunycode||O.hasUserinfo",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/cfdfec14c-C3ZgQr3k.js",
+          "utf8_byte_start": 4858,
+          "utf8_byte_end_exclusive": 4881,
+          "literal": "activationDelayMs:g=400",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "记忆列表不是网站安全评估；400ms 为此组件默认值，不是全站常量。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-13",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "默认受控图片组件展示 Show Image，可进入确认；只允许列出的 raster data URI，其他非 HTTP(S) 候选转文字。",
+      "scope_zh": "qc 图片路线；imgSrcAllow 直出例外见 SG-10。",
+      "anchors": [
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 91700,
+          "utf8_byte_end_exclusive": 91732,
+          "literal": "var Gc=[\"data:image/png;base64,\"",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 92176,
+          "utf8_byte_end_exclusive": 92189,
+          "literal": "Wc(p)&&!Kc(p)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/c89efce1a-C_zUGLCA.js",
+          "utf8_byte_start": 92632,
+          "utf8_byte_end_exclusive": 92659,
+          "literal": "defaultMessage:\"Show Image\"",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "并未证明全产品全部远程图片均经此路线。"
+      ],
+      "prior_evidence": []
+    },
+    {
+      "id": "SG-14",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "富 artifact frame 声明 allow-scripts allow-same-origin，用户内容 renderer URL 来自配置。",
+      "scope_zh": "artifact host 客户端。",
+      "anchors": [
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_start": 12450,
+          "utf8_byte_end_exclusive": 12484,
+          "literal": "let{userContentRendererUrl:E}=oe()",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/cc61d0d63-CISU76WY.js",
+          "utf8_byte_start": 32903,
+          "utf8_byte_end_exclusive": 32944,
+          "literal": "sandbox:\"allow-scripts allow-same-origin\"",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "未取得实际 renderer origin、response CSP、HTML/SVG sanitizer 或编译器实现。"
+      ],
+      "prior_evidence": [
+        "W05"
+      ]
+    },
+    {
+      "id": "SG-15",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "window 消息核对 origin 与准确 frame window；端口握手后有 schema、重复 ID 与权限判断。",
+      "scope_zh": "所检查 artifact communicator；port 不重复 window 的 origin 字段检查。",
+      "anchors": [
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_start": 35367,
+          "utf8_byte_end_exclusive": 35406,
+          "literal": "if(e.origin!==this.allowedOrigin)return",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_start": 35439,
+          "utf8_byte_end_exclusive": 35471,
+          "literal": "if(t===null||e.source!==t)return",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_start": 36998,
+          "utf8_byte_end_exclusive": 37022,
+          "literal": "r=Re.safeParse(t.method)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "ion-dist/assets/v1/shared-15-J8PhW4f7.js",
+          "utf8_byte_start": 37324,
+          "utf8_byte_end_exclusive": 37352,
+          "literal": "Request ID already processed",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "传输通道身份不自动授予内容能力；内容 epoch 与 consent 见 W10-W14。"
+      ],
+      "prior_evidence": [
+        "W06",
+        "W07",
+        "W10",
+        "W11",
+        "W12"
+      ]
+    },
+    {
+      "id": "SG-16",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "扩展 sensitive 字符串和数组中的字符串尝试 safeStorage；不可用、字段异常或清单解析失败有未加密回退，最终进入 writer。",
+      "scope_zh": "扩展设置路径，不推广为所有凭据。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 4391132,
+          "utf8_byte_end_exclusive": 4391149,
+          "literal": "function D2r(e,t)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 4391316,
+          "utf8_byte_end_exclusive": 4391350,
+          "literal": "safeStorage encryption unavailable",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 4391759,
+          "utf8_byte_end_exclusive": 4391792,
+          "literal": "Failed to encrypt sensitive field",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 4395758,
+          "utf8_byte_end_exclusive": 4395794,
+          "literal": "saving userConfig without encryption",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 4396853,
+          "utf8_byte_end_exclusive": 4396879,
+          "literal": "await Yr(n,i),mY.delete(e)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "没有读取任何实际用户配置或秘密；成功 safeStorage 调用不证明所有 backend 的安全性质。"
+      ],
+      "prior_evidence": [
+        "X07"
+      ]
+    },
+    {
+      "id": "SG-17",
+      "evidence_kind": "static-shipped-code",
+      "finding_zh": "Linux keyring 不可用提示受 CI、已提示状态、pending 和已登录账户条件约束，并延迟调度。",
+      "scope_zh": "Linux 启动 notice 路线。",
+      "anchors": [
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 6283562,
+          "utf8_byte_end_exclusive": 6283613,
+          "literal": "var dEa=\"insecureStorageNoticeShown\",fEa=!1,pEa=5e3",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 6283614,
+          "utf8_byte_end_exclusive": 6283628,
+          "literal": "function mEa()",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 6284312,
+          "utf8_byte_end_exclusive": 6284329,
+          "literal": "e&&lo.set(dEa,!0)",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        },
+        {
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_start": 6284441,
+          "utf8_byte_end_exclusive": 6284455,
+          "literal": "function hEa()",
+          "occurrence_zero_based": 0,
+          "occurrence_count": 1
+        }
+      ],
+      "limits_zh": [
+        "提示提及其他凭据无法保存，不等于本次已逐项验证那些存储实现；不是每次字段加密失败必提示。"
+      ],
+      "prior_evidence": [
+        "X07"
+      ]
+    }
+  ],
+  "official_sources": [
+    {
+      "id": "SD-01",
+      "title": "Electron safeStorage",
+      "url": "https://www.electronjs.org/docs/latest/api/safe-storage",
+      "read_sections": "Platform-Specific Key Providers / synchronous API / basic_text / availability",
+      "scope": "OS properties are a current API contract, not proof of the fixed package backend.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-02",
+      "title": "Electron Security",
+      "url": "https://www.electronjs.org/docs/latest/tutorial/security",
+      "read_sections": "IPC sender validation / isolation / openExternal",
+      "scope": "Engineering guidance, not a target runtime audit.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-03",
+      "title": "OWASP OS Command Injection Defense",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+      "read_sections": "Argument injection / avoid shell / parameterization and argument validation",
+      "scope": "The lab is a deliberately tiny grammar, not the OWASP page code.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-04",
+      "title": "Node child_process",
+      "url": "https://nodejs.org/api/child_process.html",
+      "read_sections": "exec vs execFile; Windows .bat/.cmd caveat",
+      "scope": "Current Node API description; not evidence of target CLI behavior.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-05",
+      "title": "Anthropic indirect injection guidance",
+      "url": "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks",
+      "read_sections": "Indirect injection / tool-result provenance / least privilege",
+      "scope": "Guidance; does not establish a particular deployed classifier or its effectiveness.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-06",
+      "title": "Anthropic containment engineering",
+      "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+      "read_sections": "Published 2026-05-25; environment/model/content layers; approved-domain egress",
+      "scope": "Historical first-party architecture explanation, reconciled with fixed package host-loop branches.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-07",
+      "title": "HTML Standard iframe sandbox",
+      "url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-iframe-sandbox",
+      "read_sections": "allow-same-origin / allow-scripts / same-origin conjunction / navigation",
+      "scope": "The target renderer origin and CSP remain unknown.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-08",
+      "title": "SVG 2 Conformance",
+      "url": "https://www.w3.org/TR/SVG2/conform.html",
+      "read_sections": "Secure static mode / image embedding / inline SVG",
+      "scope": "Standards processing model, not proof of an application sanitizer.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-09",
+      "title": "Linux openat2 manual",
+      "url": "https://man7.org/linux/man-pages/man2/openat2.2.html",
+      "read_sections": "RESOLVE_BENEATH / NO_SYMLINKS / race errors",
+      "scope": "A possible Linux-specific implementation direction, not claimed used by the target.",
+      "accessed_utc": "2026-10-14"
+    },
+    {
+      "id": "SD-10",
+      "title": "WHATWG URL Standard",
+      "url": "https://url.spec.whatwg.org/",
+      "read_sections": "URL parsing and origin",
+      "scope": "Teaching uses JavaScript URL parser; no DNS/redirect/SSRF implementation.",
+      "accessed_utc": "2026-10-14"
+    }
+  ],
+  "prior_bounded_rea": [
+    {
+      "prior_ledger": "agent-loop-cowork.json",
+      "evidence_id": "ev_19278318e7f5a7305ba954956c318665ca4c48ea9b6c4d7cc2e34b8dc198ab3b",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    },
+    {
+      "prior_ledger": "agent-loop-cowork.json",
+      "evidence_id": "ev_e4e958733036cd56bde8e411a89e50b54a6ecc3e1552aca56985b6c6f93658b9",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    },
+    {
+      "prior_ledger": "extension-boundaries.json",
+      "evidence_id": "ev_6f5c90548cc49678a59ca9438d6d3851e6b0cbe3417367afeb161f8d145cf3d3",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    },
+    {
+      "prior_ledger": "workspaces-deep-dive.json",
+      "evidence_id": "ev_48d50c1c0abb68874003ecd689ae855a20d2cc44956a2055b2fc52011734d979",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    },
+    {
+      "prior_ledger": "workspaces-deep-dive.json",
+      "evidence_id": "ev_799ffadc09d17c8da7f4dfb4f2d3c3e18bf3e5b5374df31c8884ea01e5b8c73e",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    },
+    {
+      "prior_ledger": "shell-architecture.json",
+      "evidence_id": "ev_f0ea92b8613c9193b4ca947f73442288081f5e5d0988186fbcff84e1fa0b248f",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    },
+    {
+      "prior_ledger": "shell-architecture.json",
+      "evidence_id": "ev_834907c3907d270e002eb694437796f90e01ea1665c134fd3f9ef2996c283254",
+      "note": "Reused bounded prior analysis for navigation only; new SG findings verified against inert exact bytes. No new full-program REA claim."
+    }
+  ],
+  "verification": {
+    "all_anchors_read_back": true,
+    "anchor_count": 66,
+    "claim_count": 17,
+    "max_anchor_characters": 68
+  },
+  "teaching_lab": {
+    "original": true,
+    "tests_passed": 57,
+    "target_compatibility_claim": false,
+    "no_os_operations": true,
+    "not_implemented": [
+      "actual Bash parser",
+      "OS atomic file open",
+      "HTML/SVG sanitizer",
+      "browser sandbox enforcement",
+      "DNS/redirect/SSRF control",
+      "cryptographic key provider",
+      "server authorization"
+    ]
+  }
+}

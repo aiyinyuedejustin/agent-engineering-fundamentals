@@ -28,3 +28,5 @@
 - [工具合同实验](tool-contracts/README.md)：形状校验、适配损失、权限与执行器分层；24 项无依赖测试。
 
 - [流式性能实验](streaming-performance/README.md)：调度、增量状态、完成边界与资源寿命；27 项零依赖合同测试。
+
+- [安全边界实验](security-guardrails/README.md)：审批绑定、资源变化、外链与敏感保存策略；57 项原创离线测试。
