@@ -1,0 +1,12 @@
+/* 可选增强，默认桥接不导入：需要原生 @scope 支持。
+ * 仅当确实需要 dark: 改变语义角色或布局时使用。
+ * 根节点必须同放 data-ui="atelier" / data-palette / data-theme。
+ * 下一个 atelier 根是排除边界；其自身若为 dark，会形成自己的新作用域。
+ * 不把任意 [data-theme="dark"] 祖先、系统深色偏好当作 atelier 深色。
+ * 作用域约束的是选择器匹配，不会阻断 color/font 等 CSS 继承。
+ */
+@custom-variant dark {
+  @scope ([data-ui="atelier"][data-theme="dark"]) to ([data-ui="atelier"]) {
+    @slot;
+  }
+}

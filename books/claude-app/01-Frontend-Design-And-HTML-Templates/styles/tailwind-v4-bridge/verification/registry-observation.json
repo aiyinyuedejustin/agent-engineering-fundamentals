@@ -1,0 +1,22 @@
+{
+  "observedOn": "2026-10-15",
+  "registry": "https://registry.npmjs.org/",
+  "commands": [
+    "npm view tailwindcss dist-tags --json",
+    "npm view @tailwindcss/cli dist-tags --json",
+    "npm view tailwindcss@3.4.19 version --json"
+  ],
+  "tailwindcssDistTags": {
+    "next": "4.0.0",
+    "v3-lts": "3.4.19",
+    "latest": "4.3.3",
+    "insiders": "0.0.0-insiders.9c92dfd"
+  },
+  "cliDistTags": {
+    "internal": "0.0.0-internal.b2586d4e",
+    "next": "4.0.0",
+    "latest": "4.3.3",
+    "insiders": "0.0.0-insiders.9c92dfd"
+  },
+  "v3ExactVersion": "3.4.19"
+}

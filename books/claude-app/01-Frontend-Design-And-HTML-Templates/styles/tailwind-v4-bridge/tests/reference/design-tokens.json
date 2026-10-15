@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "description": "原创复用令牌；非官方主题；不包含全部静态颜色观测",
+  "researchBaseline": "2026-10-14",
+  "scope": "[data-ui=\"atelier\"]",
+  "sources": [
+    "../README.md",
+    "../../04-Extracted-Core-Code-And-Scripts/evidence/data/design-token-summary.json"
+  ],
+  "palettes": {
+    "paper": {
+      "name": "纸与陶",
+      "provenance": "original adaptation",
+      "light": {
+        "canvas": "#f8f7f3",
+        "sidebar": "#f0eee7",
+        "surface": "#ffffff",
+        "ink": "#26251f",
+        "muted": "#656258",
+        "line": "#d9d6cc",
+        "line-strong": "#878273",
+        "accent": "#a24b33",
+        "accent-soft": "#f3e3da"
+      },
+      "dark": {
+        "canvas": "#1b1b18",
+        "sidebar": "#23231f",
+        "surface": "#2b2b26",
+        "ink": "#eeede6",
+        "muted": "#b8b5a8",
+        "line": "#44443b",
+        "line-strong": "#817e70",
+        "accent": "#e2a68b",
+        "accent-soft": "#3b2b24"
+      }
+    },
+    "sage": {
+      "name": "苔绿",
+      "provenance": "original adaptation",
+      "light": {
+        "canvas": "#f4f6ef",
+        "sidebar": "#e8ede1",
+        "surface": "#fdfef9",
+        "ink": "#253028",
+        "muted": "#596656",
+        "line": "#d1d9c9",
+        "line-strong": "#7c8975",
+        "accent": "#41664a",
+        "accent-soft": "#e1eddf"
+      },
+      "dark": {
+        "canvas": "#19201a",
+        "sidebar": "#202a22",
+        "surface": "#29342b",
+        "ink": "#e9eee5",
+        "muted": "#b0beac",
+        "line": "#3c4d3e",
+        "line-strong": "#7e947d",
+        "accent": "#a8c7a1",
+        "accent-soft": "#2b402e"
+      }
+    },
+    "ocean": {
+      "name": "雾蓝",
+      "provenance": "original adaptation",
+      "light": {
+        "canvas": "#f3f6f7",
+        "sidebar": "#e6eef1",
+        "surface": "#fdfefe",
+        "ink": "#22323a",
+        "muted": "#536875",
+        "line": "#cddbe0",
+        "line-strong": "#708995",
+        "accent": "#326780",
+        "accent-soft": "#deedf3"
+      },
+      "dark": {
+        "canvas": "#172127",
+        "sidebar": "#1f2b32",
+        "surface": "#29373e",
+        "ink": "#e7eff2",
+        "muted": "#a8bdc7",
+        "line": "#3b515e",
+        "line-strong": "#7f9aa8",
+        "accent": "#9cc5d8",
+        "accent-soft": "#28404d"
+      }
+    },
+    "plum": {
+      "name": "梅灰",
+      "provenance": "original adaptation",
+      "light": {
+        "canvas": "#f8f4f6",
+        "sidebar": "#efe7ed",
+        "surface": "#fffdfd",
+        "ink": "#392b36",
+        "muted": "#74606e",
+        "line": "#dfd1dc",
+        "line-strong": "#947c8b",
+        "accent": "#895577",
+        "accent-soft": "#f0e1ec"
+      },
+      "dark": {
+        "canvas": "#261c24",
+        "sidebar": "#30242d",
+        "surface": "#3c2e38",
+        "ink": "#f1e8ef",
+        "muted": "#c8afc0",
+        "line": "#594451",
+        "line-strong": "#a18599",
+        "accent": "#d7adc9",
+        "accent-soft": "#4b3143"
+      }
+    },
+    "graphite": {
+      "name": "石墨",
+      "provenance": "original adaptation",
+      "light": {
+        "canvas": "#f5f5f4",
+        "sidebar": "#eaeae8",
+        "surface": "#ffffff",
+        "ink": "#242627",
+        "muted": "#626566",
+        "line": "#d6d8d8",
+        "line-strong": "#7f8385",
+        "accent": "#4f6069",
+        "accent-soft": "#e5ebed"
+      },
+      "dark": {
+        "canvas": "#191b1d",
+        "sidebar": "#232629",
+        "surface": "#2c3034",
+        "ink": "#eaedef",
+        "muted": "#b4bdc2",
+        "line": "#42494e",
+        "line-strong": "#84929b",
+        "accent": "#b0c6d3",
+        "accent-soft": "#32424d"
+      }
+    }
+  },
+  "profiles": {
+    "compact": {
+      "controlMinHeight": "36px",
+      "uiFontSize": "13px"
+    },
+    "comfortable": {
+      "controlMinHeight": "44px",
+      "uiFontSize": "14px"
+    },
+    "reading": {
+      "default": "18px",
+      "large": "21px",
+      "lineHeight": 1.85
+    }
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    72
+  ],
+  "radius": {
+    "control": 8,
+    "card": 14,
+    "composer": 20
+  },
+  "fonts": {
+    "ui": "system sans-serif",
+    "reading": "system serif",
+    "code": "system monospace"
+  }
+}

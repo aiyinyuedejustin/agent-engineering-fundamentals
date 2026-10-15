@@ -1,0 +1,11 @@
+/* 复制到项目 styles/；两个既有 CSS 与本适配器放在同一目录。
+ * @source 路径相对此入口；按项目改为真实源码目录。
+ */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "./claude-tokens.css" layer(theme);
+@import "./claude-reset-and-base.css" layer(base);
+@import "./claude-tailwind-v4.css";
+/* 可选、须单独验收浏览器：@import "./claude-tailwind-v4-dark-scope.css"; */
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "../src";

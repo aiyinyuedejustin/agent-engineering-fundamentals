@@ -1,0 +1,7 @@
+{
+  "name": "claude-reuse-tailwind-v3-regression",
+  "private": true,
+  "dependencies": {
+    "tailwindcss": "3.4.19"
+  }
+}

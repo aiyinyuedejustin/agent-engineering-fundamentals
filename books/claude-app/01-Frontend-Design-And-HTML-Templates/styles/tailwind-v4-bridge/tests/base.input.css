@@ -1,0 +1,7 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "./reference/claude-tokens.css" layer(theme);
+@import "./reference/claude-reset-and-base.css" layer(base);
+@import "../styles/claude-tailwind-v4.css";
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "./base.fixture.html";

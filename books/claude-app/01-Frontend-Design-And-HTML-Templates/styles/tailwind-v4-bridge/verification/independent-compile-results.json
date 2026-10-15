@@ -1,0 +1,344 @@
+{
+  "generatedAt": "2026-10-15T04:42:59.675Z",
+  "status": "passed",
+  "assertions": 84,
+  "tests": [
+    {
+      "name": "base: pinned compiler succeeds from unrelated cwd",
+      "status": "passed"
+    },
+    {
+      "name": "base: independent output is byte-identical to author fixture",
+      "status": "passed"
+    },
+    {
+      "name": "dark: pinned compiler succeeds from unrelated cwd",
+      "status": "passed"
+    },
+    {
+      "name": "dark: independent output is byte-identical to author fixture",
+      "status": "passed"
+    },
+    {
+      "name": "v3: pinned compiler succeeds from unrelated cwd",
+      "status": "passed"
+    },
+    {
+      "name": "v3: original config fixture regression is byte-identical",
+      "status": "passed"
+    },
+    {
+      "name": "tailwind.config.js: author snapshot and review copy equal publication original",
+      "status": "passed"
+    },
+    {
+      "name": "claude-tokens.css: author snapshot and review copy equal publication original",
+      "status": "passed"
+    },
+    {
+      "name": "claude-reset-and-base.css: author snapshot and review copy equal publication original",
+      "status": "passed"
+    },
+    {
+      "name": "design-tokens.json: author snapshot and review copy equal publication original",
+      "status": "passed"
+    },
+    {
+      "name": "matrix: pinned compiler succeeds from unrelated cwd",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-canvas: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-canvas: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-canvas: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-surface: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-surface: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-surface: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-sidebar: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-sidebar: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-sidebar: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-ink: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-ink: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-ink: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-muted: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-muted: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-muted: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-line: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-line: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-line: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-line-strong: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-line-strong: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-line-strong: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-accent: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-accent: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-accent: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-accent-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-accent-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-accent-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-action: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-action: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-action: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-on-action: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-on-action: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-on-action: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-danger: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-danger: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-danger: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-danger-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-danger-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-danger-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-success: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-success: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-success: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-success-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-success-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-success-soft: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".bg-scrim: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".text-scrim: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".border-scrim: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".font-sans: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".font-serif: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".font-mono: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".rounded-control: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".rounded-card: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".rounded-composer: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".shadow-float: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".p-gutter: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".p-section: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".p-editorial: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": ".min-h-control: reads expected runtime variable at utility usage",
+      "status": "passed"
+    },
+    {
+      "name": "control height is not exposed as arbitrary spacing",
+      "status": "passed"
+    },
+    {
+      "name": "source(none) ignores unregistered sibling fixture",
+      "status": "passed"
+    },
+    {
+      "name": "explicit-source: pinned compiler succeeds from unrelated cwd",
+      "status": "passed"
+    },
+    {
+      "name": "explicit CSS-relative source generates the negative-control utility",
+      "status": "passed"
+    },
+    {
+      "name": "default-dark: pinned compiler succeeds from unrelated cwd",
+      "status": "passed"
+    },
+    {
+      "name": "without opt-in, dark utility retains Tailwind system-media meaning",
+      "status": "passed"
+    },
+    {
+      "name": "base: no unscoped element reset declarations",
+      "status": "passed"
+    },
+    {
+      "name": "dark: no unscoped element reset declarations",
+      "status": "passed"
+    },
+    {
+      "name": "matrix: no unscoped element reset declarations",
+      "status": "passed"
+    },
+    {
+      "name": "default-dark: no unscoped element reset declarations",
+      "status": "passed"
+    },
+    {
+      "name": "v3: no unscoped element reset declarations",
+      "status": "passed"
+    },
+    {
+      "name": "tailwindcss-4.3.3-MIT.txt: distributed license equals installed upstream license",
+      "status": "passed"
+    },
+    {
+      "name": "tailwindcss-cli-4.3.3-MIT.txt: distributed license equals installed upstream license",
+      "status": "passed"
+    },
+    {
+      "name": "tailwindcss-3.4.19-MIT.txt: distributed license equals installed upstream license",
+      "status": "passed"
+    }
+  ],
+  "browserStatus": "Not run; cloud-browser verification remains separate."
+}

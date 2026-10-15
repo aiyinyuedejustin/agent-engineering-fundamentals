@@ -112,3 +112,7 @@
 - 主题选择器依赖 CSS 自定义属性的继承。若在局部容器切换主题，需要在该容器上设置 `data-theme`。
 - 焦点、交互、表单提交与屏幕阅读器语义不能仅靠 CSS 自动完成。
 - 色彩配对与可访问性需要在实际应用场景、字体大小和状态下重新验证。
+
+## Tailwind 3 与 4 的接入边界
+
+现有 `tailwind.config.js` 使用3.4格式。v4的 `@config` 不会恢复已经取消的 `corePlugins`，因此关闭Preflight必须在CSS入口处完成。[v4 CSS-first桥接](tailwind-v4-bridge/README.md)提供原有局部令牌到工具类的映射、无Preflight入口、固定版本编译测试及独立的可选深色变体。普通语义色类已能随容器切主题，六套原生HTML无需迁移。

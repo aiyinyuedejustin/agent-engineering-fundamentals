@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>可选有边界 dark 变体验收</title>
+<body data-theme="dark">
+<p id="outside" class="dark:bg-danger">外部同名属性不能激活 atelier dark</p>
+<main id="dark-root" data-ui="atelier" data-palette="paper" data-theme="dark" class="bg-canvas dark:bg-danger">
+  <p id="dark-child" class="bg-canvas dark:bg-danger">dark 根与后代</p>
+  <div id="dark-no-class">没有工具类不得被作用域意外选中</div>
+  <section id="light-root" data-ui="atelier" data-palette="sage" data-theme="light" class="bg-canvas dark:bg-danger">
+    <p id="light-child" class="bg-canvas dark:bg-danger">浅色边界阻止外层 dark</p>
+    <section id="nested-dark-root" data-ui="atelier" data-palette="ocean" data-theme="dark" class="bg-canvas dark:bg-danger">
+      <p id="nested-dark-child" class="bg-canvas dark:bg-danger">内层 dark 重新生效</p>
+    </section>
+  </section>
+  <section id="default-root" data-ui="atelier" class="bg-canvas dark:bg-danger"><p id="default-child" class="bg-canvas dark:bg-danger">新 atelier 根默认浅色</p></section>
+  <section id="invalid-root" data-ui="atelier" data-palette="paper" data-theme="Dark" class="bg-canvas dark:bg-danger"><p id="invalid-child" class="bg-canvas dark:bg-danger">大小写不匹配不得当深色</p></section>
+</main>
+<section data-ui="other" data-theme="dark"><p id="foreign-ui" class="dark:bg-danger">其他组件不激活</p></section>
+</body></html>

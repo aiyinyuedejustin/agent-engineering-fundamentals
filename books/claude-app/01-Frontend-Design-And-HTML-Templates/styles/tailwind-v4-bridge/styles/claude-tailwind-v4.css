@@ -1,0 +1,41 @@
+/* 原创 CSS-first 语义桥接；独立选择用于 Tailwind CSS v4。
+ * 运行时令牌来自 claude-tokens.css 的 [data-ui="atelier"]，不是 :root。
+ * 不导入 Tailwind、Preflight 或 v3 JS 配置；入口负责按需装配。
+ * @theme inline 让生成的工具类在使用位置读取 --ui-*，避免根级别别名解析。
+ * 普通 bg-canvas / text-ink 已能随最近的 atelier 容器切换浅深主题。
+ * 此默认文件不改写 dark:；其默认系统媒体查询不等于 data-theme。
+ */
+@theme inline {
+  --color-canvas: var(--ui-canvas);
+  --color-surface: var(--ui-surface);
+  --color-sidebar: var(--ui-sidebar);
+  --color-ink: var(--ui-ink);
+  --color-muted: var(--ui-muted);
+  --color-line: var(--ui-line);
+  --color-line-strong: var(--ui-line-strong);
+  --color-accent: var(--ui-accent);
+  --color-accent-soft: var(--ui-accent-soft);
+  --color-action: var(--ui-action);
+  --color-on-action: var(--ui-on-action);
+  --color-danger: var(--ui-danger);
+  --color-danger-soft: var(--ui-danger-soft);
+  --color-success: var(--ui-success);
+  --color-success-soft: var(--ui-success-soft);
+  --color-scrim: var(--ui-scrim);
+
+  --font-sans: var(--ui-font);
+  --font-serif: var(--ui-reading);
+  --font-mono: var(--ui-mono);
+  --radius-control: var(--ui-radius);
+  --radius-card: var(--ui-card-radius);
+  --radius-composer: var(--ui-composer-radius);
+  --shadow-float: var(--ui-shadow);
+  --spacing-gutter: var(--ui-space-5);
+  --spacing-section: var(--ui-space-7);
+  --spacing-editorial: var(--ui-space-8);
+}
+
+/* 仅增加既有 min-h-control，不把控件高度扩展成任意方向的 spacing token。 */
+@utility min-h-control {
+  min-height: var(--ui-control);
+}

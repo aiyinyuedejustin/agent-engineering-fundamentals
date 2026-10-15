@@ -1,0 +1,17 @@
+{
+  "existingOutputRejected": true,
+  "rejectedRerunDidNotChangeAnyOutputFile": true,
+  "ownedTemporaryDirectoriesCleaned": true,
+  "publicationFilesUnchanged": {
+    "templates/03-split-artifact-ide-template.html": true,
+    "templates/04-editorial-blog-and-doc-template.html": true,
+    "templates/02-chat-workspace-template.html": true,
+    "templates/05-settings-and-dashboard-template.html": true,
+    "templates/01-component-gallery.html": true,
+    "templates/06-floating-launcher-template.html": true,
+    "styles/tailwind.config.js": true,
+    "styles/claude-tokens.css": true,
+    "styles/claude-reset-and-base.css": true,
+    "styles/design-tokens.json": true
+  }
+}

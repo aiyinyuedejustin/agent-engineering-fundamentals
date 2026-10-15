@@ -1,0 +1,188 @@
+{
+  "generatedAt": "2026-10-15T04:44:39.419Z",
+  "status": "passed",
+  "node": "v24.19.0",
+  "compilers": {
+    "tailwindcssV4": "4.3.3",
+    "tailwindcssCli": "4.3.3",
+    "tailwindcssV3": "3.4.19"
+  },
+  "registry": "https://registry.npmjs.org/",
+  "installation": "Exact versions; --ignore-scripts --no-audit --no-fund; separate tooling folders; no publication dependency changes.",
+  "sourceSnapshots": {
+    "tailwind.config.js": "708f2d172faa817aa4e54276788e29e426d897576e4853bc46f1e330cb708873",
+    "claude-tokens.css": "6d868986a66929d48125b02f5ad528b9be306c83d978e616bce0be9f044f11c4",
+    "claude-reset-and-base.css": "0437056a41f662ddbbbaea9aa8ea8b4cc0853f73729726cc828704439ee47e7e",
+    "design-tokens.json": "a8584cc14a115d04e1c361c20270f0419c1532b82435ea0e5a4484ed3cb1e6e1"
+  },
+  "assertions": 40,
+  "tests": [
+    {
+      "name": "Fixed compiler versions",
+      "status": "passed"
+    },
+    {
+      "name": "base: CLI exit 0",
+      "status": "passed"
+    },
+    {
+      "name": "dark: CLI exit 0",
+      "status": "passed"
+    },
+    {
+      "name": "v3: CLI exit 0",
+      "status": "passed"
+    },
+    {
+      "name": "base: .bg-canvas directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .bg-surface directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .text-ink directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .font-sans directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .font-serif directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .font-mono directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .rounded-control directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .rounded-card directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .rounded-composer directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .min-h-control directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "base: .shadow-float directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .bg-canvas directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .bg-surface directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .text-ink directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .font-sans directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .font-serif directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .font-mono directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .rounded-control directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .rounded-card directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .rounded-composer directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .min-h-control directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v3: .shadow-float directly reads local token",
+      "status": "passed"
+    },
+    {
+      "name": "v4 semantic spacing reads local variables",
+      "status": "passed"
+    },
+    {
+      "name": "Default bridge has no custom dark variant or @scope",
+      "status": "passed"
+    },
+    {
+      "name": "Optional v4 dark compiles into bounded atelier scope",
+      "status": "passed"
+    },
+    {
+      "name": "v3 selector dark compiles from original config snapshot",
+      "status": "passed"
+    },
+    {
+      "name": "base: no global Preflight reset rules",
+      "status": "passed"
+    },
+    {
+      "name": "dark: no global Preflight reset rules",
+      "status": "passed"
+    },
+    {
+      "name": "v3: no global Preflight reset rules",
+      "status": "passed"
+    },
+    {
+      "name": "Every inline bridge token exists in reviewed token CSS",
+      "status": "passed"
+    },
+    {
+      "name": "JSON palette values agree with CSS snapshots",
+      "status": "passed"
+    },
+    {
+      "name": "Reviewed source snapshots unchanged by tests",
+      "status": "passed"
+    },
+    {
+      "name": "base: compiler MIT banner retained",
+      "status": "passed"
+    },
+    {
+      "name": "base: standalone fixture has no scripts or external assets",
+      "status": "passed"
+    },
+    {
+      "name": "dark: compiler MIT banner retained",
+      "status": "passed"
+    },
+    {
+      "name": "dark: standalone fixture has no scripts or external assets",
+      "status": "passed"
+    }
+  ],
+  "browserStatus": "Not run by this script. Browser verification is separate; see browser-results.json if present.",
+  "limits": [
+    "No cross-version equivalence claim.",
+    "No all-browser compatibility claim.",
+    "No Preflight is not zero global CSS: Tailwind utility custom-property initializers may be global.",
+    "Optional @scope dark variant is not imported by the default bridge."
+  ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>Tailwind v4 语义桥接验收</title>
+<body>
+<h1 id="outside-heading">容器外原生标题，不应被 Preflight 清零</h1>
+<button id="outside-button">原生按钮</button>
+<ul id="outside-list"><li>原生列表</li></ul>
+<div id="outside-box">原生盒模型</div>
+<main id="paper-light" data-ui="atelier" data-palette="paper" data-theme="light" class="bg-canvas text-ink font-sans p-gutter">
+  <h2>普通语义类随容器主题切换</h2>
+  <button id="action" class="bg-action text-on-action rounded-control min-h-control border border-solid border-line px-gutter">主操作</button>
+  <div id="card" class="bg-surface rounded-card shadow-float p-section">卡片</div>
+  <div id="composer" class="bg-sidebar rounded-composer p-editorial">输入区</div>
+  <p id="reading" class="font-serif text-muted">阅读字体</p>
+  <code id="code" class="font-mono text-accent">代码字体</code>
+  <div class="bg-accent-soft border-line-strong text-danger">边界与点缀</div>
+  <div class="bg-danger-soft text-danger">错误</div>
+  <div class="bg-success-soft text-success">成功</div>
+  <div class="bg-scrim">遮罩</div>
+  <section id="sage-dark" data-ui="atelier" data-palette="sage" data-theme="dark" class="bg-canvas text-ink font-sans">
+    <div id="sage-child" class="bg-surface text-muted rounded-card">嵌套深色</div>
+    <section id="ocean-light" data-ui="atelier" data-palette="ocean" data-theme="light" class="bg-canvas text-ink">
+      <div id="ocean-child" class="bg-surface text-muted">深色里的浅色</div>
+      <section id="plum-dark" data-ui="atelier" data-palette="plum" data-theme="dark" class="bg-canvas text-ink">
+        <div id="plum-child" class="bg-surface text-muted">再次深色</div>
+      </section>
+    </section>
+  </section>
+  <section id="custom-local" data-ui="atelier" data-palette="graphite" data-theme="light" style="--ui-canvas:rgb(1, 2, 3);--ui-font:monospace;--ui-radius:17px" class="bg-canvas font-sans rounded-control">局部变量覆盖验收</section>
+</main>
+</body></html>

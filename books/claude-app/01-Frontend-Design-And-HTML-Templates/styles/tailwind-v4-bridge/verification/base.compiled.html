@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>Tailwind v4 语义桥接验收</title>
+<style>
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+@layer theme, base, components, utilities;
+@layer theme {
+  :where([data-ui="atelier"]), :where([data-ui="atelier"][data-palette="paper"][data-theme="light"]) {
+    color-scheme: light;
+    --ui-canvas: #f8f7f3;
+    --ui-sidebar: #f0eee7;
+    --ui-surface: #ffffff;
+    --ui-ink: #26251f;
+    --ui-muted: #656258;
+    --ui-line: #d9d6cc;
+    --ui-line-strong: #878273;
+    --ui-accent: #a24b33;
+    --ui-accent-soft: #f3e3da;
+    --ui-action: #272722;
+    --ui-on-action: #ffffff;
+    --ui-danger: #9c332c;
+    --ui-danger-soft: #fbeae5;
+    --ui-success: #386043;
+    --ui-success-soft: #e4efe5;
+    --ui-scrim: #26251f40;
+  }
+  :where([data-ui="atelier"][data-palette="paper"][data-theme="dark"]) {
+    color-scheme: dark;
+    --ui-canvas: #1b1b18;
+    --ui-sidebar: #23231f;
+    --ui-surface: #2b2b26;
+    --ui-ink: #eeede6;
+    --ui-muted: #b8b5a8;
+    --ui-line: #44443b;
+    --ui-line-strong: #817e70;
+    --ui-accent: #e2a68b;
+    --ui-accent-soft: #3b2b24;
+    --ui-action: #eeede6;
+    --ui-on-action: #24241f;
+    --ui-danger: #f1ada5;
+    --ui-danger-soft: #422c29;
+    --ui-success: #a9d1b0;
+    --ui-success-soft: #283e2c;
+    --ui-scrim: #00000080;
+  }
+  :where([data-ui="atelier"][data-palette="sage"][data-theme="light"]) {
+    color-scheme: light;
+    --ui-canvas: #f4f6ef;
+    --ui-sidebar: #e8ede1;
+    --ui-surface: #fdfef9;
+    --ui-ink: #253028;
+    --ui-muted: #596656;
+    --ui-line: #d1d9c9;
+    --ui-line-strong: #7c8975;
+    --ui-accent: #41664a;
+    --ui-accent-soft: #e1eddf;
+    --ui-action: #272722;
+    --ui-on-action: #ffffff;
+    --ui-danger: #9c332c;
+    --ui-danger-soft: #fbeae5;
+    --ui-success: #386043;
+    --ui-success-soft: #e4efe5;
+    --ui-scrim: #26251f40;
+  }
+  :where([data-ui="atelier"][data-palette="sage"][data-theme="dark"]) {
+    color-scheme: dark;
+    --ui-canvas: #19201a;
+    --ui-sidebar: #202a22;
+    --ui-surface: #29342b;
+    --ui-ink: #e9eee5;
+    --ui-muted: #b0beac;
+    --ui-line: #3c4d3e;
+    --ui-line-strong: #7e947d;
+    --ui-accent: #a8c7a1;
+    --ui-accent-soft: #2b402e;
+    --ui-action: #eeede6;
+    --ui-on-action: #24241f;
+    --ui-danger: #f1ada5;
+    --ui-danger-soft: #422c29;
+    --ui-success: #a9d1b0;
+    --ui-success-soft: #283e2c;
+    --ui-scrim: #00000080;
+  }
+  :where([data-ui="atelier"][data-palette="ocean"][data-theme="light"]) {
+    color-scheme: light;
+    --ui-canvas: #f3f6f7;
+    --ui-sidebar: #e6eef1;
+    --ui-surface: #fdfefe;
+    --ui-ink: #22323a;
+    --ui-muted: #536875;
+    --ui-line: #cddbe0;
+    --ui-line-strong: #708995;
+    --ui-accent: #326780;
+    --ui-accent-soft: #deedf3;
+    --ui-action: #272722;
+    --ui-on-action: #ffffff;
+    --ui-danger: #9c332c;
+    --ui-danger-soft: #fbeae5;
+    --ui-success: #386043;
+    --ui-success-soft: #e4efe5;
+    --ui-scrim: #26251f40;
+  }
+  :where([data-ui="atelier"][data-palette="ocean"][data-theme="dark"]) {
+    color-scheme: dark;
+    --ui-canvas: #172127;
+    --ui-sidebar: #1f2b32;
+    --ui-surface: #29373e;
+    --ui-ink: #e7eff2;
+    --ui-muted: #a8bdc7;
+    --ui-line: #3b515e;
+    --ui-line-strong: #7f9aa8;
+    --ui-accent: #9cc5d8;
+    --ui-accent-soft: #28404d;
+    --ui-action: #eeede6;
+    --ui-on-action: #24241f;
+    --ui-danger: #f1ada5;
+    --ui-danger-soft: #422c29;
+    --ui-success: #a9d1b0;
+    --ui-success-soft: #283e2c;
+    --ui-scrim: #00000080;
+  }
+  :where([data-ui="atelier"][data-palette="plum"][data-theme="light"]) {
+    color-scheme: light;
+    --ui-canvas: #f8f4f6;
+    --ui-sidebar: #efe7ed;
+    --ui-surface: #fffdfd;
+    --ui-ink: #392b36;
+    --ui-muted: #74606e;
+    --ui-line: #dfd1dc;
+    --ui-line-strong: #947c8b;
+    --ui-accent: #895577;
+    --ui-accent-soft: #f0e1ec;
+    --ui-action: #272722;
+    --ui-on-action: #ffffff;
+    --ui-danger: #9c332c;
+    --ui-danger-soft: #fbeae5;
+    --ui-success: #386043;
+    --ui-success-soft: #e4efe5;
+    --ui-scrim: #26251f40;
+  }
+  :where([data-ui="atelier"][data-palette="plum"][data-theme="dark"]) {
+    color-scheme: dark;
+    --ui-canvas: #261c24;
+    --ui-sidebar: #30242d;
+    --ui-surface: #3c2e38;
+    --ui-ink: #f1e8ef;
+    --ui-muted: #c8afc0;
+    --ui-line: #594451;
+    --ui-line-strong: #a18599;
+    --ui-accent: #d7adc9;
+    --ui-accent-soft: #4b3143;
+    --ui-action: #eeede6;
+    --ui-on-action: #24241f;
+    --ui-danger: #f1ada5;
+    --ui-danger-soft: #422c29;
+    --ui-success: #a9d1b0;
+    --ui-success-soft: #283e2c;
+    --ui-scrim: #00000080;
+  }
+  :where([data-ui="atelier"][data-palette="graphite"][data-theme="light"]) {
+    color-scheme: light;
+    --ui-canvas: #f5f5f4;
+    --ui-sidebar: #eaeae8;
+    --ui-surface: #ffffff;
+    --ui-ink: #242627;
+    --ui-muted: #626566;
+    --ui-line: #d6d8d8;
+    --ui-line-strong: #7f8385;
+    --ui-accent: #4f6069;
+    --ui-accent-soft: #e5ebed;
+    --ui-action: #272722;
+    --ui-on-action: #ffffff;
+    --ui-danger: #9c332c;
+    --ui-danger-soft: #fbeae5;
+    --ui-success: #386043;
+    --ui-success-soft: #e4efe5;
+    --ui-scrim: #26251f40;
+  }
+  :where([data-ui="atelier"][data-palette="graphite"][data-theme="dark"]) {
+    color-scheme: dark;
+    --ui-canvas: #191b1d;
+    --ui-sidebar: #232629;
+    --ui-surface: #2c3034;
+    --ui-ink: #eaedef;
+    --ui-muted: #b4bdc2;
+    --ui-line: #42494e;
+    --ui-line-strong: #84929b;
+    --ui-accent: #b0c6d3;
+    --ui-accent-soft: #32424d;
+    --ui-action: #eeede6;
+    --ui-on-action: #24241f;
+    --ui-danger: #f1ada5;
+    --ui-danger-soft: #422c29;
+    --ui-success: #a9d1b0;
+    --ui-success-soft: #283e2c;
+    --ui-scrim: #00000080;
+  }
+  :where([data-ui="atelier"]) {
+    --ui-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --ui-reading: Georgia, "Times New Roman", "Songti SC", "STSong", serif;
+    --ui-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    --ui-text: 14px;
+    --ui-reading-size: 18px;
+    --ui-leading: 1.85;
+    --ui-control: 40px;
+    --ui-radius: 8px;
+    --ui-card-radius: 14px;
+    --ui-composer-radius: 20px;
+    --ui-space-1: 4px;
+    --ui-space-2: 8px;
+    --ui-space-3: 12px;
+    --ui-space-4: 16px;
+    --ui-space-5: 24px;
+    --ui-space-6: 32px;
+    --ui-space-7: 48px;
+    --ui-space-8: 72px;
+    --ui-fast: 140ms;
+    --ui-ease: cubic-bezier(.2,.7,.3,1);
+    --ui-shadow: 0 12px 40px #0000000c, 0 2px 5px #00000006;
+  }
+  :where([data-ui="atelier"][data-theme="dark"]) {
+    --ui-shadow: 0 12px 40px #00000040, 0 2px 5px #00000030;
+  }
+  :where([data-ui="atelier"][data-density="compact"]) {
+    --ui-control: 36px;
+    --ui-text: 13px;
+  }
+  :where([data-ui="atelier"][data-density="comfortable"]) {
+    --ui-control: 44px;
+    --ui-text: 14px;
+  }
+  :where([data-ui="atelier"][data-reading="large"]) {
+    --ui-reading-size: 21px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :where([data-ui="atelier"]) {
+      --ui-fast: 0ms;
+    }
+  }
+}
+@layer base {
+  :where([data-ui="atelier"], [data-ui="atelier"] *) {
+    box-sizing: border-box;
+  }
+  :where([data-ui="atelier"]) {
+    margin: 0;
+    color: var(--ui-ink);
+    background: var(--ui-canvas);
+    font: var(--ui-text)/1.6 var(--ui-font);
+    accent-color: var(--ui-accent);
+  }
+  :where([data-ui="atelier"]) :where(body) {
+    margin: 0;
+  }
+  :where([data-ui="atelier"]) :where(button,input,textarea,select) {
+    font: inherit;
+    color: inherit;
+  }
+  :where([data-ui="atelier"]) :where(button,select,summary) {
+    cursor: pointer;
+  }
+  :where([data-ui="atelier"]) :where(button) {
+    touch-action: manipulation;
+  }
+  :where([data-ui="atelier"]) :where(button:disabled) {
+    opacity: .44;
+    cursor: not-allowed;
+  }
+  :where([data-ui="atelier"]) :where(input,textarea,select) {
+    max-width: 100%;
+  }
+  :where([data-ui="atelier"]) :where(p,h1,h2,h3) {
+    margin-top: 0;
+  }
+  :where([data-ui="atelier"]) :where(a) {
+    color: inherit;
+    text-underline-offset: 4px;
+  }
+  :where([data-ui="atelier"]) :where(svg) {
+    display: block;
+  }
+  :where([data-ui="atelier"]) :where(:focus-visible) {
+    outline: 2px solid var(--ui-accent);
+    outline-offset: 4px;
+  }
+  :where([data-ui="atelier"]) :where([hidden]) {
+    display: none !important;
+  }
+  :where([data-ui="atelier"]) .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :where([data-ui="atelier"]) *, :where([data-ui="atelier"]) *::before, :where([data-ui="atelier"]) *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  @media (forced-colors: active) {
+    :where([data-ui="atelier"]) :where(button,input,select,textarea,.card,.badge) {
+      border: 1px solid ButtonText;
+    }
+  }
+}
+@layer utilities {
+  .min-h-control {
+    min-height: var(--ui-control);
+  }
+  .rounded-card {
+    border-radius: var(--ui-card-radius);
+  }
+  .rounded-composer {
+    border-radius: var(--ui-composer-radius);
+  }
+  .rounded-control {
+    border-radius: var(--ui-radius);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-solid {
+    --tw-border-style: solid;
+    border-style: solid;
+  }
+  .border-line {
+    border-color: var(--ui-line);
+  }
+  .border-line-strong {
+    border-color: var(--ui-line-strong);
+  }
+  .bg-accent-soft {
+    background-color: var(--ui-accent-soft);
+  }
+  .bg-action {
+    background-color: var(--ui-action);
+  }
+  .bg-canvas {
+    background-color: var(--ui-canvas);
+  }
+  .bg-danger-soft {
+    background-color: var(--ui-danger-soft);
+  }
+  .bg-scrim {
+    background-color: var(--ui-scrim);
+  }
+  .bg-sidebar {
+    background-color: var(--ui-sidebar);
+  }
+  .bg-success-soft {
+    background-color: var(--ui-success-soft);
+  }
+  .bg-surface {
+    background-color: var(--ui-surface);
+  }
+  .p-editorial {
+    padding: var(--ui-space-8);
+  }
+  .p-gutter {
+    padding: var(--ui-space-5);
+  }
+  .p-section {
+    padding: var(--ui-space-7);
+  }
+  .px-gutter {
+    padding-inline: var(--ui-space-5);
+  }
+  .font-mono {
+    font-family: var(--ui-mono);
+  }
+  .font-sans {
+    font-family: var(--ui-font);
+  }
+  .font-serif {
+    font-family: var(--ui-reading);
+  }
+  .text-accent {
+    color: var(--ui-accent);
+  }
+  .text-danger {
+    color: var(--ui-danger);
+  }
+  .text-ink {
+    color: var(--ui-ink);
+  }
+  .text-muted {
+    color: var(--ui-muted);
+  }
+  .text-on-action {
+    color: var(--ui-on-action);
+  }
+  .text-success {
+    color: var(--ui-success);
+  }
+  .shadow-float {
+    --tw-shadow: var(--ui-shadow);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}
+
+</style>
+<body>
+<h1 id="outside-heading">容器外原生标题，不应被 Preflight 清零</h1>
+<button id="outside-button">原生按钮</button>
+<ul id="outside-list"><li>原生列表</li></ul>
+<div id="outside-box">原生盒模型</div>
+<main id="paper-light" data-ui="atelier" data-palette="paper" data-theme="light" class="bg-canvas text-ink font-sans p-gutter">
+  <h2>普通语义类随容器主题切换</h2>
+  <button id="action" class="bg-action text-on-action rounded-control min-h-control border border-solid border-line px-gutter">主操作</button>
+  <div id="card" class="bg-surface rounded-card shadow-float p-section">卡片</div>
+  <div id="composer" class="bg-sidebar rounded-composer p-editorial">输入区</div>
+  <p id="reading" class="font-serif text-muted">阅读字体</p>
+  <code id="code" class="font-mono text-accent">代码字体</code>
+  <div class="bg-accent-soft border-line-strong text-danger">边界与点缀</div>
+  <div class="bg-danger-soft text-danger">错误</div>
+  <div class="bg-success-soft text-success">成功</div>
+  <div class="bg-scrim">遮罩</div>
+  <section id="sage-dark" data-ui="atelier" data-palette="sage" data-theme="dark" class="bg-canvas text-ink font-sans">
+    <div id="sage-child" class="bg-surface text-muted rounded-card">嵌套深色</div>
+    <section id="ocean-light" data-ui="atelier" data-palette="ocean" data-theme="light" class="bg-canvas text-ink">
+      <div id="ocean-child" class="bg-surface text-muted">深色里的浅色</div>
+      <section id="plum-dark" data-ui="atelier" data-palette="plum" data-theme="dark" class="bg-canvas text-ink">
+        <div id="plum-child" class="bg-surface text-muted">再次深色</div>
+      </section>
+    </section>
+  </section>
+  <section id="custom-local" data-ui="atelier" data-palette="graphite" data-theme="light" style="--ui-canvas:rgb(1, 2, 3);--ui-font:monospace;--ui-radius:17px" class="bg-canvas font-sans rounded-control">局部变量覆盖验收</section>
+</main>
+</body></html>

@@ -1,0 +1,12 @@
+{
+  "templates/03-split-artifact-ide-template.html": "c03dcd318877d8693721954efe9499779ab10af2e6b12f8abbe029c570d3538a",
+  "templates/04-editorial-blog-and-doc-template.html": "3b1dd5992b651f7593c7fde7016980db6ae6cb7470306337bd78b1bd36045f8b",
+  "templates/02-chat-workspace-template.html": "906d639339e14b2838cf0e5906d61e04e8addb7d7c97cdd3e5be77206e848081",
+  "templates/05-settings-and-dashboard-template.html": "1a87ff25d0bc238fe4064cb913afce64990f8365b4b46362459e012f4f96cd6f",
+  "templates/01-component-gallery.html": "63e105c6031be008738a039693cc680b06595e9df8f6c75a54dd799f84870821",
+  "templates/06-floating-launcher-template.html": "94b5af590991bcfdeabf3807abfdf582c757f7fb886c0d85220446a9bfb3d095",
+  "styles/tailwind.config.js": "708f2d172faa817aa4e54276788e29e426d897576e4853bc46f1e330cb708873",
+  "styles/claude-tokens.css": "6d868986a66929d48125b02f5ad528b9be306c83d978e616bce0be9f044f11c4",
+  "styles/claude-reset-and-base.css": "0437056a41f662ddbbbaea9aa8ea8b4cc0853f73729726cc828704439ee47e7e",
+  "styles/design-tokens.json": "a8584cc14a115d04e1c361c20270f0419c1532b82435ea0e5a4484ed3cb1e6e1"
+}
