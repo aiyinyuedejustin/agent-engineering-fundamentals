@@ -6,10 +6,10 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 4957,
-      "sha256": "87355996104781df0b427b2bc41582cf84779c3bcb8186c237a43e890bb348fb",
+      "bytes": 5200,
+      "sha256": "1e51764d4e82d8d5629c58337c5d6e5efdc98a7c36eb53bb5c4345a8665982dd",
       "source": "original-integration",
-      "copy": "new"
+      "copy": "modified"
     },
     {
       "path": "color-tools/.gitignore",
@@ -20,24 +20,31 @@
     },
     {
       "path": "color-tools/README.md",
-      "bytes": 12286,
-      "sha256": "f16015f817ffd1439fcd22f33fcebe4bd27451ed04b46c3983bb6037b71ca7d1",
-      "source": "staging/color-tools/README.md",
-      "copy": "unchanged"
+      "bytes": 16781,
+      "sha256": "beddb257c9fddfe539ed60f04520edb740177f2c441f51f9c77b6142f5af7e0a",
+      "source": "original-integration",
+      "copy": "modified"
+    },
+    {
+      "path": "color-tools/apply_catalog_overlay.py",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 3481,
+      "sha256": "a8e8602a04903c2a04ae33ee62ea381bd8f7c41143532f3d996cd318292e664b"
     },
     {
       "path": "color-tools/build_color_catalog.py",
-      "bytes": 20497,
-      "sha256": "ff687f65108b501de15e2f720613dc0ef3d00e88b4c976a343a65de99a526acb",
-      "source": "staging/color-tools/build_color_catalog.py",
-      "copy": "unchanged"
+      "bytes": 21040,
+      "sha256": "6cea32c0f9f5d83bb252745a12ea53a87618857a74ec3661fcb2c5ae50aedc33",
+      "source": "original-integration",
+      "copy": "modified"
     },
     {
       "path": "color-tools/color_catalog_template.html",
-      "bytes": 26465,
-      "sha256": "3c6b6fe0bff694db8dfe5ac5a40a6627849cb1e6a93f7975e00dc458be80ed03",
-      "source": "staging/color-tools/color_catalog_template.html",
-      "copy": "unchanged"
+      "bytes": 36374,
+      "sha256": "1c5460123713e0762869fb8999b5ef7920f6fcaa521b06b24145d3d959948f12",
+      "source": "original-integration",
+      "copy": "modified"
     },
     {
       "path": "color-tools/extract_design_tokens.py",
@@ -61,11 +68,25 @@
       "copy": "unchanged"
     },
     {
+      "path": "color-tools/resolution_overlay.py",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 9910,
+      "sha256": "561427e7b9a5f75763d226ef3eea785e7fb76799e84cb906081669f1046a29a6"
+    },
+    {
+      "path": "color-tools/reviewed-resolution-overlay.json",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 55339,
+      "sha256": "e2fb24eafc513d7bf3855daed2e89693fe7e7b0275c477fb4259016c1a91f641"
+    },
+    {
       "path": "color-tools/tests/test_browser_dom.cjs",
-      "bytes": 6666,
-      "sha256": "c10c4672e7e8a36fc145c51fca9bf0c1427d4206ae6d1bcb3f39eca4b2f89033",
-      "source": "staging/color-tools/tests/test_browser_dom.cjs",
-      "copy": "unchanged"
+      "bytes": 6672,
+      "sha256": "fdb31f8920cb7f292eabd6b8bec06da8348153cce48d8e0d48d404225c1ecba5",
+      "source": "original-integration",
+      "copy": "modified"
     },
     {
       "path": "color-tools/tests/test_color_tools.py",
@@ -75,11 +96,39 @@
       "copy": "unchanged"
     },
     {
+      "path": "color-tools/tests/test_copy_fallback_dom.cjs",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 11742,
+      "sha256": "ee6cbdff09e69e030a151098a090f40dbcaeef4e274967962c4bd05cf9ab3291"
+    },
+    {
+      "path": "color-tools/tests/test_resolution_browser_dom.cjs",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 12980,
+      "sha256": "bf288bacbe088e7e8077a9da1f9f15feb9ceb007baa363a5537065c570621bce"
+    },
+    {
+      "path": "color-tools/tests/test_resolution_overlay.py",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 15445,
+      "sha256": "edbf867a5c73cc8f5c6c2f11e6d45641e5cd5c333e7dbffb52f5a30c32c9540a"
+    },
+    {
       "path": "color-tools/tests/verify_baseline.py",
       "bytes": 3790,
       "sha256": "06580f20534680298e889f5017b88aa6a5f6b1ba86f23aa5838895b32ded2af0",
       "source": "staging/color-tools/tests/verify_baseline.py",
       "copy": "unchanged"
+    },
+    {
+      "path": "color-tools/tests/verify_resolution_baseline.py",
+      "source": "original-integration",
+      "copy": "new",
+      "bytes": 3332,
+      "sha256": "ad99cc22cb479fc8600391550d46740c0c9531184e62e51bf72241656384e4db"
     },
     {
       "path": "loop-cowork/README.md",

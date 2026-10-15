@@ -48,12 +48,12 @@ ASAR_ROOT="/path/to/extracted-app-asar"
 INVENTORY="/path/to/private/color-inventory.json"
 OUTPUT="/path/to/generated-color-catalog"
 
-python3 "$TOOLS/extract_design_tokens.py" \
+python3 -B "$TOOLS/extract_design_tokens.py" \
   --resources "$RESOURCES" \
   --asar-root "$ASAR_ROOT" \
   --output "$INVENTORY"
 
-python3 "$TOOLS/build_color_catalog.py" \
+python3 -B "$TOOLS/build_color_catalog.py" \
   --inventory "$INVENTORY" \
   --resources "$RESOURCES" \
   --asar-root "$ASAR_ROOT" \
@@ -84,7 +84,7 @@ python3 "$TOOLS/build_color_catalog.py" \
 默认从 `ion/` 来源中选择唯一一个拥有完整 315 项根色阶的文件，**不硬编码带哈希的 CSS 文件名**。若出现多个候选，使用清单中确切的来源 ID 或路径：
 
 ```sh
-python3 "$TOOLS/build_color_catalog.py" \
+python3 -B "$TOOLS/build_color_catalog.py" \
   --inventory "$INVENTORY" --resources "$RESOURCES" \
   --asar-root "$ASAR_ROOT" --output "$OUTPUT" \
   --primary-source "ion/assets/your-selected-source.css"
@@ -134,7 +134,7 @@ Claude Desktop Linux 2.37337.1 的验证结果：
 ### 1. 无产品文件的单元测试
 
 ```sh
-python3 -m unittest discover -s "$TOOLS/tests" -p 'test_*.py' -v
+python3 -B -m unittest discover -s "$TOOLS/tests" -p 'test_*.py' -v
 ```
 
 覆盖原创最小输入、315 项色阶、明暗配置与层顺序、Legacy 桥接、透明度、未求值表达式、输入校验、哈希及字节锚点篡改、路径穿越/符号链接、模板转义、CLI 移动到其他目录后执行、带空格路径以及 `python -O` 下仍然有效的验证。
@@ -144,7 +144,7 @@ python3 -m unittest discover -s "$TOOLS/tests" -p 'test_*.py' -v
 你需要另行持有原清单和原 `color-catalog.json`，两者均不随工具包附送。
 
 ```sh
-python3 "$TOOLS/tests/verify_baseline.py" \
+python3 -B "$TOOLS/tests/verify_baseline.py" \
   --inventory "/path/to/private/original-design-token-taxonomy.json" \
   --baseline "/path/to/private/original-color-catalog.json" \
   --resources "$RESOURCES" \
@@ -177,7 +177,7 @@ node tests/test_browser_dom.cjs "$OUTPUT/index.html"
 - `Cannot choose a unique complete ion palette`：候选缺失或不唯一；检查输入，必要时明确指定 `--primary-source`。
 - `Expected 1341 records`：输入版本或配置结构发生变化；先复核差异，再决定期望值。
 
-CLI 校验失败以非零状态退出并给出错误。执行 `python3 "$TOOLS/build_color_catalog.py" --help` 或提取器的 `--help` 可查看全部参数。
+CLI 校验失败以非零状态退出并给出错误。执行 `python3 -B "$TOOLS/build_color_catalog.py" --help` 或提取器的 `--help` 可查看全部参数。
 
 ## 可选：接入已核验的相对色派生层
 
@@ -196,7 +196,7 @@ CLI 校验失败以非零状态退出并给出错误。执行 `python3 "$TOOLS/b
 也可只对已经发布的紧凑 JSON 和离线页面追加解析层，无需重新取得源码：
 
 ```sh
-python3 "$TOOLS/apply_catalog_overlay.py" \
+python3 -B "$TOOLS/apply_catalog_overlay.py" \
   --catalog "/path/to/original/color-catalog.json" \
   --browser "/path/to/original/index.html" \
   --overlay "$TOOLS/reviewed-resolution-overlay.json" \
@@ -208,7 +208,7 @@ python3 "$TOOLS/apply_catalog_overlay.py" \
 本书已发布的紧凑JSON、当前HTML与随附overlay就足够复现，不需要私有全表或原CSS。在本书根目录运行：
 
 ```sh
-python3 04-Extracted-Core-Code-And-Scripts/core-code-lab/color-tools/apply_catalog_overlay.py \
+python3 -B 04-Extracted-Core-Code-And-Scripts/core-code-lab/color-tools/apply_catalog_overlay.py \
   --output /tmp/claude-color-catalog-rebuilt
 ```
 
@@ -217,9 +217,9 @@ python3 04-Extracted-Core-Code-And-Scripts/core-code-lab/color-tools/apply_catal
 新增测试（沿用本节已有环境，无需额外依赖）：
 
 ```sh
-python3 -m unittest discover -s "$TOOLS/tests" -p 'test_*.py' -v
+python3 -B -m unittest discover -s "$TOOLS/tests" -p 'test_*.py' -v
 node "$TOOLS/tests/test_resolution_browser_dom.cjs" "/path/to/annotated-output/index.html"
-python3 "$TOOLS/tests/verify_resolution_baseline.py" \
+python3 -B "$TOOLS/tests/verify_resolution_baseline.py" \
   --baseline "/path/to/original/color-catalog.json" \
   --annotated "/path/to/annotated-output/color-catalog.json" \
   --baseline-browser "/path/to/original/index.html" \

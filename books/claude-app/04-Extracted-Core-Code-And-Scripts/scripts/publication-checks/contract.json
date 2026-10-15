@@ -86,6 +86,7 @@
   "manifests": [
     "05-Automated-Reverse-Toolkit/manifest.json",
     "02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/validation.json",
-    "01-Frontend-Design-And-HTML-Templates/interactive-lessons/attachment-pipeline/validation.json"
+    "01-Frontend-Design-And-HTML-Templates/interactive-lessons/attachment-pipeline/validation.json",
+    "04-Extracted-Core-Code-And-Scripts/core-code-lab/manifest.json"
   ]
 }

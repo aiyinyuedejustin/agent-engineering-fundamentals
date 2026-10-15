@@ -22,7 +22,7 @@ python3 -B -m unittest -v test_worked_cases.py
 node --test context_budget*.test.mjs
 ```
 
-两个测试入口分别为 17 个 Python 测试（6 个回合组合案例、11 个 MCP 绑定案例）和 11 个 Node 测试。测试数仅属于这三个新增案例，不应与产品验证、前端工作台或六套 HTML 模板的测试合并表述。
+两个测试入口分别为 17 个 Python 测试（6 个回合组合案例、11 个 MCP 绑定案例）和 12 个 Node 测试。测试数仅属于这三个新增案例，不应与产品验证、前端工作台或六套 HTML 模板的测试合并表述。
 
 ## 模型边界
 

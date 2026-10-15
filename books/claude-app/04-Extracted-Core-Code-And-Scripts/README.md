@@ -45,7 +45,7 @@ python3 -B run_book_tests.py --skills
 
 前端检查另有独立口径：交互工作台为 46+32 项模拟 DOM、6+10 项静态检查及 6 项滚动容器回归，共 100 项检查；六套 HTML 模板为 80 项基础、25 项边界、8 项预览生命周期、8 项文档导航及 31 项当前章节检查，共 152 项静态/模拟 DOM 检查。它们使用可选开发依赖，均未混入本命令，也不代表浏览器绘制、真实中文输入法或辅助技术验收。浏览器记录须同时注明对应提交、视口和实际覆盖场景。
 
-- [原生、语音与坐标实验](native-voice-geometry/README.md)：音频分帧、播放账本、目标身份、显示器/PDF 变换；61 项测试含 360 组矩阵往返。
+- [原生、语音与坐标实验](native-voice-geometry/README.md)：音频分帧、播放账本、目标身份、显示器/PDF 变换；71 项测试含 360 组矩阵往返。
 
 跨版本的受限解包、快照与差分另见 [自动逆向工具箱](../05-Automated-Reverse-Toolkit/README.md)。
 
@@ -59,7 +59,7 @@ python3 -B run_book_tests.py --skills
 - [三个异步边界实验](async-reading-primer/README.md)：19 项确定性测试与逐步预测题。
 - [遥测指标实验](../02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab/README.md)：74 项测试，从合成事件重算指标、隔离时间矛盾并保留筛选前分母。
 
-- [出版物完整性检查器](scripts/publication-checks/README.md)：只读检查必需目录、阅读链接与三份已登记清单；39 项合成测试，输出结构化报告。
+- [出版物完整性检查器](scripts/publication-checks/README.md)：只读检查必需目录、阅读链接与四份已登记清单；40 项合成测试，输出结构化报告。
 
 - [条件写入与流式工作粒度](worked-cases/concurrency-and-streaming/README.md)：27项实现测试与16项独立合同复核，覆盖旧快照覆盖、重基、历史回执，以及大输入块的分片检查点。
 

@@ -46,7 +46,28 @@ class Fixture(unittest.TestCase):
         groups = {x["name"]: x["paths"] for x in contract["required"]}
         for group, count in (("six_templates", 6), ("sixteen_core_chapters", 16), ("three_supplement_chapters", 3), ("seven_mechanism_skills", 7)):
             self.assertEqual(len(groups[group]), count)
-        self.assertEqual(len(contract["manifests"]), 3)
+        self.assertEqual(len(contract["manifests"]), 4)
+        self.assertIn("04-Extracted-Core-Code-And-Scripts/core-code-lab/manifest.json", contract["manifests"])
+
+    def test_registered_core_manifest_catches_new_overlay_drift(self):
+        contract = checker.validate_contract(json.loads((HERE / "contract.json").read_text()))
+        manifest_path = "04-Extracted-Core-Code-And-Scripts/core-code-lab/manifest.json"
+        self.assertIn(manifest_path, contract["manifests"])
+        self.contract["manifests"] = [manifest_path]
+        folder = str(Path(manifest_path).parent)
+        source = self.write(folder + "/color-tools/resolution_overlay.py", "# synthetic source\n")
+        raw = source.read_bytes()
+        self.write(manifest_path, json.dumps({"format_version": 1, "files": [{
+            "path": "color-tools/resolution_overlay.py", "bytes": len(raw),
+            "sha256": hashlib.sha256(raw).hexdigest(), "source": "original-integration", "copy": "new"
+        }]}))
+        clean = self.run_check()
+        self.assertEqual(clean["status"], "passed", clean)
+        self.assertEqual(clean["manifests"][0]["matched"], 1)
+        source.write_text("# synthetic drift!\n", encoding="utf-8")
+        dirty = self.run_check()
+        self.assertEqual(dirty["status"], "failed", dirty)
+        self.assertIn("manifest_hash_drift", self.codes(dirty))
 
     def test_duplicate_headings_and_collision_suffix(self):
         self.write("README.md", "# Hello\n# Hello\n# Hello-1\n# Hello\n[x](#hello) [x](#hello-1) [x](#hello-1-1) [x](#hello-2)\n")

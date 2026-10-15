@@ -7,9 +7,9 @@
 环境：Node.js 20+、Python 3.10+。下面的命令均从本目录运行；核心测试无需安装 npm 或 pip 依赖，不联网。Windows 可用 `python` 替换 `python3`。
 
 ```sh
-python3 verify_manifest.py
-python3 run_tests.py
-python3 run_tests.py --demos
+python3 -B verify_manifest.py
+python3 -B run_tests.py
+python3 -B run_tests.py --demos
 ```
 
 第一个命令核验交付文件和 SHA-256。第二个运行五个模块的全部无产品依赖测试。第三个先测试，再运行四个合成数据演示。测试失败会返回非零退出状态；不会把可选、未运行的检查算作通过。可以从任意工作目录调用这两个脚本的绝对路径。
@@ -62,4 +62,4 @@ python3 -B -m unittest discover -s color-tools/tests -p 'test_*.py' -v
 
 `manifest.json` 列出每个交付文件的相对路径、字节数、SHA-256 和来源类别。原样复制文件可与源哈希直接核对；模块 README 的命令路径经过可移植性调整，新增入口、脚本和演示标记为原创整合。清单本身不递归列入哈希。
 
-本目录不附安装包、bundle、原始 CSS、产品字体、私有证据、原始提取清单、生成结果、测试日志、`node_modules` 或 Python 缓存。不要把自行取得的样本或生成产物放回交付目录。完整性核验会报告新增或缺失文件；依赖安装和本地改写应在工作副本中完成。
+本目录不附安装包、bundle、原始 CSS、产品字体、私有证据、原始提取清单、生成结果、测试日志、`node_modules` 或 Python 缓存。不要把自行取得的样本或生成产物放回交付目录。完整性核验会报告新增或缺失文件；依赖安装和本地改写应在工作副本中完成。Python 命令使用 -B 避免导入产生 __pycache__；已有缓存不会被 -B 删除。发布前应在仅含拟发布文件的干净检出或导出快照中核验，不将本地缓存加入清单，也不忽略其他未知文件。
