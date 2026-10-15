@@ -9,7 +9,7 @@
 ## 一张图：安装到调用的五道门
 
 ```mermaid
-flowchart LR
+flowchart TB
     Package[扩展包与清单] --> Installed[已安装]
     Installed --> Enable{用户或策略启用?}
     Enable -->|是| Config{配置有效?}
