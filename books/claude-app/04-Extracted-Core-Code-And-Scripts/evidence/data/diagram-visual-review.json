@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-15",
+  "finalized": true,
+  "scope": "Selected first Mermaid diagram per volume and both replacement diagrams where split, plus the first SVG in volume18; not all book diagrams.",
+  "source_basis": "Live GitHub diagram inspection in our cloud Chrome; original screenshots are separate evidence from CSS viewport measurements.",
+  "default_pass_criteria": [
+    "Actual GitHub README rendering",
+    "Readable labels, connections and arrowheads at default content width",
+    "Normal vertical scrolling allowed",
+    "Expanded-only readability or partial recovery does not qualify"
+  ],
+  "records": [
+    {
+      "volume": 1,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "7dba9f9d2b83ff8d77395c6d69fb837606674a56",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/01-System-Architecture/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7dba9f9d2b83ff8d77395c6d69fb837606674a56/books/claude-app/02-Illustrated-Deep-Dive-Book/01-System-Architecture/README.md"
+    },
+    {
+      "volume": 2,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "split_lr_into_two_tb",
+      "revision": "74a5cb333f1b9a4ab86de43de24766b74eab1c49",
+      "default_readability": "passed",
+      "note": "工具路由图右下边框与控件轻微重叠，无文字或箭头遮挡。",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/02-Agent-Loop-Engine/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/74a5cb333f1b9a4ab86de43de24766b74eab1c49/books/claude-app/02-Illustrated-Deep-Dive-Book/02-Agent-Loop-Engine/README.md"
+    },
+    {
+      "volume": 3,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "74a5cb333f1b9a4ab86de43de24766b74eab1c49",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/74a5cb333f1b9a4ab86de43de24766b74eab1c49/books/claude-app/02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md"
+    },
+    {
+      "volume": 4,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "lr_to_tb",
+      "revision": "7190178a34fdb09a75160f12148162785f4938d1",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7190178a34fdb09a75160f12148162785f4938d1/books/claude-app/02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md"
+    },
+    {
+      "volume": 5,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "lr_to_tb",
+      "revision": "7190178a34fdb09a75160f12148162785f4938d1",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7190178a34fdb09a75160f12148162785f4938d1/books/claude-app/02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md"
+    },
+    {
+      "volume": 6,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "lr_to_tb",
+      "revision": "1f0f2727ebc21073a7f79c734abf44282c35c274",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/06-MCP-Host-Internals/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/1f0f2727ebc21073a7f79c734abf44282c35c274/books/claude-app/02-Illustrated-Deep-Dive-Book/06-MCP-Host-Internals/README.md"
+    },
+    {
+      "volume": 7,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "split_lr_into_two_tb",
+      "revision": "7190178a34fdb09a75160f12148162785f4938d1",
+      "default_readability": "passed",
+      "note": "边框贴近控件，无文字遮挡。",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7190178a34fdb09a75160f12148162785f4938d1/books/claude-app/02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md"
+    },
+    {
+      "volume": 8,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "7dba9f9d2b83ff8d77395c6d69fb837606674a56",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/08-Conversation-Tree-And-Streaming/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7dba9f9d2b83ff8d77395c6d69fb837606674a56/books/claude-app/02-Illustrated-Deep-Dive-Book/08-Conversation-Tree-And-Streaming/README.md"
+    },
+    {
+      "volume": 9,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "74a5cb333f1b9a4ab86de43de24766b74eab1c49",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/74a5cb333f1b9a4ab86de43de24766b74eab1c49/books/claude-app/02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md"
+    },
+    {
+      "volume": 10,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "74a5cb333f1b9a4ab86de43de24766b74eab1c49",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/74a5cb333f1b9a4ab86de43de24766b74eab1c49/books/claude-app/02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md"
+    },
+    {
+      "volume": 11,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "7190178a34fdb09a75160f12148162785f4938d1",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/11-Performance-And-Streaming/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7190178a34fdb09a75160f12148162785f4938d1/books/claude-app/02-Illustrated-Deep-Dive-Book/11-Performance-And-Streaming/README.md"
+    },
+    {
+      "volume": 12,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "7190178a34fdb09a75160f12148162785f4938d1",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/7190178a34fdb09a75160f12148162785f4938d1/books/claude-app/02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/README.md"
+    },
+    {
+      "volume": 13,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "passed",
+      "note": "串行默认正文完整通过；字体偏小但可辨，箭头清楚、无控件遮挡；未展开、未刷新。先前灰底仅记为当时渲染异常，原因未定。",
+      "css_viewport": "not-recorded",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/README.md"
+    },
+    {
+      "volume": 14,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "lr_to_tb",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "passed",
+      "note": "",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/14-Security-And-Guardrails/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/14-Security-And-Guardrails/README.md"
+    },
+    {
+      "volume": 15,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "lr_to_tb",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "passed",
+      "note": "纵向布局已完成串行默认正文复验。",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/15-Voice-And-Vision-Math/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/15-Voice-And-Vision-Math/README.md"
+    },
+    {
+      "volume": 16,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "passed",
+      "note": "原 TD 未改；串行默认正文复验通过，未展开、未崩溃。先前 iframe 异常仅是运行时现象，不作根因归属。",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/16-Resilience-And-Quota/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/16-Resilience-And-Quota/README.md"
+    },
+    {
+      "volume": 17,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "passed_after_reload",
+      "note": "首次出现 undefined/render 红框并降级显示源码；正常重新打开并普通刷新一次后恢复，默认视图完整滚动上中下通过。字体略小但可读，分支箭头清楚，无截字或控件遮挡；未展开或缩放。运行时错误原因未定。",
+      "css_viewport": "not-recorded",
+      "device_pixel_ratio": "not-recorded",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md"
+    },
+    {
+      "volume": 18,
+      "selection": "first_illustration_svg",
+      "layout_change": "none",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "not_applicable",
+      "note": "本地主 README 确认 0 Mermaid；首张已有 SVG 完整滚动通过，主标签和箭头清楚、小字偏细小但可读、无遮挡；未展开或缩放。",
+      "css_viewport": "not-recorded",
+      "device_pixel_ratio": "not-recorded",
+      "svg_default_readability": "passed",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md"
+    },
+    {
+      "volume": 19,
+      "selection": "first_mermaid_or_split_replacements",
+      "layout_change": "none",
+      "revision": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+      "default_readability": "passed",
+      "note": "首幅 Mermaid 完整滚动通过，三分支实线与回流虚线清楚，控件位于空白处；未展开或缩放。",
+      "css_viewport": "not-recorded",
+      "device_pixel_ratio": "not-recorded",
+      "source_path": "books/claude-app/02-Illustrated-Deep-Dive-Book/19-Mobile-Surfaces/README.md",
+      "source_url": "https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/71a5eacd4da73a6df35ea01c86dcbe1bcb979148/books/claude-app/02-Illustrated-Deep-Dive-Book/19-Mobile-Surfaces/README.md"
+    }
+  ],
+  "illustrations": [
+    {
+      "target": "assets/screenshots/loop-diagram-before-7dba9f9.jpg",
+      "revision": "7dba9f9d2b83ff8d77395c6d69fb837606674a56",
+      "format": "JPEG",
+      "width": 1173,
+      "height": 751,
+      "bytes": 116235,
+      "sha256": "fa1780d282d3386469b3c5c05e8685357b39487bde78ab67e49bfc08d4f633ad",
+      "exif_entries": 0,
+      "pixel_review": "visually_inspected"
+    },
+    {
+      "target": "assets/screenshots/loop-main-chain-74a5cb3.jpg",
+      "revision": "74a5cb333f1b9a4ab86de43de24766b74eab1c49",
+      "format": "JPEG",
+      "width": 1173,
+      "height": 751,
+      "bytes": 78301,
+      "sha256": "bfb8a7dfa6a95318513f4602c104bbfb8a90d01a4de238ab9e3f70356bf017ec",
+      "exif_entries": 0,
+      "pixel_review": "visually_inspected"
+    }
+  ],
+  "syntax_validation": {
+    "source_commit": "71a5eacd4da73a6df35ea01c86dcbe1bcb979148",
+    "mermaid_version": "12.2.0",
+    "source_occurrences": 86,
+    "unique_diagrams": 76,
+    "unique_pass": 76,
+    "unique_fail": 0,
+    "rendered_by_this_parser_check": 0,
+    "note": "Syntax checks are separate from this selected-diagram visual review."
+  },
+  "finalized_scope": "This batch of selected diagrams only; not all diagrams in the book.",
+  "capture_dimensions": {
+    "example_jpegs_pixels": [
+      1173,
+      751
+    ],
+    "other_captures_varied": true,
+    "css_viewport": "not-recorded",
+    "device_pixel_ratio": "not-recorded"
+  }
+}

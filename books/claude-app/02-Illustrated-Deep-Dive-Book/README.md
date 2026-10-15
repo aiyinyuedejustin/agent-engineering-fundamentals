@@ -68,3 +68,5 @@
 
 [返回本书导航](../README.md) · [先看前端设计](../01-Frontend-Design-And-HTML-Templates/README.md)
 
+
+[图表阅读与实际渲染检查](../04-Extracted-Core-Code-And-Scripts/evidence/diagram-visual-review.md)：各卷选定图的默认正文可读性、纵向重排及前后示例。
