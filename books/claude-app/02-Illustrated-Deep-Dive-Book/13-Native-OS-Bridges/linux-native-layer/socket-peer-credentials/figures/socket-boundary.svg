@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="640" viewBox="0 0 1120 640" role="img" aria-label="Observed Linux socket credential check and result boundary">
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#44596a"/></marker><style>text{font-family:Arial,sans-serif;fill:#203342}.h{font-size:24px;font-weight:700}.t{font-size:18px}.s{font-size:15px}.box{fill:#eef4f8;stroke:#90a7ba;stroke-width:1.5}.line{fill:none;stroke:#44596a;stroke-width:2}</style></defs>
+<rect width="1120" height="640" fill="#fff"/><text x="35" y="45" class="h">Linux x86-64：同 UID socket 检查</text><text x="35" y="74" class="s">原创证据图 · 静态关联与选定分支，不是运行轨迹</text>
+<rect class="box" x="35" y="110" width="260" height="100" rx="10"/><text x="55" y="145" class="t">JS 方法注册</text><text x="55" y="177" class="s">connectUnixSocketSameUid</text>
+<rect class="box" x="360" y="110" width="290" height="100" rx="10"/><text x="380" y="145" class="t">回调 → 异步任务</text><text x="380" y="177" class="s">两处函数表关联</text>
+<rect class="box" x="720" y="110" width="360" height="100" rx="10"/><text x="740" y="145" class="t">socket 工作函数</text><text x="740" y="177" class="s">connect → fcntl → peer 凭据检查</text>
+<path marker-end="url(#a)" class="line" d="M295 160H360"/><path marker-end="url(#a)" class="line" stroke-dasharray="7 5" d="M650 160H720"/>
+<rect class="box" x="360" y="280" width="360" height="100" rx="10"/><text x="380" y="315" class="t">getsockopt(SO_PEERCRED)</text><text x="380" y="347" class="s">查询成功：比较 peer UID 与 geteuid()</text><path marker-end="url(#a)" class="line" d="M900 210V250H540V280"/>
+<rect x="35" y="440" width="300" height="105" rx="10" fill="#fff0ec" stroke="#cb9c8f"/><text x="55" y="475" class="t">查询失败 / UID 不符</text><text x="55" y="505" class="s">EPEERCRED / EPERM；close(fd)</text><path marker-end="url(#a)" class="line" d="M400 380V410H185V440"/>
+<rect x="400" y="440" width="300" height="105" rx="10" fill="#edf7ee" stroke="#98b59b"/><text x="420" y="475" class="t">UID 相等</text><text x="420" y="505" class="s">交出 fd，跳过本地 close</text><path marker-end="url(#a)" class="line" d="M550 380V440"/>
+<rect class="box" x="765" y="440" width="315" height="105" rx="10"/><text x="785" y="475" class="t">完成回调 → JS wrapper</text><text x="785" y="505" class="s">整数结果 → new net.Socket</text><path marker-end="url(#a)" class="line" stroke-dasharray="7 5" d="M700 490H765"/>
+<text x="35" y="585" class="s">虚线：结构性交付；调度、取消和交付失败的所有权处理仍需分别核对。</text><text x="35" y="610" class="s">同 UID 只约束本地 peer 身份；窗口、动作和应用权限由其他层判断。</text>
+</svg>
