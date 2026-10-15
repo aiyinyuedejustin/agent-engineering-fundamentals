@@ -1,4 +1,4 @@
-"""Original inert ASAR subset reader. No target import, execution or sidecar reads.
+"""Original inert ASAR subset reader. No target import or execution; explicit, exact sidecar opt-in only.
 
 Canonical Electron Pickle framing only. Quiescent inputs and a trusted, stable
 output parent are required. All archive-derived names and ranges are validated
@@ -7,7 +7,7 @@ host does not expose an appropriate primitive. See SUPPORT.md for exclusions.
 """
 from __future__ import annotations
 
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 import ctypes
 import errno
 import hashlib
@@ -23,6 +23,7 @@ import tempfile
 import unicodedata
 
 from .safeio import Limits, ToolkitError, safe_member
+from .asar_sidecar import Sidecar
 
 CHUNK = 64 * 1024
 MAX_PATH_BYTES = 4096
@@ -339,7 +340,7 @@ def atomic_publish(source: Path, destination: Path):
 
 
 def _copy_entry(stream, entry, destination):
-    stream.seek(entry["start"])
+    stream.seek(entry.get("start", 0))
     remaining = entry["size"]
     whole = hashlib.sha256()
     block_hash = hashlib.sha256()
@@ -365,10 +366,11 @@ def _copy_entry(stream, entry, destination):
             raise ToolkitError("ASAR empty-member block integrity mismatch")
         if whole.hexdigest() != integrity["hash"].lower():
             raise ToolkitError("ASAR member integrity mismatch")
+    return whole.hexdigest()
 
 
-def extract_asar(archive: Path, output: Path, limits=Limits()):
-    """Extract the strict subset; all exclusions reject the entire operation."""
+def extract_asar(archive: Path, output: Path, limits=Limits(), *, unpacked_dir=None):
+    """Strict default; explicit companion opts into exact declared scope only."""
     _validate_limits(limits)
     output = Path(output).absolute()
     if output.exists() or output.is_symlink():
@@ -380,22 +382,36 @@ def extract_asar(archive: Path, output: Path, limits=Limits()):
     try:
         with _source(Path(archive), limits) as (stream, size):
             entries, metadata = _admit(stream, size, limits)
-            if metadata["exclusions"]:
+            if metadata["exclusions"] and unpacked_dir is None:
                 reasons = sorted({e["reason"] for e in metadata["exclusions"]})
                 raise ToolkitError("ASAR exclusions prevent complete extraction: " + ", ".join(reasons)
                                    + ". Use inspect-asar for explicit coverage; no sidecars were read")
-            temporary = Path(tempfile.mkdtemp(prefix=".reverse-toolkit-asar-", dir=output.parent))
-            for entry in entries:
-                destination = temporary / entry["path"]
-                if entry["kind"] == "directory":
-                    destination.mkdir(mode=0o700, parents=True, exist_ok=True)
-                else:
-                    destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
-                    _copy_entry(stream, entry, destination)
+            if any(e["kind"] == "link" for e in entries):
+                raise ToolkitError("ASAR link exclusions prevent complete extraction even with an explicit sidecar")
+            companion = (Sidecar(unpacked_dir, entries, metadata["packed_bytes"], limits, output)
+                         if unpacked_dir is not None else nullcontext(None))
+            with companion as sidecar:
+                temporary = Path(tempfile.mkdtemp(prefix=".reverse-toolkit-asar-", dir=output.parent))
+                for entry in entries:
+                    destination = temporary / entry["path"]
+                    if entry["kind"] == "directory":
+                        destination.mkdir(mode=0o700, parents=True, exist_ok=True)
+                    else:
+                        destination.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
+                        if entry["unpacked"]:
+                            with sidecar.source(entry) as source:
+                                sidecar.observed_hashes[entry["path"]] = _copy_entry(source, entry, destination)
+                        else:
+                            _copy_entry(stream, entry, destination)
+                if sidecar is not None:
+                    metadata.update({"sidecar": sidecar.metadata(),
+                                     "extraction_scope": "asar-declared-packed-and-unpacked-v1",
+                                     "container_exclusions": metadata["exclusions"],
+                                     "exclusions": [], "extractable_within_subset": True})
         # Source identity is rechecked by _source BEFORE any publication.
         atomic_publish(temporary, output)
         temporary = None
-        metadata.update({"expanded_bytes": metadata["packed_bytes"],
+        metadata.update({"expanded_bytes": metadata["packed_bytes"] + metadata.get("sidecar", {}).get("bytes", 0),
                          "declared_member_integrity_verified": True,
                          "files_with_declared_integrity": sum(e.get("integrity") is not None for e in entries)})
         return metadata

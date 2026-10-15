@@ -191,14 +191,19 @@ class VersionDiffTests(unittest.TestCase):
         self.assertFalse((self.old / "report").exists())
         self.assert_clean()
 
-    def test_unsupported_packaging_and_invalid_zip_fail_with_manual_guidance(self):
+    def test_unsupported_packaging_guidance_is_specific_to_adapter(self):
         for extension in ("asar", "dmg", "deb", "rpm", "7z", "tar", "exe", "zip"):
             with self.subTest(extension=extension):
                 path = self.base / ("unsupported." + extension)
                 path.write_bytes(b"synthetic non-ZIP bytes")
                 result = self.run_cli(old=path)
                 self.assertEqual(result.returncode, 2)
-                self.assertIn("extract manually with a trusted tool", result.stderr)
+                if extension == "asar":
+                    self.assertIn("inspect-asar", result.stderr)
+                    self.assertIn("trusted source", result.stderr)
+                    self.assertNotIn("extract manually", result.stderr)
+                else:
+                    self.assertIn("extract manually with a trusted tool", result.stderr)
                 self.assert_clean()
 
     def test_bad_second_archive_cleans_successful_first_extraction(self):
@@ -227,6 +232,8 @@ class VersionDiffTests(unittest.TestCase):
         result = self.run_cli(new=archive)
         self.assertEqual(result.returncode, 2)
         self.assertIn("CRC", result.stderr)
+        self.assertIn("Never bypass integrity checks", result.stderr)
+        self.assertNotIn("extract manually", result.stderr)
         self.assert_clean()
 
     def test_traversal_and_zip_symlink_rejected_by_existing_adapter(self):

@@ -92,9 +92,10 @@ def main(argv=None):
     unpack.add_argument("--input", type=Path, required=True)
     unpack.add_argument("--output", type=Path, required=True)
     scan_options(unpack, rules=False)
-    asar = sub.add_parser("unpack-asar", help="Extract the strict bounded ASAR subset; no links or sidecars")
+    asar = sub.add_parser("unpack-asar", help="Extract bounded ASAR; explicit exact sidecar opt-in, no links")
     asar.add_argument("--input", type=Path, required=True)
     asar.add_argument("--output", type=Path, required=True)
+    asar.add_argument("--unpacked-dir", type=Path, help="Explicit exact companion directory; never guessed")
     scan_options(asar, rules=False)
     inspect = sub.add_parser("inspect-asar", help="Read-only ASAR compatibility report with explicit exclusions")
     inspect.add_argument("--input", type=Path, required=True)
@@ -128,9 +129,13 @@ def main(argv=None):
             write_report(out, report)
             print(json.dumps({"report_directory": str(out), "uncertain_candidates": len(report["uncertain_candidates"])}))
         else:
-            out = prepare_output(args.output, [args.input])
-            adapter = extract_asar if args.command == "unpack-asar" else extract_zip
-            print(json.dumps(adapter(args.input, out, limits), sort_keys=True))
+            companion = getattr(args, "unpacked_dir", None)
+            out = prepare_output(args.output, [args.input] + ([companion] if companion is not None else []))
+            if args.command == "unpack-asar":
+                result = extract_asar(args.input, out, limits, unpacked_dir=companion)
+            else:
+                result = extract_zip(args.input, out, limits)
+            print(json.dumps(result, sort_keys=True))
         return 0
     except (ToolkitError, OSError, ValueError, RuntimeError, RecursionError, zipfile.BadZipFile, zipfile.LargeZipFile) as exc:
         print("error: " + str(exc), file=sys.stderr)

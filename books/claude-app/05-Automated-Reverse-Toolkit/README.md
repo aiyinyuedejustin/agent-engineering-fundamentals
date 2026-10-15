@@ -25,7 +25,7 @@ python3 -B reverse_toolkit.py compare --old tests/fixtures/v1 --new tests/fixtur
 
 ## 真正一条命令：两个本地版本 → 私有解包 + 快照 + 差分
 
-`diff-versions.py` 把准备 ZIP/ASAR 输入和生成差分合成一次调用。旧、新输入各自可以是已经解包的目录，或满足安全子集的本地 ZIP/ASAR；这些类型可以混用。ASAR 的外置 companion 和链接会导致整次比较拒绝，先用 `inspect-asar` 查看覆盖缺口。脚本应与 `reverse_toolkit.py`、`toolkit/` 放在同一目录。
+`diff-versions.py` 把准备 ZIP/ASAR 输入和生成差分合成一次调用。旧、新输入各自可以是已经解包的目录，或满足安全子集的本地 ZIP/ASAR；这些类型可以混用。ASAR 默认拒绝外置 companion；可通过 `--old-unpacked-dir` / `--new-unpacked-dir` 显式指定并严格核验精确配套目录。链接始终拒绝，先用 `inspect-asar` 查看容器声明与覆盖缺口。脚本应与 `reverse_toolkit.py`、`toolkit/` 放在同一目录。
 
 ```sh
 python3 -B diff-versions.py "/path/to/old.zip" "/path/to/new.zip" --output "/path/to/private/new-version-diff"
@@ -53,7 +53,7 @@ new-version-diff/
 ```
 
 - 原目录只读，不会复制进输出。ZIP 通过原工具箱的 `safeio.extract_zip` 提取，随后调用同一套 `snapshot`、`diff_snapshots` 和报告写入逻辑；没有另一套扫描器。相同目录布局、字节、标签与规则下，目录和 ZIP 入口的四个报告文件字节相同。ZIP 带有额外顶层目录时不会自动剥掉它；先保证两版本输入范围一致。
-- `.asar` 常规文件选择受限 ASAR 字节适配器，其余常规文件选择受限 ZIP 适配器；扩展名不证明格式有效。ASAR 支持精确共享字节范围并逐份计入总量，拒绝部分重叠、链接和外置 companion；只读 `inspect-asar` 明确列出排除项，绝不把缺失内容当成删功能。完整约定见 [SUPPORT.md](SUPPORT.md)。**DMG、DEB、RPM、7z、TAR、原生安装器等没有内置解包流程**，请先自行使用受信任工具得到目录。脚本不下载、不运行安装器、REA、包管理器、命令行工具或输入中的程序，不自动递归解包。
+- `.asar` 常规文件选择受限 ASAR 字节适配器，其余常规文件选择受限 ZIP 适配器；扩展名不证明格式有效。ASAR 支持精确共享字节范围并逐份计入总量，拒绝部分重叠和链接；外置 companion 默认拒绝，仅支持显式精确配套合同；只读 `inspect-asar` 明确列出排除项，绝不把缺失内容当成删功能。完整约定见 [SUPPORT.md](SUPPORT.md)。**DMG、DEB、RPM、7z、TAR、原生安装器等没有内置解包流程**，请先自行使用受信任工具得到目录。脚本不下载、不运行安装器、REA、包管理器、命令行工具或输入中的程序，不自动递归解包。
 - 固定使用审计版 `Limits()` 默认值：档案 256 MiB、central directory 16 MiB、20,000 条目、单文件 64 MiB、总量 512 MiB、深度 64、压缩比 200:1、清单记录 200,000。各输入分别受这些上限约束；此入口不提供提高容量的开关。可选 `--rules /path/to/rules.json` 使用同一套有界字面量规则验证；标签通过 `--old-label`、`--new-label` 指定，仍未认证。
 - `--output` 必须尚不存在，父目录必须已经存在，且输出不能在任一输入目录内，包括通过父目录符号链接指向输入的情况。不会覆盖旧输出或跟随输入根部、输出末尾的符号链接。输入内部链接沿用原扫描器的跳过与覆盖警告策略。
 - 先在输出父目录内创建私有暂存目录，所有提取、快照、差分及元数据成功后，才以原子不替换操作交付完整输出。报告目录也使用相同操作；若目标中途出现，会保留那个路径并撤销本次暂存。普通异常、解析失败或可捕获的中断会清理本次暂存。`SIGKILL`、断电或清理本身失败可能留下 `.diff-versions-*` 私有暂存，需要人工检查，不要误当成功结果。
@@ -100,7 +100,7 @@ python3 -B reverse_toolkit.py diff --old-snapshot "/path/to/private/old.json" --
 | 已解包目录 | 受限遍历、文件哈希、选定文本扩展名扫描 | 不证明来自完整/真实安装包 |
 | 普通 ZIP | `unpack-zip`，仅 stored/deflated、非加密、非 ZIP64、单卷 | 不支持所有 ZIP 变体或所有安装器 |
 | MSIX/AppX/APK 等 ZIP 容器 | 只有满足上述 ZIP 子集时，按普通字节容器提取 | 不验证平台签名、安装语义或应用行为 |
-| ASAR | `inspect-asar` 只读检查；`unpack-asar` 提取严格子集；精确共享范围逐份复制 | 链接/外置 companion 使提取整体拒绝；不认证发布方，见 [支持约定](SUPPORT.md) |
+| ASAR | `inspect-asar` 只读检查；`unpack-asar` 提取严格子集；精确共享范围逐份复制 | 链接一律拒绝，外置 companion 需显式选择并完整核验；不认证发布方，见 [支持约定](SUPPORT.md) |
 | DMG、DEB、RPM、7z、TAR、原生可执行文件 | **没有内置解包器**；自行用受信任工具得到目录后传入 | 不把扩展名当格式检测，不宣称跨平台解包 |
 
 受限 ZIP 命令：
@@ -207,7 +207,7 @@ python3 -B run_tests.py
 
 ## ASAR 子集与实际包边界
 
-先对每个输入运行 `inspect-asar`，查看 `extractable_within_subset` 和 `exclusions`。只读检查成功并不等于可以完整解包；只有没有链接或外置内容时，才适合继续尝试严格提取。它仍需核验声明的成员哈希和输入稳定性。没有跳过外置内容的开关，不能把遗漏的内容当作删功能。完整判读表见 [先检查 ASAR 再提取](SUPPORT.md#先检查-asar-再提取)。
+先对每个输入运行 `inspect-asar`，查看 `extractable_within_subset` 和 `exclusions`。只读检查成功并不等于可以完整解包。没有排除项时可继续默认严格提取；只有外置声明而没有链接时，可显式提供精确配套目录尝试提取。它仍需核验声明的成员哈希和输入稳定性。没有跳过外置内容或完整性校验的开关，不能把遗漏的内容当作删功能。完整判读表见 [先检查 ASAR 再提取](SUPPORT.md#先检查-asar-再提取)。
 
 ```sh
 python3 -B reverse_toolkit.py inspect-asar --input "/path/to/app.asar"
@@ -215,4 +215,16 @@ python3 -B reverse_toolkit.py unpack-asar --input "/path/to/app.asar" --output "
 python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --output "/path/to/private/new-asar-diff"
 ```
 
-三个既有 Linux/Windows/macOS 样本的元数据清点通过，均有 25 个精确共享范围别名，并分别有 3/6/10 个外置文件；未重新核验每个成员的实际哈希。严格提取全部在写出前拒绝，未创建输出目录；不能宣称这些官方包已可直接完整差分。外置配套目录策略仍待实现，当前仅合成 ASAR 端到端差分已通过。完整支持范围、来源和测试见 [SUPPORT.md](SUPPORT.md)、[ASAR-SOURCE-NOTES.md](ASAR-SOURCE-NOTES.md)、[ASAR-VALIDATION.md](ASAR-VALIDATION.md)。
+三个既有 Linux/Windows/macOS 样本的元数据清点通过，均有 25 个精确共享范围别名，并分别有 3/6/10 个外置文件；未重新核验每个成员的实际哈希。严格提取全部在写出前拒绝，未创建输出目录；不能宣称这些官方包已可直接完整差分。新增显式配套目录候选合同只用原创合成样本验证，尚待独立审查；本轮未读取或验证三个实际包的配套材料。完整支持范围、来源和测试见 [SUPPORT.md](SUPPORT.md)、[ASAR-SOURCE-NOTES.md](ASAR-SOURCE-NOTES.md)、[ASAR-VALIDATION.md](ASAR-VALIDATION.md)。
+
+
+### 显式 ASAR 配套目录候选接口
+
+```sh
+python3 -B reverse_toolkit.py unpack-asar --input "/path/to/app.asar" --unpacked-dir "/explicit/companion" --output "/private/new-tree"
+python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpacked-dir "/explicit/old" --new-unpacked-dir "/explicit/new" --output "/private/new-diff"
+```
+
+默认不读取任何 companion。显式 opt-in 后，只允许 ASAR 声明的外置文件、外置目录和必要祖先目录；缺失、额外内容（包括空目录）、链接/特殊文件、大小或声明哈希不匹配、输入变动都会整体失败，没有绕过开关。原子交付前才返回成功；失败不产出残缺差分。
+
+此候选实现目前只在 Linux 通过原创合成验证，需要 POSIX no-follow 与 descriptor-relative 原语，Windows sidecar 尚不支持。完整文件清单覆盖不等于完整应用或发布方认证；原生文件的语义不会因此被静态扫描器解析。详见 [显式配套目录合同](SUPPORT.md#显式配套目录精确匹配整体成功或整体失败)。

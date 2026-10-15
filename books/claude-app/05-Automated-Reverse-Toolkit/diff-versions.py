@@ -34,9 +34,41 @@ def input_kind(source: Path):
     raise ToolkitError("Inputs must be non-symlink directories or regular ZIP/ASAR files")
 
 
+def rejection_guidance(kind, error):
+    """Explain rejection without suggesting an integrity-check bypass."""
+    code = getattr(error, "code", "")
+    diagnostic = str(error)
+    if (code == "declared-integrity-failure" or (not code and (
+            "integrity mismatch" in diagnostic or (kind == "zip" and (
+                "CRC" in diagnostic or "size mismatch" in diagnostic))))):
+        target = "archive and exact matching companion" if kind == "asar" else "archive"
+        return (f"Stop: verify the {target} against a trusted source and check the declared "
+                "sizes and integrity metadata. Never bypass integrity checks, rewrite declarations, "
+                "or switch extraction tools to accept mismatched bytes.")
+    if kind != "asar":
+        return ("Only the strict ZIP subset is supported. For unsupported packaging, "
+                "extract manually with a trusted tool, then pass the directory.")
+    if code == "coverage-mismatch":
+        return ("Verify the selected archive and exact companion against a trusted source; "
+                "check the reported missing/extra/invalid paths and declared sizes. "
+                "Do not skip unmatched files or treat them as feature removals.")
+    if "changed" in code or (not code and "changed" in str(error)):
+        return ("The input changed. Verify a fresh, quiescent copy from a trusted source "
+                "before retrying; no partial comparison was published.")
+    if code == "unsupported-host-no-follow-primitives":
+        return ("Use a host with the required no-follow filesystem primitives. "
+                "Do not weaken the sidecar safety checks.")
+    if code in ("root-io-failure", "inventory-io-failure", "read-failure"):
+        return ("Check the explicit companion path and read access, then verify the selected "
+                "archive and companion against a trusted source. Unknown coverage is not completeness.")
+    return ("Use inspect-asar to review the archive declarations and exclusions, and verify "
+            "the selected input against a trusted source. Unresolved ASAR exclusions fail "
+            "the whole run; do not skip files or bypass validation.")
+
+
 def compare_versions(old: Path, new: Path, output: Path,
                      old_label="old-unverified-label", new_label="new-unverified-label",
-                     rules=None):
+                     rules=None, *, old_unpacked_dir=None, new_unpacked_dir=None):
     """Build privately, publish the whole run only after every step succeeds.
 
     Inputs and the output parent must be quiescent, isolated local paths.
@@ -45,7 +77,11 @@ def compare_versions(old: Path, new: Path, output: Path,
     """
     sources = (("old", old, old_label), ("new", new, new_label))
     kinds = {side: input_kind(source) for side, source, _ in sources}
-    out = prepare_output(output, [old, new])
+    companions = {"old": old_unpacked_dir, "new": new_unpacked_dir}
+    for side, companion in companions.items():
+        if companion is not None and kinds[side] != "asar":
+            raise ToolkitError(f"{side} unpacked-dir requires an ASAR input")
+    out = prepare_output(output, [old, new] + [p for p in companions.values() if p is not None])
     limits = Limits()  # Exactly the audited defaults; no capacity bypass flags.
     rules = load_rules(rules)
     stage = Path(tempfile.mkdtemp(prefix=".diff-versions-", dir=out.parent))
@@ -62,14 +98,14 @@ def compare_versions(old: Path, new: Path, output: Path,
             else:
                 root = inputs / side
                 try:
-                    adapter = extract_asar if kinds[side] == "asar" else extract_zip
-                    extraction = adapter(source, root, limits)
+                    if kinds[side] == "asar":
+                        extraction = extract_asar(source, root, limits, unpacked_dir=companions[side])
+                    else:
+                        extraction = extract_zip(source, root, limits)
                 except (ToolkitError, zipfile.BadZipFile, zipfile.LargeZipFile) as exc:
                     raise ToolkitError(
                         f"{side} input rejected by the bounded {kinds[side].upper()} adapter: {exc}. "
-                        "Only strict ZIP/ASAR subsets are supported; ASAR exclusions fail the whole run. "
-                        "For ASAR use inspect-asar to identify exclusions. For unsupported packaging, "
-                        "extract manually with a trusted tool, then pass the directory."
+                        + rejection_guidance(kinds[side], exc)
                     ) from exc
                 adapters[side] = {**extraction, "private_root": f"inputs/{side}"}
             inventories[side] = snapshot(root, label, limits, rules)
@@ -116,13 +152,16 @@ def main(argv=None):
     parser.add_argument("old", type=Path, help="Old unpacked directory or local ZIP/ASAR-subset archive")
     parser.add_argument("new", type=Path, help="New unpacked directory or local ZIP/ASAR-subset archive")
     parser.add_argument("--output", type=Path, required=True, help="New private run directory; its parent must exist")
+    parser.add_argument("--old-unpacked-dir", type=Path, help="Explicit exact companion for old ASAR only")
+    parser.add_argument("--new-unpacked-dir", type=Path, help="Explicit exact companion for new ASAR only")
     parser.add_argument("--old-label", default="old-unverified-label")
     parser.add_argument("--new-label", default="new-unverified-label")
     parser.add_argument("--rules", type=Path, help="Same bounded literal-rule JSON accepted by reverse_toolkit.py")
     args = parser.parse_args(argv)
     try:
         rules = load_rules(read_json(args.rules)) if args.rules else None
-        result = compare_versions(args.old, args.new, args.output, args.old_label, args.new_label, rules)
+        result = compare_versions(args.old, args.new, args.output, args.old_label, args.new_label, rules,
+                                  old_unpacked_dir=args.old_unpacked_dir, new_unpacked_dir=args.new_unpacked_dir)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 0
     except (ToolkitError, OSError, ValueError, RuntimeError, RecursionError,

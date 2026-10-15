@@ -17,13 +17,13 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --output "/p
 | 检查结果 | 接下来怎么做 | 能得出的结论 |
 |---|---|---|
 | `inspect-asar` 拒绝输入 | 停止；先查格式、路径、大小或范围错误 | 未通过本工具的元数据检查 |
-| 检查成功，`extractable_within_subset` 为 `false` | 查看 `exclusions`；不要继续假定能够完整提取 | 有链接或外置内容，当前严格提取会整体拒绝 |
+| 检查成功，`extractable_within_subset` 为 `false` | 查看 `exclusions`；有链接必须停止；只有外置声明时可提供明确配套目录再尝试 | 默认严格提取拒绝；配套内容尚未读取或验证 |
 | 检查成功，`extractable_within_subset` 为 `true` | 可尝试 `unpack-asar`；两版本都满足条件时可用 `diff-versions.py` | 元数据符合子集；成员哈希和读取时的输入稳定性仍待提取阶段验证 |
 | 严格提取成功 | 用同一范围的目录制作静态快照、比较版本 | 已提取所支持的打包内容；仍不证明完整应用、发布方身份或运行时行为 |
 
 `inspect-asar` 只返回容器身份、数量、明确排除的路径及兼容性元数据。它计算容器 SHA-256，但不读取 `.asar.unpacked` 外置配套目录、不跟随链接、不写出解包树，也不逐个验证成员哈希。输出不是功能快照，不能交给 `diff_snapshots`；`complete_application` 和 `publisher_authenticity_verified` 始终为 `false`。
 
-`unpack-asar` 只提取完全位于 ASAR 内的受支持内容（packed-only）。只要任一条目是链接或依赖外置配套内容（sidecar），整次提取就会失败，不交付残缺目录，也没有“跳过 sidecar”的开关。`diff-versions.py` 按不区分大小写的 `.asar` 后缀选择适配器，再验证实际字节；后缀不证明格式或来源。任一 ASAR 输入被拒绝，整个两版本任务都会在交付报告前撤销。其他普通文件输入仍使用 ZIP 适配器。
+`unpack-asar` 默认只提取完全位于 ASAR 内的受支持内容（packed-only）。未显式传入配套目录时，任一外置条目都会使整次提取失败。新增的 `--unpacked-dir` 只允许完整核验与选定 ASAR 声明精确匹配的配套内容；链接仍然一律拒绝。没有“跳过 sidecar”或“忽略完整性”的开关。`diff-versions.py` 按不区分大小写的 `.asar` 后缀选择适配器，再验证实际字节；后缀不证明格式或来源。任一 ASAR 输入被拒绝，整个两版本任务都会在交付报告前撤销。其他普通文件输入仍使用 ZIP 适配器。
 
 ## 支持的 ASAR 表示
 
@@ -35,7 +35,7 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --output "/p
 
 ## 明确拒绝或不处理的内容
 
-检查会列出链接和外置条目，提取会拒绝它们。目录的 `unpacked` 状态会传给子项；同一条目既标成外置又声明容器内偏移，连检查也会拒绝。未知元数据一律拒绝，包括硬链接、特殊文件、设备和 `mode` 扩展，不做宽松猜测。
+检查会列出链接和外置条目。提取始终拒绝链接；外置内容默认拒绝，仅可通过下述显式、精确配套合同纳入。目录的 `unpacked` 状态会传给子项；同一条目既标成外置又声明容器内偏移，连检查也会拒绝。未知元数据一律拒绝，包括硬链接、特殊文件、设备和 `mode` 扩展，不做宽松猜测。
 
 所有路径分量必须是可移植的相对名称。拒绝路径穿越、绝对路径、分量内分隔符、盘符/ADS 语法、控制字符、未配对 Unicode 代理码、保留设备名、空名称、末尾点或空格、重复 JSON 键，以及大小写或 Unicode 归一化后的路径冲突。
 
@@ -54,7 +54,7 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --output "/p
 | JSON token，构造 JSON 对象前计数 | 200,000 |
 | 档案条目，含目录和排除项 | 20,000 |
 | 单文件字节 | 64 MiB |
-| 逻辑打包字节，精确别名逐份计入 | 512 MiB |
+| 逻辑提取字节，packed + unpacked 合计，精确别名逐份计入 | 512 MiB |
 | 路径分量数 | 64 |
 | 单路径 UTF-8 字节 | 4,096 |
 | 展开路径清单预算，含每条记录开销 | 16 MiB |
@@ -93,4 +93,27 @@ POSIX 下，ASAR 解包根和目录使用 `0700`，文件使用 `0600`；Windows
 
 三个样本都通过元数据检查，包括精确别名的完整性声明一致性检查；**并未重新核验容器内各成员的实际哈希**。三次严格提取都没有留下输出目录。结果只说明这些样本的元数据与本子集兼容，不能证明通用 ASAR 兼容性、各平台运行时行为、真实产品两版本完整差分的正确性或发布方真实性。
 
-要完整比较这类官方包，外置配套内容策略仍待实现和审查：将明确的配套目录绑定到所选档案，安全清点每个配套文件，保留缺失、变动和额外内容的覆盖信息，并按明确的不匹配策略验证声明哈希。不能把未纳入的内容当作“功能已删除”。已有的可选 REA 流程可另行审查使用；本适配器不会安装或调用它。
+上述结果保留为默认 packed-only 路径的历史验证记录。新增显式配套合同仅用原创合成样本验证，本轮没有读取原生配套内容，也没有重跑这三个实际包的完整提取。因此仍不能宣称这些包已经可完整差分。发现任何大小或完整性不匹配必须停止；不能跳过、改写声明或借其他工具绕过。已有的可选 REA 流程可另行审查使用；本适配器不会安装或调用它。
+
+
+## 显式配套目录：精确匹配，整体成功或整体失败
+
+这是候选增量支持；仅在 Linux 执行过合成验证，尚待独立审查。默认模式与 `inspect-asar` 行为不变。
+
+```sh
+python3 -B reverse_toolkit.py unpack-asar --input "/path/to/app.asar" --unpacked-dir "/explicit/companion" --output "/private/new-tree"
+python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpacked-dir "/explicit/old-companion" --new-unpacked-dir "/explicit/new-companion" --output "/private/new-diff"
+```
+
+- 目录必须由调用者逐个显式指定；名称不必为 `.asar.unpacked`，工具不猜目录、不下载、不执行内容。单包库接口为 `extract_asar(archive, output, limits, unpacked_dir=...)`，最后一项只能用关键字传入。
+- 只有 ASAR 声明的 unpacked 文件、unpacked 目录（含空目录）及必要祖先目录可出现。每个路径精确匹配；packed 文件不能被替换。未声明目录，即使为空，也视为 extra。ASAR 没有 unpacked 声明却传入配套目录，或为 ZIP/普通目录传配套参数，均拒绝。
+- missing、extra、错误类型、大小不符、完整性失败、输入变动或超限都会整体拒绝。错误中区分 `missing` / `extra` / `invalid`，不创建成功报告、不把未纳入内容解释为删功能。若变动、路径错误或资源超限使清点无法完成，`inventory_complete` 为 false，未知覆盖项为 null，不能当作空列表。
+- 所有文件大小严格匹配。声明的 SHA256 整文件及分块哈希全部核验，包括空文件；没有忽略/修复开关。无完整性声明的文件仍记录实际 SHA256 和未声明状态；显式选择配套目录不证明它来自原发布方。
+- 合并的 packed + unpacked 逻辑字节受同一个总量限制。配套目录元数据清点另受同一条目数、路径深度以及 16 MiB 清单预算限制；不读取 extra 文件内容。
+- 根、每一级目录和文件均以 no-follow/descriptor-relative 原语打开。拒绝根及内部符号链接、普通文件的硬链接、FIFO、socket、设备及其他特殊对象。读取前后核对身份，整体提取完成后重新清点；此前读取的文件若变动同样撤销。检查是对静止输入的验证，不能消除最后检查与原子交付之间的并发窗口。
+- opt-in 依赖 POSIX `O_NOFOLLOW`、`O_DIRECTORY`、`O_NONBLOCK`、`dir_fd` 及 fd 目录清点。主机缺少原语则拒绝，不降级。Windows sidecar 本轮不支持；macOS 原生验证未做。默认 packed-only 的平台边界保持不变。
+- 输出必须在配套根之外。可信、稳定祖先路径和私有输出父目录仍是前提，不是恶意并发或文件系统失陷的沙箱。
+
+成功元数据增加 `sidecar`：每个声明外置文件的相对路径、大小、实读 SHA256、是否声明完整性，以及确定性清单摘要、验证数量和空的覆盖缺口列表。原始容器检查中的排除项保留为 `container_exclusions`；已完成的提取 `exclusions` 为空。`extraction_scope` 明确是 ASAR 声明的 packed 与 unpacked 范围，`complete_application` 和 `publisher_authenticity_verified` 仍为 false。不在报告写入绝对配套路径。
+
+两版本入口的缺失或不合规配套使整个运行目录撤销，即使另一边已经成功提取。不会把 extra 内容以“成功但警告”的形式混入差分。本合同不扩展现有静态扫描器能力，native 字节仍可只是 hashed-only，功能解释边界不变。
