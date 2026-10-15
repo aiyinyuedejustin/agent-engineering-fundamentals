@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T00:10:18.789Z",
-  "root": "/workspace/shared/claude-design-research/staging/preview-lifecycle-fix/fixtures",
+  "generatedAt": "2026-10-15T01:18:31.994Z",
+  "root": "/workspace/shared/claude-design-research/publication/01-Frontend-Design-And-HTML-Templates/templates",
   "method": "jsdom with deterministic timers, media-query changes, storage exceptions and native-dialog-method stubs. No browser/layout/CSP-enforcement claim.",
   "runner": {
     "node": "v24.19.0",
@@ -10,7 +10,7 @@
     "01-component-gallery.html": "63e105c6031be008738a039693cc680b06595e9df8f6c75a54dd799f84870821",
     "02-chat-workspace-template.html": "e9db89c56f00f50a5ba96c702cabb7135d33fb315c141bd116dd97bb95dffab7",
     "03-split-artifact-ide-template.html": "4a5dce371f4882acb990aed89f256330785c7a463e8f1553408dcbb7550ba702",
-    "04-editorial-blog-and-doc-template.html": "4ca18ed62dd2d09c192118fdf6bf90d5681b8372c94b50c125800e7a0f91df78",
+    "04-editorial-blog-and-doc-template.html": "a87997bee537c44d9478b19773c3a5b0a36d01ef43f4d989052ef5880dd73d76",
     "05-settings-and-dashboard-template.html": "1a87ff25d0bc238fe4064cb913afce64990f8365b4b46362459e012f4f96cd6f",
     "06-floating-launcher-template.html": "c8827ffc2d8493870ef01ef1ed6a65f6693e703310ea060975cd3cf40828b7fd"
   },
