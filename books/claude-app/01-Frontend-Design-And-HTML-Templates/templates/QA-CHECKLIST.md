@@ -77,3 +77,15 @@
 2026-10-15，在云端 Chrome 的不可变 HTML Preview 页面核验提交 254e723：初次加载、Code/Preview 来回切换、保留 H1 属性的标题修改、无效/过大输入保留上一版、重置、错误恢复和键盘更新共 9 项通过。修复方式为有效更新时重新挂载保持原 sandbox/CSP 的 iframe；无效输入不替换已有文档。
 
 [完整浏览器记录](../../04-Extracted-Core-Code-And-Scripts/evidence/data/preview-lifecycle-browser.json)与 113 项静态/模拟 DOM 测试分开计数。这次浏览器结果覆盖该 Chrome/查看器路径，不代表各浏览器或 file:// 模式。
+
+## 快捷键跨界与焦点归还
+
+2026-10-15，在云端 Chrome 的固定 HTTPS 预览中，修复前 `7fc367b` 的三条路径均复现，修复后 `a35b3e0` 均通过：
+
+| 模板与动作 | 修复前 | 修复后 |
+|---|---|---|
+| 02：笔记模态框内 Ctrl+K | 背景草稿被清空 | 草稿保留，焦点留在模态框；Escape 回到原笔记卡片 |
+| 03：编辑器 Ctrl+Enter | 面板隐藏，焦点落到 BODY | 焦点转到可见的预览标签 |
+| 06：主题控件 Ctrl+K，再 Escape | 回到固定的打开按钮 | 回到实际发起快捷键的主题控件 |
+
+[浏览器检查数据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/template-keyboard-focus-browser.json)。该记录覆盖上述 Chrome/HTTPS 路径；Ctrl/Meta 分支及19项边界回归另由模拟 DOM 测试覆盖，二者分开计数。

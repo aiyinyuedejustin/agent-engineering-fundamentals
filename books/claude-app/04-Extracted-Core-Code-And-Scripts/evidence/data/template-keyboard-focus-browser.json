@@ -1,0 +1,71 @@
+{
+  "tested_at": "2026-10-15T04:16:28Z",
+  "browser": "cloud Chrome",
+  "commit": "7fc367bc398093afc2472949a7a061645e2b5553",
+  "surface": "HTMLPreview HTTPS",
+  "checks": [
+    {
+      "template": "03",
+      "action": "code tab -> focus code editor -> Ctrl+Enter",
+      "result": {
+        "codeHidden": true,
+        "previewSelected": true,
+        "activeTag": "BODY",
+        "activeId": ""
+      },
+      "classification": "confirmed focus loss before fix"
+    },
+    {
+      "template": "02",
+      "action": "enter synthetic draft, open note dialog, Ctrl+K on continue button",
+      "result": {
+        "dialogOpen": true,
+        "draft": ""
+      },
+      "classification": "confirmed background draft reset during native modal"
+    },
+    {
+      "template": "06",
+      "action": "Escape initial modal; theme-toggle Ctrl+K; Escape",
+      "result": {
+        "active": "open-launcher",
+        "expected": "theme-toggle"
+      },
+      "classification": "confirmed wrong opener restoration"
+    }
+  ],
+  "fixedCommit": "a35b3e0f1b60e3cea340e63a4e24c56bd5e88778",
+  "fixedChecks": [
+    {
+      "template": "06",
+      "action": "theme-toggle Ctrl+K -> Escape",
+      "active": "theme-toggle",
+      "dialogOpen": false,
+      "passed": true
+    },
+    {
+      "template": "03",
+      "action": "code editor Ctrl+Enter",
+      "active": "preview-tab",
+      "codeHidden": true,
+      "previewSelected": true,
+      "passed": true
+    },
+    {
+      "template": "02",
+      "action": "draft -> note dialog -> Ctrl+K -> Escape",
+      "duringModal": {
+        "draft": "焦点修复后的草稿",
+        "dialogOpen": true,
+        "activeText": "继续对话"
+      },
+      "afterEscape": {
+        "active": "reading-card",
+        "dialogOpen": false,
+        "draft": "焦点修复后的草稿"
+      },
+      "passed": true
+    }
+  ],
+  "completedAt": "2026-10-15T04:22:12Z"
+}
