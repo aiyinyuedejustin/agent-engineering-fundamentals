@@ -4,6 +4,8 @@
 
 对象限于 Claude Desktop 2.37337.1、Linux amd64 的已校验样本。本文是静态研究，没有执行目标或故障注入。[样本、定位与未闭合链](EVIDENCE-APPENDIX.md)
 
+先约定两个名字：**fd（file descriptor，文件描述符）**是Linux进程引用打开文件或socket的整数编号；释放这类资源需要对应的 `close` 路径。**deferred** 是Node-API创建Promise时给出的结算凭据，供后续resolve/reject使用；它有自己的消费与释放时点。堆内存则另由 `free` 管理。
+
 ## 1. 同样叫“完成”，其实是两类回调
 
 TSFN 是 Node-API 的线程安全函数。socket 的交付回调使用 `call_js_cb(env, js_callback, context, data)`；两个文件方法使用 `complete(env, status, data)`。原章节自然语言中的“完成回调”不能据此理解成相同的 API 签名。
