@@ -44,7 +44,12 @@ export class BackoffLedger {
   }
   clear() { return this.write(0, this.latest()); }
 }
-/** Ack after application; three failures at a known cursor avoid an infinite poison replay. */
+/** 仅接收同步消费者：apply必须在返回前完成，失败时同步抛错。
+ * 返回值被忽略；async/Promise消费者不受支持，会在settlement前确认，
+ * 后续拒绝不能恢复已被cursor过滤的重放资格。
+ * 异步交付需要串行等待应用完成后再提交cursor，并另行定义失败与幂等合同。
+ * 已知cursor连续三次同步失败后跳过，避免无限毒事件重放。
+ */
 export class CursorConsumer {
   constructor() { this.cursor = undefined; this.poison = undefined; this.strikes = 0; this.applied = []; }
   deliver(seq, payload, apply) {

@@ -30,7 +30,7 @@ node demo.mjs
 - 完成帧之后的传输错误需要与提前中断区分
 - 取消必须解除等待
 - 存储不可用不能令错误处理器再次崩溃
-- 事件应用成功后才提交 cursor；毒事件需有有界处理方式
+- 同步消费者应用正常返回后才提交 cursor；同步抛错走有界毒事件处理
 - 4,096 UTF-8 字节不等于4,096个汉字或 emoji
 - 异步恢复不能覆盖新编辑或跨账户内容
 - 模拟服务端的稳定幂等身份可避免“提交成功、回包丢失”后的重复执行
@@ -50,6 +50,18 @@ node demo.mjs
 | DraftHydration | 用显式 edit revision/owner epoch 演示；不复刻 rich-editor merge、真实 IndexedDB、附件引用存储或多 tab 竞态 |
 | IdempotentServer | 原创、内存中的假想接口契约；不证明目标服务端去重、原子性或 exactly-once |
 | quotaRoute | 简化展示意图；不含全部首次触达、计划切换、overage、账户 UI 条件，不能用于真实账单或购买决策 |
+
+CursorConsumer 的调用前置条件：`apply` 必须在返回前同步完成应用，或在失败时同步抛错；模型忽略返回值，把正常返回当作应用成功。不支持 `async` 函数或返回 Promise/thenable 的消费者：误传时会在异步工作结束前推进 cursor，之后即使拒绝，同序号重放也会被过滤。这里的“应用成功后 ack”仅指上述同步合同。
+
+生产异步路径须串行等待当前应用完成后再提交 cursor，并另行设计失败处置、重连世代与幂等；仅添加 `async` 关键字不够。在调用之后检测 thenable 也不能撤销已启动的副作用，更不能据此自动重试。配套[不支持用法反例探针](probe-unsupported-async-callback.mjs)只重现这个限制，不是异步支持测试；探针预先处理其自建 Promise 的拒绝，不执行真实副作用。
+
+运行反例：
+
+```sh
+node --unhandled-rejections=strict probe-unsupported-async-callback.mjs
+```
+
+输出`reproduced unsupported callback usage`并退出0，表示限制被成功重现；它不加入默认绿色测试套件，也不增加异步支持的测试计数。
 
 ## 设计练习
 
