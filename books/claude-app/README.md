@@ -77,3 +77,5 @@
 主样本：Claude Desktop 2.37337.1，覆盖 Linux、Windows、macOS 包；公开移动端与网页资料按各自来源日期记录。[来源索引](04-Extracted-Core-Code-And-Scripts/evidence/sources.md)
 
 - [第 19 卷：移动端交互边界](02-Illustrated-Deep-Dive-Book/19-Mobile-Surfaces/README.md)
+
+[一条命令运行原创模型与 skills](04-Extracted-Core-Code-And-Scripts/README.md#一条命令运行已收录的原创模型)
