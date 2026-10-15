@@ -143,3 +143,5 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 [查看六份375px真实浏览器截图与三档尺寸记录](narrow-layout-lab/BROWSER-REVIEW.md)。
 
 [设置页保存与重置实测](settings-browser-review.md)：正常刷新恢复、确认取消与默认值持久化，以及min-height和控件实高的区别。
+
+[组件画廊实际交互与焦点边界](gallery-browser-review.md)：表单、排序、开关与关闭回焦，以及未满足的严格Tab循环目标。

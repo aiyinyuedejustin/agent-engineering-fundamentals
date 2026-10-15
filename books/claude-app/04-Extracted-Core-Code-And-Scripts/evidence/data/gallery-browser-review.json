@@ -1,0 +1,1998 @@
+{
+  "browser": "Chrome",
+  "viewport": {
+    "width": 1188,
+    "height": 761,
+    "dpr": 1
+  },
+  "records": [
+    {
+      "label": "initial",
+      "data": {
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false,
+            "text": "A MOMENT TO REVIEW把这一版，标记为已发布？这是本页的状态示例。确认后会更新状态标记；不会上传内容或对外发布。再检查一下确认标记"
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BODY",
+          "text": ""
+        },
+        "form": "工作区名称\n\n2–36 个字符，只在本页保存。\n\n内容类型\n设计研究\n产品写作\n个人项目\n检查输入",
+        "input": {
+          "invalid": null,
+          "value": ""
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": ""
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "empty validation",
+      "data": {
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false,
+            "text": "A MOMENT TO REVIEW把这一版，标记为已发布？这是本页的状态示例。确认后会更新状态标记；不会上传内容或对外发布。再检查一下确认标记"
+          }
+        ],
+        "focus": {
+          "id": "project-name",
+          "tag": "INPUT",
+          "text": ""
+        },
+        "form": "工作区名称\n\n请至少输入 2 个字符。\n\n内容类型\n设计研究\n产品写作\n个人项目\n检查输入",
+        "input": {
+          "invalid": "true",
+          "value": ""
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": ""
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "valid synthetic name",
+      "data": {
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false,
+            "text": "A MOMENT TO REVIEW把这一版，标记为已发布？这是本页的状态示例。确认后会更新状态标记；不会上传内容或对外发布。再检查一下确认标记"
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "检查输入"
+        },
+        "form": "工作区名称\n\n名称可用：合成画廊验收\n\n内容类型\n设计研究\n产品写作\n个人项目\n检查输入",
+        "input": {
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": ""
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "save immediate",
+      "data": {
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false,
+            "text": "A MOMENT TO REVIEW把这一版，标记为已发布？这是本页的状态示例。确认后会更新状态标记；不会上传内容或对外发布。再检查一下确认标记"
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BODY",
+          "text": ""
+        },
+        "form": "工作区名称\n\n名称可用：合成画廊验收\n\n内容类型\n设计研究\n产品写作\n个人项目\n检查输入",
+        "input": {
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": true,
+          "text": "保存中…"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": ""
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "save restored",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BODY",
+          "text": ""
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog initial focus",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "再检查一下"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog Tab 1",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "confirm-publish",
+          "tag": "BUTTON",
+          "text": "确认标记"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog Tab 2 wrap",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BODY",
+          "text": ""
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog ShiftTab wrap",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "confirm-publish",
+          "tag": "BUTTON",
+          "text": "确认标记"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog Escape focus return",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "open-dialog",
+          "tag": "BUTTON",
+          "text": "打开确认对话框"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "reopened ShiftTab from first",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BODY",
+          "text": ""
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "Tab from boundary",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BUTTON",
+          "text": "再检查一下"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog cancel focus return",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "open-dialog",
+          "tag": "BUTTON",
+          "text": "打开确认对话框"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "尚未标记为发布"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "示例更改已保存到本页。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "dialog confirm focus return",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "open-dialog",
+          "tag": "BUTTON",
+          "text": "打开确认对话框"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "name descending",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "sort-name",
+          "tag": "BUTTON",
+          "text": "项目名称 ↕"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称降序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "descending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "name ascending",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "sort-name",
+          "tag": "BUTTON",
+          "text": "项目名称 ↕"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按名称升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "ascending",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "none",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "date ascending",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "sort-date",
+          "tag": "BUTTON",
+          "text": "更新时间 ↕"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按更新时间升序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "none",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "ascending",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "date descending",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "sort-date",
+          "tag": "BUTTON",
+          "text": "更新时间 ↕"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "自动整理已开启"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按更新时间降序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": false,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": true,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "none",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "descending",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "switch toggled",
+      "data": {
+        "details": [
+          {
+            "open": true,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": false,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "organize-switch",
+          "tag": "INPUT",
+          "text": ""
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "安静模式开启 · 自动整理关闭"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按更新时间降序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": true,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": false,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "none",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "descending",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "details toggled",
+      "data": {
+        "details": [
+          {
+            "open": false,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": true,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": false
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "SUMMARY",
+          "text": "如何让界面更适合键盘？"
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "安静模式开启 · 自动整理关闭"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按更新时间降序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": true,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": false,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "none",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "descending",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "reproduced Tab boundary",
+      "data": {
+        "details": [
+          {
+            "open": false,
+            "summary": "何时应该使用折叠内容？"
+          },
+          {
+            "open": true,
+            "summary": "如何让界面更适合键盘？"
+          },
+          {
+            "open": false,
+            "summary": "需要安装任何依赖吗？"
+          }
+        ],
+        "dialogs": [
+          {
+            "id": "publish-dialog",
+            "open": true
+          }
+        ],
+        "focus": {
+          "id": "",
+          "tag": "BODY",
+          "text": ""
+        },
+        "input": {
+          "help": "名称可用：合成画廊验收",
+          "invalid": "false",
+          "value": "合成画廊验收"
+        },
+        "save": {
+          "disabled": false,
+          "text": "保存更改"
+        },
+        "statuses": [
+          {
+            "id": "switch-status",
+            "text": "安静模式开启 · 自动整理关闭"
+          },
+          {
+            "id": "publish-status",
+            "text": "已标记为发布 · 本地示例"
+          },
+          {
+            "id": "sort-status",
+            "text": "按更新时间降序排列"
+          },
+          {
+            "id": "toast",
+            "text": "状态标记已更新。"
+          }
+        ],
+        "switches": [
+          {
+            "checked": true,
+            "id": "quiet-switch"
+          },
+          {
+            "checked": false,
+            "id": "organize-switch"
+          }
+        ],
+        "table": {
+          "headers": [
+            {
+              "sort": "none",
+              "text": "项目名称 ↕"
+            },
+            {
+              "sort": null,
+              "text": "类型"
+            },
+            {
+              "sort": null,
+              "text": "状态"
+            },
+            {
+              "sort": "descending",
+              "text": "更新时间 ↕"
+            }
+          ],
+          "rows": [
+            "01 阅读界面\t设计研究\t已完成\t10 月 14 日",
+            "02 交互笔记\t产品写作\t进行中\t10 月 12 日",
+            "03 色彩实验\t个人项目\t草稿\t10 月 10 日"
+          ]
+        },
+        "viewport": {
+          "dpr": 1,
+          "height": 761,
+          "width": 1188
+        }
+      }
+    },
+    {
+      "label": "disabled control",
+      "data": {
+        "label": "暂不可用",
+        "isEnabled": false,
+        "attemptedClick": false
+      }
+    }
+  ],
+  "schema": "original-gallery-browser-check/v1",
+  "observed_utc": "2026-10-15T07:57:00Z/2026-10-15T08:01:00Z",
+  "source_commit": "f240c99f7abcbda760b12eea5dafbb0fa6b91f86",
+  "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html",
+  "images": [
+    {
+      "path": "assets/screenshots/gallery-switch-details-f240c99.jpg",
+      "width": 1173,
+      "height": 751,
+      "sha256": "832795714fcb6631f85228a7a69b8d5dc413dcb832caa232f7672821d051429b"
+    },
+    {
+      "path": "assets/screenshots/gallery-dialog-boundary-f240c99.jpg",
+      "width": 1173,
+      "height": 751,
+      "sha256": "e48c7116d9d4438977fabdf1ae35c1adb874feb208c1abe1ca2cdc94690c3691"
+    }
+  ],
+  "modal_supplement": {
+    "open": true,
+    "matches_modal": true
+  },
+  "strict_direct_two_button_cycle": false,
+  "background_focus_escape_observed": false,
+  "actual_browser_chrome_destination_observed": false,
+  "record_label_note": "wrap labels name the test goal, not a passing assertion",
+  "not_tested": [
+    "same-direction Tab after forward BODY boundary",
+    "same-direction Shift+Tab after reverse BODY boundary",
+    "actual browser UI focus destination",
+    "screen reader or complete assistive technology behavior",
+    "clipboard",
+    "network audit"
+  ],
+  "product_app_executed": false
+}
