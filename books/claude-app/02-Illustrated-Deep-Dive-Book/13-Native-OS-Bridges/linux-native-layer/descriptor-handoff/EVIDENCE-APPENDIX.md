@@ -1,6 +1,6 @@
 # 证据附录：fd交付的条件、定位与未闭合链
 
-本轮只补已发表 Linux 原生层章节留下的失败交付缺口。对象是 Claude Desktop 2.37337.1、Linux amd64 的同一份已校验原生模块；SHA-256 为 `c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6`，大小 10,026,272 字节。以下全部是静态控制流与数据传递，未加载或执行目标。
+本文讨论 Linux 原生层的失败交付路径。对象是 Claude Desktop 2.37337.1、Linux amd64 的同一份已校验原生模块；SHA-256 为 `c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6`，大小 10,026,272 字节。以下全部是静态控制流与数据传递，未加载或执行目标。
 
 ## 1. 先分清状态和结果，再看 fd
 
@@ -100,10 +100,8 @@ socket 的 reject 返回值也未检查。异常落点调用的 `0x63d5a0` 不�
 - `verification.json`：本轮通过结果。
 - `test-verifier.py`：10项不读取产品样本的原创fixture测试，涵盖拒绝输入、稳定快照和异常清理。
 - `figures/descriptor-handoff.mmd`：正文原创Mermaid图源；现有Mermaid解析器与正/负对照通过。只做语法验证，不声称浏览器布局或GitHub渲染通过。
-- `EVIDENCE-LEDGER.md`：收集范围、读过的来源与明确未闭合项。
-- `private-evidence/`：原始反汇编与校验后样本快照，仅供私下复核，不应随正文发布。
 
-未修改 publication 或 git。研究日期：2026-10-15（UTC）。
+研究日期：2026-10-15（UTC）。
 
 ## NDH-01：签名关联
 
@@ -198,6 +196,6 @@ beneath任务大小0x68：result位于+0x28（D）、+0x30（fd低32位）；共
 
 ## 验证器输入与临时文件合同
 
-脚本只接受一个输入路径；末端nofollow、非阻塞open后先核普通文件与精确大小，再读受限字节数并核SHA-256。任一身份不匹配均在调用二进制工具前拒绝。通过后在系统临时目录用TemporaryDirectory创建自身独占目录，将已校验字节写成稳定快照；readelf/objdump只读该快照。JSON仅输出stdout，没有输出路径选项，结束或工具异常时只清理自身创建的临时目录，不依赖未发布private-evidence目录。
+脚本只接受一个输入路径；末端nofollow、非阻塞open后先核普通文件与精确大小，再读受限字节数并核SHA-256。任一身份不匹配均在调用二进制工具前拒绝。通过后在系统临时目录用TemporaryDirectory创建自身独占目录，将已校验字节写成稳定快照；readelf/objdump只读该快照。JSON仅输出stdout，没有输出路径选项，结束或工具异常时只清理自身创建的临时目录。
 
 10项fixture测试不需要真实模块；mock只用于安全输入/临时目录的测试，不用于声称样本的指令检查通过。真实样本的174项检查另由verification.json记录。
