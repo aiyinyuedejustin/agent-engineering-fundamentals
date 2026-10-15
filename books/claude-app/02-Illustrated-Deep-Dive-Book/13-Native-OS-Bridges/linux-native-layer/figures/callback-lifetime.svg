@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 465" role="img" aria-labelledby="title desc"><title id="title">原创适配模式：线程、队列、JS 会话各自有 owner</title><desc id="desc">原创静态证据图；图例与正文区分实际观察和工程建议。</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#546e89"/></marker></defs><style>text{font-family:"Noto Sans CJK SC","Noto Sans",sans-serif;fill:#24364b} .title{font-size:26px;font-weight:700}.label{font-size:20px;font-weight:600}.small{font-size:16px}.note{font-size:17px;fill:#54687e}.code{font-family:monospace;font-size:17px}.arrow{fill:none;stroke:#546e89;stroke-width:2.5;marker-end:url(#arrow)}</style><rect width="1120" height="465" rx="18" fill="#f8fafc"/><text x="36" y="48" class="title">原创适配模式：线程、队列、JS 会话各自有 owner</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 465" role="img" aria-labelledby="title desc"><title id="title">原创适配模式：线程、队列、JS 会话各自有 owner</title><desc id="desc">原创静态证据图；图例与正文区分实际观察和工程建议。</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#546e89"/></marker></defs><style>text{font-family:"Noto Sans CJK SC","Noto Sans",sans-serif;fill:#24364b} .title{font-size:26px;font-weight:700}.label{font-size:20px;font-weight:600}.small{font-size:16px}.note{font-size:17px;fill:#54687e}.code{font-family:monospace;font-size:17px}.arrow{fill:none;stroke:#546e89;stroke-width:2.5}</style><rect width="1120" height="465" rx="18" fill="#f8fafc"/><text x="36" y="48" class="title">原创适配模式：线程、队列、JS 会话各自有 owner</text>
 <rect x="36" y="110" width="300" height="146" rx="12" fill="#edf0fb" stroke="#c5d3e2"/>
 <text x="54" y="143" class="label">原生生产者</text>
 <text x="54" y="173" class="small">管理 OS 句柄与在途工作</text>
@@ -14,8 +14,8 @@
 <text x="802" y="173" class="small">关闭即失效旧回调</text>
 <text x="802" y="200" class="small">只交付仍有效的结果</text>
 <text x="802" y="227" class="small">示例只实现这一层</text>
-<path d="M 336 182 L 410 182" class="arrow"/>
-<path d="M 710 182 L 784 182" class="arrow"/>
+<path d="M 336 182 L 410 182" class="arrow" marker-end="url(#arrow)"/>
+<path d="M 710 182 L 784 182" class="arrow" marker-end="url(#arrow)"/>
 <rect x="36" y="315" width="1048" height="80" rx="12" fill="#fff5df" stroke="#c5d3e2"/>
 <text x="54" y="348" class="label">关闭原则</text>
 <text x="54" y="378" class="small">会话 closing → 生产者停止并处理在途工作 → 队列与资源释放 → closed</text>

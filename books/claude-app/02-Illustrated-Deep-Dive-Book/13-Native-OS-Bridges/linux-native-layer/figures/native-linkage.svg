@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 490" role="img" aria-labelledby="title desc"><title id="title">同一原生模块，两组可验证的链接面</title><desc id="desc">原创静态证据图；图例与正文区分实际观察和工程建议。</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#546e89"/></marker></defs><style>text{font-family:"Noto Sans CJK SC","Noto Sans",sans-serif;fill:#24364b} .title{font-size:26px;font-weight:700}.label{font-size:20px;font-weight:600}.small{font-size:16px}.note{font-size:17px;fill:#54687e}.code{font-family:monospace;font-size:17px}.arrow{fill:none;stroke:#546e89;stroke-width:2.5;marker-end:url(#arrow)}</style><rect width="1120" height="490" rx="18" fill="#f8fafc"/><text x="36" y="48" class="title">同一原生模块，两组可验证的链接面</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 490" role="img" aria-labelledby="title desc"><title id="title">同一原生模块，两组可验证的链接面</title><desc id="desc">原创静态证据图；图例与正文区分实际观察和工程建议。</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#546e89"/></marker></defs><style>text{font-family:"Noto Sans CJK SC","Noto Sans",sans-serif;fill:#24364b} .title{font-size:26px;font-weight:700}.label{font-size:20px;font-weight:600}.small{font-size:16px}.note{font-size:17px;fill:#54687e}.code{font-family:monospace;font-size:17px}.arrow{fill:none;stroke:#546e89;stroke-width:2.5}</style><rect width="1120" height="490" rx="18" fill="#f8fafc"/><text x="36" y="48" class="title">同一原生模块，两组可验证的链接面</text>
 <rect x="36" y="91" width="300" height="102" rx="12" fill="#eaf0f7" stroke="#c5d3e2"/>
 <text x="54" y="124" class="label">Linux JavaScript loader</text>
 <text x="54" y="154" class="small">明确加载随包 .node</text>
@@ -7,7 +7,7 @@
 <text x="450" y="124" class="label">ELF64 · x86-64 · Node-API 注册入口</text>
 <text x="450" y="154" class="small">一个 ELF 注册导出，不是一个 JavaScript 方法</text>
 <text x="450" y="181" class="small">254 个命名导入：59 个 napi_，19 个 pw_</text>
-<path d="M 336 142 L 432 142" class="arrow"/>
+<path d="M 336 142 L 432 142" class="arrow" marker-end="url(#arrow)"/>
 <rect x="80" y="273" width="440" height="131" rx="12" fill="#e5f1ee" stroke="#c5d3e2"/>
 <text x="98" y="306" class="label">Node-API 宿主链接面</text>
 <text x="98" y="336" class="small">跨线程回调 / async work / Promise</text>
@@ -18,7 +18,7 @@
 <text x="618" y="336" class="small">DT_NEEDED：libpipewire-0.3.so.0</text>
 <text x="618" y="363" class="small">context / stream / buffer / loop</text>
 <text x="618" y="390" class="small">具体授权与媒体运行结果未知</text>
-<path d="M 620 193 L 620 230 L 300 230 L 300 273" class="arrow"/>
-<path d="M 820 193 L 820 273" class="arrow"/>
+<path d="M 620 193 L 620 230 L 300 230 L 300 273" class="arrow" marker-end="url(#arrow)"/>
+<path d="M 820 193 L 820 273" class="arrow" marker-end="url(#arrow)"/>
 <text x="56" y="451" class="note">接口同处一个模块，不等于已经恢复“PipeWire 数据 → 某个 JS 回调”的完整链。</text>
 </svg>
