@@ -16,5 +16,19 @@
     "active": "preview-tab",
     "status": "预览已更新 · 静态内容",
     "screenshotObservation": "A terracotta square is visibly painted in the iframe preview."
-  }
+  },
+  "additional_after_checks": [
+    {
+      "at": "2026-10-15T04:42:31Z",
+      "fixture": "<style>.stamp::before{content:\"CSS 生成的文字\";color:#c96442}</style><div class=\"stamp\"></div>",
+      "observation": "Native accessibility tree exposes CSS 生成的文字 inside preview iframe; preview-tab retains focus.",
+      "passed": true
+    },
+    {
+      "at": "2026-10-15T04:42:43Z",
+      "fixture": "<hr>",
+      "observation": "Screenshot visibly shows a horizontal rule in the iframe; preview update succeeds.",
+      "passed": true
+    }
+  ]
 }
