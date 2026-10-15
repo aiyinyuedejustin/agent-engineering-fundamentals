@@ -30,20 +30,20 @@
 - [五套原创配色配方](01-Frontend-Design-And-HTML-Templates/palette-recipes/README.md)：直接看到浅深色搭配、精确色值与排版参数。
 - [基础样式](01-Frontend-Design-And-HTML-Templates/styles/README.md)：变量、组件与页面布局的三层分工。
 
-[完整交互色表](01-Frontend-Design-And-HTML-Templates/color-catalog/index.html)已可使用：315 个原始色阶，连同主题与桥接记录共 1,341 项。六套零依赖 HTML 模板可直接下载打开；模板内嵌 CSS 和 JavaScript，交互只使用本地演示数据。
+[完整交互色表](01-Frontend-Design-And-HTML-Templates/color-catalog/index.html)已可使用：315 个原始色阶，连同主题与桥接记录共 1,341 项。六套模板可先[在线预览](01-Frontend-Design-And-HTML-Templates/templates/README.md#在线预览)，再按[下载说明](01-Frontend-Design-And-HTML-Templates/templates/README.md#下载与本地打开)带走；模板内嵌 CSS 和 JavaScript，交互只使用本地演示数据。
 
-- [组件交互画廊](01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html)
-- [对话工作台](01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html)
-- [分屏代码与预览](01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html)
-- [技术博客与文档](01-Frontend-Design-And-HTML-Templates/templates/04-editorial-blog-and-doc-template.html)
-- [设置与数据看板](01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html)
-- [Quick Entry 指令面板](01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html)
+- [组件交互画廊 · 在线预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html) · [源码](01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html)
+- [对话工作台 · 在线预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html) · [源码](01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html)
+- [分屏代码与预览 · 在线预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html) · [源码](01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html)
+- [技术博客与文档 · 在线预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/04-editorial-blog-and-doc-template.html) · [源码](01-Frontend-Design-And-HTML-Templates/templates/04-editorial-blog-and-doc-template.html)
+- [设置与数据看板 · 在线预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html) · [源码](01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html)
+- [Quick Entry 指令面板 · 在线预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html) · [源码](01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html)
 
 ## 模板实景
 
 [![对话工作台实景](assets/screenshots/02-chat-d63d0f4.jpg)](01-Frontend-Design-And-HTML-Templates/templates/README.md#浏览器实景)
 
-[查看六套模板截图与用法](01-Frontend-Design-And-HTML-Templates/templates/README.md#浏览器实景)
+[查看截图](01-Frontend-Design-And-HTML-Templates/templates/README.md#浏览器实景) · [下载与打开](01-Frontend-Design-And-HTML-Templates/templates/README.md#下载与本地打开) · [复制局部组件](01-Frontend-Design-And-HTML-Templates/templates/component-extraction/README.md)
 
 ## 技术全书：十卷主线，专题补充
 

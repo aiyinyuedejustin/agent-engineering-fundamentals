@@ -31,7 +31,7 @@ Claude 的视觉识别由几种关系共同组成：接近纸张的浅色大面�
 
 ## 直接拿来做网站
 
-[五套浅深配色配方](palette-recipes/README.md) · [六套 HTML 模板与实景](templates/README.md) · [完整产品色表](color-catalog/README.md)
+[在线预览六套模板](templates/README.md#在线预览) · [下载与本地打开](templates/README.md#下载与本地打开) · [复制局部组件](templates/component-extraction/README.md) · [选五套浅深配色](palette-recipes/README.md) · [完整产品色表](color-catalog/README.md)
 
 ![五套原创配方](palette-recipes/swatches/overview.svg)
 

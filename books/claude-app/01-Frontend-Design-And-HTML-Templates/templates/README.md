@@ -2,7 +2,22 @@
 
 用暖中性色、阅读节奏与清楚的动作层级，建立自己的产品界面。
 
-每个 HTML 都内联了全部 CSS 和 JavaScript。直接双击即可使用；不需要安装依赖、启动服务器、连接模型或加载字体。顶部提供五套原创配色与浅深主题。
+每个 HTML 都内联了全部 CSS 和 JavaScript，不需要安装依赖、连接模型或加载字体。顶部提供五套原创配色与浅深主题。
+
+[下载与本地打开](#下载与本地打开) · [复制局部组件](component-extraction/README.md) · [选五套浅深配色](../palette-recipes/README.md)
+
+## 在线预览
+
+手机阅读可先点下面的在线预览；桌面也可直接试用。预览固定在版本 `f240c99`，下方表格保留当前源码入口。
+
+- [组件交互画廊](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html)
+- [对话工作台](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html)
+- [分屏代码与预览](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html)
+- [技术博客与文档](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/04-editorial-blog-and-doc-template.html)
+- [设置与数据看板](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html)
+- [Quick Entry 指令面板](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html)
+
+HTMLPreview 是需联网的第三方预览服务；涉及私有内容时，请下载后在本地打开。已有浏览器记录覆盖桌面 HTTPS 路径，手机与原生 file:// 模式尚未实测。
 
 ## 从需要的界面开始
 
@@ -16,6 +31,12 @@
 | [06 浮动轻入口](06-floating-launcher-template.html) | 快速记录、命令面板与搜索入口 | 模糊文本匹配、方向键导航、命令执行、保存位置选择、输入提交、关闭后保留草稿、最近八条记录、移除记录 |
 
 模板 02 的回复与“思路”是预先编写的本地内容。模板 05 的指标明确标为示例数据。模板 06 首次打开即显示命令面板，关闭后可查看记录区。
+
+## 下载与本地打开
+
+1. 点击上表中的模板名，进入 GitHub 源码页。
+2. 用文件页的下载按钮保存 Raw HTML；也可点 Raw 后另存为原来的 `.html` 文件名。不要保存带 GitHub 导航栏的源码网页。
+3. 在电脑上用浏览器打开下载的 `.html` 文件。每页已内联所需样式与脚本，无需额外启动服务器。
 
 ## 单页与整包复制
 
