@@ -1,0 +1,132 @@
+{
+  "status": "real_linux_cross_version_compare_passed_with_scanner_gaps",
+  "old_version": "2.31226.1",
+  "new_version": "2.37337.1",
+  "architecture": "amd64",
+  "source": "official signed stable APT index and exact listed artifact URL",
+  "candidate_counts": {
+    "css_palettes": {
+      "added": 0,
+      "removed": 0,
+      "changed": 0
+    },
+    "css_tokens": {
+      "added": 76,
+      "removed": 33,
+      "changed": 0
+    },
+    "flags": {
+      "added": 0,
+      "removed": 0,
+      "changed": 0
+    },
+    "telemetry": {
+      "added": 0,
+      "removed": 0,
+      "changed": 0
+    },
+    "tool_contracts": {
+      "added": 0,
+      "removed": 0,
+      "changed": 0
+    }
+  },
+  "unchanged_keys": {
+    "css_palettes": 714,
+    "css_tokens": 2341,
+    "flags": 0,
+    "telemetry": 1,
+    "tool_contracts": 4
+  },
+  "file_counts": {
+    "added": 369,
+    "changed": 27,
+    "possible_moves": 0,
+    "removed": 350,
+    "unresolved": 0
+  },
+  "coverage": {
+    "old": {
+      "declared_integrity_files": 470,
+      "sidecar_files": 3,
+      "file_status_counts": {
+        "hashed-only": 44,
+        "scan-incomplete": 16,
+        "scanned": 410
+      },
+      "complete_within_declared_scope": false
+    },
+    "new": {
+      "declared_integrity_files": 489,
+      "sidecar_files": 3,
+      "file_status_counts": {
+        "hashed-only": 44,
+        "scan-incomplete": 18,
+        "scanned": 427
+      },
+      "complete_within_declared_scope": false
+    }
+  },
+  "same_key_and_value_set_different_scope_pairs": 33,
+  "elapsed_seconds": {
+    "download": 9.992,
+    "compare": 81.738,
+    "combined_execution": 91.73
+  },
+  "tool_source_sha256": {
+    "deb_projection.py": "32d1573a0a6e58a8880935850c829cc24b9057e78f38fd2459f20746a823440c",
+    "deb_versions.py": "e36d1d38b9ac15ff912698eb2802fe0c3c57976810a6cad88b71ba1838d55a72",
+    "diff-versions.py": "1404955fdd0aa8a5d64c85de9d19b37d7445c83cdb1c61de9ccf87364984bf93",
+    "reverse_toolkit.py": "d644ebd68f794a3b403f8c09e5ed112741f7438b5f673341a12757634c56191b",
+    "run_tests.py": "a70c476ee470903d4c427db9220b58cd16b459b9d4999a1bf65145ac9e741bd9",
+    "toolkit/__init__.py": "427585576103093d313373ecbf78ae5ef1bf4518a2bfca547476a8b8dd148c92",
+    "toolkit/asar.py": "d9351f3930ea790df42f8a33a5a3d3447bb95326a9e8f50e75d41292f0fd5e25",
+    "toolkit/asar_sidecar.py": "6e633eaec32892ffe0c19c59ea4e7f728958f7633886593c2f58463e478190eb",
+    "toolkit/css_scan.py": "1bfc95009bb8bcb8522185e9db8d7cb8b21c909ac4de8c1b423a4bf3973ad9da",
+    "toolkit/diffing.py": "2bebeaf6a795a5281c183148938f418b30efb82cbd39fe22b0de9e37f3fd992b",
+    "toolkit/inventory.py": "5656818563dcc5d73ef31798a58daed6c7c3ecd98f8b249f9297199aba6d7168",
+    "toolkit/literals.py": "c466879b0cf065623209309986ca25c9200999e8b91edb857848f312861991e6",
+    "toolkit/safeio.py": "337084045c6f0ed701b268d11ee5b3bd1940e274d0c7073ec32cd99e59e77b19"
+  },
+  "scope_policy_sha256": "9703534ea2a444b95e3aae9bf646a61b4d70b3065e0b43f179d2df375cb590a1",
+  "product_code_executed": false,
+  "complete_application": false,
+  "complete_package": false,
+  "semantic_completeness_proven": false,
+  "schema": "real-linux-cross-version-validation/v1",
+  "observed_utc": "2026-10-15",
+  "published_tool_commit": "fbc57b9431b3ac6f59174b55fbc3b2594561a440",
+  "independent_report_checks": 53,
+  "independent_remote_tool_blob_checks": 13,
+  "real_cross_version_comparison": true,
+  "inputs": {
+    "old": {
+      "version": "2.31226.1",
+      "bytes": 181377680,
+      "sha256": "5a9bebdfcb1df6ce38767b373f3a7fabf77156a2ddd8a3f5d04961da5bde305e",
+      "url": "https://downloads.claude.ai/claude-desktop/apt/stable/pool/main/c/claude-desktop/claude-desktop_2.31226.1_amd64.deb"
+    },
+    "new": {
+      "version": "2.37337.1",
+      "bytes": 182483892,
+      "sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+      "url": "https://downloads.claude.ai/claude-desktop/apt/stable/pool/main/c/claude-desktop/claude-desktop_2.37337.1_amd64.deb"
+    }
+  },
+  "external_source_validation": {
+    "index_url": "https://downloads.claude.ai/claude-desktop/apt/stable/dists/stable/main/binary-amd64/Packages",
+    "index_bytes": 56908,
+    "index_sha256": "0f30928df65f247ed47a2d87d3fd539abdceb2f033e4fad4aa1ec28ea3cdc76c",
+    "inrelease_signature_valid": true,
+    "signer_fingerprint": "31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE",
+    "fingerprint_reference": "https://code.claude.com/docs/en/desktop-linux",
+    "gpg_web_of_trust": "unknown",
+    "system_trust_modified": false
+  },
+  "selection": {
+    "asar": "usr/lib/claude-desktop/resources/app.asar",
+    "companion": "usr/lib/claude-desktop/resources/app.asar.unpacked"
+  },
+  "tool_publisher_authenticity_verified": false,
+  "source_verification_note": "External signed-index/payload checks are separate from the parser, which does not authenticate publishers."
+}

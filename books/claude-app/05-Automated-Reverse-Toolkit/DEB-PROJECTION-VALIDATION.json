@@ -101,5 +101,6 @@
   },
   "smoke_code_note": "Real-package smoke preceded only CLI stdout cap and portable import-location changes; parser/extractor/transaction logic identical. Final modules then passed all synthetic and independent checks. No second real-package scan was needed.",
   "publication_payload_included": false,
-  "target_code_executed": false
+  "target_code_executed": false,
+  "additional_real_cross_version_validation": "LINUX-CROSS-VERSION-VALIDATION.json"
 }

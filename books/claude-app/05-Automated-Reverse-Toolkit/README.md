@@ -229,7 +229,7 @@ rea extract-artifact "/absolute/path/to/local/app.asar" --json > "/path/to/priva
 python3 -B run_tests.py
 ```
 
-默认套件共329项：既有215项，加DEB投影的89项格式检查、24项事务检查与1项异地安装检查。[DEB验证记录](DEB-PROJECTION-VALIDATION.json)另列独立评审及同包smoke；同包零差异不代表真实跨版本验收。单独运行诊断回归或未修复局限探针：
+默认套件共329项：既有215项，加DEB投影的89项格式检查、24项事务检查与1项异地安装检查。[DEB验证记录](DEB-PROJECTION-VALIDATION.json)另列独立评审及同包smoke；早期同包零差异与[两真实版本比较](LINUX-CROSS-VERSION-VALIDATION.md)分别记录。单独运行诊断回归或未修复局限探针：
 
 ```sh
 python3 -B tests/test_scanner_diagnostics.py
@@ -254,7 +254,7 @@ python3 -B reverse_toolkit.py unpack-asar --input "/path/to/app.asar" --output "
 python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --output "/path/to/private/new-asar-diff"
 ```
 
-三个既有Linux/Windows/macOS样本的元数据清点均有25个精确共享范围别名，分别声明3/6/10个外置文件。默认不提供companion时，严格提取会在写出前拒绝；只读元数据清点不等于成员完整性通过。显式提供精确companion后，Linux 2.37337.1已完成489个声明文件完整性核验及同包差分，见[Linux验证](LINUX-ASAR-VALIDATION.md)；不能将此结果扩展到另外两个平台或真实跨版本比较。完整支持范围、来源和测试见 [SUPPORT.md](SUPPORT.md)、[ASAR-SOURCE-NOTES.md](ASAR-SOURCE-NOTES.md)、[ASAR-VALIDATION.md](ASAR-VALIDATION.md)。
+三个既有Linux/Windows/macOS样本的元数据清点均有25个精确共享范围别名，分别声明3/6/10个外置文件。默认不提供companion时，严格提取会在写出前拒绝；只读元数据清点不等于成员完整性通过。显式提供精确companion后，Linux 2.37337.1已完成489个声明文件完整性核验及同包差分，见[Linux验证](LINUX-ASAR-VALIDATION.md)；不能将此同包结果扩展到另外两个平台；另有[Linux两真实版本比较](LINUX-CROSS-VERSION-VALIDATION.md)独立验证。完整支持范围、来源和测试见 [SUPPORT.md](SUPPORT.md)、[ASAR-SOURCE-NOTES.md](ASAR-SOURCE-NOTES.md)、[ASAR-VALIDATION.md](ASAR-VALIDATION.md)。
 
 
 ### 显式 ASAR 配套目录接口
@@ -269,6 +269,8 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpack
 此入口已在Linux通过原创合成检查和上述真实同包验证；需要POSIX no-follow与descriptor-relative原语，Windows原生sidecar入口尚不支持，macOS原生运行未验证。完整文件清单覆盖不等于完整应用或发布方认证；原生文件的语义不会因此被静态扫描器解析。详见 [显式配套目录合同](SUPPORT.md#显式配套目录精确匹配整体成功或整体失败)。
 
 ## 真实样本验证
+
+[Linux 2.31226.1 → 2.37337.1](LINUX-CROSS-VERSION-VALIDATION.md)：真实不同DEB、同一ASAR范围、默认预算比较通过。76新增/33移除CSS候选中，33个移除均找到同键同值、不同作用域对应项；不能据数量直接判断功能删增。
 
 [Linux 2.37337.1显式ASAR配套](LINUX-ASAR-VALIDATION.md)：489个声明文件完整性通过，同字节双输入流程完成；语义扫描仍保留18个不完整文件，报告未抹掉覆盖缺口。验证没有执行产品代码。
 

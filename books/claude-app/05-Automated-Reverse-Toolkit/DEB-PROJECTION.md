@@ -67,7 +67,7 @@ run.json有三层校验与scanner原coverage。outer_envelope_inventory_complete
 
 原始包、raw/、inputs/、snapshot和完整清单都是私有中间材料，不应公开。随工具发布的只有原创实现、原创合成测试、文档和脱敏验证摘要。
 
-Linux 2.37337.1 的同包双输入 smoke 已通过：489个声明文件核验，选区79,057,846B，逻辑展开81,280,912B；保留44个 hashed-only、18个 scan-incomplete。零差异仅为同包重复性 smoke，不是两个真实版本的检出验收。未认证发布方，也未扩展Mac/Win原生证据。
+Linux 2.37337.1 的同包双输入 smoke 已通过：489个声明文件核验，选区79,057,846B，逻辑展开81,280,912B；保留44个 hashed-only、18个 scan-incomplete。零差异仅为同包重复性 smoke，不是两个真实版本的检出验收。工具自身不认证发布方，也未扩展Mac/Win原生证据。另已完成[2.31226.1 → 2.37337.1真实跨版本验证](LINUX-CROSS-VERSION-VALIDATION.md)，外部签名来源校验、扫描缺口与候选解释分别记录。
 
 ## 测试
 
