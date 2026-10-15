@@ -139,3 +139,5 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 ## 窄容器布局检查
 
 [固定源检查页与构建器](narrow-layout-lab/README.md)把六份模板放入375、768、1024 CSS px的iframe内容框，保留源摘要与沙盒边界；用于布局检查，不等同移动设备或持久化测试。
+
+[查看六份375px真实浏览器截图与三档尺寸记录](narrow-layout-lab/BROWSER-REVIEW.md)。

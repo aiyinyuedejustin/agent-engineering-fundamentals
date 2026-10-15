@@ -1,0 +1,299 @@
+{
+  "fixtureCommit": "bc1674f59edf3e41aaa2869a695b077e496a75d5",
+  "fixtureSha256": "54cea36ecf1661245e9bda78d88f44b8e491554df852068a439804daaf6b36f9",
+  "browser": "cloud Chrome",
+  "frameHeightCssPx": 900,
+  "measurements": [
+    {
+      "template": "01-component-gallery.html",
+      "width": 375,
+      "geometry": "选中 375 CSS px · iframe 内容框实测 375 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "01-component-gallery.html",
+      "width": 768,
+      "geometry": "选中 768 CSS px · iframe 内容框实测 768 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "01-component-gallery.html",
+      "width": 1024,
+      "geometry": "选中 1024 CSS px · iframe 内容框实测 1024 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 1009,
+        "scrollWidth": 1009,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "02-chat-workspace-template.html",
+      "width": 375,
+      "geometry": "选中 375 CSS px · iframe 内容框实测 375 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "theme": "light"
+      },
+      "draft": "窄容器验证草稿"
+    },
+    {
+      "template": "02-chat-workspace-template.html",
+      "width": 768,
+      "geometry": "选中 768 CSS px · iframe 内容框实测 768 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "theme": "light"
+      },
+      "draft": "窄容器验证草稿"
+    },
+    {
+      "template": "02-chat-workspace-template.html",
+      "width": 1024,
+      "geometry": "选中 1024 CSS px · iframe 内容框实测 1024 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "theme": "light"
+      },
+      "draft": "窄容器验证草稿"
+    },
+    {
+      "template": "03-split-artifact-ide-template.html",
+      "width": 375,
+      "geometry": "选中 375 CSS px · iframe 内容框实测 375 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "03-split-artifact-ide-template.html",
+      "width": 768,
+      "geometry": "选中 768 CSS px · iframe 内容框实测 768 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "03-split-artifact-ide-template.html",
+      "width": 1024,
+      "geometry": "选中 1024 CSS px · iframe 内容框实测 1024 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "04-editorial-blog-and-doc-template.html",
+      "width": 375,
+      "geometry": "选中 375 CSS px · iframe 内容框实测 375 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "04-editorial-blog-and-doc-template.html",
+      "width": 768,
+      "geometry": "选中 768 CSS px · iframe 内容框实测 768 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "04-editorial-blog-and-doc-template.html",
+      "width": 1024,
+      "geometry": "选中 1024 CSS px · iframe 内容框实测 1024 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 1009,
+        "scrollWidth": 1009,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "05-settings-and-dashboard-template.html",
+      "width": 375,
+      "geometry": "选中 375 CSS px · iframe 内容框实测 375 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "05-settings-and-dashboard-template.html",
+      "width": 768,
+      "geometry": "选中 768 CSS px · iframe 内容框实测 768 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 753,
+        "scrollWidth": 753,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "05-settings-and-dashboard-template.html",
+      "width": 1024,
+      "geometry": "选中 1024 CSS px · iframe 内容框实测 1024 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 1009,
+        "scrollWidth": 1009,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "06-floating-launcher-template.html",
+      "width": 375,
+      "geometry": "选中 375 CSS px · iframe 内容框实测 375 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "06-floating-launcher-template.html",
+      "width": 768,
+      "geometry": "选中 768 CSS px · iframe 内容框实测 768 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "theme": "light"
+      }
+    },
+    {
+      "template": "06-floating-launcher-template.html",
+      "width": 1024,
+      "geometry": "选中 1024 CSS px · iframe 内容框实测 1024 × 900 CSS px",
+      "document": {
+        "clientHeight": 900,
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "theme": "light"
+      }
+    }
+  ],
+  "observed_at_utc": "2026-10-15T06:34:45Z",
+  "outer_viewport_css_px": {
+    "width": 1173,
+    "height": 761
+  },
+  "source_bundle_sha256": "be68a58fb3ae9e3ec2a0c6b27b4c1351220e23e2fc1273e283aa2182031dc945",
+  "root_horizontal_overflow_observed": false,
+  "scope": "Six fixed original templates in sandbox=allow-scripts srcdoc frames. 18 base-view root width measurements; template 02 includes a synthetic composer draft; visual inspection and screenshots at 375px. Not device, touch, persistent storage, navigation, full accessibility or comprehensive CSP enforcement validation.",
+  "interactions": [
+    {
+      "template": "01",
+      "check": "Theme toggle changed data-theme light to dark and back; storage-denied notice appeared",
+      "passed": true
+    },
+    {
+      "template": "02",
+      "check": "Synthetic composer draft survived 375/768/1024 width changes",
+      "passed": true
+    },
+    {
+      "template": "02",
+      "check": "Narrow navigation drawer opened; closing restored focus to sidebar-toggle",
+      "passed": true
+    },
+    {
+      "template": "03",
+      "check": "CSS-only static div measured 120x120; empty update rejected; after selecting preview tab the prior div remained 120x120",
+      "passed": true
+    },
+    {
+      "template": "04",
+      "check": "Docs view became selected and its content appeared",
+      "passed": true
+    },
+    {
+      "template": "05",
+      "check": "Synthetic 30-day selection changed displayed notes from 24 to 92",
+      "passed": true
+    },
+    {
+      "template": "06",
+      "check": "Query filtered command choices; selecting theme command changed data-theme to dark",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "assets/screenshots/narrow-01-375-bc1674f.jpg",
+      "width": 375,
+      "height": 900,
+      "sha256": "f5d21855ce95c9361f31acf31c16262d5c3c6be7e2e58184fcc5c2f2526b5ea3",
+      "view": "initial top of template at 375 CSS px"
+    },
+    {
+      "file": "assets/screenshots/narrow-02-375-bc1674f.jpg",
+      "width": 375,
+      "height": 900,
+      "sha256": "ebbfd72cd2872045fe28da1abc9087d2442adcc31f3d2112eac34c1066d8440c",
+      "view": "initial top of template at 375 CSS px"
+    },
+    {
+      "file": "assets/screenshots/narrow-03-375-bc1674f.jpg",
+      "width": 375,
+      "height": 900,
+      "sha256": "6d2e15b0023da10f9d7e58793f59e950d5f8ebcb030319d2038435186954ca8d",
+      "view": "initial top of template at 375 CSS px"
+    },
+    {
+      "file": "assets/screenshots/narrow-04-375-bc1674f.jpg",
+      "width": 375,
+      "height": 900,
+      "sha256": "0983d90be5ce138141a1112a63a9210173b32de32fec11c3f25b9801c42c9f75",
+      "view": "initial top of template at 375 CSS px"
+    },
+    {
+      "file": "assets/screenshots/narrow-05-375-bc1674f.jpg",
+      "width": 375,
+      "height": 900,
+      "sha256": "6e97cac1181b32f2f6668f271e72897d55b88c3381b2994effca54948005ad73",
+      "view": "initial top of template at 375 CSS px"
+    },
+    {
+      "file": "assets/screenshots/narrow-06-375-bc1674f.jpg",
+      "width": 375,
+      "height": 900,
+      "sha256": "944fadfb3a84333bb0d79b61c3480c96c518aee7d612ad9234e19726d5141906",
+      "view": "initial top of template at 375 CSS px"
+    }
+  ],
+  "screenshot_path_base": "book root"
+}

@@ -26,13 +26,6 @@
       "failed": 0
     }
   ],
-  "notRun": [
-    "Browser rendering",
-    "CSP runtime enforcement",
-    "Android/iOS or touch",
-    "200% browser zoom",
-    "persistent storage"
-  ],
   "sourceFiles": [
     {
       "filename": "01-component-gallery.html",
@@ -77,5 +70,13 @@
     "python": "3.12.14",
     "node": "24.19.0",
     "portability": "POSIX output APIs required; other build platforms not verified"
-  }
+  },
+  "notCoveredByTheseStaticChecks": [
+    "Browser rendering",
+    "CSP runtime enforcement",
+    "Android/iOS or touch",
+    "200% browser zoom",
+    "persistent storage"
+  ],
+  "separateBrowserReview": "BROWSER-REVIEW.md"
 }
