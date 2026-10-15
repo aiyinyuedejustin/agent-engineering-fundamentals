@@ -99,4 +99,99 @@ class McpBindingTests(unittest.TestCase):
                          call_digest(self.binding, {'b': 2, 'a': 1}))
 
 
+class McpLifecycleTests(unittest.TestCase):
+    def setUp(self):
+        self.binding = Binding('notes', 'extension:sample', 1, 1, 'read_note')
+        self.host = MockHost(self.binding, policy='allow')
+        self.args = {'path': 'notes/meeting.txt'}
+
+    def assert_stale_after(self, field, interim):
+        original = getattr(self.host, field)
+        self.assertEqual(self.host.ask('r', self.args), 'pending')
+        setattr(self.host, field, interim)
+        setattr(self.host, field, original)
+        self.assertEqual(self.host.decide_and_record('r', self.args), 'deny')
+        self.assertEqual(self.host.decide_and_record('r', self.args), 'missing')
+        self.assertEqual(self.host.ask('r', self.args), 'duplicate-request')
+        self.assertEqual(self.host.journal, [])
+        self.assertEqual(self.host.ask('new', self.args), 'pending')
+        self.assertEqual(self.host.decide_and_record('new', self.args), 'allow')
+
+    def test_policy_deny_allow_before_first_click(self):
+        self.assert_stale_after('policy', 'deny')
+
+    def test_policy_unknown_allow_before_first_click(self):
+        self.assert_stale_after('policy', 'unknown')
+
+    def test_disconnect_reconnect_before_first_click(self):
+        self.assert_stale_after('ready', False)
+
+    def test_binding_change_restore_before_first_click(self):
+        self.assert_stale_after('binding', replace(self.binding, source='manual:sample'))
+
+    def test_duplicate_after_restore_cannot_refresh_old_snapshot(self):
+        self.host.ask('r', self.args)
+        self.host.policy = 'deny'; self.host.policy = 'allow'
+        self.assertEqual(self.host.ask('r', self.args), 'duplicate-request')
+        self.assertEqual(self.host.decide_and_record('r', self.args), 'deny')
+        self.assertEqual(self.host.journal, [])
+
+    def test_equal_assignments_keep_pending_approval(self):
+        self.host.ask('r', self.args)
+        self.host.policy = 'allow'; self.host.ready = True
+        self.host.binding = replace(self.binding)
+        self.assertEqual(self.host.decide_and_record('r', self.args), 'allow')
+
+    def test_disconnected_click_consumes_before_restore(self):
+        self.host.ask('r', self.args); self.host.ready = False
+        self.assertEqual(self.host.decide_and_record('r', self.args), 'state-changed')
+        self.host.ready = True
+        self.assertEqual(self.host.decide_and_record('r', self.args), 'missing')
+        self.assertEqual(self.host.journal, [])
+
+    def test_nested_argument_mutation_is_denied_and_consumed(self):
+        args = {'paths': ['notes/meeting.txt']}
+        self.host.ask('r', args); args['paths'][0] = 'other'
+        self.assertEqual(self.host.decide_and_record('r', args), 'deny')
+        self.assertEqual(self.host.decide_and_record('r', args), 'missing')
+        self.assertEqual(self.host.journal, [])
+
+    def test_one_transition_revokes_every_older_card_only(self):
+        self.host.ask('a', self.args); self.host.ask('b', self.args)
+        self.host.ready = False; self.host.ready = True
+        self.host.ask('c', self.args)
+        self.assertEqual(self.host.decide_and_record('c', self.args), 'allow')
+        self.assertEqual(self.host.decide_and_record('a', self.args), 'deny')
+        self.assertEqual(self.host.decide_and_record('b', self.args), 'deny')
+        self.assertEqual(len(self.host.journal), 1)
+
+    def test_other_host_transition_does_not_revoke_this_host(self):
+        other = MockHost(self.binding, policy='allow', approvals=self.host.approvals)
+        self.host.ask('a', self.args); other.ask('b', self.args)
+        other.policy = 'deny'; other.policy = 'allow'
+        self.assertEqual(self.host.decide_and_record('a', self.args), 'allow')
+        self.assertEqual(other.decide_and_record('b', self.args), 'deny')
+
+    def test_dataclass_public_shape_and_value_semantics_preserved(self):
+        from dataclasses import asdict, fields
+        desk = lab.ApprovalDesk(); journal = []
+        left = MockHost(self.binding, True, 'allow', desk, journal)
+        right = MockHost(self.binding, True, 'allow', desk, journal)
+        self.assertEqual([f.name for f in fields(left)],
+                         ['binding', 'ready', 'policy', 'approvals', 'journal'])
+        self.assertEqual(left, right)
+        self.assertEqual(repr(left), repr(right))
+        self.assertEqual(asdict(left), asdict(right))
+        left.policy = 'deny'; left.policy = 'allow'
+        self.assertEqual(left, right)
+        self.assertEqual(replace(left), left)
+        with self.assertRaises(TypeError): hash(left)
+
+    def test_replacement_is_new_host_not_old_authorization(self):
+        self.host.ask('r', self.args)
+        cloned = replace(self.host)
+        self.assertEqual(cloned.decide_and_record('r', self.args), 'deny')
+        self.assertEqual(self.host.journal, [])
+
+
 if __name__ == '__main__': unittest.main()

@@ -43,7 +43,7 @@ MCP 是这条链中交换消息的协议；MCPB 描述扩展怎样打包与安�
 
 ## 三、用已有 ApprovalDesk，补上“批准的是谁”
 
-本书的 [ApprovalDesk](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/model.py) 已经解决一次消费与参数摘要匹配。新的 [mcp_binding.py](../../04-Extracted-Core-Code-And-Scripts/worked-cases/mcp_binding.py) 只在它外面补一个绑定对象：
+本书的 [ApprovalDesk](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/model.py) 已经解决一次消费与参数摘要匹配。新的 [mcp_binding.py](../../04-Extracted-Core-Code-And-Scripts/worked-cases/mcp_binding.py) 在它外面补一个绑定对象和宿主状态修订号：
 
 ```python
 from dataclasses import dataclass
@@ -57,7 +57,9 @@ class Binding:
     tool: str
 ```
 
-准备审批时，对 `Binding + arguments` 的确定性 JSON 表达计算摘要，放进 ApprovalDesk。消费决定时，从当前绑定和即将使用的参数重新计算摘要。摘要不同，就不能消费为 allow。
+准备审批时，先用 `call_digest(Binding, arguments)` 固定绑定与参数，再将它和当前宿主状态修订号一起计算审批摘要，放进 ApprovalDesk。消费决定时，用当前修订号、绑定和即将使用的参数重新计算。摘要不同，就不能消费为 allow。`call_digest` 的两参数接口与原摘要规则保持不变。
+
+`MockHost` 通过 `__setattr__` 保留直接赋值接口：`policy`、`ready`、`binding` 的值每次真正改变，都会取得一个更大的进程内修订号；赋相等值不算变化。初始化也取得新修订号。因此即使状态经历 A→B→A，当前值恢复相同，修订号仍与旧卡片不同。修订号是运行时内部属性，不加入 dataclass 的字段、构造参数、repr、相等比较或 asdict 输出；新建宿主包括 `dataclasses.replace` 不继承旧审批授权。这个例子只支持可信代码的普通字段赋值，不支持直接改 `__dict__`、私有修订号或跨进程恢复审批。
 
 在 `04-Extracted-Core-Code-And-Scripts/worked-cases/` 目录中独立运行下面的片段：
 
@@ -80,15 +82,16 @@ assert host.journal == []
 
 `ask()` 在画审批卡之前检查策略和连接：策略尚未加载时返回 `policy-loading`，连接断开时返回 `not-connected`。这些状态不应都显示成“无法使用工具，请重试”。
 
-`decide_and_record()` 在消费卡片时再检查一次。如果组织策略变成拒绝，或连接已经断开，它结束这个 pending 请求，返回 `state-changed`。恢复连接或策略之后，旧卡片不会自行复活。
+`decide_and_record()` 在消费卡片时再检查一次。如果组织策略变成拒绝，或连接已经断开，它结束这个 pending 请求，返回 `state-changed`。恢复连接或策略之后，旧卡片不会自行复活。如果撤销后还没有点击就已恢复，当前状态检查虽然通过，修订号摘要仍不匹配：首次点击返回 `deny` 并消费旧请求，再点返回 `missing`。
 
 | 时间 | 环境 | 应发生什么 |
 |---|---|---|
 | t0 | 策略 unknown | 等待策略，不创建可执行的批准 |
 | t1 | 策略 allow、连接 ready | 可以展示具体调用审批 |
 | t2 | 卡片仍在，管理员撤销能力 | 将该请求视为已经失去当前前提 |
-| t3 | 用户点击旧 Allow | 拒绝消费，不记录模拟 dispatch |
-| t4 | 策略稍后重新允许 | 新请求重新进入判断，不重放旧答案 |
+| t3 | 未点击，策略已重新允许 | 修订号继续增加，旧审批仍失效 |
+| t4 | 用户首次点击旧 Allow | 返回 deny 并消费旧请求，不记录模拟 dispatch |
+| t5 | 用户再次点击旧 Allow | 返回 missing；需使用新请求 ID 重新审批 |
 
 示例的判断与 journal 写入是一个同步内存步骤。真实宿主若在检查后还要 await，需要在真正提交前重新确认相关代次，或把授权凭据交给能原子检查与执行的服务。这个小模型没有证明真实跨进程的“检查到使用”间隙已经消失。
 
@@ -134,6 +137,8 @@ python3 -B -m unittest discover -s 04-Extracted-Core-Code-And-Scripts/worked-cas
 4. 审批期间断开，随后重新连接：原请求不能自动获得新批准。
 5. 读取路径从 `notes/meeting.txt` 改成另一个路径：deny，需重新审查目标。
 
-11 个 MCP 绑定测试与第 2 卷的 6 个组合场景共用一个 Python 测试入口。它们只验证本模型的宿主策略；既不安装扩展，也不证明操作系统沙箱、真实凭据保护或产品的全部 MCP 行为。
+23 个 MCP 绑定与生命周期测试（含撤权恢复、断开恢复、绑定恢复和 API 兼容性）与第 2 卷的 6 个组合场景共用一个 Python 测试入口。它们只验证本模型的宿主策略；既不安装扩展，也不证明操作系统沙箱、真实凭据保护或产品的全部 MCP 行为。
+
+独立 Skill 的 [策略修订号检查](../../03-Ready-To-Use-Agent-Skills/mcp-tool-integration/assets/boundary-model.mjs) 与 [撤销再恢复回归](../../03-Ready-To-Use-Agent-Skills/mcp-tool-integration/assets/boundary-model.test.mjs) 已覆盖等待批准期间的策略历史；本次 Python 修订不改变该实现。它每次 `setToolPolicy` 都推进修订号，而本例普通字段同值赋值保持不变，两者不要混为同一个 API 合同。
 
 可复用流程可继续读[工具集成 Skill](../../03-Ready-To-Use-Agent-Skills/mcp-tool-integration/SKILL.md)。把这个例子迁移到自有宿主时，先接真实的服务身份与配置所有者，再接 transport；不要把模拟 journal 改成文件读写就称作完成了安全边界。
