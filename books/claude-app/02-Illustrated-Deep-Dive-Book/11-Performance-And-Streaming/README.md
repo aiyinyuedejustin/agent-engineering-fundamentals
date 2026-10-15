@@ -461,7 +461,7 @@ Long Animation Frames API 可在支持的浏览器中提供超过阈值的 frame
 
 Claude 客户端值得学习的，不是某个神奇帧率常量，而是持续缩小昂贵工作的范围，并让每类工作拥有自己的完成与失效边界：稳定块、活动尾部、完整文档；完成代码行、临时行；共享 Worker、单个 stream；组件清理、全局缓存；source final、formatter ready、browser paint。
 
-这套设计也留下了清楚的限制：同步 parser 仍然同步，单批 cap 不是总内存 cap，timeout 不是抢占，缓存估算不是 heap 测量，文件 diff 虚拟化不是全 transcript 虚拟化。把这些边界说清楚，才能把机制可靠地迁移到自己的产品，而不是复制一个看似专业的性能故事。
+这套设计也留下了清楚的限制：同步 parser 仍然同步，单批 cap 不是总内存 cap，timeout 不是抢占，缓存估算不是 heap 测量，文件 diff 虚拟化不是全 transcript 虚拟化。
 
 ## 证据索引与复核
 
