@@ -1,0 +1,47 @@
+{
+  "scope": "jsdom DOM lifecycle; does not verify rendered pixels, CSP enforcement, or browser engine behavior",
+  "passed": 8,
+  "failed": 0,
+  "results": [
+    {
+      "id": "LIFECYCLE-01",
+      "title": "A successful visible refresh replaces exactly one iframe and preserves all isolation attributes",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-02",
+      "title": "Code to Preview with unchanged source gets a new browsing context",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-03",
+      "title": "Hidden title instruction then Preview remounts without losing heading attributes",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-04-empty",
+      "title": "Invalid empty source keeps last-good iframe identity and document",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-04-oversize",
+      "title": "Invalid oversize source keeps last-good iframe identity and document",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-04-unsupported",
+      "title": "Invalid unsupported source keeps last-good iframe identity and document",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-05",
+      "title": "Reset and error restoration remount good documents without retaining unsafe content",
+      "result": "pass"
+    },
+    {
+      "id": "LIFECYCLE-06",
+      "title": "Repeated tab and preview actions retain one frame and one instruction event path",
+      "result": "pass"
+    }
+  ]
+}
