@@ -244,13 +244,34 @@ let articleMode='journal';const searchInput=$('#doc-search'),searchIme=imeGuard(
 const journalSections=$$('#journal-content .article-section'),docsSections=$$('#docs-content .article-section');
 // 使用当前文档 URL，避免嵌入式预览的 <base> 把页内目录带到源码地址。
 function sectionURL(id){const url=new URL(window.location.href);url.hash=id;return url.href;}
-function showMode(mode){articleMode=mode;$('#journal-content').hidden=mode!=='journal';$('#docs-content').hidden=mode!=='docs';$('#journal-tab').setAttribute('aria-pressed',String(mode==='journal'));$('#docs-tab').setAttribute('aria-pressed',String(mode==='docs'));const nav=$('.toc nav');nav.replaceChildren();for(const section of mode==='journal'?journalSections:docsSections){const a=document.createElement('a');a.href=sectionURL(section.id);a.dataset.section=section.id;a.textContent=$('h2,h3',section).textContent;nav.append(a);}searchInput.value='';search();}
+function showMode(mode){sectionNavigation=null;articleMode=mode;$('#journal-content').hidden=mode!=='journal';$('#docs-content').hidden=mode!=='docs';$('#journal-tab').setAttribute('aria-pressed',String(mode==='journal'));$('#docs-tab').setAttribute('aria-pressed',String(mode==='docs'));const nav=$('.toc nav');nav.replaceChildren();for(const section of mode==='journal'?journalSections:docsSections){const a=document.createElement('a');a.href=sectionURL(section.id);a.dataset.section=section.id;a.textContent=$('h2,h3',section).textContent;nav.append(a);}searchInput.value='';search();}
 $('#journal-tab').addEventListener('click',()=>showMode('journal'));$('#docs-tab').addEventListener('click',()=>showMode('docs'));
-$('#read-mode').addEventListener('click',e=>{const active=root.classList.toggle('reading-mode');e.currentTarget.setAttribute('aria-pressed',String(active));e.currentTarget.textContent=active?'退出专注':'专注阅读';});
-function search(){if(searchIme())return;const query=searchInput.value.trim().toLowerCase();const searching=Boolean(query);root.classList.toggle('searching',searching);$('#search-results').hidden=!searching;if(!query)return;const all=[...journalSections,...docsSections];const results=all.filter(s=>s.textContent.toLowerCase().includes(query));$('#search-count').textContent=results.length?'找到 '+results.length+' 处相关内容':'没有找到。试试“字体”“间距”或“主题”。';$('#search-list').replaceChildren();for(const s of results){const b=document.createElement('button');b.className='search-result';const title=document.createElement('strong');title.textContent=$('h2,h3',s).textContent;const excerpt=document.createElement('span');excerpt.textContent=$('p:not(.eyebrow)',s)?.textContent.slice(0,120)||s.textContent.slice(0,120);b.append(title,excerpt);b.addEventListener('click',()=>{showMode(s.closest('#docs-content')?'docs':'journal');try{history.replaceState(null,'',sectionURL(s.id));}catch{/* file:// 或嵌入容器可拒绝历史修改；阅读定位仍应完成。 */}s.scrollIntoView({behavior:'auto',block:'start'});s.tabIndex=-1;s.focus({preventScroll:true});});$('#search-list').append(b);}}
+$('#read-mode').addEventListener('click',e=>{const active=root.classList.toggle('reading-mode');e.currentTarget.setAttribute('aria-pressed',String(active));e.currentTarget.textContent=active?'退出专注':'专注阅读';sectionNavigation=null;updateCurrentSection();});
+function search(){if(searchIme())return;const query=searchInput.value.trim().toLowerCase();const searching=Boolean(query);root.classList.toggle('searching',searching);$('#search-results').hidden=!searching;updateCurrentSection();if(!query)return;const all=[...journalSections,...docsSections];const results=all.filter(s=>s.textContent.toLowerCase().includes(query));$('#search-count').textContent=results.length?'找到 '+results.length+' 处相关内容':'没有找到。试试“字体”“间距”或“主题”。';$('#search-list').replaceChildren();for(const s of results){const b=document.createElement('button');b.className='search-result';const title=document.createElement('strong');title.textContent=$('h2,h3',s).textContent;const excerpt=document.createElement('span');excerpt.textContent=$('p:not(.eyebrow)',s)?.textContent.slice(0,120)||s.textContent.slice(0,120);b.append(title,excerpt);b.addEventListener('click',()=>{showMode(s.closest('#docs-content')?'docs':'journal');try{history.replaceState(null,'',sectionURL(s.id));}catch{/* file:// 或嵌入容器可拒绝历史修改；阅读定位仍应完成。 */}s.scrollIntoView({behavior:'auto',block:'start'});s.tabIndex=-1;s.focus({preventScroll:true});markSectionNavigation(s.id);});$('#search-list').append(b);}}
 searchInput.addEventListener('input',search);searchInput.addEventListener('compositionend',search);searchInput.addEventListener('keydown',e=>{if(!searchIme(e)&&e.key==='Escape'){searchInput.value='';search();}});
-$('.toc nav').addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;$$('.toc a').forEach(link=>link.removeAttribute('aria-current'));a.setAttribute('aria-current','location');});
-if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting){$$('.toc a').forEach(a=>{if(a.dataset.section===entry.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}},{rootMargin:'-100px 0px -55% 0px'});[...journalSections,...docsSections].forEach(s=>observer.observe(s));}
-$('#back-top').addEventListener('click',()=>{window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#main').focus({preventScroll:true});});
+let sectionNavigation=null;
+function setCurrentSection(id){$$('.toc a').forEach(a=>{if(a.dataset.section===id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
+function updateCurrentSection(){
+ if(root.classList.contains('searching')){sectionNavigation=null;setCurrentSection(null);return;}
+ const sections=articleMode==='journal'?journalSections:docsSections;
+ if(sectionNavigation&&(sectionNavigation.y===null||sectionNavigation.y===window.scrollY)){setCurrentSection(sectionNavigation.id);return;}
+ sectionNavigation=null;
+ // 每次读取当前文章的完整几何；旧回调、离开 entry 与 entry 顺序都不能决定赢家。
+ const readingLine=(parseFloat(getComputedStyle(sections[0]).scrollMarginTop)||110)+1;
+ let current=sections[0];
+ for(const section of sections){if(section.getBoundingClientRect().top>readingLine)break;current=section;}
+ setCurrentSection(current.id);
+}
+function markSectionNavigation(id){
+ const navigation=sectionNavigation={id,y:null};setCurrentSection(id);
+ // 等原生锚点完成滚动。停在相同位置时保留明确目标，含页尾无法顶齐的章节。
+ requestAnimationFrame(()=>{if(sectionNavigation===navigation){navigation.y=window.scrollY;updateCurrentSection();}});
+}
+$('.toc nav').addEventListener('click',e=>{const a=e.target.closest('a');if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;markSectionNavigation(a.dataset.section);});
+if('IntersectionObserver'in window){const observer=new IntersectionObserver(updateCurrentSection,{rootMargin:'-100px 0px -55% 0px'});[...journalSections,...docsSections].forEach(s=>observer.observe(s));}
+window.addEventListener('scroll',updateCurrentSection,{passive:true});
+window.addEventListener('resize',()=>{sectionNavigation=null;updateCurrentSection();});
+updateCurrentSection();
+$('#back-top').addEventListener('click',()=>{sectionNavigation=null;window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});$('#main').focus({preventScroll:true});updateCurrentSection();});
 
 </script></body></html>
