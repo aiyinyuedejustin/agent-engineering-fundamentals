@@ -49,11 +49,12 @@ JSON 写到标准输出；一句摘要写到标准错误。工具不主动创建
 - 相对文件或目录路径；标准 URL 拆分后只解码一次百分号编码。查询串不用于文件定位，计入 `local_queries_ignored`。片段单独解码且区分大小写。非法百分号编码和非法 UTF-8 会报错。
 - 仓库根相对链接 `/books/claude-app/...` 映射到传入的书根目录；其他仓库路径会报越界。HTTP(S)、mailto、tel 和协议相对地址不发起请求，不声称其可达。
 - 普通 ATX 标题与单行 Setext 标题的 GitHub 风格片段：小写、空格变连字符、去除标点/符号、保留字母/数字/组合标记/下划线/连字符；去掉简单强调和行内代码标记；重复片段依次加 `-1`、`-2`，并处理与已有后缀冲突。
+- 前后均为空行（仅空格/制表符，或文档边界）的独立行、至多三个前导空格的严格空锚点 `<a id="旧锚点-1_"></a>`：只接受双引号、唯一 id 属性、无内容/额外属性；ID 为 1–128 个 Unicode 字母或数字（类别 L/N）、下划线或连字符。大小写敏感，不解码实体，不接受组合标记。显式 ID 重复或与任何已生成标题片段碰撞时，整份文档片段仍为 `incomplete`。该上限仅是检查器支持子集，不是 HTML 或渲染器的通用限制。
 - 普通 fenced code、四空格/制表符缩进代码、同行行内代码、闭合 HTML 注释和开头的 YAML frontmatter 不做链接检查。纯 `<br>` 不产生链接警告。
 
 标题规则参考 [GitHub 官方格式说明](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)。该工具没有引入 CommonMark/GFM 解析器，也没有复制 GitHub 完整 Unicode slugger 数据表；复杂 Unicode、渲染器扩展和未来规则变化仍需人工核对。
 
-会明确报告的不支持项包括：多行或复杂 reference 定义、复杂嵌套标签、多行/未闭合行内代码、列表或引用容器中的标题/围栏、HTML/MDX、标题中的链接/HTML 实体/自定义 ID/数学与 emoji 短码、HTML/PDF/源码行号片段，以及目录片段的 README 自动选择。遇到可能影响标题列表的结构，不会把该文档的片段检查冒充为完成。
+会明确报告的不支持项包括：多行或复杂 reference 定义、复杂嵌套标签、多行/未闭合行内代码、列表或引用容器中的标题/围栏、除上述严格空锚点以外的 HTML/MDX、标题中的链接/HTML 实体/自定义 ID/数学与 emoji 短码、HTML/PDF/源码行号片段，以及目录片段的 README 自动选择。遇到可能影响标题列表的结构，不会把该文档的片段检查冒充为完成。
 
 这是保守的有限扫描器，不保证识别每一种未支持语法。缩进列表、跨行段落、嵌套 HTML 和复杂行内格式的精确渲染不在合同内；无警告也不能代替完整 Markdown 渲染测试。书中示例代码和未使用 reference 定义中的路径不作为读者链接验收。
 
@@ -80,3 +81,13 @@ Markdown 和 JSON 的单文件解析上限为 8 MiB；清单目标按块计算�
 稳定输出标识为 `publication-integrity-report/v1`。每项问题至少含 `severity`、`code`、`path`、`message`；存在行号时给出 `line`，目标、期望/实际哈希等放在 `details`。
 
 请按错误码分类消费，不解析英文提示句；保留 `unsupported` 问题和 `scope`。`checks` 分别记录目录、Markdown、清单阶段的状态，因此目录/哈希可通过而总状态仍为 `incomplete`。只有该清单的 `status` 为 `passed`，且 `matched` 数与 `entries` 数一致时，才能说“这份清单列出的当前文件全部匹配”。不能由此推断清单外文件、远程仓库、渲染结果或历史测试也被验证。
+
+## 1.1.0 有限扩展
+
+严格空锚点不再单独使普通 Markdown 标题不可判定；原有 `heading_fragments_checked` 计数现在包括上述显式锚点目标。HTML 文件片段仍为 `non_markdown_fragment`，即使源码中看似存在唯一 ID，也不代表脚本执行后的 DOM 或浏览器定位已验证。未执行 JavaScript、未读取额外依赖图、未访问网络；四份 manifest 合同保持不变。
+
+出现非 CR/LF 行分隔符（如 Unicode U+2028/U+2029、NBSP 不算空行）时，不把解析边界冒充为 Markdown 保证；非标准行分隔符报告 `unsupported_line_separator`。
+
+### 缩进 HTML 的保守拒绝
+
+未围栏、未注释的四空格/制表符缩进行如含原始 HTML 标签起始或声明，报告 `unsupported_indented_html` 并将整文片段检查标为不完整。此规则避免段落延续中的 HTML 被误当代码隐藏；宁可将一小类合法缩进 HTML 代码标为 unsupported，不尝试完整解析 CommonMark 段落。普通缩进代码、围栏内 HTML、闭合注释和 frontmatter 不触发该保守规则。

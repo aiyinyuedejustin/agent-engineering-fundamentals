@@ -321,5 +321,124 @@ class Fixture(unittest.TestCase):
                 self.assertIn("publication-check:", result.stderr)
 
 
+class EmptyAnchorSubset(unittest.TestCase):
+    setUp = Fixture.setUp
+    tearDown = Fixture.tearDown
+    write = Fixture.write
+    run_check = Fixture.run_check
+    codes = Fixture.codes
+
+    def test_explicit_anchor_and_ordinary_heading(self):
+        self.write("README.md", '# Title\n\n<a id="旧锚点-1_"></a>\n\n[old](#旧锚点-1_) [new](#title)\n')
+        report = self.run_check()
+        self.assertEqual(report["status"], "passed", report["issues"])
+        self.assertEqual(report["summary"]["heading_fragments_checked"], 2)
+
+    def test_anchor_boundaries(self):
+        for value in ("a", "a" * 128, "中文_123-", "É５"):
+            with self.subTest(value=value):
+                parsed = checker.markdown('<a id="' + value + '"></a>')
+                self.assertTrue(parsed[2])
+                self.assertIn(value, parsed[1])
+
+    def test_unsupported_anchor_forms(self):
+        for value in ('<a id=""></a>', '<a id="' + 'a' * 129 + '"></a>',
+                      '<a id="with space"></a>', '<a id="a.b"></a>',
+                      '<a id="e\u0301"></a>', '<a id="&#97;"></a>',
+                      '<a id="x" class="y"></a>', '<a id="x">text</a>',
+                      "<a id='x'></a>", '<a id="x"/>', '<a name="x"></a>',
+                      '<a id="x"></a> text', '> <a id="x"></a>',
+                      '<a id="x">\n</a>'):
+            with self.subTest(value=value):
+                parsed = checker.markdown(value)
+                self.assertFalse(parsed[2])
+                self.assertIn("unsupported_html", {x[1] for x in parsed[3]})
+
+    def test_commented_decorations_are_outside_strict_subset(self):
+        for text in ('<a id="x"></a><!-- comment -->', '<!-- comment --><a id="x"></a>'):
+            with self.subTest(text=text):
+                parsed = checker.markdown(text)
+                self.assertNotIn("x", parsed[1])
+        self.assertFalse(checker.markdown('<a id="x"></a><!-- comment -->')[2])
+
+    def test_multiline_contexts_remain_unsupported(self):
+        for text in ('![\n\u00a0\n<a id="x"></a>\n\u00a0\n](image.png)',
+                     '<![CDATA[\n\n<a id="x"></a>\n\n]]>',
+                     '<?pi\n\n<a id="x"></a>\n\n?>',
+                     '![\n<a id="x"></a>\n](image.png)',
+                     "<div title='\n\n<a id=\"x\"></a>\n\n'>",
+                     '<a id="x"></a>\n# Next'):
+            with self.subTest(text=text):
+                parsed = checker.markdown(text)
+                self.assertFalse(parsed[2])
+                self.assertIn("unsupported_html", {x[1] for x in parsed[3]})
+
+    def test_anchor_collisions_remain_incomplete(self):
+        for text in ('<a id="same"></a>\n\n<a id="same"></a>',
+                     '# Same\n\n<a id="same"></a>',
+                     '<a id="same"></a>\n\n# Same',
+                     '# Same\n# Same\n\n<a id="same-1"></a>'):
+            with self.subTest(text=text):
+                self.write("README.md", text + '\n\n[link](#same)')
+                report = self.run_check()
+                self.assertEqual(report["status"], "incomplete")
+                self.assertIn("unsupported_anchor_collision", self.codes(report))
+                self.assertIn("fragment_incomplete", self.codes(report))
+                self.assertNotIn("heading_fragments_checked", report["summary"])
+
+    def test_ignored_anchor_contexts_do_not_create_ids(self):
+        for text in ('```html\n<a id="x"></a>\n```',
+                     '    <a id="x"></a>', '`<a id="x"></a>`',
+                     '<!-- <a id="x"></a> -->',
+                     '<!--\n\n<a id="x"></a>\n\n-->',
+                     '---\n<a id="x"></a>\n---'):
+            with self.subTest(text=text):
+                parsed = checker.markdown(text)
+                self.assertNotIn("x", parsed[1])
+
+    def test_non_markdown_line_separators_are_unsupported(self):
+        for sep in ('\u2028', '\u2029', '\x85', '\v', '\f', '\x1c'):
+            parsed = checker.markdown('![' + sep * 2 + '<a id="x"></a>' + sep * 2 + '](image.png)')
+            self.assertFalse(parsed[2])
+            self.assertIn("unsupported_line_separator", {x[1] for x in parsed[3]})
+
+    def test_ambiguous_indented_html_is_conservatively_unsupported(self):
+        for prefix in ('paragraph\n    <textarea>', 'paragraph\n\t<textarea>',
+                       'paragraph\n    <!CDATA[', '    <div>'):
+            parsed = checker.markdown(prefix + '\n\n<a id="x"></a>\n\n[go](#x)')
+            self.assertFalse(parsed[2])
+            self.assertIn("unsupported_indented_html", {x[1] for x in parsed[3]})
+
+    def test_indented_code_fences_and_comments_controls(self):
+        for prefix in ('    ordinary_code()', '    x = 1',
+                       '```html\n    <textarea>\n```',
+                       '<!--\n    <textarea>\n-->',
+                       '---\n    <textarea>\n---'):
+            parsed = checker.markdown(prefix + '\n\n<a id="x"></a>\n\n[go](#x)')
+            self.assertTrue(parsed[2], parsed[3])
+            self.assertIn("x", parsed[1])
+            self.assertNotIn("unsupported_indented_html", {x[1] for x in parsed[3]})
+
+    def test_compact_raw_tags_stay_unsupported(self):
+        for tag in ('<script/>', '<img/>', '<Foo.Bar>'):
+            parsed = checker.markdown(tag + '\n\n<a id="x"></a>\n\n[go](#x)')
+            self.assertFalse(parsed[2])
+            self.assertIn("unsupported_html", {x[1] for x in parsed[3]})
+
+    def test_other_html_still_taints_document(self):
+        self.write("README.md", '# Title\n\n<a id="old"></a>\n<div id="other"></div>\n[x](#title)')
+        report = self.run_check()
+        self.assertEqual(report["status"], "incomplete")
+        self.assertIn("fragment_incomplete", self.codes(report))
+
+    def test_html_fragments_remain_unsupported_even_with_unique_id(self):
+        for html in ('<div id="x"></div>', '<div id="x"></div><script>throw 1</script>'):
+            self.write("page.html", html)
+            self.write("README.md", '[x](page.html#x)')
+            report = self.run_check()
+            self.assertEqual(report["status"], "incomplete")
+            self.assertIn("non_markdown_fragment", self.codes(report))
+
+
 if __name__ == "__main__":
     unittest.main()

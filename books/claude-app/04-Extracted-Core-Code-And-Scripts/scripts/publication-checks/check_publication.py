@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 from pathlib import PurePosixPath
 from urllib.parse import unquote, urlsplit
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 SCHEMA = "publication-integrity-report/v1"
 EXCLUDED = {".git", ".hg", ".svn", "node_modules", "__pycache__", ".venv", "venv"}
 MAX_DOCUMENT_BYTES = 8 * 1024 * 1024
@@ -174,7 +174,7 @@ def without_inline_code(line):
     return re.sub(r"(`+)(?!`)(.*?)\1(?!`)", lambda m: " " * len(m.group()), line)
 
 
-def visible_lines(text):
+def visible_lines(text, warnings=None):
     """Skip frontmatter, comments, ordinary fences and indented code."""
     text = re.sub(r"<!--.*?-->", lambda m: "\n".join(" " * len(s) for s in m.group().split("\n")), text, flags=re.S)
     fence = None
@@ -193,6 +193,8 @@ def visible_lines(text):
             fence = match[1]
             continue
         if line.startswith(("    ", "\t")):
+            if warnings is not None and re.search(r"</?[A-Za-z][^>]*>|</?[A-Za-z][A-Za-z0-9-]*(?:\s|>|$)|<[!?]", line):
+                warnings.append((number, "unsupported_indented_html", "Unfenced indented HTML may continue a paragraph; conservatively unverified"))
             continue
         yield number, line
 
@@ -215,6 +217,11 @@ def github_slug(text):
     text = text.strip().lower()
     return "".join("-" if c == " " else c for c in text
                    if c in " -_" or unicodedata.category(c)[0] in "LMN")
+
+
+def bounded_id(value):
+    return isinstance(value, str) and 1 <= len(value) <= 128 and all(
+        c in "_-" or unicodedata.category(c)[0] in "LN" for c in value)
 
 
 def destination(line, start):
@@ -286,8 +293,15 @@ def reference_key(label):
 def markdown(text):
     """Return supported links, heading anchors and explicit coverage warnings."""
     links, warnings, anchors, used = [], [], set(), set()
+    explicit = Counter()
+    source_lines = text.splitlines()
     headings_complete = True
-    lines = list(visible_lines(text))
+    if re.search(r"[\v\f\x1c-\x1e\x85\u2028\u2029]", text):
+        warnings.append((1, "unsupported_line_separator", "Non-CR/LF separators are outside the Markdown line subset"))
+        headings_complete = False
+    lines = list(visible_lines(text, warnings))
+    if any(code == "unsupported_indented_html" for _, code, _ in warnings):
+        headings_complete = False
     references, definition_lines = {}, set()
     for number, line in lines:
         match = re.match(r"^ {0,3}\[([^\]]+)\]:[ \t]*(.*)$", line)
@@ -327,10 +341,16 @@ def markdown(text):
             warnings.append((number, "unsupported_code_span", "Unmatched or multiline inline-code delimiter; line link parsing skipped"))
             headings_complete = False
             continue
+        empty_anchor = re.fullmatch(r' {0,3}<a id="([^"<>]+)"></a>[ \t]*', source_lines[number - 1])
+        isolated = ((number == 1 or not source_lines[number - 2].strip(" \t"))
+                    and (number == len(source_lines) or not source_lines[number].strip(" \t")))
+        if empty_anchor and bounded_id(empty_anchor[1]) and isolated and line == source_lines[number - 1]:
+            explicit[empty_anchor[1]] += 1
+            continue
         html_visible = re.sub(r"\]\(\s*<[^>\n]*>\s*", "](", visible)
         html_visible = re.sub(r"<(?:https?://|mailto:)[^>]*>", "", html_visible)
         html_visible = re.sub(r"<br\s*/?>", "", html_visible, flags=re.I)
-        if re.search(r"</?[A-Za-z][^>]*>|<!--", html_visible):
+        if re.search(r"</?[A-Za-z][^>]*>|</?[A-Za-z][A-Za-z0-9-]*(?:\s|>|$)|<[!?]", html_visible):
             warnings.append((number, "unsupported_html", "Raw HTML/MDX links, anchors, and block semantics are not parsed"))
             headings_complete = False
         if re.match(r"^ {0,3}(?:>\s*|[-+*]\s+|\d+[.)]\s+)(?:#{1,6}\s|`{3,}|~{3,})", visible):
@@ -382,6 +402,11 @@ def markdown(text):
     if "<!--" in re.sub(r"<!--.*?-->", "", text, flags=re.S):
         warnings.append((1, "unsupported_comment", "Unterminated HTML comment"))
         headings_complete = False
+    for anchor, count in explicit.items():
+        if count != 1 or anchor in anchors:
+            warnings.append((1, "unsupported_anchor_collision", "Explicit anchor duplicates an ID or heading slug"))
+            headings_complete = False
+        anchors.add(anchor)
     return links, anchors, headings_complete, warnings
 
 
@@ -468,7 +493,7 @@ class Checker:
                     if not complete:
                         self.issue("unsupported", "fragment_incomplete", source, "Target has unsupported heading or HTML semantics", line, target=raw)
                     elif fragment not in anchors:
-                        self.issue("error", "missing_heading", source, "No matching supported GitHub-style heading fragment", line, target=raw, resolved_path=target)
+                        self.issue("error", "missing_heading", source, "No matching supported heading or explicit-anchor fragment", line, target=raw, resolved_path=target)
                     else:
                         self.counts["heading_fragments_checked"] += 1
         except (CheckError, UnicodeDecodeError) as exc:
@@ -548,7 +573,7 @@ class Checker:
                     started_at=started, finished_at=datetime.now(timezone.utc).isoformat(),
                     root=self.tree.root, repository_prefix=self.contract["repository_prefix"],
                     snapshot="Read-only non-atomic filesystem observation; rerun after publication edits settle.",
-                    scope={"required_structure": True, "markdown": "documented inline/reference-link and basic-heading subset only",
+                    scope={"required_structure": True, "markdown": "documented inline/reference-link, basic-heading and standalone empty-anchor subset only",
                            "manifests": "explicitly listed SHA-256 entries only; not provenance or complete inventory",
                            "source_code_executed": False, "network_used": False, "secret_scan": False,
                            "security_audit": False, "excluded_directory_names": sorted(EXCLUDED),
