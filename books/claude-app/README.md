@@ -17,6 +17,8 @@
 | 一条命令比较新旧版本 | [自动逆向工具箱](05-Automated-Reverse-Toolkit/README.md) | 受限解包、静态快照与可追溯的配色/开关/契约/遥测差分 |
 | 复算参数或研究新版本 | [代码与脚本](04-Extracted-Core-Code-And-Scripts/README.md) | 重要结论能追到输入，也能从输入重新算出来 |
 
+先读一篇：[图文网页样章](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/db4f4ae60a91439a76b203a72f79bd9867bae132/books/claude-app/01-Frontend-Design-And-HTML-Templates/offline-reader/preview-single.html)。想把全书带走，可用[离线读本构建器](01-Frontend-Design-And-HTML-Templates/offline-reader/README.md)从同一份Markdown生成阅读网页。
+
 ## 前端：先看图，再看代码
 
 [![浅深色板](assets/figures/cds-palette.svg)](01-Frontend-Design-And-HTML-Templates/README.md#01-色板与主题)

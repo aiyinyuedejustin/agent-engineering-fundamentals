@@ -96,3 +96,11 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 ### Quick Entry
 
 ![Quick Entry](../../assets/screenshots/06-launcher-d63d0f4.jpg)
+
+### 博客目录同步复验
+
+2026-10-15，固定提交 `6cab7830e0356770225fd4ec96ee8b89bedcf85d`，Chrome，1188 × 761 CSS px、DPR 1。搜索“主题”后，正文焦点、URL 与目录当前项一致，延迟观察保持不变；继续滚动、点击页尾章节、切换文档/手记与专注阅读后，目录会按可见文章重新选择。截图为原始返回尺寸1173 × 751像素。
+
+![搜索定位后正文与目录均为配色与主题](../../assets/screenshots/editorial-active-search-6cab783.jpg)
+
+普通滚动只更新当前项，不重写最近一次导航的URL片段。此次为单一桌面视口的针对性复验，不包括file URL、窄屏、缩放、真实输入法或辅助技术。

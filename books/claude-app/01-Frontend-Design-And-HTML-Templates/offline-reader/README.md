@@ -124,3 +124,13 @@ python3 tests/audit_single.py /path/to/preview-single.html
 `build-manifest.json` 记录收录输入和构建器的 SHA-256、源指纹、输出模式、明确排除及降级提示。不含构建时间或绝对路径；同一源快照与构建器应产生逐文件相同的输出。
 
 完整书页是派生物，建议作为生成包交付，而不把数百个 HTML 重复提交到仓库。保留构建器、测试、vendor 和小型排版样章即可；正文修改仍在原 Markdown 中进行。
+
+## 浏览器样章实景
+
+2026-10-15，Chrome，1188 × 761 CSS px、DPR 1，固定提交 `db4f4ae60a91439a76b203a72f79bd9867bae132`。单文件样章在HTTPS预览中实际显示暖纸样式，目录可跳转第二节并返回正文，内嵌预算SVG完成加载（原图1120 × 704）。实际正文背景为 rgb(248,247,243)，字体采用声明的系统衬线回退。
+
+[打开已验证的单文件样章](https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/db4f4ae60a91439a76b203a72f79bd9867bae132/books/claude-app/01-Frontend-Design-And-HTML-Templates/offline-reader/preview-single.html)
+
+![单文件样章中的附件预算图解](../../assets/screenshots/reader-figure-db4f4ae.jpg)
+
+这次浏览器检查覆盖上述桌面样章路径；没有验证手机、本地file URL、系统深色切换或屏幕阅读器。多文件版本需要保持同源资源关系；第三方HTML预览器的跨源资源改写不适合它，单文件样章专门避免该依赖。
