@@ -129,7 +129,8 @@ body { overflow: hidden; }
 #panel-states .study-switch-row { font-size: 11px; }
 .state-path { font: 10px/2 var(--study-font-ui); background: var(--study-sidebar); border-radius: 6px; padding: 12px; margin-top: 16px; }
 .state-path span { color: var(--study-ink-muted); }
-.document-view { overflow: auto; padding: 42px 40px 48px; scrollbar-width: thin; }
+/* Keep absolute screen-reader content inside this view's scrolling boundary. */
+.document-view { position: relative; overflow: auto; padding: 42px 40px 48px; scrollbar-width: thin; }
 .page-heading { max-width: 800px; margin: 0 auto 30px; }
 .page-heading h1 { font: 500 29px/1.5 var(--study-font-reading); margin: 11px 0 12px; letter-spacing: -.02em; }
 .page-heading > p:last-child { font-size: 12px; color: var(--study-ink-muted); max-width: 530px; line-height: 1.9; }
