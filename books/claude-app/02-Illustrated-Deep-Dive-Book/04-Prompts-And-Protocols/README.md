@@ -283,3 +283,7 @@ await consumeChunks(chunks, frame => {
 静态范围为 Claude Desktop Linux amd64 2.37337.1；研究未运行目标应用或探测端点。hub/C3、Code/Cowork 和语音不能仅凭共享事件名视为同一协议，服务端完整上下文与系统提示词不由这些客户端文件证明。PT 编号对应 [protocol-tree-streaming.json](../../04-Extracted-Core-Code-And-Scripts/evidence/data/protocol-tree-streaming.json)。该文件保存逐条主张、实际包内相对路径、短锚点与偏移；正文不重复哈希和分析日志。提示词正文仅作职责概述，没有发布完整专有提示词。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 深入：声明与执行之间的六层合同
+
+[客户端工具合同详解](client-tool-contracts.md)列出 59 个有界静态定义的输入字段，并逐层拆开 JSON Schema、适配器、SDK 校验、权限与执行器。重点看 integer、array 长度与 union 在转换后是否仍被检查，以及相同 workspace 工具名为什么不能推出同一个执行位置。配套原创路由器有 24 项无依赖测试。

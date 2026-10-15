@@ -1,0 +1,4613 @@
+{
+  "schema": "original-client-tool-contracts/v1",
+  "recorded_at_utc": "2026-10-14T23:57:42.958742+00:00",
+  "subject": {
+    "product": "Claude Desktop",
+    "package_version": "2.37337.1",
+    "distribution": "Linux amd64 official package",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14"
+  },
+  "method": {
+    "target_executed": false,
+    "target_imported": false,
+    "native_binary_executed": false,
+    "private_endpoint_requests": false,
+    "source_descriptions_republished": false,
+    "description_text_not_copied": true,
+    "structural_extraction": "Babel inert AST plus explicit dynamic-branch annotation and source byte anchors",
+    "schema_semantics": "Field structures form a union of finite source declarations, not a runtime active tool set. required is declarative requiredness; runtime may add/refine checks."
+  },
+  "bounded_closure": {
+    "computer_use": {
+      "declaration_count": 44,
+      "constructors": {
+        "Ne": 25,
+        "Pe": 16,
+        "Fe": 3
+      },
+      "unconditional_Ne_count": 24,
+      "conditional_list_apps_count": 1,
+      "top_level_dispatch_names_matched": 44
+    },
+    "framebuffer": {
+      "declaration_count": 13,
+      "base_array_count": 5,
+      "conditional_input_array_count": 8,
+      "selected_aggregate_enabled": false
+    },
+    "workspace": {
+      "declaration_count": 2,
+      "builder": "zp"
+    },
+    "total": 59,
+    "not_enumerated": [
+      "Other SS internal servers and getDynamicTools branches",
+      "Browser tools and simulator/terminal definitions",
+      "Third-party discovered MCP schemas",
+      "CLI built-in tool schemas",
+      "Service-owned tools and private service schema",
+      "Native executor implementation details"
+    ]
+  },
+  "files": [
+    {
+      "key": "cu",
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "bytes": 229134,
+      "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+    },
+    {
+      "key": "registry",
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "bytes": 729748,
+      "sha256": "6c68132d14051ad2f503d18db364fdf1f39e4c27e956c485cf90d667b1e30c87"
+    },
+    {
+      "key": "adapter",
+      "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+      "bytes": 2336,
+      "sha256": "98443e387ca96582fb0e18fb785bfe9638dd5a572d9dd40f9012054e65bb2dbc"
+    },
+    {
+      "key": "sdk",
+      "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+      "bytes": 1199908,
+      "sha256": "622b069ec0b06b9ad1e8320dc0471496ad89a9289dfd2cd50e068336d25af8cc"
+    },
+    {
+      "key": "loop",
+      "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+      "bytes": 595508,
+      "sha256": "e1d802b46c6d6f648ab2d918fe9b509a92c7a6d302c4d9f37895761d59ac69f9"
+    },
+    {
+      "key": "main",
+      "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+      "bytes": 6956732,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    }
+  ],
+  "rea": {
+    "version": "6.5.0",
+    "evidence_id": "ev_fd06df39d26f75cb722748596573b4e070dfc84568a231655a946ac0accad44d",
+    "parameters": {
+      "format": "directory",
+      "integrity_policy": "fail",
+      "max_semantic_nodes": 7000,
+      "max_semantic_nodes_per_file": 3000,
+      "source_paths": [
+        ".vite/build/index.chunk-Dc4xQdhj.js",
+        ".vite/build/index.chunk-Cdc21k2u.js",
+        ".vite/build/index.chunk-BHCJSlbX.js"
+      ],
+      "max_heap_mb": 1024,
+      "analysis_timeout_ms": 90000
+    },
+    "statistics": {
+      "relevant_files": 437,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 961218,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 3,
+      "visited_ast_nodes": 159643,
+      "findings": 193,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "limitations": [
+      "Caller-selected source analysis leaves 434 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+    ],
+    "raw_result_republished": false
+  },
+  "$defs": {
+    "display_action": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "key",
+            "type",
+            "mouse_move",
+            "left_click",
+            "left_click_drag",
+            "right_click",
+            "middle_click",
+            "double_click",
+            "triple_click",
+            "scroll",
+            "hold_key",
+            "screenshot",
+            "zoom",
+            "cursor_position",
+            "left_mouse_down",
+            "left_mouse_up",
+            "wait"
+          ]
+        },
+        "coordinate": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "region": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "scale": {
+          "type": "number"
+        },
+        "start_coordinate": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "text": {
+          "type": "string"
+        },
+        "scroll_direction": {
+          "type": "string",
+          "enum": [
+            "up",
+            "down",
+            "left",
+            "right"
+          ]
+        },
+        "scroll_amount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "duration": {
+          "type": "number"
+        },
+        "repeat": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "action"
+      ]
+    },
+    "app_action": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "click",
+            "type",
+            "key",
+            "scroll",
+            "screenshot",
+            "zoom",
+            "drag"
+          ]
+        },
+        "coordinate": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "element_index": {
+          "type": "number"
+        },
+        "scale": {
+          "type": "number"
+        },
+        "region": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "focused"
+          ]
+        },
+        "button": {
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ]
+        },
+        "count": {
+          "type": "number",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "overwrite_existing": {
+          "type": "boolean"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "insert",
+            "replace"
+          ]
+        },
+        "disable_substitutions": {
+          "type": "boolean"
+        },
+        "combo": {
+          "type": "string"
+        },
+        "dy": {
+          "type": "number"
+        },
+        "to_coordinate": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "path": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 20,
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      },
+      "required": [
+        "action"
+      ]
+    },
+    "teach_step": {
+      "type": "object",
+      "properties": {
+        "explanation": {
+          "type": "string"
+        },
+        "next_preview": {
+          "type": "string"
+        },
+        "anchor": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/display_action"
+          }
+        }
+      },
+      "required": [
+        "explanation",
+        "next_preview",
+        "actions"
+      ]
+    },
+    "framebuffer_action": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "click",
+            "type",
+            "key",
+            "move",
+            "scroll",
+            "drag",
+            "hold_key"
+          ]
+        },
+        "args": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "action",
+        "args"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "registry": "computer-use",
+      "name": "request_access",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "apps",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "reason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "clipboardRead",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "clipboardWrite",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "systemKeyCombos",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "L",
+          "Vr",
+          "Ur"
+        ]
+      },
+      "dispatch": {
+        "route": "ea direct branch",
+        "consumer": "Vr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 15717,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"request_access\"",
+        "utf8_byte_start": 15717,
+        "utf8_byte_end_exclusive": 15739,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "screenshot",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "scale",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "save_to_disk",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "dynamic_fields": [
+        {
+          "field": "scale",
+          "when": "adaptiveResolution !== false"
+        },
+        {
+          "field": "save_to_disk",
+          "when": "saveToDisk !== false; removed from args before CU binder and consumed by screenshot persistence wrapper"
+        }
+      ],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "vr/pir"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "li",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 18400,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"screenshot\"",
+        "utf8_byte_start": 18400,
+        "utf8_byte_end_exclusive": 18418,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "zoom",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "region",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        {
+          "name": "scale",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "save_to_disk",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "dynamic_fields": [
+        {
+          "field": "scale",
+          "when": "adaptiveResolution !== false"
+        },
+        {
+          "field": "save_to_disk",
+          "when": "saveToDisk !== false; removed from args before CU binder and consumed by screenshot persistence wrapper"
+        }
+      ],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "ui",
+          "vr/pir",
+          "fi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "fi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 18891,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"zoom\"",
+        "utf8_byte_start": 18891,
+        "utf8_byte_end_exclusive": 18903,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "left_click",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "pi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "pi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 20030,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"left_click\"",
+        "utf8_byte_start": 20030,
+        "utf8_byte_end_exclusive": 20048,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "double_click",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "pi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "pi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 20191,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"double_click\"",
+        "utf8_byte_start": 20191,
+        "utf8_byte_end_exclusive": 20211,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "triple_click",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "pi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "pi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 20393,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"triple_click\"",
+        "utf8_byte_start": 20393,
+        "utf8_byte_end_exclusive": 20413,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "right_click",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "pi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "pi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 20595,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"right_click\"",
+        "utf8_byte_start": 20595,
+        "utf8_byte_end_exclusive": 20614,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "middle_click",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "pi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "pi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 20801,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"middle_click\"",
+        "utf8_byte_start": 20801,
+        "utf8_byte_end_exclusive": 20821,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "type",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "L",
+          "mi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "mi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 20987,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"type\"",
+        "utf8_byte_start": 20987,
+        "utf8_byte_end_exclusive": 20999,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "key",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "repeat",
+          "required": false,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "L",
+          "hi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "hi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 21250,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"key\"",
+        "utf8_byte_start": 21250,
+        "utf8_byte_end_exclusive": 21261,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "scroll",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "scroll_direction",
+          "required": true,
+          "type": "string",
+          "enum": [
+            "up",
+            "down",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "scroll_amount",
+          "required": true,
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "gi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "gi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 21782,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"scroll\"",
+        "utf8_byte_start": 21782,
+        "utf8_byte_end_exclusive": 21796,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "left_click_drag",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "start_coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "_i"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "_i",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 22156,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"left_click_drag\"",
+        "utf8_byte_start": 22156,
+        "utf8_byte_end_exclusive": 22179,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "mouse_move",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "coordinate",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "R",
+          "nt",
+          "vi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "vi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 22475,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"mouse_move\"",
+        "utf8_byte_start": 22475,
+        "utf8_byte_end_exclusive": 22493,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "open_application",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "yi",
+          "bi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "bi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 22668,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"open_application\"",
+        "utf8_byte_start": 22668,
+        "utf8_byte_end_exclusive": 22692,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "switch_display",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "display",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "L",
+          "xi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "xi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 23144,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"switch_display\"",
+        "utf8_byte_start": 23144,
+        "utf8_byte_end_exclusive": 23166,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "list_granted_applications",
+      "declaration_function": "Ne",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Si"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Si",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 23798,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"list_granted_applications\"",
+        "utf8_byte_start": 23798,
+        "utf8_byte_end_exclusive": 23831,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "list_apps",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "running_first",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        },
+        {
+          "name": "cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped and platform=darwin"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Ci"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Ci",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 24064,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"list_apps\"",
+        "utf8_byte_start": 24064,
+        "utf8_byte_end_exclusive": 24081,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "read_clipboard",
+      "declaration_function": "Ne",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Ti",
+          "Di"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Di",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; separate clipboard grant; background app-lock conflict",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 24833,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"read_clipboard\"",
+        "utf8_byte_start": 24833,
+        "utf8_byte_end_exclusive": 24855,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "write_clipboard",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Oi",
+          "ki"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "ki",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; separate clipboard grant; background app-lock conflict",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 25008,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"write_clipboard\"",
+        "utf8_byte_start": 25008,
+        "utf8_byte_end_exclusive": 25031,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "wait",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "duration",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Ai"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Ai",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 25195,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"wait\"",
+        "utf8_byte_start": 25195,
+        "utf8_byte_end_exclusive": 25207,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "cursor_position",
+      "declaration_function": "Ne",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "ji"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "ji",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 25390,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"cursor_position\"",
+        "utf8_byte_start": 25390,
+        "utf8_byte_end_exclusive": 25413,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "hold_key",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "duration",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "L",
+          "Ii"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Ii",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 26416,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"hold_key\"",
+        "utf8_byte_start": 26416,
+        "utf8_byte_end_exclusive": 26432,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "left_mouse_down",
+      "declaration_function": "Ne",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Li"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Li",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 26822,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"left_mouse_down\"",
+        "utf8_byte_start": 26822,
+        "utf8_byte_end_exclusive": 26845,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "left_mouse_up",
+      "declaration_function": "Ne",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Ri"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Ri",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 27112,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"left_mouse_up\"",
+        "utf8_byte_start": 27112,
+        "utf8_byte_end_exclusive": 27133,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "computer_batch",
+      "declaration_function": "Ne",
+      "fields": [
+        {
+          "name": "actions",
+          "required": true,
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/display_action"
+          }
+        },
+        {
+          "name": "save_to_disk",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "dynamic_fields": [
+        {
+          "field": "actions[].scale",
+          "when": "adaptiveResolution !== false"
+        },
+        {
+          "field": "save_to_disk",
+          "when": "saveToDisk !== false; removed from args before CU binder and consumed by screenshot persistence wrapper"
+        }
+      ],
+      "availability_conditions": [
+        "computer-use server enabled for session and host"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Yi",
+          "Xi"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → Qi",
+        "consumer": "Wi/Xi",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 27353,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"computer_batch\"",
+        "utf8_byte_start": 27353,
+        "utf8_byte_end_exclusive": 27375,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "release_full_control",
+      "declaration_function": "Pe",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "zn"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "zn",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 32545,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"release_full_control\"",
+        "utf8_byte_start": 32545,
+        "utf8_byte_end_exclusive": 32573,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "request_full_control",
+      "declaration_function": "Pe",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "In"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "In",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 33016,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"request_full_control\"",
+        "utf8_byte_start": 33016,
+        "utf8_byte_end_exclusive": 33044,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_list_windows",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "Nn"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "Nn",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; read",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 33510,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_list_windows\"",
+        "utf8_byte_start": 33510,
+        "utf8_byte_end_exclusive": 33534,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_ax_find",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "title_contains",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "on"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "on",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; read",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 34056,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_ax_find\"",
+        "utf8_byte_start": 34056,
+        "utf8_byte_end_exclusive": 34075,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_screenshot",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "scale",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "vr/pir",
+          "J",
+          "Un"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "Un",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; read",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 34835,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_screenshot\"",
+        "utf8_byte_start": 34835,
+        "utf8_byte_end_exclusive": 34857,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_zoom",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "region",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        {
+          "name": "scale",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Wn",
+          "vr/pir",
+          "J"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "Wn",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; read",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 35779,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_zoom\"",
+        "utf8_byte_start": 35779,
+        "utf8_byte_end_exclusive": 35795,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_click",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "element_index",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "target",
+          "required": false,
+          "type": "string",
+          "enum": [
+            "focused"
+          ]
+        },
+        {
+          "name": "button",
+          "required": false,
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "count",
+          "required": false,
+          "type": "number",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "rr"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "X/rr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; click",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 36368,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_click\"",
+        "utf8_byte_start": 36368,
+        "utf8_byte_end_exclusive": 36385,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_type",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "element_index",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "target",
+          "required": false,
+          "type": "string",
+          "enum": [
+            "focused"
+          ]
+        },
+        {
+          "name": "text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "overwrite_existing",
+          "required": false,
+          "type": "boolean"
+        },
+        {
+          "name": "mode",
+          "required": false,
+          "type": "string",
+          "enum": [
+            "insert",
+            "replace"
+          ]
+        },
+        {
+          "name": "disable_substitutions",
+          "required": false,
+          "type": "boolean"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "rr",
+          "L"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "X/rr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; full",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 37363,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_type\"",
+        "utf8_byte_start": 37363,
+        "utf8_byte_end_exclusive": 37379,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_key",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "combo",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "rr",
+          "L",
+          "hn"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "X/rr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; full",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 39267,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_key\"",
+        "utf8_byte_start": 39267,
+        "utf8_byte_end_exclusive": 39282,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_scroll",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "dy",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "rr"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "X/rr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; click",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 41053,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_scroll\"",
+        "utf8_byte_start": 41053,
+        "utf8_byte_end_exclusive": 41071,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_focus",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "element_index",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "rr"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "X/rr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; full",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 41592,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_focus\"",
+        "utf8_byte_start": 41592,
+        "utf8_byte_end_exclusive": 41609,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_drag",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "to_coordinate",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "path",
+          "required": false,
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 20,
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate",
+        "supportsRawInput true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "tt",
+          "J",
+          "rr"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "X/rr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; full",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 42511,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_drag\"",
+        "utf8_byte_start": 42511,
+        "utf8_byte_end_exclusive": 42527,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_menu",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "path",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 16
+        },
+        {
+          "name": "list",
+          "required": false,
+          "type": [
+            "string",
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 16
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "Mn",
+          "J"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "jn/Mn",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; full (menu list branch uses read)",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 43239,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_menu\"",
+        "utf8_byte_start": 43239,
+        "utf8_byte_end_exclusive": 43255,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_batch",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        },
+        {
+          "name": "actions",
+          "required": true,
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/app_action"
+          }
+        }
+      ],
+      "dynamic_fields": [
+        {
+          "field": "actions[].path / action=drag",
+          "when": "supportsRawInput true"
+        }
+      ],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "fr",
+          "dr"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "fr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; read classification; per-action checks",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 44664,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_batch\"",
+        "utf8_byte_start": 44664,
+        "utf8_byte_end_exclusive": 44681,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_release",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "pr"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "pr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 46721,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_release\"",
+        "utf8_byte_start": 46721,
+        "utf8_byte_end_exclusive": 46740,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "app_bring_to_current_space",
+      "declaration_function": "Pe",
+      "fields": [
+        {
+          "name": "app",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "window_id",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.appScoped present; Desktop supplier requires effective macOS app-scoped gate",
+        "supportsRawInput true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "J",
+          "Fn"
+        ]
+      },
+      "dispatch": {
+        "route": "ea → dr",
+        "consumer": "Fn",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier; read classification plus window/screen guards",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 47414,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"app_bring_to_current_space\"",
+        "utf8_byte_start": 47414,
+        "utf8_byte_end_exclusive": 47448,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "request_teach_access",
+      "declaration_function": "Fe",
+      "fields": [
+        {
+          "name": "apps",
+          "required": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "reason",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.teachMode true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "L",
+          "Qr",
+          "Ur"
+        ]
+      },
+      "dispatch": {
+        "route": "ea direct branch",
+        "consumer": "Qr",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 49369,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"request_teach_access\"",
+        "utf8_byte_start": 49369,
+        "utf8_byte_end_exclusive": 49397,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "teach_step",
+      "declaration_function": "Fe",
+      "fields": [
+        {
+          "name": "explanation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "next_preview",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "anchor",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        {
+          "name": "actions",
+          "required": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/display_action"
+          }
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.teachMode true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "$r",
+          "ni"
+        ]
+      },
+      "dispatch": {
+        "route": "ea direct branch",
+        "consumer": "ni/$r",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 50283,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"teach_step\"",
+        "utf8_byte_start": 50283,
+        "utf8_byte_end_exclusive": 50301,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "computer-use",
+      "name": "teach_batch",
+      "declaration_function": "Fe",
+      "fields": [
+        {
+          "name": "steps",
+          "required": true,
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/teach_step"
+          }
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "computer-use server enabled for session and host",
+        "capabilities.teachMode true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "$r",
+          "ri"
+        ]
+      },
+      "dispatch": {
+        "route": "ea direct branch",
+        "consumer": "ri/$r",
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js"
+      },
+      "permission": "CU binder ca: grants, OS permission state, device/session locks, optional takeover; handler refines target/tier",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 51258,
+        "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+        "literal": "{name:\"teach_batch\"",
+        "utf8_byte_start": 51258,
+        "utf8_byte_end_exclusive": 51277,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_list",
+      "declaration_function": "Yi static base array",
+      "fields": [],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "service.listSources"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "service.listSources",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 67991,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_list\"",
+        "utf8_byte_start": 67991,
+        "utf8_byte_end_exclusive": 68015,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_attach",
+      "declaration_function": "Yi static base array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "requestOpenInRenderer"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "requestOpenInRenderer",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 68191,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_attach\"",
+        "utf8_byte_start": 68191,
+        "utf8_byte_end_exclusive": 68217,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_screenshot",
+      "declaration_function": "Yi static base array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "scale",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Ni"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Ni",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 68644,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_screenshot\"",
+        "utf8_byte_start": 68644,
+        "utf8_byte_end_exclusive": 68674,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_zoom",
+      "declaration_function": "Yi static base array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "x",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "y",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "width",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "height",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "scale",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Pi"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Pi",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 69036,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_zoom\"",
+        "utf8_byte_start": 69036,
+        "utf8_byte_end_exclusive": 69060,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_cursor_position",
+      "declaration_function": "Yi static base array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Fi"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Fi",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 69837,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_cursor_position\"",
+        "utf8_byte_start": 69837,
+        "utf8_byte_end_exclusive": 69872,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_click",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "x",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "y",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "button",
+          "required": false,
+          "type": "string",
+          "enum": [
+            "left",
+            "middle",
+            "right"
+          ]
+        },
+        {
+          "name": "count",
+          "required": false,
+          "type": "number",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "name": "modifiers",
+          "required": false,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Li",
+          "ji"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Li",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 70117,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_click\"",
+        "utf8_byte_start": 70117,
+        "utf8_byte_end_exclusive": 70142,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_move",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "x",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "y",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Ii",
+          "ji"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Ii",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 70942,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_move\"",
+        "utf8_byte_start": 70942,
+        "utf8_byte_end_exclusive": 70966,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_drag",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "from",
+          "required": [
+            "x",
+            "y"
+          ],
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "name": "to",
+          "required": [
+            "x",
+            "y"
+          ],
+          "type": "object",
+          "properties": {
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            }
+          }
+        },
+        {
+          "name": "button",
+          "required": false,
+          "type": "string",
+          "enum": [
+            "left",
+            "middle",
+            "right"
+          ]
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Ri",
+          "ji"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Ri",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 71150,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_drag\"",
+        "utf8_byte_start": 71150,
+        "utf8_byte_end_exclusive": 71174,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_scroll",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "x",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "y",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "direction",
+          "required": true,
+          "type": "string",
+          "enum": [
+            "up",
+            "down",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "amount",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "zi",
+          "ji"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "zi",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 71683,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_scroll\"",
+        "utf8_byte_start": 71683,
+        "utf8_byte_end_exclusive": 71709,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_type",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Vi"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Vi",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 72060,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_type\"",
+        "utf8_byte_start": 72060,
+        "utf8_byte_end_exclusive": 72084,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_key",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "chord",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "repeat",
+          "required": false,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Hi"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Hi",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 72413,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_key\"",
+        "utf8_byte_start": 72413,
+        "utf8_byte_end_exclusive": 72436,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_hold_key",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "durationMs",
+          "required": true,
+          "type": "number"
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Ui"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Ui",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 72822,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_hold_key\"",
+        "utf8_byte_start": 72822,
+        "utf8_byte_end_exclusive": 72850,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "Framebuffer",
+      "name": "framebuffer_batch",
+      "declaration_function": "Xi static input array",
+      "fields": [
+        {
+          "name": "name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "actions",
+          "required": true,
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "$ref": "#/$defs/framebuffer_action"
+          }
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "SS aggregate registers this server with isEnabled:()=>false; no activation demonstrated",
+        "Qi includes input array only when gate 4141490266 is true"
+      ],
+      "validator": {
+        "adapter": "Dc4xQdhj:a/n → SDK validateToolInput",
+        "consumer_functions": [
+          "la",
+          "Gi"
+        ]
+      },
+      "dispatch": {
+        "route": "la → named special branch / $i table",
+        "consumer": "Gi",
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js"
+      },
+      "permission": "named source and attached preview consumer; non-read classes additionally require input gate and prior screenshot; does not imply host CU grants",
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 73153,
+        "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+        "literal": "{name:\"framebuffer_batch\"",
+        "utf8_byte_start": 73153,
+        "utf8_byte_end_exclusive": 73178,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "workspace",
+      "name": "bash",
+      "declaration_function": "zp",
+      "fields": [
+        {
+          "name": "command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "timeout_ms",
+          "required": false,
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 600000
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "workspace SDK MCP server created by zp; shell policy checked again in handler; VM must be ready"
+      ],
+      "validator": {
+        "adapter": "direct Zod .int().positive().max(...), without Dc4xQdhj converter",
+        "consumer_functions": [
+          "zp callback"
+        ]
+      },
+      "dispatch": {
+        "route": "SDK tool handler → VM command executor",
+        "consumer": "bash -c; each call receives its own cwd/mount/domain options",
+        "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js"
+      },
+      "permission": "organization shell-disable check; resolved mounts/domains; separate VM launch path",
+      "runtime_defaults": {
+        "timeout_ms": 120000
+      },
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 296545,
+        "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+        "literal": "{command:t.I8().describe(",
+        "utf8_byte_start": 296545,
+        "utf8_byte_end_exclusive": 296570,
+        "line_1_based": 1
+      }
+    },
+    {
+      "registry": "workspace",
+      "name": "web_fetch",
+      "declaration_function": "zp",
+      "fields": [
+        {
+          "name": "url",
+          "required": true,
+          "type": "string",
+          "format": "url (Zod)"
+        },
+        {
+          "name": "timeout_ms",
+          "required": false,
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 30000
+        }
+      ],
+      "dynamic_fields": [],
+      "availability_conditions": [
+        "workspace SDK MCP server created by zp; omitted from tools list when disabled by policy"
+      ],
+      "validator": {
+        "adapter": "direct Zod .url()/.int().positive().max(...), without Dc4xQdhj converter",
+        "consumer_functions": [
+          "zp callback",
+          "ed or network fetch wrapper"
+        ]
+      },
+      "dispatch": {
+        "route": "SDK tool handler → gated API route or host fetch wrapper",
+        "consumer": "ed (conditional) / t.lV (fallback)",
+        "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js"
+      },
+      "permission": "organization disable check; API route can use URL approval/permission mode; fallback refuseTarget applies allowed-domain policy",
+      "runtime_defaults": {
+        "timeout_ms": 30000
+      },
+      "anchor": {
+        "total_occurrences": 1,
+        "selected_character_start": 300919,
+        "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+        "literal": "l=n(t.ZK,Gu,{url:t.I8().url()",
+        "utf8_byte_start": 300919,
+        "utf8_byte_end_exclusive": 300948,
+        "line_1_based": 1
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "TC-01",
+      "finding_zh": "本表闭合的是 Ne/Pe/Fe 三个 CU 构造器的 44 个具名定义、Framebuffer 的 Yi/Xi 两数组的 13 个定义，以及 zp 的 2 个 workspace 工具；不是所有 Claude 工具。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 11552,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function Ne(t,n,r)",
+          "utf8_byte_start": 11552,
+          "utf8_byte_end_exclusive": 11570,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 29070,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function Pe(t,n)",
+          "utf8_byte_start": 29070,
+          "utf8_byte_end_exclusive": 29086,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 48476,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function Fe(e,t,n)",
+          "utf8_byte_start": 48476,
+          "utf8_byte_end_exclusive": 48494,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 74129,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "function Qi(){let e=t.sZ(\"4141490266\")",
+          "utf8_byte_start": 74129,
+          "utf8_byte_end_exclusive": 74167,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 295556,
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "function zp({createSdkMcpServer:e,tool:n},r)",
+          "utf8_byte_start": 295556,
+          "utf8_byte_end_exclusive": 295600,
+          "line_1_based": 1
+        }
+      ]
+    },
+    {
+      "id": "TC-02",
+      "finding_zh": "内部服务器先经过 session/CLI trust/server enabled、dynamic tools 和逐工具开关筛选，随后 JSON Schema 被转换为 Zod 字段形状，再注册 SDK tool callback。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 434203,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "async createProxyServers(e,n,r,i)",
+          "utf8_byte_start": 434203,
+          "utf8_byte_end_exclusive": 434236,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 435204,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "ie.t(n.inputSchema)",
+          "utf8_byte_start": 435204,
+          "utf8_byte_end_exclusive": 435223,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 434657,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "let l=[...d.tools,...d.getDynamicTools?.(e)??[]]",
+          "utf8_byte_start": 434657,
+          "utf8_byte_end_exclusive": 434705,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "SS 还有 browser/simulator/terminal 等动态分支，本表没有穷尽它们。"
+    },
+    {
+      "id": "TC-03",
+      "finding_zh": "SDK 在调用 handler 前执行 validateToolInput；校验失败成为工具错误。返回的 parsed data 会交给 handler。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 660455,
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "async validateToolInput(e,t,n)",
+          "utf8_byte_start": 660455,
+          "utf8_byte_end_exclusive": 660485,
+          "line_1_based": 7
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 661187,
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "async executeToolHandler(e,t,n)",
+          "utf8_byte_start": 661187,
+          "utf8_byte_end_exclusive": 661218,
+          "line_1_based": 7
+        }
+      ],
+      "qualification_zh": "此步骤验证转换后的 SDK schema，不等于逐字执行原 JSON Schema。"
+    },
+    {
+      "id": "TC-04",
+      "finding_zh": "JSON-Schema 适配器仅部分映射约束：string enum 保留，安全整数可转 string；boolean 可接收字面字符串 true/false；number/integer 分支只有 number 及 minimum/maximum。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 732,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "function n(r)",
+          "utf8_byte_start": 732,
+          "utf8_byte_end_exclusive": 745,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 859,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "Number.isSafeInteger(e)?String(e):e",
+          "utf8_byte_start": 859,
+          "utf8_byte_end_exclusive": 894,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 903,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "else if(i===\"number\"||i===\"integer\")",
+          "utf8_byte_start": 903,
+          "utf8_byte_end_exclusive": 939,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 1055,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "else if(i===\"boolean\")",
+          "utf8_byte_start": 1055,
+          "utf8_byte_end_exclusive": 1077,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "未在该分支调用整数检查；不外推为执行器接受所有非整数。"
+    },
+    {
+      "id": "TC-05",
+      "finding_zh": "array 转换递归 items，但未转 minItems/maxItems；number enum 未转；type 数组 union 未逐项展开；嵌套 object 使用 passthrough。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 1122,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "else if(i===\"array\")",
+          "utf8_byte_start": 1122,
+          "utf8_byte_end_exclusive": 1142,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 2,
+          "selected_character_start": 1331,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "o=e.M8(a).passthrough()",
+          "utf8_byte_start": 1331,
+          "utf8_byte_end_exclusive": 1354,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 1595,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "else o=t(r)?e.M8({}).passthrough():e.R8()",
+          "utf8_byte_start": 1595,
+          "utf8_byte_end_exclusive": 1636,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "这是此转换器的有限静态观察，不是完整 JSON Schema 兼容性测试，也不宣称所有输入路径都用它。"
+    },
+    {
+      "id": "TC-06",
+      "finding_zh": "root required 与字段 default 联合决定可选性；default 用 prefault。描述可附着在转换后的节点上，但不因此成为检查。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 1976,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "function a(e)",
+          "utf8_byte_start": 1976,
+          "utf8_byte_end_exclusive": 1989,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 2085,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "r.includes(e)&&o.default===void 0?t:i(t)",
+          "utf8_byte_start": 2085,
+          "utf8_byte_end_exclusive": 2125,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 1701,
+          "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+          "literal": "o=o.prefault(r.default)",
+          "utf8_byte_start": 1701,
+          "utf8_byte_end_exclusive": 1724,
+          "line_1_based": 1
+        }
+      ]
+    },
+    {
+      "id": "TC-07",
+      "finding_zh": "运行时消费器补充许多形状/数值/状态检查：坐标长度与有限非负数、repeat 整数、duration 0..100、scale 0.1..1。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 54998,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function R(e,t=\"coordinate\")",
+          "utf8_byte_start": 54998,
+          "utf8_byte_end_exclusive": 55026,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 195475,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function hi(t,r,i,a)",
+          "utf8_byte_start": 195475,
+          "utf8_byte_end_exclusive": 195501,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 204412,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function Ai(e,t)",
+          "utf8_byte_start": 204412,
+          "utf8_byte_end_exclusive": 204434,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 3621388,
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "function pir(e)",
+          "utf8_byte_start": 3621388,
+          "utf8_byte_end_exclusive": 3621403,
+          "line_1_based": 13
+        }
+      ],
+      "qualification_zh": "不能把描述里的约束直接归为 schema；补查的严格程度因工具而异。"
+    },
+    {
+      "id": "TC-08",
+      "finding_zh": "app_* 的目标字段互斥、前序快照与菜单二选一是消费器语义。app_menu list 分支只读，press 分支 full；app_click 数字 count 非 2/3 时走 1。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 138044,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function rr(e,t,n,r,i)",
+          "utf8_byte_start": 138044,
+          "utf8_byte_end_exclusive": 138072,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 106834,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function Mn(t,n,r)",
+          "utf8_byte_start": 106834,
+          "utf8_byte_end_exclusive": 106858,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 155919,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "count:e.count===2?2:e.count===3?3:1",
+          "utf8_byte_start": 155919,
+          "utf8_byte_end_exclusive": 155954,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "分类表 Jt 并非最终授权决定；字段声明不穷尽 handler 可接受行为。"
+    },
+    {
+      "id": "TC-09",
+      "finding_zh": "CU 声明按 teachMode/appScoped/adaptiveResolution/saveToDisk 条件变化；Desktop app-scoped supplier 受有效 gate 约束；batch-only 模式可移除独立 display action 工具。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 28975,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "...t.teachMode?Fe(a,u,s):[]",
+          "utf8_byte_start": 28975,
+          "utf8_byte_end_exclusive": 29002,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 29003,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "...t.appScoped?Pe(t.appScoped.supportsRawInput??!1,t.platform):[]",
+          "utf8_byte_start": 29003,
+          "utf8_byte_end_exclusive": 29068,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 46936,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "function Fr(e)",
+          "utf8_byte_start": 46936,
+          "utf8_byte_end_exclusive": 46950,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 47551,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "i.filter((e=>!n.o.has(e.name)))",
+          "utf8_byte_start": 47551,
+          "utf8_byte_end_exclusive": 47582,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "静态 Linux 包包含 macOS app-scoped 代码不等于 Linux 对外开放。"
+    },
+    {
+      "id": "TC-10",
+      "finding_zh": "CU session binder 先施加 grants/锁/接管同意等上下文，再分配给 ea 与 display/app/teach 消费器；save_to_disk 由外包装器取走并在成功结果后处理。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 215533,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function ca(t,n,r)",
+          "utf8_byte_start": 215533,
+          "utf8_byte_end_exclusive": 215551,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 213329,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function ea(e,t,n,r)",
+          "utf8_byte_start": 213329,
+          "utf8_byte_end_exclusive": 213355,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 55246,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "{save_to_disk:s,...c}=r",
+          "utf8_byte_start": 55246,
+          "utf8_byte_end_exclusive": 55269,
+          "line_1_based": 1
+        }
+      ]
+    },
+    {
+      "id": "TC-11",
+      "finding_zh": "computer_batch 的声明仅要求每项 action，实际按白名单及具体 action 消费器再检查。app_batch 与 teach_batch 有各自嵌套合同；不能当成同一个批处理协议。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 210277,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "function Yi(e)",
+          "utf8_byte_start": 210277,
+          "utf8_byte_end_exclusive": 210291,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 158468,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function fr(e,t,r)",
+          "utf8_byte_start": 158468,
+          "utf8_byte_end_exclusive": 158492,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 182678,
+          "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+          "literal": "async function $r(e,t,n,r)",
+          "utf8_byte_start": 182678,
+          "utf8_byte_end_exclusive": 182704,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "未声称所有项的参数在第一个副作用发生前都已完整验证。"
+    },
+    {
+      "id": "TC-12",
+      "finding_zh": "Framebuffer 注册表具有 13 个定义，但选定 SS 聚合处硬编码 isEnabled false；输入定义还另受 gate，handler 要求正在显示该 source 的 preview consumer。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 433030,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "serverName:Ki,tools:Qi()",
+          "utf8_byte_start": 433030,
+          "utf8_byte_end_exclusive": 433054,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 433246,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "isEnabled:e=>!1}),s.push(Xx(a))",
+          "utf8_byte_start": 433246,
+          "utf8_byte_end_exclusive": 433277,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 76759,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "if(!n.hasAttachedConsumers(c.sessionId))",
+          "utf8_byte_start": 76759,
+          "utf8_byte_end_exclusive": 76799,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "仅证明这条聚合路线关闭，不能证明包内其他调用者永远无法使用。"
+    },
+    {
+      "id": "TC-13",
+      "finding_zh": "workspace bash/web_fetch 由直接 Zod 构造，整数性在此明确表达；两者共用服务器名称不等于都在 VM 内执行，web_fetch 有 API/主机网络分支。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 2222644,
+          "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+          "literal": "HXt=\"workspace\",UXt=\"bash\",WXt=\"web_fetch\"",
+          "utf8_byte_start": 2222644,
+          "utf8_byte_end_exclusive": 2222686,
+          "line_1_based": 13
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 296619,
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "timeout_ms:t.j8().int().positive().max(yp)",
+          "utf8_byte_start": 296619,
+          "utf8_byte_end_exclusive": 296661,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 2,
+          "selected_character_start": 216039,
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "timeout_ms:t.j8().int().positive().max(Lu)",
+          "utf8_byte_start": 216039,
+          "utf8_byte_end_exclusive": 216081,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 2,
+          "selected_character_start": 216174,
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "return ed(e,r.getWebFetchAllowedUrls()",
+          "utf8_byte_start": 216174,
+          "utf8_byte_end_exclusive": 216212,
+          "line_1_based": 1
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 301756,
+          "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+          "literal": "s=await t.lV({url:o.href",
+          "utf8_byte_start": 301756,
+          "utf8_byte_end_exclusive": 301780,
+          "line_1_based": 1
+        }
+      ]
+    },
+    {
+      "id": "TC-14",
+      "finding_zh": "CLI can_use_tool 控制请求、SDK-hosted MCP callback、前端 tool_use 参数预览、classic request builder 是不同层次，不能用某层名字补出另一层 schema。",
+      "anchors": [
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 1128316,
+          "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+          "literal": "if(e.request.subtype===\"can_use_tool\")",
+          "utf8_byte_start": 1128316,
+          "utf8_byte_end_exclusive": 1128354,
+          "line_1_based": 7
+        },
+        {
+          "total_occurrences": 1,
+          "selected_character_start": 435204,
+          "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+          "literal": "ie.t(n.inputSchema)",
+          "utf8_byte_start": 435204,
+          "utf8_byte_end_exclusive": 435223,
+          "line_1_based": 1
+        }
+      ],
+      "qualification_zh": "参照现有 PT-07/PT-19/PT-23/PT-27 与 AL-11/AL-12；服务端完整工具 schema 和最终 system prompt 未恢复。"
+    }
+  ],
+  "cross_references": [
+    "protocol-tree-streaming.json: PT-07/PT-19/PT-23/PT-27",
+    "agent-loop-cowork.json: AL-11/AL-12/CU-01..CU-25",
+    "extension-boundaries.json: third-party MCP discovery and permissions"
+  ],
+  "verification": {
+    "definition_names_unique_per_registry": true,
+    "source_anchors_readback_match": true,
+    "tool_definition_anchors": 59,
+    "claim_anchors": 47,
+    "target_execution": false,
+    "consumer_location_anchors": 81,
+    "original_tests": {
+      "command": "node --test test/*.test.mjs",
+      "passed": 28,
+      "failed": 0,
+      "scope": "Original teaching model and inert extraction fixtures, not target runtime tests"
+    }
+  },
+  "original_deliverable": "staging/tool-contracts",
+  "consumer_locations": {
+    "cu:$r": {
+      "total_occurrences": 1,
+      "selected_character_start": 182678,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function $r(e,t,n,r)",
+      "utf8_byte_start": 182678,
+      "utf8_byte_end_exclusive": 182704,
+      "line_1_based": 1
+    },
+    "cu:Ai": {
+      "total_occurrences": 1,
+      "selected_character_start": 204412,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Ai(e,t)",
+      "utf8_byte_start": 204412,
+      "utf8_byte_end_exclusive": 204434,
+      "line_1_based": 1
+    },
+    "cu:Ci": {
+      "total_occurrences": 1,
+      "selected_character_start": 201101,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Ci(t,n,r)",
+      "utf8_byte_start": 201101,
+      "utf8_byte_end_exclusive": 201125,
+      "line_1_based": 1
+    },
+    "cu:Di": {
+      "total_occurrences": 1,
+      "selected_character_start": 203083,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Di(e,t,n)",
+      "utf8_byte_start": 203083,
+      "utf8_byte_end_exclusive": 203107,
+      "line_1_based": 1
+    },
+    "cu:Fn": {
+      "total_occurrences": 1,
+      "selected_character_start": 112435,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Fn(e,t,n)",
+      "utf8_byte_start": 112435,
+      "utf8_byte_end_exclusive": 112459,
+      "line_1_based": 1
+    },
+    "cu:Ii": {
+      "total_occurrences": 1,
+      "selected_character_start": 207078,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Ii(t,n,r,i)",
+      "utf8_byte_start": 207078,
+      "utf8_byte_end_exclusive": 207104,
+      "line_1_based": 1
+    },
+    "cu:In": {
+      "total_occurrences": 1,
+      "selected_character_start": 115695,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function In(e)",
+      "utf8_byte_start": 115695,
+      "utf8_byte_end_exclusive": 115715,
+      "line_1_based": 1
+    },
+    "cu:J": {
+      "total_occurrences": 1,
+      "selected_character_start": 98083,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function J(e,t,n,r)",
+      "utf8_byte_start": 98083,
+      "utf8_byte_end_exclusive": 98108,
+      "line_1_based": 1
+    },
+    "cu:L": {
+      "total_occurrences": 1,
+      "selected_character_start": 54909,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function L(e,t)",
+      "utf8_byte_start": 54909,
+      "utf8_byte_end_exclusive": 54924,
+      "line_1_based": 1
+    },
+    "cu:Li": {
+      "total_occurrences": 1,
+      "selected_character_start": 208164,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Li(e,t,n)",
+      "utf8_byte_start": 208164,
+      "utf8_byte_end_exclusive": 208188,
+      "line_1_based": 1
+    },
+    "cu:Mn": {
+      "total_occurrences": 1,
+      "selected_character_start": 106834,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Mn(t,n,r)",
+      "utf8_byte_start": 106834,
+      "utf8_byte_end_exclusive": 106858,
+      "line_1_based": 1
+    },
+    "cu:Nn": {
+      "total_occurrences": 1,
+      "selected_character_start": 111905,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Nn(e,t,n)",
+      "utf8_byte_start": 111905,
+      "utf8_byte_end_exclusive": 111929,
+      "line_1_based": 1
+    },
+    "cu:Oi": {
+      "total_occurrences": 1,
+      "selected_character_start": 203371,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function Oi(e,t)",
+      "utf8_byte_start": 203371,
+      "utf8_byte_end_exclusive": 203387,
+      "line_1_based": 1
+    },
+    "cu:Qi": {
+      "total_occurrences": 1,
+      "selected_character_start": 211965,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Qi(e,t,n,r,i)",
+      "utf8_byte_start": 211965,
+      "utf8_byte_end_exclusive": 211993,
+      "line_1_based": 1
+    },
+    "cu:Qr": {
+      "total_occurrences": 1,
+      "selected_character_start": 179411,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Qr(e,n,r,i)",
+      "utf8_byte_start": 179411,
+      "utf8_byte_end_exclusive": 179437,
+      "line_1_based": 1
+    },
+    "cu:R": {
+      "total_occurrences": 1,
+      "selected_character_start": 54998,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function R(e,t=\"coordinate\")",
+      "utf8_byte_start": 54998,
+      "utf8_byte_end_exclusive": 55026,
+      "line_1_based": 1
+    },
+    "cu:Ri": {
+      "total_occurrences": 1,
+      "selected_character_start": 208544,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Ri(e,t,n)",
+      "utf8_byte_start": 208544,
+      "utf8_byte_end_exclusive": 208568,
+      "line_1_based": 1
+    },
+    "cu:Si": {
+      "total_occurrences": 1,
+      "selected_character_start": 201024,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function Si(e)",
+      "utf8_byte_start": 201024,
+      "utf8_byte_end_exclusive": 201038,
+      "line_1_based": 1
+    },
+    "cu:Ti": {
+      "total_occurrences": 1,
+      "selected_character_start": 202811,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function Ti(e,t)",
+      "utf8_byte_start": 202811,
+      "utf8_byte_end_exclusive": 202827,
+      "line_1_based": 1
+    },
+    "cu:U": {
+      "total_occurrences": 1,
+      "selected_character_start": 64419,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function U(e,t,n,r,i,a,o,s)",
+      "utf8_byte_start": 64419,
+      "utf8_byte_end_exclusive": 64452,
+      "line_1_based": 1
+    },
+    "cu:Un": {
+      "total_occurrences": 1,
+      "selected_character_start": 119112,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Un(t,n,r)",
+      "utf8_byte_start": 119112,
+      "utf8_byte_end_exclusive": 119136,
+      "line_1_based": 1
+    },
+    "cu:Ur": {
+      "total_occurrences": 1,
+      "selected_character_start": 171696,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Ur(t,n,r,i,a,o)",
+      "utf8_byte_start": 171696,
+      "utf8_byte_end_exclusive": 171726,
+      "line_1_based": 1
+    },
+    "cu:V": {
+      "total_occurrences": 1,
+      "selected_character_start": 59525,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function V(t,n,r,i,a={})",
+      "utf8_byte_start": 59525,
+      "utf8_byte_end_exclusive": 59555,
+      "line_1_based": 1
+    },
+    "cu:Vr": {
+      "total_occurrences": 1,
+      "selected_character_start": 166411,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Vr(n,r,i,a)",
+      "utf8_byte_start": 166411,
+      "utf8_byte_end_exclusive": 166437,
+      "line_1_based": 1
+    },
+    "cu:Wi": {
+      "total_occurrences": 1,
+      "selected_character_start": 209259,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Wi(e,t)",
+      "utf8_byte_start": 209259,
+      "utf8_byte_end_exclusive": 209281,
+      "line_1_based": 1
+    },
+    "cu:Wn": {
+      "total_occurrences": 1,
+      "selected_character_start": 122451,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Wn(e,t,n)",
+      "utf8_byte_start": 122451,
+      "utf8_byte_end_exclusive": 122475,
+      "line_1_based": 1
+    },
+    "cu:X": {
+      "total_occurrences": 1,
+      "selected_character_start": 137988,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function X(e,t,n,r,i)",
+      "utf8_byte_start": 137988,
+      "utf8_byte_end_exclusive": 138009,
+      "line_1_based": 1
+    },
+    "cu:Xi": {
+      "total_occurrences": 1,
+      "selected_character_start": 210716,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function Xi(e,t,r,i,a)",
+      "utf8_byte_start": 210716,
+      "utf8_byte_end_exclusive": 210744,
+      "line_1_based": 1
+    },
+    "cu:Xt": {
+      "total_occurrences": 1,
+      "selected_character_start": 93031,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function Xt(t,n,i)",
+      "utf8_byte_start": 93031,
+      "utf8_byte_end_exclusive": 93049,
+      "line_1_based": 1
+    },
+    "cu:Yi": {
+      "total_occurrences": 1,
+      "selected_character_start": 210277,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function Yi(e)",
+      "utf8_byte_start": 210277,
+      "utf8_byte_end_exclusive": 210291,
+      "line_1_based": 1
+    },
+    "cu:_i": {
+      "total_occurrences": 1,
+      "selected_character_start": 197620,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function _i(e,t,n,r)",
+      "utf8_byte_start": 197620,
+      "utf8_byte_end_exclusive": 197646,
+      "line_1_based": 1
+    },
+    "cu:bi": {
+      "total_occurrences": 1,
+      "selected_character_start": 199350,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function bi(e,t,n)",
+      "utf8_byte_start": 199350,
+      "utf8_byte_end_exclusive": 199374,
+      "line_1_based": 1
+    },
+    "cu:ca": {
+      "total_occurrences": 1,
+      "selected_character_start": 215533,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function ca(t,n,r)",
+      "utf8_byte_start": 215533,
+      "utf8_byte_end_exclusive": 215551,
+      "line_1_based": 1
+    },
+    "cu:dr": {
+      "total_occurrences": 1,
+      "selected_character_start": 155053,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function dr(t,n,r,i)",
+      "utf8_byte_start": 155053,
+      "utf8_byte_end_exclusive": 155079,
+      "line_1_based": 1
+    },
+    "cu:ea": {
+      "total_occurrences": 1,
+      "selected_character_start": 213329,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function ea(e,t,n,r)",
+      "utf8_byte_start": 213329,
+      "utf8_byte_end_exclusive": 213355,
+      "line_1_based": 1
+    },
+    "cu:fi": {
+      "total_occurrences": 1,
+      "selected_character_start": 191625,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function fi(e,t,n)",
+      "utf8_byte_start": 191625,
+      "utf8_byte_end_exclusive": 191649,
+      "line_1_based": 1
+    },
+    "cu:fr": {
+      "total_occurrences": 1,
+      "selected_character_start": 158468,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function fr(e,t,r)",
+      "utf8_byte_start": 158468,
+      "utf8_byte_end_exclusive": 158492,
+      "line_1_based": 1
+    },
+    "cu:gi": {
+      "total_occurrences": 1,
+      "selected_character_start": 196723,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function gi(e,t,n,r)",
+      "utf8_byte_start": 196723,
+      "utf8_byte_end_exclusive": 196749,
+      "line_1_based": 1
+    },
+    "cu:hi": {
+      "total_occurrences": 1,
+      "selected_character_start": 195475,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function hi(t,r,i,a)",
+      "utf8_byte_start": 195475,
+      "utf8_byte_end_exclusive": 195501,
+      "line_1_based": 1
+    },
+    "cu:hn": {
+      "total_occurrences": 1,
+      "selected_character_start": 102420,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function hn(t)",
+      "utf8_byte_start": 102420,
+      "utf8_byte_end_exclusive": 102434,
+      "line_1_based": 1
+    },
+    "cu:ji": {
+      "total_occurrences": 1,
+      "selected_character_start": 204862,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function ji(e,t)",
+      "utf8_byte_start": 204862,
+      "utf8_byte_end_exclusive": 204884,
+      "line_1_based": 1
+    },
+    "cu:jn": {
+      "total_occurrences": 1,
+      "selected_character_start": 106785,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function jn(e,t,n)",
+      "utf8_byte_start": 106785,
+      "utf8_byte_end_exclusive": 106803,
+      "line_1_based": 1
+    },
+    "cu:ki": {
+      "total_occurrences": 1,
+      "selected_character_start": 203480,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function ki(e,t,n,r)",
+      "utf8_byte_start": 203480,
+      "utf8_byte_end_exclusive": 203506,
+      "line_1_based": 1
+    },
+    "cu:li": {
+      "total_occurrences": 1,
+      "selected_character_start": 188805,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function li(e,t,n,r)",
+      "utf8_byte_start": 188805,
+      "utf8_byte_end_exclusive": 188831,
+      "line_1_based": 1
+    },
+    "cu:mi": {
+      "total_occurrences": 1,
+      "selected_character_start": 194246,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function mi(t,r,i,a)",
+      "utf8_byte_start": 194246,
+      "utf8_byte_end_exclusive": 194272,
+      "line_1_based": 1
+    },
+    "cu:ni": {
+      "total_occurrences": 1,
+      "selected_character_start": 185067,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function ni(e,t,n,r)",
+      "utf8_byte_start": 185067,
+      "utf8_byte_end_exclusive": 185093,
+      "line_1_based": 1
+    },
+    "cu:nt": {
+      "total_occurrences": 1,
+      "selected_character_start": 55491,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function nt(e,t,n,r,i,a,o=\"coordinate\")",
+      "utf8_byte_start": 55491,
+      "utf8_byte_end_exclusive": 55530,
+      "line_1_based": 1
+    },
+    "cu:on": {
+      "total_occurrences": 1,
+      "selected_character_start": 97075,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function on(e,t,n)",
+      "utf8_byte_start": 97075,
+      "utf8_byte_end_exclusive": 97099,
+      "line_1_based": 1
+    },
+    "cu:pi": {
+      "total_occurrences": 1,
+      "selected_character_start": 192489,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function pi(t,n,r,i,a,o)",
+      "utf8_byte_start": 192489,
+      "utf8_byte_end_exclusive": 192519,
+      "line_1_based": 1
+    },
+    "cu:pr": {
+      "total_occurrences": 1,
+      "selected_character_start": 160262,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function pr(e,t)",
+      "utf8_byte_start": 160262,
+      "utf8_byte_end_exclusive": 160284,
+      "line_1_based": 1
+    },
+    "cu:ri": {
+      "total_occurrences": 1,
+      "selected_character_start": 185573,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function ri(e,t,n,r)",
+      "utf8_byte_start": 185573,
+      "utf8_byte_end_exclusive": 185599,
+      "line_1_based": 1
+    },
+    "cu:rr": {
+      "total_occurrences": 1,
+      "selected_character_start": 138044,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function rr(e,t,n,r,i)",
+      "utf8_byte_start": 138044,
+      "utf8_byte_end_exclusive": 138072,
+      "line_1_based": 1
+    },
+    "cu:tt": {
+      "total_occurrences": 1,
+      "selected_character_start": 55346,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function tt(e)",
+      "utf8_byte_start": 55346,
+      "utf8_byte_end_exclusive": 55360,
+      "line_1_based": 1
+    },
+    "cu:ui": {
+      "total_occurrences": 1,
+      "selected_character_start": 191125,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function ui(e)",
+      "utf8_byte_start": 191125,
+      "utf8_byte_end_exclusive": 191139,
+      "line_1_based": 1
+    },
+    "cu:vi": {
+      "total_occurrences": 1,
+      "selected_character_start": 198527,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function vi(e,t,n,r)",
+      "utf8_byte_start": 198527,
+      "utf8_byte_end_exclusive": 198553,
+      "line_1_based": 1
+    },
+    "cu:vr": {
+      "total_occurrences": 1,
+      "selected_character_start": 161564,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function vr(t)",
+      "utf8_byte_start": 161564,
+      "utf8_byte_end_exclusive": 161578,
+      "line_1_based": 1
+    },
+    "cu:xi": {
+      "total_occurrences": 1,
+      "selected_character_start": 200129,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function xi(e,t,n)",
+      "utf8_byte_start": 200129,
+      "utf8_byte_end_exclusive": 200153,
+      "line_1_based": 1
+    },
+    "cu:yi": {
+      "total_occurrences": 1,
+      "selected_character_start": 199023,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function yi(e,t)",
+      "utf8_byte_start": 199023,
+      "utf8_byte_end_exclusive": 199039,
+      "line_1_based": 1
+    },
+    "cu:zn": {
+      "total_occurrences": 1,
+      "selected_character_start": 117593,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "function zn(e)",
+      "utf8_byte_start": 117593,
+      "utf8_byte_end_exclusive": 117607,
+      "line_1_based": 1
+    },
+    "cu:zt": {
+      "total_occurrences": 1,
+      "selected_character_start": 81315,
+      "file": "app.asar/.vite/build/index.chunk-Cdc21k2u.js",
+      "literal": "async function zt(e,t,n,r,i,a)",
+      "utf8_byte_start": 81315,
+      "utf8_byte_end_exclusive": 81345,
+      "line_1_based": 1
+    },
+    "registry:Fi": {
+      "total_occurrences": 1,
+      "selected_character_start": 62677,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "function Fi(e)",
+      "utf8_byte_start": 62677,
+      "utf8_byte_end_exclusive": 62691,
+      "line_1_based": 1
+    },
+    "registry:Gi": {
+      "total_occurrences": 1,
+      "selected_character_start": 66841,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Gi(e,t)",
+      "utf8_byte_start": 66841,
+      "utf8_byte_end_exclusive": 66863,
+      "line_1_based": 1
+    },
+    "registry:Hi": {
+      "total_occurrences": 1,
+      "selected_character_start": 65751,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Hi(e,t)",
+      "utf8_byte_start": 65751,
+      "utf8_byte_end_exclusive": 65773,
+      "line_1_based": 1
+    },
+    "registry:Ii": {
+      "total_occurrences": 1,
+      "selected_character_start": 62965,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Ii(e,t)",
+      "utf8_byte_start": 62965,
+      "utf8_byte_end_exclusive": 62987,
+      "line_1_based": 1
+    },
+    "registry:Li": {
+      "total_occurrences": 1,
+      "selected_character_start": 63220,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Li(e,n,r={})",
+      "utf8_byte_start": 63220,
+      "utf8_byte_end_exclusive": 63247,
+      "line_1_based": 1
+    },
+    "registry:Ni": {
+      "total_occurrences": 1,
+      "selected_character_start": 61220,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Ni(e,n={})",
+      "utf8_byte_start": 61220,
+      "utf8_byte_end_exclusive": 61245,
+      "line_1_based": 1
+    },
+    "registry:Pi": {
+      "total_occurrences": 1,
+      "selected_character_start": 61869,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Pi(e,n)",
+      "utf8_byte_start": 61869,
+      "utf8_byte_end_exclusive": 61891,
+      "line_1_based": 1
+    },
+    "registry:Ri": {
+      "total_occurrences": 1,
+      "selected_character_start": 64087,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Ri(e,n,r={})",
+      "utf8_byte_start": 64087,
+      "utf8_byte_end_exclusive": 64114,
+      "line_1_based": 1
+    },
+    "registry:Ui": {
+      "total_occurrences": 1,
+      "selected_character_start": 66344,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Ui(e,n)",
+      "utf8_byte_start": 66344,
+      "utf8_byte_end_exclusive": 66366,
+      "line_1_based": 1
+    },
+    "registry:Vi": {
+      "total_occurrences": 1,
+      "selected_character_start": 65512,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function Vi(e,t)",
+      "utf8_byte_start": 65512,
+      "utf8_byte_end_exclusive": 65534,
+      "line_1_based": 1
+    },
+    "registry:ji": {
+      "total_occurrences": 1,
+      "selected_character_start": 60598,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "function ji(e,t)",
+      "utf8_byte_start": 60598,
+      "utf8_byte_end_exclusive": 60614,
+      "line_1_based": 1
+    },
+    "registry:la": {
+      "total_occurrences": 1,
+      "selected_character_start": 75645,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "function la(e)",
+      "utf8_byte_start": 75645,
+      "utf8_byte_end_exclusive": 75659,
+      "line_1_based": 1
+    },
+    "registry:zi": {
+      "total_occurrences": 1,
+      "selected_character_start": 64927,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async function zi(e,t)",
+      "utf8_byte_start": 64927,
+      "utf8_byte_end_exclusive": 64949,
+      "line_1_based": 1
+    },
+    "main:pir": {
+      "total_occurrences": 1,
+      "selected_character_start": 3621388,
+      "file": "app.asar/.vite/build/index.chunk-ny8j26BQ.js",
+      "literal": "function pir(e)",
+      "utf8_byte_start": 3621388,
+      "utf8_byte_end_exclusive": 3621403,
+      "line_1_based": 13
+    },
+    "adapter:a": {
+      "total_occurrences": 1,
+      "selected_character_start": 1976,
+      "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+      "literal": "function a(e)",
+      "utf8_byte_start": 1976,
+      "utf8_byte_end_exclusive": 1989,
+      "line_1_based": 1
+    },
+    "adapter:i": {
+      "total_occurrences": 1,
+      "selected_character_start": 1910,
+      "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+      "literal": "function i(e)",
+      "utf8_byte_start": 1910,
+      "utf8_byte_end_exclusive": 1923,
+      "line_1_based": 1
+    },
+    "adapter:n": {
+      "total_occurrences": 1,
+      "selected_character_start": 732,
+      "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+      "literal": "function n(r)",
+      "utf8_byte_start": 732,
+      "utf8_byte_end_exclusive": 745,
+      "line_1_based": 1
+    },
+    "adapter:t": {
+      "total_occurrences": 1,
+      "selected_character_start": 609,
+      "file": "app.asar/.vite/build/index.chunk-Dc4xQdhj.js",
+      "literal": "function t(e)",
+      "utf8_byte_start": 609,
+      "utf8_byte_end_exclusive": 622,
+      "line_1_based": 1
+    },
+    "sdk:validateToolInput": {
+      "total_occurrences": 1,
+      "selected_character_start": 660455,
+      "file": "app.asar/.vite/build/index.chunk-C4qJSrNf.js",
+      "literal": "async validateToolInput(e,t,n)",
+      "utf8_byte_start": 660455,
+      "utf8_byte_end_exclusive": 660485,
+      "line_1_based": 7
+    },
+    "registry:createProxyServers": {
+      "total_occurrences": 1,
+      "selected_character_start": 434203,
+      "file": "app.asar/.vite/build/index.chunk-BHCJSlbX.js",
+      "literal": "async createProxyServers(e,n,r,i)",
+      "utf8_byte_start": 434203,
+      "utf8_byte_end_exclusive": 434236,
+      "line_1_based": 1
+    },
+    "loop:zp": {
+      "total_occurrences": 1,
+      "selected_character_start": 295556,
+      "file": "app.asar/.vite/build/index.chunk-Dvr3hk9Q.js",
+      "literal": "function zp({createSdkMcpServer:e,tool:n},r)",
+      "utf8_byte_start": 295556,
+      "utf8_byte_end_exclusive": 295600,
+      "line_1_based": 1
+    }
+  }
+}
