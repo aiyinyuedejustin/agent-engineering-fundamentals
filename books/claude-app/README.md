@@ -56,8 +56,9 @@
 | 08 | [对话分支与流式渲染](02-Illustrated-Deep-Dive-Book/08-Conversation-Tree-And-Streaming/README.md) | 编辑、重试和连续输出如何保持一致？ |
 | 09 | [Memory、Projects 与 Styles](02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md) | 跨对话信息和当前轮输入怎样分层组织？ |
 | 10 | [Feature Flags 与配置演化](02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md) | 开关、能力与产品入口如何组合，代码能说明什么？ |
-| 专题 | [状态、恢复与更新](02-Illustrated-Deep-Dive-Book/11-State-Recovery-And-Updates/README.md) | 网络失败、配置损坏、崩溃与升级分别怎样处理？ |
-| 专题 | [版本与跨平台](02-Illustrated-Deep-Dive-Book/12-Versions-And-Cross-Platform/README.md) | 三个平台共享哪些字节，又保留哪些系统差异？ |
+| 11 | [流式性能与分层调度](02-Illustrated-Deep-Dive-Book/11-Performance-And-Streaming/README.md) | 稳定块、活动尾部、Worker 与图表队列怎样减少重复工作？ |
+| 17 | [状态、恢复与更新](02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md) | 网络失败、配置损坏、崩溃与升级分别怎样处理？ |
+| 18 | [版本与跨平台](02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md) | 三个平台共享哪些字节，又保留哪些系统差异？ |
 
 ## 读完最值得带走的六件事
 
@@ -73,3 +74,5 @@
 下载 `books/claude-app/` 即可保留书、图和示例。原创代码用于解释机制和独立开发；产品源码定位、版本范围与核验记录集中在[证据附录](04-Extracted-Core-Code-And-Scripts/evidence/README.md)，不打断正文。
 
 主样本：Claude Desktop 2.37337.1，覆盖 Linux、Windows、macOS 包；公开移动端与网页资料按各自来源日期记录。[来源索引](04-Extracted-Core-Code-And-Scripts/evidence/sources.md)
+
+- [第 19 卷：移动端交互边界](02-Illustrated-Deep-Dive-Book/19-Mobile-Surfaces/README.md)

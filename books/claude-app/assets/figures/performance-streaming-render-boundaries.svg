@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="640" viewBox="0 0 1220 640" role="img" aria-label="流式性能：五个不同边界">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#625d54"/></marker></defs>
+<rect width="1220" height="640" fill="#faf8f4"/>
+<text x="44" y="48" font-family="sans-serif" font-size="28" fill="#292821">流式性能：五个不同边界</text>
+<text x="44" y="80" font-family="sans-serif" font-size="16" fill="#625d54">原创结构图；实线表示选定源码关系，不代表所有 surface 同时使用。</text>
+<rect x="44.0" y="112" width="353.3333333333333" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="62.0" y="143" font-family="sans-serif" font-size="20" fill="#292821">接收与 reducer</text>
+<text x="62.0" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">完整顺序消费 delta</text>
+<text x="62.0" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">上游交付合并：见卷八</text>
+<path d="M399.3333333333333 169h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="427.3333333333333" y="112" width="353.3333333333333" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="445.3333333333333" y="143" font-family="sans-serif" font-size="20" fill="#292821">Markdown 揭示门</text>
+<text x="445.3333333333333" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">holdBack / 语法边界 / 可见性</text>
+<text x="445.3333333333333" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">独立于 generic smoother [PF-01–05]</text>
+<path d="M782.6666666666666 169h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="810.6666666666666" y="112" width="353.3333333333333" height="114" rx="13" fill="#e6edf0" stroke="#c9c3b8"/>
+<text x="828.6666666666666" y="143" font-family="sans-serif" font-size="20" fill="#292821">稳定块 + 活动尾块</text>
+<text x="828.6666666666666" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">追加扫描 / fast path / memo</text>
+<text x="828.6666666666666" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">同步 parse + runSync [PF-06–13]</text>
+<path d="M610 230v25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="44.0" y="262" width="545.0" height="114" rx="13" fill="#e6edf0" stroke="#c9c3b8"/>
+<text x="62.0" y="293" font-family="sans-serif" font-size="20" fill="#292821">Code 高亮</text>
+<text x="62.0" y="320" font-family="sans-serif" font-size="15" fill="#4f4b43">实际 module Worker</text>
+<text x="62.0" y="343" font-family="sans-serif" font-size="15" fill="#4f4b43">epoch / recall / 回退 [PF-18–28]</text>
+<rect x="619.0" y="262" width="545.0" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="637.0" y="293" font-family="sans-serif" font-size="20" fill="#292821">数学与图表</text>
+<text x="637.0" y="320" font-family="sans-serif" font-size="15" fill="#4f4b43">KaTeX 延迟加载；Mermaid 串行</text>
+<text x="637.0" y="343" font-family="sans-serif" font-size="15" fill="#4f4b43">不能统称 Worker 渲染 [PF-29–33]</text>
+<path d="M610 380v25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="44.0" y="412" width="545.0" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="62.0" y="443" font-family="sans-serif" font-size="20" fill="#292821">订阅与 React commit</text>
+<text x="62.0" y="470" font-family="sans-serif" font-size="15" fill="#4f4b43">源码有合并与 finalization 标记</text>
+<text x="62.0" y="493" font-family="sans-serif" font-size="15" fill="#4f4b43">这还不是像素显示 [PF-23,43]</text>
+<path d="M591.0 469h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="619.0" y="412" width="545.0" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="637.0" y="443" font-family="sans-serif" font-size="20" fill="#292821">浏览器布局与 paint</text>
+<text x="637.0" y="470" font-family="sans-serif" font-size="15" fill="#4f4b43">content-visibility ≠ 删除 DOM</text>
+<text x="637.0" y="493" font-family="sans-serif" font-size="15" fill="#4f4b43">必须另行记录 runtime trace</text>
+<text x="44" y="616" font-family="sans-serif" font-size="15" fill="#625d54">证据边界：未执行目标应用；没有实测 FPS、p95 延迟或峰值堆内存。</text>
+</svg>

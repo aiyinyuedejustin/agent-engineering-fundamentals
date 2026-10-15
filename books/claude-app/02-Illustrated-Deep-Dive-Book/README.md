@@ -1,6 +1,6 @@
 # Claude App 工程全书
 
-按“界面承载什么 → 动作怎样执行 → 数据怎样流动 → 产品怎样演化”阅读。十卷主线与三篇专题把结构、条件和可复用实现放在一起；源码定位集中在证据附录。主要静态样本为 Claude Desktop 2.37337.1，公开产品与移动资料的观察日期另列在各卷。
+按“界面承载什么 → 动作怎样执行 → 数据怎样流动 → 产品怎样演化”阅读。核心主线与扩展专题把结构、条件和可复用实现放在一起；源码定位集中在证据附录。主要静态样本为 Claude Desktop 2.37337.1，公开产品与移动资料的观察日期另列在各卷。
 
 ## 十卷主线
 
@@ -15,11 +15,15 @@
 9. [Memory、Projects 与 Styles](09-Memory-Projects-And-Styles/README.md)：跨轮信息、项目知识与个性化。
 10. [Feature Flags 与版本演化](10-Feature-Flags-And-Evolution/README.md)：条件组合、能力发现与兼容结构。
 
-## 补充专题
+## 深入专题
 
-- [第 11 卷：状态、恢复与更新](11-State-Recovery-And-Updates/README.md)
-- [第 12 卷：版本与跨平台](12-Versions-And-Cross-Platform/README.md)
-- [第 13 卷：iOS / Android 的界面与交互边界](13-Mobile-Surfaces/README.md)
+- [第 11 卷：流式性能与分层调度](11-Performance-And-Streaming/README.md)：稳定块与尾块、高亮 Worker、图表队列、虚拟化与资源生命周期。
+
+## 平台与恢复专题
+
+- [第 17 卷：状态、恢复与更新](17-State-Recovery-And-Updates/README.md)
+- [第 18 卷：版本与跨平台](18-Versions-And-Cross-Platform/README.md)
+- [第 19 卷：iOS / Android 的界面与交互边界](19-Mobile-Surfaces/README.md)
 
 ## 一页阅读准备
 
@@ -40,8 +44,8 @@
 
 - 从架构入门：1 → 2 → 3 → 6，跟踪“用户输入到工具执行”的责任交接。
 - 研究聊天数据流：4 → 5 → 8，跟踪输入、请求、事件、消息树与显示。
-- 研究工作区与个性化：7 → 9 → 10，再用 11、12 理解恢复和版本条件。
-- 研究移动体验：先读 13，再用 12 核对哪些桌面结论可以迁移；商店宣传图不能替代原生运行测量。
+- 研究工作区与个性化：7 → 9 → 10，再用 17、18 理解恢复和版本条件。
+- 研究移动体验：先读 19，再用 18 核对哪些桌面结论可以迁移；商店宣传图不能替代原生运行测量。
 
 每卷先读开头和总图，再挑一个失败、取消或过期场景沿调用链追踪。最后进入[原创代码实验室](../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)，运行对应模型和测试。图是解释工具，证据编号连接到短锚点、文件摘要与限制；结论的成立条件比单个函数名字更重要。
 

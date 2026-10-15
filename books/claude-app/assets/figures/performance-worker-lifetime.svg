@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="640" viewBox="0 0 1220 640" role="img" aria-label="高亮 Worker：计算通道也需要生命周期">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#625d54"/></marker></defs>
+<rect width="1220" height="640" fill="#faf8f4"/>
+<text x="44" y="48" font-family="sans-serif" font-size="28" fill="#292821">高亮 Worker：计算通道也需要生命周期</text>
+<text x="44" y="80" font-family="sans-serif" font-size="16" fill="#625d54">原创结构图，对应 PF-18–28、45–46；输入队列长度与单批长度是不同限制。</text>
+<rect x="44.0" y="112" width="353.3333333333333" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="62.0" y="143" font-family="sans-serif" font-size="20" fill="#292821">组件 controller</text>
+<text x="62.0" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">source + completed + provisional</text>
+<text x="62.0" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">epoch 防旧任务回写</text>
+<path d="M399.3333333333333 169h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="427.3333333333333" y="112" width="353.3333333333333" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="445.3333333333333" y="143" font-family="sans-serif" font-size="20" fill="#292821">一个在途请求</text>
+<text x="445.3333333333333" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">最多 16,384 code units / 批</text>
+<text x="445.3333333333333" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">pending text helper 未证明总 cap</text>
+<path d="M782.6666666666666 169h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="810.6666666666666" y="112" width="353.3333333333333" height="114" rx="13" fill="#e6edf0" stroke="#c9c3b8"/>
+<text x="828.6666666666666" y="143" font-family="sans-serif" font-size="20" fill="#292821">共享 Worker</text>
+<text x="828.6666666666666" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">完整行复用 grammar state</text>
+<text x="828.6666666666666" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">开放行返回 recall + 新 tokens</text>
+<path d="M610 230v25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="44.0" y="262" width="545.0" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="62.0" y="293" font-family="sans-serif" font-size="20" fill="#292821">正常回复</text>
+<text x="62.0" y="320" font-family="sans-serif" font-size="15" fill="#4f4b43">撤销 provisional 尾部再拼接</text>
+<text x="62.0" y="343" font-family="sans-serif" font-size="15" fill="#4f4b43">验证 coverage / recall 一致性</text>
+<rect x="619.0" y="262" width="545.0" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="637.0" y="293" font-family="sans-serif" font-size="20" fill="#292821">失败或变更</text>
+<text x="637.0" y="320" font-family="sans-serif" font-size="15" fill="#4f4b43">错误 / 超时 / 主题 / language</text>
+<text x="637.0" y="343" font-family="sans-serif" font-size="15" fill="#4f4b43">关闭旧流；plain 或 in-page 回退</text>
+<path d="M610 380v25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="44.0" y="412" width="545.0" height="114" rx="13" fill="#e6edf0" stroke="#c9c3b8"/>
+<text x="62.0" y="443" font-family="sans-serif" font-size="20" fill="#292821">组件 unmount</text>
+<text x="62.0" y="470" font-family="sans-serif" font-size="15" fill="#4f4b43">取消 hold timer + close stream</text>
+<text x="62.0" y="493" font-family="sans-serif" font-size="15" fill="#4f4b43">不为每块卸载销毁共享 Worker</text>
+<path d="M591.0 469h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="619.0" y="412" width="545.0" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="637.0" y="443" font-family="sans-serif" font-size="20" fill="#292821">Worker close</text>
+<text x="637.0" y="470" font-family="sans-serif" font-size="15" fill="#4f4b43">delete(streamId) 释放会话状态</text>
+<text x="637.0" y="493" font-family="sans-serif" font-size="15" fill="#4f4b43">共享缓存另按容量与寿命管理</text>
+<text x="44" y="616" font-family="sans-serif" font-size="15" fill="#625d54">本图证明的是静态协议与清理路径；没有证明运行时从不泄漏或永远及时返回。</text>
+</svg>

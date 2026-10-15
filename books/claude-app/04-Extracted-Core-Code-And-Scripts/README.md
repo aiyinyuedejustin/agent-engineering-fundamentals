@@ -26,3 +26,5 @@
 - [导航与退出实验](shell-lifecycle/README.md)：导航代际、晚到回调、具名清理与落盘结算；7 项离线测试。
 
 - [工具合同实验](tool-contracts/README.md)：形状校验、适配损失、权限与执行器分层；24 项无依赖测试。
+
+- [流式性能实验](streaming-performance/README.md)：调度、增量状态、完成边界与资源寿命；27 项零依赖合同测试。

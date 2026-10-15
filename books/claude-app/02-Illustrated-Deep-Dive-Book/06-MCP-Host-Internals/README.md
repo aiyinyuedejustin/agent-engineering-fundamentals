@@ -34,7 +34,7 @@ flowchart LR
 
 **S 静态**对应本包的声明与处理分支；**D 官方文档**按文档日期与适用产品解释；**A 原创**表示工程推导与示例。证据范围限于静态分析与文档：目标应用和代码未运行，扩展未安装，真实配置与凭据未读取；账户启用状态及实际执行结果仍待运行验证。
 
-[X01–X16 台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)保存文件摘要、短锚点、UTF-8 位置和 D01–D10 官方来源。主进程 IPC 边界见[第 1 卷](../01-System-Architecture/README.md)，通用配置持久化见[恢复专题](../11-State-Recovery-And-Updates/README.md)。
+[X01–X16 台账](../../04-Extracted-Core-Code-And-Scripts/evidence/data/extension-boundaries.json)保存文件摘要、短锚点、UTF-8 位置和 D01–D10 官方来源。主进程 IPC 边界见[第 1 卷](../01-System-Architecture/README.md)，通用配置持久化见[恢复专题](../17-State-Recovery-And-Updates/README.md)。
 
 ## 01 集成的四个坐标
 

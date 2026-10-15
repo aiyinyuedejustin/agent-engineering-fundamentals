@@ -1,0 +1,1093 @@
+{
+  "research_scope": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "observed_at": "2026-10-14T23:53:00Z",
+    "artifact_root": "resources/ion-dist",
+    "installation_package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "target_execution": false,
+    "authenticated_requests": false,
+    "source_bodies_republished": false
+  },
+  "collection_status": "closed for selected Markdown renderers, highlighting Worker, rich formatter scheduling, file/diff virtualization, caches and disposal; no authenticated performance profile",
+  "rea": {
+    "evidence_id": "ev_6c85ae48209047f4d3c3d59198504cbfaab9802c7ea8effbd920d3be88cd4550",
+    "provider": {
+      "id": "rea-javascript-application",
+      "name": "REA JavaScript application analyzer",
+      "version": "1"
+    },
+    "root_artifact_sha256": "ec34292b7d85207e70a6246a2d60cd2bb9c8d51cf3c85e255520ae79496881fb",
+    "source_selection": {
+      "requested_paths": [
+        "assets/v1/shared-11-BoE9JQRc.js",
+        "assets/v1/c89efce1a-C_zUGLCA.js",
+        "assets/v1/c3fde7009-CfDHIRHB.js",
+        "assets/v1/c64baa838-D91NsTRR.js"
+      ],
+      "unselected_files": 3492
+    },
+    "statistics": {
+      "relevant_files": 3496,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 556529,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 4,
+      "visited_ast_nodes": 166680,
+      "findings": 1290,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "limitations": [
+      "Caller-selected source analysis leaves 3492 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+    ],
+    "private_raw_result_sha256": "1ad07ab1a68af1b8622ea2f47432a26db371941f6c9bea360597ccd704b98b92"
+  },
+  "files": {
+    "assets/v1/cc1aae219-_TxnVCRG.js": {
+      "sha256": "99c4cd7095acdfa231e1729882d131ac0e2bc58b847300eb165ea152a035e41c",
+      "bytes": 576438
+    },
+    "assets/v1/c89efce1a-C_zUGLCA.js": {
+      "sha256": "06b23cdcaea585e2d894ca5919dd20731c4248b0868f7ca4f4c03900de2f6e80",
+      "bytes": 93304
+    },
+    "assets/v1/shared-11-BoE9JQRc.js": {
+      "sha256": "8d1cf05b2272aac0154afdd96c19a548b3179a38c8707bf0951b09fd853c5d79",
+      "bytes": 288097
+    },
+    "assets/v1/shared-23-BY6HquaF.js": {
+      "sha256": "ed9f321af9c143cc7015e53996e871bf3af52616dfbe392ff8620f916de1b9a1",
+      "bytes": 419667
+    },
+    "assets/v1/shared-19-SWo9Ge1k.js": {
+      "sha256": "ff57838a99f79f5e8c55f9f798559f63a431c1f8cee085a054d1aebc15959b1b",
+      "bytes": 505863
+    },
+    "assets/v1/c851b27a8-DE92t9EK.js": {
+      "sha256": "5c941d325619f139df9e6acbc44caa890fffddf3410222be7be7d820251ae50a",
+      "bytes": 35498
+    },
+    "assets/v1/c3fde7009-CfDHIRHB.js": {
+      "sha256": "1ed65aa12daa83af72f8e71cb78adc69124c61eb7e503fac58fd11b12d572472",
+      "bytes": 52409
+    },
+    "assets/v1/c64baa838-D91NsTRR.js": {
+      "sha256": "2aed6f046643e3234e51779dda77b9e738158f30640f369b2cf1d214033a9d5a",
+      "bytes": 122719
+    },
+    "assets/v1/ca7ba268c-iijqXfZj.js": {
+      "sha256": "241162a0eee7d687efe13ba982e6d30a220601e16448402702186e4164a8dc72",
+      "bytes": 196986
+    },
+    "assets/highlightWorker-DC5uhXj0.js": {
+      "sha256": "17bb472727e2c5f67a2ee93000d1a3ea6ae5608b36f0ee5426781e51af0e9980",
+      "bytes": 1576704
+    }
+  },
+  "claims": [
+    {
+      "id": "PF-01",
+      "claim": "Chat reply wrapper qF requests the streaming renderer and passes lifecycle callbacks; rollout and successful runtime activation remain unobserved.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cc1aae219-_TxnVCRG.js",
+      "anchor": "useStreamingFadeIn:!0,onFirstPaint:m",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 158777,
+        "end": 158813,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 158777,
+        "end": 158813,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 24
+    },
+    {
+      "id": "PF-02",
+      "claim": "StandardMarkDown latches the streaming-renderer choice at mount from requested fade-in and math-loader status; a pending loader selects react-markdown fallback for that mount.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c89efce1a-C_zUGLCA.js",
+      "anchor": "[R]=v(()=>j&&_t()!==\"pending\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 89226,
+        "end": 89256,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 89226,
+        "end": 89256,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 17
+    },
+    {
+      "id": "PF-03",
+      "claim": "Formatter telemetry distinguishes streaming renderer, requested-but-fallback renderer, and regular renderer.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c89efce1a-C_zUGLCA.js",
+      "anchor": "renderer:R?\"streaming_md\":j?\"react_md_fallback\":\"react_md\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 89540,
+        "end": 89598,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 89540,
+        "end": 89598,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 17
+    },
+    {
+      "id": "PF-04",
+      "claim": "The downstream reveal helper has its own 22-character step, 550ms target lag, 25–150ms step parameters; these are configuration, not measured performance.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "ac=Object.freeze({stepChars:22,targetLagMs:550,minStepMs:25,maxStepMs:150})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 17026,
+        "end": 17101,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 17026,
+        "end": 17101,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "PF-05",
+      "claim": "Reveal keeps a cursor separate from source, holds incomplete syntax boundaries, handles non-prefix corrections and visibility changes, and removes timer/listener on cleanup.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Il(e,{enabled:t,wordWave:n=!1,holdBack:r=!0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 27101,
+        "end": 27153,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 27101,
+        "end": 27153,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 15
+    },
+    {
+      "id": "PF-06",
+      "claim": "The boundary scanner resumes from saved offset and tracks fence, math, list, table, quote and indented-code state; it records state before the incomplete last line.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function $d(e,t){let n=e.slice(t.offset).split(",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 48652,
+        "end": 48699,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 48652,
+        "end": 48699,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 21
+    },
+    {
+      "id": "PF-07",
+      "claim": "Append-compatible input extends completed chunks; non-prefix input resets scanner/chunks rather than treating edits as append.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function af(e,t,n){if(!n||!t)return rf",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 50281,
+        "end": 50319,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 50281,
+        "end": 50319,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 22
+    },
+    {
+      "id": "PF-08",
+      "claim": "While streaming, completed chunks and remaining tail are separate; after streaming, boundaries can be recomputed for the whole input.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function lf(e,t,n=!0)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 50955,
+        "end": 50976,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 50955,
+        "end": 50976,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 22
+    },
+    {
+      "id": "PF-09",
+      "claim": "The selected Markdown processor calls parse and runSync synchronously on the rendering path; no Markdown Worker handoff is established by this function.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Zu(e,t,n,r)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 40406,
+        "end": 40426,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 40406,
+        "end": 40426,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 18
+    },
+    {
+      "id": "PF-10",
+      "claim": "Tail parsing attempts fence, list, table and paragraph fast paths; exceptions fall back and are separately reported.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Qp(e,t,n){let{list:r,table:i,paragraph:a}=n",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 67582,
+        "end": 67634,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 67582,
+        "end": 67634,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-11",
+      "claim": "Fence fast path excludes carriage returns, NUL and frontmatter-like prefixes before attempting an open-fence rewrite.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Zf(e){if(e.includes(\"\\r\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 55031,
+        "end": 55065,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 55031,
+        "end": 55065,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 22
+    },
+    {
+      "id": "PF-12",
+      "claim": "Paragraph append fast path requires same processor, strict prefix growth and safe suffix/line context; it is not arbitrary character concatenation.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Dp(e,t,n){let r=t.text",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 61777,
+        "end": 61808,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 61777,
+        "end": 61808,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 25
+    },
+    {
+      "id": "PF-13",
+      "claim": "Chunk component uses memoized transformed trees, stable/tail roles and a custom equality guard; streaming and settled phases have different reuse conditions.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "gm=O(({text:e,boundaries:t,settled:n",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 69921,
+        "end": 69957,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 69921,
+        "end": 69957,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-14",
+      "claim": "On settlement the selected renderer obtains a full-document HAST and repartitions children using chunk origins; finalization is more than cancelling an animation.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "Oe=N(()=>I?lm(ce,W,V,De):null",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 74419,
+        "end": 74448,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 74419,
+        "end": 74448,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-15",
+      "claim": "Early settlement only attempts bounded chunks (fd=20,000 code units), reparses and compares tree shape before retaining a streamed tree.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function pd(e,t,n,r,i){if(t.length>fd)return null",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 43568,
+        "end": 43617,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 43568,
+        "end": 43617,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 19
+    },
+    {
+      "id": "PF-16",
+      "claim": "Settled-tree cache is bounded by 500 entries, estimated 8MiB total and 2MiB per item; these are accounting estimates, not heap caps.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "gf=500,_f=8388608,vf=2097152",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 51817,
+        "end": 51845,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 51817,
+        "end": 51845,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 22
+    },
+    {
+      "id": "PF-17",
+      "claim": "Chat module initialization enables the tree cache, installs fallback reporting, and registers the shared highlight Worker factory; direct invocation appears at module scope.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-23-BY6HquaF.js",
+      "anchor": "function $G(){KD(!0),ZD(tK),UD({createWorker:iu,feature:\"chat\"})}",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 229373,
+        "end": 229438,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 229373,
+        "end": 229438,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 10
+    },
+    {
+      "id": "PF-18",
+      "claim": "The chat highlight factory constructs an actual module Worker from the locally packaged highlightWorker asset.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-19-SWo9Ge1k.js",
+      "anchor": "new Worker(e,{type:\"module\",name:\"shiki-highlight\"})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 276806,
+        "end": 276858,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 276806,
+        "end": 276858,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 5
+    },
+    {
+      "id": "PF-19",
+      "claim": "Highlight stream client keeps one in-flight request, queues appended text, sends at most 16,384 code units per request (preferring a newline), and sends close to release Worker stream state. No total pending-text cap is established in this helper.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function p_({lang:e,themes:t,tokenize:n",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 95131,
+        "end": 95170,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 95131,
+        "end": 95170,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-20",
+      "claim": "Worker replies retract the previous provisional token tail; recall mismatch or invalid source coverage triggers protocol_desync fallback.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "if(e.recall!==t){this.fail(\"protocol_desync\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 102465,
+        "end": 102510,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 102465,
+        "end": 102510,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-21",
+      "claim": "Worker controller increments an epoch on abandonment and rejects stale callbacks, clearing completed/provisional state.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "abandon(){this.stream?.close(),this.stream=null,this.epoch+=1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 101583,
+        "end": 101644,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 101583,
+        "end": 101644,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-22",
+      "claim": "Worker token hook disposal cancels its hold timer and closes/abandons its stream, rather than terminating the shared Worker on every component unmount.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "dispose(){this.cancelHold(),this.abandon()}",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 100559,
+        "end": 100602,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 100559,
+        "end": 100602,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-23",
+      "claim": "Some Worker token updates are grouped through rAF with a 100ms timeout fallback; the batch uses an identity guard so only one dispatch wins.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function D_(e){if(S_.push(e),C_!==0)return",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 97796,
+        "end": 97838,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 97796,
+        "end": 97838,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-24",
+      "claim": "Streaming-highlight controller has a separate 200ms hold-for-growth fallback; rendering can cancel the hold. It is not a universal 200ms token delay.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "holdForGrowth(){this.holdTimer===void 0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 103892,
+        "end": 103931,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 103892,
+        "end": 103931,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-25",
+      "claim": "Shared Worker boot has visibility-accounted slow and ceiling timers, error/termination handling, construction retry cooldowns and loss listeners; Worker availability is not assumed.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Zh(e,t={})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 85560,
+        "end": 85579,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 85560,
+        "end": 85579,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-26",
+      "claim": "In-page fallback reuses completed-line grammar states, leaves streaming trailing text provisional, and falls back after time-limit or grammar-state failure.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "var Hg=class{constructor(){this.lines=[]",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 90799,
+        "end": 90839,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 90799,
+        "end": 90839,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-27",
+      "claim": "Highlight prefix cache has a 64-entry threshold, four-million-character accounting target and 30-minute retention; one remaining oversized entry is allowed by the eviction condition.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "var pg=64,mg=4e6,hg=18e5",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 88259,
+        "end": 88283,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 88259,
+        "end": 88283,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-28",
+      "claim": "Final-token cache has 2,000 entries, one-million-character accounting and expiry; cleanup scheduling is separate from component disposal.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "xg=2e3,Sg=1e6,Cg=hg",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 89179,
+        "end": 89198,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 89179,
+        "end": 89198,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-29",
+      "claim": "Math-loading hook subscribes to shared loader state and lazy-loads KaTeX/remark/rehype chunks. This is asynchronous module acquisition, not proof of off-main-thread math rendering.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c851b27a8-DE92t9EK.js",
+      "anchor": "function wr(n=!0,r={})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 34910,
+        "end": 34932,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 34910,
+        "end": 34932,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 24
+    },
+    {
+      "id": "PF-30",
+      "claim": "Mermaid draws are serialized through a shared Promise chain, yield before starting, inspect cancellation, and refuse later work if a timed-out earlier draw is still running.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "function Ob(e,t,n,r,i={})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 140010,
+        "end": 140035,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 140010,
+        "end": 140035,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 37
+    },
+    {
+      "id": "PF-31",
+      "claim": "Mermaid timeout does not forcibly preempt underlying drawing; the unresolved draw is tracked until settlement.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "o.stuck=y,y.then(()=>{o.stuck===y&&(o.stuck=void 0)})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 139370,
+        "end": 139423,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 139370,
+        "end": 139423,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 37
+    },
+    {
+      "id": "PF-32",
+      "claim": "Mermaid success cache has 48-entry, four-million SVG-character and 512,000-character per-item thresholds; cache retrieval checks viewport-width tolerance and re-sanitizes a new scope ID.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "Nb=48,Pb=4e6,Fb=512e3",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 140966,
+        "end": 140987,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 140966,
+        "end": 140987,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 37
+    },
+    {
+      "id": "PF-33",
+      "claim": "Selected chat Mermaid call supplies 20,000-character text and 400-edge limits, an abort signal, a 30,000ms requested limit, and raw-code/error fallback.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "maxTextSize:2e4,maxEdges:400",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 144487,
+        "end": 144515,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 144487,
+        "end": 144515,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 37
+    },
+    {
+      "id": "PF-34",
+      "claim": "Offscreen Markdown mode retains DOM and applies content-visibility/intrinsic sizes, with math-container and print exceptions; it is not established as row virtualization.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c89efce1a-C_zUGLCA.js",
+      "anchor": "tr=[\"supports-[(overflow-anchor:auto)_and_(contain-intrinsic-block-size:auto_1px)]",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 23849,
+        "end": 23931,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 23849,
+        "end": 23931,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 5
+    },
+    {
+      "id": "PF-35",
+      "claim": "Offscreen deferral is requested and latched for a particular text; changing that text disables the latch. It is not a universal active-stream setting.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c89efce1a-C_zUGLCA.js",
+      "anchor": "function Qo({requested:e,text:t,rootRef:n,shown:r=!0})",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 67504,
+        "end": 67558,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 67504,
+        "end": 67558,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 16
+    },
+    {
+      "id": "PF-36",
+      "claim": "Optional idle prelayout checks document visibility, pending input, pointer activity, idle budget and reader anchor stability, then removes listeners and forced styles on cleanup.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c89efce1a-C_zUGLCA.js",
+      "anchor": "function Ko(e){let t=z(e)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 63315,
+        "end": 63340,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 63315,
+        "end": 63340,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 16
+    },
+    {
+      "id": "PF-37",
+      "claim": "File/document Markdown uses distinct progressive thresholds: 49,152 code units for ordinary file typography and 8,192 for document typography.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c3fde7009-CfDHIRHB.js",
+      "anchor": "Hi=49152,Ui=8192",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 44439,
+        "end": 44455,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 44439,
+        "end": 44455,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-38",
+      "claim": "Progressive file renderer starts with one chunk and reveals another using requestIdleCallback(timeout 100) or a 16ms scheduling fallback; no supported-window fallback reveals all.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c3fde7009-CfDHIRHB.js",
+      "anchor": "function pa(e){let[t,n]=b(1)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 51315,
+        "end": 51343,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 51315,
+        "end": 51343,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-39",
+      "claim": "Document navigation can force reveal through a source offset beyond the idle chunk count; exported/print preparation reveals all and waits a bounded period for pending rich content.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c3fde7009-CfDHIRHB.js",
+      "anchor": "h=m===null?d:Math.min(e.length,Math.max(d,f.findLastIndex",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 50965,
+        "end": 51022,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 50965,
+        "end": 51022,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 29
+    },
+    {
+      "id": "PF-40",
+      "claim": "Packaged code/file renderer has true before/after spacer elements and computed visible line ranges. This evidence applies to code/file virtualization, not the whole chat transcript.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c64baa838-D91NsTRR.js",
+      "anchor": "this.bufferBefore.dataset.virtualizerBuffer=\"before\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 91082,
+        "end": 91134,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 91082,
+        "end": 91134,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 57
+    },
+    {
+      "id": "PF-41",
+      "claim": "Packaged CodeView/diff virtualizer owns a scroll root, resize observer, visible item range and interaction listeners. Runtime usage and effectiveness require separate measurement.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/ca7ba268c-iijqXfZj.js",
+      "anchor": "this.resizeObserver=new ResizeObserver(this.handleResize)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 136539,
+        "end": 136596,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 136539,
+        "end": 136596,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "PF-42",
+      "claim": "Streaming table layout records row/tail signature and samples column widths adaptively instead of always committing new min-widths; it still performs layout reads.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/c89efce1a-C_zUGLCA.js",
+      "anchor": "function Tc(e,t){let r=n(null)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 83210,
+        "end": 83240,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 83210,
+        "end": 83240,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 17
+    },
+    {
+      "id": "PF-43",
+      "claim": "Markdown finalization emits a mark with slot/retention counts and a callback. This does not by itself prove physical pixels were painted.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "performance.mark(\"md:finalize\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 72746,
+        "end": 72776,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 72746,
+        "end": 72776,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-44",
+      "claim": "A hidden synthetic Markdown warmup traverses streaming and settled states with a watchdog; source presence is not a measured cold-start reduction.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/cc1aae219-_TxnVCRG.js",
+      "anchor": "\"render-path-warmup\").Warmup",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 159711,
+        "end": 159739,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 159711,
+        "end": 159739,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 27
+    },
+    {
+      "id": "PF-45",
+      "claim": "The actual Worker deletes per-stream grammar/open-line state on close; it serializes inbound messages with a Promise chain.",
+      "evidence_kind": "observed-source",
+      "file": "assets/highlightWorker-DC5uhXj0.js",
+      "anchor": "if(n.close){s.delete(r);return}",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 1575183,
+        "end": 1575214,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 1575183,
+        "end": 1575214,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 14
+    },
+    {
+      "id": "PF-46",
+      "claim": "Worker tokenization reuses grammar state for completed lines and returns recall count to replace the old open-line tokens.",
+      "evidence_kind": "observed-source",
+      "file": "assets/highlightWorker-DC5uhXj0.js",
+      "anchor": "function sa(e,t,n,r){let i=(t.openLine+n).split(",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 1573327,
+        "end": 1573375,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 1573327,
+        "end": 1573375,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 13
+    },
+    {
+      "id": "PF-47",
+      "claim": "Formatter observability separates waiting, formatted, failed/plain and engine/fallback causes; declaration of telemetry is not a collected timing distribution.",
+      "evidence_kind": "observed-source",
+      "file": "assets/v1/shared-11-BoE9JQRc.js",
+      "anchor": "Av({formatter:\"shiki\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 128664,
+        "end": 128685,
+        "encoding": "Unicode code points; zero-based; end-exclusive"
+      },
+      "byte_range": {
+        "start": 128664,
+        "end": 128685,
+        "encoding": "UTF-8; zero-based; end-exclusive"
+      },
+      "line": 32
+    }
+  ],
+  "related_evidence": [
+    "protocol-tree-streaming.json"
+  ],
+  "primary_documentation": [
+    {
+      "id": "DOC-RAF",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
+      "supports": "rAF runs before repaint and is usually paused in hidden tabs; no fixed 60fps guarantee"
+    },
+    {
+      "id": "DOC-CV",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content-visibility",
+      "supports": "content-visibility skips rendering work without equating to removal of DOM"
+    },
+    {
+      "id": "DOC-PROFILER",
+      "url": "https://react.dev/reference/react/Profiler",
+      "supports": "React commit/render timing does not measure all browser paint work"
+    },
+    {
+      "id": "DOC-LOAF",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceLongAnimationFrameTiming",
+      "supports": "Long-animation-frame timing and script/render attribution, with support checks"
+    }
+  ],
+  "unanswered": [
+    "No runtime FPS, p95 latency, heap size, battery cost or cache hit rate was measured.",
+    "Not every surface uses the same renderer, worker, flags or cache.",
+    "No transcript-wide virtualized-list claim is made.",
+    "The Markdown parse path examined is synchronous; no general absence of all Markdown Workers is claimed.",
+    "Timeouts and chunk sizes do not imply end-to-end bounded queues or preemptive CPU cancellation."
+  ],
+  "original_deliverable": {
+    "target_code_imported": false,
+    "artifact": "staging/performance-expansion/lab",
+    "tests": {
+      "command": "node --test test/*.test.mjs",
+      "passed": 27,
+      "failed": 0,
+      "target_execution": false
+    },
+    "simulation": {
+      "label": "deterministic model, not Claude benchmark",
+      "unit": "UTF-16 code units",
+      "sourceLength": 4885,
+      "updates": 543,
+      "commits": 69,
+      "naiveParseInput": 1329262,
+      "stableAndTailParseInput": 10622,
+      "parseInputReduction": 0.992,
+      "completedLineBookkeeping": 4882,
+      "finalContentExact": true,
+      "pendingTimers": 0,
+      "caveat": "Counts logical parser input only; no real parser, DOM, Worker startup, string-copy, GC or paint cost is timed."
+    }
+  }
+}

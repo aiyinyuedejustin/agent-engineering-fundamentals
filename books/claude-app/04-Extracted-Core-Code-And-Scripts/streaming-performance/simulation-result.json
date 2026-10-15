@@ -1,0 +1,14 @@
+{
+  "label": "deterministic model, not Claude benchmark",
+  "unit": "UTF-16 code units",
+  "sourceLength": 4885,
+  "updates": 543,
+  "commits": 69,
+  "naiveParseInput": 1329262,
+  "stableAndTailParseInput": 10622,
+  "parseInputReduction": 0.992,
+  "completedLineBookkeeping": 4882,
+  "finalContentExact": true,
+  "pendingTimers": 0,
+  "caveat": "Counts logical parser input only; no real parser, DOM, Worker startup, string-copy, GC or paint cost is timed."
+}

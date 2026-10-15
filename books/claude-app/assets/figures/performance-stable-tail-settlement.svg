@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1220" height="640" viewBox="0 0 1220 640" role="img" aria-label="稳定前缀、活动尾部与最终全文">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#625d54"/></marker></defs>
+<rect width="1220" height="640" fill="#faf8f4"/>
+<text x="44" y="48" font-family="sans-serif" font-size="28" fill="#292821">稳定前缀、活动尾部与最终全文</text>
+<text x="44" y="80" font-family="sans-serif" font-size="16" fill="#625d54">原创教学结构图，对应 PF-06–16、21–22；分块不是永久冻结语义。</text>
+<rect x="44.0" y="112" width="545.0" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="62.0" y="143" font-family="sans-serif" font-size="20" fill="#292821">STREAMING</text>
+<text x="62.0" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">块 A：完成，复用身份</text>
+<text x="62.0" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">块 B：完成，复用身份</text>
+<path d="M591.0 169h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="619.0" y="112" width="545.0" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="637.0" y="143" font-family="sans-serif" font-size="20" fill="#292821">TAIL</text>
+<text x="637.0" y="170" font-family="sans-serif" font-size="15" fill="#4f4b43">块 C：可变，尝试受限 fast path</text>
+<text x="637.0" y="193" font-family="sans-serif" font-size="15" fill="#4f4b43">引用 / 列表 / 数学仍可能改变解释</text>
+<path d="M610 230v25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="44.0" y="262" width="545.0" height="114" rx="13" fill="#e6edf0" stroke="#c9c3b8"/>
+<text x="62.0" y="293" font-family="sans-serif" font-size="20" fill="#292821">FINALIZE</text>
+<text x="62.0" y="320" font-family="sans-serif" font-size="15" fill="#4f4b43">对完整源文本作权威解析</text>
+<text x="62.0" y="343" font-family="sans-serif" font-size="15" fill="#4f4b43">全局语义：引用定义、插件配置</text>
+<path d="M591.0 319h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="619.0" y="262" width="545.0" height="114" rx="13" fill="#e9eee5" stroke="#c9c3b8"/>
+<text x="637.0" y="293" font-family="sans-serif" font-size="20" fill="#292821">REPARTITION</text>
+<text x="637.0" y="320" font-family="sans-serif" font-size="15" fill="#4f4b43">按原 offset 分配最终树</text>
+<text x="637.0" y="343" font-family="sans-serif" font-size="15" fill="#4f4b43">经比较才保留 early-settled tree</text>
+<path d="M610 380v25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="44.0" y="412" width="545.0" height="114" rx="13" fill="#efe7dd" stroke="#c9c3b8"/>
+<text x="62.0" y="443" font-family="sans-serif" font-size="20" fill="#292821">缓存准入</text>
+<text x="62.0" y="470" font-family="sans-serif" font-size="15" fill="#4f4b43">条目数 + 总估算 + 单项估算</text>
+<text x="62.0" y="493" font-family="sans-serif" font-size="15" fill="#4f4b43">配置键参与命中判断</text>
+<path d="M591.0 469h25" stroke="#625d54" stroke-width="2" marker-end="url(#a)"/>
+<rect x="619.0" y="412" width="545.0" height="114" rx="13" fill="#e6edf0" stroke="#c9c3b8"/>
+<text x="637.0" y="443" font-family="sans-serif" font-size="20" fill="#292821">生命周期</text>
+<text x="637.0" y="470" font-family="sans-serif" font-size="15" fill="#4f4b43">编辑 / 换主题 / 换语言 / 关闭</text>
+<text x="637.0" y="493" font-family="sans-serif" font-size="15" fill="#4f4b43">失效、epoch、取消及释放各有责任</text>
+<text x="44" y="616" font-family="sans-serif" font-size="15" fill="#625d54">不要从“尾块优化”推断解析总耗时严格线性；最终解析和字符串操作仍有成本。</text>
+</svg>

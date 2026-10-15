@@ -215,4 +215,4 @@ page.settle(old, { ok: true }); // false：不能改写 page-b 的失败状态
 | 谁拥有草稿？ | 显示与交付分别确认 | 快捷入口失败不吞掉输入 |
 | 谁负责退出？ | 具名任务、期限、持久化结果 | 一个任务卡住不遮蔽其他结果 |
 
-继续阅读：[状态、恢复与更新](../11-State-Recovery-And-Updates/README.md) · [MCP 宿主](../06-MCP-Host-Internals/README.md) · [版本与跨平台](../12-Versions-And-Cross-Platform/README.md)
+继续阅读：[状态、恢复与更新](../17-State-Recovery-And-Updates/README.md) · [MCP 宿主](../06-MCP-Host-Internals/README.md) · [版本与跨平台](../18-Versions-And-Cross-Platform/README.md)
