@@ -56,3 +56,7 @@
 - `build_color_catalog.py`：重新生成目录和页面；输入来自已解析的包内 CSS。
 
 本目录基于 Claude Desktop Linux 2.37337.1 包内静态颜色事实；交互页面与组织方式为原创实现。
+
+## 相对色与上下文值
+
+[原创浏览器核验页](relative-color-fixture.html)用隔离的19个静态派生表达式和5个上下文例子检查相对RGB、initial回退与currentColor。它保留超范围sRGB通道，不把裁剪HEX冒充原值；只检查浏览器CSS语义，不加载产品样式文件或执行产品脚本。页面会直接显示各项计算结果与通过/失败。
