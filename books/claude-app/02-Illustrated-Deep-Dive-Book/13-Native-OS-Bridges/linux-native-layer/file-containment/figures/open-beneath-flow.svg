@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1020" viewBox="0 0 1120 1020" role="img" aria-labelledby="title desc">
+<title id="title">openBeneath 的两条有限控制流</title><desc id="desc">先验证分量，首选 openat2。成功返回 fd；errno 为 EAGAIN 或 ENOSYS 时进入逐分量 openat；其他错误返回错误。两条路线不能自动视为相同安全保证。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#35566a"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC","WenQuanYi Zen Hei",sans-serif;fill:#173b50;font-size:20px}.small{font-size:17px;fill:#426477}.title{font-size:28px;font-weight:700}.box{fill:#edf5f7;stroke:#58869a;stroke-width:2}.alt{fill:#fff4df;stroke:#b88431;stroke-width:2}.bad{fill:#fcebea;stroke:#be6b64;stroke-width:2}.ok{fill:#e5f3e8;stroke:#5c9367;stroke-width:2}.edge{fill:none;stroke:#35566a;stroke-width:2.2}.note{font-size:18px;fill:#754f20}</style>
+<rect width="1120" height="1020" fill="#fffdf7"/>
+<text x="46" y="51" class="title">一个工作函数，两种路径解析策略</text>
+<text x="46" y="83" class="small">Linux amd64 2.37337.1 · 选定静态分支 · 非运行记录 / 非完整安全保证</text>
+<rect x="46" y="115" width="1028" height="90" rx="13" class="box"/>
+<text x="72" y="148">共同检查：逐分量验证</text><text x="72" y="181" class="small">拒绝空分量、.、..、NUL、/；通过后用 / 组合路径</text>
+<path d="M560 205V239" class="edge" marker-end="url(#arrow)"/>
+<rect x="224" y="240" width="672" height="112" rx="13" class="box"/>
+<text x="248" y="273">首选：openat2(dirfd, path, &amp;how, 24)</text>
+<text x="248" y="307" class="small">flags |= NOFOLLOW | CLOEXEC | NONBLOCK</text>
+<text x="248" y="333" class="small">resolve = BENEATH | NO_SYMLINKS | NO_MAGICLINKS = 0xe</text>
+<path d="M560 352V395" class="edge" marker-end="url(#arrow)"/>
+<path d="M560 396L727 451L560 506L393 451Z" class="box"/>
+<text x="485" y="446">syscall 返回</text><text x="485" y="473" class="small">只展开选定分支</text>
+<path d="M393 451H188V532" class="edge" marker-end="url(#arrow)"/>
+<text x="227" y="433" class="small">非负 fd</text>
+<rect x="62" y="533" width="252" height="73" rx="12" class="ok"/>
+<text x="112" y="578">写入成功结果</text>
+<path d="M727 451H940V532" class="edge" marker-end="url(#arrow)"/>
+<text x="774" y="433" class="small">其他 errno</text>
+<rect x="814" y="533" width="252" height="73" rx="12" class="bad"/>
+<text x="864" y="578">构造错误结果</text>
+<path d="M560 506V567" class="edge" marker-end="url(#arrow)"/>
+<text x="582" y="548" class="small">errno = 11 或 38</text>
+<rect x="352" y="568" width="416" height="91" rx="12" class="alt"/>
+<text x="378" y="602">进入逐分量 openat 实现</text>
+<text x="378" y="634" class="small">EAGAIN 不等于“内核不支持”</text>
+<path d="M560 659V695" class="edge" marker-end="url(#arrow)"/>
+<rect x="224" y="696" width="672" height="112" rx="12" class="alt"/>
+<text x="248" y="730">中间分量（如有）：验证 → openat(当前 fd, 分量)</text>
+<text x="248" y="762" class="small">O_PATH | O_DIRECTORY | O_NOFOLLOW | O_CLOEXEC</text>
+<text x="248" y="789" class="small">成功后换用新目录 fd；循环中关闭旧临时目录 fd</text>
+<path d="M560 808V842" class="edge" marker-end="url(#arrow)"/>
+<rect x="224" y="843" width="672" height="72" rx="12" class="alt"/>
+<text x="248" y="875">末分量：验证 → openat(当前 fd, 末分量)</text>
+<text x="248" y="901" class="small">flags |= 0xa0800；成功/拒绝分别进入相应结果路线</text>
+<text x="46" y="956" class="note">边界：0xe 不含 NO_XDEV；持有目录 fd 不等于目录一直位于原根之下。</text>
+<text x="46" y="986" class="small">省略：分配失败、字符串转换、异常展开、完整 close 路由及 Promise 交付。</text>
+</svg>

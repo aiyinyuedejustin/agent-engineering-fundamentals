@@ -137,3 +137,7 @@ node --test examples/callback-gate.test.mjs examples/callback-gate.audit.test.mj
 随包包含 12 项模型测试，以及独立编写的 22 项反例测试，共 34 项。已在 Node.js v24.19.0 复跑通过，不需安装依赖。
 
 除排队、关闭、重入与异常路径外，独立测试还明确验证模型的限制：它不会自动复制可变 Buffer，不会替调用方释放被拒绝或关闭时丢弃的合成资源。测试中的资源只是普通 JS 对象，不是真实 fd、原生内存或设备。34 项通过只验证这个原创模型，不验证目标应用的真实线程、PipeWire、权限或 native 行为。
+
+## 文件解析：内核约束与兼容路径
+
+[openRootDir / openBeneath 补篇](file-containment/README.md)连接方法注册、异步工作、根目录 fd、openat2 的解析约束和逐分量 openat 回退。重点区分目录身份与目录树位置、链接解析与跨挂载限制，并提供样本绑定的只读复核器及无需样本的输入安全测试。

@@ -1,0 +1,561 @@
+{
+  "kind": "sample-bound selected static anchors; not behavior or full control-flow proof",
+  "input_sha256": "c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6",
+  "snapshot_sha256_after": "c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6",
+  "target_bytes": 10026272,
+  "target_executed": false,
+  "target_loaded": false,
+  "fdes": [
+    {
+      "start": "0x6313d0",
+      "end_exclusive": "0x6314b1"
+    },
+    {
+      "start": "0x6316a0",
+      "end_exclusive": "0x631781"
+    },
+    {
+      "start": "0x62d560",
+      "end_exclusive": "0x62d806"
+    },
+    {
+      "start": "0x62ecd0",
+      "end_exclusive": "0x62f4d8"
+    },
+    {
+      "start": "0x61c8f0",
+      "end_exclusive": "0x61d12d"
+    },
+    {
+      "start": "0x619e80",
+      "end_exclusive": "0x619f10"
+    },
+    {
+      "start": "0x619f10",
+      "end_exclusive": "0x619f96"
+    },
+    {
+      "start": "0x4f4670",
+      "end_exclusive": "0x4f47ea"
+    },
+    {
+      "start": "0x4f3bc0",
+      "end_exclusive": "0x4f3f2b"
+    },
+    {
+      "start": "0x4f34b0",
+      "end_exclusive": "0x4f3bb4"
+    },
+    {
+      "start": "0x62d330",
+      "end_exclusive": "0x62d557"
+    },
+    {
+      "start": "0x61b230",
+      "end_exclusive": "0x61b4d0"
+    },
+    {
+      "start": "0x61b4d0",
+      "end_exclusive": "0x61b72d"
+    },
+    {
+      "start": "0x632350",
+      "end_exclusive": "0x63248f"
+    }
+  ],
+  "checks": [
+    {
+      "test": "fixed Linux amd64 snapshot digest and size",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 6313d0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 6313d0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 6316a0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 6316a0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 62d560",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 62d560",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 62ecd0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 62ecd0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 61c8f0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 61c8f0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 619e80",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 619e80",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 619f10",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 619f10",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 4f4670",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 4f4670",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 4f3bc0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 4f3bc0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 4f34b0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 4f34b0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 62d330",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 62d330",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 61b230",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 61b230",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 61b4d0",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 61b4d0",
+      "passed": true
+    },
+    {
+      "test": "FDE begins at 632350",
+      "passed": true
+    },
+    {
+      "test": "aligned decode has no bad/byte marker 632350",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d640 resolves napi_create_function",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d7e8 resolves napi_create_async_work",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d7f0 resolves napi_queue_async_work",
+      "passed": true
+    },
+    {
+      "test": "GOT 98c830 resolves syscall",
+      "passed": true
+    },
+    {
+      "test": "GOT 98c7a0 resolves __errno_location",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d2e8 resolves openat",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d300 resolves open",
+      "passed": true
+    },
+    {
+      "test": "GOT 98c928 resolves close",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d488 resolves napi_create_int32",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d800 resolves napi_reject_deferred",
+      "passed": true
+    },
+    {
+      "test": "GOT 98d808 resolves napi_resolve_deferred",
+      "passed": true
+    },
+    {
+      "test": "exact method name at 3f04d",
+      "passed": true
+    },
+    {
+      "test": "exact method name at 3d84d",
+      "passed": true
+    },
+    {
+      "test": "instruction 6313e1: lea\\s+rsi,.*# 3f04d\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 6313e8: lea\\s+rcx,.*# 62d560\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 6313fd: call.*# 98d640\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 6316b1: lea\\s+rsi,.*# 3d84d\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 6316b8: lea\\s+rcx,.*# 62ecd0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 6316cd: call.*# 98d640\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d7d3: call\\s+61c8f0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61cd99: lea\\s+rcx,.*# 619e80\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61cdad: call.*# 98d7e8\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61ce01: call.*# 98d7f0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 62f151: lea\\s+rcx,.*# 619f10\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 62f165: call.*# 98d7e8\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 62f1b0: call.*# 98d7f0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 619ea0: call\\s+4f3bc0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 619f25: call\\s+4f4670\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 619e88: mov\\s+esi,DWORD PTR \\[rsi\\+0x18\\]",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f4700: mov\\s+esi,0x2b0000",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f4707: call.*# 98d300\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f470f: js\\s+4f473c",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f4711: mov\\s+DWORD PTR \\[r14\\+0x8\\],eax",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c0d: call\\s+62d330\\b",
+      "passed": true
+    },
+    {
+      "test": "join separator is slash",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c2a: lea\\s+rcx,.*# 57005\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d357: je\\s+62d433",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d37e: cmp\\s+BYTE PTR \\[rsi\\],0x2e",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d383: jmp\\s+62d433",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d388: cmp\\s+WORD PTR \\[rsi\\],0x2e2e",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d38d: je\\s+62d433",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d52a: je\\s+62d433",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d530: cmp\\s+eax,0x2f",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d533: je\\s+62d433",
+      "passed": true
+    },
+    {
+      "test": "instruction 62d541: mov.*0xffffffffffffffff",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3be1: mov\\s+DWORD PTR \\[rsp\\+0xc\\],esi",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c5a: or\\s+eax,0xa0800",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c61: shl\\s+ecx,0x19",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c64: sar\\s+ecx,0x1f",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c6b: mov\\s+QWORD PTR \\[rsp\\+0x90\\],rax",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c73: mov\\s+QWORD PTR \\[rsp\\+0x98\\],rcx",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3c7b: mov\\s+QWORD PTR \\[rsp\\+0xa0\\],0xe",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d4b: lea\\s+rcx,\\[rsp\\+0x90\\]",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d53: mov\\s+edi,0x1b5",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d58: mov\\s+r8d,0x18",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d5e: mov\\s+esi,DWORD PTR \\[rsp\\+0xc\\]",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d62: mov\\s+rdx,r15",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d70: js\\s+4f3d97",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d67: call.*# 98c830\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3d9c: call.*# 98c7a0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3dde: xor\\s+ebp,ebp",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3de0: cmp\\s+eax,0xb",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3de3: je\\s+4f3e29",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3de5: cmp\\s+eax,0x26",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3de8: je\\s+4f3e29",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3e5e: je\\s+4f3e7c",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3e03: call\\s+632350\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3ea6: call\\s+4f34b0\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 6323f8: test\\s+r15,r15",
+      "passed": true
+    },
+    {
+      "test": "instruction 6323fb: jns\\s+63240a",
+      "passed": true
+    },
+    {
+      "test": "instruction 632408: ud2",
+      "passed": true
+    },
+    {
+      "test": "instruction 63243b: mov\\s+QWORD PTR \\[rbx\\],r15",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f372e: or\\s+edx,0xa0800",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f379a: mov\\s+edx,0x2b0000",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f39b8: mov\\s+edx,0x2b0000",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f39ad: mov\\s+r13d,DWORD PTR \\[rsp\\+0xc\\]",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f39b2: mov\\s+edi,r13d",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f39c5: mov\\s+DWORD PTR \\[rsp\\+0x4\\],eax",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3741: call.*# 98d2e8\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f37a1: call.*# 98d2e8\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f39bf: call.*# 98d2e8\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3510: call\\s+62d330\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f35ab: call\\s+62d330\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f3970: call\\s+62d330\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f375b: call.*# 98c928\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 4f39d4: call.*# 98c928\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61b41d: call.*# 98d488\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61b490: call.*# 98d808\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61b38b: call.*# 98d800\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61b67a: call.*# 98d488\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61b6ed: call.*# 98d808\\b",
+      "passed": true
+    },
+    {
+      "test": "instruction 61b63b: call.*# 98d800\\b",
+      "passed": true
+    },
+    {
+      "test": "analysis-host x86-64 ABI assertions (compile-only)",
+      "passed": true
+    },
+    {
+      "test": "sample digest unchanged after checks",
+      "passed": true
+    }
+  ],
+  "passed": 123
+}

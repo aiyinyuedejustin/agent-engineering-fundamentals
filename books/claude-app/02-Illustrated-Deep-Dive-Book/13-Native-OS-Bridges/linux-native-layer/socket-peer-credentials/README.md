@@ -43,7 +43,7 @@ SO_PEERCRED 返回连接建立相关时刻的 peer 凭据，不是每次业务�
 - 只适用于这份 Linux x86-64 样本，不泛化为所有 Unix 平台。
 - 同 UID 不是可执行文件来源证明，也不是 helper 协议或业务权限的完整认证。
 - 取得凭据成功后，局部路径直接比较 UID；没有看到对 getsockopt 返回长度再次比较。这里记录观察，不据此提出绕过或漏洞结论。
-- openRootDir/openBeneath 没有在本次继续下钻；JS wrapper 的 fail-closed 文本不是本节证明了内核路径包含约束的理由。
+- 文件路径约束由另一条调用链负责，见 [openRootDir / openBeneath](../file-containment/README.md)；socket 的 UID 检查不能代替文件解析约束。
 - 不把静态路径存在写成用户机器已经执行或验证成功。
 
 [返回 Linux 原生层](../README.md)
