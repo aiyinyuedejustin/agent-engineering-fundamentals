@@ -1,0 +1,83 @@
+{
+  "kind": "original-synthetic-worked-examples",
+  "display": {
+    "center": {
+      "x": -1000,
+      "y": 500,
+      "displayId": "left"
+    },
+    "edge": {
+      "x": -1,
+      "y": 1099,
+      "displayId": "left"
+    },
+    "percentCenter": {
+      "x": -1000,
+      "y": 500,
+      "displayId": "left"
+    }
+  },
+  "window": {
+    "x": 400,
+    "y": 240,
+    "windowId": "window-A"
+  },
+  "pdf": {
+    "viewport": {
+      "matrix": [
+        1.5,
+        0,
+        0,
+        -1.5,
+        0,
+        1200
+      ],
+      "width": 900,
+      "height": 1200,
+      "rotation": 0
+    },
+    "rectangle": [
+      150,
+      150,
+      300,
+      300
+    ],
+    "rotated": {
+      "matrix": [
+        0,
+        3,
+        3,
+        0,
+        -53,
+        -19
+      ],
+      "width": 300,
+      "height": 600,
+      "rotation": 90
+    },
+    "rotatedFullBounds": [
+      7,
+      11,
+      307,
+      611
+    ],
+    "cssPoint": [
+      150,
+      150
+    ],
+    "bitmapPointAtDpr2": [
+      300,
+      300
+    ]
+  },
+  "audio": {
+    "sampleRate": 16000,
+    "durationMs": 20,
+    "samplesPerFrame": 320,
+    "pcm16BytesPerFrame": 640,
+    "frames": 3,
+    "tailSamples": 47,
+    "playedMsAfterInterrupt": 10,
+    "remainingSamplesAfterInterrupt": 0
+  }
+}

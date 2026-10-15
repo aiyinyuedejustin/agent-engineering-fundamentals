@@ -1,0 +1,9 @@
+flowchart LR
+    NET[回复音频到达] --> DECODE[解码 / PCM 样本]
+    DECODE --> SELECT{当前 sink 条件}
+    SELECT -->|可用| RING[共享环形缓冲]
+    RING --> WORKLET[AudioWorklet 消费]
+    SELECT -->|回落| BUFFER[定时 AudioBufferSource]
+    WORKLET --> GAIN[Gain / analyser / output]
+    BUFFER --> GAIN
+    GAIN --> OUT[音频设备]

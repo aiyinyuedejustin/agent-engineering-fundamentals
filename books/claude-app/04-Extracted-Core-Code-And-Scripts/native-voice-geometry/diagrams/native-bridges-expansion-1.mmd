@@ -1,0 +1,12 @@
+flowchart LR
+    OS[系统快捷键 / 协议入口] --> MAIN[Electron 主进程]
+    UI[共享前端] --> CONTRACT[preload 与有类型的调用合同]
+    CONTRACT --> MAIN
+    MAIN --> WINDOW[窗口管理与焦点恢复]
+    MAIN --> CONTEXT[上下文 probe 与编辑状态机]
+    MAIN --> CU[会话授权与 Computer Use binder]
+    CONTEXT --> NATIVE[平台 native adapter]
+    CU --> NATIVE
+    MAIN --> LOCAL[本地 MCP 进程]
+    UI --> ACCOUNT[账户远程连接器]
+    ACCOUNT --> CLOUD[云端发起服务连接]

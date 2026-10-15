@@ -1,0 +1,756 @@
+{
+  "schema": "original-native-voice-expansion/v1",
+  "as_of_utc": "2026-10-15",
+  "package_version": "Claude Desktop 2.37337.1",
+  "static_only": true,
+  "target_executed": false,
+  "native_modules_executed": false,
+  "microphone_opened": false,
+  "private_endpoints_probed": false,
+  "native_integrity_policy": "No override; mismatching companions excluded",
+  "publication_boundary": "Only original prose/code, compact identifiers, source hashes and short anchors; proprietary bundles and complete REA graphs remain private.",
+  "claims": [
+    {
+      "id": "VV-01",
+      "finding": "短 dictation、SDK speak/read-aloud 和完整 voiceSessionManager 是不同入口，不应合成一个实现。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/frame-shell-dictate-VnOYd-cJ.js",
+          "utf8_byte_offset": 1487,
+          "length_bytes": 26,
+          "literal": "export{l as openDictation}",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 344029,
+          "length_bytes": 29,
+          "literal": "export{Zn as dictationSession",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/frame-shell-speak-mERk55k3.js",
+          "utf8_byte_offset": 797,
+          "length_bytes": 15,
+          "literal": "readAloud:new i",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "是否在某个账户走哪个 facade 尚未运行验证。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-02",
+      "finding": "frame-shell dictation 明确注入 capture worklet URL；worklet 复制第一输入声道 Float32 块，以 transferable buffer 发给宿主。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/frame-shell-dictate-VnOYd-cJ.js",
+          "utf8_byte_offset": 529,
+          "length_bytes": 32,
+          "literal": "audioInput:new t({workletUrl:a})",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/cb2b919a8-BamlKQVF.js",
+          "utf8_byte_offset": 370,
+          "length_bytes": 30,
+          "literal": "const block = channel.slice();",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/cb2b919a8-BamlKQVF.js",
+          "utf8_byte_offset": 407,
+          "length_bytes": 45,
+          "literal": "this.port.postMessage(block, [block.buffer]);",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": null,
+      "related_evidence": []
+    },
+    {
+      "id": "VV-03",
+      "finding": "SDK capture 区分 caller-owned stream、stop、close promise 和消息 fence；切换设备用 generation 抵御过期启动。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/c6cf8f08a-dv3ZsDjj.js",
+          "utf8_byte_offset": 3388,
+          "length_bytes": 22,
+          "literal": "streamOwnedByCaller=!1",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/c6cf8f08a-dv3ZsDjj.js",
+          "utf8_byte_offset": 4313,
+          "length_bytes": 24,
+          "literal": "afterChunksOnTheirWay(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/c6cf8f08a-dv3ZsDjj.js",
+          "utf8_byte_offset": 3352,
+          "length_bytes": 18,
+          "literal": "switchGeneration=0",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "本次不打开麦克风，不测试硬件时序。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-04",
+      "finding": "完整 voice recorder 包含 PCM、WebCodecs Opus 和 MediaRecorder WebM/Opus 路线；非 PCM 模式选择支持的 Opus backend。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 7412,
+          "length_bytes": 21,
+          "literal": "async selectBackend()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 3754,
+          "length_bytes": 28,
+          "literal": "preferredBackend:\"webcodecs\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 15501,
+          "length_bytes": 17,
+          "literal": "setupPcmCapture()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "完整 voice recorder 的 PCM 支路使用 ScriptProcessor；不要说所有录音都用 AudioWorklet。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-05",
+      "finding": "完整 voice analysis 建立 48 kHz 请求的 AudioContext、2048 FFT analyser、频域与时域缓冲，定时报告 level/isSpeaking。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 16194,
+          "length_bytes": 30,
+          "literal": "this.analyserNode.fftSize=2048",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 16225,
+          "length_bytes": 42,
+          "literal": "this.analyserNode.smoothingTimeConstant=.3",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 7307,
+          "length_bytes": 20,
+          "literal": "startLevelAnalysis()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "请求的 sampleRate 与实际设备/浏览器采样率仍应区分。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-06",
+      "finding": "本地 detectSpeech 是 85–3500 Hz 频域 byte-bin 平均值阈值 .075；音量 UI 更新不等于服务器端点检测。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 3842,
+          "length_bytes": 21,
+          "literal": "kt=85,At=3500,jt=.075",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 22619,
+          "length_bytes": 14,
+          "literal": "detectSpeech()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 167423,
+          "length_bytes": 53,
+          "literal": "n.setOnAudioLevel(e=>{k.getState().setAudioLevel(e)})",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "没有由该方法恢复出神经 VAD、ASR 或 server silence threshold。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-07",
+      "finding": "完整 voice 收到 server transcription_start/user_input_end/playback_start/playback_end 事件，并分别进入 listening/processing/speaking 或等待排空。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 233306,
+          "length_bytes": 26,
+          "literal": "case\"transcription_start\":",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 236123,
+          "length_bytes": 21,
+          "literal": "case\"user_input_end\":",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 239777,
+          "length_bytes": 19,
+          "literal": "case\"playback_end\":",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "这些事件名证明协议消费者存在，不证明服务器 VAD 实现或测得延迟。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-08",
+      "finding": "按钮 interrupt 先停本地播放器、丢弃 cut buffer、取消 playback ack，再发控制消息和更新文本/字幕状态。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 177751,
+          "length_bytes": 41,
+          "literal": "interrupt(){this.userUtteranceInFlight=!1",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 178173,
+          "length_bytes": 53,
+          "literal": "this.ws?.interrupt(),this.host?.interrupted(\"button\")",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "停播不等于服务端全部工具执行或已提交副作用自动撤销。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-09",
+      "finding": "语音插话和服务器 cut 还经过 hold/drop/queue 的音频门与条件性 verdict 等待；导航 hold 与 cut hold 是不同缓冲。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 201933,
+          "length_bytes": 18,
+          "literal": "routeReplyAudio(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 202226,
+          "length_bytes": 15,
+          "literal": "holdCutAudio(){",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 205675,
+          "length_bytes": 17,
+          "literal": "handleServerCut()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "受 gate 与 transport 影响，不把一种 barge-in 路线当全部账户默认。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-10",
+      "finding": "完整 voice 具有 socket_audio 与 webrtc_media 分支、media offer/answer、失败回落条件和独立 mic/media 生命周期。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 110841,
+          "length_bytes": 24,
+          "literal": "transport=\"socket_audio\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 116855,
+          "length_bytes": 31,
+          "literal": "this.transport===\"webrtc_media\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 188016,
+          "length_bytes": 36,
+          "literal": "markWebRtcUnusableIfNeverConnected()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "这里只证明分发实现，不保证 WebRTC rollout、可达性或网络质量。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-11",
+      "finding": "输出播放器根据 SharedArrayBuffer、crossOriginIsolated 与 AudioWorklet 支持选择 ring-buffer worklet，否则使用 buffer sources；worklet 初始化失败也可回落。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccea0620f-rFO_QU40.js",
+          "utf8_byte_offset": 6905,
+          "length_bytes": 12,
+          "literal": "selectSink()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccea0620f-rFO_QU40.js",
+          "utf8_byte_offset": 7278,
+          "length_bytes": 29,
+          "literal": "self.crossOriginIsolated===!0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccea0620f-rFO_QU40.js",
+          "utf8_byte_offset": 7413,
+          "length_bytes": 24,
+          "literal": "async setupWorkletSink()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "不能从 worklet 文件存在推出所有用户都启用共享内存。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-12",
+      "finding": "输出 ring buffer 保留一个槽区分空/满，consumer 更新 played sample count；underrun 在实际播放后并且干涸随后恢复时计数，turn_end/flush 有独立逻辑。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:audio/voice/audioSinkWorklet.js",
+          "utf8_byte_offset": 3435,
+          "length_bytes": 16,
+          "literal": "usableCapacity()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:audio/voice/audioSinkWorklet.js",
+          "utf8_byte_offset": 8493,
+          "length_bytes": 26,
+          "literal": "this.dryGapPending = true;",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:audio/voice/audioSinkWorklet.js",
+          "utf8_byte_offset": 8268,
+          "length_bytes": 30,
+          "literal": "this.ring.incrementUnderrun();",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "计数含义是此 sink 的定义，非端到端所有音频丢失。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-13",
+      "finding": "播放时间以消费样本数/采样率计算；push 总量和播放位置不是同一指标，字幕和 interrupt 读取实际播放进度。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ccea0620f-rFO_QU40.js",
+          "utf8_byte_offset": 4870,
+          "length_bytes": 58,
+          "literal": "this.ringBuffer.playedSamples()/this.config.sampleRate*1e3",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 177979,
+          "length_bytes": 37,
+          "literal": "this.player?.getPlayedDurationMs()??0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "utf8_byte_offset": 234314,
+          "length_bytes": 26,
+          "literal": "truncateToSpokenContent(e)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "该值仍非声学测量；硬件 output latency 与 WebRTC 时间有另外路线。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-14",
+      "finding": "dictation waveform 有独立 AudioContext/analyser，使用 byte time-domain RMS、噪声底与非线性增益，按约 80ms 推入历史，rAF 平滑移动 SVG 柱条。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ce1d55484-DdKhB_4f.js",
+          "utf8_byte_offset": 138,
+          "length_bytes": 4,
+          "literal": "l=80",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ce1d55484-DdKhB_4f.js",
+          "utf8_byte_offset": 826,
+          "length_bytes": 26,
+          "literal": "t.getByteTimeDomainData(n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ce1d55484-DdKhB_4f.js",
+          "utf8_byte_offset": 958,
+          "length_bytes": 6,
+          "literal": "i-.015",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "这是 dictation 的可视化，不是已证实的实时语音端点检测器。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-15",
+      "finding": "dictation waveform 以 clientWidth 推导可见柱数，限制历史长度；卸载断开 source、关闭 AudioContext、取消 animation frame。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "ion:assets/v1/ce1d55484-DdKhB_4f.js",
+          "utf8_byte_offset": 734,
+          "length_bytes": 15,
+          "literal": "Math.floor(o/7)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ce1d55484-DdKhB_4f.js",
+          "utf8_byte_offset": 1005,
+          "length_bytes": 34,
+          "literal": "l.length>s&&l.splice(0,l.length-s)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "ion:assets/v1/ce1d55484-DdKhB_4f.js",
+          "utf8_byte_offset": 505,
+          "length_bytes": 24,
+          "literal": "n.disconnect(),e.close()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": null,
+      "related_evidence": []
+    },
+    {
+      "id": "VV-16",
+      "finding": "display 像素坐标优先使用 frameWidth/Height，再用返回 image 尺寸；按 display dimensions 比率缩放、加 origin、最后夹到边界。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 55491,
+          "length_bytes": 39,
+          "literal": "function nt(e,t,n,r,i,a,o=\"coordinate\")",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 55809,
+          "length_bytes": 21,
+          "literal": "i.frameWidth??i.width",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 56668,
+          "length_bytes": 24,
+          "literal": "function rt(e,t,n,r,i,a)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "这些坐标是 executor 的 display-space，不能一概叫物理设备像素。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-17",
+      "finding": "normalized_0_100 是明确的可选模式，按 0..100 百分比映射；无先前截图的像素回落按 scaleFactor 除法并警告。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 55588,
+          "length_bytes": 22,
+          "literal": "n===\"normalized_0_100\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 56288,
+          "length_bytes": 29,
+          "literal": "falling back to /scaleFactor.",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "不是 0..1，也不能把截图任意归一化后当默认协议。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-18",
+      "finding": "app 窗口帧坐标与 display 坐标不同：Qt 将帧内点缩放为 window-local，AX summary 反向缩放为同一 frame 坐标。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 95126,
+          "length_bytes": 16,
+          "literal": "function Qt(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 95877,
+          "length_bytes": 18,
+          "literal": "function rn(e,t,n)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "window-local 不加 desktop origin；native dispatch 才使用窗口身份。",
+      "related_evidence": []
+    },
+    {
+      "id": "VV-19",
+      "finding": "缩小 app screenshot 保留 full-resolution frame；zoom 是观察辅助，不改后续动作坐标参照；batch 有固定批前 frame。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 95520,
+          "length_bytes": 16,
+          "literal": "function en(t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 119112,
+          "length_bytes": 24,
+          "literal": "async function Un(t,n,r)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "复用 CU-10 的 batch/zoom 调用链，不能以显示图片大小替换完整 frame。",
+      "related_evidence": [
+        "agent-loop-cowork.json/CU-10"
+      ]
+    },
+    {
+      "id": "VV-20",
+      "finding": "Office MCP 包含 PDF viewport 矩阵和 rectangle conversion，但可达 extractor 读取 getTextContent 后只拼接 str；没有由此证实 chat PDF 高亮矩形链。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:resources/office365-mcp/pdfExtractorProcess.mjs",
+          "utf8_byte_offset": 67805,
+          "length_bytes": 29,
+          "literal": "convertToViewportRectangle(t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:resources/office365-mcp/pdfExtractorProcess.mjs",
+          "utf8_byte_offset": 422821,
+          "length_bytes": 22,
+          "literal": "async function Xr(o,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:resources/office365-mcp/pdfExtractorProcess.mjs",
+          "utf8_byte_offset": 423477,
+          "length_bytes": 47,
+          "literal": "getTextContent()).items.map(v=>v.str).join(\" \")",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "库存在与产品调用路径分开。原创 PDF rectangle lab 是通用几何示例，不冒充 Claude UI 实现。",
+      "related_evidence": []
+    }
+  ],
+  "files": {
+    "ion:assets/v1/c6cf8f08a-dv3ZsDjj.js": {
+      "container": "ion",
+      "path": "assets/v1/c6cf8f08a-dv3ZsDjj.js",
+      "size_bytes": 70731,
+      "sha256": "2da5f956171c6ebb7e63a156d891db6ef1bc4cd3142d0a43cd4f6d92354d61cc"
+    },
+    "ion:assets/v1/cb2b919a8-BamlKQVF.js": {
+      "container": "ion",
+      "path": "assets/v1/cb2b919a8-BamlKQVF.js",
+      "size_bytes": 541,
+      "sha256": "1e30ea7fe5897d8af2385bde0abdf6cdb84957066ba51bea958b28651cd499ad"
+    },
+    "ion:assets/v1/ccc68ce7f-D2Vyaff-.js": {
+      "container": "ion",
+      "path": "assets/v1/ccc68ce7f-D2Vyaff-.js",
+      "size_bytes": 344167,
+      "sha256": "7d5ca5a0e92bb931724f1115c9ebbdc9fa234c29a65943e28f421c4f411905e0"
+    },
+    "ion:assets/v1/ccea0620f-rFO_QU40.js": {
+      "container": "ion",
+      "path": "assets/v1/ccea0620f-rFO_QU40.js",
+      "size_bytes": 25269,
+      "sha256": "71263a24984b0c7591d5f59d8d65f14c068fabde1799f7a072897d1a7d2bca5c"
+    },
+    "ion:assets/v1/ce1d55484-DdKhB_4f.js": {
+      "container": "ion",
+      "path": "assets/v1/ce1d55484-DdKhB_4f.js",
+      "size_bytes": 2060,
+      "sha256": "2c08f56d4f9fa4e260afb45e6669600f147f0e1a8866dc64986cbe95cd79fdf7"
+    },
+    "ion:assets/v1/frame-shell-dictate-VnOYd-cJ.js": {
+      "container": "ion",
+      "path": "assets/v1/frame-shell-dictate-VnOYd-cJ.js",
+      "size_bytes": 1514,
+      "sha256": "aa842175b98e0df5b1eb03d4680b5425ffe56912b42dfc26bbcbb3c3717594c6"
+    },
+    "ion:assets/v1/frame-shell-speak-mERk55k3.js": {
+      "container": "ion",
+      "path": "assets/v1/frame-shell-speak-mERk55k3.js",
+      "size_bytes": 1119,
+      "sha256": "59b65db5723d29d69232c6aa26e20b33ce2c2eb7d45b5d9b94ff40e2ed4a772a"
+    },
+    "ion:audio/voice/audioSinkWorklet.js": {
+      "container": "ion",
+      "path": "audio/voice/audioSinkWorklet.js",
+      "size_bytes": 9277,
+      "sha256": "f07c06f4cd830f8b9a33030855e25a12d8ded6d6f4d8d4f85d949afec09c4ffb"
+    },
+    "linux-asar:.vite/build/index.chunk-Cdc21k2u.js": {
+      "container": "linux-asar",
+      "path": ".vite/build/index.chunk-Cdc21k2u.js",
+      "size_bytes": 229134,
+      "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+    },
+    "linux-asar:resources/office365-mcp/pdfExtractorProcess.mjs": {
+      "container": "linux-asar",
+      "path": "resources/office365-mcp/pdfExtractorProcess.mjs",
+      "size_bytes": 425295,
+      "sha256": "a2cc9807348e91d9ac0c1377f202d20294a3e828bcfeb00d82f062ed6eae0337"
+    }
+  },
+  "rea_runs": [
+    {
+      "evidence_id": "ev_8c5832cbf10ba9146a686829d8c4099b6c54df92aa8fc3c9cd51eb036bb04690",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 12000,
+        "max_semantic_nodes_per_file": 4500,
+        "source_paths": [
+          "assets/v1/c6cf8f08a-dv3ZsDjj.js",
+          "assets/v1/cf66d5828-C3WKJ_qo.js",
+          "assets/v1/cb2b919a8-BamlKQVF.js",
+          "audio/voice/audioSinkWorklet.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "statistics": {
+        "relevant_files": 3496,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 140921,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 4,
+        "visited_ast_nodes": 38780,
+        "findings": 32,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "integrity_contradictions": [],
+      "limitations": [
+        "Caller-selected source analysis leaves 3492 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ]
+    },
+    {
+      "evidence_id": "ev_4702f5031ff788a2ace9db78b6a0857d6a6d770d4cf2f19cb141221b6caae115",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 16000,
+        "max_semantic_nodes_per_file": 6000,
+        "source_paths": [
+          "assets/v1/ccc68ce7f-D2Vyaff-.js",
+          "assets/v1/ce1d55484-DdKhB_4f.js",
+          "assets/v1/frame-shell-dictate-VnOYd-cJ.js",
+          "assets/v1/frame-shell-speak-mERk55k3.js",
+          "assets/v1/ccea0620f-rFO_QU40.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "statistics": {
+        "relevant_files": 3496,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 374129,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 5,
+        "visited_ast_nodes": 85369,
+        "findings": 193,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "integrity_contradictions": [],
+      "limitations": [
+        "Caller-selected source analysis leaves 3491 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ]
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://support.claude.com/en/articles/11101966-use-voice-mode",
+      "role": "public dictation/full-voice distinction; surfaces may change"
+    },
+    {
+      "url": "https://www.w3.org/TR/webaudio-1.1/",
+      "role": "AudioContext/worklet/analyser concepts, not target implementation"
+    },
+    {
+      "url": "https://www.electronjs.org/docs/latest/api/screen",
+      "role": "DIP versus physical screen coordinates"
+    },
+    {
+      "url": "https://www.electronjs.org/docs/latest/api/structures/display",
+      "role": "display bounds/workArea/scaleFactor fields"
+    },
+    {
+      "url": "https://github.com/mozilla/pdf.js/blob/master/docs/contents/examples/index.md",
+      "role": "PDF viewport versus HiDPI canvas distinction"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/mozilla/pdf.js/master/src/display/display_utils.js",
+      "role": "primary PDF viewport mathematics; original lab separately authored"
+    }
+  ],
+  "verified_anchor_count": 56
+}

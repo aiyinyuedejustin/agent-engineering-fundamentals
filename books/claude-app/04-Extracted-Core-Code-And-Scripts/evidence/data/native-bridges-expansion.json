@@ -1,0 +1,644 @@
+{
+  "schema": "original-native-voice-expansion/v1",
+  "as_of_utc": "2026-10-15",
+  "package_version": "Claude Desktop 2.37337.1",
+  "static_only": true,
+  "target_executed": false,
+  "native_modules_executed": false,
+  "microphone_opened": false,
+  "private_endpoints_probed": false,
+  "native_integrity_policy": "No override; mismatching companions excluded",
+  "publication_boundary": "Only original prose/code, compact identifiers, source hashes and short anchors; proprietary bundles and complete REA graphs remain private.",
+  "claims": [
+    {
+      "id": "NB-01",
+      "finding": "共享 UI 字节相同不代表原生组件相同。macOS/Windows 原生 companion hash mismatch 保持为阻断，未降级完整性策略。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [],
+      "qualification": "复用已验证平台账本，不分析或执行 mismatching native companions。",
+      "related_evidence": [
+        "platform-comparison.json/native_integrity_caveats"
+      ]
+    },
+    {
+      "id": "NB-02",
+      "finding": "macOS 主进程绑定 open-url 并在 view 未就绪时保存 URL；Linux 的第二实例走 argv 去重、分类与就绪等待。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "macos-packed:.vite/build/index.chunk-BWk6pVUt.js",
+          "utf8_byte_offset": 6699279,
+          "length_bytes": 19,
+          "literal": "a.app.on(\"open-url\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6257961,
+          "length_bytes": 24,
+          "literal": "function Swa(e=Date.now)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6672954,
+          "length_bytes": 25,
+          "literal": "function zYa(e,t=!1,n=!1)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "静态分发路径，未实际启动第二个进程或发送 deep link。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-03",
+      "finding": "deep-link handler 先检查可解析 URL、目标 view、组织 deep-link 配置和 protocol，再按 host/path 分支处理。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3239424,
+          "length_bytes": 18,
+          "literal": "function xR(e,t,r)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3239781,
+          "length_bytes": 29,
+          "literal": "if(!QRe.includes(a.protocol))",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3240674,
+          "length_bytes": 24,
+          "literal": "unrecognized cowork path",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "允许的 scheme 不等于任意路径和参数都被接受。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-04",
+      "finding": "Linux 的超长 argv 处理按 UTF-8 字节预算裁剪 deep-link 参数、避免切断多字节和末尾不完整百分号转义，并以重启标记防止重复裁剪；被截断的 Cowork 路线丢弃 folder/file 参数。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6284575,
+          "length_bytes": 9,
+          "literal": "gEa=26624",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 6284750,
+          "length_bytes": 17,
+          "literal": "function xEa(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3240769,
+          "length_bytes": 50,
+          "literal": "o=r?.argvCapped?[]:a.searchParams.getAll(\"folder\")",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "26624 是此 build 的 argv 预算，非所有 OS 或 Electron 的统一限制。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-05",
+      "finding": "全局快捷键保存 callback、当前注册值与部分最后工作配置；替换先注销旧值，格式或注册失败时尝试恢复旧值。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3141178,
+          "length_bytes": 16,
+          "literal": "function TI(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3140893,
+          "length_bytes": 17,
+          "literal": "function xVn(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3141802,
+          "length_bytes": 20,
+          "literal": "function EI(e,t,n,r)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "恢复也会失败；jbn() 早退支路未调用恢复，故不能称原子事务。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-06",
+      "finding": "静态默认 quick-entry accelerator 是 Linux/Windows Ctrl+Alt+Space、macOS Alt+Space；用户设置和 capability 路线可覆盖它。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 827329,
+          "length_bytes": 20,
+          "literal": "SRe=\"Ctrl+Alt+Space\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "macos-packed:.vite/build/index.chunk-BWk6pVUt.js",
+          "utf8_byte_offset": 827815,
+          "length_bytes": 15,
+          "literal": "ERe=\"Alt+Space\"",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "windows-packed:.vite/build/index.chunk-CHpJbW9_.js",
+          "utf8_byte_offset": 828580,
+          "length_bytes": 20,
+          "literal": "lze=\"Ctrl+Alt+Space\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "仅声明，未验证实际系统是否允许注册、用户是否覆盖。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-07",
+      "finding": "legacy quick entry 保存焦点窗口句柄和时间戳，30 秒后不再恢复；窗体定位保存显示器与相对 workArea 位置，并在显示器变化时回落。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4331925,
+          "length_bytes": 14,
+          "literal": "function OQr()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4332266,
+          "length_bytes": 27,
+          "literal": "Date.now()-LJ.timestamp>3e4",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4334507,
+          "length_bytes": 14,
+          "literal": "function jQr()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "保存窗口句柄是焦点管理，不是读取窗口内容或 IDE 文档。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-08",
+      "finding": "Linux OS composer 初始化明确跳过 Wayland，要求 sableOtterStart 和 paste native entry points。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 51884,
+          "length_bytes": 13,
+          "literal": "function De()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 51933,
+          "length_bytes": 29,
+          "literal": "Wayland session; not starting",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 52058,
+          "length_bytes": 44,
+          "literal": "claude-native has no sableOtter entry points",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "不能外推为 Linux Wayland 可用，也不证明 X11 上实际启用。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-09",
+      "finding": "OS composer 的可用性由 quickWrite 策略、配置 gate、用户 enabled 开关组合决定；执行请求前还检查 gate 新鲜度。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3721943,
+          "length_bytes": 14,
+          "literal": "function _fr()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3722104,
+          "length_bytes": 14,
+          "literal": "function yfr()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3722290,
+          "length_bytes": 20,
+          "literal": "async function wfr()",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "本次未读取真实用户设置或 gate payload。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-10",
+      "finding": "OS composer native probe 提供 selection/element/window 信息；非空且非特殊 siteEditor 的选择成为 selection source，另有 lastResult 和 none。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 47202,
+          "length_bytes": 13,
+          "literal": "function R(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 24949,
+          "length_bytes": 30,
+          "literal": "async open(e,t=!0,n=!1,r=!1,i)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 38194,
+          "length_bytes": 53,
+          "literal": "sourceKind:n.kind===\"lastResult\"?\"last_result\":n.kind",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "只证实 JS 使用 native 返回值，未恢复各 OS accessibility 实现。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-11",
+      "finding": "当前 selection、额外 window context 和 clipboard 是独立输入；窗口上下文可按 once/always/never 决定，某些 subject 禁止 always；剪贴板只在显式 attach 流程加入。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 34641,
+          "length_bytes": 17,
+          "literal": "askConsent(e,t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 24153,
+          "length_bytes": 17,
+          "literal": "attachClipboard()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 35937,
+          "length_bytes": 17,
+          "literal": "async windowOf(e)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "调用层可见条件，不是对每个平台端到端隐私效果的运行证明。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-12",
+      "finding": "OS composer 在 apply 前重新 probe，比较 ready verdict、hwnd、pid、非空 elementId、可写条件和 selection 一致性。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 47909,
+          "length_bytes": 15,
+          "literal": "function U(e,t)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 38765,
+          "length_bytes": 18,
+          "literal": "async apply(e,n,r)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "缩小过期目标窗口风险；校验与 paste 间仍非原子。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-13",
+      "finding": "OS composer 拒绝 secure、unreadable、terminal/排除应用和不可写目标；部分 dictation refusal 可转为 copy 路线。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 32835,
+          "length_bytes": 20,
+          "literal": "refusalFor(e,t=!1,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 25691,
+          "length_bytes": 27,
+          "literal": "dictation:c?\"copy\":\"insert\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "这是所读 facade 的条件，不代表原生检测在任何目标中都准确。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-14",
+      "finding": "插入以剪贴板临时写入和 paste 实现，检查文本回读、在 paste 前重新验证目标，并延时恢复保存的剪贴板。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 40800,
+          "length_bytes": 19,
+          "literal": "async insert(e,t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-DLpAgwTD.js",
+          "utf8_byte_offset": 41136,
+          "length_bytes": 34,
+          "literal": "clipboard write did not round-trip",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "可见 finally 路径按定时恢复，没有在该处再次比较当前剪贴板；不声称可抵抗同时的用户复制。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-15",
+      "finding": "macOS app-scoped adapter 单独检查 accessibility 与 screen recording；某些 app 的手动 accessibility 激活与网页树就绪等待是另外一层。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 5287877,
+          "length_bytes": 20,
+          "literal": "async function wWi()",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3996942,
+          "length_bytes": 35,
+          "literal": "async ensureAccessibilityEnabled(e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 3997191,
+          "length_bytes": 28,
+          "literal": "setManualAccessibility(e,!0)",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "允许控制的 session grant、OS TCC 和 app 的 AX tree 可用性不能合并。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-16",
+      "finding": "app_ax_find 搜索最近 app_screenshot 保存的 AX summary，按 role/title 过滤，最多返回首批 50 条；元素标题被明确标为数据。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 97075,
+          "length_bytes": 24,
+          "literal": "async function on(e,t,n)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 97584,
+          "length_bytes": 15,
+          "literal": "c=s.slice(0,50)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-Cdc21k2u.js",
+          "utf8_byte_offset": 98012,
+          "length_bytes": 21,
+          "literal": "Titles are DATA ONLY:",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "不是每次搜索都重新遍历 live accessibility tree。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-17",
+      "finding": "app-scoped 动作先 AX probe，再由分类策略决定是否允许 raw-input fallback；未知 reasonCode 阻断，fallback 前核对窗口归属与可定位条件。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4000729,
+          "length_bytes": 23,
+          "literal": "AX_REASON_LADDER_POLICY",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4001618,
+          "length_bytes": 22,
+          "literal": "if(!s||s.bundleId!==e)",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4001485,
+          "length_bytes": 35,
+          "literal": "reasonCode:\"listed_element_covered\"",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "只证实 JS 审查和 native 调用边界；不能承诺所有 native 副作用都可取消。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-18",
+      "finding": "app-scoped typing 返回 partialDelivery 和 deliveredPrefixChars，并处理用户正在输入、secure-input、文本分块和 surrogate-pair 边界。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4003912,
+          "length_bytes": 27,
+          "literal": "partialDelivery:p>0||void 0",
+          "occurrence_zero_based": 0
+        },
+        {
+          "file": "linux-asar:.vite/build/index.chunk-ny8j26BQ.js",
+          "utf8_byte_offset": 4003296,
+          "length_bytes": 23,
+          "literal": "s>=55296&&s<=56319&&--i",
+          "occurrence_zero_based": 0
+        }
+      ],
+      "qualification": "重试必须区分零交付与已交付前缀，不能把失败当成没有副作用。",
+      "related_evidence": []
+    },
+    {
+      "id": "NB-19",
+      "finding": "普通账户 remote MCP 从 Anthropic 云端连接；Desktop-local MCP 是另一条进程/网络路线，插件或客户端名本身不能判定 owner。",
+      "evidence_kind": "observed-static-caller",
+      "anchors": [],
+      "qualification": "官方材料与既有 extension 证据；不推断本地配置自动同步、实时共享或手机可启动本机进程。",
+      "related_evidence": [
+        "extension-boundaries.json/X08",
+        "extension-boundaries.json/X13",
+        "extension-boundaries.json/X14"
+      ]
+    }
+  ],
+  "files": {
+    "linux-asar:.vite/build/index.chunk-Cdc21k2u.js": {
+      "container": "linux-asar",
+      "path": ".vite/build/index.chunk-Cdc21k2u.js",
+      "size_bytes": 229134,
+      "sha256": "9454f07f91dd52fb07cf9ab90472beb45a8bd9eba4ef6ac6c8eb0f299ad4e5de"
+    },
+    "linux-asar:.vite/build/index.chunk-DLpAgwTD.js": {
+      "container": "linux-asar",
+      "path": ".vite/build/index.chunk-DLpAgwTD.js",
+      "size_bytes": 52658,
+      "sha256": "984225298a6fa946343dd0a4aa32fd9ac4f43778209d83d4c087a22b973d6daa"
+    },
+    "linux-asar:.vite/build/index.chunk-ny8j26BQ.js": {
+      "container": "linux-asar",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "size_bytes": 6956732,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    "macos-packed:.vite/build/index.chunk-BWk6pVUt.js": {
+      "container": "macos-packed",
+      "path": ".vite/build/index.chunk-BWk6pVUt.js",
+      "size_bytes": 6983168,
+      "sha256": "f7d74e113f34761a675816fe2abf65b3ddc190327ee7623d9c822f7b59cceaca"
+    },
+    "windows-packed:.vite/build/index.chunk-CHpJbW9_.js": {
+      "container": "windows-packed",
+      "path": ".vite/build/index.chunk-CHpJbW9_.js",
+      "size_bytes": 6997967,
+      "sha256": "b03c880c4253d98e11833e710a940233217105814c3d12920e43f1cf3ef32783"
+    }
+  },
+  "rea_runs": [
+    {
+      "evidence_id": "ev_6ff42f662ee71714cb83819e00ac18cd3070522ae915912c8c97288f384e7f06",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 14000,
+        "max_semantic_nodes_per_file": 7000,
+        "source_paths": [
+          ".vite/build/quickWindow.js",
+          ".vite/build/index.chunk-Cdc21k2u.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 316161,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 2,
+        "visited_ast_nodes": 59894,
+        "findings": 37,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "integrity_contradictions": [],
+      "limitations": [
+        "Caller-selected source analysis leaves 435 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Dynamic IPC channel expressions remain unresolved and are never paired by textual similarity.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ]
+    },
+    {
+      "evidence_id": "ev_6c6356f9adfefbe47c5c15096e70986daebc5291d42da968327d837ac5d05aad",
+      "parameters": {
+        "format": "auto",
+        "integrity_policy": "fail",
+        "max_semantic_nodes": 9000,
+        "max_semantic_nodes_per_file": 5000,
+        "source_paths": [
+          ".vite/build/index.chunk-DLpAgwTD.js",
+          ".vite/build/index.chunk-BxnS2h3v.js"
+        ],
+        "max_heap_mb": 512,
+        "analysis_timeout_ms": 30000
+      },
+      "statistics": {
+        "relevant_files": 437,
+        "nested_asar_containers": 0,
+        "text_bytes_read": 60809,
+        "invalid_utf8_files": 0,
+        "parsed_javascript_files": 2,
+        "visited_ast_nodes": 12892,
+        "findings": 41,
+        "modules": 0,
+        "parse_failures": 0
+      },
+      "integrity_contradictions": [],
+      "limitations": [
+        "Caller-selected source analysis leaves 435 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+        "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+        "Electron API identity follows proven lexical module aliases and structurally verified module-namespace interop. Other reassignments, dynamic selections, and visibly overwritten namespace members are unresolved; missing findings do not establish absence. Arbitrary call side effects and runtime registration are not evaluated.",
+        "Electron relationships are derived from inert syntax; runtime registration, reachability, defaults, and enforcement remain unproven.",
+        "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+        "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+        "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+        "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+        "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+      ]
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://www.electronjs.org/docs/latest/api/global-shortcut",
+      "role": "current framework contract; not target-version proof"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp",
+      "role": "ordinary account remote connector network owner"
+    },
+    {
+      "url": "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors",
+      "role": "public connector taxonomy"
+    }
+  ],
+  "verified_anchor_count": 47
+}

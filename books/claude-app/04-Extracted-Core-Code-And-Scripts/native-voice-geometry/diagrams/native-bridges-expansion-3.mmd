@@ -1,0 +1,8 @@
+flowchart TD
+    TARGET[窗口 + 目标 + 动作] --> AX[AX probe / dispatch]
+    AX --> RESULT{结果类别}
+    RESULT -->|完成| DONE[返回结果]
+    RESULT -->|未知或禁止回落| STOP[保留明确拒绝]
+    RESULT -->|已知可考虑回落| OWNER[再次检查 window owner 与目标]
+    OWNER --> INPUT[受约束 raw-input helper]
+    INPUT --> PARTIAL[完整 / 部分交付 / 未交付]

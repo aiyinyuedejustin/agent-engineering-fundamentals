@@ -1,0 +1,6 @@
+flowchart LR
+    MIC[MediaStream] --> SRC[MediaStreamSource]
+    SRC --> CAP[SDK capture worklet]
+    CAP -->|Float32 block + sample rate| FRAME[SDK framing / codec / transport]
+    FRAME --> TEXT[dictation result]
+    TEXT --> OWNER[输入框或 frame-shell 回调]

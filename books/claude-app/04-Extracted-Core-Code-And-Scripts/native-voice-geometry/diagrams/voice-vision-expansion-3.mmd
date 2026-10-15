@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Connecting: start
+    Connecting --> Listening: session ready
+    Listening --> Processing: input endpoint / message start
+    Processing --> Speaking: playback starts
+    Speaking --> Listening: interrupt / new speech
+    Speaking --> Listening: output drained
+    Connecting --> Error: unrecoverable failure
+    Processing --> Error: unrecoverable failure
+    Listening --> Idle: stop
+    Speaking --> Idle: stop
+    Error --> Idle: leave

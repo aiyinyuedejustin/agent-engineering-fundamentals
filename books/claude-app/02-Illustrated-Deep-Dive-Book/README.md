@@ -19,7 +19,10 @@
 
 - [第 11 卷：流式性能与分层调度](11-Performance-And-Streaming/README.md)：稳定块与尾块、高亮 Worker、图表队列、虚拟化与资源生命周期。
 
+- [第 13 卷：原生系统桥接](13-Native-OS-Bridges/README.md)：快捷键、系统入口、选择文本与编辑目标重验证。
 - [第 14 卷：安全防线与执行边界](14-Security-And-Guardrails/README.md)：内容信任、命令语义、资源身份、外链与敏感字段存储。
+
+- [第 15 卷：语音与视觉数学](15-Voice-And-Vision-Math/README.md)：采样、播放、打断、显示器坐标与 PDF 仿射变换。
 
 ## 平台与恢复专题
 

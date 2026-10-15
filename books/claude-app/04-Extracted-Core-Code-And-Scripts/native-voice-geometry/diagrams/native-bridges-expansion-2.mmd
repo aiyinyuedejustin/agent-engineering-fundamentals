@@ -1,0 +1,13 @@
+flowchart TD
+    ENTRY[OS 入口] --> PLATFORM{平台交付形式}
+    PLATFORM --> MAC[macOS open-url]
+    PLATFORM --> ARGV[第二实例 argv]
+    ARGV --> DEDUPE[去重并分类参数]
+    MAC --> READY{可用 view 已就绪?}
+    DEDUPE --> READY
+    READY -->|否| HOLD[等待 / 冷启动交付路径]
+    READY -->|是| PARSE[解析 scheme / host / path]
+    HOLD --> PARSE
+    PARSE --> POLICY[策略与参数检查]
+    POLICY --> ROUTE[内部导航或特定业务入口]
+    POLICY --> REJECT[拒绝 / 安全回落]
