@@ -15,6 +15,7 @@ from toolkit.diffing import diff_snapshots, readable
 from toolkit.inventory import snapshot
 from toolkit.literals import load_rules
 from toolkit.safeio import Limits, ToolkitError, bounded_read, extract_zip
+from toolkit.asar import extract_asar, inspect_asar, atomic_publish
 
 
 def emit(path, value):
@@ -51,7 +52,7 @@ def write_report(output, report, old=None, new=None):
         (temp / "diff.md").write_text(readable(report), encoding="utf-8")
         if output.exists() or output.is_symlink():
             raise ToolkitError("Output appeared during operation")
-        temp.rename(output)
+        atomic_publish(temp, output)
     except BaseException:
         shutil.rmtree(temp)
         raise
@@ -91,6 +92,13 @@ def main(argv=None):
     unpack.add_argument("--input", type=Path, required=True)
     unpack.add_argument("--output", type=Path, required=True)
     scan_options(unpack, rules=False)
+    asar = sub.add_parser("unpack-asar", help="Extract the strict bounded ASAR subset; no links or sidecars")
+    asar.add_argument("--input", type=Path, required=True)
+    asar.add_argument("--output", type=Path, required=True)
+    scan_options(asar, rules=False)
+    inspect = sub.add_parser("inspect-asar", help="Read-only ASAR compatibility report with explicit exclusions")
+    inspect.add_argument("--input", type=Path, required=True)
+    scan_options(inspect, rules=False)
     sub.add_parser("rules", help="Print default rule JSON, without reading inputs")
     args = parser.parse_args(argv)
     try:
@@ -101,7 +109,9 @@ def main(argv=None):
         if hasattr(args, "max_files"):
             limits = replace(limits, max_files=args.max_files, max_file_bytes=args.max_file_mib*1024*1024, max_total_bytes=args.max_total_mib*1024*1024)
         rules = load_rules(read_json(args.rules)) if getattr(args, "rules", None) else None
-        if args.command == "snapshot":
+        if args.command == "inspect-asar":
+            print(json.dumps(inspect_asar(args.input, limits), sort_keys=True))
+        elif args.command == "snapshot":
             out = prepare_output(args.output, [args.input])
             result = snapshot(args.input, args.label, limits, rules)
             emit(out, result)
@@ -119,7 +129,8 @@ def main(argv=None):
             print(json.dumps({"report_directory": str(out), "uncertain_candidates": len(report["uncertain_candidates"])}))
         else:
             out = prepare_output(args.output, [args.input])
-            print(json.dumps(extract_zip(args.input, out, limits), sort_keys=True))
+            adapter = extract_asar if args.command == "unpack-asar" else extract_zip
+            print(json.dumps(adapter(args.input, out, limits), sort_keys=True))
         return 0
     except (ToolkitError, OSError, ValueError, RuntimeError, RecursionError, zipfile.BadZipFile, zipfile.LargeZipFile) as exc:
         print("error: " + str(exc), file=sys.stderr)

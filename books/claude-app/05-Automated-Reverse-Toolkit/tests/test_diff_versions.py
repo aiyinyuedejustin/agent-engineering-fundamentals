@@ -310,15 +310,24 @@ class VersionDiffTests(unittest.TestCase):
         self.assertFalse(list(self.base.glob(".diff-versions-*")))
 
     def test_final_rename_failure_removes_staging(self):
-        original = Path.rename
-        def fail_stage(path, destination):
-            if path.name.startswith(".diff-versions-"):
-                raise OSError("synthetic publish failure")
-            return original(path, destination)
-        with mock.patch.object(Path, "rename", fail_stage):
+        with mock.patch.object(frontend, "atomic_publish", side_effect=OSError("synthetic publish failure")):
             with self.assertRaisesRegex(OSError, "synthetic publish failure"):
                 frontend.compare_versions(self.old, self.new, self.out)
         self.assert_clean()
+
+    def test_empty_destination_appearing_at_publish_is_not_replaced(self):
+        original = frontend.atomic_publish
+        created_inode = []
+        def appear(stage, destination):
+            self.out.mkdir()
+            created_inode.append(self.out.stat().st_ino)
+            return original(stage, destination)
+        with mock.patch.object(frontend, "atomic_publish", side_effect=appear):
+            with self.assertRaisesRegex(ToolkitError, "nothing was replaced"):
+                frontend.compare_versions(self.old, self.new, self.out)
+        self.assertEqual(self.out.stat().st_ino, created_inode[0])
+        self.assertEqual(list(self.out.iterdir()), [])
+        self.assertFalse(list(self.base.glob(".diff-versions-*")))
 
     def test_directory_coverage_gaps_are_preserved(self):
         (self.old / "broken.json").write_text('{"duplicate":1,"duplicate":2}')

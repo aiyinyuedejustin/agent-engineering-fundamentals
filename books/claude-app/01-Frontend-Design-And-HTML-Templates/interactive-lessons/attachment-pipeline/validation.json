@@ -4,8 +4,9 @@
   "validated_on": "2026-10-15",
   "files": {
     "index.html": "b30997f62197113428b2a6c64ef40b814c2a225167edf7c0e4d12c8837a59ed1",
-    "README.md": "ce5e773d1bab61e6986c82c8ca2e7a03cf97175b625dbfb26c1a2d38d6a92489",
-    "test.cjs": "4be4f217fe219b43e04d6aa40821e902ec6ee1ebb500444008ea2d44fee77eb5"
+    "README.md": "c292b3c047976cd8faebe1d16d7bd2f8e602a2960103e8332a0162a6ddeaf16d",
+    "test.cjs": "4be4f217fe219b43e04d6aa40821e902ec6ee1ebb500444008ea2d44fee77eb5",
+    "browser-validation.json": "66815b0b3b5a3de1dd4e365f71966bd48609f0b0fea7bdccb77454c06b10fd63"
   },
   "original_source": {
     "html_sha256": "6ed788f38951d0cc6bbdd7a76518570d6dc702c9b377310b11b05768b342d389",
@@ -40,10 +41,15 @@
     "scope": "All README Markdown links and HTML href/src references"
   },
   "real_browser": {
-    "status": "not_verified_for_this_publication",
-    "rendering_checked": false,
-    "native_keyboard_checked": false,
-    "screen_reader_checked": false
+    "status": "passed_scoped",
+    "rendering_checked": true,
+    "native_keyboard_checked": true,
+    "screen_reader_checked": false,
+    "viewport_css_pixels": [
+      1188,
+      761
+    ],
+    "evidence": "browser-validation.json"
   },
   "limits": [
     "Node/jsdom is not a real-browser layout, native keyboard, screen-reader, or WCAG compliance result.",

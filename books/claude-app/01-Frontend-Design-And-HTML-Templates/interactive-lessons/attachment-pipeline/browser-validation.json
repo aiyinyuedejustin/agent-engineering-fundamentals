@@ -1,0 +1,46 @@
+{
+  "schema": "original-ui-browser-check/v1",
+  "date": "2026-10-15",
+  "base_commit": "5f7c02b118c9eb55264e80fda7448a0e498c1b37",
+  "base_html_sha256": "6ed788f38951d0cc6bbdd7a76518570d6dc702c9b377310b11b05768b342d389",
+  "viewport_css_pixels": {
+    "width": 1188,
+    "height": 761
+  },
+  "verified": [
+    "stable input slots despite out-of-order completion",
+    "UTF-8 reservations and admission after cancellation",
+    "manual retry and distinct waiting reasons",
+    "account/draft/generation ownership",
+    "Send snapshots and pending-state guard",
+    "keyboard skip link and focus restoration"
+  ],
+  "not_verified": [
+    "mobile viewports",
+    "1440px viewport",
+    "200 percent zoom",
+    "screen reader",
+    "reduced-motion runtime",
+    "full network audit"
+  ],
+  "fixed_followup": {
+    "issue": "Historical budget rejection called its old remaining capacity current",
+    "status": "passed: after cancel available=48B and historical rejection=30B; focus retained"
+  },
+  "figures": [
+    {
+      "path": "../../../assets/screenshots/attachment-lesson-keyboard-5f7c02b.jpg",
+      "sha256": "acbe750b9cdb574bf8a881a6b8b8ac8093dd13234740bd576ce28545ffd44b19"
+    },
+    {
+      "path": "../../../assets/screenshots/attachment-lesson-order-5f7c02b.jpg",
+      "sha256": "e3c1c926bb5bad6bdee0bdd37326ca8aab5f67dc93c56ac8fefd35abc19a81a7"
+    },
+    {
+      "path": "../../../assets/screenshots/attachment-lesson-budget-f387080.jpg",
+      "sha256": "a2993bf3b361c75a331093d782621ef8e31233cad8087af7aa0333d3dc9da53d"
+    }
+  ],
+  "revised_commit": "f387080d5d0df51c9a13153e70fbde6abcdfdce8",
+  "revised_html_sha256": "b30997f62197113428b2a6c64ef40b814c2a225167edf7c0e4d12c8837a59ed1"
+}

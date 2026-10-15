@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One offline transaction: two directories/ZIPs -> private inputs and diff.
+"""One offline transaction: two directories/ZIPs/ASARs -> private inputs and diff.
 
 Python 3.10+. Install beside reverse_toolkit.py and toolkit/. Input packages
 are never imported, executed, downloaded, or passed to another executable.
@@ -21,6 +21,7 @@ from toolkit.diffing import diff_snapshots
 from toolkit.inventory import snapshot
 from toolkit.literals import load_rules
 from toolkit.safeio import Limits, ToolkitError, extract_zip
+from toolkit.asar import extract_asar, atomic_publish
 
 
 def input_kind(source: Path):
@@ -29,8 +30,8 @@ def input_kind(source: Path):
     if stat.S_ISDIR(mode):
         return "directory"
     if stat.S_ISREG(mode):
-        return "zip"
-    raise ToolkitError("Inputs must be non-symlink directories or regular ZIP files")
+        return "asar" if source.suffix.lower() == ".asar" else "zip"
+    raise ToolkitError("Inputs must be non-symlink directories or regular ZIP/ASAR files")
 
 
 def compare_versions(old: Path, new: Path, output: Path,
@@ -61,12 +62,13 @@ def compare_versions(old: Path, new: Path, output: Path,
             else:
                 root = inputs / side
                 try:
-                    extraction = extract_zip(source, root, limits)
+                    adapter = extract_asar if kinds[side] == "asar" else extract_zip
+                    extraction = adapter(source, root, limits)
                 except (ToolkitError, zipfile.BadZipFile, zipfile.LargeZipFile) as exc:
                     raise ToolkitError(
-                        f"{side} input rejected by the bounded ZIP adapter: {exc}. "
-                        "Only the audited stored/deflated ZIP subset is supported. "
-                        "For ASAR, DMG, DEB, RPM, 7z, TAR or other packaging, "
+                        f"{side} input rejected by the bounded {kinds[side].upper()} adapter: {exc}. "
+                        "Only strict ZIP/ASAR subsets are supported; ASAR exclusions fail the whole run. "
+                        "For ASAR use inspect-asar to identify exclusions. For unsupported packaging, "
                         "extract manually with a trusted tool, then pass the directory."
                     ) from exc
                 adapters[side] = {**extraction, "private_root": f"inputs/{side}"}
@@ -86,7 +88,7 @@ def compare_versions(old: Path, new: Path, output: Path,
         })
         if out.exists() or out.is_symlink():
             raise ToolkitError("Output appeared during operation; nothing was replaced")
-        stage.rename(out)
+        atomic_publish(stage, out)
     except BaseException:
         # Remove only our private staging directory, never an output that
         # appeared meanwhile. shutil.rmtree refuses a symlink at its root.
@@ -106,13 +108,13 @@ def compare_versions(old: Path, new: Path, output: Path,
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        description="One offline command: directories and/or bounded ZIPs -> fresh private staging + static diff",
-        epilog=("No downloads, installers or target code execution. ASAR/DMG/DEB/etc. "
+        description="One offline command: directories and/or bounded ZIPs/ASARs -> fresh private staging + static diff",
+        epilog=("No downloads, installers or target code execution. ASAR must be fully supported; DMG/DEB/etc. "
                 "need manual trusted extraction first. Keep inputs and output parent "
                 "quiescent and isolated. Output must be outside input directories."),
     )
-    parser.add_argument("old", type=Path, help="Old unpacked directory or local ZIP-subset archive")
-    parser.add_argument("new", type=Path, help="New unpacked directory or local ZIP-subset archive")
+    parser.add_argument("old", type=Path, help="Old unpacked directory or local ZIP/ASAR-subset archive")
+    parser.add_argument("new", type=Path, help="New unpacked directory or local ZIP/ASAR-subset archive")
     parser.add_argument("--output", type=Path, required=True, help="New private run directory; its parent must exist")
     parser.add_argument("--old-label", default="old-unverified-label")
     parser.add_argument("--new-label", default="new-unverified-label")

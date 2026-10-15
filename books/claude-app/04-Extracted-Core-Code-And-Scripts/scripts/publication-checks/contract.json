@@ -1,0 +1,91 @@
+{
+  "schema": "publication-integrity-contract/v1",
+  "repository_prefix": "books/claude-app",
+  "required": [
+    {
+      "name": "core_directories",
+      "kind": "directory",
+      "paths": [
+        "01-Frontend-Design-And-HTML-Templates",
+        "02-Illustrated-Deep-Dive-Book",
+        "03-Ready-To-Use-Agent-Skills",
+        "04-Extracted-Core-Code-And-Scripts",
+        "05-Automated-Reverse-Toolkit",
+        "assets"
+      ]
+    },
+    {
+      "name": "entry_documents",
+      "kind": "file",
+      "paths": [
+        "README.md",
+        "01-Frontend-Design-And-HTML-Templates/README.md",
+        "02-Illustrated-Deep-Dive-Book/README.md",
+        "03-Ready-To-Use-Agent-Skills/README.md",
+        "04-Extracted-Core-Code-And-Scripts/README.md",
+        "05-Automated-Reverse-Toolkit/README.md"
+      ]
+    },
+    {
+      "name": "six_templates",
+      "kind": "file",
+      "paths": [
+        "01-Frontend-Design-And-HTML-Templates/templates/01-component-gallery.html",
+        "01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html",
+        "01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html",
+        "01-Frontend-Design-And-HTML-Templates/templates/04-editorial-blog-and-doc-template.html",
+        "01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html",
+        "01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html"
+      ]
+    },
+    {
+      "name": "sixteen_core_chapters",
+      "kind": "file",
+      "paths": [
+        "02-Illustrated-Deep-Dive-Book/01-System-Architecture/README.md",
+        "02-Illustrated-Deep-Dive-Book/02-Agent-Loop-Engine/README.md",
+        "02-Illustrated-Deep-Dive-Book/03-Computer-Use-And-Cowork/README.md",
+        "02-Illustrated-Deep-Dive-Book/04-Prompts-And-Protocols/README.md",
+        "02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md",
+        "02-Illustrated-Deep-Dive-Book/06-MCP-Host-Internals/README.md",
+        "02-Illustrated-Deep-Dive-Book/07-Artifacts-And-Sandbox/README.md",
+        "02-Illustrated-Deep-Dive-Book/08-Conversation-Tree-And-Streaming/README.md",
+        "02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md",
+        "02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md",
+        "02-Illustrated-Deep-Dive-Book/11-Performance-And-Streaming/README.md",
+        "02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/README.md",
+        "02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/README.md",
+        "02-Illustrated-Deep-Dive-Book/14-Security-And-Guardrails/README.md",
+        "02-Illustrated-Deep-Dive-Book/15-Voice-And-Vision-Math/README.md",
+        "02-Illustrated-Deep-Dive-Book/16-Resilience-And-Quota/README.md"
+      ]
+    },
+    {
+      "name": "three_supplement_chapters",
+      "kind": "file",
+      "paths": [
+        "02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md",
+        "02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md",
+        "02-Illustrated-Deep-Dive-Book/19-Mobile-Surfaces/README.md"
+      ]
+    },
+    {
+      "name": "seven_mechanism_skills",
+      "kind": "file",
+      "paths": [
+        "03-Ready-To-Use-Agent-Skills/claude-web-design-skill/SKILL.md",
+        "03-Ready-To-Use-Agent-Skills/agent-loop-architecture/SKILL.md",
+        "03-Ready-To-Use-Agent-Skills/context-file-cache/SKILL.md",
+        "03-Ready-To-Use-Agent-Skills/streaming-tag-parser/SKILL.md",
+        "03-Ready-To-Use-Agent-Skills/mcp-tool-integration/SKILL.md",
+        "03-Ready-To-Use-Agent-Skills/secure-preview-sandbox/SKILL.md",
+        "03-Ready-To-Use-Agent-Skills/high-performance-streaming-ui-skill/SKILL.md"
+      ]
+    }
+  ],
+  "manifests": [
+    "05-Automated-Reverse-Toolkit/manifest.json",
+    "02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/validation.json",
+    "01-Frontend-Design-And-HTML-Templates/interactive-lessons/attachment-pipeline/validation.json"
+  ]
+}

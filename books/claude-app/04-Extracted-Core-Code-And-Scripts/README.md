@@ -56,3 +56,5 @@ python3 -B run_book_tests.py --skills
 
 - [三个异步边界实验](async-reading-primer/README.md)：19 项确定性测试与逐步预测题。
 - [遥测指标实验](../02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab/README.md)：74 项测试，从合成事件重算指标、隔离时间矛盾并保留筛选前分母。
+
+- [出版物完整性检查器](scripts/publication-checks/README.md)：只读检查必需目录、阅读链接与三份已登记清单；39 项合成测试，输出结构化报告。

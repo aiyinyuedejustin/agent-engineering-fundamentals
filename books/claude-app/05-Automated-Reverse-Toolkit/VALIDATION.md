@@ -4,7 +4,7 @@
 
 ## 已运行
 
-- 从与工具目录不同的工作目录，使用 `run_tests.py` 的绝对路径运行 `python3 -B /path/to/05-Automated-Reverse-Toolkit/run_tests.py`：**86 项通过，0 失败**。
+- 从与工具目录不同的工作目录，使用 `run_tests.py` 的绝对路径运行 `python3 -B /path/to/05-Automated-Reverse-Toolkit/run_tests.py`：**152 项通过，0 失败**。
 - 端到端合成目录比较：产生 `before.json`、`after.json`、`diff.json`、`diff.md`。
 - 再用两个快照运行 `diff`：JSON 和 Markdown 与直接 `compare` **字节一致**。
 - 相同输入复制到另一绝对路径：完整快照一致。
@@ -45,3 +45,7 @@
 ## 单命令入口
 
 新增 diff-versions.py 与 24 项端到端检查：目录、ZIP/ZIP 与混合输入得到相同的快照和差分；失败回滚、输出拒绝覆盖、符号链接、既有限额和不执行目标代码均通过。连同原审计基线共 86 项测试。
+
+## ASAR 与最终交付边界
+
+新增 ASAR 的格式、共享范围、外置文件排除与发布竞态检查见 [ASAR 验证记录](ASAR-VALIDATION.md)。当前总计 152 项，包括原有 86 项、41 项 ASAR 合成回归、1 项外层发布竞态回归与 24 项独立复核。仅 Linux 执行通过；平台与静止父目录要求见 [支持合同](SUPPORT.md)。

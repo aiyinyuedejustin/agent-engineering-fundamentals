@@ -103,11 +103,11 @@ node --test --test-reporter=tap "$test_dir/test.cjs"
 
 共 22 项检查，包含：实际 UTF-8、异步完成顺序、并发准入、边界值、同名独立身份、重复清理、重复完成、账户/草稿切换、同名新代次、旧尝试票据、等待与重试、Send 双重守卫、不可变快照、焦点恢复、实时播报、静态 ARIA、零外部资源与 500 步确定性状态压力测试。
 
-[验证元数据](validation.json) 记录本目录文件的 SHA-256、验证范围和运行环境。源码来自本研究的原创合成实现；HTML 与原始交互课一致。22 项 Node/jsdom 检查已通过；这不等于真实浏览器布局、实际键盘导航或读屏通过。
+[验证元数据](validation.json) 记录本目录文件的 SHA-256、验证范围和运行环境。源码来自本研究的原创合成实现；浏览器检查后补了一处历史预算提示文案与回归测试。22 项 Node/jsdom 检查已通过，实际浏览器结果单列在下方。
 
 ## 真实浏览器验收清单
 
-以下是发布时应另行完成的检查，不是已通过的结论。浏览器检查结果应单独记录；不要用 Node/jsdom 结果代替。
+以下是完整验收清单；本轮已覆盖的桌面操作与尚待检查的项目，在下方浏览器记录中分别列出。
 
 1. 在桌面 1440 px、手机 390 px 与 320 px 宽度下检查横向溢出，确认固定槽位、账本和 Send 原因清楚可读。
 2. 只用键盘：跳过导航链接有效；按钮可用 Enter / 空格激活；下拉框可用方向键选择；取消后焦点留在原槽位，下一次 Tab 进入后续正常操作。
@@ -128,3 +128,15 @@ node --test --test-reporter=tap "$test_dir/test.cjs"
 ## 延伸阅读
 
 [回到卷五：上下文与附件流水线](../../../02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/README.md) · [context-file-cache 原创模型](../../../03-Ready-To-Use-Agent-Skills/context-file-cache/SKILL.md)
+
+## 浏览器实景与已验证交互
+
+![附件实验台的键盘入口](../../../assets/screenshots/attachment-lesson-keyboard-5f7c02b.jpg)
+
+![第二个附件先完成，槽位与总占用仍保持稳定](../../../assets/screenshots/attachment-lesson-order-5f7c02b.jpg)
+
+![取消释放预算，历史拒绝提示保留检查时点与焦点](../../../assets/screenshots/attachment-lesson-budget-f387080.jpg)
+
+2026-10-15，Chrome 的实际窗口为 1188 × 761 CSS px。四个场景、Send 守卫、账户/草稿/代次隔离、跳过导航及操作消失后的焦点恢复均经过实际操作。前两图来自提交 `5f7c02b`；第三图来自文案修订后的 `f387080`，复核了“剩余 48 B”与“上次检查时剩余 30 B”同时成立的状态。图片展示窗口中的可见部分，不是整页长截图。
+
+本轮覆盖桌面窗口。手机宽度、1440 px、200% 缩放、实际读屏与减少动态效果仍列为待检项；详见[机器可读浏览器记录](browser-validation.json)。
