@@ -1,0 +1,31 @@
+/* 仅装饰演示宿主；不选择组件内部控件，不改共享令牌或组件合同。 */
+.demo-host { margin: 0; background: #f5f4ee; color: #30362e; font: 15px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.demo-shell { box-sizing: border-box; max-width: 1240px; margin: 0 auto; padding: 54px 36px 32px; }
+.demo-heading { max-width: 760px; }
+.demo-eyebrow { margin: 0 0 12px; color: #677452; font-size: 12px; font-weight: 650; letter-spacing: .16em; }
+.demo-title { margin: 0 0 16px; font-size: clamp(30px, 4.4vw, 48px); line-height: 1.18; font-weight: 600; letter-spacing: -.055em; }
+.demo-lede { max-width: 660px; margin: 0 0 13px; color: #5b6255; font-size: 16px; line-height: 1.8; }
+.demo-local { margin: 0; font-size: 12px; color: #626d58; }
+.demo-guide { display: flex; flex-wrap: wrap; gap: 12px 28px; margin: 30px 0 32px; padding: 17px 0; border-block: 1px solid #d9ddd1; }
+.demo-step { display: flex; gap: 9px; align-items: baseline; margin: 0; font-size: 12px; color: #515b48; }
+.demo-number { color: #626d58; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+.demo-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; gap: 28px; }
+.demo-panel { min-width: 0; }
+.demo-panel-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 0 2px 12px; }
+.demo-panel-title { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; font-weight: 600; }
+.demo-panel-mark { display: inline-grid; place-items: center; width: 25px; height: 25px; border: 1px solid #ccd3c2; border-radius: 7px; background: #edf0e6; color: #586947; font-size: 12px; }
+.demo-namespace { color: #626d58; font: 12px/1.5 ui-monospace, monospace; }
+.demo-actions { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #d9ddd1; }
+.demo-actions-copy { max-width: 520px; }
+.demo-actions-title { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+.demo-actions-note { margin: 0; color: #68715e; font-size: 12px; line-height: 1.75; }
+.demo-buttons { display: flex; flex-wrap: wrap; flex-shrink: 0; gap: 9px; }
+.demo-button { min-height: 42px; padding: 10px 14px; border: 1px solid #bfc8b4; border-radius: 9px; background: #fafbf7; color: #445039; cursor: pointer; font: 500 12px/1.4 system-ui, sans-serif; }
+.demo-button:hover { background: #e9eedf; }
+.demo-button-primary { border-color: #586947; background: #586947; color: #fff; }
+.demo-button-primary:hover { background: #435435; }
+.demo-button:focus-visible { outline: 3px solid #8a6951; outline-offset: 4px; }
+.demo-footnote { margin: 26px 0 0; color: #626d58; font-size: 12px; }
+@media (max-width: 1000px) { .demo-actions { align-items: flex-start; flex-direction: column; gap: 16px; } .demo-buttons { flex-shrink: 1; } }
+@media (max-width: 760px) { .demo-shell { padding: 32px 18px 24px; } .demo-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; } .demo-guide { margin-block: 22px 26px; gap: 10px 20px; } .demo-lede { font-size: 14px; } .demo-local { font-size: 12px; } }
+@media (forced-colors: active) { .demo-button, .demo-panel-mark { border: 1px solid ButtonText; } }

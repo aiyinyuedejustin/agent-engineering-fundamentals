@@ -7,29 +7,42 @@ export class MemoryStorage {
 }
 const key = 'teaching-backoff-v1';
 const safe = (fn, fallback) => { try { return fn(); } catch { return fallback; } };
+/** Single writer, nondecreasing finite clock, trusted synchronous stores.
+ * order persists ordering across equal timestamps; failures=0 is a clear tombstone.
+ * At least one successful write is required for a durable record/clear.
+ */
 export class BackoffLedger {
   constructor(local, session, now = () => Date.now()) { Object.assign(this, { local, session, now }); }
   parse(raw) {
     return safe(() => {
       const x = JSON.parse(raw), now = this.now();
-      if (!x || x.v !== 1 || !Number.isInteger(x.failures) || x.failures < 0 || !Number.isFinite(x.at) || x.at < 0 || x.at > now + 60000 || now - x.at >= 300000) return null;
-      return { v: 1, failures: Math.min(15, x.failures), at: x.at };
+      if (!x || x.v !== 1 || !Number.isInteger(x.failures) || x.failures < 0 || !Number.isFinite(now) || !Number.isFinite(x.at) || x.at < 0 || x.at > now + 60000 || now - x.at >= 300000) return null;
+      const order = x.order ?? 0; // Older v1 records predate persistent ordering.
+      if (!Number.isSafeInteger(order) || order < 0) return null;
+      return { v: 1, failures: Math.min(15, x.failures), at: x.at, order };
     }, null);
   }
-  read() {
+  latest() {
     const a = this.parse(safe(() => this.local.getItem(key), null));
     const b = this.parse(safe(() => this.session.getItem(key), null));
-    const latest = b && (!a || b.at > a.at) ? b : a;
+    // Timestamp remains primary for old v1 records; same-clock operations use order.
+    const latest = b && (!a || b.at > a.at || (b.at === a.at && (b.order > a.order || (b.order === a.order && b.failures > a.failures)))) ? b : a;
     if (latest === b && b && safe(() => { this.local.setItem(key, JSON.stringify(b)); return true; }, false)) safe(() => this.session.removeItem(key));
     return latest;
   }
-  record() {
-    const prior = this.read();
-    const record = { v: 1, failures: Math.min(15, (prior?.failures ?? 0) + 1), at: this.now() };
+  read() { const latest = this.latest(); return latest?.failures ? latest : null; }
+  write(failures, prior) {
+    const at = this.now(), order = (prior?.order ?? 0) + 1;
+    if (!Number.isFinite(at) || at < 0 || (prior && at < prior.at) || !Number.isSafeInteger(order)) return { stored: false };
+    const record = { v: 1, failures, at, order };
     const stored = safe(() => { this.local.setItem(key, JSON.stringify(record)); return true; }, false) || safe(() => { this.session.setItem(key, JSON.stringify(record)); return true; }, false);
     return { ...record, stored };
   }
-  clear() { safe(() => this.local.removeItem(key)); safe(() => this.session.removeItem(key)); }
+  record() {
+    const prior = this.latest();
+    return this.write(Math.min(15, (prior?.failures ?? 0) + 1), prior);
+  }
+  clear() { return this.write(0, this.latest()); }
 }
 /** Ack after application; three failures at a known cursor avoid an infinite poison replay. */
 export class CursorConsumer {

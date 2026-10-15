@@ -1,9 +1,16 @@
 <!doctype html>
 <html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>两个有边界的原创组件</title>
-<link rel="stylesheet" href="../../styles/claude-tokens.css"><link rel="stylesheet" href="../../styles/claude-reset-and-base.css"><link rel="stylesheet" href="scoped-chat.css">
-<body><h1>两个组件，一个宿主</h1><p>分别切主题、输入草稿；把焦点留在某一组件按 Ctrl/⌘+K。此示例不发网络请求。</p><button id="host">宿主按钮：此处快捷键不归组件所有</button>
-<section aria-label="左侧工作区"></section><section aria-label="右侧工作区"></section>
-<button id="remount">卸载并重新挂载左侧</button>
+<link rel="stylesheet" href="../../styles/claude-tokens.css"><link rel="stylesheet" href="../../styles/claude-reset-and-base.css"><link rel="stylesheet" href="scoped-chat.css"><link rel="stylesheet" href="demo-host.css">
+<body class="demo-host"><main class="demo-shell">
+<header class="demo-heading"><p class="demo-eyebrow">ATELIER / COMPONENT STUDY</p><h1 class="demo-title">同在一页，各有边界。</h1><p class="demo-lede">两个独立工作区，共用一份组件源码。主题、配色和草稿各自保存；快捷键只交给当前聚焦的工作区。</p><p class="demo-local">本地预设回复 · 不发送网络请求 · 窄屏时上下排列</p></header>
+<div class="demo-guide" aria-label="试用顺序"><p class="demo-step"><span class="demo-number">01</span>分别切换明暗与配色</p><p class="demo-step"><span class="demo-number">02</span>两侧写下不同的草稿</p><p class="demo-step"><span class="demo-number">03</span>聚焦一侧，按 Ctrl / ⌘ + K</p></div>
+<div class="demo-grid">
+<div class="demo-panel"><div class="demo-panel-heading"><h2 class="demo-panel-title"><span class="demo-panel-mark">A</span>左侧工作区</h2><span class="demo-namespace">example:left</span></div><section aria-label="左侧工作区"></section></div>
+<div class="demo-panel"><div class="demo-panel-heading"><h2 class="demo-panel-title"><span class="demo-panel-mark">B</span>右侧工作区</h2><span class="demo-namespace">example:right</span></div><section aria-label="右侧工作区"></section></div>
+</div>
+<footer class="demo-actions"><div class="demo-actions-copy"><h2 class="demo-actions-title">再试试边界</h2><p class="demo-actions-note">聚焦宿主按钮后，快捷键不应清空任何草稿。左侧发送后立即重挂，旧回复不应进入新实例；已保存的草稿仍会恢复。</p></div><div class="demo-buttons"><button class="demo-button" id="host" type="button">宿主按钮 · 测试快捷键边界</button><button class="demo-button demo-button-primary" id="remount" type="button">卸载并重新挂载左侧</button></div></footer>
+<p class="demo-footnote">这是作用域与生命周期的原创教学示例，不是完整产品聊天界面。浏览器存储被禁用时，交互仍可继续。</p>
+</main>
 <script src="scoped-chat.js"></script><script>
 const roots = document.querySelectorAll('section');
 let left = AtelierScopedChat.mount(roots[0], {namespace:'example:left'});

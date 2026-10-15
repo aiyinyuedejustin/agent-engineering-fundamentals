@@ -1,14 +1,14 @@
 'use strict';
 // 仅把固定 demo 的本地资源原样内联供 HTML 预览器使用，不转换或复制业务实现。
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
-const cssFiles=['../../styles/claude-tokens.css','../../styles/claude-reset-and-base.css','scoped-chat.css'];
+const cssFiles=['../../styles/claude-tokens.css','../../styles/claude-reset-and-base.css','scoped-chat.css','demo-host.css'];
 const scriptFile='scoped-chat.js';
 function once(text,marker){assert.equal(text.split(marker).length-1,1,'必须恰有一个固定标记: '+marker);}
 function render(sourceDir){
  sourceDir=path.resolve(sourceDir);
  let html=fs.readFileSync(path.join(sourceDir,'demo.html'),'utf8');
  // 该构建器只接受已审核的 demo 资源形状，不做任意 URL 抓取或通用 HTML 转换。
- assert.equal((html.match(/<link\b/gi)||[]).length,3,'只允许三份固定样式');
+ assert.equal((html.match(/<link\b/gi)||[]).length,4,'只允许四份固定样式');
  assert.equal((html.match(/<style\b/gi)||[]).length,0,'demo 不应含内联样式');
  assert.equal((html.match(/<script\b/gi)||[]).length,2,'只允许一个外链脚本及一个初始化脚本');
  assert.equal((html.match(/<\/script\s*>/gi)||[]).length,2,'script 边界必须完整');

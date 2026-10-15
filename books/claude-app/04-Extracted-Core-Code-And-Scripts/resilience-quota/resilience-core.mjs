@@ -64,18 +64,43 @@ export function streamOutcome({ stopped, successorPending, networkError, cleanCl
   if (networkError) return 'transport-error';
   return stopped || stopReason ? 'settled' : 'incomplete';
 }
-/** Original stricter retry-after parser, not the target helper. */
+/** Strict HTTP-date teaching parser: all three RFC 9110 forms, in UTC.
+ * A leap-second :60 maps to the next representable JS millisecond instant.
+ */
 export function parseRetryAfter(value, now) {
-  if (typeof value !== 'string' || value.trim() === '') return undefined;
+  if (typeof value !== 'string' || value.trim() === '' || !Number.isFinite(now) || !Number.isFinite(new Date(now).getTime())) return undefined;
   const text = value.trim();
   if (/^\d+$/.test(text)) {
     const result = Number(text) * 1000;
     return Number.isFinite(result) ? result : undefined;
   }
-  // Reject signed/fractional numeric tokens instead of letting Date.parse reinterpret them.
-  if (/^[+\-\d.]/.test(text)) return undefined;
-  const date = Date.parse(text);
-  return Number.isFinite(date) ? Math.max(0, date - now) : undefined;
+  const shortDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const longDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  let match, dayName, day, monthName, year, hour, minute, second;
+  if ((match = /^(Sun|Mon|Tue|Wed|Thu|Fri|Sat), (\d{2}) ([A-Z][a-z]{2}) (\d{4}) (\d{2}):(\d{2}):(\d{2}) GMT$/.exec(text))) {
+    [, dayName, day, monthName, year, hour, minute, second] = match;
+  } else if ((match = /^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), (\d{2})-([A-Z][a-z]{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) GMT$/.exec(text))) {
+    [, dayName, day, monthName, year, hour, minute, second] = match;
+    dayName = shortDays[longDays.indexOf(dayName)];
+    const currentYear = new Date(now).getUTCFullYear();
+    year = currentYear + (Number(year) - currentYear % 100 + 100) % 100;
+    // A date >50 years ahead is interpreted as the most recent matching past year.
+    const cutoff = new Date(now); cutoff.setUTCFullYear(currentYear + 50);
+    const candidate = new Date(0);
+    candidate.setUTCFullYear(year, months.indexOf(monthName), Number(day));
+    candidate.setUTCHours(Number(hour), Number(minute), Number(second), 0);
+    if (candidate.getTime() > cutoff.getTime()) year -= 100;
+  } else if ((match = /^(Sun|Mon|Tue|Wed|Thu|Fri|Sat) ([A-Z][a-z]{2}) ( [1-9]|0[1-9]|[12]\d|3[01]) (\d{2}):(\d{2}):(\d{2}) (\d{4})$/.exec(text))) {
+    [, dayName, monthName, day, hour, minute, second, year] = match;
+  } else return undefined;
+  [day, year, hour, minute, second] = [day, year, hour, minute, second].map(Number);
+  const month = months.indexOf(monthName);
+  if (year < 1900 || month < 0 || day < 1 || hour > 23 || minute > 59 || second > 60) return undefined;
+  const date = new Date(0);
+  date.setUTCFullYear(year, month, day); date.setUTCHours(hour, minute, Math.min(second, 59), 0);
+  if (date.getUTCFullYear() !== year || date.getUTCMonth() !== month || date.getUTCDate() !== day || shortDays[date.getUTCDay()] !== dayName) return undefined;
+  return Math.max(0, date.getTime() + (second === 60 ? 1000 : 0) - now);
 }
 export function abortableSleep(ms, signal) {
   return new Promise((resolve, reject) => {

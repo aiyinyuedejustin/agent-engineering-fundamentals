@@ -567,7 +567,8 @@ node demo.mjs
 | recovery-state.mjs | 短期失败记录、cursor、mirror、hydration、quota 分派 | 完整 rich-editor merge、IndexedDB、跨设备同步 |
 | IdempotentServer | 提交后丢回包的去重契约示例 | Claude 服务端实际幂等事务 |
 | demo.mjs | 五次网络失败轨迹、毒事件、超大 mirror | 真实用户流量、服务端故障时序 |
-| test/resilience.test.mjs | 52 项可复现断言 | 目标应用端到端运行正确性 |
+| test/resilience.test.mjs | 原有52项可复现断言 | 目标应用端到端运行正确性 |
+| test/boundaries.test.mjs | 新增12项：三时区HTTP日期、同毫秒存储降级/恢复/clear，共64项通过 | 任意存储故障下的持久事务或跨tab一致性 |
 
 ### 14.2 关键测试矩阵
 
@@ -596,7 +597,7 @@ node demo.mjs
 
 ### 14.3 测试与源码之间保留差异表
 
-实验使用可读名称与显式类，避免照搬 minified 闭包。其 Retry-After parser 更严格；cursor 统一去重；mirror reader 也实施 byte cap；hydration 使用简化的编辑 revision；失败 ledger 仅保留版本、时间与计数。所有这些差异都在 README 与证据清单中列出。
+实验使用可读名称与显式类，避免照搬 minified 闭包。其 Retry-After parser 更严格；cursor 统一去重；mirror reader 也实施 byte cap；hydration 使用简化的编辑 revision；失败 ledger 保留版本、时间、计数及持久顺序字段，用零计数墓碑表达逻辑clear。HTTP日期支持三种规范形式并按UTC解释，RFC850使用50年规则。ledger限定单逻辑写者、非倒退时钟且能读取最新记录；stored:true只表示至少一次存储写入成功，不保证读故障下的计数与clear排序。所有这些差异都在 README 与证据清单中列出。
 
 源码观察与教学实验分别回答两个问题：目标版本实现了什么，以及某项设计性质能否独立验证。
 
@@ -656,6 +657,6 @@ node demo.mjs
 
 ### 验证对象
 
-本卷研究 Claude Desktop Linux amd64 2.37337.1 分发包中的选定聊天、Code/CCR 事件订阅与草稿恢复路径。证据来自惰性静态分析与调用关系核对，没有启动目标应用、登录账户或请求私有接口。52 项通过的测试运行在本书原创教学模型上。它们验证可复用设计与推导，不是对 Claude 生产系统的故障注入报告。
+本卷研究 Claude Desktop Linux amd64 2.37337.1 分发包中的选定聊天、Code/CCR 事件订阅与草稿恢复路径。证据来自惰性静态分析与调用关系核对，没有启动目标应用、登录账户或请求私有接口。64 项通过的测试（原52项及新增12项边界回归）运行在本书原创教学模型上。它们验证可复用设计与推导，不是对 Claude 生产系统的故障注入报告。
 
 [延伸到卷九：重放成功回执为何可能比当前数据更旧](../09-Memory-Projects-And-Styles/authoritative-writes.md)。幂等身份与权威版本前提解决不同问题。

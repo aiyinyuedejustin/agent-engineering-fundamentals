@@ -11,7 +11,7 @@ node --test --test-reporter=tap test/*.test.mjs
 node demo.mjs
 ```
 
-本次结果：52 项测试通过，0 失败。`demo-output.json` 保存确定性示例。测试中的账户、session、prompt 和事件都是虚构的。
+本次结果：64 项测试通过，0 失败。`demo-output.json` 保存确定性示例。测试中的账户、session、prompt 和事件都是虚构的。
 
 ## 读代码顺序
 
@@ -43,8 +43,8 @@ node demo.mjs
 |---|---|
 | 可读对象式错误 | 不使用目标 API error 类型、特定 transport error 类与全部 TypeError 判定 |
 | 纯 RetryBudget reducer | 不发送 fetch；不实现 gzip 回退或嵌套 open retry；不重建完整 telemetry |
-| retry-after parser | 只接受严格整数秒或有效 HTTP 日期；目标各 helper 的 Number/Date.parse 更宽松且相互不同 |
-| BackoffLedger | 仅示范版本、计数、时间、存储降级；省略模型、声明等待 metadata 与浏览器 storage 事件；过期读返回 null，没有复刻目标清理细节 |
+| retry-after parser | 只接受严格整数秒或三种 HTTP-date 语法；全部按 UTC，RFC850 使用随当前日期滚动的50年规则，并核对日历日期和星期；目标各 helper 的 Number/Date.parse 更宽松且相互不同 |
+| BackoffLedger | 示范版本、计数、时间、存储降级及持久顺序字段；clear 写零计数墓碑；省略模型、声明等待 metadata 与浏览器 storage 事件；过期读返回 null，没有复刻目标清理细节 |
 | CursorConsumer | 统一过滤有效序号的重复事件；非正/非安全整数序号视为无 ID，仍可调用消费者，但不提交 cursor 或清除毒事件计数；目标 poll 中显式去重，不声称目标 SSE 也完全如此 |
 | mirror reader | 与 writer 一样按 UTF-8 字节限制；目标底层 reader 的 text.length 检查按代码单元 |
 | DraftHydration | 用显式 edit revision/owner epoch 演示；不复刻 rich-editor merge、真实 IndexedDB、附件引用存储或多 tab 竞态 |
@@ -62,3 +62,11 @@ node demo.mjs
 ## 实验结果范围
 
 纯单元/模型测试已运行；目标应用运行、联网故障注入、真实账户限额、浏览器存储端到端测试均未运行。本目录只包含原创模型与生成的测试结果，不包含目标源码和原始 REA 输出。
+
+## 恢复边界回归：2026-10-15
+
+新增12项原创回归，原52项保留，共64项。`test/boundaries.test.mjs` 用独立 Node 子进程分别设置 UTC、America/New_York、Asia/Tokyo；三个合法 HTTP 日期表示同一时刻，必须得到相同等待与重试决策。不存在的日期、星期不匹配及自然语言日期被拒绝。RFC850 两位年份按完整时刻的50年界限解释，不使用运行时固定世纪猜测。JavaScript 不表示闰秒，`:60` 映射到下一可表示时刻；模型不验证历史天文闰秒表。规范参考：[RFC 9110 §5.6.7](https://www.rfc-editor.org/rfc/rfc9110.html#section-5.6.7) 与 [§10.2.3](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3)。
+
+BackoffLedger 的局部合同：一个逻辑写者，可信同步存储，有限非负且不倒退的时钟。允许同一毫秒连续操作。持久 `order` 在相同时间戳内区分先后；旧v1记录缺少该字段时按0读取。clear 不物理删除两份记录，而是写带更高顺序的零计数墓碑，read 对它返回 null；旧副本不能在同毫秒恢复后复活。墓碑沿用五分钟过期合同。安全整数顺序耗尽或观测到时钟倒退时，写入返回 stored:false。
+
+record/clear 返回的 stored:true 只表示至少一份同步写入成功；双存储都不可写时返回 false，不能承诺持久清除。累计计数与clear正确排序都依赖能读到最新记录；若最新副本也无法读取，即使stored:true也不保证完整历史或清零在稍后恢复读取时仍有效。这不解决多写者、跨tab、时钟倒退、任意存储损坏或强持久性问题。clear 的逻辑清零也不是敏感数据物理擦除。已有存储读取/写入失败不抛出错误的兜底合同保持不变。
