@@ -6,7 +6,7 @@
 
 ## 随仓即可运行
 
-- [原创机制实验室](core-code-lab/README.md)：流式协议、对话树、执行循环、预览状态、记忆与配置；本实验室 155 项离线测试，不含下列新增专题。
+- [原创机制实验室](core-code-lab/README.md)：流式协议、对话树、执行循环、预览状态、记忆与配置；本实验室182项离线测试，不含下列新增专题。
 - [三张学习图生成器](scripts/build_learning_figures.py)：Python 标准库生成坐标、UTF-8/SSE 与分支阅读图。
 
 ## 需要本地产品样本的工具
@@ -52,7 +52,7 @@ python3 -B run_book_tests.py --skills
 
 - [恢复与配额实验](resilience-quota/README.md)：分类退避、终止边界、订阅游标与草稿归属；64 项原创模型测试。
 
-- [三个可手算的工程案例](worked-cases/README.md)：Stop/restart、UTF-8 预留与 MCP 审批绑定；17 项 Python 与 12 项 Node 测试。
+- [三个可手算的工程案例](worked-cases/README.md)：Stop/restart、UTF-8 预留与 MCP 审批绑定；29项Python与12项Node测试。
 - [两个状态转移案例](worked-cases/state-transitions/README.md)：对话树身份重命名、顺序保存与组织切换；20 项测试与 2 份确定性演示输出。
 
 - [原创模型的七条边界合同](model-boundaries.md)：取消重入、数值溢出、审批序列化与原子输入验证。

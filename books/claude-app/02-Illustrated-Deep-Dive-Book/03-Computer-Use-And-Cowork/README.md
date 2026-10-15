@@ -251,7 +251,7 @@ helper、native binding 与 VM image 的文件身份及类型另列在配套证�
 
 ## 11. 一套可验证的原创教学模型
 
-[loop-cowork 教学实验](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/README.md) 有 28 个测试，全部只用合成数据。它不是兼容客户端，而是让读者验证边界的最小练习：
+[loop-cowork 教学实验](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/README.md) 有46个测试，全部只用合成数据。它不是兼容客户端，而是让读者验证边界的最小练习：
 
 - result 成功后，session idle 与 process retained 可以同时成立。
 - 停止使旧 spawn/result 失效。
