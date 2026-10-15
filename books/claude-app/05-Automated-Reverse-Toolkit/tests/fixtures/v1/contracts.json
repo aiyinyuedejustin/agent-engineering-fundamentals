@@ -1,0 +1,1 @@
+{"name":"demo_lookup","input_schema":{"type":"object","properties":{"query":{"type":"string"}},"required":["query"]},"feature_flags":{"demo_map_flag":false}}

@@ -1,0 +1,1 @@
+{"name":"original-resilience-quota-lab","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs","demo":"node demo.mjs"},"engines":{"node":">=20"}}

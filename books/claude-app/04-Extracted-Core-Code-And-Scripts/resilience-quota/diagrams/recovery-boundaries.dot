@@ -1,0 +1,16 @@
+digraph Recovery {
+  graph [rankdir=LR, bgcolor="#f8f7f3", pad=0.45, nodesep=0.42, ranksep=0.55, label="RECOVERY IS A FACT CHECK BEFORE IT IS A RETRY", labelloc=t, fontsize=19, fontname="DejaVu Sans", fontcolor="#203a3a"];
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#9ba8a0", penwidth=1.3, fontname="DejaVu Sans", fontsize=12, margin="0.18,0.15"];
+  edge [color="#64746d", fontname="DejaVu Sans", fontsize=10, arrowsize=0.7];
+  failure [label="Failure / interruption", fillcolor="#e6ede7"];
+  chat [label="CHAT SUBMISSION\nStable turn identity\nCompletion boundary"];
+  events [label="EVENT SUBSCRIPTION\nLast applied cursor\nPoison-frame policy"];
+  quota [label="QUOTA\nWindow / concurrency\nAccount or model condition"];
+  draft [label="DRAFT\nAccount + session\nEditor generation"];
+  reconcile [label="Read back or gated resend", fillcolor="#dce9e5"];
+  subscribe [label="Reconnect or gated polling", fillcolor="#dce9e5"];
+  explain [label="Explain the required change", fillcolor="#f1e7ce"];
+  restore [label="Restore, defer, or reject stale work", fillcolor="#dce9e5"];
+  failure -> {chat events quota draft};
+  chat -> reconcile; events -> subscribe; quota -> explain; draft -> restore;
+}

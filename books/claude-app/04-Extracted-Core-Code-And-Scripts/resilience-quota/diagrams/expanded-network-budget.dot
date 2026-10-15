@@ -1,0 +1,11 @@
+digraph Budget {
+  graph [rankdir=LR, bgcolor="#f8f7f3", pad=.45, nodesep=.5, ranksep=.65, label="EXPANDED: CONTINUOUS NETWORK FAILURES (NO INHERITED HISTORY)\n\n5 failed calls; 4 waits; 11.5 seconds of nominal waiting + request time + jitter", labelloc=t, fontsize=17, fontname="DejaVu Sans", fontcolor="#203a3a"];
+  node [shape=box, style="rounded,filled", fillcolor="#e1ebe6", color="#82958b", fontname="DejaVu Sans", fontsize=12, margin=".16,.16"];
+  edge [color="#65776d", fontname="DejaVu Sans", fontsize=11, arrowsize=.65];
+  a [label="Call 1 fails\nnetwork = 1"];
+  b [label="Call 2 fails\nnetwork = 2"];
+  c [label="Call 3 fails\nnetwork = 3"];
+  d [label="Call 4 fails\ngeneric = 1",fillcolor="#f1e7ce"];
+  e [label="Call 5 fails\ngeneric = 2\nSTOP",fillcolor="#edd6ca"];
+  a->b [label="0.5 s"]; b->c [label="1 s"]; c->d [label="2 s"]; d->e [label="8 s"];
+}

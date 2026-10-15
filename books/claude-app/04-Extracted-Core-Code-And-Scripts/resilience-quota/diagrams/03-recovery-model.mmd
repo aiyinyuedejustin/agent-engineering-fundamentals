@@ -1,0 +1,9 @@
+stateDiagram-v2
+    [*] --> Open
+    Open --> Stopped: message_stop
+    Open --> Broken: 提前网络失败
+    Stopped --> SuccessClean: 正常收尾
+    Stopped --> SuccessUnclean: 网络失败且无后继等待
+    Stopped --> SuccessorPending: 模型更新或继续处理
+    SuccessorPending --> Open: 后续 message_start
+    SuccessorPending --> Broken: 后续链条中断

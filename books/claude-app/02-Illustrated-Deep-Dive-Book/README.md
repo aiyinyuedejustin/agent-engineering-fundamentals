@@ -24,6 +24,8 @@
 
 - [第 15 卷：语音与视觉数学](15-Voice-And-Vision-Math/README.md)：采样、播放、打断、显示器坐标与 PDF 仿射变换。
 
+- [第 16 卷：恢复、限流与配额](16-Resilience-And-Quota/README.md)：重试分类、完成边界、游标恢复与草稿身份。
+
 ## 平台与恢复专题
 
 - [第 17 卷：状态、恢复与更新](17-State-Recovery-And-Updates/README.md)

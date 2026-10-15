@@ -1,0 +1,3 @@
+/* Original synthetic fixture. Not a product stylesheet. */
+:root { --demo-gray-100: #eeeeee; --demo-accent: rgb(12 34 56); --demo-radius: 4px; }
+@media (prefers-color-scheme: dark) { :root { --demo-gray-100: #222222; } }

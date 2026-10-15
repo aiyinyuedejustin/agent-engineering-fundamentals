@@ -44,3 +44,7 @@ python3 -B run_book_tests.py --skills
 模板的 jsdom 测试另有可选开发依赖，真实浏览器绘制另行验收；这两类结果没有混入本命令。
 
 - [原生、语音与坐标实验](native-voice-geometry/README.md)：音频分帧、播放账本、目标身份、显示器/PDF 变换；34 项测试含 360 组矩阵往返。
+
+跨版本的受限解包、快照与差分另见 [自动逆向工具箱](../05-Automated-Reverse-Toolkit/README.md)。
+
+- [恢复与配额实验](resilience-quota/README.md)：分类退避、终止边界、订阅游标与草稿归属；52 项原创模型测试。

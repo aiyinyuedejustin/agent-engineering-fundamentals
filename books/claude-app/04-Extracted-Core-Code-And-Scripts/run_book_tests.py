@@ -16,7 +16,7 @@ def commands(include_skills=False):
         raise RuntimeError('需要 Node.js 20+，请先把 node 放入 PATH。')
     jobs = [('core-code-lab', ROOT / 'core-code-lab', [sys.executable, '-B', 'run_tests.py'])]
     for folder, pattern in [('shell-lifecycle', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
-                            ('streaming-performance', 'test/*.test.mjs'), ('security-guardrails', '*.test.mjs'), ('native-voice-geometry', '*.test.mjs')]:
+                            ('streaming-performance', 'test/*.test.mjs'), ('security-guardrails', '*.test.mjs'), ('native-voice-geometry', '*.test.mjs'), ('resilience-quota', 'test/*.test.mjs')]:
         location = ROOT / folder
         files = sorted(location.glob(pattern))
         if not files:

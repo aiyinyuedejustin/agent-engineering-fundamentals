@@ -1,0 +1,138 @@
+{
+  "schema": "original-toolkit-file-manifest/v1",
+  "note": "Manifest excludes itself. Original code, docs and synthetic tests only.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 53,
+      "sha256": "98a388463c09aa5b69b14cee4c88a62b34d73ed12fafd39c56f8adb43c4aa9b4",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "README.md",
+      "bytes": 17790,
+      "sha256": "998d0a21fbc0a44f64e422dbd7bf529a1e4b8019699e9a9bb6ad511dd0a5d7a1",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "SOURCE-NOTES.md",
+      "bytes": 1492,
+      "sha256": "b651fed7cba4db92c1b347f5867721ca33ebb19147b272b6cad2aa64447f1d80",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 3786,
+      "sha256": "1d98dd15083aefb8fb749545ea000f39b7c92304e8b3e44dd75ac8b3e3a32f8c",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "diff-versions.py",
+      "bytes": 6164,
+      "sha256": "d48f65ce5b135290c301ad9ff51f48bb0951aedf4300dee3e735561745295162",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "reverse_toolkit.py",
+      "bytes": 6245,
+      "sha256": "cb1391e967b5dba4dfb3cc08657e05265c073c7d8588ee33a0f089e38245b37d",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "run_tests.py",
+      "bytes": 419,
+      "sha256": "a70c476ee470903d4c427db9220b58cd16b459b9d4999a1bf65145ac9e741bd9",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/fixtures/v1/app.js",
+      "bytes": 200,
+      "sha256": "b8326a25eb1a1e3d41ec107ccaab336db9cdf96f8e118cec977eb18c12730afa",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/fixtures/v1/contracts.json",
+      "bytes": 158,
+      "sha256": "5d58408061458051710326222c037a9dde5d1120a698bb7495d79dde9ed57393",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/fixtures/v1/theme.css",
+      "bytes": 222,
+      "sha256": "1547fc83f26bad0c73ba85412476852bc3d5a3d31ec4331f1f9a55350d5be5ee",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/fixtures/v2/app.js",
+      "bytes": 236,
+      "sha256": "8f2fbcddf0f1aa1a4ef19a106fbb85a08590ddb1a007b1344eeb800dd8d6ae7a",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/fixtures/v2/contracts.json",
+      "bytes": 192,
+      "sha256": "b572c000707322be2fb7836f4a4a77ac361e4ec3c740448fc58f54e88c7bb41b",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/fixtures/v2/theme.css",
+      "bytes": 219,
+      "sha256": "49eb58e5bdb9452421242e724e9ec00f90a4febf6ba4396c1bef9bebbd348ed5",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_adversarial.py",
+      "bytes": 12483,
+      "sha256": "da89e6a8466d32e6daaccb52602cfa2beaf54c6c623c62e534e399a5497391e9",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_diff_versions.py",
+      "bytes": 17791,
+      "sha256": "8bc0605292076ad74a0715cb0fc4abc9d09acadd137c7dd61d21f16f3cf78d63",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_toolkit.py",
+      "bytes": 17401,
+      "sha256": "1ee3a55726a31bc075265c0c00321abd8b5e0caa3b0bb1b24a5e72d7bdcf6a87",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "toolkit/__init__.py",
+      "bytes": 72,
+      "sha256": "427585576103093d313373ecbf78ae5ef1bf4518a2bfca547476a8b8dd148c92",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "toolkit/css_scan.py",
+      "bytes": 3429,
+      "sha256": "1bfc95009bb8bcb8522185e9db8d7cb8b21c909ac4de8c1b423a4bf3973ad9da",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "toolkit/diffing.py",
+      "bytes": 8127,
+      "sha256": "d50841cc052f1001d8ad8477b4d6b00893cace51ed93e4f7f5b46edd63da8b0f",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "toolkit/inventory.py",
+      "bytes": 11288,
+      "sha256": "ce43abef1281dc3e5e3770f1d8b2c91649b449038ec82fb1a759cf4c8b809bcf",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "toolkit/literals.py",
+      "bytes": 9420,
+      "sha256": "7e03e5d2f926c2ccf884c92f06eb2460c7322952108caf1cdb8d02c40d1cb027",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "toolkit/safeio.py",
+      "bytes": 12816,
+      "sha256": "337084045c6f0ed701b268d11ee5b3bd1940e274d0c7073ec32cd99e59e77b19",
+      "origin": "original-tool-or-documentation"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "originalLabOnly": true,
+  "expandedNetworkFailureTrace": [
+    {
+      "call": 1,
+      "action": "retry",
+      "originalClass": "network",
+      "errorClass": "network",
+      "count": 1,
+      "limit": 30,
+      "delayMs": 500,
+      "nominalDelayMs": 500
+    },
+    {
+      "call": 2,
+      "action": "retry",
+      "originalClass": "network",
+      "errorClass": "network",
+      "count": 2,
+      "limit": 30,
+      "delayMs": 1000,
+      "nominalDelayMs": 1000
+    },
+    {
+      "call": 3,
+      "action": "retry",
+      "originalClass": "network",
+      "errorClass": "network",
+      "count": 3,
+      "limit": 30,
+      "delayMs": 2000,
+      "nominalDelayMs": 2000
+    },
+    {
+      "call": 4,
+      "action": "retry",
+      "originalClass": "network",
+      "errorClass": "server",
+      "count": 1,
+      "limit": 2,
+      "delayMs": 8000,
+      "nominalDelayMs": 8000
+    },
+    {
+      "call": 5,
+      "action": "stop",
+      "reason": "exhausted",
+      "errorClass": "server",
+      "originalClass": "network",
+      "count": 2,
+      "limit": 2
+    }
+  ],
+  "stoppedThenDisconnected": "succeeded-unclean",
+  "poison": [
+    "replay",
+    "replay",
+    "skipped-poison"
+  ],
+  "cursor": 7,
+  "simulatedServerExecutions": 1,
+  "oversizedMirror": {
+    "account": "demo",
+    "session": "demo",
+    "at": 0,
+    "attachmentCount": 1,
+    "omitted": "exceeds-capacity"
+  }
+}

@@ -1,0 +1,1257 @@
+{
+  "title": "卷十六 Resilience & Quota 证据与实验清单",
+  "research_scope": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "artifact_root": "resources/ion-dist",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+    "collection_date": "2026-10-15",
+    "target_execution": false,
+    "authenticated_requests": false,
+    "private_endpoint_requests": false,
+    "raw_source_redistributed": false
+  },
+  "status": "collection closed for selected paths; static conclusions only",
+  "rea": {
+    "tool_version": "6.5.0",
+    "evidence_id": "ev_8ed6418a14d521ec9c0398ae5199219f6c4b34f9b57416c964ea9f6a9bc99905",
+    "provider": {
+      "id": "rea-javascript-application",
+      "name": "REA JavaScript application analyzer",
+      "version": "1"
+    },
+    "root_artifact_sha256": "ec34292b7d85207e70a6246a2d60cd2bb9c8d51cf3c85e255520ae79496881fb",
+    "source_selection": {
+      "requested_paths": [
+        "assets/v1/shared-156-BeTC6pHT.js",
+        "assets/v1/shared-104-lA7EKODn.js",
+        "assets/v1/shared-130-CGEumh8Q.js",
+        "assets/v1/shared-182-CW7gYT2d.js"
+      ],
+      "unselected_files": 3492
+    },
+    "statistics": {
+      "relevant_files": 3496,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 1681125,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 4,
+      "visited_ast_nodes": 472122,
+      "findings": 5934,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "limitations": [
+      "Caller-selected source analysis leaves 3492 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+    ],
+    "private_raw_sha256": "d63c193303b5ec9f08fffc0f65eacf62f046167da693cfa12e443ba040cac7b9",
+    "raw_result_published": false,
+    "note": "Four selected modules parsed by installed REA; additional caller/helper closure was manually inspected as inert source."
+  },
+  "source_files": {
+    "assets/v1/shared-1-7J3IM-U8.js": {
+      "bytes": 337733,
+      "sha256": "574dfbd5228bfbb92236000f4c73d603c7bcf32a0086a6888665bd5665640f58"
+    },
+    "assets/v1/shared-156-BeTC6pHT.js": {
+      "bytes": 448220,
+      "sha256": "b0e9ec9ce4efa5474d12098f0c7811b3d47a5f83bc1c71e9cec34462d0cceee9"
+    },
+    "assets/v1/shared-0-CIydqnOr.js": {
+      "bytes": 370934,
+      "sha256": "710b12a51d9f978721d0683c8229d5d50e82507b7b7d13d49ae9cd6f30baa3e2"
+    },
+    "assets/v1/shared-104-lA7EKODn.js": {
+      "bytes": 348029,
+      "sha256": "60a441eeb9086024face5a823bce2cc9a1129d592aafb58db615f72f57398983"
+    },
+    "assets/v1/shared-2-SYzsATg-.js": {
+      "bytes": 440042,
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc"
+    },
+    "assets/v1/shared-130-CGEumh8Q.js": {
+      "bytes": 463843,
+      "sha256": "ccee249b4f0203b0a462e6c1d488905fec77b03fe7aee3f0390a470016795e10"
+    },
+    "assets/v1/shared-182-CW7gYT2d.js": {
+      "bytes": 421033,
+      "sha256": "96bdca0dbb904c78079ea7def1cd943ba9881dcce379de0c349a9be9e0618280"
+    }
+  },
+  "claims": [
+    {
+      "id": "RQ-01",
+      "claim": "Retry-mode precedence is disabled/off, emergency, idempotency/expanded, otherwise legacy.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "function fA(e){return e.completionRetryDisabled?",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 166445,
+        "end": 166493,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 166445,
+        "end": 166493,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-02",
+      "claim": "The classic hook passes resolved retry mode, budget and stated-wait gates; separate networkRetryOnOpen is enabled only for legacy.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "retryMode:o,retryPerTurnBudget:fe",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 175468,
+        "end": 175501,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 175468,
+        "end": 175501,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-03",
+      "claim": "The expanded/shared transport classifier treats LO and recognized network TypeErrors as network, excludes container conflicts,429 and other4xx, then separates overload from generic5xx. Legacy/emergency instead use overload-type-only classifiers without the same status exclusions.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function uj(e){if(e instanceof LO)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 253080,
+        "end": 253114,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 253080,
+        "end": 253114,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-04",
+      "claim": "The complete selected mode factory defines off, legacy, expanded and emergency; the constants are inventoried below.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function dj(e){switch(e)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 253487,
+        "end": 253511,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 253487,
+        "end": 253511,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-05",
+      "claim": "Exponential delay caps the exponent with min(maxAttempts, previousAttempts); this maxAttempts name does not itself limit requests.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function IE({numPrevAttempts:e=1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 210926,
+        "end": 210958,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 210926,
+        "end": 210958,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-06",
+      "claim": "Jitter is symmetric around the nominal exponential delay, floored to a nonnegative millisecond value; sleep receives the abort signal.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "async function LE({numPrevAttempts:e=1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 211049,
+        "end": 211087,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 211049,
+        "end": 211087,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-07",
+      "claim": "After three network-class failures, further network failures in a schedule with generic-server handling count as generic-server failures; expanded continuous network failure therefore stops on its fifth failed outer call absent other effects.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "r===\"network\"&&v.network>=3",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 257640,
+        "end": 257667,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 257640,
+        "end": 257667,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-08",
+      "claim": "Inherited failure count reduces a class budget only when its schedule explicitly opts in, the run has per-turn enabled, and inherited error class matches. The legacy overload schedule opts in.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "E.perTurnBudget&&g===T?",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 258239,
+        "end": 258262,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 258239,
+        "end": 258262,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-09",
+      "claim": "The outer retry executor has a 50-call runaway guard, separate from ordinary per-class exhaustion.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "if(e>=50)throw",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 255894,
+        "end": 255908,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 255894,
+        "end": 255908,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-10",
+      "claim": "Stated wait takes a finite numeric body retry_after in seconds and, only for HTTP529, a header helper; positive maximum is capped to120000ms.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function hj(e){if(!(e instanceof K))",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 254400,
+        "end": 254436,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 254400,
+        "end": 254436,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-11",
+      "claim": "The classic helper only reads a Headers instance and positive finite numeric Retry-After seconds; it does not implement HTTP-date parsing.",
+      "evidence_kind": "observed-source",
+      "surface": "shared-http-helper",
+      "file": "assets/v1/shared-0-CIydqnOr.js",
+      "anchor": "function fK(e){let t=e.extra?.headers",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 308993,
+        "end": 309030,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 308993,
+        "end": 309030,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 19
+    },
+    {
+      "id": "RQ-12",
+      "claim": "Backoff sleep and optional stated wait are awaited together with Promise.all, so their maximum controls the wait, not their sum.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function gj(e,t,n){return t===void 0?",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 254663,
+        "end": 254700,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 254663,
+        "end": 254700,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-13",
+      "claim": "A stated wait over60000ms can exhaust the run immediately when per-turn behavior is enabled; otherwise continuing stated waits receive additional positive jitter.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "M=a&&j!==void 0&&j>pj",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 258356,
+        "end": 258377,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 258356,
+        "end": 258377,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-14",
+      "claim": "The stream caller obeys stated waits in the retry-completion endpoint mode, while separately passing keepStatedWait and the current model.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "obeyStatedWait:C&&t===2",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 277967,
+        "end": 277990,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 277967,
+        "end": 277990,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-15",
+      "claim": "Backoff history uses a versioned storage key, five-minute TTL, two-minute stated horizon and a stored failure cap of15.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "var rD=[\"network\",\"server.generic\",\"server.overloaded\"]",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 222899,
+        "end": 222954,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 222899,
+        "end": 222954,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-16",
+      "claim": "History parser validates version, nonnegative integral failures, bounded future timestamps and optional class/model fields; malformed records are ignored.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function gD(e){if(!e)return null",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 223457,
+        "end": 223489,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 223457,
+        "end": 223489,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-17",
+      "claim": "Local and session records are compared by lastFailureAt; newer session data is promoted to local if possible, with caught storage errors.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function xD(){let e=vD(\"local\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 224356,
+        "end": 224387,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 224356,
+        "end": 224387,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-18",
+      "claim": "Failure writes inherit fresh failure count, cap it, merge stated-wait horizons, and fall back from localStorage to sessionStorage; this is not a per-conversation map. The executor bypasses this write for its synthetic LO reconnect signal; this is not a counter of all exceptions.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function ED(e){let t=xD(),n=Date.now()",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 224804,
+        "end": 224842,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 224804,
+        "end": 224842,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-19",
+      "claim": "Successful enabled retry execution clears both stores; expiry removes stale history when read.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function DD(){bD(\"local\"),bD(\"session\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 225432,
+        "end": 225471,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 225432,
+        "end": 225471,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-20",
+      "claim": "The history store notifies same-tab subscribers and observes cross-tab storage events while subscribed.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "function TD(e){return SD.size===0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 224610,
+        "end": 224643,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 224610,
+        "end": 224643,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-21",
+      "claim": "Reconnect resend requires expanded mode, non-detached call, at least one turn message UUID and a separate reconnect-resend gate.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "We=x===\"expanded\"&&!D",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 265734,
+        "end": 265755,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 265734,
+        "end": 265755,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-22",
+      "claim": "After a stream returns, gated resend is considered only if not aborted and a message_start was observed, with a pending successor or no final stop/stop reason.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "We&&!v.signal.aborted&&me&&(ce||!se&&!R)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 277406,
+        "end": 277446,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 277406,
+        "end": 277446,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-23",
+      "claim": "A network error after message_stop is suppressed only with no pending successor; the retry executor returns closedCleanly=false rather than replaying.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "se&&!ce&&uj(e)===\"network\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 277175,
+        "end": 277201,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 277175,
+        "end": 277201,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-24",
+      "claim": "Both server event labels call onModelFallback with first-hop/pre-stream metadata and can mark a pending successor after a prior stop; this is not client-side quota model selection.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-chat",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "case\"model_fallback\":case\"model_update\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 274578,
+        "end": 274617,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 274578,
+        "end": 274617,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-25",
+      "claim": "Read-only persistence probe uses absolute time offsets, may skip overdue intermediate reads, searches for a client message UUID and supports abort.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-reconciliation",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "mk=[1500,3e3,5e3,8e3,12e3,16e3,2e4]",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 161058,
+        "end": 161093,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 161058,
+        "end": 161093,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-26",
+      "claim": "The opened-stream-loss probe is gate-controlled, requires an opened stream without assistant identity or final reason, a recognized transport error, not known offline, a human UUID, and non-edit/non-background conditions; inline-create needs an additional gate.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-reconciliation",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "if(he&&Ht===!0&&z===void 0",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 182175,
+        "end": 182201,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 182175,
+        "end": 182201,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-27",
+      "claim": "A separate gated container-conflict probe runs only after an automatic open retry without assistant UUID, with human UUID and non-create/non-edit/non-background context.",
+      "evidence_kind": "observed-source",
+      "surface": "classic-reconciliation",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "if(_e&&a&&n.errorCode===\"wiggle_container_in_use\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 182915,
+        "end": 182964,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 182915,
+        "end": 182964,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-28",
+      "claim": "CCR event subscription defines35s idle restart, exponential random reconnect up to30s, and two empty idle attempts before optional polling.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "var Dw=35e3,Ow=1e3",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 180326,
+        "end": 180344,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 180326,
+        "end": 180344,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-29",
+      "claim": "CCR rebuilds last-event-id from its current numeric cursor, removing stale copies of the header.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "function Uw(e,t){if(e?.headers===void 0)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 188351,
+        "end": 188391,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 188351,
+        "end": 188391,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-30",
+      "claim": "CCR410 clears its cursor and redials; other fatal errors generally stop except bounded device-attestation403 paths. This special410 handling is in SSE, not the generic poll-error branch.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "if(t?.fatal)throw t.status===410?",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 186978,
+        "end": 187011,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 186978,
+        "end": 187011,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-31",
+      "claim": "CCR Retry-After parser accepts numeric seconds or HTTP-date; the SSE reconnect wait is capped at30s and the poll wait at5minutes.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "function Ww(e){if(!e)return;",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 188708,
+        "end": 188736,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 188708,
+        "end": 188736,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-32",
+      "claim": "CCR consumer failures without sequence are dropped; a known poisoned sequence is replayed until the third strike then skipped and acknowledged.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "oe=(e,t)=>{let n=t instanceof Error?",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 181570,
+        "end": 181606,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 181570,
+        "end": 181606,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-33",
+      "claim": "CCR polling is gate-controlled, reads event pages with a cursor, suppresses already-consumed sequences, adapts page limit on some timeout paths, and periodically returns to an SSE probe.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr",
+      "file": "assets/v1/shared-104-lA7EKODn.js",
+      "anchor": "ce=async()=>{S||(S=!0,F(\"entered\"))",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 182219,
+        "end": 182254,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 182219,
+        "end": 182254,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-34",
+      "claim": "The Code/Cowork subscription adapter supplies cursor callbacks, attestation, dynamic polling enablement and a configured interval; it emits stream signals to its consumer.",
+      "evidence_kind": "observed-source",
+      "surface": "code-ccr-caller",
+      "file": "assets/v1/shared-2-SYzsATg-.js",
+      "anchor": "a=Uc(e.rawFetch,e.orgUuid,t",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 216816,
+        "end": 216843,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 216816,
+        "end": 216843,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 20
+    },
+    {
+      "id": "RQ-35",
+      "claim": "Streaming message_limit is saved as a limit result, independently from transport retry classification; first-hit data is locally normalized.",
+      "evidence_kind": "observed-source",
+      "surface": "quota",
+      "file": "assets/v1/shared-156-BeTC6pHT.js",
+      "anchor": "case\"message_limit\":{let e=Oj",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 274057,
+        "end": 274086,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 274057,
+        "end": 274086,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 2
+    },
+    {
+      "id": "RQ-36",
+      "claim": "Rate-limit presentation combines server message_limit, credits-required details, first-hit and paid-age fields; it separately handles windows, model/overage and concurrent limits.",
+      "evidence_kind": "observed-source",
+      "surface": "quota",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "function ef(e,t,n,r,i,a=!1",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 39731,
+        "end": 39757,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 39731,
+        "end": 39757,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-37",
+      "claim": "Five-hour and seven-day claims are explicitly recognized by the post-plan-change explanatory route with additional exclusion conditions.",
+      "evidence_kind": "observed-source",
+      "surface": "quota",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "c.representativeClaim===\"five_hour\"||c.representativeClaim===\"seven_day\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 40330,
+        "end": 40402,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 40330,
+        "end": 40402,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-38",
+      "claim": "Concurrent-limit errors get a dedicated finish-or-stop-running-response message, rather than an inferred five-hour timer.",
+      "evidence_kind": "observed-source",
+      "surface": "quota",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "c.representativeClaim===\"concurrents\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 40628,
+        "end": 40665,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 40628,
+        "end": 40665,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-39",
+      "claim": "Thinking-specific and Opus-specific limit branches differ; the latter is rethrown here instead of absorbed by the generic toast.",
+      "evidence_kind": "observed-source",
+      "surface": "quota",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "if(e.errorCode===\"opus_messages_rate_limit_exceeded\")throw e",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 40851,
+        "end": 40911,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 40851,
+        "end": 40911,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-40",
+      "claim": "Recent plan-success marker is organization-scoped and valid for five minutes; it can support an updating-limits explanation, not proof of new quota availability.",
+      "evidence_kind": "observed-source",
+      "surface": "quota",
+      "file": "assets/v1/shared-130-CGEumh8Q.js",
+      "anchor": "var Hd=3e5,Ud=null",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 38477,
+        "end": 38495,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 38477,
+        "end": 38495,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 4
+    },
+    {
+      "id": "RQ-41",
+      "claim": "Independent unavailable-model fallback selects a changed current account chat model only if present, enabled and not deprecated/legacy, after a gated account refresh with a3s race.",
+      "evidence_kind": "observed-source",
+      "surface": "model-availability",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "function ik(e,t){let n=e?.model_selector_state",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 159237,
+        "end": 159283,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 159237,
+        "end": 159283,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-42",
+      "claim": "For an existing conversation the unavailable-model path restores failed-input data and offers a user switch action; it is not an unconditional automatic quota downgrade.",
+      "evidence_kind": "observed-source",
+      "surface": "model-availability",
+      "file": "assets/v1/shared-1-7J3IM-U8.js",
+      "anchor": "action:f(Zc,{fallbackModelName:Le.name,onSwitch:",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 185381,
+        "end": 185429,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 185381,
+        "end": 185429,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-43",
+      "claim": "The static draft mirror only projects plain paragraph/text documents without marks or embedded newline; richer documents receive omission metadata.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "function tb(e){let t=e;if(!t||t.type!==\"doc\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 113134,
+        "end": 113179,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 113134,
+        "end": 113179,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 3
+    },
+    {
+      "id": "RQ-44",
+      "claim": "Mirror writes enforce4096 UTF-8 bytes and retain account/session, timestamp and attachment/file counts; omitted text does not mean the underlying full draft is deleted.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "new TextEncoder().encode(i.text).length>4096",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 113813,
+        "end": 113857,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 113813,
+        "end": 113857,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 5
+    },
+    {
+      "id": "RQ-45",
+      "claim": "Mirror persistence checks empty/quarantine states, owner, current and recorded session markers, and owner identity at enqueue time.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "function fb(e,t){if(e===null||!Be(e))",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 115116,
+        "end": 115153,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 115116,
+        "end": 115153,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 5
+    },
+    {
+      "id": "RQ-46",
+      "claim": "Mirror read requires current account and session equality. Its low-level parser checks text.length<=4096 code units; this differs from the write byte cap.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "function hb(){let e=db();if(e===null)",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 115711,
+        "end": 115748,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 115711,
+        "end": 115748,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 5
+    },
+    {
+      "id": "RQ-47",
+      "claim": "Draft restore may defer on absent/mismatched session marker, confirmed-account mismatch or ambiguous markers rather than blindly hydrating.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "function _b(){if(typeof document>\"u\")",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 115856,
+        "end": 115893,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 115856,
+        "end": 115893,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 5
+    },
+    {
+      "id": "RQ-48",
+      "claim": "Full editor store has independent persisted restore/hydration states, suppression flags, seed precedence and temporary-conversation handling.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "function NE(e){let{conversationId:t=\"default\"",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 169960,
+        "end": 170005,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 169960,
+        "end": 170005,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 47
+    },
+    {
+      "id": "RQ-49",
+      "claim": "Editor persistence suppresses writes while restore is suppressed or hydration/seed/unmount ownership constraints are unresolved; queued content can trigger deferred hydration.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "setItem:(e,n)=>{if(!l&&!Ws(t))",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 171026,
+        "end": 171056,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 171026,
+        "end": 171056,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 47
+    },
+    {
+      "id": "RQ-50",
+      "claim": "Delayed attachment reference cleanup checks store generation before deleting references; stale owners should not collect data used by a newer instance.",
+      "evidence_kind": "observed-source",
+      "surface": "draft",
+      "file": "assets/v1/shared-182-CW7gYT2d.js",
+      "anchor": "if((DE.get(t)??0)>c)return;",
+      "anchor_occurrences": 1,
+      "selected_occurrence": 0,
+      "character_range": {
+        "start": 175563,
+        "end": 175590,
+        "unit": "Unicode code points, zero-based, end-exclusive"
+      },
+      "byte_range": {
+        "start": 175563,
+        "end": 175590,
+        "unit": "UTF-8, zero-based, end-exclusive"
+      },
+      "line": 47
+    }
+  ],
+  "mode_schedule": {
+    "off": {},
+    "legacy": {
+      "server.overloaded": {
+        "failure_limit": 10,
+        "base_ms": 5000,
+        "factor": 1.5,
+        "jitter": 0.1,
+        "inherits_class_budget": true
+      }
+    },
+    "expanded": {
+      "network": {
+        "declared_failure_limit": 30,
+        "base_ms": 500,
+        "factor": 2,
+        "jitter": 0.1,
+        "exponent_cap": 4,
+        "control_flow_note": "after3 network failures further network errors count as server.generic"
+      },
+      "server.generic": {
+        "failure_limit": 2,
+        "base_ms": 8000,
+        "factor": 1.5,
+        "jitter": 0.15
+      },
+      "server.overloaded": {
+        "failure_limit": 5,
+        "base_ms": 8000,
+        "factor": 1.5,
+        "jitter": 0.15
+      }
+    },
+    "emergency": {
+      "server.overloaded": {
+        "failure_limit": 3,
+        "base_ms": 45000,
+        "factor": 2,
+        "jitter": 0.2,
+        "exponent_cap": 2
+      }
+    }
+  },
+  "public_sources": [
+    {
+      "id": "PUB-01",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "sections": [
+        "9.2.2",
+        "10.2.3"
+      ],
+      "purpose": "HTTP idempotent retry and Retry-After semantics; not evidence of Claude private endpoint implementation",
+      "checked": "2026-10-15"
+    },
+    {
+      "id": "PUB-02",
+      "url": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work",
+      "purpose": "Public product distinction between usage and context length; five-hour and weekly usage windows",
+      "checked": "2026-10-15"
+    },
+    {
+      "id": "PUB-03",
+      "url": "https://platform.claude.com/docs/en/api/errors",
+      "purpose": "Public API429/529/stream errors comparison only; not classic app retry rules",
+      "checked": "2026-10-15"
+    },
+    {
+      "id": "PUB-04",
+      "url": "https://platform.claude.com/docs/en/api/rate-limits",
+      "purpose": "Public API rate-limit dimensions and waiting guidance; not subscription-client quota formula",
+      "checked": "2026-10-15"
+    }
+  ],
+  "original_lab": {
+    "directory": "staging/resilience-expansion",
+    "target_code_imported": false,
+    "target_application_executed": false,
+    "tests": {
+      "command": "node --test --test-reporter=tap test/*.test.mjs",
+      "passed": 52,
+      "failed": 0,
+      "scope": "original deterministic teaching model, not target runtime behavior"
+    },
+    "differences": [
+      "Original classes and abstract error records replace target closures and error classes.",
+      "The Retry-After teaching parser rejects malformed numeric forms more strictly than target Number/Date.parse helpers.",
+      "Teaching cursor rejects duplicate sequences for all deliveries; target explicit duplicate filtering was observed in poll path, not universally asserted for SSE.",
+      "Teaching mirror reader enforces UTF-8 byte cap while target low-level read parser uses string code-unit length.",
+      "Teaching hydration uses explicit edit revisions and owner epochs; target full rich-editor merge and attachment lifecycle are not cloned.",
+      "IdempotentServer is a hypothetical educational server contract, not evidence of target server deduplication.",
+      "Ledger lab retains only version/count/time, not target model-scoped stated-wait metadata."
+    ],
+    "validation_file": "staging/resilience-expansion/validation.json",
+    "diagrams": {
+      "mermaid": 5,
+      "svg": 2,
+      "visual_check": "Original SVG diagrams rendered to PNG and visually reviewed"
+    }
+  },
+  "limitations": [
+    "No target execution, fault injection, login, or private endpoint requests.",
+    "Feature gates prove conditional code paths, not enabled population or user account rollout.",
+    "No proof of exactly-once processing, durable server deduplication window, or tool-effect transactionality.",
+    "No claim about full offline editing, encrypted local draft storage, multi-device draft synchronization or complete text preservation by the lightweight mirror.",
+    "HTTP/API public docs are kept separate from app product quota behavior.",
+    "Code/CCR subscription transport must not be generalized into classic completion replay."
+  ],
+  "independent_review": {
+    "anchor_character_and_byte_offsets_verified": 50,
+    "source_hashes_and_sizes_verified": 7,
+    "original_tests_passed": 52,
+    "material_corrections_applied": [
+      "Mode-specific classifier scope; legacy/emergency do not reuse expanded status exclusions.",
+      "Invalid teaching cursor sequences treated as ID-less rather than rejected.",
+      "Successful ID-less event no longer clears teaching poison strikes; chapter qualifies reset statement."
+    ]
+  }
+}

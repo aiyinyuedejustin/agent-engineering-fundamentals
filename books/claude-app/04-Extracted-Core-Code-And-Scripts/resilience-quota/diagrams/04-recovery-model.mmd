@@ -1,0 +1,9 @@
+flowchart TD
+    E[收到有序事件] --> D{已消费过吗}
+    D -->|是，教学模型统一过滤| Skip[忽略重复]
+    D -->|否| Apply[调用业务消费者]
+    Apply -->|成功| Ack[提交 cursor]
+    Apply -->|失败且无 ID| Drop[报告并丢弃]
+    Apply -->|失败且有 ID| Strike[累计同 ID 失败]
+    Strike -->|少于3次| Replay[重连重放]
+    Strike -->|第3次| Poison[报告缺口并越过毒事件]

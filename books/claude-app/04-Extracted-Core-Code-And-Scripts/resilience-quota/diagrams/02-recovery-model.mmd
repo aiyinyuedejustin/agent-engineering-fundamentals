@@ -1,0 +1,6 @@
+flowchart LR
+    N1[network 1] -->|0.5 s| N2[network 2]
+    N2 -->|1 s| N3[network 3]
+    N3 -->|2 s| G1[第4次错误改计 generic 1]
+    G1 -->|8 s| G2[第5次错误 generic 2]
+    G2 --> X[预算耗尽]

@@ -1,0 +1,11 @@
+stateDiagram-v2
+    [*] --> Unhydrated
+    Unhydrated --> Deferred: 身份尚未对齐
+    Unhydrated --> Reading: 可读且所有者明确
+    Deferred --> Reading: 身份条件解决后重读
+    Deferred --> Abandoned: 所有者变更或验证失败
+    Reading --> Restored: 无更新的输入冲突
+    Reading --> PreserveNewEdit: 已有较新的编辑
+    Reading --> Abandoned: 世代或所有者已变化
+    Restored --> Writable: 非临时且通过写入条件
+    PreserveNewEdit --> Writable: 恢复阶段已安全完成

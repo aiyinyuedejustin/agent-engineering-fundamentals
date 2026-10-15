@@ -14,6 +14,7 @@
 | 看组件怎样响应操作 | [原创交互工作台](01-Frontend-Design-And-HTML-Templates/interactive-study/index.html) · [运行说明](01-Frontend-Design-And-HTML-Templates/interactive-study/README.md) | 密度、阅读字号、输入状态和 Quick Entry 可以独立研究 |
 | 理解桌面产品的内部组织 | [技术全书目录](02-Illustrated-Deep-Dive-Book/README.md) | 窗口、内容、能力与执行拥有不同的生命周期 |
 | 让另一个 agent 接着做 | [Skills 导航](03-Ready-To-Use-Agent-Skills/README.md) | 把选型依据、反例和代码入口一起交给 agent |
+| 一条命令比较新旧版本 | [自动逆向工具箱](05-Automated-Reverse-Toolkit/README.md) | 受限解包、静态快照与可追溯的配色/开关/契约/遥测差分 |
 | 复算参数或研究新版本 | [代码与脚本](04-Extracted-Core-Code-And-Scripts/README.md) | 重要结论能追到输入，也能从输入重新算出来 |
 
 ## 前端：先看图，再看代码
@@ -60,6 +61,7 @@
 | 13 | [原生系统桥接](02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/README.md) | 窗口上下文、选择文字与最终编辑目标如何保持同一身份？ |
 | 14 | [安全防线与执行边界](02-Illustrated-Deep-Dive-Book/14-Security-And-Guardrails/README.md) | 内容、权限、资源身份与执行之间，哪些检查不能省？ |
 | 15 | [语音与视觉数学](02-Illustrated-Deep-Dive-Book/15-Voice-And-Vision-Math/README.md) | 采样、播放、像素、显示器与文档坐标如何换算？ |
+| 16 | [恢复、限流与配额](02-Illustrated-Deep-Dive-Book/16-Resilience-And-Quota/README.md) | 断网以后，怎样先判断已经完成的工作，再决定重试？ |
 | 17 | [状态、恢复与更新](02-Illustrated-Deep-Dive-Book/17-State-Recovery-And-Updates/README.md) | 网络失败、配置损坏、崩溃与升级分别怎样处理？ |
 | 18 | [版本与跨平台](02-Illustrated-Deep-Dive-Book/18-Versions-And-Cross-Platform/README.md) | 三个平台共享哪些字节，又保留哪些系统差异？ |
 
