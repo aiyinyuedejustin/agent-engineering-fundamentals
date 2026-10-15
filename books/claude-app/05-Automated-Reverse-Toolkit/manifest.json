@@ -4,8 +4,8 @@
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 53,
-      "sha256": "98a388463c09aa5b69b14cee4c88a62b34d73ed12fafd39c56f8adb43c4aa9b4",
+      "bytes": 101,
+      "sha256": "8ad6e4b512ff44f9ca3391c1d2c15e1c446c18b29c78be7749515c67bf7d6ed7",
       "origin": "original-tool-or-documentation"
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 24665,
-      "sha256": "be46259b9e86cb037b9407d4bb23e1352b35423d5179b6491f3d5125a2c44e66",
+      "bytes": 24824,
+      "sha256": "0bc86c30b9f76e947d5fa67bb49b4ad0bebbd2f1201f067651f44dd381126225",
       "origin": "original-tool-or-documentation"
     },
     {

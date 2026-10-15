@@ -1,27 +1,10 @@
 # 自动化静态逆向工具箱
 
-> 候选边界：本工具输出静态候选清单，不证明 JavaScript 语义完整。
-
-### 候选、覆盖与已知词法局限
-
-- 快照及差分明确给出 `analysis_kind: "lexical_candidate_inventory"`、`semantic_completeness_proven: false`。
-- `coverage.complete_within_declared_scope` 只汇总声明范围内已报告的文件/候选管线检查。即使为 `true`，也不能推出 JavaScript 语义完整、候选全真、没有遗漏或运行时无变化。
-- JavaScript 的模板与正则边界使用启发式。嵌套模板、插值内含反引号的正则、正则/除法上下文和字符串值/关键字混淆都可能导致拒绝、假候选或漏候选；未抛错并不排除这些问题。
-- 原创最小反例的内层模板内容目前可能被误识别为调用候选：
-
-  ```javascript
-  const t = `${`checkGate("synthetic_false")`}`;
-  ```
-
-  该局限仍未修复；需要独立 AST/人工核验。[独立局限探针](probes/known_lexical_limitations.py)单独记录为 `expected-limitation-reproduced`，不能视为正确性通过。
-- 新增的有界诊断只有稳定类别、字节位置、计数等元数据，不含原始源码或异常文本。`byte_start` / `byte_cursor` 是原输入 UTF-8 字节序列中的零基偏移；当前实现以 Latin-1 一字节一字符视图保持该合同。
-- `js-quoted-state-unclosed` 描述扫描器到达输入末尾时的词法状态，不断言输入的 JavaScript 语法损坏，也不保证该位置是首次失步点。`js-token-bound-exceeded` 保留 1,000,000 token 原有硬上限。
-- 本次诊断增强不改变接受范围，不恢复拒绝文件的候选，不提限。旧 v1 快照仍可读；缺少上述新增字段同样不意味着语义完整。策略版本变化会在新旧快照比较时保留告警。
-
-
 一个可复用、离线、Python 标准库优先的入口：**目录/受限 ZIP/受限 ASAR → 静态快照 → CSS token 与色阶候选 → 旗标、工具契约、遥测字面量候选 → 两版本 JSON + 中文 Markdown 差分**。
 
 这是原创研究工具，不是 Claude 官方 SDK、产品运行时，也不是完整反编译器。不下载产品、不运行安装器、不执行被分析的代码。交付只包含原创工具与合成测试，未附安装包、产品 bundle、字体或完整源码。
+
+> 候选边界：本工具输出静态候选清单，不证明 JavaScript 语义完整。
 
 ## 一条命令先跑通
 
@@ -38,7 +21,7 @@ python3 -B reverse_toolkit.py compare --old tests/fixtures/v1 --new tests/fixtur
 - `diff.json`：完整机器可读差分，包括来源定位、覆盖警告和待核候选
 - `diff.md`：中文可读差分，保留旧值、新值和来源
 
-输出必须是**尚不存在的新目录**，父目录必须存在。重复运行请换输出名；工具不会覆盖旧证据。`private-output/` 已加入忽略规则，但这不是隐私保护或发布审查的替代品。
+输出必须是**尚不存在的新目录**，父目录必须存在。重复运行请换输出名；工具不会覆盖旧证据。`private-output/`、`private-version-output/` 和 `private-directory-diff/` 已加入忽略规则，但这不是隐私保护或发布审查的替代品。
 
 本合成例子会展示 1 个 token 新增、1 个移除、1 个值变化，1 个新旗标候选、2 个旗标值变化候选，以及契约摘要和遥测字面量变化。这里的 `demo_*` 全是原创测试名字，与产品功能无关。
 
@@ -47,19 +30,19 @@ python3 -B reverse_toolkit.py compare --old tests/fixtures/v1 --new tests/fixtur
 `diff-versions.py` 把准备 ZIP/ASAR 输入和生成差分合成一次调用。旧、新输入各自可以是已经解包的目录，或满足安全子集的本地 ZIP/ASAR；这些类型可以混用。ASAR 默认拒绝外置 companion；可通过 `--old-unpacked-dir` / `--new-unpacked-dir` 显式指定并严格核验精确配套目录。链接始终拒绝，先用 `inspect-asar` 查看容器声明与覆盖缺口。脚本应与 `reverse_toolkit.py`、`toolkit/` 放在同一目录。
 
 ```sh
-python3 -B diff-versions.py "/path/to/old.zip" "/path/to/new.zip" --output "/path/to/private/new-version-diff"
+python3 -B diff-versions.py "/path/to/old.zip" "/path/to/new.zip" --output "/path/to/private/private-version-output"
 ```
 
 直接比较目录也一样：
 
 ```sh
-python3 -B diff-versions.py tests/fixtures/v1 tests/fixtures/v2 --old-label synthetic-v1 --new-label synthetic-v2 --output private-output
+python3 -B diff-versions.py tests/fixtures/v1 tests/fixtures/v2 --old-label synthetic-v1 --new-label synthetic-v2 --output private-directory-diff
 ```
 
-打开 `private-output/report/diff.md`。ZIP 示例的实际输出路径以 `--output` 为准。输出结构：
+打开 `private-directory-diff/report/diff.md`。ZIP 示例打开 `/path/to/private/private-version-output/report/diff.md`；实际输出路径以 `--output` 为准。ZIP 示例输出结构：
 
 ```text
-new-version-diff/
+private-version-output/
   inputs/
     old/            # 只有旧输入为 ZIP/ASAR 时存在；保留私有解包内容
     new/            # 只有新输入为 ZIP/ASAR 时存在；保留私有解包内容
@@ -182,6 +165,23 @@ python3 -B reverse_toolkit.py snapshot --input "/path/to/unpacked" --label "cust
 ```
 
 要求保留全部六个规则列表，每项是有界 ASCII 标识符，不接受正则或可执行代码。同一别名跨文件可能绑定到不同函数；添加名称不等于证明绑定关系。规则摘要进入快照；不同规则之间的差分会明确降为待核。
+
+### 候选、覆盖与已知词法局限
+
+- 快照及差分明确给出 `analysis_kind: "lexical_candidate_inventory"`、`semantic_completeness_proven: false`。
+- `coverage.complete_within_declared_scope` 只汇总声明范围内已报告的文件/候选管线检查。即使为 `true`，也不能推出 JavaScript 语义完整、候选全真、没有遗漏或运行时无变化。
+- JavaScript 的模板与正则边界使用启发式。嵌套模板、插值内含反引号的正则、正则/除法上下文和字符串值/关键字混淆都可能导致拒绝、假候选或漏候选；未抛错并不排除这些问题。
+- 原创最小反例的内层模板内容目前可能被误识别为调用候选：
+
+  ```javascript
+  const t = `${`checkGate("synthetic_false")`}`;
+  ```
+
+  该局限仍未修复；需要独立 AST/人工核验。[独立局限探针](probes/known_lexical_limitations.py)单独记录为 `expected-limitation-reproduced`，不能视为正确性通过。
+- 新增的有界诊断只有稳定类别、字节位置、计数等元数据，不含原始源码或异常文本。`byte_start` / `byte_cursor` 是原输入 UTF-8 字节序列中的零基偏移；当前实现以 Latin-1 一字节一字符视图保持该合同。
+- `js-quoted-state-unclosed` 描述扫描器到达输入末尾时的词法状态，不断言输入的 JavaScript 语法损坏，也不保证该位置是首次失步点。`js-token-bound-exceeded` 保留 1,000,000 token 原有硬上限。
+- 本次诊断增强不改变接受范围，不恢复拒绝文件的候选，不提限。旧 v1 快照仍可读；缺少上述新增字段同样不意味着语义完整。策略版本变化会在新旧快照比较时保留告警。
+
 
 ## 差分如何判读
 
