@@ -4,6 +4,8 @@
 
 本篇分析 Claude Desktop Linux amd64 2.37337.1 的静态调用结构，分为 bridge 双实现、子进程配置转换、专用 Session 策略三部分。[样本与定位附录](EVIDENCE-APPENDIX.md)记录核验方法。
 
+先约定几个名称：bridge 指本篇追踪的主进程 WebSocket 连接器；transport 指它选择的网络传输实现；Electron Session 是管理浏览器网络会话与配置的对象，与 Agent 会话不是同一个概念。下文的 CA 指证书颁发机构及相关受信任证书，STT 指语音转文字。排查时先确定请求由谁发出，再寻找该请求实际采用的配置。
+
 ![网络所有权原创图](network-ownership.svg)
 
 ## 1. Bridge 的业务调用者没有变，网络实现可以换
