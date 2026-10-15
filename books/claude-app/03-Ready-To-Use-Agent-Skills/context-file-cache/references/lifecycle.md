@@ -35,6 +35,12 @@ const persisted = {
 
 client-context.mjs 是原创、纯本地模型。InlineBudget 在一个 JS 执行环境中同步预留，拒绝并发过额，换 owner 后旧 reservation 失效。它没有跨标签页锁、磁盘持久性、压缩、上传、服务端去重或权限系统。PreviewPool 使用对象身份与引用计数，不按路径/名字共享；真实多账户应用还应为每个 owner 建独立池并在离开时释放。
 
-InlineBudget 的 limit 是构造时验证的只读配置；变更额度须新建账本并按宿主合同迁移现有条目，不能直接修改属性。PreviewPool 在调用注入的 revokeURL 之前移除旧条目，因此该回调重入 acquire 时得到新 URL。revokeURL 若抛错会向调用者传播，旧 handle 已释放且不会复用；这不证明 URL 已实际撤销。宿主需记录并处理清理失败，不能以池为空声称底层资源已回收，也不能重放该 handle 的 release 假装重试成功。
+InlineBudget 的 limit 是构造时验证的只读配置；变更额度须新建账本并按宿主合同迁移现有条目，不能直接修改属性。PreviewPool 在调用注入的 revokeURL 之前移除旧条目，因此该回调重入 acquire 时会重新调用 createURL 创建新条目。revokeURL 若抛错会向调用者传播，旧 handle 已释放且不会复用；这不证明 URL 已实际撤销。宿主需记录并处理清理失败，不能以池为空声称底层资源已回收，也不能重放该 handle 的 release 假装重试成功。
 
 落地需要补测：同名不同内容、相同 bytes 不同权限、磁盘额度耗尽、浏览器清除存储、离线恢复、取消后服务端已经完成、多个标签页同时修改、销毁后迟到回调。文件内容一律是不可信数据，缓存命中不使其成为指令。
+
+## 注入的预览适配器合同
+
+PreviewPool 保持同步 API：createURL(file) 必须同步返回该资源的 URL，失败可以抛错；这是调用前提，代码不验证或支持 Promise 返回值。每次成功创建应提供可独立撤销的资源身份，不能让不同活跃 entry 共用同一个可被撤销的 URL；原生 createObjectURL 符合这一使用方式。同一 File/Blob 对象正在创建时递归 acquire 会明确抛错，避免覆盖活动记录；适配器可捕获该错误继续创建，或让它传播，此时池会清除创建标记以允许重试。不同对象的创建期重入允许。此限制针对自定义适配器回调，原生 URL.createObjectURL 不会自行回调本池；不是浏览器漏洞声明。若适配器在抛错前分配了资源，该资源的清理由适配器负责，因为池没有收到其 URL。
+
+release 只移除它仍持有的 entry，重复 release 不再次撤销。最后一个订阅者释放时仍先移除 entry 再调用 revokeURL，以保留撤销期同对象重入的既有合同。池没有 dispose/clear API；宿主必须释放各 handle，不能把本模型理解为全池销毁接口。

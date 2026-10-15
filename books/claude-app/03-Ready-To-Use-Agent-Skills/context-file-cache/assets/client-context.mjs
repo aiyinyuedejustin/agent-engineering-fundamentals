@@ -31,18 +31,28 @@ export class InlineBudget {
 
 export class PreviewPool {
   #entries = new Map();
+  #creating = new Set();
   constructor(createURL, revokeURL) { this.createURL = createURL; this.revokeURL = revokeURL; }
   acquire(file) {
     if (!file || typeof file !== 'object') throw new TypeError('Expected File/Blob object identity');
+    if (this.#creating.has(file)) throw new Error('Reentrant acquisition while creating this preview');
     let entry = this.#entries.get(file);
-    if (!entry) { entry = { url: this.createURL(file), count: 0 }; this.#entries.set(file, entry); }
+    if (!entry) {
+      this.#creating.add(file);
+      try {
+        entry = { url: this.createURL(file), count: 0 };
+        this.#entries.set(file, entry);
+      } finally {
+        this.#creating.delete(file);
+      }
+    }
     entry.count++; let released = false;
     return Object.freeze({ url: entry.url, release: () => {
       if (released) return false;
       released = true; entry.count--;
       if (entry.count === 0) {
         // Invalidate ownership before calling an adapter that can reenter or throw.
-        this.#entries.delete(file);
+        if (this.#entries.get(file) === entry) this.#entries.delete(file);
         this.revokeURL(entry.url);
       }
       return true;
