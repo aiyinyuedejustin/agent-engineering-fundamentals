@@ -54,4 +54,6 @@ turn_end 到达 worklet 时，记录当时可读样本数为 residualSamples，�
 
 其中，携带代次的flush/ack与单调accepted边界是自建系统可选择的更强合同；本节两文件的静态观察并未建立这类端到端保证。一次原子整数更新只保证那一次访问的性质，多步状态转换仍需自己的协议。
 
+配套[原创确定性交错实验](../../../04-Extracted-Core-Code-And-Scripts/audio-ring-lab/README.md)把copy/publish、copyOut/release、flush/ack与自然end分成显式步骤，可逐步运行，也可运行专门的错误排序反例。实验采用保留尾部政策，与上文所读目标路径的丢弃政策不同。
+
 [返回第15卷](../README.md#72-一个槽为什么不能用)

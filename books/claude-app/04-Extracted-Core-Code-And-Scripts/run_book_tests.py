@@ -18,7 +18,7 @@ def commands(include_skills=False):
     if int(version.lstrip('v').split('.')[0]) < 22:
         raise RuntimeError('完整测试集合需要 Node.js 22+；预览超时实验使用内置虚拟定时器接口。')
     jobs = [('core-code-lab', ROOT / 'core-code-lab', [sys.executable, '-B', 'run_tests.py'])]
-    for folder, pattern in [('worked-cases/sandbox-timeout', '*.test.mjs'), ('worked-cases/state-transitions', '*.test.mjs'), ('async-reading-primer', '*.test.mjs'), ('worked-cases/concurrency-and-streaming', '*.test.mjs'), ('shell-lifecycle', '*.test.mjs'), ('resource-handoff-lab', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
+    for folder, pattern in [('worked-cases/sandbox-timeout', '*.test.mjs'), ('worked-cases/state-transitions', '*.test.mjs'), ('async-reading-primer', '*.test.mjs'), ('worked-cases/concurrency-and-streaming', '*.test.mjs'), ('shell-lifecycle', '*.test.mjs'), ('resource-handoff-lab', '*.test.mjs'), ('audio-ring-lab', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
                             ('streaming-performance', 'test/*.test.mjs'), ('security-guardrails', '*.test.mjs'), ('native-voice-geometry', '*.test.mjs'), ('resilience-quota', 'test/*.test.mjs')]:
         location = ROOT / folder
         files = sorted(location.glob(pattern))

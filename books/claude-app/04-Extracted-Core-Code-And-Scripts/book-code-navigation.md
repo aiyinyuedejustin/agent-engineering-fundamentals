@@ -54,7 +54,7 @@ python3 -B run_book_tests.py --skills
 - 第 8/9 卷：[两个状态转移案例](worked-cases/state-transitions/README.md)，逐步看消息身份重命名和组织切换。
 - 第 9/11 卷：[条件写入与流式工作粒度](worked-cases/concurrency-and-streaming/README.md)，检查旧快照覆盖及大输入块中的取消检查点。
 - 第 13 卷：[Linux 原生层研究与原创回调模型](../02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/linux-native-layer/README.md)；读[callback-gate.mjs](../02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/linux-native-layer/examples/callback-gate.mjs)、[模型测试](../02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/linux-native-layer/examples/callback-gate.test.mjs)及[独立反例](../02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/linux-native-layer/examples/callback-gate.audit.test.mjs)。两份测试已纳入统一入口的 `native-callback-lifetime` 组；资源只是合成 JS 对象，不验证真实线程、fd、PipeWire 或 native 权限。
-- 第 15 卷：从[geometry.mjs](native-voice-geometry/geometry.mjs)继续追坐标换算，再看同目录完整测试与[手算输出](native-voice-geometry/worked-examples.json)。
+- 第 15 卷：先用[音频ring交错实验](audio-ring-lab/README.md)跟踪发布、回收和flush确认；再从[geometry.mjs](native-voice-geometry/geometry.mjs)继续追坐标换算，再看同目录完整测试与[手算输出](native-voice-geometry/worked-examples.json)。
 - 第 16 卷：从[recovery-state.mjs](resilience-quota/recovery-state.mjs)补上订阅游标和草稿恢复；不要将重连当作任务重发。
 
 ## 版本研究、静态候选与独立验证
