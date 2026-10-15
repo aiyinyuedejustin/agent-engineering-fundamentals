@@ -348,7 +348,7 @@ Warmup 不是免费优化：它可能提前下载、解析、实例化与占用�
 
 ## 12. 原创模型：把策略变成可执行契约
 
-配套 [流式实验室](../../04-Extracted-Core-Code-And-Scripts/streaming-performance/README.md) 包含五个独立组件和 27 项测试，均为本书原创代码。它不导入目标 bundle，不模拟私有 API，不声称等价复现全部产品逻辑。
+配套 [流式实验室](../../04-Extracted-Core-Code-And-Scripts/streaming-performance/README.md) 包含五个独立组件和 40 项测试，均为本书原创代码。它不导入目标 bundle，不模拟私有 API，不声称等价复现全部产品逻辑。
 
 ### 12.1 模型的五个边界
 

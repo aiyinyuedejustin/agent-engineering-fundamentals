@@ -119,7 +119,7 @@ timeout 只是停止等待。若底层任务仍运行，标记 stuck 或隔离�
 node --test scripts/test/*.test.mjs
 ```
 
-27 项覆盖快照合并、terminal、重入、可见性、dispose、半个 fence、非前缀编辑、Unicode、全文 finalize、缓存权重、Worker epoch、旧回复、最新原文 fallback、send failure、协作预算与取消。
+40 项覆盖快照合并、terminal、重入、可见性、dispose、半个 fence、非前缀编辑、Unicode、全文 finalize、缓存权重、Worker epoch、旧回复、最新原文 fallback、send failure、协作预算与取消。
 
 教学 StableBlocks 只识别空行段落及顶层 fence，不是 CommonMark。真实应用必须替换 parser adapter，并补充：表格、列表嵌套、引用定义、数学、HTML、主题切换、超长行、协议破坏与异常恢复。
 

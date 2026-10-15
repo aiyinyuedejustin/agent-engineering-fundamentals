@@ -118,14 +118,21 @@ export class WeightedLRU {
   }
   put(key, value, size) {
     if (!Number.isFinite(size) || size < 0) throw RangeError('invalid cache weight');
-    if (!this.entries || size > this.itemWeight || size > this.weight) return false;
-    this.delete(key); this.items.set(key, { value, size }); this.used += size;
-    while (this.items.size > this.entries || this.used > this.weight) this.delete(this.items.keys().next().value);
+    if (this.entries < 1 || size > this.itemWeight || size > this.weight) return false;
+    this.delete(key);
+    // Evict before adding: two individually finite weights may overflow their sum.
+    while (this.items.size + 1 > this.entries || !Number.isFinite(this.used + size) || this.used + size > this.weight)
+      this.delete(this.items.keys().next().value);
+    this.items.set(key, { value, size }); this.used += size;
     return true;
   }
   delete(key) {
     const item = this.items.get(key);
-    if (item) { this.items.delete(key); this.used -= item.size; }
+    if (item) {
+      this.items.delete(key);
+      // Recompute bounded accounting so fractional subtraction leaves no residue.
+      this.used = [...this.items.values()].reduce((sum, entry) => sum + entry.size, 0);
+    }
   }
   clear() { this.items.clear(); this.used = 0; }
 }
@@ -142,7 +149,11 @@ export class LatestWorkerLane {
   submit(text) {
     if (this.closed) return false;
     if (typeof text !== 'string') throw TypeError('text must be a string');
-    if (text.length > this.maxChars) { this.reset(); this.fallback(text, 'oversize'); return false; }
+    if (text.length > this.maxChars) {
+      const sequence = this.sequence, epoch = this.reset();
+      if (!this.closed && this.epoch === epoch && this.sequence === sequence) this.fallback(text, 'oversize');
+      return false;
+    }
     this.latest = Object.freeze({ text, epoch: this.epoch, sequence: ++this.sequence });
     this.pump(); return true;
   }
@@ -164,12 +175,17 @@ export class LatestWorkerLane {
   fail(job, reason = 'worker-failed') {
     if (!this.matches(job) || this.closed) return false;
     const source = this.latest?.text ?? this.busy.text;
-    this.reset(); this.fallback(source, reason); return true;
+    const sequence = this.sequence, epoch = this.reset();
+    // Cancellation adapters may synchronously submit newer work or dispose.
+    if (!this.closed && this.epoch === epoch && this.sequence === sequence) this.fallback(source, reason);
+    return true;
   }
   reset() {
     const busy = this.busy;
-    this.epoch++; this.busy = null; this.latest = null;
-    if (busy) this.cancel(busy);
+    const epoch = ++this.epoch; this.busy = null; this.latest = null;
+    // Revocation is local even if the adapter cannot acknowledge cancellation.
+    if (busy) { try { this.cancel(busy); } catch {} }
+    return epoch;
   }
   dispose() { this.closed = true; this.reset(); }
 }

@@ -11,7 +11,7 @@ node --test --test-reporter=tap models.test.mjs
 node examples.mjs
 ```
 
-本次验证：34 个测试通过，0 个失败。PDF 变换属性测试包含 360 组正向/逆向 round trip。`worked-examples.json` 保存数值示例。
+本次验证：61 个测试通过，0 个失败。PDF 变换属性测试包含 360 组正向/逆向 round trip。`worked-examples.json` 保存数值示例。
 
 ## 文件
 

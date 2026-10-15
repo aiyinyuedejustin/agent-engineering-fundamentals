@@ -23,9 +23,13 @@ export function canonical(value) {
       if (Object.values(entries).some(x => !('value' in x))) reject('accessors are not data');
       if (Object.getOwnPropertySymbols(item).length) reject('symbol keys are not JSON');
       if (Array.isArray(item)) {
-        if (item.length > 4096 || Object.keys(item).length !== item.length
+        if (Object.getPrototypeOf(item) !== Array.prototype || item.length > 4096
+          || Object.keys(entries).length !== item.length + 1 || Object.keys(item).length !== item.length
           || Array.from({length: item.length}, (_, i) => Object.hasOwn(item, i)).some(x => !x)) reject('dense bounded JSON array required');
-        return `[${item.map(x => encode(x, depth + 1)).join(',')}]`;
+        // Read the inspected data descriptors; never call methods supplied by input.
+        const values = [];
+        for (let i = 0; i < item.length; i++) values.push(encode(entries[i].value, depth + 1));
+        return `[${values.join(',')}]`;
       }
       if (Object.keys(entries).length > 256) reject('JSON object key budget');
       return `{${Object.keys(entries).sort().map(k => `${JSON.stringify(k)}:${encode(entries[k].value, depth + 1)}`).join(',')}}`;
@@ -159,15 +163,18 @@ export function createApprovalBoundary({now = () => Date.now()} = {}) {
     trustedUiConfirm(plan, {ttlMs = 1000, decision = 'allow'} = {}) {
       if (decision !== 'allow') reject('no affirmative decision');
       if (!Number.isSafeInteger(ttlMs) || ttlMs < 1 || ttlMs > 60000) reject('expiry');
+      const time = now(), expires = time + ttlMs;
+      if (!Number.isFinite(time) || !Number.isFinite(expires) || expires <= time) reject('invalid approval clock');
       const token = Object.freeze({});
-      pending.set(token, {digest: fingerprint(scoped(plan)), expires: now() + ttlMs});
+      pending.set(token, {digest: fingerprint(scoped(plan)), expires});
       return token;
     },
     consume(token, plan) {
       const saved = pending.get(token);
       pending.delete(token); // every attempt consumes this one-use ticket
       if (!saved) reject('unknown, revoked or already consumed');
-      if (now() >= saved.expires) reject('approval expired');
+      const time = now();
+      if (!Number.isFinite(time) || time >= saved.expires) reject('approval expired or clock invalid');
       if (fingerprint(scoped(plan)) !== saved.digest) reject('approved inputs changed');
       return Object.freeze({kind: 'authorized-plan', digest: saved.digest});
     },
@@ -211,7 +218,7 @@ export function previewContract(kind) {
  */
 export function prepareSensitiveSave(value, provider) {
   if (typeof value !== 'string') return {status: 'blocked', reason: 'unsupported sensitive type'};
-  if (provider.backend === 'basic_text' || !provider.available) return {status: 'blocked', reason: 'secure backend unavailable'};
+  if (!provider || provider.backend === 'basic_text' || !provider.available) return {status: 'blocked', reason: 'secure backend unavailable'};
   try {
     const ciphertext = provider.encrypt(value);
     if (typeof ciphertext !== 'string' || !ciphertext || ciphertext === value) return {status: 'blocked', reason: 'invalid encryption result'};

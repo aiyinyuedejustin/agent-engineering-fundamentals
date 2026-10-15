@@ -181,7 +181,7 @@ flowchart TD
 
 ## 7. 两个小实验，抓住生命周期的硬边界
 
-[导航与退出实验](../../04-Extracted-Core-Code-And-Scripts/shell-lifecycle/README.md)提供可直接运行的原创模型与 7 项测试。它们把本章的原则变成明确的输入、状态和验收结果。
+[导航与退出实验](../../04-Extracted-Core-Code-And-Scripts/shell-lifecycle/README.md)提供可直接运行的原创模型与 12 项测试。它们把本章的原则变成明确的输入、状态和验收结果。
 
 ### 实验 A：旧页面成功晚于新页面失败
 

@@ -1,6 +1,6 @@
 # Security Guardrails · 原创无副作用实验
 
-对应全书第 14 卷。57 个断言覆盖受限命令语法、参数合同、虚拟路径授权、一次性审批、URL 出口、展示合同与条件式敏感保存。
+对应全书第 14 卷。68 个断言覆盖受限命令语法、参数合同、虚拟路径授权、一次性审批、URL 出口、展示合同与条件式敏感保存。
 
 ## 运行
 
@@ -11,7 +11,7 @@ node --test guardrails.test.mjs
 node demo.mjs
 ```
 
-本次执行：57 passed，0 failed，0 skipped。测试和 demo 不导入 Claude、不执行 shell、不调用网络，也不读取或修改真实文件。所有文档、路径、URL 和秘密值都是合成数据。
+本次执行：68 passed，0 failed，0 skipped。测试和 demo 不导入 Claude、不执行 shell、不调用网络，也不读取或修改真实文件。所有文档、路径、URL 和秘密值都是合成数据。
 
 ## 文件
 

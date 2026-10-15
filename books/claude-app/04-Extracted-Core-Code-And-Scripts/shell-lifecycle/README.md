@@ -6,7 +6,7 @@
 node --test lifecycle.test.mjs
 ```
 
-7 项测试围绕两个容易混淆的问题：旧页面晚到的回调如何失效，以及退出等待到期以后还能宣称什么。
+12 项测试围绕两个容易混淆的问题：旧页面晚到的回调如何失效，以及退出等待到期以后还能宣称什么。
 
 - `NavigationOwner.begin` 发出不可变 ticket；`settle` 只接受当前 ticket 的第一次结算。相同字段的伪造对象也不拥有这次导航。
 - `dispose` 撤销归属。它不停止真实网络请求，实际适配器还需取消订阅与 AbortController。

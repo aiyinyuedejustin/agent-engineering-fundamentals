@@ -25,7 +25,7 @@ export class NavigationOwner {
 
 /** 有限等待只结束协调者的等待；它不会强制终止已启动的任务。 */
 export async function settleShutdown(tasks, { deadlineMs = 1000, flush = async () => {} } = {}) {
-  if (!Number.isFinite(deadlineMs) || deadlineMs < 0) throw new RangeError('期限必须有限且非负');
+  if (!Number.isFinite(deadlineMs) || deadlineMs < 0 || deadlineMs > 2 ** 31 - 1) throw new RangeError('期限必须在平台计时器范围内（0 至 2^31-1 ms）');
   const names = Object.keys(tasks);
   if (names.some(name => typeof tasks[name] !== 'function')) throw new TypeError('清理项必须为函数');
   const outcomes = new Map(names.map(name => [name, { name, state: 'pending' }]));

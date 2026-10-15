@@ -23,13 +23,13 @@
 
 算法模块随对应章节提供。书中的“实现示例”与产品中的“实现事实”通过标题和引用分别标明，便于直接改写而不混淆归属。
 
-- [导航与退出实验](shell-lifecycle/README.md)：导航代际、晚到回调、具名清理与落盘结算；7 项离线测试。
+- [导航与退出实验](shell-lifecycle/README.md)：导航代际、晚到回调、具名清理与落盘结算；12 项离线测试。
 
 - [工具合同实验](tool-contracts/README.md)：形状校验、适配损失、权限与执行器分层；24 项无依赖测试。
 
-- [流式性能实验](streaming-performance/README.md)：调度、增量状态、完成边界与资源寿命；27 项零依赖合同测试。
+- [流式性能实验](streaming-performance/README.md)：调度、增量状态、完成边界与资源寿命；40 项零依赖合同测试。
 
-- [安全边界实验](security-guardrails/README.md)：审批绑定、资源变化、外链与敏感保存策略；57 项原创离线测试。
+- [安全边界实验](security-guardrails/README.md)：审批绑定、资源变化、外链与敏感保存策略；68 项原创离线测试。
 
 ## 一条命令运行已收录的原创模型
 
@@ -43,10 +43,12 @@ python3 -B run_book_tests.py --skills
 
 前端检查另有独立口径：交互工作台为 46+32 项模拟 DOM 与 6+10 项静态检查；六套 HTML 模板为 80 项基础加 25 项边界检查，共 105 项静态/模拟 DOM 检查。它们使用可选开发依赖，均未混入本命令，也不代表浏览器绘制、真实中文输入法或辅助技术验收。浏览器记录须同时注明对应提交、视口和实际覆盖场景。
 
-- [原生、语音与坐标实验](native-voice-geometry/README.md)：音频分帧、播放账本、目标身份、显示器/PDF 变换；34 项测试含 360 组矩阵往返。
+- [原生、语音与坐标实验](native-voice-geometry/README.md)：音频分帧、播放账本、目标身份、显示器/PDF 变换；61 项测试含 360 组矩阵往返。
 
 跨版本的受限解包、快照与差分另见 [自动逆向工具箱](../05-Automated-Reverse-Toolkit/README.md)。
 
 - [恢复与配额实验](resilience-quota/README.md)：分类退避、终止边界、订阅游标与草稿归属；52 项原创模型测试。
 
 - [三个可手算的工程案例](worked-cases/README.md)：Stop/restart、UTF-8 预留与 MCP 审批绑定；17 项 Python 与 11 项 Node 测试。
+
+- [原创模型的七条边界合同](model-boundaries.md)：取消重入、数值溢出、审批序列化与原子输入验证。

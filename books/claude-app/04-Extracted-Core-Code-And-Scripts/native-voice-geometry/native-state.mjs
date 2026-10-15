@@ -6,15 +6,22 @@ export function sameEditTarget(before,after) {
     before.elementId===after.elementId && after.editable===true &&
     (before.selection??'')===(after.selection??'');
 }
+function snapshotScope({sessionId,appId,windowId,captureId,grantVersion}) {
+  const nonempty=value=>typeof value==='string'&&value.length>0;
+  if(!nonempty(sessionId)||!nonempty(appId)||!nonempty(captureId)
+    ||!(nonempty(windowId)||Number.isSafeInteger(windowId))
+    ||!Number.isSafeInteger(grantVersion)||grantVersion<0)throw new TypeError('Invalid snapshot authority');
+  return JSON.stringify([sessionId,appId,windowId]);
+}
 export class SnapshotAuthority {
   #items=new Map();
   save({sessionId,appId,windowId,captureId,grantVersion,expiresAt,elements}) {
-    if(!sessionId||!appId||!captureId||!Number.isFinite(expiresAt)||!Array.isArray(elements))throw new TypeError('Incomplete snapshot');
-    const key=JSON.stringify([sessionId,appId,windowId]);
+    if(!Number.isFinite(expiresAt)||!Array.isArray(elements))throw new TypeError('Incomplete snapshot');
+    const key=snapshotScope({sessionId,appId,windowId,captureId,grantVersion});
     this.#items.set(key,{captureId,grantVersion,expiresAt,elements:structuredClone(elements)});
   }
   resolve({sessionId,appId,windowId,captureId,grantVersion,index,now}) {
-    const snapshot=this.#items.get(JSON.stringify([sessionId,appId,windowId]));
+    const snapshot=this.#items.get(snapshotScope({sessionId,appId,windowId,captureId,grantVersion}));
     if(!Number.isFinite(now)||!snapshot||snapshot.captureId!==captureId||snapshot.grantVersion!==grantVersion||now>=snapshot.expiresAt)
       throw new Error('Snapshot is absent, stale or outside its authority');
     if(!Number.isInteger(index)||index<0||index>=snapshot.elements.length)throw new RangeError('Unknown element index');

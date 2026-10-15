@@ -1,37 +1,43 @@
 /** Original simulations using synthetic samples only. No microphone, browser or network. */
 export function rms(samples) {
   if (!samples.length) return 0;
-  let energy=0;
+  // Scaled sum of squares avoids overflow for representable finite RMS values.
+  let scale=0, energy=0;
   for (const x of samples) {
     if (!Number.isFinite(x)) throw new TypeError('Invalid sample');
-    energy += x*x;
+    const magnitude=Math.abs(x);
+    if(magnitude>scale){energy=1+energy*(scale/magnitude)**2;scale=magnitude;}
+    else if(magnitude>0)energy+=(magnitude/scale)**2;
   }
-  return Math.sqrt(energy/samples.length);
+  return scale*Math.sqrt(energy/samples.length);
 }
 export function pcm16le(samples) {
   const bytes=new Uint8Array(samples.length*2), view=new DataView(bytes.buffer);
-  samples.forEach((v,i)=>{
+  for (let i=0;i<samples.length;i++){
+    const v=samples[i];
     if (!Number.isFinite(v)) throw new TypeError('Invalid sample');
     const x=Math.min(1,Math.max(-1,v));
     view.setInt16(i*2,Math.round(x*(x<0?32768:32767)),true);
-  });
+  }
   return bytes;
 }
 export class PcmFrameAssembler {
   #pending=[]; #sequence=0;
   constructor(sampleRate, durationMs) {
-    if (!Number.isInteger(sampleRate) || sampleRate<=0 || !Number.isFinite(durationMs) || durationMs<=0)
+    if (!Number.isSafeInteger(sampleRate) || sampleRate<=0 || !Number.isFinite(durationMs) || durationMs<=0)
       throw new RangeError('Invalid audio format');
     this.samplesPerFrame=sampleRate*durationMs/1000;
-    if (!Number.isInteger(this.samplesPerFrame)) throw new RangeError('Frame duration does not have an integer sample count');
+    if (!Number.isSafeInteger(this.samplesPerFrame) || this.samplesPerFrame<1) throw new RangeError('Frame duration does not have an integer sample count');
     this.sampleRate=sampleRate;
   }
   push(samples) {
-    for (const sample of samples) {
+    // Snapshot once, then validate all input before mutating assembly state.
+    const batch=Array.from(samples);
+    for (const sample of batch) {
       if (!Number.isFinite(sample)) throw new TypeError('Invalid sample');
     }
     const frames=[];
-    for (const sample of samples) {
+    for (const sample of batch) {
       this.#pending.push(sample);
       if (this.#pending.length === this.samplesPerFrame) {
         const sequence=this.#sequence++;
@@ -65,13 +71,14 @@ export class EnvelopeHistory {
 /** Abstract sample accounting, deliberately not a copy of the shipped worklet. */
 export class PlaybackLedger {
   constructor(sampleRate=16000) {
-    if(!Number.isInteger(sampleRate)||sampleRate<=0)throw new RangeError('Invalid sample rate');
+    if(!Number.isSafeInteger(sampleRate)||sampleRate<=0)throw new RangeError('Invalid sample rate');
     Object.assign(this,{sampleRate,queued:0,played:0,underruns:0,started:false,pendingGap:false});
   }
-  enqueue(count){if(!Number.isInteger(count)||count<0)throw new RangeError('Invalid count');this.queued+=count;}
+  enqueue(count){if(!Number.isSafeInteger(count)||count<0||!Number.isSafeInteger(this.queued+count))throw new RangeError('Invalid or unrepresentable count');this.queued+=count;}
   render(requested) {
-    if(!Number.isInteger(requested)||requested<1)throw new RangeError('Invalid quantum');
+    if(!Number.isSafeInteger(requested)||requested<1)throw new RangeError('Invalid quantum');
     const consumed=Math.min(requested,this.queued);
+    if(!Number.isSafeInteger(this.played+consumed))throw new RangeError('Played sample count overflow');
     if(consumed>0){if(this.pendingGap)this.underruns++;this.pendingGap=false;this.started=true;}
     this.queued-=consumed;this.played+=consumed;
     if(consumed<requested&&this.started)this.pendingGap=true;
@@ -89,7 +96,7 @@ export class VoiceEpoch {
     if(epoch!==this.epoch||this.state==='idle'||this.state==='error')return false;
     if(type==='ready')this.state='listening';
     else if(type==='input-end')this.state='processing';
-    else if(type==='audio'){if(!Number.isInteger(payload)||payload<0)throw new RangeError('Invalid samples');this.replySamples+=payload;this.state='speaking';}
+    else if(type==='audio'){if(!Number.isSafeInteger(payload)||payload<0||!Number.isSafeInteger(this.replySamples+payload))throw new RangeError('Invalid samples');this.replySamples+=payload;this.state='speaking';}
     else if(type==='error')this.state='error';
     else throw new RangeError('Unknown event');
     return true;

@@ -367,7 +367,7 @@ Linux 启动提示受 CI、既有已提示状态、pending 状态与已登录账
 
 测试 provider 返回的是标明 test-only 的合成字符串，没有真的加密，也没有真的落盘。生产 adapter 必须说明 backend 身份、锁定状态、错误分类、是否允许临时内存使用，以及何时需要用户处理。不能靠“返回值与输入不同”判断密码学质量。
 
-## 9. 原创实验：把最容易混淆的边界做成 57 个断言
+## 9. 原创实验：把最容易混淆的边界做成 68 个断言
 
 代码位于 [security-guardrails](../../04-Extracted-Core-Code-And-Scripts/security-guardrails/README.md)。仅使用 Node 内建模块，无第三方依赖。实验不导入目标应用、不执行 shell、不访问网络、不读取或改写真实文件。
 
@@ -408,7 +408,7 @@ plan.resources.forEach(resource => fs.validateTicket(resource));
 | 展示合同 | 文本、SVG 图片、交互 frame 被明确区分 | 浏览器渲染或 sanitizer 正确性 |
 | 敏感保存计划 | 无安全 backend 时 fail-closed | 真实加密、密钥管理、持久化成功 |
 
-**本次执行：57 个测试全部通过。** 这是原创模型的结果，不是 Claude 的安全测试成绩。虚拟文件系统使用一个全局 revision，任何链接修改都使旧资源票据失效；这是故意保守的教学简化，并不是高效的生产资源版本方案。
+**本次执行：68 个测试全部通过。** 这是原创模型的结果，不是 Claude 的安全测试成绩。虚拟文件系统使用一个全局 revision，任何链接修改都使旧资源票据失效；这是故意保守的教学简化，并不是高效的生产资源版本方案。
 
 ### 9.3 从单元测试进入真实验证的顺序
 

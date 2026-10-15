@@ -428,7 +428,7 @@ const recoveredPdfPoint = apply(invert(viewport.matrix), cssPoint);
 node --test models.test.mjs
 ```
 
-本次结果为 34 个测试通过。其中 PDF round-trip 测试在六种等价/正交角度和多种缩放下生成 360 组点，要求正向再逆向回到原点；还单独测试矩形 shear、非零 crop、DPR、右下边界、NaN、退化矩阵和 stale capture。
+本次结果为 61 个测试通过。其中 PDF round-trip 测试在六种等价/正交角度和多种缩放下生成 360 组点，要求正向再逆向回到原点；还单独测试矩形 shear、非零 crop、DPR、右下边界、NaN、退化矩阵和 stale capture。
 
 音频测试则验证：
 
