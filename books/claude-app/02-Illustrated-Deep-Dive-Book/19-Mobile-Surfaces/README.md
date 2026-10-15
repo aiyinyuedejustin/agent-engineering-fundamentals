@@ -150,4 +150,6 @@ MS-AND-08 的 All / Blocked / In progress / Done 胶囊与任务卡，说明官�
 
 现有证据支持带来源和待验项的移动交互模型；原生控件尺寸与精确视觉规范须在真机验证后补全。
 
+本卷没有原生实现或已执行的移动端测试。要查其他卷的模型与输入要求，可用[19 卷代码与测试导航](../../04-Extracted-Core-Code-And-Scripts/book-code-navigation.md)；下面的实验室链接是桌面机制的参考入口，不是本卷的真机验收结果。
+
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
