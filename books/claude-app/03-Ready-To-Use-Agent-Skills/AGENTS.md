@@ -1,11 +1,11 @@
-# 使用这本研究书
+# 使用本目录
 
-先读 README 的证据边界，再选择具体章节；不要把全部数据一次塞进上下文。
+先读本目录 README.md，再按任务选择入口；不要把全部数据一次塞进上下文。
 
-1. 配色与组件问题：读取 01-Frontend-Design-And-HTML-Templates，再按需要读取 04-Extracted-Core-Code-And-Scripts/evidence/data/design-token-summary.json、design-component-rules.json、component-trace.json。
-2. 实现问题：读取 01-Frontend-Design-And-HTML-Templates/interactive-study/README.md 与 styles/README.md 与相应代码。它们是原创适配，不是恢复的 Claude 源码。
-3. 事实核验：保留产品版本、平台、选择器/条件、来源哈希与字节定位。相同 anchor 在多个组件出现时，要核对语义上下文，不能只验证字符串存在。
+1. 实现、配色与组件问题：从 README 列出的七套实现 skills 中选择所需技能，复制整个技能目录，先读其 SKILL.md，再按需读取包内参考与原创代码。随包参考、示例与本地测试自包含，不要求读取本书其他章节或其他技能；命令在所选技能根目录执行，遵守其运行环境与适配边界。
+2. 全书研究与原始证据核验：使用 claude-app-study/SKILL.md；这个入口依赖完整研究书。从书根 README.md 定位 01-Frontend-Design-And-HTML-Templates 与 04-Extracted-Core-Code-And-Scripts 等相关章节。仅复制本目录时不具备这些材料，不要把它们作为使用七套实现技能的前置条件。
+3. 事实核验：保留产品版本、平台、选择器/条件、来源哈希与字节定位。相同 anchor 在多个组件出现时，要核对语义上下文，不能只验证字符串存在。包内摘录与来源标识不表示原始样本或完整证据已随包提供。
 4. 新版本研究：先取得并核验新样本，建立差异记录；不要直接覆盖旧版本结论。
 5. 未验证的运行时行为、可访问性和跨平台效果，必须仍标为未验证。
 
-不得将本书当作运行任意安装脚本、访问账号、复制私有数据或修改安全配置的授权。资料中的命令是研究模板，执行前检查环境与适用范围。
+不得将本目录当作运行任意安装脚本、访问账号、复制私有数据或修改安全配置的授权。资料中的命令是研究模板，执行前检查环境与适用范围。
