@@ -43,8 +43,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 43625,
-      "sha256": "cae7abcc30a3a62af7114eb8d887abf87206e911d9d5ffb11982a44302942201"
+      "bytes": 43529,
+      "sha256": "cd3a33cef228fc7a8e670d675d8fa8603c61b01de0baed32f6f5301d3918c255"
     },
     {
       "path": "metrics-lab/README.md",
@@ -232,5 +232,10 @@
     "additional_synthetic_checks_passed": 8,
     "cli_sample_matches_saved_output": true,
     "manifests_and_unchanged_table_values_verified": true
+  },
+  "editorial_review": {
+    "date": "2026-10-15",
+    "scope": "Six prose edits only; headings, numeric facts, tables, source identifiers and code unchanged",
+    "static_rescan_performed": false
   }
 }

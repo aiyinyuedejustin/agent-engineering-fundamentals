@@ -44,28 +44,50 @@ export function plain(tokens) {
 export function slug(text) {
   return text.toLowerCase().replace(/[^\p{L}\p{M}\p{N}_\-\s]/gu, '').replace(/\s/g, '-');
 }
+// Explicit empty legacy anchors are parsed as data, never passed through as HTML.
+// Keep heading allocation unchanged; legacy anchors use the remaining ID namespace.
 function headings(tokens) {
-  const sourceIds = new Set(), outputIds = new Set(['main']), result = [];
+  const sourceIds = new Set(), outputIds = new Set(['main']), result = [], anchors = [];
   const allocate = (base, used) => {
     let candidate = base, number = 0;
     while (used.has(candidate)) candidate = base + '-' + (++number);
     used.add(candidate); return candidate;
   };
-  function walk(items) {
-    for (const t of items) {
-      if (t.type === 'heading') {
-        const text = plain(t.tokens), key = slug(text) || 'section';
-        const sourceId = allocate(key, sourceIds);
-        t.id = allocate(sourceId, outputIds);
-        result.push({depth:t.depth, text, id:t.id, sourceId});
-      }
-      if (t.tokens) walk(t.tokens);
-      if (t.items) for (const item of t.items) walk(item.tokens);
+  function walk(items, visit) {
+    for (let i = 0; i < items.length; i++) {
+      const t = items[i]; visit(t, items, i);
+      if (t.tokens) walk(t.tokens, visit);
+      if (t.items) for (const item of t.items) walk(item.tokens, visit);
+      if (t.header) for (const cell of t.header) walk(cell.tokens, visit);
+      if (t.rows) for (const row of t.rows) for (const cell of row) walk(cell.tokens, visit);
     }
   }
-  walk(tokens);
-  return result;
+  walk(tokens, t => {
+    if (t.type !== 'heading') return;
+    const text = plain(t.tokens), key = slug(text) || 'section';
+    const sourceId = allocate(key, sourceIds);
+    t.id = allocate(sourceId, outputIds);
+    result.push({depth:t.depth, text, id:t.id, sourceId});
+  });
+  walk(tokens, (t, items, i) => {
+    if (t.type !== 'html') return;
+    // Exactly one quoted ID, a nonempty bounded Unicode identifier, no entities,
+    // attributes, contents, whitespace tricks, or unmatched opening/closing tags.
+    const opening = /^<a id="([\p{L}\p{M}\p{N}_-]{1,200})">(?![\s\S])/u;
+    const paired = /^<a id="([\p{L}\p{M}\p{N}_-]{1,200})"><\/a>(?![\s\S])/u;
+    let match = paired.exec(t.text);
+    if (!match && opening.test(t.text) && items[i+1]?.type === 'html' && items[i+1].text === '</a>') {
+      match = opening.exec(t.text);
+      items.splice(i+1, 1);
+    }
+    if (!match) return;
+    const sourceId = match[1];
+    t.type = 'legacy-anchor'; t.id = allocate(sourceId, outputIds);
+    anchors.push({sourceId, id:t.id});
+  });
+  return {headings:result, anchors};
 }
+
 function within(root, candidate) { const rel = path.relative(root, candidate); return !rel.startsWith('..' + path.sep) && rel !== '..' && !path.isAbsolute(rel); }
 function snapshot(source, selectedPaths = null) {
   if (fs.lstatSync(source).isSymbolicLink()) throw new Error('Source root cannot be a symlink');
@@ -121,6 +143,12 @@ export class Renderer {
     let rel = file ? path.posix.normalize(path.posix.join(path.posix.dirname(this.source), file)) : this.source;
     rel = rel.replace(/\/+$/, ''); if (rel === '.') rel = '';
     if (rel === '..' || rel.startsWith('../') || path.posix.isAbsolute(rel)) { this.warn('outside-source-root', raw); return null; }
+    // Known compiler entry points get built-in guidance. The compiler tree stays
+    // excluded, and images/unknown files/fragments never gain an alias.
+    const compilerRoot = '01-Frontend-Design-And-HTML-Templates/offline-reader/';
+    if (!image && !fragment && !this.book.preview && [compilerRoot+'README.md', compilerRoot+'preview/index.html'].includes(rel)) {
+      return {href:href(this.output, 'about.html', 'build-reader'), local:true};
+    }
     let target = rel;
     if (this.book.directories.has(target)) {
       target = target ? target + '/README.md' : 'README.md';
@@ -134,7 +162,8 @@ export class Renderer {
     }
     if (info.ext === '.md') {
       if (fragment) {
-        const heading = this.book.docs.get(target).headings.find(h => h.sourceId === fragment);
+        const doc = this.book.docs.get(target);
+        const heading = [...doc.headings, ...doc.anchors].find(h => h.sourceId === fragment);
         if (heading) fragment = heading.id;
         else this.warn('missing-heading-fragment', raw);
       }
@@ -154,6 +183,7 @@ export class Renderer {
       case 'del': return `<del>${this.inline(t.tokens)}</del>`;
       case 'codespan': return `<code>${escape(t.text)}</code>`;
       case 'br': return '<br>';
+      case 'legacy-anchor': return `<span id="${escape(t.id)}"></span>`;
       case 'hr': return '<hr>';
       case 'paragraph': return `<p>${this.inline(t.tokens)}</p>\n`;
       case 'heading': return `<h${t.depth} id="${escape(t.id ?? slug(plain(t.tokens)))}" tabindex="-1">${this.inline(t.tokens)}</h${t.depth}>\n`;
@@ -245,7 +275,7 @@ export function build({source, out, preview = false}) {
     }
     if (info.ext === '.md') {
       const tokens = marked.lexer(info.bytes.toString('utf8'), {gfm:true,breaks:false});
-      const hs = headings(tokens); book.docs.set(rel,{tokens,headings:hs,title:hs.find(h=>h.depth===1)?.text || rel});
+      const hs = headings(tokens); book.docs.set(rel,{tokens,...hs,title:hs.headings.find(h=>h.depth===1)?.text || rel});
     }
   }
   book.sequence = preview ? [book.entry] : ['README.md',...SECTIONS.flatMap(([dir]) => {
@@ -279,7 +309,7 @@ export function build({source, out, preview = false}) {
   }
   const contents=`<h1>${preview?'样章目录':'完整目录'}</h1><p>每一页都从书的 Markdown 生成。用浏览器的页面查找，快速定位主题。</p>${SECTIONS.filter(([dir])=>[...book.docs.keys()].some(rel=>rel.startsWith(dir+'/'))).map(([dir,label])=>`<h2>${escape(label)}</h2><ul class="directory-list">${[...book.docs].filter(([rel])=>rel.startsWith(dir+'/')).map(([rel,doc])=>`<li><a href="${escape(href('contents.html',page(rel)))}">${escape(doc.title)}</a></li>`).join('')}</ul>`).join('')}`;
   write('contents.html',documentShell(book,{output:'contents.html',title:'完整目录',body:contents}));
-  const about=`<h1>把书打开，慢一点读。</h1><p>这是现有研究书的静态阅读入口。正文、图、表和来源都来自同一份 Markdown；更新内容后重新构建即可。</p><h2>离线阅读</h2><p>解压完整生成目录后，用浏览器打开 index.html。不要只取一个 HTML 文件，图片和样式需要保持相对位置。手机文件管理器若限制本地 HTML，可用支持本地目录的浏览器或在同一网络内静态提供整个目录。</p><h2>阅读与键盘</h2><ul><li>Tab 可遍历链接和目录；首个链接可跳过导航直达正文。</li><li>窄屏顶部的目录可用 Enter 或空格展开。</li><li>代码和宽表格可获得键盘焦点，使用方向键横向滚动。</li><li>浏览器自带的 Ctrl / ⌘ F 查找当前页，缩放和打印仍可使用。</li><li>浅深主题跟随系统。没有账号、进度同步或远程字体。</li></ul><h2>渲染范围</h2><p>支持标题与目录、段落、强调、行内代码、围栏代码、引用、有序/无序/嵌套/任务列表、链接、图片，以及普通管道表格。并非完整 GFM 实现：没有脚注扩展、数学排版、自动生成参考文献或 Mermaid 图表引擎。不能渲染的原始 HTML 保留为文字；Mermaid 保留源码，已有 SVG 与截图继续展示。</p><h2>来源与安全边界</h2><p>相对 Markdown 链接转到阅读页；示例 HTML、脚本、JSON 和 SVG 链接转到只读源码/图像页。阅读器不会执行示例、联网请求模型、载入外部脚本或字体。网络图片不会自动载入；原始网站来源链接仅在你主动打开时离开离线阅读。</p><p>每页可查看原文。build-manifest.json 记录输入指纹、渲染器版本及未收录链接，便于核验生成结果。生成物不应手工编辑。</p>`;
+  const about=`<h1>把书打开，慢一点读。</h1><p>这是现有研究书的静态阅读入口。正文、图、表和来源都来自同一份 Markdown；更新内容后重新构建即可。</p><h2>离线阅读</h2><p>解压完整生成目录后，用浏览器打开 index.html。不要只取一个 HTML 文件，图片和样式需要保持相对位置。手机文件管理器若限制本地 HTML，可用支持本地目录的浏览器或在同一网络内静态提供整个目录。</p><h2 id="build-reader">构建与样章说明</h2><p>本页提供构建器入口的内置说明，不重复打包阅读器自身或其样章。完整书已生成在当前目录；可从首页或完整目录继续阅读。</p><p>重新生成需要 Node.js 20+ 与 Python 3.9+。在原始书根目录运行：</p><pre tabindex="0" aria-label="离线书构建命令"><code>node 01-Frontend-Design-And-HTML-Templates/offline-reader/build.mjs --source .</code></pre><p>命令打印全新的临时输出目录。已有输出不会覆盖；添加 --preview 可生成固定排版样章。请保留整个输出目录的文件关系。</p><h2>阅读与键盘</h2><ul><li>Tab 可遍历链接和目录；首个链接可跳过导航直达正文。</li><li>窄屏顶部的目录可用 Enter 或空格展开。</li><li>代码和宽表格可获得键盘焦点，使用方向键横向滚动。</li><li>浏览器自带的 Ctrl / ⌘ F 查找当前页，缩放和打印仍可使用。</li><li>浅深主题跟随系统。没有账号、进度同步或远程字体。</li></ul><h2>渲染范围</h2><p>支持标题与目录、段落、强调、行内代码、围栏代码、引用、有序/无序/嵌套/任务列表、链接、图片，以及普通管道表格。并非完整 GFM 实现：没有脚注扩展、数学排版、自动生成参考文献或 Mermaid 图表引擎。不能渲染的原始 HTML 保留为文字；Mermaid 保留源码，已有 SVG 与截图继续展示。</p><h2>来源与安全边界</h2><p>相对 Markdown 链接转到阅读页；示例 HTML、脚本、JSON 和 SVG 链接转到只读源码/图像页。阅读器不会执行示例、联网请求模型、载入外部脚本或字体。网络图片不会自动载入；原始网站来源链接仅在你主动打开时离开离线阅读。</p><p>每页可查看原文。build-manifest.json 记录输入指纹、渲染器版本及未收录链接，便于核验生成结果。生成物不应手工编辑。</p>`;
   write('about.html',documentShell(book,{output:'about.html',title:'阅读说明',body:about}));
   const inputHashes=[...files].map(([name,info])=>({path:name,sha256:hash(info.bytes)}));
   const compilerInputs=['build.mjs','svg_check.py','reader.css','vendor/marked.mjs'].map(name=>({path:name,sha256:hash(fs.readFileSync(path.join(BASE,name)))}));

@@ -86,7 +86,7 @@ node /path/to/offline-reader/build-preview-single.mjs \
 
 这不是完整 GFM 实现。不提供脚注扩展、数学排版、语法高亮、浏览器 Mermaid 渲染或完整规范一致性。Mermaid 保留语言标签与源码，已有 SVG 和截图继续显示。常用 amp/lt/gt/quot/apos/nbsp 与数字实体可规范化，其他命名实体不保证完整支持。输入按 UTF-8 文本处理，单文件限制为 5 MiB。
 
-原始 HTML 不直接通过。仅无属性的字面 `<br>`、`<br/>`、`<br />` 被识别为本工具生成的换行。其他原始 HTML，包括 `<a id>`、details、iframe、script 和嵌入 SVG，都显示为转义文字。无法渲染的内容可在原文视图完整核对。
+原始 HTML 不直接通过。仅无属性的字面 `<br>`、`<br/>`、`<br />` 被识别为本工具生成的换行。另识别精确空锚点 `<a id="旧锚点"></a>`：仅接受双引号、唯一 id 属性及 1–200 个 Unicode 字母/标记/数字、下划线或连字符，转换为工具生成的空 span，不透传 HTML。标题保持原 ID 分配并优先解析同名片段；空锚点与标题、main 或重复锚点冲突时另分配唯一 ID，重复旧锚点链接指向第一个。其他原始 HTML，包括带内容或其他属性的 a、details、iframe、script 和嵌入 SVG，都显示为转义文字。无法渲染的内容可在原文视图完整核对。
 
 ### 链接与来源
 
@@ -95,6 +95,7 @@ node /path/to/offline-reader/build-preview-single.mjs \
 - SVG/截图链接打开图像或源码视图，不直接打开活动 SVG 文档。
 - http、https、mailto 来源链接保留，只有主动点击才打开。远程图片不自动载入，只保留说明与原始链接。
 - javascript、data、file、协议相对链接、带凭证 URL、控制字符、反斜杠和逃离书根目录的路径均拒绝。
+- 完整书模式中，阅读器自身 README 与 preview/index.html 的无片段链接精确转到内置构建说明；不读取或递归打包阅读器目录。其他 compiler 文件、图片用法及带片段入口仍按未收录目标处理。
 - 未收录目标与不支持内容显示为非活动文字，详细原因写入 manifest。
 
 ## 安全边界
