@@ -55,7 +55,7 @@ private-version-output/
 ```
 
 - 原目录只读，不会复制进输出。ZIP 通过原工具箱的 `safeio.extract_zip` 提取，随后调用同一套 `snapshot`、`diff_snapshots` 和报告写入逻辑；没有另一套扫描器。相同目录布局、字节、标签与规则下，目录和 ZIP 入口的四个报告文件字节相同。ZIP 带有额外顶层目录时不会自动剥掉它；先保证两版本输入范围一致。
-- `.asar` 常规文件选择受限 ASAR 字节适配器，其余常规文件选择受限 ZIP 适配器；扩展名不证明格式有效。ASAR 支持精确共享字节范围并逐份计入总量，拒绝部分重叠和链接；外置 companion 默认拒绝，仅支持显式精确配套合同；只读 `inspect-asar` 明确列出排除项，绝不把缺失内容当成删功能。完整约定见 [SUPPORT.md](SUPPORT.md)。**DMG、DEB、RPM、7z、TAR、原生安装器等没有内置解包流程**，请先自行使用受信任工具得到目录。脚本不下载、不运行安装器、REA、包管理器、命令行工具或输入中的程序，不自动递归解包。
+- `.asar` 常规文件选择受限 ASAR 字节适配器，其余常规文件选择受限 ZIP 适配器；扩展名不证明格式有效。ASAR 支持精确共享字节范围并逐份计入总量，拒绝部分重叠和链接；外置 companion 默认拒绝，仅支持显式精确配套合同；只读 `inspect-asar` 明确列出排除项，绝不把缺失内容当成删功能。完整约定见 [SUPPORT.md](SUPPORT.md)。**此默认入口不接收 DMG、DEB、RPM、7z、TAR 或原生安装器**；DEB 的显式 ASAR 投影使用下方专用入口，其他包装请先自行使用受信任工具得到目录。脚本不下载、不运行安装器、REA、包管理器、命令行工具或输入中的程序，不自动递归解包。
 - 固定使用审计版 `Limits()` 默认值：档案 256 MiB、central directory 16 MiB、20,000 条目、单文件 64 MiB、总量 512 MiB、深度 64、压缩比 200:1、清单记录 200,000。各输入分别受这些上限约束；此入口不提供提高容量的开关。可选 `--rules /path/to/rules.json` 使用同一套有界字面量规则验证；标签通过 `--old-label`、`--new-label` 指定，仍未认证。
 - `--output` 必须尚不存在，父目录必须已经存在，且输出不能在任一输入目录内，包括通过父目录符号链接指向输入的情况。不会覆盖旧输出或跟随输入根部、输出末尾的符号链接。输入内部链接沿用原扫描器的跳过与覆盖警告策略。
 - 先在输出父目录内创建私有暂存目录，所有提取、快照、差分及元数据成功后，才以原子不替换操作交付完整输出。报告目录也使用相同操作；若目标中途出现，会保留那个路径并撤销本次暂存。普通异常、解析失败或可捕获的中断会清理本次暂存。`SIGKILL`、断电或清理本身失败可能留下 `.diff-versions-*` 私有暂存，需要人工检查，不要误当成功结果。
@@ -70,6 +70,16 @@ private-version-output/
 python3 -B run_tests.py
 ```
 
+
+## Linux DEB：直接比较指定的应用资源
+
+[DEB 专用入口](DEB-PROJECTION.md)将两个本地包中的指定 ASAR 与精确 companion 投影到私有目录，核验后复用同一套扫描与差分。以下路径来自已验证的 Linux 2.37337.1；新版本改变布局时会拒绝，不会猜测替代文件。
+
+```sh
+python3 -B deb_versions.py compare /private/old.deb /private/new.deb --asar-member usr/lib/claude-desktop/resources/app.asar --companion-prefix usr/lib/claude-desktop/resources/app.asar.unpacked --platform-label linux-amd64 --output /private/new-deb-comparison
+```
+
+打开 `/private/new-deb-comparison/diff.md`，详细候选见 `diff.json`。这是显式范围投影：包内非选区内容只清点，不当作应用功能差分。外层每遍完整解码预算为768 MiB，原ASAR单文件64 MiB、逻辑总量512 MiB不变；完整格式、两遍事务和磁盘预算见[专用支持说明](DEB-PROJECTION.md)。首次可用 `inspect` 检查外层结构，inspect不替代内层声明完整性核验。
 
 ## 用你有权读取的本地版本
 
@@ -103,7 +113,8 @@ python3 -B reverse_toolkit.py diff --old-snapshot "/path/to/private/old.json" --
 | 普通 ZIP | `unpack-zip`，仅 stored/deflated、非加密、非 ZIP64、单卷 | 不支持所有 ZIP 变体或所有安装器 |
 | MSIX/AppX/APK 等 ZIP 容器 | 只有满足上述 ZIP 子集时，按普通字节容器提取 | 不验证平台签名、安装语义或应用行为 |
 | ASAR | `inspect-asar` 只读检查；`unpack-asar` 提取严格子集；精确共享范围逐份复制 | 链接一律拒绝，外置 companion 需显式选择并完整核验；不认证发布方，见 [支持约定](SUPPORT.md) |
-| DMG、DEB、RPM、7z、TAR、原生可执行文件 | **没有内置解包器**；自行用受信任工具得到目录后传入 | 不把扩展名当格式检测，不宣称跨平台解包 |
+| DEB（严格 GNU TAR / XZ 子集） | [`deb_versions.py`](DEB-PROJECTION.md) 显式选定 ASAR 与完整 companion 后核验、扫描、差分 | 不做整包提取，不安装、不自动选区；新外层预算与原 ASAR 预算分别约束 |
+| DMG、RPM、7z、TAR、原生可执行文件 | **没有内置解包器**；自行用受信任工具得到目录后传入 | 不把扩展名当格式检测，不宣称跨平台解包 |
 
 受限 ZIP 命令：
 
@@ -218,7 +229,7 @@ rea extract-artifact "/absolute/path/to/local/app.asar" --json > "/path/to/priva
 python3 -B run_tests.py
 ```
 
-默认套件包括原 202 项与新增 13 项诊断回归，共 215 项。单独运行新增测试或未修复局限探针：
+默认套件共329项：既有215项，加DEB投影的89项格式检查、24项事务检查与1项异地安装检查。[DEB验证记录](DEB-PROJECTION-VALIDATION.json)另列独立评审及同包smoke；同包零差异不代表真实跨版本验收。单独运行诊断回归或未修复局限探针：
 
 ```sh
 python3 -B tests/test_scanner_diagnostics.py

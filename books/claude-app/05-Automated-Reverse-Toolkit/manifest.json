@@ -21,6 +21,18 @@
       "origin": "original-tool-or-documentation"
     },
     {
+      "path": "DEB-PROJECTION-VALIDATION.json",
+      "bytes": 4004,
+      "sha256": "52e1ed2e7c81acd43ffd951590ee1fbee7cea7f9af4bd6d6ae16d3446b24b733",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "DEB-PROJECTION.md",
+      "bytes": 7426,
+      "sha256": "29c9bf745b38c5a981f0191fb6a386ca3a6bd3f0f4fd634c4de8d2e7e1c284f1",
+      "origin": "original-tool-or-documentation"
+    },
+    {
       "path": "LINUX-ASAR-VALIDATION.json",
       "bytes": 9046,
       "sha256": "d883ee41adb87d4a0b552ec0010ab0f65538636d377e02af932ad06d8000522e",
@@ -34,8 +46,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 24824,
-      "sha256": "0bc86c30b9f76e947d5fa67bb49b4ad0bebbd2f1201f067651f44dd381126225",
+      "bytes": 26341,
+      "sha256": "dd7cf41c74a7880b4b06f81f0db1051d1a09ba5ed8114a161364dafea806729c",
       "origin": "original-tool-or-documentation"
     },
     {
@@ -52,14 +64,26 @@
     },
     {
       "path": "SUPPORT.md",
-      "bytes": 12926,
-      "sha256": "e2cc7e89bfb2872f25975b3f8f37e4cb147a94c10b88d23273c42dbc78a78035",
+      "bytes": 13355,
+      "sha256": "226098b1dd833a53e0da81edde98065296cea4a00723956680d71b44f3331606",
       "origin": "original-tool-or-documentation"
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 4236,
-      "sha256": "d406ee4cc44fbed06e264681a83307f74701f1868496b4da61322caaa936919b",
+      "bytes": 5186,
+      "sha256": "0f531c2b4f93816c601a9235d5f83f1cbde84cdbac86d25398432e59d40d0295",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "deb_projection.py",
+      "bytes": 14648,
+      "sha256": "32d1573a0a6e58a8880935850c829cc24b9057e78f38fd2459f20746a823440c",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "deb_versions.py",
+      "bytes": 11616,
+      "sha256": "e36d1d38b9ac15ff912698eb2802fe0c3c57976810a6cad88b71ba1838d55a72",
       "origin": "original-tool-or-documentation"
     },
     {
@@ -70,135 +94,135 @@
     },
     {
       "path": "optional-ast-channel/DESIGN.zh.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 3896,
-      "sha256": "7037109a195ffce40bf182f7f47dca1f2bc6f03734b45915d84fabc72a35445c"
+      "sha256": "7037109a195ffce40bf182f7f47dca1f2bc6f03734b45915d84fabc72a35445c",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/INDEPENDENT-REVIEW.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 12120,
-      "sha256": "8000e35722cf977b4cf1f15d891de94abdc1652bd5a42cd8585d159f26c711db"
+      "sha256": "8000e35722cf977b4cf1f15d891de94abdc1652bd5a42cd8585d159f26c711db",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/MANIFEST.sha256",
-      "origin": "original-tool-or-documentation",
       "bytes": 1290,
-      "sha256": "cde82d5b9ba74278f192a8e8e0f04038eee60669377bd28413a3db9f5eecd279"
+      "sha256": "cde82d5b9ba74278f192a8e8e0f04038eee60669377bd28413a3db9f5eecd279",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/README.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 7974,
-      "sha256": "25672762f46bc960a1cb29f53556ac8030a6378757340a86086e05f2726b3ac4"
+      "sha256": "25672762f46bc960a1cb29f53556ac8030a6378757340a86086e05f2726b3ac4",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/REPORT.zh.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 3424,
-      "sha256": "8924ae5ff90c601453d866b879d167bd2fdefe4b3f493ab28f77d9ac2f22ed3f"
+      "sha256": "8924ae5ff90c601453d866b879d167bd2fdefe4b3f493ab28f77d9ac2f22ed3f",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/SYNTHETIC-CROSSCHECK.json",
-      "origin": "original-tool-or-documentation",
       "bytes": 2166,
-      "sha256": "999cab38d9875f4f6934be621c82077ae9cdec701f5f03dfe3068da8847ee9b5"
+      "sha256": "999cab38d9875f4f6934be621c82077ae9cdec701f5f03dfe3068da8847ee9b5",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/VALIDATION.json",
-      "origin": "original-tool-or-documentation",
       "bytes": 1445,
-      "sha256": "cd46065500a6cfff61a7a32bba5b74eba8ffe9b84e389cf2b7ecc4c6dc4deff6"
+      "sha256": "cd46065500a6cfff61a7a32bba5b74eba8ffe9b84e389cf2b7ecc4c6dc4deff6",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/ast_candidates.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 14247,
-      "sha256": "42de4412758e4c9f101e446482f9f4dab9d3179d00a780d83f7a2bd0b8a807cd"
+      "sha256": "42de4412758e4c9f101e446482f9f4dab9d3179d00a780d83f7a2bd0b8a807cd",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/ast_worker.cjs",
-      "origin": "original-tool-or-documentation",
       "bytes": 11330,
-      "sha256": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5"
+      "sha256": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/linux-gap-crosscheck/AGGREGATE.json",
-      "origin": "original-analysis-metadata",
       "bytes": 15683,
-      "sha256": "d031ccb415b726818fda19982525dd201da2effaf60829ccbe7813b0f77eab69"
+      "sha256": "d031ccb415b726818fda19982525dd201da2effaf60829ccbe7813b0f77eab69",
+      "origin": "original-analysis-metadata"
     },
     {
       "path": "optional-ast-channel/linux-gap-crosscheck/MANIFEST.sha256",
-      "origin": "original-analysis-metadata",
       "bytes": 417,
-      "sha256": "e05b761d1d36a7285e0e82a3d4216edccf37ae1050684e8d5fe9e5e90a4e068d"
+      "sha256": "e05b761d1d36a7285e0e82a3d4216edccf37ae1050684e8d5fe9e5e90a4e068d",
+      "origin": "original-analysis-metadata"
     },
     {
       "path": "optional-ast-channel/linux-gap-crosscheck/PREFLIGHT.json",
-      "origin": "original-analysis-metadata",
       "bytes": 989,
-      "sha256": "be8518900c82863886d7f2d682cde6db49bb45b8768c309155c9bfd1da9214aa"
+      "sha256": "be8518900c82863886d7f2d682cde6db49bb45b8768c309155c9bfd1da9214aa",
+      "origin": "original-analysis-metadata"
     },
     {
       "path": "optional-ast-channel/linux-gap-crosscheck/REPORT.zh.md",
-      "origin": "original-analysis-metadata",
       "bytes": 3976,
-      "sha256": "f68cd8cb52363db32766566e845b363879f89cbc4375cce9f5f83e7d072d1b7e"
+      "sha256": "f68cd8cb52363db32766566e845b363879f89cbc4375cce9f5f83e7d072d1b7e",
+      "origin": "original-analysis-metadata"
     },
     {
       "path": "optional-ast-channel/linux-gap-crosscheck/SYNTAX-CONDITION.json",
-      "origin": "original-analysis-metadata",
       "bytes": 1074,
-      "sha256": "c69690740646f895b0d47e917edc1c7c265582280002f6f9cccb4b1a7db8d20c"
+      "sha256": "c69690740646f895b0d47e917edc1c7c265582280002f6f9cccb4b1a7db8d20c",
+      "origin": "original-analysis-metadata"
     },
     {
       "path": "optional-ast-channel/linux-gap-crosscheck/SYNTAX-SYNTHETIC.json",
-      "origin": "original-analysis-metadata",
       "bytes": 714,
-      "sha256": "9f2607d908ddfd7a7c23411e58794953d2f842fd9c62f195c68d77985ce45ea8"
+      "sha256": "9f2607d908ddfd7a7c23411e58794953d2f842fd9c62f195c68d77985ce45ea8",
+      "origin": "original-analysis-metadata"
     },
     {
       "path": "optional-ast-channel/run_tests.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 424,
-      "sha256": "287ca7c58a5a508af0503db42e0f3a0ed789e6de5144fc71466341e8b5f7d88d"
+      "sha256": "287ca7c58a5a508af0503db42e0f3a0ed789e6de5144fc71466341e8b5f7d88d",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/tests/FIXTURE-NOTES.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 2595,
-      "sha256": "c589aa1aff85f4a9c1ace7286033918c7fcc8d8286d97014226a4757b0dab43d"
+      "sha256": "c589aa1aff85f4a9c1ace7286033918c7fcc8d8286d97014226a4757b0dab43d",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/tests/fixtures.json",
-      "origin": "original-tool-or-documentation",
       "bytes": 25624,
-      "sha256": "3c26b774084b0f6dbf3cca8d99b9709f71d93a75cac792329def9869cf4fd183"
+      "sha256": "3c26b774084b0f6dbf3cca8d99b9709f71d93a75cac792329def9869cf4fd183",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/tests/test_ast_channel.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 17931,
-      "sha256": "8c521a02bd90a5b05070a38866aaaa2988b92dbd36362655294a93dd04626c69"
+      "sha256": "8c521a02bd90a5b05070a38866aaaa2988b92dbd36362655294a93dd04626c69",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/validation/foreign-cwd-run.txt",
-      "origin": "original-tool-or-documentation",
       "bytes": 10778,
-      "sha256": "dbfff98d028333cc99fea503c63ebbe06c9c933b63cf0b021b8d2ae7bafffdf0"
+      "sha256": "dbfff98d028333cc99fea503c63ebbe06c9c933b63cf0b021b8d2ae7bafffdf0",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/validation/test-exit-code.txt",
-      "origin": "original-tool-or-documentation",
       "bytes": 2,
-      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "optional-ast-channel/validation/test-run.txt",
-      "origin": "original-tool-or-documentation",
       "bytes": 10778,
-      "sha256": "08b89c8177d15e7af4084c3bfd6a6f391427ea113d142665146a7595a1eb5fef"
+      "sha256": "08b89c8177d15e7af4084c3bfd6a6f391427ea113d142665146a7595a1eb5fef",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "probes/known_lexical_limitations.py",
@@ -270,6 +294,24 @@
       "path": "tests/test_asar_sidecar.py",
       "bytes": 23692,
       "sha256": "394a7cf66dd8fb19c427ea3eb1660d679c23c581210ab4a74539aeb133cee63b",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_deb_portable_install.py",
+      "bytes": 2273,
+      "sha256": "0a8fd7087dbf441c69b31961bc4c72fde5ca3529cd8bd98361a066a05d7cda2f",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_deb_projection.py",
+      "bytes": 39497,
+      "sha256": "f85e041385ca2020444c0812263eaf4b6b2f9e46acff21927adac6054db631d2",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_deb_transactions.py",
+      "bytes": 11091,
+      "sha256": "42af2f6b02d186666fe665254964ee0d61d6681bcff1523d9bd7877495284aad",
       "origin": "original-tool-or-documentation"
     },
     {
