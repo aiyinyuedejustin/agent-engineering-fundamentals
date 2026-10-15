@@ -1,0 +1,707 @@
+{
+  "sample_sha256": "c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6",
+  "sample_size": 10026272,
+  "executed_target": false,
+  "loaded_target": false,
+  "fde_count": 15,
+  "check_count": 174,
+  "checks": [
+    {
+      "check": "FDE 4047b0..404c32",
+      "passed": true
+    },
+    {
+      "check": "decode 4047b0",
+      "passed": true
+    },
+    {
+      "check": "FDE 52cb60..52cc41",
+      "passed": true
+    },
+    {
+      "check": "decode 52cb60",
+      "passed": true
+    },
+    {
+      "check": "FDE 58fd60..5902d1",
+      "passed": true
+    },
+    {
+      "check": "decode 58fd60",
+      "passed": true
+    },
+    {
+      "check": "FDE 617860..6178c7",
+      "passed": true
+    },
+    {
+      "check": "decode 617860",
+      "passed": true
+    },
+    {
+      "check": "FDE 6179f0..617a9b",
+      "passed": true
+    },
+    {
+      "check": "decode 6179f0",
+      "passed": true
+    },
+    {
+      "check": "FDE 619e80..619f10",
+      "passed": true
+    },
+    {
+      "check": "decode 619e80",
+      "passed": true
+    },
+    {
+      "check": "FDE 619f10..619f96",
+      "passed": true
+    },
+    {
+      "check": "decode 619f10",
+      "passed": true
+    },
+    {
+      "check": "FDE 61b230..61b4d0",
+      "passed": true
+    },
+    {
+      "check": "decode 61b230",
+      "passed": true
+    },
+    {
+      "check": "FDE 61b4d0..61b72d",
+      "passed": true
+    },
+    {
+      "check": "decode 61b4d0",
+      "passed": true
+    },
+    {
+      "check": "FDE 61c8f0..61d12d",
+      "passed": true
+    },
+    {
+      "check": "decode 61c8f0",
+      "passed": true
+    },
+    {
+      "check": "FDE 6216e0..621855",
+      "passed": true
+    },
+    {
+      "check": "decode 6216e0",
+      "passed": true
+    },
+    {
+      "check": "FDE 62ecd0..62f4d8",
+      "passed": true
+    },
+    {
+      "check": "decode 62ecd0",
+      "passed": true
+    },
+    {
+      "check": "FDE 63d5a0..63d5a6",
+      "passed": true
+    },
+    {
+      "check": "decode 63d5a0",
+      "passed": true
+    },
+    {
+      "check": "FDE 701870..701a9f",
+      "passed": true
+    },
+    {
+      "check": "decode 701870",
+      "passed": true
+    },
+    {
+      "check": "FDE 709270..709286",
+      "passed": true
+    },
+    {
+      "check": "decode 709270",
+      "passed": true
+    },
+    {
+      "check": "instruction 58fd77",
+      "passed": true
+    },
+    {
+      "check": "instruction 58fd83",
+      "passed": true
+    },
+    {
+      "check": "instruction 70187a",
+      "passed": true
+    },
+    {
+      "check": "instruction 7018a2",
+      "passed": true
+    },
+    {
+      "check": "instruction 701973",
+      "passed": true
+    },
+    {
+      "check": "instruction 701978",
+      "passed": true
+    },
+    {
+      "check": "instruction 701980",
+      "passed": true
+    },
+    {
+      "check": "instruction 70198d",
+      "passed": true
+    },
+    {
+      "check": "instruction 701994",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a05",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a17",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a1e",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a25",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a2d",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a33",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a36",
+      "passed": true
+    },
+    {
+      "check": "instruction 404a9f",
+      "passed": true
+    },
+    {
+      "check": "instruction 6216ec",
+      "passed": true
+    },
+    {
+      "check": "instruction 6216ef",
+      "passed": true
+    },
+    {
+      "check": "instruction 6216f2",
+      "passed": true
+    },
+    {
+      "check": "instruction 6216f8",
+      "passed": true
+    },
+    {
+      "check": "instruction 6216fc",
+      "passed": true
+    },
+    {
+      "check": "instruction 621700",
+      "passed": true
+    },
+    {
+      "check": "instruction 621724",
+      "passed": true
+    },
+    {
+      "check": "instruction 62172a",
+      "passed": true
+    },
+    {
+      "check": "instruction 62172c",
+      "passed": true
+    },
+    {
+      "check": "instruction 62178e",
+      "passed": true
+    },
+    {
+      "check": "instruction 62179b",
+      "passed": true
+    },
+    {
+      "check": "instruction 6217a1",
+      "passed": true
+    },
+    {
+      "check": "instruction 6217a3",
+      "passed": true
+    },
+    {
+      "check": "instruction 62180d",
+      "passed": true
+    },
+    {
+      "check": "instruction 62181b",
+      "passed": true
+    },
+    {
+      "check": "instruction 621821",
+      "passed": true
+    },
+    {
+      "check": "instruction 621824",
+      "passed": true
+    },
+    {
+      "check": "instruction 62184a",
+      "passed": true
+    },
+    {
+      "check": "instruction 63d5a0",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b4e1",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b4e5",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b4f7",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b4ff",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b511",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b525",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b528",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b532",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b534",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b539",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b543",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b54a",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b54e",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b553",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b5ad",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b5b8",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b5e4",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b5f0",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b62c",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b63b",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b641",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b649",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b677",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b67a",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b680",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b682",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b684",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b6dc",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b6ed",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b6f3",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b598",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b70d",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b243",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b247",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b259",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b261",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b273",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b287",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b28a",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b295",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b299",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b29b",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b2a5",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b2ac",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b2b0",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b2b5",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b2fe",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b309",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b332",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b33e",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b37c",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b38b",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b391",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b39a",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b41a",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b41d",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b423",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b425",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b427",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b47f",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b490",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b496",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b3f7",
+      "passed": true
+    },
+    {
+      "check": "instruction 61b4b0",
+      "passed": true
+    },
+    {
+      "check": "instruction 619f54",
+      "passed": true
+    },
+    {
+      "check": "instruction 619f58",
+      "passed": true
+    },
+    {
+      "check": "instruction 619ecf",
+      "passed": true
+    },
+    {
+      "check": "instruction 619ed3",
+      "passed": true
+    },
+    {
+      "check": "instruction 62efd2",
+      "passed": true
+    },
+    {
+      "check": "instruction 62efdb",
+      "passed": true
+    },
+    {
+      "check": "instruction 61cba5",
+      "passed": true
+    },
+    {
+      "check": "instruction 61cbae",
+      "passed": true
+    },
+    {
+      "check": "instruction 62efa1",
+      "passed": true
+    },
+    {
+      "check": "instruction 61cb5c",
+      "passed": true
+    },
+    {
+      "check": "instruction 62f158",
+      "passed": true
+    },
+    {
+      "check": "instruction 62f165",
+      "passed": true
+    },
+    {
+      "check": "instruction 61cda0",
+      "passed": true
+    },
+    {
+      "check": "instruction 61cdad",
+      "passed": true
+    },
+    {
+      "check": "instruction 709270",
+      "passed": true
+    },
+    {
+      "check": "instruction 709279",
+      "passed": true
+    },
+    {
+      "check": "instruction 709280",
+      "passed": true
+    },
+    {
+      "check": "instruction 52cc2c",
+      "passed": true
+    },
+    {
+      "check": "instruction 61788a",
+      "passed": true
+    },
+    {
+      "check": "instruction 61789d",
+      "passed": true
+    },
+    {
+      "check": "instruction 617a5c",
+      "passed": true
+    },
+    {
+      "check": "instruction 617a6f",
+      "passed": true
+    },
+    {
+      "check": "relocation 98c598 malloc@GLIBC_2.2.5",
+      "passed": true
+    },
+    {
+      "check": "relocation 98c5a8 free@GLIBC_2.2.5",
+      "passed": true
+    },
+    {
+      "check": "relocation 98c928 close@GLIBC_2.2.5",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d0b0 napi_call_threadsafe_function",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d0b8 napi_release_threadsafe_function",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d488 napi_create_int32",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d7b0 napi_create_threadsafe_function",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d7e0 napi_create_promise",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d7e8 napi_create_async_work",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d7f8 napi_delete_async_work",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d800 napi_reject_deferred",
+      "passed": true
+    },
+    {
+      "check": "relocation 98d808 napi_resolve_deferred",
+      "passed": true
+    },
+    {
+      "check": "relative 98d4e0->701870",
+      "passed": true
+    },
+    {
+      "check": "relative 98d7c8->709270",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 6216e0",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 61b230",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 61b4d0",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 617860",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 6179f0",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 63d5a0",
+      "passed": true
+    },
+    {
+      "check": "no direct close GOT reference in FDE 709270",
+      "passed": true
+    },
+    {
+      "check": "stable snapshot",
+      "passed": true
+    }
+  ],
+  "scope": "Selected instruction/relocation checks only. Control-flow/data-flow interpretation is manual; this is not a runtime or global ownership proof."
+}

@@ -1,0 +1,48 @@
+flowchart LR
+  subgraph SOCKET[Socket TSFN call-js]
+    SF["数字 fd：result +8 低32位"]
+    SH["堆结果容器：data"]
+    SD["deferred：context"]
+    SW["TSFN：生产端持有"]
+    SN["create_int32：检查status"]
+    SR["resolve：检查status"]
+    SE["非0：尝试reject同一deferred"]
+    SM["free(data)：仅容器内存"]
+    SW -->|"调用入队，未查返回"| SH
+    SW --> SWEND["调用release（返回未检查）"]
+    SH --> SF
+    SF -->|"D=-1"| SN
+    SN -->|"status=0"| SR
+    SN -->|"status非0"| SE
+    SD -.-> SR
+    SD -.-> SE
+    SR -->|"status非0"| SE
+    SR -->|"status=0"| SM
+    SE --> SM
+  end
+  subgraph FILE[File async complete]
+    FF["数字 fd：寄存器；原槽低32位归零"]
+    FH["堆任务：结果D重置为-1"]
+    FD["deferred：从任务取出"]
+    FW["async work：从任务取出"]
+    FG["S=11 或共享C=2"]
+    FN["create_int32：检查status"]
+    FR["resolve：不查返回"]
+    FE["转换非0：新错误，尝试reject"]
+    FC["delete_async_work"]
+    FM["free路径/错误文字/控制块/任务"]
+    FH --> FF
+    FH --> FG
+    FG -->|"满足，跳过结算"| FC
+    FG -->|"S=0且C不为2且原D=-1"| FN
+    FF -.->|"仅数值转换分支使用"| FN
+    FN -->|"status=0"| FR
+    FN -->|"status非0，原fd寄存器改存status"| FE
+    FD -.-> FR
+    FD -.-> FE
+    FR --> FC
+    FE --> FC
+    FW -.-> FC
+    FC --> FM
+  end
+  NOTE["图示D=-1数值交付路线；其余条件见正文表。虚线为资源参数；未画close边：本轮没有闭合成功fd的回收归属。默认D=-1、fd低32位0不证明execute执行过。"]

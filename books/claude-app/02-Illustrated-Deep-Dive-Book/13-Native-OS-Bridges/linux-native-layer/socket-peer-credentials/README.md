@@ -47,3 +47,5 @@ SO_PEERCRED 返回连接建立相关时刻的 peer 凭据，不是每次业务�
 - 不把静态路径存在写成用户机器已经执行或验证成功。
 
 [返回 Linux 原生层](../README.md)
+
+后续的数值交付、TSFN拆除与失败清理，见[描述符交付补篇](../descriptor-handoff/README.md)。

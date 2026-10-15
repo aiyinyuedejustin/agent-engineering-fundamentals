@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="700" viewBox="0 0 1440 700">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#65758b"/></marker></defs>
+<style>text{font-family:"Noto Sans CJK SC","Noto Sans SC",sans-serif;fill:#233247;font-size:21px}.title{font-size:31px;font-weight:700}.head{font-size:25px;font-weight:700}.small{font-size:18px}.box{fill:white;stroke:#a9b7c9;stroke-width:2}.line{fill:none;stroke:#65758b;stroke-width:2}.muted{fill:#526479}.warn{fill:#fff0dc;stroke:#deaa59;stroke-width:2}</style>
+<rect width="1440" height="700" fill="#f6f8fb"/>
+<text x="44" y="53" class="title">两类交付回调：API状态与资源清理分别追踪</text>
+<text x="44" y="89" class="small muted">图示 D=-1 数值交付路线；其余条件见正文表。fd数字 ≠ 结果容器 ≠ deferred ≠ 异步资源。</text>
+<rect x="28" y="112" width="1384" height="237" rx="20" fill="#eaf2fb"/>
+<text x="48" y="151" class="head">文件 async complete</text><text x="430" y="151" class="small">S=11 或 C=2：跳过Promise结算，直接清理</text>
+<rect x="48" y="180" width="255" height="84" rx="11" class="box"/>
+<text x="68" y="213">取出D、fd低32位</text><text x="68" y="244" class="small">原任务槽重置为 -1 / 0</text>
+<path d="M303 222H350" class="line" marker-end="url(#arr)"/>
+<rect x="353" y="180" width="230" height="84" rx="11" class="box"/>
+<text x="375" y="213">create_int32</text><text x="375" y="244" class="small">检查返回状态</text>
+<path d="M583 222H635" class="line" marker-end="url(#arr)"/>
+<rect x="638" y="180" width="205" height="84" rx="11" class="box"/>
+<text x="660" y="213">resolve</text><text x="660" y="244" class="small">不检查返回状态</text>
+<path d="M843 222H894" class="line" marker-end="url(#arr)"/>
+<rect x="897" y="180" width="465" height="84" rx="11" class="box"/>
+<text x="919" y="213">delete work → 控制块/任务内存清理</text><text x="919" y="244" class="small">本段未闭合真实成功fd的回收边</text>
+<path d="M468 264V300H1128V269" class="line" marker-end="url(#arr)"/>
+<text x="501" y="293" class="small">转换非0：新错误 → 尝试reject；原fd不进入新错误</text>
+<rect x="28" y="368" width="1384" height="223" rx="20" fill="#edf5f0"/>
+<text x="48" y="408" class="head">socket TSFN call-js</text><text x="430" y="408" class="small">没有status参数，也没有独立env=NULL分支</text>
+<rect x="48" y="435" width="255" height="84" rx="11" class="box"/>
+<text x="68" y="468">data内保存D / fd</text><text x="68" y="499" class="small">context保存deferred</text>
+<path d="M303 477H350" class="line" marker-end="url(#arr)"/>
+<rect x="353" y="435" width="230" height="84" rx="11" class="box"/>
+<text x="375" y="468">create_int32</text><text x="375" y="499" class="small">检查返回状态</text>
+<path d="M583 477H635" class="line" marker-end="url(#arr)"/>
+<rect x="638" y="435" width="205" height="84" rx="11" class="box"/>
+<text x="660" y="468">resolve</text><text x="660" y="499" class="small">检查返回状态</text>
+<path d="M843 477H894" class="line" marker-end="url(#arr)"/>
+<rect x="897" y="435" width="465" height="84" rx="11" class="box"/>
+<text x="919" y="468">共同尾部free(data)</text><text x="919" y="499" class="small">释放结果容器，不自动关闭其中的fd</text>
+<path d="M468 519V552H1128V524" class="line" marker-end="url(#arr)"/><path d="M739 519V552" fill="none" stroke="#65758b" stroke-width="2"/>
+<text x="500" y="578" class="small">任一API非0：构造错误 → 尝试对同一deferred reject</text>
+<rect x="45" y="613" width="1350" height="56" rx="11" class="warn"/>
+<text x="65" y="649">两个易错推论：默认D=-1 / fd低32位0不证明执行过；API返回失败不证明资源尚未消费。</text>
+</svg>

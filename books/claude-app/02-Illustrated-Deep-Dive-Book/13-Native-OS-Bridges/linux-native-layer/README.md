@@ -141,3 +141,7 @@ node --test examples/callback-gate.test.mjs examples/callback-gate.audit.test.mj
 ## 文件解析：内核约束与兼容路径
 
 [openRootDir / openBeneath 补篇](file-containment/README.md)连接方法注册、异步工作、根目录 fd、openat2 的解析约束和逐分量 openat 回退。重点区分目录身份与目录树位置、链接解析与跨挂载限制，并提供样本绑定的只读复核器及无需样本的输入安全测试。
+
+## 交付失败时，资源归谁
+
+[描述符交付补篇](descriptor-handoff/README.md)区分TSFN与async-complete两种回调，把fd数字、堆容器、Promise deferred和异步资源分别追踪。调用失败不保证资源尚未消费，释放容器也不等于关闭其中的fd。
