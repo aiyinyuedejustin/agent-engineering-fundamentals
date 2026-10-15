@@ -1,0 +1,19 @@
+flowchart TB
+    A["分配控制块 P<br/>C = P+0x10，初始为 0"]
+    B["P 复制到任务 T<br/>root: T+0x40<br/>beneath: T+0x50"]
+    Q["create / queue async work 成功"]
+    R["本地 P 计数递减<br/>向 JS 返回 Promise"]
+    X["execute 正常调用文件 worker<br/>未按 C 分支"]
+    F["worker 结果写入 T<br/>成功时才产生真实 fd F"]
+    K["complete 读取 T 中的 P<br/>检查 status=11 或 C=2"]
+    D["抑制或尝试结算<br/>delete work，写 C=1，清理"]
+    U["仍缺：谁获得同一 P 并写 C=2？<br/>何时发生，能否与 F 同时存在？"]
+    A --> B --> Q
+    Q --> R
+    Q -->|宿主调用时| X --> F --> K --> D
+    B --> K
+    U -. "待证边，不是已确认调用" .-> K
+    classDef observed fill:#eaf3f6,stroke:#337586,color:#142e34;
+    classDef unknown fill:#fff4db,stroke:#b58429,color:#49350e,stroke-dasharray:5 4;
+    class A,B,Q,R,X,F,K,D observed;
+    class U unknown;

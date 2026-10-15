@@ -1,0 +1,546 @@
+{
+  "sample_sha256": "c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6",
+  "sample_size": 10026272,
+  "target_loaded": false,
+  "target_executed": false,
+  "fde_count": 11,
+  "check_count": 133,
+  "checks": [
+    {
+      "check": "FDE 617860..6178c7",
+      "passed": true
+    },
+    {
+      "check": "clean decode 617860",
+      "passed": true
+    },
+    {
+      "check": "FDE 6179f0..617a9b",
+      "passed": true
+    },
+    {
+      "check": "clean decode 6179f0",
+      "passed": true
+    },
+    {
+      "check": "FDE 619e80..619f10",
+      "passed": true
+    },
+    {
+      "check": "clean decode 619e80",
+      "passed": true
+    },
+    {
+      "check": "FDE 619f10..619f96",
+      "passed": true
+    },
+    {
+      "check": "clean decode 619f10",
+      "passed": true
+    },
+    {
+      "check": "FDE 61b230..61b4d0",
+      "passed": true
+    },
+    {
+      "check": "clean decode 61b230",
+      "passed": true
+    },
+    {
+      "check": "FDE 61b4d0..61b72d",
+      "passed": true
+    },
+    {
+      "check": "clean decode 61b4d0",
+      "passed": true
+    },
+    {
+      "check": "FDE 61c8f0..61d12d",
+      "passed": true
+    },
+    {
+      "check": "clean decode 61c8f0",
+      "passed": true
+    },
+    {
+      "check": "FDE 62d560..62d806",
+      "passed": true
+    },
+    {
+      "check": "clean decode 62d560",
+      "passed": true
+    },
+    {
+      "check": "FDE 62ecd0..62f4d8",
+      "passed": true
+    },
+    {
+      "check": "clean decode 62ecd0",
+      "passed": true
+    },
+    {
+      "check": "FDE 709270..709286",
+      "passed": true
+    },
+    {
+      "check": "clean decode 709270",
+      "passed": true
+    },
+    {
+      "check": "FDE 778620..778638",
+      "passed": true
+    },
+    {
+      "check": "clean decode 778620",
+      "passed": true
+    },
+    {
+      "check": "anchor 62ef85",
+      "passed": true
+    },
+    {
+      "check": "anchor 62ef8a",
+      "passed": true
+    },
+    {
+      "check": "anchor 62ef99",
+      "passed": true
+    },
+    {
+      "check": "anchor 62efa1",
+      "passed": true
+    },
+    {
+      "check": "anchor 62efa5",
+      "passed": true
+    },
+    {
+      "check": "anchor 62efb2",
+      "passed": true
+    },
+    {
+      "check": "anchor 62efec",
+      "passed": true
+    },
+    {
+      "check": "anchor 62eff1",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f012",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f017",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f151",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f158",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f162",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f165",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f1b0",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f1b6",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f1b8",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f251",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f261",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f284",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f28e",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f2a0",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f2a4",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f2b5",
+      "passed": true
+    },
+    {
+      "check": "anchor 62f2bb",
+      "passed": true
+    },
+    {
+      "check": "anchor 62ef19",
+      "passed": true
+    },
+    {
+      "check": "anchor 62ef76",
+      "passed": true
+    },
+    {
+      "check": "anchor 62ef80",
+      "passed": true
+    },
+    {
+      "check": "anchor 62eda0",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cb40",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cb45",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cb54",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cb5c",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cb60",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cb96",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cbc2",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cbca",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cbed",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cbf5",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cd99",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cda0",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cdaa",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cdad",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ce01",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ce07",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ce09",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ce7d",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ce8d",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ced1",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ced5",
+      "passed": true
+    },
+    {
+      "check": "anchor 61cedc",
+      "passed": true
+    },
+    {
+      "check": "anchor 61ceee",
+      "passed": true
+    },
+    {
+      "check": "anchor 62d7d3",
+      "passed": true
+    },
+    {
+      "check": "anchor 62d7d8",
+      "passed": true
+    },
+    {
+      "check": "anchor 62d7dd",
+      "passed": true
+    },
+    {
+      "check": "anchor 62d7e3",
+      "passed": true
+    },
+    {
+      "check": "anchor 62d7e8",
+      "passed": true
+    },
+    {
+      "check": "anchor 62d7a4",
+      "passed": true
+    },
+    {
+      "check": "anchor 619e85",
+      "passed": true
+    },
+    {
+      "check": "anchor 619ea0",
+      "passed": true
+    },
+    {
+      "check": "anchor 619ecf",
+      "passed": true
+    },
+    {
+      "check": "anchor 619ed3",
+      "passed": true
+    },
+    {
+      "check": "anchor 619f15",
+      "passed": true
+    },
+    {
+      "check": "anchor 619f25",
+      "passed": true
+    },
+    {
+      "check": "anchor 619f54",
+      "passed": true
+    },
+    {
+      "check": "anchor 619f58",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b28c",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b290",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b295",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b299",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b29b",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b2a1",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b2a5",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b3a0",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b3a4",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b52a",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b52e",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b532",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b534",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b539",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b53f",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b543",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b64f",
+      "passed": true
+    },
+    {
+      "check": "anchor 61b653",
+      "passed": true
+    },
+    {
+      "check": "anchor 709270",
+      "passed": true
+    },
+    {
+      "check": "anchor 709279",
+      "passed": true
+    },
+    {
+      "check": "anchor 709280",
+      "passed": true
+    },
+    {
+      "check": "anchor 778620",
+      "passed": true
+    },
+    {
+      "check": "anchor 778624",
+      "passed": true
+    },
+    {
+      "check": "anchor 778627",
+      "passed": true
+    },
+    {
+      "check": "anchor 77862b",
+      "passed": true
+    },
+    {
+      "check": "anchor 778631",
+      "passed": true
+    },
+    {
+      "check": "anchor 778634",
+      "passed": true
+    },
+    {
+      "check": "import malloc@GLIBC_2.2.5",
+      "passed": true
+    },
+    {
+      "check": "import free@GLIBC_2.2.5",
+      "passed": true
+    },
+    {
+      "check": "import napi_create_promise",
+      "passed": true
+    },
+    {
+      "check": "import napi_create_async_work",
+      "passed": true
+    },
+    {
+      "check": "import napi_queue_async_work",
+      "passed": true
+    },
+    {
+      "check": "import napi_delete_async_work",
+      "passed": true
+    },
+    {
+      "check": "relative 98d7c8->709270",
+      "passed": true
+    },
+    {
+      "check": "relative 984f78->778620",
+      "passed": true
+    },
+    {
+      "check": "relative 985660->778620",
+      "passed": true
+    },
+    {
+      "check": "relative 9860f8->778620",
+      "passed": true
+    },
+    {
+      "check": "relative 986ff8->778620",
+      "passed": true
+    },
+    {
+      "check": "relative 988b50->778620",
+      "passed": true
+    },
+    {
+      "check": "relative 98a218->778620",
+      "passed": true
+    },
+    {
+      "check": "relative 98aa98->778620",
+      "passed": true
+    },
+    {
+      "check": "execute 619e80 no operand at task control slot",
+      "passed": true
+    },
+    {
+      "check": "execute 619f10 no operand at task control slot",
+      "passed": true
+    },
+    {
+      "check": "reference helper no byte operand",
+      "passed": true
+    },
+    {
+      "check": "snapshot unchanged",
+      "passed": true
+    }
+  ],
+  "observations": {
+    "named_napi_cancel_async_work_dynamic_relocation": false
+  },
+  "scope": "Selected static anchors and local operand checks only; no global writer absence, cancellation reachability, runtime ordering, descriptor-leak or vulnerability proof."
+}

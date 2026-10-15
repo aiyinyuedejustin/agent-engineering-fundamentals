@@ -68,3 +68,5 @@ python3 -B verify-static.py /absolute/path/to/verified-linux.node
 10项fixture检查输入拒绝和临时快照清理；174项静态检查对应15个FDE，不能替代手工控制流分析。JSON只输出stdout；样本摘要和精确定位见[附录](EVIDENCE-APPENDIX.md)。图可从[Mermaid图源](figures/descriptor-handoff.mmd)继续改写。
 
 [返回 Linux 原生层](../README.md)
+
+[继续追踪：拿到 Promise，不等于拿到取消能力](cancellation/README.md)区分返回给调用方的结果与控制同一任务状态的能力，沿控制块的分配、引用释放、execute和complete逐段核对。

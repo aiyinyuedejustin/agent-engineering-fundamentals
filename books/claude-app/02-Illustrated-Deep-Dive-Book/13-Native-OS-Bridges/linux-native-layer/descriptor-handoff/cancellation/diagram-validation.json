@@ -1,0 +1,14 @@
+{
+  "parse": "pass",
+  "type": "flowchart-v2",
+  "negative_control": "rejected",
+  "render": "not_run",
+  "note": "Syntax validation only using existing installed Mermaid. Hand-authored SVG is a separate rendering.",
+  "hand_authored_svg": {
+    "xml_parse": "pass",
+    "render": "pass (existing Inkscape)",
+    "visual_review": "pass; local-fragment markers, corner radii and dash arrays use XML attributes",
+    "browser_render": "not_tested",
+    "offline_reader_safe_subset": "pass using unmodified offline-reader/svg_check.py validate(svgbytes)"
+  }
+}

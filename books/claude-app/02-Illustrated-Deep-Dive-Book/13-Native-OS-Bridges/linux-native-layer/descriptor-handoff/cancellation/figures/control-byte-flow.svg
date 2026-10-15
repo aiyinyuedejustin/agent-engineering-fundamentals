@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="850" viewBox="0 0 1040 850" role="img" aria-labelledby="title desc">
+<title id="title">Promise返回与控制块检查的两条路径</title>
+<desc id="desc">控制块P的字节C初始化为0，P进入任务T。queue成功后的本地路径释放一个P引用并返回Promise；宿主调用execute时进入文件worker，结果由complete处理。谁取得同一P并写2，以及与真实fd同时存在的时序，仍是未闭合边。execute异常cleanup的P引用清理单独注明。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#477c8b"/></marker><marker id="unknown" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#ac7e2b"/></marker><style>text{font-family:"Noto Sans CJK SC","Noto Sans",sans-serif;fill:#17363d;text-anchor:middle;font-size:19px}.box{fill:#eaf3f6;stroke:#477c8b;stroke-width:2}.edge{fill:none;stroke:#477c8b;stroke-width:2.4}.note{font-size:16px;fill:#52676d}.unknown{fill:#fff4db;stroke:#ac7e2b;stroke-width:2}.small{font-size:17px}</style></defs>
+<rect width="1040" height="850" fill="#fff"/>
+<text x="520" y="38" style="font-size:26px;font-weight:600">结果返回和状态控制，需要分别证明</text>
+<rect class="box" rx="12" x="315" y="65" width="410" height="70"/>
+<text x="520" y="94">分配控制块 P</text><text x="520" y="120" class="small">C = P+0x10，初始写 0</text>
+<path class="edge" marker-end="url(#arrow)" d="M520 135 V164"/>
+<rect class="box" rx="12" x="315" y="169" width="410" height="74"/>
+<text x="520" y="199">P 复制到任务 T</text><text x="520" y="226" class="small">root：T+0x40 · beneath：T+0x50</text>
+<path class="edge" marker-end="url(#arrow)" d="M520 243 V271"/>
+<rect class="box" rx="12" x="315" y="276" width="410" height="60"/>
+<text x="520" y="314">create / queue async work 成功</text>
+<path class="edge" marker-end="url(#arrow)" d="M415 336 V363 H225 V390"/>
+<path class="edge" marker-end="url(#arrow)" d="M625 336 V363 H790 V390"/>
+<text class="note" x="140" y="379">本地返回路径</text><text class="note" x="885" y="379">宿主调用时</text>
+<rect class="box" rx="12" x="55" y="395" width="340" height="90"/>
+<text x="225" y="431">递减本地 P 计数</text><text x="225" y="461">向 JS 返回 Promise</text>
+<rect class="box" rx="12" x="585" y="395" width="410" height="90"/>
+<text x="790" y="431">execute 正常调用文件 worker</text><text x="790" y="461">未按 C 决定是否执行</text>
+<path class="edge" marker-end="url(#arrow)" d="M790 485 V514"/>
+<rect class="box" rx="12" x="585" y="519" width="410" height="70"/>
+<text x="790" y="548">worker 结果写入 T</text><text x="790" y="574" class="small">真实成功 fd F 需要 execute 的结果证据</text>
+<path class="edge" marker-end="url(#arrow)" d="M790 589 V618"/>
+<rect class="box" rx="12" x="585" y="623" width="410" height="70"/>
+<text x="790" y="652">complete 读取同一 P</text><text x="790" y="678" class="small">检查 status=11 或 C=2</text>
+<rect class="unknown" rx="12" stroke-dasharray="6 5" x="55" y="575" width="340" height="120"/>
+<text x="225" y="610" style="fill:#76531b">仍缺：谁获得同一 P 并写 2？</text><text x="225" y="643" class="small" style="fill:#76531b">何时发生？</text><text x="225" y="673" class="small" style="fill:#76531b">能否与真实成功 F 同时存在？</text>
+<path d="M395 658 H578" fill="none" stroke="#ac7e2b" stroke-width="2.4" stroke-dasharray="6 5" marker-end="url(#unknown)"/>
+<text x="489" y="632" class="note" style="fill:#76531b">待证边</text>
+<path class="edge" marker-end="url(#arrow)" d="M790 693 V722"/>
+<rect class="box" rx="12" x="585" y="727" width="410" height="65"/>
+<text x="790" y="755" class="small">抑制或尝试结算后：delete work</text><text x="790" y="781" class="small">写 C=1，清理任务与引用</text>
+<text x="225" y="748" class="note">引用释放不等于取消请求</text>
+<text x="520" y="827" class="note">注：execute 异常 cleanup 会读取 P 并清理引用；图中实线不表示已证明线程时序。</text>
+</svg>
