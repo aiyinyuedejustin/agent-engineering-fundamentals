@@ -262,3 +262,7 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpack
 [Linux 2.37337.1显式ASAR配套](LINUX-ASAR-VALIDATION.md)：489个声明文件完整性通过，同字节双输入流程完成；语义扫描仍保留18个不完整文件，报告未抹掉覆盖缺口。验证没有执行产品代码。
 
 词法拒绝的分类、字节偏移合同与候选交叉核验建议见 [扫描诊断附录](SCANNER-DIAGNOSTICS.md)。
+
+## 可选实验：用语法树交叉检查候选
+
+[独立 AST 候选通道](optional-ast-channel/README.md) 用真实 JavaScript 语法节点排除五类原创词法反例。它保留独立 schema、预算和结果，不更改默认扫描器及其已报告缺口。当前89项测试使用明确标记的 Node 内部 Acorn 8.17.0；正式外置 Acorn 入口的成功路径尚待验证，不能当成默认工具箱的生产替代品。

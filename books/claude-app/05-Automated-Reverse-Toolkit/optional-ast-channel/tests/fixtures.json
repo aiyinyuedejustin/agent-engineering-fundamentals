@@ -1,0 +1,623 @@
+[
+  {
+    "id": "trap-nested-template-raw",
+    "source": "const ribbon = `${`checkGate(\"decoy_nested_ribbon\")`}`;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Nested template quasi text is data, including text that looks like a configured call."
+  },
+  {
+    "id": "control-after-nested-template-raw",
+    "source": "const ribbon = `${`checkGate(\"decoy_nested_ribbon\")`}`;\ncheckGate(\"real_after_nested_template_raw\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "real_after_nested_template_raw"
+      }
+    ],
+    "notes": "Nested template quasi text is data, including text that looks like a configured call. The subsequent real call is a positive recovery control; no decoy is expected."
+  },
+  {
+    "id": "trap-return-string-division",
+    "source": "const ratio = \"return\" / 7; const ribbon = \"/checkGate('decoy_division_ribbon'); /\"; const expression = /z/;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "A string containing return is not the return keyword. Division and the following string must retain their grammar roles."
+  },
+  {
+    "id": "control-after-return-string-division",
+    "source": "const ratio = \"return\" / 7; const ribbon = \"/checkGate('decoy_division_ribbon'); /\"; const expression = /z/;\ncheckGate(\"real_after_return_string_division\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "real_after_return_string_division"
+      }
+    ],
+    "notes": "A string containing return is not the return keyword. Division and the following string must retain their grammar roles. The subsequent real call is a positive recovery control; no decoy is expected."
+  },
+  {
+    "id": "trap-regex-after-arrow",
+    "source": "const expression = () => /checkGate(\"decoy_arrow_ribbon\")/;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "A regex literal in an arrow expression body must not become executable candidate syntax."
+  },
+  {
+    "id": "control-after-regex-after-arrow",
+    "source": "const expression = () => /checkGate(\"decoy_arrow_ribbon\")/;\ncheckGate(\"real_after_regex_after_arrow\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "real_after_regex_after_arrow"
+      }
+    ],
+    "notes": "A regex literal in an arrow expression body must not become executable candidate syntax. The subsequent real call is a positive recovery control; no decoy is expected."
+  },
+  {
+    "id": "trap-regex-after-and",
+    "source": "const expression = ready && /checkGate(\"decoy_and_ribbon\")/;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "A regex literal after logical AND remains regex text."
+  },
+  {
+    "id": "control-after-regex-after-and",
+    "source": "const expression = ready && /checkGate(\"decoy_and_ribbon\")/;\ncheckGate(\"real_after_regex_after_and\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "real_after_regex_after_and"
+      }
+    ],
+    "notes": "A regex literal after logical AND remains regex text. The subsequent real call is a positive recovery control; no decoy is expected."
+  },
+  {
+    "id": "trap-regex-after-control-header",
+    "source": "if ((ready)) /checkGate(\"decoy_control_ribbon\")/.test(\"ribbon\");",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Both control-header closing parentheses precede a regex expression statement; regex contents are not calls."
+  },
+  {
+    "id": "control-after-regex-after-control-header",
+    "source": "if ((ready)) /checkGate(\"decoy_control_ribbon\")/.test(\"ribbon\");\ncheckGate(\"real_after_regex_after_control_header\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "real_after_regex_after_control_header"
+      }
+    ],
+    "notes": "Both control-header closing parentheses precede a regex expression statement; regex contents are not calls. The subsequent real call is a positive recovery control; no decoy is expected."
+  },
+  {
+    "id": "calls-direct-three-categories",
+    "source": "checkGate(\"signal_cedar\"); defineTool(\"tool_cedar\"); trackEvent(\"event_cedar\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_cedar"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "tool_cedar"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_cedar"
+      }
+    ],
+    "notes": "Configured direct Identifier CallExpression nodes count as candidates only, without proving a runtime binding."
+  },
+  {
+    "id": "calls-member-three-categories",
+    "source": "gates.isEnabled(\"signal_willow\"); tools.registerTool(\"tool_willow\"); metrics.capture(\"event_willow\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_willow"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "tool_willow"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_willow"
+      }
+    ],
+    "notes": "Noncomputed MemberExpression callees are matched by their property name; receiver semantics are not inferred."
+  },
+  {
+    "id": "call-plain-template-argument",
+    "source": "useGate(`signal_fir`); define_tool(`tool_fir`); emitEvent(`event_fir`);",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_fir"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "tool_fir"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_fir"
+      }
+    ],
+    "notes": "Unescaped templates with zero substitutions are accepted first-argument names."
+  },
+  {
+    "id": "call-inside-template-interpolation",
+    "source": "const ribbon = `raw checkGate(\"decoy_interpolation_raw\") ${checkGate(\"signal_inside_ribbon\")} tail`;",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_inside_ribbon"
+      }
+    ],
+    "notes": "Traverse the interpolation expression and find its real call, never parse either raw quasi as code."
+  },
+  {
+    "id": "call-inside-nested-template-interpolation",
+    "source": "const ribbon = `${`raw checkGate(\"decoy_nested_raw\") ${track(\"event_inside_nested\")}`}`;",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "telemetry",
+        "key": "event_inside_nested"
+      }
+    ],
+    "notes": "Nested template interpolation traversal still distinguishes expression nodes from nested raw text."
+  },
+  {
+    "id": "call-in-interpolated-name-expression",
+    "source": "checkGate(`prefix_${track(\"event_name_builder\")}`);",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "telemetry",
+        "key": "event_name_builder"
+      }
+    ],
+    "notes": "The outer interpolated flag name is ignored, but its interpolation contains a real independent telemetry call."
+  },
+  {
+    "id": "comments-and-trivia-around-real-call",
+    "source": "checkGate /* spacer */ ( /* spacer */ \"signal_with_trivia\" /* spacer */, false );",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_with_trivia"
+      }
+    ],
+    "notes": "Comments between syntactic pieces do not hide a genuine CallExpression."
+  },
+  {
+    "id": "all-default-call-spellings",
+    "source": "checkGate(\"spelling_flags_0\");\ncheck_gate(\"spelling_flags_1\");\ngetFeatureFlag(\"spelling_flags_2\");\nget_feature_flag(\"spelling_flags_3\");\nisFeatureEnabled(\"spelling_flags_4\");\nisEnabled(\"spelling_flags_5\");\nuseFeatureFlag(\"spelling_flags_6\");\nuseGate(\"spelling_flags_7\");\nregisterTool(\"spelling_tool_contracts_0\");\ndefineTool(\"spelling_tool_contracts_1\");\nregister_tool(\"spelling_tool_contracts_2\");\ndefine_tool(\"spelling_tool_contracts_3\");\ntrack(\"spelling_telemetry_0\");\ntrackEvent(\"spelling_telemetry_1\");\ncapture(\"spelling_telemetry_2\");\nlogEvent(\"spelling_telemetry_3\");\nemitEvent(\"spelling_telemetry_4\");",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "spelling_flags_0"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_1"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_2"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_3"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_4"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_5"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_6"
+      },
+      {
+        "category": "flags",
+        "key": "spelling_flags_7"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "spelling_tool_contracts_0"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "spelling_tool_contracts_1"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "spelling_tool_contracts_2"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "spelling_tool_contracts_3"
+      },
+      {
+        "category": "telemetry",
+        "key": "spelling_telemetry_0"
+      },
+      {
+        "category": "telemetry",
+        "key": "spelling_telemetry_1"
+      },
+      {
+        "category": "telemetry",
+        "key": "spelling_telemetry_2"
+      },
+      {
+        "category": "telemetry",
+        "key": "spelling_telemetry_3"
+      },
+      {
+        "category": "telemetry",
+        "key": "spelling_telemetry_4"
+      }
+    ],
+    "notes": "All existing original-scanner default call spellings are covered; names and code are synthetic."
+  },
+  {
+    "id": "negative-line-and-block-comments",
+    "source": "// checkGate(\"decoy_line_comment\");\n/* defineTool(\"decoy_block_comment\"); track(\"decoy_block_event\"); */\nconst count = 1;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Comment text is never reparsed as source."
+  },
+  {
+    "id": "negative-plain-quoted-strings",
+    "source": "const a = 'checkGate(\"decoy_single_quote\")'; const b = \"registerTool('decoy_double_quote')\";",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Call-looking plain string contents are data."
+  },
+  {
+    "id": "negative-plain-template-raw",
+    "source": "const ribbon = `checkGate(\"decoy_plain_template\"); track(\"decoy_template_event\")`;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "A standalone template is not a call merely because its quasi contains call-looking text."
+  },
+  {
+    "id": "negative-regex-literal",
+    "source": "const expression = /checkGate(\"decoy_regex_literal\")|track(\"decoy_regex_event\")/;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Regex literal contents must not be parsed as JavaScript."
+  },
+  {
+    "id": "negative-dynamic-first-arguments",
+    "source": "checkGate(flagName); defineTool(toolName); track(eventName);",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Identifier first arguments are dynamic and are not literal-name candidates."
+  },
+  {
+    "id": "negative-concatenated-first-arguments",
+    "source": "checkGate(\"prefix_\" + suffix); defineTool(\"tool_\" + \"joined\"); track(\"event_\" + ending);",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "No concatenation is folded, even when all operands are quoted strings."
+  },
+  {
+    "id": "negative-interpolated-first-arguments",
+    "source": "checkGate(`flag_${suffix}`); defineTool(`tool_${suffix}`); track(`event_${suffix}`);",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Interpolated templates are not accepted names."
+  },
+  {
+    "id": "negative-escaped-quoted-first-arguments",
+    "source": "checkGate(\"signal_\\u0061corn\"); defineTool(\"tool_\\x61corn\"); track(\"event_\\nacorn\");",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Any escape spelling inside a quoted name excludes it, even when its cooked value is predictable."
+  },
+  {
+    "id": "negative-escaped-template-first-arguments",
+    "source": "checkGate(`signal_\\u0061corn`); defineTool(`tool_\\x61corn`); track(`event_\\nacorn`);",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Any escape spelling inside a no-substitution template name excludes it."
+  },
+  {
+    "id": "negative-computed-callees",
+    "source": "registry[\"checkGate\"](\"decoy_computed_flag\"); registry[`defineTool`](\"decoy_computed_tool\"); registry[\"track\"](\"decoy_computed_event\");",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Computed MemberExpression callees are deliberately outside the candidate contract."
+  },
+  {
+    "id": "negative-dynamic-and-aliased-callees",
+    "source": "(ready ? checkGate : useGate)(\"decoy_conditional_callee\"); const alias = checkGate; alias(\"decoy_alias\"); factory()(\"decoy_factory\");",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Conditional, aliased, and returned function callees are not direct configured identifiers or noncomputed member names."
+  },
+  {
+    "id": "negative-new-and-tagged-expressions",
+    "source": "new checkGate(\"decoy_constructor\"); track`decoy_tagged_template`;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "NewExpression and TaggedTemplateExpression are not CallExpression nodes."
+  },
+  {
+    "id": "negative-function-and-object-method-definitions",
+    "source": "function checkGate(value) { return value; } const handlers = { track(value) { return value; }, input_schema() { return {}; }, event_name() { return \"decoy_method_event\"; } };",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Function declarations and method definitions are not calls; object methods do not create schema/event init-property candidates."
+  },
+  {
+    "id": "negative-getters-and-setters",
+    "source": "const record = { get inputSchema() { return {}; }, set outputSchema(value) {}, get eventName() { return \"decoy_getter_event\"; } };",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Object getter/setter properties have non-init kinds and are excluded."
+  },
+  {
+    "id": "negative-no-arguments-and-nonstrings",
+    "source": "checkGate(); checkGate(42); defineTool(null); track(false);",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Missing and nonstring first arguments are excluded."
+  },
+  {
+    "id": "object-all-default-schema-markers",
+    "source": "const contract = { input_schema: {}, output_schema: {}, inputSchema: {}, outputSchema: {}, parameters: {} };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:input_schema"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:output_schema"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:inputSchema"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:outputSchema"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:parameters"
+      }
+    ],
+    "notes": "ObjectExpression init properties create unassociated schema markers only; no nearby tool association or schema validation is inferred."
+  },
+  {
+    "id": "object-all-default-event-fields",
+    "source": "const events = { event_key: \"event_key_oak\", event_name: \"event_name_oak\", eventName: \"eventName_oak\", telemetry_event: \"telemetry_event_oak\" };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "telemetry",
+        "key": "event_key_oak"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_name_oak"
+      },
+      {
+        "category": "telemetry",
+        "key": "eventName_oak"
+      },
+      {
+        "category": "telemetry",
+        "key": "telemetry_event_oak"
+      }
+    ],
+    "notes": "Configured event init keys with plain unescaped string values are event candidates."
+  },
+  {
+    "id": "object-quoted-keys-and-template-value",
+    "source": "const record = { \"input_schema\": {}, \"event_name\": `event_quoted_oak` };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:input_schema"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_quoted_oak"
+      }
+    ],
+    "notes": "Plain quoted property keys are supported. The same static-name rule accepts a no-substitution event-value template."
+  },
+  {
+    "id": "object-nested-real-init-properties",
+    "source": "const record = { wrapper: { parameters: {}, eventName: \"event_nested_oak\" } };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:parameters"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_nested_oak"
+      }
+    ],
+    "notes": "Recursive traversal discovers nested ObjectExpression init properties without associating them with an enclosing name."
+  },
+  {
+    "id": "negative-object-dynamic-event-values",
+    "source": "const events = { event_key: eventValue, event_name: \"event_\" + suffix, eventName: `event_${suffix}`, telemetry_event: \"event_\\u0061corn\" };",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Dynamic, concatenated, interpolated, and escaped event field values are ignored."
+  },
+  {
+    "id": "negative-computed-object-keys",
+    "source": "const record = { [\"input_schema\"]: {}, [\"event_name\"]: \"decoy_computed_event_field\" };",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Computed keys are excluded from the direct static-property contract even when their expression is a string."
+  },
+  {
+    "id": "negative-labels-and-object-patterns",
+    "source": "input_schema: while (false) { break input_schema; } const { parameters, eventName = \"decoy_destructure_event\" } = sourceRecord;",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Label syntax and ObjectPattern bindings are not ObjectExpression init properties."
+  },
+  {
+    "id": "real-call-inside-object-method",
+    "source": "const methods = { input_schema() { return checkGate(\"signal_method_body\"); } };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_method_body"
+      }
+    ],
+    "notes": "The method key is excluded, while an actual call in its body remains a candidate under static traversal."
+  },
+  {
+    "id": "schema-marker-not-tool-association",
+    "source": "registerTool(\"tool_unassociated_map\"); const record = { name: \"unrelated_map\", input_schema: { type: \"object\" } };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "tool_contracts",
+        "key": "tool_unassociated_map"
+      },
+      {
+        "category": "tool_contracts",
+        "key": "schema-marker:input_schema"
+      }
+    ],
+    "notes": "A nearby tool call and name field must not turn an unassociated marker into a recovered tool contract."
+  },
+  {
+    "id": "name-length-exactly-256",
+    "source": "checkGate(\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"); const event = { event_name: \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\" };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "category": "telemetry",
+        "key": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ],
+    "notes": "The maximum accepted name length is inclusive; this ASCII fixture avoids code-point/code-unit ambiguity."
+  },
+  {
+    "id": "name-length-over-256",
+    "source": "checkGate(\"ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\"); defineTool(`ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc`); const event = { event_name: \"ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\" };",
+    "expected_status": "scanned",
+    "expected_candidates": [],
+    "notes": "Names longer than 256 are excluded from calls and event fields."
+  },
+  {
+    "id": "unicode-and-emoji-byte-anchors",
+    "source": "const décor = \"🌲\";\n// π 🍂 before the real call\ncheckGate(\"signal_étoile_🧭\");\nconst event = { eventName: \"event_東京_🌿\" };",
+    "expected_status": "scanned",
+    "expected_candidates": [
+      {
+        "category": "flags",
+        "key": "signal_étoile_🧭"
+      },
+      {
+        "category": "telemetry",
+        "key": "event_東京_🌿"
+      }
+    ],
+    "notes": "Non-ASCII BMP text and astral emoji occur before and inside candidates. Optional anchor_expectations use zero-based UTF-8 byte offsets spanning the complete quoted literal, including delimiters.",
+    "anchor_expectations": [
+      {
+        "category": "flags",
+        "key": "signal_étoile_🧭",
+        "source_literal": "\"signal_étoile_🧭\"",
+        "byte_start": 65,
+        "byte_end": 86
+      },
+      {
+        "category": "telemetry",
+        "key": "event_東京_🌿",
+        "source_literal": "\"event_東京_🌿\"",
+        "byte_start": 116,
+        "byte_end": 135
+      }
+    ]
+  },
+  {
+    "id": "incomplete-malformed-missing-argument",
+    "source": "checkGate(\"signal_before_bad_syntax\"); const broken = ;",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "Malformed JavaScript must produce explicit scan-incomplete, with no candidates from a partial parse."
+  },
+  {
+    "id": "incomplete-unclosed-string",
+    "source": "checkGate(\"unterminated_signal);",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "Unclosed string must produce an explicit parse-incomplete result."
+  },
+  {
+    "id": "incomplete-unclosed-template",
+    "source": "const ribbon = `unfinished ${checkGate(\"signal_unfinished\")};",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "An unclosed template must not silently become a successful empty scan."
+  },
+  {
+    "id": "incomplete-unclosed-block-comment",
+    "source": "checkGate(\"signal_before_comment\"); /* unfinished",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "An unclosed comment must produce explicit scan-incomplete rather than returning earlier candidates."
+  },
+  {
+    "id": "incomplete-typescript-annotation",
+    "source": "const signal: string = \"typed_signal\"; checkGate(\"signal_after_type\");",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "TypeScript syntax is unsupported in the plain Acorn JavaScript channel; report scan-incomplete without claiming completeness."
+  },
+  {
+    "id": "incomplete-typescript-interface",
+    "source": "interface SignalShape { enabled: boolean }\ncheckGate(\"signal_after_interface\");",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "TypeScript interface syntax is unsupported and must be explicit incomplete."
+  },
+  {
+    "id": "incomplete-jsx-element",
+    "source": "const panel = <Panel enabled={checkGate(\"signal_inside_jsx\")} />;",
+    "expected_status": "scan-incomplete",
+    "expected_candidates": [],
+    "notes": "JSX requires an unsupported grammar extension; report scan-incomplete rather than mining candidate-looking source."
+  }
+]

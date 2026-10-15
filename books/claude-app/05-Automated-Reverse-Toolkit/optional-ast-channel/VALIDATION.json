@@ -1,0 +1,48 @@
+{
+  "schema": "original-ast-channel-validation/v1",
+  "date": "2026-10-15",
+  "runtime": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "acorn": "8.17.0",
+    "dependency_source": "node-internal-test-only"
+  },
+  "default_suite": {
+    "tests": 89,
+    "passed": 89,
+    "failed": 0,
+    "skipped": 0
+  },
+  "fixture_cases": {
+    "total": 52,
+    "scanned": 45,
+    "scan_incomplete": 7
+  },
+  "independent_review": {
+    "additional_final_assertions": 36,
+    "passed": 36
+  },
+  "known_lexical_traps": {
+    "cases": 5,
+    "legacy_false_candidates_per_case": 1,
+    "ast_false_candidates_per_case": 0,
+    "legacy_limitation_fixed": false
+  },
+  "production_external_acorn_success_tested": false,
+  "target_javascript_executed": false,
+  "product_inputs_read": false,
+  "network_dependencies_installed": false,
+  "semantic_completeness_proven": false,
+  "hashes": {
+    "ast_candidates.py": "42de4412758e4c9f101e446482f9f4dab9d3179d00a780d83f7a2bd0b8a807cd",
+    "ast_worker.cjs": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5",
+    "DESIGN.zh.md": "7037109a195ffce40bf182f7f47dca1f2bc6f03734b45915d84fabc72a35445c",
+    "tests/test_ast_channel.py": "8c521a02bd90a5b05070a38866aaaa2988b92dbd36362655294a93dd04626c69",
+    "tests/fixtures.json": "3c26b774084b0f6dbf3cca8d99b9709f71d93a75cac792329def9869cf4fd183"
+  },
+  "foreign_working_directory_suite": {
+    "tests": 89,
+    "passed": 89,
+    "failed": 0
+  }
+}

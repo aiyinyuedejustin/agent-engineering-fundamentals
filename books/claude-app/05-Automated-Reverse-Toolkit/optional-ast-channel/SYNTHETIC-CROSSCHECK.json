@@ -1,0 +1,76 @@
+{
+  "schema": "original-synthetic-candidate-crosscheck/v1",
+  "input_origin": "newly-authored-synthetic",
+  "analysis_kind": "separate_candidate_channel_comparison",
+  "semantic_completeness_proven": false,
+  "target_javascript_executed": false,
+  "legacy_coverage_modified": false,
+  "ast_dependency_testing_only": true,
+  "results": [
+    {
+      "case": "trap-nested-template-raw",
+      "input_sha256": "7d1321a4d5cfc2754b92a560030f16a4c0c4354958cd4112ce8564806991efe2",
+      "lexical": {
+        "status": "scanned",
+        "false_candidate_count": 1
+      },
+      "ast": {
+        "status": "scanned",
+        "false_candidate_count": 0
+      },
+      "legacy_limitation_fixed": false
+    },
+    {
+      "case": "trap-return-string-division",
+      "input_sha256": "b1dfad72ee81a02760d2636a1003f7a1dd7f769a07a2ba9a5e1d0c56696e20f2",
+      "lexical": {
+        "status": "scanned",
+        "false_candidate_count": 1
+      },
+      "ast": {
+        "status": "scanned",
+        "false_candidate_count": 0
+      },
+      "legacy_limitation_fixed": false
+    },
+    {
+      "case": "trap-regex-after-arrow",
+      "input_sha256": "ef552a45a49b32d690aa4acf61a6ecaa394b0bd5ed88d70de176a5a7f27a3d57",
+      "lexical": {
+        "status": "scanned",
+        "false_candidate_count": 1
+      },
+      "ast": {
+        "status": "scanned",
+        "false_candidate_count": 0
+      },
+      "legacy_limitation_fixed": false
+    },
+    {
+      "case": "trap-regex-after-and",
+      "input_sha256": "38fe79ef0fcac0dd9bcb23b0fea560ebfa2870e569beb766d7b84eee823083d0",
+      "lexical": {
+        "status": "scanned",
+        "false_candidate_count": 1
+      },
+      "ast": {
+        "status": "scanned",
+        "false_candidate_count": 0
+      },
+      "legacy_limitation_fixed": false
+    },
+    {
+      "case": "trap-regex-after-control-header",
+      "input_sha256": "549338f5b2d71314de3e0404bac87d23c13250d41b12ad7869b7df3da820d456",
+      "lexical": {
+        "status": "scanned",
+        "false_candidate_count": 1
+      },
+      "ast": {
+        "status": "scanned",
+        "false_candidate_count": 0
+      },
+      "legacy_limitation_fixed": false
+    }
+  ]
+}
