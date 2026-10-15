@@ -1,0 +1,28 @@
+{
+  "adapter_sha256": {
+    "ast_candidates.py": "42de4412758e4c9f101e446482f9f4dab9d3179d00a780d83f7a2bd0b8a807cd",
+    "ast_worker.cjs": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5"
+  },
+  "all_baseline_hashes_match": true,
+  "all_verified_extraction_hashes_match": true,
+  "baseline_metadata_sha256": "2e5e2f623060879e02b88e025f9797e679c875c01e71ec9713255bd50a5878e6",
+  "bytes": 12585540,
+  "dependency_testing_only": true,
+  "extraction_metadata_sha256": "3243d0e0d6e9398ec2f551dbfa75a344acb4befd56957c70ec3fab4103609cb2",
+  "failed_companions_read_or_retried": false,
+  "files": 18,
+  "limits": {
+    "cpu_seconds": 10,
+    "max_depth": 64,
+    "max_input_bytes": 67108864,
+    "max_nodes": 200000,
+    "max_output_bytes": 8388608,
+    "max_records": 200000,
+    "max_tokens": 1000000,
+    "v8_old_space_mib": 128,
+    "wall_seconds": 15
+  },
+  "schema": "original-linux-ast-gap-preflight/v1",
+  "source_type": "module",
+  "target_javascript_executed": false
+}

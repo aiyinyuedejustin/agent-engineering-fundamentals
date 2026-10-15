@@ -1,0 +1,24 @@
+{
+  "schema": "original-linux-ast-syntax-condition/v1",
+  "case_id": "case-07",
+  "input_sha256": "036676c8ff8bc659b7132c3174c9cfba88b6c15bd69f0badf7923a4aa850ac94",
+  "original_diagnostic_code": "ast-syntax-rejected",
+  "original_byte_offset": 30328,
+  "observed_grammar_condition": "await-using-declaration",
+  "observed_grammar_span": {
+    "byte_start": 30316,
+    "byte_end": 30330
+  },
+  "diagnostic_inside_observed_grammar_span": true,
+  "baseline_node_syntax_only_source_type": "module",
+  "baseline_node_syntax_only_accepted": true,
+  "adapter_ecma_version": 2025,
+  "synthetic_condition_rejected_2025_module_and_script": true,
+  "synthetic_condition_accepted_2026_module_and_script": true,
+  "inference": "first-observed-boundary-is-fixed-ecma-version-not-module-vs-script",
+  "real_input_reparsed_with_changed_parameters": false,
+  "whole_real_input_acceptance_under_2026": "not-tested",
+  "original_result_modified": false,
+  "semantic_completeness_proven": false,
+  "synthetic_probe_sha256": "f3a268039c318dd2ad4cef816b3f23b99b022ff52dcab4a71c8998cba929317f"
+}

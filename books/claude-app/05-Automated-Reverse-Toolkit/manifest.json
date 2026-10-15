@@ -84,13 +84,13 @@
       "path": "optional-ast-channel/MANIFEST.sha256",
       "origin": "original-tool-or-documentation",
       "bytes": 1290,
-      "sha256": "882d46b459d1e3f5ad83d1b27ba578516c6a133cd8c8ae451cd04b8a380959da"
+      "sha256": "cde82d5b9ba74278f192a8e8e0f04038eee60669377bd28413a3db9f5eecd279"
     },
     {
       "path": "optional-ast-channel/README.md",
       "origin": "original-tool-or-documentation",
-      "bytes": 7625,
-      "sha256": "354dc97da708f4afced753730230672abe46722f264c72b79693ccec9ab6baf7"
+      "bytes": 7974,
+      "sha256": "25672762f46bc960a1cb29f53556ac8030a6378757340a86086e05f2726b3ac4"
     },
     {
       "path": "optional-ast-channel/REPORT.zh.md",
@@ -121,6 +121,42 @@
       "origin": "original-tool-or-documentation",
       "bytes": 11330,
       "sha256": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5"
+    },
+    {
+      "path": "optional-ast-channel/linux-gap-crosscheck/AGGREGATE.json",
+      "origin": "original-analysis-metadata",
+      "bytes": 15683,
+      "sha256": "d031ccb415b726818fda19982525dd201da2effaf60829ccbe7813b0f77eab69"
+    },
+    {
+      "path": "optional-ast-channel/linux-gap-crosscheck/MANIFEST.sha256",
+      "origin": "original-analysis-metadata",
+      "bytes": 417,
+      "sha256": "e05b761d1d36a7285e0e82a3d4216edccf37ae1050684e8d5fe9e5e90a4e068d"
+    },
+    {
+      "path": "optional-ast-channel/linux-gap-crosscheck/PREFLIGHT.json",
+      "origin": "original-analysis-metadata",
+      "bytes": 989,
+      "sha256": "be8518900c82863886d7f2d682cde6db49bb45b8768c309155c9bfd1da9214aa"
+    },
+    {
+      "path": "optional-ast-channel/linux-gap-crosscheck/REPORT.zh.md",
+      "origin": "original-analysis-metadata",
+      "bytes": 3976,
+      "sha256": "f68cd8cb52363db32766566e845b363879f89cbc4375cce9f5f83e7d072d1b7e"
+    },
+    {
+      "path": "optional-ast-channel/linux-gap-crosscheck/SYNTAX-CONDITION.json",
+      "origin": "original-analysis-metadata",
+      "bytes": 1074,
+      "sha256": "c69690740646f895b0d47e917edc1c7c265582280002f6f9cccb4b1a7db8d20c"
+    },
+    {
+      "path": "optional-ast-channel/linux-gap-crosscheck/SYNTAX-SYNTHETIC.json",
+      "origin": "original-analysis-metadata",
+      "bytes": 714,
+      "sha256": "9f2607d908ddfd7a7c23411e58794953d2f842fd9c62f195c68d77985ce45ea8"
     },
     {
       "path": "optional-ast-channel/run_tests.py",

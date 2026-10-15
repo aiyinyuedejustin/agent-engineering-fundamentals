@@ -1,0 +1,506 @@
+{
+  "adapter_sha256": {
+    "ast_candidates.py": "42de4412758e4c9f101e446482f9f4dab9d3179d00a780d83f7a2bd0b8a807cd",
+    "ast_worker.cjs": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5"
+  },
+  "analysis_kind": "separate_ast_syntax_candidate_gap_crosscheck",
+  "ast_candidate_count": 0,
+  "ast_diagnostic_counts": {
+    "ast-node-bound-exceeded": 2,
+    "ast-syntax-rejected": 1
+  },
+  "ast_status_counts": {
+    "scan-incomplete": 3,
+    "scanned": 15
+  },
+  "date": "2026-10-15",
+  "dependency": {
+    "expected_acorn_version": "8.17.0",
+    "external_acorn_success_tested": false,
+    "source": "node-internal-test-only",
+    "testing_only": true
+  },
+  "failed_companions_read_or_retried": false,
+  "legacy_counts_recomputed": false,
+  "legacy_coverage_modified": false,
+  "legacy_rejection_counts": {
+    "js-quoted-state-unclosed": 16,
+    "js-token-bound-exceeded": 2
+  },
+  "limits": {
+    "cpu_seconds": 10,
+    "max_depth": 64,
+    "max_input_bytes": 67108864,
+    "max_nodes": 200000,
+    "max_output_bytes": 8388608,
+    "max_records": 200000,
+    "max_tokens": 1000000,
+    "v8_old_space_mib": 128,
+    "wall_seconds": 15
+  },
+  "results": [
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.326,
+        "metrics": {
+          "max_ast_depth": 28,
+          "node_allocations": 25806,
+          "tokens": 34264,
+          "visited_nodes": 25803
+        },
+        "private_report_sha256": "45a28a76d6baee38ba3e172b3b9df56bdbdac00d2f3409f19519036d71ec267b",
+        "status": "scanned"
+      },
+      "bytes": 87027,
+      "case_id": "case-01",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 34356
+      },
+      "sha256": "5dff28aecdfc2b66e7d773289945241a7da3516d5f1c0156ee01bdbc23f7d042"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.325,
+        "metrics": {
+          "max_ast_depth": 28,
+          "node_allocations": 25762,
+          "tokens": 34212,
+          "visited_nodes": 25759
+        },
+        "private_report_sha256": "543c2e1911ca62eea71fd15bef0b5c51c77873c0a2599ee590124c0ef6537b57",
+        "status": "scanned"
+      },
+      "bytes": 86735,
+      "case_id": "case-02",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 34303
+      },
+      "sha256": "e402398e6c2498caa48e4e23c5f5ad67755108da726e0c4d122f1b78c881f819"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.122,
+        "metrics": {
+          "max_ast_depth": 15,
+          "node_allocations": 862,
+          "tokens": 1171,
+          "visited_nodes": 862
+        },
+        "private_report_sha256": "85082bca4f35856714005dd2d59d53873b12166a5147ba80eb99be49ac4c1fcc",
+        "status": "scanned"
+      },
+      "bytes": 4358,
+      "case_id": "case-03",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 816
+      },
+      "sha256": "f05ec51c3338b8a18ad5ca8f32ac32d076fa6695f1ab58ed3b2f66da11cb5b6e"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.19,
+        "metrics": {
+          "max_ast_depth": 33,
+          "node_allocations": 15868,
+          "tokens": 21478,
+          "visited_nodes": 15847
+        },
+        "private_report_sha256": "e42c719fc61c52e6a3a04be0e771cf10834e18b3b00b0a0a3c3038c1b7038573",
+        "status": "scanned"
+      },
+      "bytes": 70136,
+      "case_id": "case-04",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 20821
+      },
+      "sha256": "bd6871af5bef0e81026db05fee9ebd76d6b302b7ddb3166ac6a01303b7f709bb"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.175,
+        "metrics": {
+          "max_ast_depth": 15,
+          "node_allocations": 2742,
+          "tokens": 3760,
+          "visited_nodes": 2742
+        },
+        "private_report_sha256": "fe50f8fce5cdcab499c57e47ffad06ce1329323948ea8ec8f7e42eb898300ea3",
+        "status": "scanned"
+      },
+      "bytes": 11202,
+      "case_id": "case-05",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 616
+      },
+      "sha256": "853e4b673455d20d562d25505487c7cbf8e05bed91cb6cd2705cce4adb263b45"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.137,
+        "metrics": {
+          "max_ast_depth": 15,
+          "node_allocations": 360,
+          "tokens": 475,
+          "visited_nodes": 360
+        },
+        "private_report_sha256": "1fa533797c1458acfd56c79853fc8319df1c1f09624dbe593eb82dda268f327f",
+        "status": "scanned"
+      },
+      "bytes": 2346,
+      "case_id": "case-06",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 371
+      },
+      "sha256": "91a6bdd88d222881742e97e9d3ef6370ba01466c289e1cc88681e2555b2ce589"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [
+          {
+            "byte_offset": 30328,
+            "code": "ast-syntax-rejected",
+            "input_validity": "not-determined",
+            "phase": "ast-candidate-channel"
+          }
+        ],
+        "elapsed_seconds": 0.146,
+        "metrics": {
+          "max_ast_depth": 0,
+          "node_allocations": 6540,
+          "tokens": 8906,
+          "visited_nodes": 0
+        },
+        "private_report_sha256": "b9547884bb2e44ca10887f5ee24dd4a42e2662509982cc1e4edce82519cfd0ca",
+        "status": "scan-incomplete"
+      },
+      "bytes": 61626,
+      "case_id": "case-07",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 8396
+      },
+      "sha256": "036676c8ff8bc659b7132c3174c9cfba88b6c15bd69f0badf7923a4aa850ac94"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.609,
+        "metrics": {
+          "max_ast_depth": 44,
+          "node_allocations": 111838,
+          "tokens": 148082,
+          "visited_nodes": 111835
+        },
+        "private_report_sha256": "340b5c844d0a1fe4136ea32889aac5ae6542222206c1054582b323169f897f45",
+        "status": "scanned"
+      },
+      "bytes": 373223,
+      "case_id": "case-08",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 143807
+      },
+      "sha256": "f6d494004649cc96f45ff2d70dfa9ce6556a6db62df2b9fe08defe5f610097d6"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.149,
+        "metrics": {
+          "max_ast_depth": 19,
+          "node_allocations": 1557,
+          "tokens": 2139,
+          "visited_nodes": 1553
+        },
+        "private_report_sha256": "f22c36840b32ef86205790c91fa481b98b1632258c8b10ef945c39edf42b6c86",
+        "status": "scanned"
+      },
+      "bytes": 8262,
+      "case_id": "case-09",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 681
+      },
+      "sha256": "7ed6b275e39ee06dcefbcb6b08a8d7bfe6c5b97b4662e298ef5fb4259c68bd2b"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.193,
+        "metrics": {
+          "max_ast_depth": 34,
+          "node_allocations": 10558,
+          "tokens": 14424,
+          "visited_nodes": 10552
+        },
+        "private_report_sha256": "d44212c3aa9f87cf0b8d22ada59ada8f3642e1172d523cdcf531625b23432a71",
+        "status": "scanned"
+      },
+      "bytes": 41004,
+      "case_id": "case-10",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 9020
+      },
+      "sha256": "d22950a9c3a14c18027d98c3b0fc54e170e2b5730b44d1836f392def2bc91bac"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.573,
+        "metrics": {
+          "max_ast_depth": 38,
+          "node_allocations": 90508,
+          "tokens": 119945,
+          "visited_nodes": 90426
+        },
+        "private_report_sha256": "ff80017f06613636535581d7e4b5eec8ef20aa2878257ed4b7f0028025e14403",
+        "status": "scanned"
+      },
+      "bytes": 347977,
+      "case_id": "case-11",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 108282
+      },
+      "sha256": "5fb7c4a338cbb34a2b4d36871a37021a3f0e8804fdd8b4e1407506916e7cccac"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.12,
+        "metrics": {
+          "max_ast_depth": 21,
+          "node_allocations": 3765,
+          "tokens": 5103,
+          "visited_nodes": 3765
+        },
+        "private_report_sha256": "def6bcf3895d747a631ec6c55b4b336498971cf5ff7ccf42a856a1e7ecd388cb",
+        "status": "scanned"
+      },
+      "bytes": 27520,
+      "case_id": "case-12",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 4654
+      },
+      "sha256": "347b8869484c94a6e515fadae7cb7b163547bb3423e83ec20951ad85b2fde882"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.25,
+        "metrics": {
+          "max_ast_depth": 28,
+          "node_allocations": 26133,
+          "tokens": 34680,
+          "visited_nodes": 26130
+        },
+        "private_report_sha256": "cf02c7b7992767f6ab96f630d4ad8a27eb98ceee430ae7fce6bb8fe784d023b8",
+        "status": "scanned"
+      },
+      "bytes": 88143,
+      "case_id": "case-13",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 34356
+      },
+      "sha256": "15974d98b0873d1a721cebf6348017805247ebdf88e0e64d401466e16f0a767d"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.315,
+        "metrics": {
+          "max_ast_depth": 28,
+          "node_allocations": 25806,
+          "tokens": 34264,
+          "visited_nodes": 25803
+        },
+        "private_report_sha256": "9399e5b83743da2fb34133118c764138976f86b5b2867e819e17e577602b9a98",
+        "status": "scanned"
+      },
+      "bytes": 87027,
+      "case_id": "case-14",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 34356
+      },
+      "sha256": "cad877d96d5e7df9cd79934d2d6fab25faecceb5eb05da66ccbc471e73e600d4"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.235,
+        "metrics": {
+          "max_ast_depth": 28,
+          "node_allocations": 25525,
+          "tokens": 33951,
+          "visited_nodes": 25521
+        },
+        "private_report_sha256": "1c23c871af5b5c4830945ea30d370431b8e913ada426eb1d2311d00ee407fb5f",
+        "status": "scanned"
+      },
+      "bytes": 85419,
+      "case_id": "case-15",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 33522
+      },
+      "sha256": "b74a5605b035f7ec57df80eb8f363c3c39f0c3f9dddd760631dccbaec71e2c8f"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [],
+        "elapsed_seconds": 0.708,
+        "metrics": {
+          "max_ast_depth": 36,
+          "node_allocations": 108346,
+          "tokens": 144396,
+          "visited_nodes": 108343
+        },
+        "private_report_sha256": "90da4ada3f26f66a9f7fa3b659e9810b0caf63dbdb585af9bdae6e4070f6c611",
+        "status": "scanned"
+      },
+      "bytes": 342343,
+      "case_id": "case-16",
+      "legacy": {
+        "rejection_code": "js-quoted-state-unclosed",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 34313
+      },
+      "sha256": "977fd35bfb3fb3bc5e27afa268632f1a6f822eb2059e94139d416e0bcb55820d"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [
+          {
+            "byte_offset": 738106,
+            "code": "ast-node-bound-exceeded",
+            "input_validity": "not-determined",
+            "phase": "ast-candidate-channel"
+          }
+        ],
+        "elapsed_seconds": 0.579,
+        "metrics": {
+          "max_ast_depth": 0,
+          "node_allocations": 200001,
+          "tokens": 270096,
+          "visited_nodes": 0
+        },
+        "private_report_sha256": "b409f7b97882fc77a8ca113ea235646b19fcfe9b912f55d6111f31ca96ad6792",
+        "status": "scan-incomplete"
+      },
+      "bytes": 3572661,
+      "case_id": "case-17",
+      "legacy": {
+        "rejection_code": "js-token-bound-exceeded",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 1000001
+      },
+      "sha256": "581ed7d74bd9048d0e3a91363927d72ef22942d7722546b27f7cc29e35390eb8"
+    },
+    {
+      "ast": {
+        "candidate_count": 0,
+        "candidate_counts_by_category": {},
+        "diagnostics": [
+          {
+            "byte_offset": 720295,
+            "code": "ast-node-bound-exceeded",
+            "input_validity": "not-determined",
+            "phase": "ast-candidate-channel"
+          }
+        ],
+        "elapsed_seconds": 0.499,
+        "metrics": {
+          "max_ast_depth": 0,
+          "node_allocations": 200001,
+          "tokens": 265885,
+          "visited_nodes": 0
+        },
+        "private_report_sha256": "0065beba3107619eb72b88d51515c80c84540519c39fdf2732b4d3c920e3b196",
+        "status": "scan-incomplete"
+      },
+      "bytes": 7288531,
+      "case_id": "case-18",
+      "legacy": {
+        "rejection_code": "js-token-bound-exceeded",
+        "status": "scan-incomplete",
+        "token_count_at_rejection": 1000001
+      },
+      "sha256": "d37ce131927ea3ddae01f2369d2dbb30fd04bea1bacc6d3494a3701a0074435d"
+    }
+  ],
+  "schema": "original-linux-ast-gap-crosscheck/v1",
+  "scope": {
+    "all_input_hashes_verified_before_parsing": true,
+    "historical_gap_files": 18,
+    "input_bytes": 12585540,
+    "per_file_attempts": 1,
+    "source_type": "module"
+  },
+  "semantic_completeness_proven": false,
+  "target_javascript_executed": false
+}
