@@ -1,0 +1,6 @@
+dist/
+dist-*/
+tests/.scratch/
+review/
+__pycache__/
+*.zip

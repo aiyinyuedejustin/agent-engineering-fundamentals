@@ -425,3 +425,7 @@ demo 的最小结构由 `.composer-dock` 包住表单 `.composer`，表单内是
 [附件实验台：从可见到可发送](interactive-lessons/attachment-pipeline/README.md)把固定槽位、UTF-8 预留、取消与跨草稿回包变成可逐步操作的合成案例；[打开单文件页面](interactive-lessons/attachment-pipeline/index.html)。
 
 [查看交互工作台的修复前后实景](interactive-study/BROWSER-QA.md)：桌面视口内保留顶部工具栏，让键盘焦点只滚动当前面板。
+
+## 把全书变成离线网页
+
+[离线读本构建器](offline-reader/README.md)从同一份 Markdown 生成静态多页阅读版，保留目录、表格、图片和只读代码；无运行时 JavaScript、远程字体或账号。[排版样章](offline-reader/preview/index.html)只收录附件预算推演及其图解，完整书按构建器说明生成。
