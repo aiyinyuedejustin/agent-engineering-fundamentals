@@ -1,0 +1,213 @@
+{
+  "schema": "claude.color-gap-consumers.public.v1",
+  "evidence_status": "包内静态事实；运行时激活状态未核实",
+  "offset_unit": "零起点UTF-8字节，右端不包含",
+  "sources": {
+    "c6a992d55-CNGsCU46.css": {
+      "logical_path": "ion/assets/v1/c6a992d55-CNGsCU46.css",
+      "sha256": "e805f0daa316017c4299c79daedeb5a122d35e315b28f3a0a5f11a6e6889b12e",
+      "bytes": 1720886
+    },
+    "shared-frame-BjUcQ1Qc.js": {
+      "logical_path": "ion/assets/v1/shared-frame-BjUcQ1Qc.js",
+      "sha256": "775130e78d78c7c3ad05d72ed413a5e21bddf587adca6c306e7228f362b214c7",
+      "bytes": 395334
+    },
+    "shared-2-SYzsATg-.js": {
+      "logical_path": "ion/assets/v1/shared-2-SYzsATg-.js",
+      "sha256": "7dfe206319163eefb6308b8b22a485245798bbfbb0ad8a775c04dcb50486a1dc",
+      "bytes": 440042
+    }
+  },
+  "observations": [
+    {
+      "id": "badge_tints",
+      "source": "shared-frame-BjUcQ1Qc.js",
+      "finding_zh": "Badge 的非 bold 分支使用 tint 背景：语义 accent/success/warning/danger/pro 分别为 blue/green/yellow/red/violet；显式色名分支覆盖八色。bold 分支另走不透明色阶。",
+      "anchors": [
+        {
+          "byte_start": 38862,
+          "byte_end": 38935
+        },
+        {
+          "byte_start": 39573,
+          "byte_end": 39649
+        },
+        {
+          "byte_start": 42431,
+          "byte_end": 42467
+        },
+        {
+          "byte_start": 42491,
+          "byte_end": 42509
+        }
+      ]
+    },
+    {
+      "id": "personal_user_message",
+      "source": "shared-2-SYzsATg-.js",
+      "finding_zh": "UserMessage 的 personal 背景走 blue tint 别名。局部分支要求 author=self、非 editing、非 fullWidth、非 queued；还要有气泡内容/编辑/失败内容才能渲染对应块。它不是所有用户消息的固定背景。",
+      "anchors": [
+        {
+          "byte_start": 411980,
+          "byte_end": 412076
+        },
+        {
+          "byte_start": 415638,
+          "byte_end": 415673
+        },
+        {
+          "byte_start": 415855,
+          "byte_end": 415922
+        },
+        {
+          "byte_start": 418005,
+          "byte_end": 418064
+        },
+        {
+          "byte_start": 420436,
+          "byte_end": 420460
+        }
+      ]
+    },
+    {
+      "id": "shortcut_currentcolor",
+      "source": "shared-frame-BjUcQ1Qc.js",
+      "finding_zh": "Shortcut 的 keycap 分支生成 kbd，并使用 shortcut-cap-ink 作为文字色、shortcut-cap-line 作为边框。onFill 或实心按钮祖先可把 ink 改成 currentColor，因此不能把 line 永久绑定灰色。",
+      "anchors": [
+        {
+          "byte_start": 44062,
+          "byte_end": 44188
+        },
+        {
+          "byte_start": 44633,
+          "byte_end": 44683
+        },
+        {
+          "byte_start": 44857,
+          "byte_end": 44899
+        },
+        {
+          "byte_start": 45163,
+          "byte_end": 45201
+        },
+        {
+          "byte_start": 44800,
+          "byte_end": 44821
+        },
+        {
+          "byte_start": 59648,
+          "byte_end": 59735
+        }
+      ]
+    },
+    {
+      "id": "border_line_fallback",
+      "source": "c6a992d55-CNGsCU46.css",
+      "finding_zh": "五个已打包工具类消费 var(--cds-border-line,var(--cds-border))；包括普通、before、after 和两个断点。initial 保留为无自定义线色；在这些消费者中才回退到 border。",
+      "anchors": [
+        {
+          "byte_start": 1604673,
+          "byte_end": 1604698
+        },
+        {
+          "byte_start": 302121,
+          "byte_end": 302174
+        }
+      ]
+    },
+    {
+      "id": "git_draft_hover_limit",
+      "source": "shared-frame-BjUcQ1Qc.js",
+      "finding_zh": "Git draft hover 在导出的样式token对象中有映射；本轮没有确认一个具体可见按钮/徽标消费它。只报告token语义，不虚构已激活组件。",
+      "anchors": [
+        {
+          "byte_start": 164327,
+          "byte_end": 164418
+        }
+      ]
+    },
+    {
+      "id": "text_input_states",
+      "source": "shared-frame-BjUcQ1Qc.js",
+      "finding_zh": "TextInput 共用 field 填充和 field-ring；hover、invalid、focus-visible 与 invalid+focus 是分开的阴影路径。TextArea 非内嵌分支也复用该底色。",
+      "anchors": [
+        {
+          "byte_start": 188850,
+          "byte_end": 188922
+        },
+        {
+          "byte_start": 189044,
+          "byte_end": 189124
+        },
+        {
+          "byte_start": 189220,
+          "byte_end": 189253
+        },
+        {
+          "byte_start": 189815,
+          "byte_end": 189820
+        },
+        {
+          "byte_start": 192069,
+          "byte_end": 192091
+        },
+        {
+          "byte_start": 189552,
+          "byte_end": 189581
+        },
+        {
+          "byte_start": 249647,
+          "byte_end": 249668
+        }
+      ]
+    },
+    {
+      "id": "button_states",
+      "source": "shared-frame-BjUcQ1Qc.js",
+      "finding_zh": "Button 的 primary/secondary/ghost/danger/brand 背景与 hover 或打开状态分开；默认variant是secondary。onContent另用透明背景与独立ring。已有按钮token不在这23条缺口中。",
+      "anchors": [
+        {
+          "byte_start": 51362,
+          "byte_end": 51423
+        },
+        {
+          "byte_start": 60773,
+          "byte_end": 60835
+        },
+        {
+          "byte_start": 60173,
+          "byte_end": 60222
+        },
+        {
+          "byte_start": 60303,
+          "byte_end": 60357
+        },
+        {
+          "byte_start": 65357,
+          "byte_end": 65376
+        }
+      ]
+    },
+    {
+      "id": "tint_scope_override",
+      "source": "shared-frame-BjUcQ1Qc.js",
+      "finding_zh": "一个填充色作用域处理器可把 tint 变量换成对应 opaque 变量。因此全局profile的19条结果不能外推到所有局部作用域。",
+      "anchors": [
+        {
+          "byte_start": 24219,
+          "byte_end": 24270
+        },
+        {
+          "byte_start": 24274,
+          "byte_end": 24363
+        }
+      ]
+    }
+  ],
+  "limitations_zh": [
+    "锚点指向特定版本的静态源文件，不证明功能已经启用或出现在实际页面。",
+    "当前结果不模拟完整跨文件级联、DOM、系统模式或运行时自定义属性注册。",
+    "Git draft hover只确认样式token对象映射，尚无具体可见消费组件结论。"
+  ]
+}

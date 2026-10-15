@@ -101,7 +101,7 @@ python3 "$TOOLS/build_color_catalog.py" \
 
 直接用浏览器打开 `index.html` 即可筛选色族、主题、类别、透明色和表达式，搜索 token、查看来源并导出当前筛选结果。复制功能受浏览器的剪贴板权限限制；拒绝时会显示失败提示，不会声称复制成功。页面的深浅画布只改变展示背景，不会改变所选来源配置。
 
-同一输出目录重复运行会替换同名的这两份产物；构建器拒绝用它们覆盖输入清单或模板。生成内容先在内存完成验证，校验错误不会开始写输出；文件系统中途写入失败不提供事务回滚。
+输出目录必须是尚不存在的新目录。完整生成器与追加解析层 CLI 均拒绝已有目录、普通文件或符号链接，不提供覆盖选项，也不会删除已有目录。每个产物采用独占创建，即使出现已有硬链接或符号链接也不会截断其目标。重复构建请选择另一个新输出目录。生成内容先在内存完成验证，校验错误不会开始写输出；文件系统中途写入失败可能保留部分新输出供检查，不提供事务回滚。
 
 ## 基线记录和解析边界
 
@@ -149,7 +149,7 @@ python3 "$TOOLS/tests/verify_baseline.py" \
   --baseline "/path/to/private/original-color-catalog.json" \
   --resources "$RESOURCES" \
   --asar-root "$ASAR_ROOT" \
-  --output "$OUTPUT"
+  --output "/path/to/new-baseline-verification"
 ```
 
 测试先确认重新提取的 `sources`、`blocks`、`tokens`、`statistics` 与原清单完全相同，再检查两条构建路径的全部 `records`、`statistics`、`definition_inventory`、`sources`、`blocks` 与基线逐项相同，并确认来源哈希、3,234 个声明锚点及 23 条未求值记录未被填入颜色。`--output` 可省略，此时不会保留构建产物。
@@ -178,3 +178,52 @@ node tests/test_browser_dom.cjs "$OUTPUT/index.html"
 - `Expected 1341 records`：输入版本或配置结构发生变化；先复核差异，再决定期望值。
 
 CLI 校验失败以非零状态退出并给出错误。执行 `python3 "$TOOLS/build_color_catalog.py" --help` 或提取器的 `--help` 可查看全部参数。
+
+## 可选：接入已核验的相对色派生层
+
+默认构建器继续保留 1,341 条原基线记录及 1,318/23 原统计。附带的 reviewed-resolution-overlay.json 仅适用于已核验的 Claude Desktop Linux 2.37337.1 完整六列基线指纹；不匹配会在写入前拒绝，不能自动套到新版本。
+
+在前述构建命令增加：
+
+```sh
+--resolution-overlay "$TOOLS/reviewed-resolution-overlay.json"
+```
+
+会追加顶层 resolution_extension，不改 records、statistics、profiles 或原始声明。浏览器按 record id（profile:name）读取扩展，单独展示 19 条静态派生和 4 条上下文分类。1,318 + 19 = 1,337 条静态数值，其中 1,332 常规 HEX、5 扩展 sRGB；4 条上下文没有固定 HEX/alpha。
+
+扩展同时保留精确分数、未裁剪 sRGB 通道、原始展开表达式、推导过程、基线指纹、源码哈希和独立浏览器 CSS 语义验证范围。附带的 clipped_preview 仅为审计参考，浏览器不会把它显示或复制成原值。浏览器默认复制派生 color(srgb)；小数字符串是精确分数的近似序列化。上下文的条件性 fallback 不作为 token 本身颜色。
+
+也可只对已经发布的紧凑 JSON 和离线页面追加解析层，无需重新取得源码：
+
+```sh
+python3 "$TOOLS/apply_catalog_overlay.py" \
+  --catalog "/path/to/original/color-catalog.json" \
+  --browser "/path/to/original/index.html" \
+  --overlay "$TOOLS/reviewed-resolution-overlay.json" \
+  --output "/path/to/annotated-output"
+```
+
+输出目录必须尚不存在；请勿预先创建该目录。输入可以是未追加的匹配基线，也可以是当前公开目录已经带同一扩展的版本。对于后者，脚本会从原六列事实重新构建扩展，并要求现有扩展与重建结果完全一致；任何不一致都会拒绝，不会静默覆盖。此脚本不执行产品代码，不联网，也不写回输入。应用后的输出新增顶层键；删除这一键，即还原原有 JSON 字段。
+
+本书已发布的紧凑JSON、当前HTML与随附overlay就足够复现，不需要私有全表或原CSS。在本书根目录运行：
+
+```sh
+python3 04-Extracted-Core-Code-And-Scripts/core-code-lab/color-tools/apply_catalog_overlay.py \
+  --output /tmp/claude-color-catalog-rebuilt
+```
+
+未提供的输入路径相对于工具所在的本书目录定位，不依赖当前工作目录。`--output` 必须显式提供且指向尚不存在的新目录。已有输出一律拒绝，不会被删除或覆盖；重复运行请换一个新目录，例如 `/tmp/claude-color-catalog-rebuilt-2`。此规则同样适用于完整生成器。
+
+新增测试（沿用本节已有环境，无需额外依赖）：
+
+```sh
+python3 -m unittest discover -s "$TOOLS/tests" -p 'test_*.py' -v
+node "$TOOLS/tests/test_resolution_browser_dom.cjs" "/path/to/annotated-output/index.html"
+python3 "$TOOLS/tests/verify_resolution_baseline.py" \
+  --baseline "/path/to/original/color-catalog.json" \
+  --annotated "/path/to/annotated-output/color-catalog.json" \
+  --baseline-browser "/path/to/original/index.html" \
+  --annotated-browser "/path/to/annotated-output/index.html"
+```
+
+原 test_browser_dom.cjs 用于不带扩展的基线；test_resolution_browser_dom.cjs 用于已追加扩展的页面。后者覆盖19条派生复制、全部23条原声明复制、14个新增HEX、5个超域值、4个上下文值、独立CSV列和拒绝剪贴板。DOM测试不是实际浏览器像素、原生剪贴板/对话框或已登录产品验证。

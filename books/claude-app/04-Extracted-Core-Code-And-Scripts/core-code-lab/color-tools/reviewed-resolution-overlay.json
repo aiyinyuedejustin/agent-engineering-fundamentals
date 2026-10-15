@@ -1,0 +1,1635 @@
+{
+  "schema": "claude.color-gap-overlay.recommendation.v1",
+  "mode": "additive_annotation_only",
+  "baseline_compact_sha256": "4291b8827086a3767e8d8a4432068fc667bc4aefb64ad62f424a14d5d98579de",
+  "instructions": "Add resolution_extension by profile:name. Preserve old declaration, status and counts until the consumer supports extended sRGB and contextual records. This file does not modify a catalog.",
+  "records": [
+    {
+      "id": "cds_light:--cds-bg-tint-aqua",
+      "expected_declared": "rgb(from var(--cds-aqua-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #bfebdb calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (191 - 819/5) / (7/20) = 544/7",
+          "g: (235 - 819/5) / (7/20) = 1424/7",
+          "b: (219 - 3263/20) / (7/20) = 1117/7"
+        ],
+        "rgb_255_exact": [
+          "544/7",
+          "1424/7",
+          "1117/7"
+        ],
+        "rgb_255": [
+          77.71428571428571,
+          203.42857142857142,
+          159.57142857142858
+        ],
+        "srgb_exact": [
+          "32/105",
+          "1424/1785",
+          "1117/1785"
+        ],
+        "srgb_channels": [
+          0.3047619047619048,
+          0.7977591036414566,
+          0.6257703081232493
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.304761904762 0.797759103641 0.625770308123 / 0.35)",
+        "hex": "#4ecba0",
+        "rgb_css": "rgb(77.7142857143 203.428571429 159.571428571 / 0.35)",
+        "hsl_degrees_percent": [
+          159.0681818182,
+          54.9313358302,
+          55.1260504202
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#4ecba0",
+          "rgb_255": [
+            77.71428571428571,
+            203.42857142857142,
+            159.57142857142858
+          ],
+          "hsl_degrees_percent": [
+            159.0681818182,
+            54.9313358302,
+            55.1260504202
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(159.0681818182 54.9313358302% 55.1260504202% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "191",
+            "235",
+            "219"
+          ],
+          "origin_rgb_255": [
+            191,
+            235,
+            219
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-blue",
+      "expected_declared": "rgb(from var(--cds-blue-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #cde2fb calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (205 - 819/5) / (7/20) = 824/7",
+          "g: (226 - 819/5) / (7/20) = 1244/7",
+          "b: (251 - 3263/20) / (7/20) = 251"
+        ],
+        "rgb_255_exact": [
+          "824/7",
+          "1244/7",
+          "251"
+        ],
+        "rgb_255": [
+          117.71428571428571,
+          177.71428571428572,
+          251.0
+        ],
+        "srgb_exact": [
+          "824/1785",
+          "1244/1785",
+          "251/255"
+        ],
+        "srgb_channels": [
+          0.461624649859944,
+          0.6969187675070028,
+          0.984313725490196
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.46162464986 0.696918767507 0.98431372549 / 0.35)",
+        "hex": "#76b2fb",
+        "rgb_css": "rgb(117.714285714 177.714285714 251 / 0.35)",
+        "hsl_degrees_percent": [
+          212.9903536977,
+          94.3377148635,
+          72.2969187675
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#76b2fb",
+          "rgb_255": [
+            117.71428571428571,
+            177.71428571428572,
+            251.0
+          ],
+          "hsl_degrees_percent": [
+            212.9903536977,
+            94.3377148635,
+            72.2969187675
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(212.9903536977 94.3377148635% 72.2969187675% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "205",
+            "226",
+            "251"
+          ],
+          "origin_rgb_255": [
+            205,
+            226,
+            251
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-green",
+      "expected_declared": "rgb(from var(--cds-green-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #caeac7 calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (202 - 819/5) / (7/20) = 764/7",
+          "g: (234 - 819/5) / (7/20) = 1404/7",
+          "b: (199 - 3263/20) / (7/20) = 717/7"
+        ],
+        "rgb_255_exact": [
+          "764/7",
+          "1404/7",
+          "717/7"
+        ],
+        "rgb_255": [
+          109.14285714285714,
+          200.57142857142858,
+          102.42857142857143
+        ],
+        "srgb_exact": [
+          "764/1785",
+          "468/595",
+          "239/595"
+        ],
+        "srgb_channels": [
+          0.4280112044817927,
+          0.7865546218487395,
+          0.4016806722689076
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.428011204482 0.786554621849 0.401680672269 / 0.35)",
+        "hex": "#6dc966",
+        "rgb_css": "rgb(109.142857143 200.571428571 102.428571429 / 0.35)",
+        "hsl_degrees_percent": [
+          115.8951965066,
+          47.4120082816,
+          59.4117647059
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#6dc966",
+          "rgb_255": [
+            109.14285714285714,
+            200.57142857142858,
+            102.42857142857143
+          ],
+          "hsl_degrees_percent": [
+            115.8951965066,
+            47.4120082816,
+            59.4117647059
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(115.8951965066 47.4120082816% 59.4117647059% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "202",
+            "234",
+            "199"
+          ],
+          "origin_rgb_255": [
+            202,
+            234,
+            199
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-magenta",
+      "expected_declared": "rgb(from var(--cds-magenta-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #f9d4e2 calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (249 - 819/5) / (7/20) = 1704/7",
+          "g: (212 - 819/5) / (7/20) = 964/7",
+          "b: (226 - 3263/20) / (7/20) = 1257/7"
+        ],
+        "rgb_255_exact": [
+          "1704/7",
+          "964/7",
+          "1257/7"
+        ],
+        "rgb_255": [
+          243.42857142857142,
+          137.71428571428572,
+          179.57142857142858
+        ],
+        "srgb_exact": [
+          "568/595",
+          "964/1785",
+          "419/595"
+        ],
+        "srgb_channels": [
+          0.9546218487394958,
+          0.5400560224089636,
+          0.704201680672269
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.954621848739 0.540056022409 0.704201680672 / 0.35)",
+        "hex": "#f38ab4",
+        "rgb_css": "rgb(243.428571429 137.714285714 179.571428571 / 0.35)",
+        "hsl_degrees_percent": [
+          336.2432432432,
+          82.0399113082,
+          74.7338935574
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#f38ab4",
+          "rgb_255": [
+            243.42857142857142,
+            137.71428571428572,
+            179.57142857142858
+          ],
+          "hsl_degrees_percent": [
+            336.2432432432,
+            82.0399113082,
+            74.7338935574
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(336.2432432432 82.0399113082% 74.7338935574% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "249",
+            "212",
+            "226"
+          ],
+          "origin_rgb_255": [
+            249,
+            212,
+            226
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-orange",
+      "expected_declared": "rgb(from var(--cds-orange-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #f7d8cb calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (247 - 819/5) / (7/20) = 1664/7",
+          "g: (216 - 819/5) / (7/20) = 1044/7",
+          "b: (203 - 3263/20) / (7/20) = 797/7"
+        ],
+        "rgb_255_exact": [
+          "1664/7",
+          "1044/7",
+          "797/7"
+        ],
+        "rgb_255": [
+          237.71428571428572,
+          149.14285714285714,
+          113.85714285714286
+        ],
+        "srgb_exact": [
+          "1664/1785",
+          "348/595",
+          "797/1785"
+        ],
+        "srgb_channels": [
+          0.9322128851540616,
+          0.584873949579832,
+          0.44649859943977593
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.932212885154 0.58487394958 0.44649859944 / 0.35)",
+        "hex": "#ee9572",
+        "rgb_css": "rgb(237.714285714 149.142857143 113.857142857 / 0.35)",
+        "hsl_degrees_percent": [
+          17.0934256055,
+          78.1785392245,
+          68.9355742297
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#ee9572",
+          "rgb_255": [
+            237.71428571428572,
+            149.14285714285714,
+            113.85714285714286
+          ],
+          "hsl_degrees_percent": [
+            17.0934256055,
+            78.1785392245,
+            68.9355742297
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(17.0934256055 78.1785392245% 68.9355742297% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "247",
+            "216",
+            "203"
+          ],
+          "origin_rgb_255": [
+            247,
+            216,
+            203
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-red",
+      "expected_declared": "rgb(from var(--cds-red-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #fad6d6 calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (250 - 819/5) / (7/20) = 1724/7",
+          "g: (214 - 819/5) / (7/20) = 1004/7",
+          "b: (214 - 3263/20) / (7/20) = 1017/7"
+        ],
+        "rgb_255_exact": [
+          "1724/7",
+          "1004/7",
+          "1017/7"
+        ],
+        "rgb_255": [
+          246.28571428571428,
+          143.42857142857142,
+          145.28571428571428
+        ],
+        "srgb_exact": [
+          "1724/1785",
+          "1004/1785",
+          "339/595"
+        ],
+        "srgb_channels": [
+          0.9658263305322129,
+          0.5624649859943978,
+          0.5697478991596638
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.965826330532 0.562464985994 0.56974789916 / 0.35)",
+        "hex": "#f68f91",
+        "rgb_css": "rgb(246.285714286 143.428571429 145.285714286 / 0.35)",
+        "hsl_degrees_percent": [
+          358.9166666667,
+          85.5106888361,
+          76.4145658263
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#f68f91",
+          "rgb_255": [
+            246.28571428571428,
+            143.42857142857142,
+            145.28571428571428
+          ],
+          "hsl_degrees_percent": [
+            358.9166666667,
+            85.5106888361,
+            76.4145658263
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(358.9166666667 85.5106888361% 76.4145658263% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "250",
+            "214",
+            "214"
+          ],
+          "origin_rgb_255": [
+            250,
+            214,
+            214
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-violet",
+      "expected_declared": "rgb(from var(--cds-violet-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #dfdbfd calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (223 - 819/5) / (7/20) = 1184/7",
+          "g: (219 - 819/5) / (7/20) = 1104/7",
+          "b: (253 - 3263/20) / (7/20) = 1797/7"
+        ],
+        "rgb_255_exact": [
+          "1184/7",
+          "1104/7",
+          "1797/7"
+        ],
+        "rgb_255": [
+          169.14285714285714,
+          157.71428571428572,
+          256.7142857142857
+        ],
+        "srgb_exact": [
+          "1184/1785",
+          "368/595",
+          "599/595"
+        ],
+        "srgb_channels": [
+          0.6633053221288515,
+          0.6184873949579832,
+          1.0067226890756302
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": false,
+        "css_color_srgb": "color(srgb 0.663305322129 0.618487394958 1.00672268908 / 0.35)",
+        "hex": null,
+        "rgb_css": null,
+        "hsl_degrees_percent": null,
+        "hex_semantics": "No lossless in-gamut HEX: retain extended-sRGB channels.",
+        "clipped_preview": {
+          "hex": "#a99eff",
+          "rgb_255": [
+            169.14285714285714,
+            157.71428571428572,
+            255.0
+          ],
+          "hsl_degrees_percent": [
+            247.0484581498,
+            100.0,
+            80.9243697479
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": null,
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "223",
+            "219",
+            "253"
+          ],
+          "origin_rgb_255": [
+            223,
+            219,
+            253
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-tint-yellow",
+      "expected_declared": "rgb(from var(--cds-yellow-100) calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #f9dca4 calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (249 - 819/5) / (7/20) = 1704/7",
+          "g: (220 - 819/5) / (7/20) = 1124/7",
+          "b: (164 - 3263/20) / (7/20) = 17/7"
+        ],
+        "rgb_255_exact": [
+          "1704/7",
+          "1124/7",
+          "17/7"
+        ],
+        "rgb_255": [
+          243.42857142857142,
+          160.57142857142858,
+          2.4285714285714284
+        ],
+        "srgb_exact": [
+          "568/595",
+          "1124/1785",
+          "1/105"
+        ],
+        "srgb_channels": [
+          0.9546218487394958,
+          0.6296918767507003,
+          0.009523809523809525
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.954621848739 0.629691876751 0.00952380952381 / 0.35)",
+        "hex": "#f3a102",
+        "rgb_css": "rgb(243.428571429 160.571428571 2.42857142857 / 0.35)",
+        "hsl_degrees_percent": [
+          39.3716656787,
+          98.024404416,
+          48.2072829132
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#f3a102",
+          "rgb_255": [
+            243.42857142857142,
+            160.57142857142858,
+            2.4285714285714284
+          ],
+          "hsl_degrees_percent": [
+            39.3716656787,
+            98.024404416,
+            48.2072829132
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(39.3716656787 98.024404416% 48.2072829132% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "249",
+            "220",
+            "164"
+          ],
+          "origin_rgb_255": [
+            249,
+            220,
+            164
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-bg-user-message-personal",
+      "expected_declared": "var(--cds-bg-tint-blue)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #cde2fb calc((r - 163.8) / .35) calc((g - 163.8) / .35) calc((b - 163.15) / .35) / 35%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (205 - 819/5) / (7/20) = 824/7",
+          "g: (226 - 819/5) / (7/20) = 1244/7",
+          "b: (251 - 3263/20) / (7/20) = 251"
+        ],
+        "rgb_255_exact": [
+          "824/7",
+          "1244/7",
+          "251"
+        ],
+        "rgb_255": [
+          117.71428571428571,
+          177.71428571428572,
+          251.0
+        ],
+        "srgb_exact": [
+          "824/1785",
+          "1244/1785",
+          "251/255"
+        ],
+        "srgb_channels": [
+          0.461624649859944,
+          0.6969187675070028,
+          0.984313725490196
+        ],
+        "alpha_exact": "7/20",
+        "alpha": 0.35,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.46162464986 0.696918767507 0.98431372549 / 0.35)",
+        "hex": "#76b2fb",
+        "rgb_css": "rgb(117.714285714 177.714285714 251 / 0.35)",
+        "hsl_degrees_percent": [
+          212.9903536977,
+          94.3377148635,
+          72.2969187675
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#76b2fb",
+          "rgb_255": [
+            117.71428571428571,
+            177.71428571428572,
+            251.0
+          ],
+          "hsl_degrees_percent": [
+            212.9903536977,
+            94.3377148635,
+            72.2969187675
+          ],
+          "alpha": 0.35,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(212.9903536977 94.3377148635% 72.2969187675% / 0.35)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "252",
+            "252",
+            "251"
+          ],
+          "recomposed_rgb_255_exact": [
+            "205",
+            "226",
+            "251"
+          ],
+          "origin_rgb_255": [
+            205,
+            226,
+            251
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-border-line",
+      "expected_declared": "initial",
+      "resolution_extension": {
+        "expanded_expression": "initial",
+        "audit_status": "context_dependent",
+        "dependency_kind": "custom_property_initial",
+        "hex": null,
+        "alpha": null,
+        "reason": "For an unregistered custom property, initial is guaranteed-invalid; consumer var() fallback determines its usable value.",
+        "consumer_example": {
+          "expression": "var(--cds-border-line,var(--cds-border))",
+          "condition": "Unregistered custom property; selected initial declaration active; no overriding declaration or runtime registration.",
+          "fallback_token": "--cds-border",
+          "fallback_hex": "#0b0b0b",
+          "fallback_alpha": 0.1,
+          "is_token_hex": false
+        }
+      }
+    },
+    {
+      "id": "cds_light:--cds-fill-git-draft-hover",
+      "expected_declared": "gray",
+      "resolution_extension": {
+        "expanded_expression": "gray",
+        "audit_status": "statically_resolved",
+        "method": "css_named_color",
+        "math": [
+          "CSS named color gray = #808080 = RGB(128, 128, 128)."
+        ],
+        "rgb_255_exact": [
+          "128",
+          "128",
+          "128"
+        ],
+        "rgb_255": [
+          128.0,
+          128.0,
+          128.0
+        ],
+        "srgb_exact": [
+          "128/255",
+          "128/255",
+          "128/255"
+        ],
+        "srgb_channels": [
+          0.5019607843137255,
+          0.5019607843137255,
+          0.5019607843137255
+        ],
+        "alpha_exact": "1",
+        "alpha": 1.0,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.501960784314 0.501960784314 0.501960784314 / 1)",
+        "hex": "#808080",
+        "rgb_css": "rgb(128 128 128 / 1)",
+        "hsl_degrees_percent": [
+          0.0,
+          0.0,
+          50.1960784314
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#808080",
+          "rgb_255": [
+            128.0,
+            128.0,
+            128.0
+          ],
+          "hsl_degrees_percent": [
+            0.0,
+            0.0,
+            50.1960784314
+          ],
+          "alpha": 1.0,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(0.0 0.0% 50.1960784314% / 1)"
+      }
+    },
+    {
+      "id": "cds_light:--cds-shortcut-cap-line",
+      "expected_declared": "color-mix(in srgb, currentColor 18%, transparent)",
+      "resolution_extension": {
+        "expanded_expression": "color-mix(in srgb, currentColor 18%, transparent)",
+        "audit_status": "context_dependent",
+        "dependency_kind": "element_currentcolor",
+        "hex": null,
+        "alpha": null,
+        "currentcolor_alpha_multiplier": 0.18,
+        "reason": "RGB follows the consuming element color; alpha is color alpha multiplied by the mix weight, not necessarily 0.18/0.22."
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-aqua",
+      "expected_declared": "rgb(from var(--cds-aqua-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #022720 calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (2 - 21/4) / (3/4) = -13/3",
+          "g: (39 - 21/4) / (3/4) = 45",
+          "b: (32 - 21/4) / (3/4) = 107/3"
+        ],
+        "rgb_255_exact": [
+          "-13/3",
+          "45",
+          "107/3"
+        ],
+        "rgb_255": [
+          -4.333333333333333,
+          45.0,
+          35.666666666666664
+        ],
+        "srgb_exact": [
+          "-13/765",
+          "3/17",
+          "107/765"
+        ],
+        "srgb_channels": [
+          -0.01699346405228758,
+          0.17647058823529413,
+          0.13986928104575164
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": false,
+        "css_color_srgb": "color(srgb -0.0169934640523 0.176470588235 0.139869281046 / 0.75)",
+        "hex": null,
+        "rgb_css": null,
+        "hsl_degrees_percent": null,
+        "hex_semantics": "No lossless in-gamut HEX: retain extended-sRGB channels.",
+        "clipped_preview": {
+          "hex": "#002d24",
+          "rgb_255": [
+            0.0,
+            45.0,
+            35.666666666666664
+          ],
+          "hsl_degrees_percent": [
+            167.5555555556,
+            100.0,
+            8.8235294118
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": null,
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "2",
+            "39",
+            "32"
+          ],
+          "origin_rgb_255": [
+            2,
+            39,
+            32
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-blue",
+      "expected_declared": "rgb(from var(--cds-blue-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #032042 calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (3 - 21/4) / (3/4) = -3",
+          "g: (32 - 21/4) / (3/4) = 107/3",
+          "b: (66 - 21/4) / (3/4) = 81"
+        ],
+        "rgb_255_exact": [
+          "-3",
+          "107/3",
+          "81"
+        ],
+        "rgb_255": [
+          -3.0,
+          35.666666666666664,
+          81.0
+        ],
+        "srgb_exact": [
+          "-1/85",
+          "107/765",
+          "27/85"
+        ],
+        "srgb_channels": [
+          -0.011764705882352941,
+          0.13986928104575164,
+          0.3176470588235294
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": false,
+        "css_color_srgb": "color(srgb -0.0117647058824 0.139869281046 0.317647058824 / 0.75)",
+        "hex": null,
+        "rgb_css": null,
+        "hsl_degrees_percent": null,
+        "hex_semantics": "No lossless in-gamut HEX: retain extended-sRGB channels.",
+        "clipped_preview": {
+          "hex": "#002451",
+          "rgb_255": [
+            0.0,
+            35.666666666666664,
+            81.0
+          ],
+          "hsl_degrees_percent": [
+            213.5802469136,
+            100.0,
+            15.8823529412
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": null,
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "3",
+            "32",
+            "66"
+          ],
+          "origin_rgb_255": [
+            3,
+            32,
+            66
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-green",
+      "expected_declared": "rgb(from var(--cds-green-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #11260f calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (17 - 21/4) / (3/4) = 47/3",
+          "g: (38 - 21/4) / (3/4) = 131/3",
+          "b: (15 - 21/4) / (3/4) = 13"
+        ],
+        "rgb_255_exact": [
+          "47/3",
+          "131/3",
+          "13"
+        ],
+        "rgb_255": [
+          15.666666666666666,
+          43.666666666666664,
+          13.0
+        ],
+        "srgb_exact": [
+          "47/765",
+          "131/765",
+          "13/255"
+        ],
+        "srgb_channels": [
+          0.06143790849673202,
+          0.17124183006535948,
+          0.050980392156862744
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.0614379084967 0.171241830065 0.0509803921569 / 0.75)",
+        "hex": "#102c0d",
+        "rgb_css": "rgb(15.6666666667 43.6666666667 13 / 0.75)",
+        "hsl_degrees_percent": [
+          114.7826086957,
+          54.1176470588,
+          11.1111111111
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#102c0d",
+          "rgb_255": [
+            15.666666666666666,
+            43.666666666666664,
+            13.0
+          ],
+          "hsl_degrees_percent": [
+            114.7826086957,
+            54.1176470588,
+            11.1111111111
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(114.7826086957 54.1176470588% 11.1111111111% / 0.75)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "17",
+            "38",
+            "15"
+          ],
+          "origin_rgb_255": [
+            17,
+            38,
+            15
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-magenta",
+      "expected_declared": "rgb(from var(--cds-magenta-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #390f1f calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (57 - 21/4) / (3/4) = 69",
+          "g: (15 - 21/4) / (3/4) = 13",
+          "b: (31 - 21/4) / (3/4) = 103/3"
+        ],
+        "rgb_255_exact": [
+          "69",
+          "13",
+          "103/3"
+        ],
+        "rgb_255": [
+          69.0,
+          13.0,
+          34.333333333333336
+        ],
+        "srgb_exact": [
+          "23/85",
+          "13/255",
+          "103/765"
+        ],
+        "srgb_channels": [
+          0.27058823529411763,
+          0.050980392156862744,
+          0.134640522875817
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.270588235294 0.0509803921569 0.134640522876 / 0.75)",
+        "hex": "#450d22",
+        "rgb_css": "rgb(69 13 34.3333333333 / 0.75)",
+        "hsl_degrees_percent": [
+          337.1428571429,
+          68.2926829268,
+          16.0784313725
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#450d22",
+          "rgb_255": [
+            69.0,
+            13.0,
+            34.333333333333336
+          ],
+          "hsl_degrees_percent": [
+            337.1428571429,
+            68.2926829268,
+            16.0784313725
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(337.1428571429 68.2926829268% 16.0784313725% / 0.75)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "57",
+            "15",
+            "31"
+          ],
+          "origin_rgb_255": [
+            57,
+            15,
+            31
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-orange",
+      "expected_declared": "rgb(from var(--cds-orange-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #371407 calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (55 - 21/4) / (3/4) = 199/3",
+          "g: (20 - 21/4) / (3/4) = 59/3",
+          "b: (7 - 21/4) / (3/4) = 7/3"
+        ],
+        "rgb_255_exact": [
+          "199/3",
+          "59/3",
+          "7/3"
+        ],
+        "rgb_255": [
+          66.33333333333333,
+          19.666666666666668,
+          2.3333333333333335
+        ],
+        "srgb_exact": [
+          "199/765",
+          "59/765",
+          "7/765"
+        ],
+        "srgb_channels": [
+          0.2601307189542484,
+          0.07712418300653595,
+          0.009150326797385621
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.260130718954 0.0771241830065 0.00915032679739 / 0.75)",
+        "hex": "#421402",
+        "rgb_css": "rgb(66.3333333333 19.6666666667 2.33333333333 / 0.75)",
+        "hsl_degrees_percent": [
+          16.25,
+          93.2038834951,
+          13.4640522876
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#421402",
+          "rgb_255": [
+            66.33333333333333,
+            19.666666666666668,
+            2.3333333333333335
+          ],
+          "hsl_degrees_percent": [
+            16.25,
+            93.2038834951,
+            13.4640522876
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(16.25 93.2038834951% 13.4640522876% / 0.75)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "55",
+            "20",
+            "7"
+          ],
+          "origin_rgb_255": [
+            55,
+            20,
+            7
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-red",
+      "expected_declared": "rgb(from var(--cds-red-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #3c0e0e calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (60 - 21/4) / (3/4) = 73",
+          "g: (14 - 21/4) / (3/4) = 35/3",
+          "b: (14 - 21/4) / (3/4) = 35/3"
+        ],
+        "rgb_255_exact": [
+          "73",
+          "35/3",
+          "35/3"
+        ],
+        "rgb_255": [
+          73.0,
+          11.666666666666666,
+          11.666666666666666
+        ],
+        "srgb_exact": [
+          "73/255",
+          "7/153",
+          "7/153"
+        ],
+        "srgb_channels": [
+          0.28627450980392155,
+          0.0457516339869281,
+          0.0457516339869281
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.286274509804 0.0457516339869 0.0457516339869 / 0.75)",
+        "hex": "#490c0c",
+        "rgb_css": "rgb(73 11.6666666667 11.6666666667 / 0.75)",
+        "hsl_degrees_percent": [
+          0.0,
+          72.4409448819,
+          16.6013071895
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#490c0c",
+          "rgb_255": [
+            73.0,
+            11.666666666666666,
+            11.666666666666666
+          ],
+          "hsl_degrees_percent": [
+            0.0,
+            72.4409448819,
+            16.6013071895
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(0.0 72.4409448819% 16.6013071895% / 0.75)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "60",
+            "14",
+            "14"
+          ],
+          "origin_rgb_255": [
+            60,
+            14,
+            14
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-violet",
+      "expected_declared": "rgb(from var(--cds-violet-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #1d1649 calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (29 - 21/4) / (3/4) = 95/3",
+          "g: (22 - 21/4) / (3/4) = 67/3",
+          "b: (73 - 21/4) / (3/4) = 271/3"
+        ],
+        "rgb_255_exact": [
+          "95/3",
+          "67/3",
+          "271/3"
+        ],
+        "rgb_255": [
+          31.666666666666668,
+          22.333333333333332,
+          90.33333333333333
+        ],
+        "srgb_exact": [
+          "19/153",
+          "67/765",
+          "271/765"
+        ],
+        "srgb_channels": [
+          0.12418300653594772,
+          0.08758169934640522,
+          0.3542483660130719
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": true,
+        "css_color_srgb": "color(srgb 0.124183006536 0.0875816993464 0.354248366013 / 0.75)",
+        "hex": "#20165a",
+        "rgb_css": "rgb(31.6666666667 22.3333333333 90.3333333333 / 0.75)",
+        "hsl_degrees_percent": [
+          248.2352941176,
+          60.3550295858,
+          22.091503268
+        ],
+        "hex_semantics": "Rounded 8-bit display; alpha remains separate.",
+        "clipped_preview": {
+          "hex": "#20165a",
+          "rgb_255": [
+            31.666666666666668,
+            22.333333333333332,
+            90.33333333333333
+          ],
+          "hsl_degrees_percent": [
+            248.2352941176,
+            60.3550295858,
+            22.091503268
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": "hsl(248.2352941176 60.3550295858% 22.091503268% / 0.75)",
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "29",
+            "22",
+            "73"
+          ],
+          "origin_rgb_255": [
+            29,
+            22,
+            73
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-tint-yellow",
+      "expected_declared": "rgb(from var(--cds-yellow-800) calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #311a00 calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (49 - 21/4) / (3/4) = 175/3",
+          "g: (26 - 21/4) / (3/4) = 83/3",
+          "b: (0 - 21/4) / (3/4) = -7"
+        ],
+        "rgb_255_exact": [
+          "175/3",
+          "83/3",
+          "-7"
+        ],
+        "rgb_255": [
+          58.333333333333336,
+          27.666666666666668,
+          -7.0
+        ],
+        "srgb_exact": [
+          "35/153",
+          "83/765",
+          "-7/255"
+        ],
+        "srgb_channels": [
+          0.22875816993464052,
+          0.1084967320261438,
+          -0.027450980392156862
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": false,
+        "css_color_srgb": "color(srgb 0.228758169935 0.108496732026 -0.0274509803922 / 0.75)",
+        "hex": null,
+        "rgb_css": null,
+        "hsl_degrees_percent": null,
+        "hex_semantics": "No lossless in-gamut HEX: retain extended-sRGB channels.",
+        "clipped_preview": {
+          "hex": "#3a1c00",
+          "rgb_255": [
+            58.333333333333336,
+            27.666666666666668,
+            0.0
+          ],
+          "hsl_degrees_percent": [
+            28.4571428571,
+            100.0,
+            11.4379084967
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": null,
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "49",
+            "26",
+            "0"
+          ],
+          "origin_rgb_255": [
+            49,
+            26,
+            0
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-bg-user-message-personal",
+      "expected_declared": "var(--cds-bg-tint-blue)",
+      "resolution_extension": {
+        "expanded_expression": "rgb(from #032042 calc((r - 5.25) / .75) calc((g - 5.25) / .75) calc((b - 5.25) / .75) / 75%)",
+        "audit_status": "statically_resolved",
+        "method": "relative_rgb_exact_rational_no_channel_clipping",
+        "math": [
+          "r: (3 - 21/4) / (3/4) = -3",
+          "g: (32 - 21/4) / (3/4) = 107/3",
+          "b: (66 - 21/4) / (3/4) = 81"
+        ],
+        "rgb_255_exact": [
+          "-3",
+          "107/3",
+          "81"
+        ],
+        "rgb_255": [
+          -3.0,
+          35.666666666666664,
+          81.0
+        ],
+        "srgb_exact": [
+          "-1/85",
+          "107/765",
+          "27/85"
+        ],
+        "srgb_channels": [
+          -0.011764705882352941,
+          0.13986928104575164,
+          0.3176470588235294
+        ],
+        "alpha_exact": "3/4",
+        "alpha": 0.75,
+        "srgb_in_gamut": false,
+        "css_color_srgb": "color(srgb -0.0117647058824 0.139869281046 0.317647058824 / 0.75)",
+        "hex": null,
+        "rgb_css": null,
+        "hsl_degrees_percent": null,
+        "hex_semantics": "No lossless in-gamut HEX: retain extended-sRGB channels.",
+        "clipped_preview": {
+          "hex": "#002451",
+          "rgb_255": [
+            0.0,
+            35.666666666666664,
+            81.0
+          ],
+          "hsl_degrees_percent": [
+            213.5802469136,
+            100.0,
+            15.8823529412
+          ],
+          "alpha": 0.75,
+          "method": "independent per-channel clipping to [0,255], then 8-bit rounding",
+          "warning": "Preview only. Not browser gamut mapping, computed style, used value, or product screenshot measurement."
+        },
+        "hsl_css": null,
+        "algebraic_composite_check": {
+          "reference_backdrop_rgb_255_exact": [
+            "21",
+            "21",
+            "21"
+          ],
+          "recomposed_rgb_255_exact": [
+            "3",
+            "32",
+            "66"
+          ],
+          "origin_rgb_255": [
+            3,
+            32,
+            66
+          ],
+          "exact_roundtrip": true,
+          "meaning": "An algebraic inverse-alpha relationship inferred from the constants. Not evidence of the actual product background or renderer compositing path."
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-border-line",
+      "expected_declared": "initial",
+      "resolution_extension": {
+        "expanded_expression": "initial",
+        "audit_status": "context_dependent",
+        "dependency_kind": "custom_property_initial",
+        "hex": null,
+        "alpha": null,
+        "reason": "For an unregistered custom property, initial is guaranteed-invalid; consumer var() fallback determines its usable value.",
+        "consumer_example": {
+          "expression": "var(--cds-border-line,var(--cds-border))",
+          "condition": "Unregistered custom property; selected initial declaration active; no overriding declaration or runtime registration.",
+          "fallback_token": "--cds-border",
+          "fallback_hex": "#ffffff",
+          "fallback_alpha": 0.1,
+          "is_token_hex": false
+        }
+      }
+    },
+    {
+      "id": "cds_dark:--cds-shortcut-cap-line",
+      "expected_declared": "color-mix(in srgb, currentColor 22%, transparent)",
+      "resolution_extension": {
+        "expanded_expression": "color-mix(in srgb, currentColor 22%, transparent)",
+        "audit_status": "context_dependent",
+        "dependency_kind": "element_currentcolor",
+        "hex": null,
+        "alpha": null,
+        "currentcolor_alpha_multiplier": 0.22,
+        "reason": "RGB follows the consuming element color; alpha is color alpha multiplied by the mix weight, not necessarily 0.18/0.22."
+      }
+    }
+  ],
+  "validation": {
+    "version": "2.37337.1",
+    "baseline_projection_sha256": "c615072ecf8757f88b577f1dcef57ef5ce16af7e8c3c9e0683ad6599e32bae27",
+    "expected_statistics": {
+      "baseline_records": 1341,
+      "baseline_resolved_records": 1318,
+      "baseline_unresolved_records": 23,
+      "derived_static_records": 19,
+      "derived_hex_records": 14,
+      "extended_srgb_records": 5,
+      "context_dependent_records": 4,
+      "static_numeric_records": 1337,
+      "hex_records": 1332
+    }
+  },
+  "provenance": {
+    "input_sha256": {
+      "compact": "4291b8827086a3767e8d8a4432068fc667bc4aefb64ad62f424a14d5d98579de",
+      "audit": "3c787c4823e649bca92dcd6afb17d763905fe27d6e2db296c6c6ba8ecf7c2b3b",
+      "recommendation": "314629e396f5aefbf1f111e97f7df356c96e55edeffeafb8d13267d5ebca52db",
+      "browser_results": "57bd8490699e3cce2a0d2517df6d2d9a119782c1942e8ee55edcecad73e9593f"
+    },
+    "source": {
+      "id": "f014",
+      "path": "ion/assets/v1/c6a992d55-CNGsCU46.css",
+      "sha256": "e805f0daa316017c4299c79daedeb5a122d35e315b28f3a0a5f11a6e6889b12e",
+      "bytes": 1720886
+    },
+    "standards": {
+      "relative_channels": "https://www.w3.org/TR/2026/WD-css-color-5-20260913/#relative-colors",
+      "relative_rgb": "https://www.w3.org/TR/2026/WD-css-color-5-20260913/#relative-RGB",
+      "named_gray": "https://www.w3.org/TR/css-color-4/#named-colors",
+      "initial_and_fallback": "https://www.w3.org/TR/css-variables-1/#guaranteed-invalid",
+      "currentcolor": "https://www.w3.org/TR/css-color-4/#currentcolor-color"
+    },
+    "browser_css_semantics": {
+      "fixture": "original CSS semantics fixture",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+      "static_color_cases_passed": 19,
+      "context_cases_passed": 5,
+      "product_runtime_executed": false,
+      "limitation": "Isolated original fixture verifies CSS semantics, not logged-in product appearance or the integrated catalog UI."
+    }
+  }
+}

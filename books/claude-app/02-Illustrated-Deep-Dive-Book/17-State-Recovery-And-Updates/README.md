@@ -146,9 +146,9 @@ journal 是写入过程留下的恢复记录。本包 store 的 `.journal` 携�
 
 ### 小实验：write、rename、commit 之间停下，重启后该读到什么？
 
-本节新增的是**原创教学模型**。SET-07 的 private-file writer 与 SET-08 的 store/journal 是两条产品路线，不能把它们拼成一条“已经还原的 Claude 写入算法”。下面不使用产品格式、运行时、账户或真实配置。
+下面是**原创教学模型**，仅使用合成文件。SET-07 的 private-file writer 与 SET-08 的 store/journal 是两条独立的产品路线；本实验不复现 Claude 写入算法，也不使用产品格式、运行时、账户或真实配置。
 
-让一个独立 Python 子进程把合成配置从 r7 改成 r8。我们不按时间猜测它走到哪里：子进程在指定阶段完成后发出握手并暂停，父进程收到握手，才通过自己创建的 Popen handle 终止它；恢复由一个新子进程执行。全部数据只存在于父进程自己的 TemporaryDirectory。
+实验中，一个独立的 Python 子进程把合成配置从 r7 改成 r8。子进程在指定阶段完成后发出握手并暂停，父进程收到握手，才通过自己创建的 Popen handle 终止它；恢复由一个新子进程执行。这样便能确定停止的位置，无需按时间猜测。全部数据只存在于父进程自己的 TemporaryDirectory。
 
 ![写完、替换完成与提交完成的不同恢复合同](../../assets/figures/crash-cuts-and-recovery.svg)
 
@@ -173,7 +173,7 @@ writeComplete 只表示候选写入与读回校验完成；renameComplete 表示
 | C4：写完 intent | target=r7，candidate=r8，完整 intent | baseHash 与候选 nextHash 都匹配才替换，再写回执 |
 | C5：完成替换 | target=r8，完整 intent，没有 candidate/receipt | 识别已安装，只补回执与清理，不再替换 target |
 
-**完整 intent 是允许恢复继续提交的决策点，仍不等于提交已经完成。** 这是本实验选择的合同，不是所有产品必须遵守的规则。
+**在本模型中，完整 intent 是允许恢复继续提交的决策点，仍不等于提交已经完成。**
 
 #### 恢复器判断的是事实，不是“文件在不在”
 
@@ -188,7 +188,7 @@ writeComplete 只表示候选写入与读回校验完成；renameComplete 表示
 
 #### 读结果时不要跨过证据边界
 
-C1/C3 的半文件是程序主动写入固定前缀的**合成 torn file**。进程停止时操作系统还在运行，页缓存也可能存在；本实验没有调用 fsync，没有模拟断电，没有观察任意 I/O 指令内部的崩溃，也没有证明 Claude 的实际恢复行为。Linux 文档分别讨论 [rename 的替换可见性](https://man7.org/linux/man-pages/man2/rename.2.html) 与 [fsync 及目录项同步](https://man7.org/linux/man-pages/man2/fsync.2.html)；“正式名字已切换”不能替代一份持久顺序证明。
+C1/C3 的半文件是程序主动写入固定前缀的**合成 torn file**。进程停止时操作系统还在运行，页缓存也可能存在；本实验没有调用 fsync，没有模拟断电，也没有观察任意 I/O 指令内部的崩溃。Linux 文档分别讨论 [rename 的替换可见性](https://man7.org/linux/man-pages/man2/rename.2.html) 与 [fsync 及目录项同步](https://man7.org/linux/man-pages/man2/fsync.2.html)；“正式名字已切换”不能替代一份持久顺序证明。
 
 本模型假设单 writer。读取摘要再 replace 之间没有并发修改；若允许另一个 writer 插入修改，就必须另行设计锁、仲裁或条件提交。故意制造 r9 的案例检验的是**恢复开始前已有的新状态**，不是并发写入的完整解决方案。
 

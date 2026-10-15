@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse, colorsys, hashlib, json, math, re
 from pathlib import Path
 from inventory_inputs import source_bases, source_path, validate_inventory
+from resolution_overlay import write_new_outputs
 
 FAMILIES = ['gray','red','orange','yellow','green','aqua','blue','violet','magenta']
 SHADES = [0,10,20,30,40,50,60,70,80,90,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,810,820,830,840,850,860,870,880,890,900]
@@ -214,7 +215,10 @@ def browser_payload(catalog):
         'conditions': blocks[r['block']]['context'],
         'source_label': sources[r['source']]['path'],
     } for r in catalog['records']]
-    return {key: catalog[key] for key in ('product', 'version', 'families', 'profiles', 'statistics')} | {'records': records}
+    payload = {key: catalog[key] for key in ('product', 'version', 'families', 'profiles', 'statistics')} | {'records': records}
+    if 'resolution_extension' in catalog:
+        payload['resolution_extension'] = catalog['resolution_extension']
+    return payload
 
 
 def render_html(catalog, template):
@@ -228,10 +232,10 @@ def render_html(catalog, template):
 
 def write_outputs(catalog, output, template):
     html = render_html(catalog, Path(template).read_text(encoding='utf-8'))
-    output = Path(output)
-    output.mkdir(parents=True, exist_ok=True)
-    (output / 'color-catalog.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    (output / 'index.html').write_text(html, encoding='utf-8')
+    write_new_outputs(output, {
+        'color-catalog.json': json.dumps(catalog, ensure_ascii=False, indent=2, allow_nan=False) + '\n',
+        'index.html': html,
+    })
 
 
 def main(argv=None):
@@ -239,8 +243,9 @@ def main(argv=None):
     ap.add_argument('--inventory', type=Path, required=True, help='JSON inventory produced by extract_design_tokens.py')
     ap.add_argument('--resources', type=Path, required=True, help='Resources directory containing ion-dist/')
     ap.add_argument('--asar-root', type=Path, help='Already-extracted app.asar directory; required when the inventory uses asar sources')
-    ap.add_argument('--output', type=Path, required=True, help='Destination directory for color-catalog.json and index.html')
+    ap.add_argument('--output', type=Path, required=True, help='New, non-existing destination directory for color-catalog.json and index.html')
     ap.add_argument('--template', type=Path, default=Path(__file__).with_name('color_catalog_template.html'))
+    ap.add_argument('--resolution-overlay', type=Path, help='Reviewed additive resolution overlay for this exact baseline')
     ap.add_argument('--primary-source', help='Exact inventory source ID or path; default: the sole complete ion palette')
     ap.add_argument('--product', default='Claude Desktop', help='Metadata label only; not inferred or verified')
     ap.add_argument('--version', default='unspecified', help='Package version label only; not inferred or verified')
@@ -252,9 +257,12 @@ def main(argv=None):
         if args.expect_records is not None and len(catalog['records']) != args.expect_records:
             raise ValueError(f"Expected {args.expect_records} records, got {len(catalog['records'])}; review the source/profile recipe")
         outputs = [args.output / name for name in ('color-catalog.json', 'index.html')]
-        protected = [args.inventory, args.template]
+        protected = [args.inventory, args.template] + ([args.resolution_overlay] if args.resolution_overlay else [])
         if any(target.resolve() == original.resolve() for target in outputs for original in protected):
             raise ValueError('Output files must not overwrite the inventory or template')
+        if args.resolution_overlay:
+            from resolution_overlay import apply_resolution_overlay, load_resolution_overlay
+            catalog = apply_resolution_overlay(catalog, load_resolution_overlay(args.resolution_overlay))
         write_outputs(catalog, args.output, args.template)
     except (OSError, ValueError, KeyError, TypeError, RecursionError) as error:
         ap.exit(2, f'error: {error}\n')
