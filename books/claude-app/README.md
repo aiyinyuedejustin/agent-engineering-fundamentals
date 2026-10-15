@@ -4,6 +4,20 @@
 
 这本书把 Claude App 拆成两条阅读路线：**看得见的设计，拿来做网页；看不见的机制，拿来做系统。** 色板、组件、状态机和代码放在一起，读完一节就能进入对应的实现。
 
+## 值得收藏的相关仓库
+
+**想直接做 Claude 风格的 React 网页，先看 [Open Claude UI](https://github.com/Caho1/open-claude-ui)。** 本书侧重设计拆解、机制讲解与可复算示例；下面这些项目补齐组件装配、聊天运行时和生成式预览，按需要挑一个即可。
+
+| 仓库 | 适合收藏来做什么 | 使用时先看 |
+|---|---|---|
+| **[Caho1/open-claude-ui](https://github.com/Caho1/open-claude-ui)** | Claude 风格 React 组件、主题与交互 hooks；适合按组件取用，研究输入框、滚动跟随和动效 | [统一组件入口](https://github.com/Caho1/open-claude-ui/blob/main/src/index.ts)，再挑需要的模块 |
+| [ibelick/prompt-kit](https://github.com/ibelick/prompt-kit) | 给现有 React / shadcn 项目补 AI 输入框与聊天界面组件，按需复制和定制 | README 的组件安装与使用；它是通用 AI UI，不是 Claude 复刻 |
+| [assistant-ui/assistant-ui](https://github.com/assistant-ui/assistant-ui) | 把消息、会话、工具展示与后端运行时接起来；适合需要真实聊天行为的 React 应用 | README 的 primitives 与 runtime adapters；样式可以另行设计 |
+| [e2b-dev/fragments](https://github.com/e2b-dev/fragments) | 研究类似 Artifacts 的“生成代码 → 沙箱执行 → 预览”完整应用路径 | README 与 sandbox-templates；运行涉及 E2B 和模型服务配置，不是纯静态模板 |
+| [vercel/ai-elements](https://github.com/vercel/ai-elements) | 收藏对话、消息、推理展示和代码块组件的实现，搭配 AI SDK / shadcn 阅读 | **迁移观察项**：上游已公告 2026 年 11 月底弃用此仓库，转向 [shadcn/ui AI Elements](https://ui.shadcn.com/docs/ai-elements)；新项目先确认迁移状态 |
+
+核对日期：2026-10-15。这是按用途整理的外部书签，不引入额外依赖；采用代码时查看各仓库的许可证与安装要求。另可收藏本书使用的逆向方法工具 [morluto/rea](https://github.com/morluto/rea)。
+
 ![Claude App：界面、状态、能力与执行的全景关系](assets/figures/book-panorama.svg)
 
 ## 先挑一个入口
