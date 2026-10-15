@@ -1,0 +1,143 @@
+{
+  "schema": "original-settings-browser-check/v1",
+  "observed_utc": "2026-10-15T07:47:00Z/2026-10-15T07:50:00Z",
+  "source_commit": "f240c99f7abcbda760b12eea5dafbb0fa6b91f86",
+  "source_git_blob": "3dc29c842b309ce2928887b94aa7ff589dc2213b",
+  "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/05-settings-and-dashboard-template.html",
+  "environment": {
+    "browser": "Own cloud Chrome",
+    "viewport_css_px": [
+      1188,
+      761
+    ],
+    "device_emulation": false
+  },
+  "synthetic_name": "合成测试员 QA0746",
+  "observations": [
+    "dark theme preserves density and reading settings",
+    "compact changes min-height token and UI font size without changing 18px reading text",
+    "large reading changes reading text to21px without changing compact select height",
+    "empty name rejects save, exposes aria-invalid and restores input focus",
+    "activity hidden and demo reduced-motion toggle take effect",
+    "save then normal reload restores synthetic name, dark/compact/large, hidden activity and reduced-motion",
+    "reset opens a confirmation dialog with cancel initially focused",
+    "cancel preserves data and restores reset button focus",
+    "confirm restores default values and saves them; focus returns",
+    "normal reload after unsaved density change restores saved defaults"
+  ],
+  "density_measurements": {
+    "comfortable": {
+      "density": "comfortable",
+      "elements": [
+        {
+          "border": "1px solid rgb(135, 130, 115)",
+          "boxSizing": "border-box",
+          "fontSize": "14px",
+          "height": 44,
+          "lineHeight": "normal",
+          "minHeight": "44px",
+          "padding": "10px 12px",
+          "selector": "#control-density",
+          "uiControl": "44px",
+          "uiControlHeight": ""
+        },
+        {
+          "border": "1px solid rgb(39, 39, 34)",
+          "boxSizing": "border-box",
+          "fontSize": "12px",
+          "height": 44,
+          "lineHeight": "15.6px",
+          "minHeight": "44px",
+          "padding": "8px 12px",
+          "selector": "#save-settings",
+          "uiControl": "44px",
+          "uiControlHeight": ""
+        },
+        {
+          "border": "1px solid rgb(135, 130, 115)",
+          "boxSizing": "border-box",
+          "fontSize": "14px",
+          "height": 44.390625,
+          "lineHeight": "22.4px",
+          "minHeight": "44px",
+          "padding": "10px 12px",
+          "selector": "#display-name",
+          "uiControl": "44px",
+          "uiControlHeight": ""
+        }
+      ]
+    },
+    "compact": {
+      "density": "compact",
+      "elements": [
+        {
+          "border": "1px solid rgb(135, 130, 115)",
+          "boxSizing": "border-box",
+          "fontSize": "13px",
+          "height": 43,
+          "lineHeight": "normal",
+          "minHeight": "36px",
+          "padding": "10px 12px",
+          "selector": "#control-density",
+          "uiControl": "36px",
+          "uiControlHeight": ""
+        },
+        {
+          "border": "1px solid rgb(39, 39, 34)",
+          "boxSizing": "border-box",
+          "fontSize": "12px",
+          "height": 36,
+          "lineHeight": "15.6px",
+          "minHeight": "36px",
+          "padding": "8px 12px",
+          "selector": "#save-settings",
+          "uiControl": "36px",
+          "uiControlHeight": ""
+        },
+        {
+          "border": "1px solid rgb(135, 130, 115)",
+          "boxSizing": "border-box",
+          "fontSize": "13px",
+          "height": 42.796875,
+          "lineHeight": "20.8px",
+          "minHeight": "36px",
+          "padding": "10px 12px",
+          "selector": "#display-name",
+          "uiControl": "36px",
+          "uiControlHeight": ""
+        }
+      ]
+    }
+  },
+  "storage_scope": {
+    "origin": "https://htmlpreview.github.io",
+    "keys": [
+      "atelier-settings",
+      "atelier-theme"
+    ],
+    "scope": "Origin scoped, not isolated by preview URL",
+    "restored_defaults": true
+  },
+  "images": [
+    {
+      "path": "assets/screenshots/settings-persisted-f240c99.jpg",
+      "width": 1173,
+      "height": 1901,
+      "sha256": "c2d60432dd4a40f0aeb7cc14172ca29d769e3739ec98b97d4fca6285d84597f0"
+    },
+    {
+      "path": "assets/screenshots/settings-reset-dialog-f240c99.jpg",
+      "width": 1173,
+      "height": 751,
+      "sha256": "26e7975922cc4431ba691263ca309d7fa65e54cabb63aa6a5f73198b122fdd42"
+    }
+  ],
+  "not_tested": [
+    "storage denied or full",
+    "OS reduced motion preference",
+    "real mobile device or IME",
+    "console or network audit",
+    "file URL or cold offline operation"
+  ],
+  "product_app_executed": false
+}

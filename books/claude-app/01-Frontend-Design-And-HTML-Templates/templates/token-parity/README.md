@@ -24,7 +24,7 @@
 
 JSON 提供 90 个颜色值、18 个尺寸值，以及三个系统字体类别。七个公共动作/状态/遮罩变量、阴影、动效、完整字体栈等以 CSS 为准。
 
-无密度属性时，CSS 的控件默认值是 40px；JSON 的 compact 36px / comfortable 44px 是两个明确的密度档，二者不矛盾。字体只核对 JSON 类别与 CSS 最后一级 sans-serif / serif / monospace 回退，不把类别当成完整字体栈。
+无密度属性时，CSS 的控件最小高度默认值是40px；JSON的controlMinHeight在compact/comfortable下分别为36px/44px，二者不矛盾。它们不保证每个控件的最终实高，内容、padding、边框与原生布局可令盒子更高；具体浏览器读数见[设置页验收](../settings-browser-review.md)。字体只核对 JSON 类别与 CSS 最后一级 sans-serif / serif / monospace 回退，不把类别当成完整字体栈。
 
 ## 安装与运行
 

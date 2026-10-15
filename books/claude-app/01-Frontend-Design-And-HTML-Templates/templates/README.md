@@ -67,7 +67,7 @@ HTMLPreview 是需联网的第三方预览服务；涉及私有内容时，请�
 </main>
 ```
 
-`data-palette` 支持 `paper` 纸与陶、`sage` 苔绿、`ocean` 雾蓝、`plum` 梅灰和 `graphite` 石墨。配色决定表面与强调色，`--ui-action` 仍独立承担主要动作。密度使用 `compact` / `comfortable`，阅读使用 `default` / `large`，两个尺度互不绑定。
+`data-palette` 支持 `paper` 纸与陶、`sage` 苔绿、`ocean` 雾蓝、`plum` 梅灰和 `graphite` 石墨。配色决定表面与强调色，`--ui-action` 仍独立承担主要动作。密度使用 `compact` / `comfortable`，阅读使用 `default` / `large`，两个尺度互不绑定。 `--ui-control` 是采用该token的控件最小高度：无密度属性40px、紧凑36px、舒适44px。内容、padding、边框与原生控件布局可以撑高；特殊工具栏和多行输入另有尺寸规则。
 
 Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要用 `@config` 显式加载；暗色变体应按 v4 配置方式设置。这里提供的是标注版本的 v3.4 起点，迁移前请对照[官方升级指南](https://tailwindcss.com/docs/upgrade-guide#using-a-javascript-config-file)。配置的 content 路径相对于配置文件，复制到自己的工程后需调整。
 
@@ -141,3 +141,5 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 [固定源检查页与构建器](narrow-layout-lab/README.md)把六份模板放入375、768、1024 CSS px的iframe内容框，保留源摘要与沙盒边界；用于布局检查，不等同移动设备或持久化测试。
 
 [查看六份375px真实浏览器截图与三档尺寸记录](narrow-layout-lab/BROWSER-REVIEW.md)。
+
+[设置页保存与重置实测](settings-browser-review.md)：正常刷新恢复、确认取消与默认值持久化，以及min-height和控件实高的区别。
