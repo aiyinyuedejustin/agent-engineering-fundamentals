@@ -1,0 +1,415 @@
+{
+  "schema": "desktop-network-ownership-evidence/v1",
+  "sample": {
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "asar_sha256": "3d4aea62ccf045ea88d3e92ce728e23aa01c965f25eda450f6369e7557848395"
+  },
+  "files": {
+    "package.json": {
+      "sha256": "941d1f329539cd083461f2e35da52b87694bf87806c89d06a6f3876e170342ed",
+      "bytes": 5036,
+      "matches_verified_asar_member": true
+    },
+    ".vite/build/index.js": {
+      "sha256": "f20848248e60ec046c97186812dbe5d0fe79c57f2fc200684f59d40ff911d3bb",
+      "bytes": 638,
+      "matches_verified_asar_member": true
+    },
+    ".vite/build/index.chunk-ny8j26BQ.js": {
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512",
+      "bytes": 6956732,
+      "matches_verified_asar_member": true
+    },
+    ".vite/build/mcp-runtime/nodeHost.js": {
+      "sha256": "61dee6621d5fb36df79dcf297241544e4112d4031ce822732edbc4b83bec414d",
+      "bytes": 5853,
+      "matches_verified_asar_member": true
+    },
+    ".vite/build/index.chunk-BHCJSlbX.js": {
+      "sha256": "6c68132d14051ad2f503d18db364fdf1f39e4c27e956c485cf90d667b1e30c87",
+      "bytes": 729748,
+      "matches_verified_asar_member": true
+    },
+    ".vite/build/index.chunk-nyb8MP2w.js": {
+      "sha256": "0e7971f88c13ccf6a77b4b19edb8051debf0c321aad2d461b9b9e9db4dec0ffe",
+      "bytes": 2933,
+      "matches_verified_asar_member": true
+    },
+    ".vite/build/index.pre.js": {
+      "sha256": "f45e07ae009e0156a05a8976fb42c1b0e0020d5024a10910229d15aeb383ad32",
+      "bytes": 903038,
+      "matches_verified_asar_member": true
+    }
+  },
+  "anchors": [
+    {
+      "id": "NW01",
+      "path": "package.json",
+      "anchor": "\"main\": \".vite/build/index.pre.js\"",
+      "utf8_byte_start": 215,
+      "utf8_byte_end": 249,
+      "line_1_based": 8,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW02",
+      "path": ".vite/build/index.js",
+      "anchor": "require(\"./index.chunk-ny8j26BQ.js\")",
+      "utf8_byte_start": 601,
+      "utf8_byte_end": 637,
+      "line_1_based": 1,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW03",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "let a=require(\"electron\")",
+      "utf8_byte_start": 727,
+      "utf8_byte_end": 752,
+      "line_1_based": 1,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW04",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "te=require(\"ws\")",
+      "utf8_byte_start": 1482,
+      "utf8_byte_end": 1498,
+      "line_1_based": 1,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW05",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "var Ner=\"claude-bridge-ws\"",
+      "utf8_byte_start": 3543654,
+      "utf8_byte_end": 3543680,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW06",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "useSessionCookies:!1",
+      "utf8_byte_start": 3545730,
+      "utf8_byte_end": 3545750,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW07",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function zer(e,t)",
+      "utf8_byte_start": 3545763,
+      "utf8_byte_end": 3545786,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW08",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function D9e(e)",
+      "utf8_byte_start": 1390158,
+      "utf8_byte_end": 1390179,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW09",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "this.unsubscribeNetWsFeature=Ty(jer",
+      "utf8_byte_start": 5207115,
+      "utf8_byte_end": 5207150,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW10",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "applyTransportFlag(){",
+      "utf8_byte_start": 5212647,
+      "utf8_byte_end": 5212668,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW11",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "rotateOrDrain(e){",
+      "utf8_byte_start": 5230697,
+      "utf8_byte_end": 5230714,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW12",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "rotate(e){if(this.closing",
+      "utf8_byte_start": 5231224,
+      "utf8_byte_end": 5231249,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW13",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "resetSocket(e=Jg.Other",
+      "utf8_byte_start": 5235018,
+      "utf8_byte_end": 5235040,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW14",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function N9e(e={})",
+      "utf8_byte_start": 1391789,
+      "utf8_byte_end": 1391813,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW15",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "function F9e(e,t,n)",
+      "utf8_byte_start": 1392406,
+      "utf8_byte_end": 1392425,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW16",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function I9e(e,t,n)",
+      "utf8_byte_start": 1393019,
+      "utf8_byte_end": 1393044,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW17",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "let e=await I9e(this.nodeHostPath",
+      "utf8_byte_start": 1403899,
+      "utf8_byte_end": 1403932,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW18",
+      "path": ".vite/build/mcp-runtime/nodeHost.js",
+      "anchor": "import((0,d.pathToFileURL)(e).toString())",
+      "utf8_byte_start": 5658,
+      "utf8_byte_end": 5699,
+      "line_1_based": 3,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW19",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function N5r(e,t)",
+      "utf8_byte_start": 4478446,
+      "utf8_byte_end": 4478469,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW20",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function f9e(e,t,n)",
+      "utf8_byte_start": 1386197,
+      "utf8_byte_end": 1386222,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW21",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "u9r=\"persist:cowork-file-preview\"",
+      "utf8_byte_start": 4498112,
+      "utf8_byte_end": 4498145,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW22",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "declineReason:\"preview_network_open\"",
+      "utf8_byte_start": 5782879,
+      "utf8_byte_end": 5782915,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW23",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "function v4(){",
+      "utf8_byte_start": 5693858,
+      "utf8_byte_end": 5693872,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW24",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "if(!await N5r(e,\"artifact\"))return Response.error()",
+      "utf8_byte_start": 5697513,
+      "utf8_byte_end": 5697564,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW25",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function gSr(e,t)",
+      "utf8_byte_start": 3869276,
+      "utf8_byte_end": 3869299,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW26",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "function mSr(){",
+      "utf8_byte_start": 3868832,
+      "utf8_byte_end": 3868847,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW27",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "function mm(e){",
+      "utf8_byte_start": 1384931,
+      "utf8_byte_end": 1384946,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW28",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function h9e(e,t)",
+      "utf8_byte_start": 1387602,
+      "utf8_byte_end": 1387625,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW29",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "function _m(e){",
+      "utf8_byte_start": 1388217,
+      "utf8_byte_end": 1388232,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW30",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function ufr(e){",
+      "utf8_byte_start": 3718731,
+      "utf8_byte_end": 3718753,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW31",
+      "path": ".vite/build/index.chunk-BHCJSlbX.js",
+      "anchor": "Making remote MCP tool call:",
+      "utf8_byte_start": 457150,
+      "utf8_byte_end": 457178,
+      "line_1_based": 1,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW32",
+      "path": ".vite/build/index.chunk-nyb8MP2w.js",
+      "anchor": "/api/event_logging/v2/batch",
+      "utf8_byte_start": 1408,
+      "utf8_byte_end": 1435,
+      "line_1_based": 1,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW33",
+      "path": ".vite/build/index.pre.js",
+      "anchor": "require(\"./index.js\")",
+      "utf8_byte_start": 902686,
+      "utf8_byte_end": 902707,
+      "line_1_based": 1,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW34",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "this.forceWsTransport=e.host!==void 0",
+      "utf8_byte_start": 5203143,
+      "utf8_byte_end": 5203180,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW35",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "this.doProtocolVersion<1&&this.ws!==null&&!this.ws.supportsProtocolPing",
+      "utf8_byte_start": 5221915,
+      "utf8_byte_end": 5221986,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW36",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "NODE_USE_SYSTEM_CA:process.env.NODE_USE_SYSTEM_CA??\"1\"",
+      "utf8_byte_start": 1393242,
+      "utf8_byte_end": 1393296,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW37",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function W8i(e)",
+      "utf8_byte_start": 5693527,
+      "utf8_byte_end": 5693548,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW38",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "function l5i(){",
+      "utf8_byte_start": 5697121,
+      "utf8_byte_end": 5697136,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    },
+    {
+      "id": "NW39",
+      "path": ".vite/build/index.chunk-ny8j26BQ.js",
+      "anchor": "async function pm(e)",
+      "utf8_byte_start": 1384681,
+      "utf8_byte_end": 1384701,
+      "line_1_based": 13,
+      "basis": "static syntax; does not establish runtime execution"
+    }
+  ],
+  "checks_passed": 39,
+  "restrictions": [
+    "no target execution",
+    "no private endpoint request",
+    "no credential or CA contents read",
+    "no macOS or Windows sample read"
+  ],
+  "official_semantics": [
+    {
+      "url": "https://www.electronjs.org/docs/latest/api/net",
+      "role": "API semantics only; not target runtime version evidence"
+    },
+    {
+      "url": "https://www.electronjs.org/docs/latest/api/session",
+      "role": "session and proxy semantics only; not runtime safety proof"
+    }
+  ]
+}

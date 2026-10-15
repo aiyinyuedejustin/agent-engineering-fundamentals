@@ -463,3 +463,7 @@ node demo.mjs
 ## 逐步推演
 
 [预览读取超时以后，究竟还有什么在运行？](worked-case.md)用双资源账本区分响应截止、取消确认、底层工作与迟到交付，并给出 16 行时间线和可运行测试。
+
+## 预览网络策略的作用域
+
+[专用 Session 与本地库映射](../01-System-Architecture/network-ownership/README.md)：导航前代理答案检查、精确库白名单，以及 HTTPS 地址映射包内文件的路径。

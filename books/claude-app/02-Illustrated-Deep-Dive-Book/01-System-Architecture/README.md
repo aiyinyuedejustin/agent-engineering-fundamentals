@@ -216,3 +216,7 @@ page.settle(old, { ok: true }); // false：不能改写 page-b 的失败状态
 | 谁负责退出？ | 具名任务、期限、持久化结果 | 一个任务卡住不遮蔽其他结果 |
 
 继续阅读：[状态、恢复与更新](../17-State-Recovery-And-Updates/README.md) · [MCP 宿主](../06-MCP-Host-Internals/README.md) · [版本与跨平台](../18-Versions-And-Cross-Platform/README.md)
+
+## 网络请求由谁负责
+
+[网络分层补篇](network-ownership/README.md)：bridge 双 transport、MCP 子进程环境、预览专用 Session；用同一个请求失败，区分不同的代理、证书与重试边界。

@@ -208,3 +208,7 @@ REA 6.5.0 的静态分析覆盖 Node 适配器、确认窗口 preload、确认�
 ## 动手推演
 
 [完整案例：状态表、可运行代码与预测练习](worked-case.md)把本卷的异步边界放到同一条时间线上。
+
+## 网络配置如何进入工具子进程
+
+[配置转换补篇](../01-System-Architecture/network-ownership/README.md)：Electron 代理答案到环境变量的转换、两个 CA 变量的共存与 caller 优先规则。
