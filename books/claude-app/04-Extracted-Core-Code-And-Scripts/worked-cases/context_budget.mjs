@@ -3,12 +3,14 @@ import {pathToFileURL} from 'node:url';
 export const utf8Bytes = text => new TextEncoder().encode(text).byteLength;
 
 export class InlineBudget {
+  #limit;
   #pending = new Map();
   #committed = new Map();
   constructor(limit) {
     if (!Number.isSafeInteger(limit) || limit < 0) throw new RangeError('invalid byte limit');
-    this.limit = limit;
+    this.#limit = limit;
   }
+  get limit() { return this.#limit; }
   get used() { return [...this.#committed.values()].reduce((a, b) => a + b, 0); }
   get reserved() { return [...this.#pending.values()].reduce((a, b) => a + b.bytes, 0); }
   reserve(id, text) {
@@ -16,7 +18,7 @@ export class InlineBudget {
     if (this.#committed.has(id) || [...this.#pending.values()].some(x => x.id === id)) {
       throw new Error('duplicate attachment identity');
     }
-    if (this.used + this.reserved + bytes > this.limit) return null;
+    if (this.used + this.reserved + bytes > this.#limit) return null;
     const token = Symbol(id);
     this.#pending.set(token, {id, bytes});
     return Object.freeze({

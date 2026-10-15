@@ -50,7 +50,8 @@ test('stress: cancellation is a request and does not make a late task result cur
 });
 test('stress: finite huge cache weights do not overflow accounting or loop forever', () => {
   const source=readFileSync(new URL('../model.mjs',import.meta.url),'utf8');
-  const code=source.slice(source.indexOf('export class WeightedLRU'),source.indexOf('/** One in-flight')).replace('export class','class');
+  const helpers=source.slice(0,source.indexOf('export class FakeClock'));
+  const code=helpers+source.slice(source.indexOf('export class WeightedLRU'),source.indexOf('/** One in-flight')).replace('export class','class');
   // A VM timeout bounds the original infinite-loop reproduction without real OS/process actions.
   assert.doesNotThrow(()=>vm.runInNewContext(`${code}; const c=new WeightedLRU({weight:Number.MAX_VALUE}); c.put('a',1,Number.MAX_VALUE); c.put('b',2,Number.MAX_VALUE); if(c.used!==Number.MAX_VALUE || c.get('b')!==2 || c.items.size!==1) throw Error('accounting');`,{}, {timeout:200}));
 });

@@ -1,15 +1,16 @@
 /** Original, local teaching models. No network, disk or server-cache behavior. */
 export class InlineBudget {
-  #owner; #epoch = 0; #entries = new Map(); #pending = new Map();
+  #owner; #limit; #epoch = 0; #entries = new Map(); #pending = new Map();
   constructor({ owner, limit }) {
     if (!Number.isSafeInteger(limit) || limit < 0) throw new RangeError('Invalid byte limit');
-    this.#owner = owner; this.limit = limit;
+    this.#owner = owner; this.#limit = limit;
   }
+  get limit() { return this.#limit; }
   get used() { return [...this.#entries.values(), ...this.#pending.values()].reduce((a, b) => a + b, 0); }
   reserve(text) {
     if (typeof text !== 'string') throw new TypeError('Expected immutable text');
     const bytes = new TextEncoder().encode(text).byteLength;
-    if (this.used + bytes > this.limit) return null;
+    if (this.used + bytes > this.#limit) return null;
     const key = Symbol('reservation'), epoch = this.#epoch, owner = this.#owner;
     this.#pending.set(key, bytes);
     const live = () => epoch === this.#epoch && owner === this.#owner && this.#pending.has(key);
@@ -39,7 +40,11 @@ export class PreviewPool {
     return Object.freeze({ url: entry.url, release: () => {
       if (released) return false;
       released = true; entry.count--;
-      if (entry.count === 0) { this.revokeURL(entry.url); this.#entries.delete(file); }
+      if (entry.count === 0) {
+        // Invalidate ownership before calling an adapter that can reenter or throw.
+        this.#entries.delete(file);
+        this.revokeURL(entry.url);
+      }
       return true;
     } });
   }

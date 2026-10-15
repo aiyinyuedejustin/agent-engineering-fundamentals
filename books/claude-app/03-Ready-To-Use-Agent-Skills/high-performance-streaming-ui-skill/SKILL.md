@@ -119,7 +119,7 @@ timeout 只是停止等待。若底层任务仍运行，标记 stuck 或隔离�
 node --test scripts/test/*.test.mjs
 ```
 
-40 项覆盖快照合并、terminal、重入、可见性、dispose、半个 fence、非前缀编辑、Unicode、全文 finalize、缓存权重、Worker epoch、旧回复、最新原文 fallback、send failure、协作预算与取消。
+46 项覆盖快照合并、terminal、重入、可见性、dispose、半个 fence、非前缀编辑、Unicode、全文 finalize、缓存权重、Worker epoch、旧回复、最新原文 fallback、send failure、协作预算与取消。
 
 教学 StableBlocks 只识别空行段落及顶层 fence，不是 CommonMark。真实应用必须替换 parser adapter，并补充：表格、列表嵌套、引用定义、数学、HTML、主题切换、超长行、协议破坏与异常恢复。
 
@@ -154,3 +154,7 @@ node --test scripts/test/*.test.mjs
 交付真实路径图、改动前后证据、契约测试、回退策略、资源清理表与剩余风险。清楚区分 passed / failed / never run。不要把本 Skill 的原创模拟统计当成 Claude 或你项目的真实性能成绩。
 
 详见 [研究证据边界](references/evidence-boundaries.md) 与 [评测矩阵](references/benchmark-matrix.md)。
+
+## 模型预算配置
+
+maxChars 和缓存 entries 必须是有限非负安全整数；缓存 weight/itemWeight 允许有限非负小数。显示延迟须在 0–2,147,483,647ms 范围内；runSlices 的 budget 须为有限正数。预算与延迟构造后只读，需要变更时新建所有者并显式迁移状态。无效配置立即报错，不把 NaN 当作无限预算。字符预算按 UTF-16 code unit 计算。这些是原创教学合同，不是 Claude 限制。

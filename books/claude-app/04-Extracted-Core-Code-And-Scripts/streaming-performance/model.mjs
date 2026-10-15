@@ -1,4 +1,16 @@
 /** Original teaching models. No target application code or dependencies. */
+const countLimit = value => {
+  if (!Number.isSafeInteger(value) || value < 0) throw RangeError('invalid count limit');
+  return value;
+};
+const delayLimit = value => {
+  if (!Number.isFinite(value) || value < 0 || value > 2_147_483_647) throw RangeError('invalid delay limit');
+  return value;
+};
+// Budget changes require a new owner; public assignment must not disable a cap.
+const fixedLimits = (target, values) => {
+  for (const [key, value] of Object.entries(values)) Object.defineProperty(target, key, { value, enumerable: true });
+};
 export class FakeClock {
   time = 0; next = 1; tasks = new Map();
   now = () => this.time;
@@ -24,7 +36,8 @@ export class FakeClock {
 /** Coalesce complete snapshots, never arbitrary deltas. Terminal flush is explicit. */
 export class SnapshotPresenter {
   constructor({ clock, commit, visibleDelay = 24, hiddenDelay = 160, maxChars = 1_000_000 }) {
-    Object.assign(this, { clock, commit, visibleDelay, hiddenDelay, maxChars });
+    fixedLimits(this, { visibleDelay: delayLimit(visibleDelay), hiddenDelay: delayLimit(hiddenDelay), maxChars: countLimit(maxChars) });
+    Object.assign(this, { clock, commit });
     this.pending = null; this.timer = null; this.revision = 0;
     this.hidden = false; this.closed = false; this.first = true;
     this.metrics = { updates: 0, commits: 0, coalesced: 0 };
@@ -74,7 +87,8 @@ export class SnapshotPresenter {
  */
 export class StableBlocks {
   constructor({ finalParser = text => ({ source: text }), maxChars = 1_000_000 } = {}) {
-    this.finalParser = finalParser; this.maxChars = maxChars; this.reset();
+    fixedLimits(this, { maxChars: countLimit(maxChars) });
+    this.finalParser = finalParser; this.reset();
   }
   reset() {
     this.text = ''; this.scanned = 0; this.blockStart = 0; this.fence = null;
@@ -108,8 +122,9 @@ export class StableBlocks {
 /** Explicit accounting, not actual heap size; rejected replacement keeps old value. */
 export class WeightedLRU {
   constructor({ entries = 100, weight = 1_000_000, itemWeight = weight } = {}) {
-    if (![entries, weight, itemWeight].every(x => Number.isFinite(x) && x >= 0)) throw RangeError('invalid cache limits');
-    Object.assign(this, { entries, weight, itemWeight }); this.items = new Map(); this.used = 0;
+    countLimit(entries);
+    if (![weight, itemWeight].every(x => Number.isFinite(x) && x >= 0)) throw RangeError('invalid cache limits');
+    fixedLimits(this, { entries, weight, itemWeight }); this.items = new Map(); this.used = 0;
   }
   get(key) {
     const item = this.items.get(key);
@@ -143,7 +158,8 @@ export class WeightedLRU {
  */
 export class LatestWorkerLane {
   constructor({ send, publish, fallback, maxChars = 100_000, cancel = () => {} }) {
-    Object.assign(this, { send, publish, fallback, maxChars, cancel });
+    fixedLimits(this, { maxChars: countLimit(maxChars) });
+    Object.assign(this, { send, publish, fallback, cancel });
     this.epoch = 1; this.sequence = 0; this.busy = null; this.latest = null; this.closed = false;
   }
   submit(text) {
@@ -192,7 +208,7 @@ export class LatestWorkerLane {
 
 /** Cooperative slicing checks after each unit; one unit can exceed the budget. */
 export async function runSlices(units, { visit, now, yieldTask, budget = 4, signal }) {
-  if (!(budget > 0)) throw RangeError('budget must be positive');
+  if (!Number.isFinite(budget) || !(budget > 0)) throw RangeError('budget must be finite and positive');
   let start = now(), yields = 0, visited = 0;
   for (const unit of units) {
     signal?.throwIfAborted();

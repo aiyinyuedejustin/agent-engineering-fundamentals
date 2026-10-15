@@ -18,7 +18,7 @@ description: Design or debug client attachment pipelines, draft/blob persistence
 5. 每次异步写回前检查归属和代次。切换会话、删除或路线变化时取消旧任务；旧任务即使随后成功，也不能重新挂回当前输入。
 6. 持久化 JSON 元数据与 Blob 内容分开处理。恢复要区分文字已就绪、Blob 仍加载、引用不可恢复。只有引用而没有 bytes 时明确提示，不能把附件标为可发送。
 7. 错误分为准入拒绝、编码待选择、可重试传输错误、用户取消、未知外部结果。自动重试限定在已知可重试且幂等的操作；已发出的远端删除/上传不能凭取消本地 Promise 判定撤销成功。
-8. 运行 `node assets/client-context.test.mjs`。再用真实宿主测试刷新恢复、跨账户隔离和网络中断；本地模型不证明浏览器存储或服务器合同。
+8. 运行 `node --test assets/*.test.mjs`。再用真实宿主测试刷新恢复、跨账户隔离和网络中断；本地模型不证明浏览器存储或服务器合同。
 
 ## Anti-Patterns
 

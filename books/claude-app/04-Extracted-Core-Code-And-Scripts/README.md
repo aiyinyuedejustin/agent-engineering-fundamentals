@@ -27,7 +27,7 @@
 
 - [工具合同实验](tool-contracts/README.md)：形状校验、适配损失、权限与执行器分层；24 项无依赖测试。
 
-- [流式性能实验](streaming-performance/README.md)：调度、增量状态、完成边界与资源寿命；40 项零依赖合同测试。
+- [流式性能实验](streaming-performance/README.md)：调度、增量状态、完成边界与资源寿命；46 项零依赖合同测试。
 
 - [安全边界实验](security-guardrails/README.md)：审批绑定、资源变化、外链与敏感保存策略；68 项原创离线测试。
 
@@ -49,7 +49,7 @@ python3 -B run_book_tests.py --skills
 
 - [恢复与配额实验](resilience-quota/README.md)：分类退避、终止边界、订阅游标与草稿归属；52 项原创模型测试。
 
-- [三个可手算的工程案例](worked-cases/README.md)：Stop/restart、UTF-8 预留与 MCP 审批绑定；17 项 Python 与 11 项 Node 测试。
+- [三个可手算的工程案例](worked-cases/README.md)：Stop/restart、UTF-8 预留与 MCP 审批绑定；17 项 Python 与 12 项 Node 测试。
 - [两个状态转移案例](worked-cases/state-transitions/README.md)：对话树身份重命名、顺序保存与组织切换；20 项测试与 2 份确定性演示输出。
 
 - [原创模型的七条边界合同](model-boundaries.md)：取消重入、数值溢出、审批序列化与原子输入验证。

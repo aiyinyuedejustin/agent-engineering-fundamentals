@@ -26,7 +26,7 @@ def commands(include_skills=False):
             raise RuntimeError(f'缺少已声明的测试：{folder}/{pattern}')
         jobs.append((folder, location, [node, '--test', *map(str, files)]))
     jobs.append(('worked-cases-python', ROOT / 'worked-cases', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_worked_cases.py']))
-    jobs.append(('worked-cases-node', ROOT / 'worked-cases', [node, '--test', 'context_budget.test.mjs']))
+    jobs.append(('worked-cases-node', ROOT / 'worked-cases', [node, '--test', *map(str, sorted((ROOT / 'worked-cases').glob('context_budget*.test.mjs')))]))
     jobs.append(('telemetry-metrics', BOOK / '02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_metrics_lab.py']))
     if include_skills:
         location = BOOK / '03-Ready-To-Use-Agent-Skills'
