@@ -27,6 +27,33 @@ def load_rules(value=None):
     return {k: sorted(set(v)) for k, v in sorted(rules.items())}
 
 
+
+def _lexical_error(code, start, cursor, token_count, quote=None):
+    """Controlled diagnostics only; never serialize source/token values."""
+    known = {
+        "js-comment-state-unclosed": ("Unclosed JavaScript comment", "lexical-state"),
+        "js-quoted-state-unclosed": ("Unclosed JavaScript string/template", "lexical-state"),
+        "js-token-bound-exceeded": ("JavaScript lexical token bound exceeded", "resource-bound"),
+    }
+    message, category = known[code]
+    error = ToolkitError(message)  # Keep the original exception type/behavior.
+    error.scan_diagnostic = {
+        "schema": "original-scanner-diagnostic/v1",
+        "phase": "javascript-tokenization",
+        "code": code,
+        "category": category,
+        "byte_start": start,
+        "byte_cursor": cursor,
+        "tokens_observed": token_count,
+        "input_validity": "not-determined",
+    }
+    if code == "js-token-bound-exceeded":
+        error.scan_diagnostic["token_limit"] = 1000000
+    if quote is not None:
+        error.scan_diagnostic["quote_kind"] = {"'": "single", '"': "double", "`": "template"}[quote]
+    return error
+
+
 def tokens(data):
     # Latin-1 gives a reversible one-character-per-byte view. Do not eval/import.
     s, out, i = data.decode("latin1"), [], 0
@@ -42,7 +69,7 @@ def tokens(data):
         if s.startswith("/*", i):
             end = s.find("*/", i + 2)
             if end < 0:
-                raise ToolkitError("Unclosed JavaScript comment")
+                raise _lexical_error("js-comment-state-unclosed", start, len(s), len(out))
             i = end + 2
             continue
         if c in "\"'`":
@@ -51,7 +78,7 @@ def tokens(data):
             while i < len(s) and s[i] != q:
                 i += 2 if s[i] == "\\" else 1
             if i >= len(s):
-                raise ToolkitError("Unclosed JavaScript string/template")
+                raise _lexical_error("js-quoted-state-unclosed", start, min(i, len(s)), len(out), q)
             i += 1
             raw = s[start+1:i-1].encode("latin1").decode("utf-8")
             # Escapes and interpolated templates are intentionally not decoded
@@ -87,7 +114,7 @@ def tokens(data):
             i += 1
             out.append(("punct", c, start, i))
         if len(out) > 1000000:
-            raise ToolkitError("JavaScript lexical token bound exceeded")
+            raise _lexical_error("js-token-bound-exceeded", start, min(i, len(s)), len(out))
     return out
 
 

@@ -10,33 +10,39 @@
     },
     {
       "path": "ASAR-SOURCE-NOTES.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 3088,
-      "sha256": "4c3ed87ee8bd7bf8d892365b776c9b2f5dd9ba4e9f7906cbed1ed8293fbe1d96"
+      "sha256": "4c3ed87ee8bd7bf8d892365b776c9b2f5dd9ba4e9f7906cbed1ed8293fbe1d96",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "ASAR-VALIDATION.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 5950,
-      "sha256": "1e581a94f574b427a7093e47cfdb304404944c036c2deac339fffb52a72c06de"
+      "sha256": "1e581a94f574b427a7093e47cfdb304404944c036c2deac339fffb52a72c06de",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "LINUX-ASAR-VALIDATION.json",
-      "origin": "original-tool-or-documentation",
       "bytes": 9046,
-      "sha256": "d883ee41adb87d4a0b552ec0010ab0f65538636d377e02af932ad06d8000522e"
+      "sha256": "d883ee41adb87d4a0b552ec0010ab0f65538636d377e02af932ad06d8000522e",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "LINUX-ASAR-VALIDATION.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 4863,
-      "sha256": "1f7e9224149d9c8a07d28feba3ab14a002ab87eb7699cbb78f1955bdd78b1b90"
+      "sha256": "1f7e9224149d9c8a07d28feba3ab14a002ab87eb7699cbb78f1955bdd78b1b90",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "README.md",
-      "origin": "original-tool-or-documentation",
-      "bytes": 21616,
-      "sha256": "555fa0bcaba67d03367ac6c1aa9ed3e9d75b08a3f93d0742ed9095bcdfdef84c"
+      "bytes": 24229,
+      "sha256": "35f62c797692e7727292a6e0faba28e0364011528ed87bfd2b198b055a73e7ca",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "SCANNER-DIAGNOSTICS.md",
+      "bytes": 6097,
+      "sha256": "0655936f9a9fd6bb173a0bfb9fa8fbbc91217bf02fdcd143496331de3027892d",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "SOURCE-NOTES.md",
@@ -46,9 +52,9 @@
     },
     {
       "path": "SUPPORT.md",
-      "origin": "original-tool-or-documentation",
       "bytes": 12926,
-      "sha256": "e2cc7e89bfb2872f25975b3f8f37e4cb147a94c10b88d23273c42dbc78a78035"
+      "sha256": "e2cc7e89bfb2872f25975b3f8f37e4cb147a94c10b88d23273c42dbc78a78035",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "VALIDATION.md",
@@ -58,15 +64,21 @@
     },
     {
       "path": "diff-versions.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 9215,
-      "sha256": "1404955fdd0aa8a5d64c85de9d19b37d7445c83cdb1c61de9ccf87364984bf93"
+      "sha256": "1404955fdd0aa8a5d64c85de9d19b37d7445c83cdb1c61de9ccf87364984bf93",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "probes/known_lexical_limitations.py",
+      "bytes": 2460,
+      "sha256": "77d392a956cfe2a5e7b7210b403905509b70cfad48e162a4fcc87835b9590e22",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "reverse_toolkit.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 7329,
-      "sha256": "d644ebd68f794a3b403f8c09e5ed112741f7438b5f673341a12757634c56191b"
+      "sha256": "d644ebd68f794a3b403f8c09e5ed112741f7438b5f673341a12757634c56191b",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "run_tests.py",
@@ -118,27 +130,33 @@
     },
     {
       "path": "tests/test_asar.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 19406,
-      "sha256": "ba2642849d617ca1673906132bf744722a7992f4d91a5c30a7875ed83c9ec569"
+      "sha256": "ba2642849d617ca1673906132bf744722a7992f4d91a5c30a7875ed83c9ec569",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "tests/test_asar_sidecar.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 23692,
-      "sha256": "394a7cf66dd8fb19c427ea3eb1660d679c23c581210ab4a74539aeb133cee63b"
+      "sha256": "394a7cf66dd8fb19c427ea3eb1660d679c23c581210ab4a74539aeb133cee63b",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "tests/test_diff_versions.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 18735,
-      "sha256": "538740ecff64b2a92500ac256f5a18c6941a4477386a36508c31a0834fd0971b"
+      "sha256": "538740ecff64b2a92500ac256f5a18c6941a4477386a36508c31a0834fd0971b",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "tests/test_independent_asar.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 18072,
-      "sha256": "66efed7a28e235de55b2b282dd512b5204294c49266c842f0f3fc389b012ac6d"
+      "sha256": "66efed7a28e235de55b2b282dd512b5204294c49266c842f0f3fc389b012ac6d",
+      "origin": "original-tool-or-documentation"
+    },
+    {
+      "path": "tests/test_scanner_diagnostics.py",
+      "bytes": 6701,
+      "sha256": "c441d82e1a398d836e167aecf0c2119703f725f2e5a4ba098559880a92a4f789",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "tests/test_toolkit.py",
@@ -154,15 +172,15 @@
     },
     {
       "path": "toolkit/asar.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 19925,
-      "sha256": "d9351f3930ea790df42f8a33a5a3d3447bb95326a9e8f50e75d41292f0fd5e25"
+      "sha256": "d9351f3930ea790df42f8a33a5a3d3447bb95326a9e8f50e75d41292f0fd5e25",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "toolkit/asar_sidecar.py",
-      "origin": "original-tool-or-documentation",
       "bytes": 11054,
-      "sha256": "6e633eaec32892ffe0c19c59ea4e7f728958f7633886593c2f58463e478190eb"
+      "sha256": "6e633eaec32892ffe0c19c59ea4e7f728958f7633886593c2f58463e478190eb",
+      "origin": "original-tool-or-documentation"
     },
     {
       "path": "toolkit/css_scan.py",
@@ -172,20 +190,20 @@
     },
     {
       "path": "toolkit/diffing.py",
-      "bytes": 8127,
-      "sha256": "d50841cc052f1001d8ad8477b4d6b00893cace51ed93e4f7f5b46edd63da8b0f",
+      "bytes": 8657,
+      "sha256": "2bebeaf6a795a5281c183148938f418b30efb82cbd39fe22b0de9e37f3fd992b",
       "origin": "original-tool-or-documentation"
     },
     {
       "path": "toolkit/inventory.py",
-      "bytes": 11288,
-      "sha256": "ce43abef1281dc3e5e3770f1d8b2c91649b449038ec82fb1a759cf4c8b809bcf",
+      "bytes": 12788,
+      "sha256": "5656818563dcc5d73ef31798a58daed6c7c3ecd98f8b249f9297199aba6d7168",
       "origin": "original-tool-or-documentation"
     },
     {
       "path": "toolkit/literals.py",
-      "bytes": 9420,
-      "sha256": "7e03e5d2f926c2ccf884c92f06eb2460c7322952108caf1cdb8d02c40d1cb027",
+      "bytes": 10620,
+      "sha256": "c466879b0cf065623209309986ca25c9200999e8b91edb857848f312861991e6",
       "origin": "original-tool-or-documentation"
     },
     {

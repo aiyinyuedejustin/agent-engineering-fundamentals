@@ -29,6 +29,11 @@ def commands(include_skills=False):
     jobs.append(('worked-cases-node', ROOT / 'worked-cases', [node, '--test', *map(str, sorted((ROOT / 'worked-cases').glob('context_budget*.test.mjs')))]))
     jobs.append(('telemetry-metrics', BOOK / '02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_metrics_lab.py']))
     jobs.append(('crash-cut-recovery', ROOT / 'crash-cut-recovery', [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', '.', '-p', 'test_*.py', '-v']))
+    native = BOOK / '02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/linux-native-layer/examples'
+    native_tests = sorted(native.glob('*.test.mjs'))
+    if len(native_tests) != 2:
+        raise RuntimeError('缺少 Linux 原生桥接教学模型的两个测试文件。')
+    jobs.append(('native-callback-lifetime', native, [node, '--test', *map(str, native_tests)]))
     if include_skills:
         location = BOOK / '03-Ready-To-Use-Agent-Skills'
         files = sorted(location.rglob('*.test.mjs'))

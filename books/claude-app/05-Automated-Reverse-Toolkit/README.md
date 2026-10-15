@@ -1,5 +1,24 @@
 # 自动化静态逆向工具箱
 
+> 候选边界：本工具输出静态候选清单，不证明 JavaScript 语义完整。
+
+### 候选、覆盖与已知词法局限
+
+- 快照及差分明确给出 `analysis_kind: "lexical_candidate_inventory"`、`semantic_completeness_proven: false`。
+- `coverage.complete_within_declared_scope` 只汇总声明范围内已报告的文件/候选管线检查。即使为 `true`，也不能推出 JavaScript 语义完整、候选全真、没有遗漏或运行时无变化。
+- JavaScript 的模板与正则边界使用启发式。嵌套模板、插值内含反引号的正则、正则/除法上下文和字符串值/关键字混淆都可能导致拒绝、假候选或漏候选；未抛错并不排除这些问题。
+- 原创最小反例的内层模板内容目前可能被误识别为调用候选：
+
+  ```javascript
+  const t = `${`checkGate("synthetic_false")`}`;
+  ```
+
+  该局限仍未修复；需要独立 AST/人工核验。[独立局限探针](probes/known_lexical_limitations.py)单独记录为 `expected-limitation-reproduced`，不能视为正确性通过。
+- 新增的有界诊断只有稳定类别、字节位置、计数等元数据，不含原始源码或异常文本。`byte_start` / `byte_cursor` 是原输入 UTF-8 字节序列中的零基偏移；当前实现以 Latin-1 一字节一字符视图保持该合同。
+- `js-quoted-state-unclosed` 描述扫描器到达输入末尾时的词法状态，不断言输入的 JavaScript 语法损坏，也不保证该位置是首次失步点。`js-token-bound-exceeded` 保留 1,000,000 token 原有硬上限。
+- 本次诊断增强不改变接受范围，不恢复拒绝文件的候选，不提限。旧 v1 快照仍可读；缺少上述新增字段同样不意味着语义完整。策略版本变化会在新旧快照比较时保留告警。
+
+
 一个可复用、离线、Python 标准库优先的入口：**目录/受限 ZIP/受限 ASAR → 静态快照 → CSS token 与色阶候选 → 旗标、工具契约、遥测字面量候选 → 两版本 JSON + 中文 Markdown 差分**。
 
 这是原创研究工具，不是 Claude 官方 SDK、产品运行时，也不是完整反编译器。不下载产品、不运行安装器、不执行被分析的代码。交付只包含原创工具与合成测试，未附安装包、产品 bundle、字体或完整源码。
@@ -199,9 +218,18 @@ rea extract-artifact "/absolute/path/to/local/app.asar" --json > "/path/to/priva
 python3 -B run_tests.py
 ```
 
+默认套件包括原 202 项与新增 13 项诊断回归，共 215 项。单独运行新增测试或未修复局限探针：
+
+```sh
+python3 -B tests/test_scanner_diagnostics.py
+python3 -B probes/known_lexical_limitations.py
+```
+
+后者只读取脚本内原创合成字节，打印 JSON，不写文件、不执行 JavaScript，也不由默认测试发现。5 个 `expected-limitation-reproduced` 表示假候选仍可重现，**不是修复成功或语义正确性通过**；输出的 `fixed` 保持 `false`。若观察结果变化，探针以退出码 2 要求重新审查。
+
 测试只使用原创合成输入：字节锚点、主题上下文、静态值变化、候选分层、策略差异、确定性、清单篡改、重命名候选、错误输入、恶意 ZIP 路径/链接/压缩比/大小/CRC 回滚、不覆盖、Markdown 安全转义、不执行目标代码，以及从任意工作目录带空格路径运行的端到端测试。
 
-通过测试说明本工具的这些局部行为被检查；不代表对任意敌对档案做过完整安全审计，也不重新证明历史产品数量或当前产品行为。运行结果见 `VALIDATION.md`。
+通过测试说明本工具的这些局部行为被检查；不代表对任意敌对档案做过完整安全审计，也不重新证明历史产品数量或当前产品行为。最新诊断回归及判读见 [扫描诊断附录](SCANNER-DIAGNOSTICS.md)；较早批次的验证记录见 [VALIDATION.md](VALIDATION.md)。
 
 不要发布自行获取的原档、展开目录、产品脚本/CSS、字体、凭据、私人聊天、完整原始清单。快照与差分是**私有中间结果**：即使没有整段源码，也可能带敏感路径、配置名、字符串或 schema 摘要。发布前人工挑选最少事实，回到原字节锚点复核，再整理原创说明。
 
@@ -232,3 +260,5 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpack
 ## 真实样本验证
 
 [Linux 2.37337.1显式ASAR配套](LINUX-ASAR-VALIDATION.md)：489个声明文件完整性通过，同字节双输入流程完成；语义扫描仍保留18个不完整文件，报告未抹掉覆盖缺口。验证没有执行产品代码。
+
+词法拒绝的分类、字节偏移合同与候选交叉核验建议见 [扫描诊断附录](SCANNER-DIAGNOSTICS.md)。

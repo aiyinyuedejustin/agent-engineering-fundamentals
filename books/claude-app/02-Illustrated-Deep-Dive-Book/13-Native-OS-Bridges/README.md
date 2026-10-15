@@ -311,6 +311,12 @@ node --test models.test.mjs
 
 整个 native/voice/geometry 实验套件有 61 个通过的测试。它们验证原创模型，不验证目标应用已经在真实 OS 上实现了相同保证。要向真实运行推进，下一阶段必须使用获准的测试账户和无害目标窗口，逐平台验证系统能力、用户同时输入、目标关闭、权限撤回与异步回包。
 
+## 12. 已验证 Linux 原生层增补
+
+[从装载合同到局部原生证据](linux-native-layer/README.md)在同版、完整性验证通过的 Linux `.node` 上继续向下追踪：Node-API 注册入口与生命周期接口、external Buffer 被拒绝后的复制分支、PipeWire 链接面，以及 helper / safe-fs 的 JS 调用合同。
+
+这份增补提供三张原创图、[精简证据附录](linux-native-layer/EVIDENCE-APPENDIX.md)和 [34 项可执行的合成测试](linux-native-layer/README.md#7-运行原创模型与独立反例)。它没有运行目标模块，也没有把 PipeWire 导入或 portal 字符串解释为已采集音频、截屏或控制桌面。
+
 ## 小结
 
 原生桥最值得复用的不是某个 API 名字，而是它携带的边界：入口有路由类型，窗口引用有时效，上下文有来源，目标有身份，权限有作用域，失败有交付程度。

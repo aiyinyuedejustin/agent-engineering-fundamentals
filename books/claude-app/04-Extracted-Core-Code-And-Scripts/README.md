@@ -62,3 +62,5 @@ python3 -B run_book_tests.py --skills
 - [条件写入与流式工作粒度](worked-cases/concurrency-and-streaming/README.md)：27项实现测试与16项独立合同复核，覆盖旧快照覆盖、重基、历史回执，以及大输入块的分片检查点。
 
 - [逻辑崩溃与恢复实验](crash-cut-recovery/README.md)：35个测试方法，在自有临时目录与子进程中检查write、rename、commit之间的恢复合同；不等同掉电耐久性。
+
+- [原生回调生命周期](../02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/linux-native-layer/README.md)：34项原创模型测试覆盖有限队列、迟到回调、调度失败与错误报告器异常；已纳入统一测试入口。

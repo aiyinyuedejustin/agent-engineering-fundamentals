@@ -13,8 +13,11 @@ from .literals import json_candidates, literal_candidates, load_rules
 from .safeio import Limits, ToolkitError, bounded_read, digest
 
 SCHEMA = "original-static-snapshot/v1"
+ANALYSIS_KIND = "lexical_candidate_inventory"
 TEXT_EXTENSIONS = {".css", ".js", ".mjs", ".cjs", ".ts", ".tsx", ".jsx", ".json"}
 LIMITATIONS = [
+    "complete_within_declared_scope describes reported file/candidate-pipeline checks only; it does not prove JS semantic completeness. Successful lexical scans can still contain false positives and false negatives.",
+    "Nested/interpolated templates and regex lexical-goal heuristics can lose token boundaries, including without throwing; candidates require independent AST/manual cross-checking.",
     "Static file/declaration/literal observations only; no target code is imported or executed.",
     "Flag additions are not product commitments, rollout status, entitlement or future release evidence.",
     "JS/TS matching is lexical, not AST binding/data-flow analysis: aliases, shadowing, minification, regex ambiguities, templates and escapes can cause misses/false matches.",
@@ -114,7 +117,13 @@ def snapshot(root: Path, label: str, limits=Limits(), rules=None):
             except (UnicodeError, ValueError, RecursionError) as exc:
                 file["status"] = "scan-incomplete"
                 # Keep error class only: parser messages can contain private source.
-                issues.append({"path": logical, "reason": "scanner-rejected-input", "error_type": type(exc).__name__})
+                issue = {"path": logical, "reason": "scanner-rejected-input", "error_type": type(exc).__name__}
+                # Only original scanner-authored, bounded metadata is exported.
+                # The scanner's failure offset is not proof of invalid input or
+                # the first causal divergence; no exception text/source is used.
+                if isinstance(exc, ToolkitError) and hasattr(exc, "scan_diagnostic"):
+                    issue["diagnostic"] = dict(exc.scan_diagnostic)
+                issues.append(issue)
                 continue
             newlines = [i for i, byte in enumerate(data) if byte == 10]
             for candidate in candidates:
@@ -130,9 +139,9 @@ def snapshot(root: Path, label: str, limits=Limits(), rules=None):
                     raise ToolkitError("Inventory record bound exceeded")
     files.sort(key=lambda f: f["path"])
     records.sort(key=canonical)
-    issues.sort(key=canonical)
-    policy = {"adapter": "unpacked-directory-v1", "scanner_version": "1.0.1", "extensions": sorted(TEXT_EXTENSIONS), "rules": rules, "limits": limits.dictionary()}
-    result = {"schema": SCHEMA, "label": label, "identity": {"tree_sha256": digest(canonical(files).encode()), "policy_sha256": digest(canonical(policy).encode()), "version_label_verified": False}, "policy": policy, "coverage": {"complete_within_declared_scope": not issues, "issues": issues, "entry_count": entries, "regular_file_bytes": total_bytes, "file_status_counts": dict(sorted(Counter(f["status"] for f in files).items()))}, "files": files, "records": records, "limitations": LIMITATIONS}
+    issues.sort(key=lambda issue: canonical({k: v for k, v in issue.items() if k != "diagnostic"}))
+    policy = {"adapter": "unpacked-directory-v1", "scanner_version": "1.0.1+diagnostic-preview.1", "extensions": sorted(TEXT_EXTENSIONS), "rules": rules, "limits": limits.dictionary()}
+    result = {"analysis_kind": ANALYSIS_KIND, "semantic_completeness_proven": False, "schema": SCHEMA, "label": label, "identity": {"tree_sha256": digest(canonical(files).encode()), "policy_sha256": digest(canonical(policy).encode()), "version_label_verified": False}, "policy": policy, "coverage": {"complete_within_declared_scope": not issues, "issues": issues, "entry_count": entries, "regular_file_bytes": total_bytes, "file_status_counts": dict(sorted(Counter(f["status"] for f in files).items()))}, "files": files, "records": records, "limitations": LIMITATIONS}
     result["identity"]["snapshot_sha256"] = digest(canonical(result).encode())
     return result
 
@@ -141,6 +150,12 @@ def verify_snapshot(doc):
     if not isinstance(doc, dict) or doc.get("schema") != SCHEMA:
         raise ToolkitError("Unsupported snapshot schema")
     try:
+        # Legacy v1 snapshots may omit these additive claim fields. Their
+        # absence never establishes semantic completeness.
+        if "analysis_kind" in doc and doc["analysis_kind"] != ANALYSIS_KIND:
+            raise ToolkitError("Unsupported snapshot analysis claim")
+        if "semantic_completeness_proven" in doc and doc["semantic_completeness_proven"] is not False:
+            raise ToolkitError("Unsupported snapshot semantic completeness claim")
         identity = dict(doc["identity"])
         declared = identity.pop("snapshot_sha256")
         if declared != digest(canonical({**doc, "identity": identity}).encode()):

@@ -2,7 +2,7 @@
 from collections import defaultdict
 import json
 
-from .inventory import canonical, verify_snapshot
+from .inventory import ANALYSIS_KIND, canonical, verify_snapshot
 
 CATEGORIES = ("css_tokens", "css_palettes", "flags", "tool_contracts", "telemetry")
 
@@ -79,7 +79,7 @@ def diff_snapshots(old, new):
     for sha in sorted(set(removed) & set(added)):
         if len(removed[sha]) == len(added[sha]) == 1:
             files["possible_moves"].append({"old_path": removed[sha][0], "new_path": added[sha][0], "sha256": sha, "interpretation": "identical-bytes-possible-move-not-proven-rename"})
-    return {"schema": "original-static-diff/v1", "old": {"label": old["label"], **old["identity"]}, "new": {"label": new["label"], **new["identity"]}, "scope": "Differences between observed static inventories; not a release roadmap or a runtime schema diff.", "warnings": warnings, "files": files, "inventories": changes, "uncertain_candidates": uncertain, "limitations": old["limitations"]}
+    return {"analysis_kind": ANALYSIS_KIND, "semantic_completeness_proven": False, "schema": "original-static-diff/v1", "old": {"label": old["label"], **old["identity"]}, "new": {"label": new["label"], **new["identity"]}, "scope": "Differences between observed static candidate inventories; not proof of semantic completeness, a release roadmap or a runtime schema diff.", "warnings": warnings, "files": files, "inventories": changes, "uncertain_candidates": uncertain, "limitations": old["limitations"]}
 
 
 def readable(report):
@@ -90,12 +90,12 @@ def readable(report):
     def values(entry):
         if entry is None: return "（未观察到）"
         return safe(json.dumps([x["value"] for x in entry["values"]], ensure_ascii=False, sort_keys=True))
-    lines = ["# 静态版本差分", "", f"{safe(report['old']['label'])} → {safe(report['new']['label'])}", "", "新增旗标不代表未来产品承诺。工具声明候选不等于运行时 schema；遥测字符串不证明实际发送。", "", "同一 category + key + CSS 上下文按值集合比较，忽略文件改名和出现次数；不恢复加载顺序。版本标签由调用者提供，未验证。", ""]
+    lines = ["# 静态候选版本差分", "", f"{safe(report['old']['label'])} → {safe(report['new']['label'])}", "", "新增旗标不代表未来产品承诺。此处新增、移除、变化均指静态候选观察；工具声明候选不等于运行时 schema；遥测字符串不证明实际发送。", "", "analysis_kind=lexical_candidate_inventory；semantic_completeness_proven=false。coverage.complete_within_declared_scope 仅指已报告的文件/候选管线检查，不证明 JS 语义完整。模板和正则启发式即使未抛错，也可能出现假候选或遗漏。", "", "同一 category + key + CSS 上下文按值集合比较，忽略文件改名和出现次数；不恢复加载顺序。版本标签由调用者提供，未验证。", ""]
     for warning in report["warnings"]: lines.append("- 覆盖警告：" + safe(warning))
     for category in CATEGORIES:
         changes = report["inventories"][category]
-        lines += ["", "## " + category, "", f"新增 {len(changes['added'])}，移除 {len(changes['removed'])}，值变化 {len(changes['changed'])}，值集合未变 {changes['unchanged_keys']}。"]
-        for status, title in (("added", "新增"), ("removed", "移除"), ("changed", "值变化")):
+        lines += ["", "## " + category, "", f"候选新增 {len(changes['added'])}，候选移除 {len(changes['removed'])}，候选值变化 {len(changes['changed'])}，候选值集合未变 {changes['unchanged_keys']}。"]
+        for status, title in (("added", "候选新增"), ("removed", "候选移除"), ("changed", "候选值变化")):
             for item in changes[status]:
                 lines += ["", f"### {title}：{safe(item['key'])}", "", "- 上下文："+safe(" / ".join(item["scope"]) or "未解析运行时作用域"), "- 旧值："+values(item["before"]), "- 新值："+values(item["after"]), "- 判读："+item["interpretation"]]
                 for label in ("before", "after"):
@@ -112,6 +112,6 @@ def readable(report):
     lines += ["", "## 待人工复核的候选", ""]
     for item in report["uncertain_candidates"]:
         lines.append(f"- {item['category']} / {safe(item['key'])} / {item['observed_change']}: " + safe(" ".join(item["reasons"])))
-    if not report["uncertain_candidates"]: lines.append("本次差分没有额外标记的候选；仍只代表声明范围内的静态事实。")
+    if not report["uncertain_candidates"]: lines.append("本次未额外标记差分候选；不证明 JS 语义完整、运行时无变化或不存在遗漏。")
     lines += ["", "## 范围与限制", ""] + ["- "+safe(x) for x in report["limitations"]]
     return "\n".join(lines) + "\n"
