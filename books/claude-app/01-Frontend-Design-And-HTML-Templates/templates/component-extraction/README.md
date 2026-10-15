@@ -165,3 +165,9 @@ NODE_PATH="$PWD/tests/node_modules" node --test component-extraction/test-compon
 ### 输出抢占反例
 
 [test-output-safety.cjs](test-output-safety.cjs) 在独占创建前插入别人的输出目录，在文件写入前插入同名普通文件、硬链接或符号链接，并检查拒绝写入且原内容保持不变。另检查 styles 目录抢占、已存在输出、缺失父目录和 source.json 元数据写入的同名竞争。测试只清理自己创建的临时 fixture；拆分工具不删除任何失败输出。
+
+## 双实例的实际浏览器检查
+
+![独立的深色和浅色工作区](../../../assets/screenshots/scoped-components-1b04c1e.jpg)
+
+云 Chrome 154、1188×761视口：两列各536.5px，无页面横向溢出；辅助文字为12px。已验证主题/配色/草稿分别保存、Ctrl+K只重置聚焦实例、卸载重挂恢复本实例草稿，以及旧延时回复不写入新实例。这里运行的是生成的单文件预览；原生file外链加载、真实IME与200%缩放仍需单独验收。
