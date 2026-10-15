@@ -1,0 +1,35 @@
+{
+  "date_utc": "2026-10-15",
+  "runtime": "Node.js v24.19.0",
+  "tests": {
+    "author": 36,
+    "first_independent_review": 12,
+    "second_independent_review": 37,
+    "total_passed": 85,
+    "failed": 0,
+    "bounded_traces_in_tests": [
+      256,
+      2048
+    ]
+  },
+  "commands": [
+    "node --unhandled-rejections=strict --test *.test.mjs",
+    "node --unhandled-rejections=strict demo.mjs"
+  ],
+  "demo_synthetic_resources_remaining": 0,
+  "scope": "Original single-JavaScript-thread model. At most one injected cleanup invocation per legal lease; no exactly-once underlying release, actual fd, Node-API, thread or distributed-system guarantee.",
+  "integration_changes": [
+    "Chinese implementation comments",
+    "Drop record cleanup reference before callback; this does not prove garbage collection",
+    "Independent test import relocated to same directory"
+  ],
+  "files": {
+    "README.md": "783290792d41b96d37c62943e4cb17a421eb3342841dacdafc7747294f15f069",
+    "demo.mjs": "735705ea320c5414b7cf5ea1fe19ebd83ce18ac9e652c9f1892c711cbe73f9fa",
+    "diagram-validation.json": "c9a7e6e70297a960e57aab05743786a9b0f75735e2587bdf83dff5a1b2d72bf2",
+    "resource-handoff.adversarial.test.mjs": "a92f24cdcd23619f777f8f6036079bf71bf752a8f5cbfb75d7fae713484552e1",
+    "resource-handoff.audit.test.mjs": "ee6cc716d0854f40793d689855481a4cb951e250557ce5e38e7f7f743a3f69c2",
+    "resource-handoff.mjs": "ee28a38e724ff066e9819ed1f44b9c062075c5d1f1292f2f2a199401095f44fd",
+    "resource-handoff.test.mjs": "5b2959aed25f283b9981c06583e03c63e7c15ef8a29d82f53bfa5b0653e3f4df"
+  }
+}

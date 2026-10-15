@@ -80,3 +80,5 @@ python3 -B probes/known_lexical_limitations.py
 模型测试通过，只说明这些原创输入下的局部合同成立；样本复算只证明其声明范围内的字节比较；已知局限探针成功说明问题可重现。三者均不能证明目标产品的真实安全性、性能、当前账户行为或完整协议兼容。每卷的证据边界和未验证项仍然适用。
 
 [返回全书目录](../02-Illustrated-Deep-Dive-Book/README.md) · [返回核心实现与研究工具](README.md)
+
+- 第13卷的资源所有权补充：[资源交付与回收实验](resource-handoff-lab/README.md)以offer/claim区分Promise到达与资源接管，包含取得前后取消、数字复用和清理失败反例。

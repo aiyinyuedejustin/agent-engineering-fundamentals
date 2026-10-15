@@ -1,0 +1,33 @@
+{
+  "node": "v24.19.0",
+  "mermaid": "12.2.0",
+  "jsdom": "27.0.1",
+  "installation": "none; reused existing validator dependencies",
+  "controls": [
+    {
+      "name": "valid flowchart",
+      "status": "passed"
+    },
+    {
+      "name": "invalid unclosed node",
+      "status": "passed"
+    }
+  ],
+  "diagrams": [
+    {
+      "block": 1,
+      "source": "flowchart LR\n    Q[\"queued：尚未启动\"] --> A[\"acquiring：正在取得\"]\n    A --> O[\"offered：等待认领\"]\n    O -->|\"claim 成功\"| T[\"transferred：消费方接管\"]\n    Q -->|\"取消或交付失败\"| X[\"cancelled / failed\"]\n    A -->|\"取消、取得失败或交付失败\"| X\n    O -->|\"取消或交付失败\"| X\n",
+      "sha256": "db2c24e7c7150a57a24e25173f678100e14e7892950052f2676d176d80bc26b7",
+      "result": "passed",
+      "type": "flowchart-v2"
+    },
+    {
+      "block": 2,
+      "source": "flowchart LR\n    F[\"fresh：取得方持有凭据\"] -->|\"任务收到有效 lease\"| P[\"producer-owned\"]\n    P -->|\"claim 成功\"| C[\"consumer-owned\"]\n    P -->|\"取消或交付失败，包括迟到结果\"| G[\"cleaning：先锁住状态\"]\n    C -->|\"owner.close\"| G\n    G -->|\"同步确认\"| R[\"released\"]\n    G -->|\"抛错或其他返回\"| U[\"outcome-unknown：不自动重试\"]\n",
+      "sha256": "4ad207e2a4a518f1f5d4cb5b12fc6e3582dd1f65f4ae63e060a53378f0c00701",
+      "result": "passed",
+      "type": "flowchart-v2"
+    }
+  ],
+  "scope": "Syntax parsing only; no render, layout, browser or target behavior verification"
+}

@@ -26,3 +26,5 @@ Promise说明调用方能接收结果；取消还需要另一条能力链：有�
 [样本身份、静态检查与复核方法](METHOD.md)
 
 [固定 napi 2.16.17 对照](UPSTREAM-COMPARISON.md)说明同样返回Promise的库入口如何保留不同的取消能力；公开源码对照不代替样本中的对象关联证据。
+
+[动手实验：Promise 到达之后，资源还归谁？](../../../../../04-Extracted-Core-Code-And-Scripts/resource-handoff-lab/README.md)用原创opaque lease与显式claim演示资源交付、迟到取消和清理未知，不运行产品代码或真实fd。
