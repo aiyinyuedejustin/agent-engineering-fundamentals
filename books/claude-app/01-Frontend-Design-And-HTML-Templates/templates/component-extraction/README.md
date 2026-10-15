@@ -171,3 +171,7 @@ NODE_PATH="$PWD/tests/node_modules" node --test component-extraction/test-compon
 ![独立的深色和浅色工作区](../../../assets/screenshots/scoped-components-1b04c1e.jpg)
 
 云 Chrome 154、1188×761视口：两列各536.5px，无页面横向溢出；辅助文字为12px。已验证主题/配色/草稿分别保存、Ctrl+K只重置聚焦实例、卸载重挂恢复本实例草稿，以及旧延时回复不写入新实例。这里运行的是生成的单文件预览；原生file外链加载、真实IME与200%缩放仍需单独验收。
+
+## 焦点也是组件资源
+
+[焦点生命周期小课](focus-lifecycle.md)：模态内的背景快捷键、隐藏面板的焦点交接、真实 opener 的归还，以及节点失效后的回落。配有状态图、代码骨架与三条真实浏览器反例。
