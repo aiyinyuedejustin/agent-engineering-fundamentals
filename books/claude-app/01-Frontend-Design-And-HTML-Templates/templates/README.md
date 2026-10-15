@@ -145,3 +145,7 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 [设置页保存与重置实测](settings-browser-review.md)：正常刷新恢复、确认取消与默认值持久化，以及min-height和控件实高的区别。
 
 [组件画廊实际交互与焦点边界](gallery-browser-review.md)：表单、排序、开关与关闭回焦，以及未满足的严格Tab循环目标。
+
+[轻入口保存与刷新实测](launcher-browser-review.md)：保存位置、两条记录顺序、刷新恢复与移除后的再次刷新。
+
+[聊天页停止与草稿恢复实测](chat-cancel-browser-review.md)：恢复原输入、保留下一条草稿，并检查旧计时窗口后没有晚到回复。

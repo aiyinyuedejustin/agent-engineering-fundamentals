@@ -1,0 +1,103 @@
+{
+  "schema": "original-chat-cancel-browser-check/v1",
+  "observed_utc": "2026-10-15T08:55:07Z/2026-10-15T08:56:01Z",
+  "source_commit": "f240c99f7abcbda760b12eea5dafbb0fa6b91f86",
+  "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html",
+  "environment": {
+    "browser": "Own cloud Chrome",
+    "viewport_css_px": [
+      1188,
+      761
+    ],
+    "device_pixel_ratio": 1
+  },
+  "method": {
+    "interaction": "Ordinary UI fill and click actions, with send and stop in the same action batch; read-only DOM observations",
+    "timer_or_source_modified": false,
+    "hidden_state_modified": false,
+    "devtools_used": false,
+    "latency_measured": false
+  },
+  "checks": [
+    {
+      "id": "restore-original-input",
+      "actions": [
+        "Fill synthetic input A",
+        "Send and immediately click Stop in one action batch"
+      ],
+      "immediate_observation_at": "2026-10-15T08:55:31.082Z",
+      "later_observation_at": "2026-10-15T08:55:41.926Z",
+      "draft_after_stop": "QA-02-立即停止-A",
+      "status_after_stop": "已停止；原输入已恢复",
+      "visible_message_articles_after_wait": 3,
+      "initial_message_articles": 2,
+      "new_assistant_messages_after_wait": 0,
+      "send_button_label_after_stop": "发送消息",
+      "passed": true
+    },
+    {
+      "id": "preserve-next-draft",
+      "actions": [
+        "Fill synthetic input B",
+        "Send, fill next draft C, and click Stop in one action batch"
+      ],
+      "immediate_observation_at": "2026-10-15T08:55:42.755Z",
+      "later_observation_at": "2026-10-15T08:56:00.285Z",
+      "draft_after_stop": "QA-02-下一条草稿-C",
+      "status_after_stop": "已停止；下一条草稿已保留",
+      "visible_message_articles_after_wait": 4,
+      "initial_message_articles": 2,
+      "new_assistant_messages_after_wait": 0,
+      "send_button_label_after_stop": "发送消息",
+      "passed": true,
+      "pending_response_visible_after_wait": false
+    }
+  ],
+  "source_inspection": {
+    "path": "01-Frontend-Design-And-HTML-Templates/templates/02-chat-workspace-template.html",
+    "current_file_git_blob": "01d2f02bce717390e011ec5069a9159b4cf86150",
+    "current_file_sha256": "906d639339e14b2838cf0e5906d61e04e8addb7d7c97cdd3e5be77206e848081",
+    "fixed_commit_blob_match": true,
+    "findings": [
+      "sendChat branches to stopChat while busy",
+      "stopChat clears pendingTimer and removes pending-response",
+      "Nonempty next draft is kept; otherwise lastText is restored",
+      "sendChat schedules a deterministic local reply with setTimeout(...,900)"
+    ],
+    "simulation_reference": "01-Frontend-Design-And-HTML-Templates/templates/tests/edge.cjs CONTROL-01/02/03; inspected, not rerun in this documentation pass",
+    "identity_verification": {
+      "method": "GitHub recursive tree API, checked by browser reviewer; truncated=false",
+      "url": "https://api.github.com/repos/aiyinyuedejustin/agent-engineering-fundamentals/git/trees/f240c99f7abcbda760b12eea5dafbb0fa6b91f86?recursive=1",
+      "fixed_commit_file_size_bytes": 39556
+    }
+  },
+  "cleanup": {
+    "prior_synthetic_draft": "焦点修复后的草稿",
+    "provenance": "04-Extracted-Core-Code-And-Scripts/evidence/data/template-keyboard-focus-browser.json fixedChecks template 02",
+    "action": "New conversation, then UI fill restores prior synthetic draft",
+    "observed_at": "2026-10-15T08:56:00.844Z",
+    "status": "新对话已就绪",
+    "tab_closed": true
+  },
+  "images": [
+    {
+      "path": "assets/screenshots/chat-cancel-next-draft-f240c99.jpg",
+      "width": 1188,
+      "height": 761,
+      "sha256": "6d9d61f9316c48fb6116b63a91cdac245e554bd5a7aa7300704942d92c9bf7a7",
+      "caption": "Two synthetic user messages, next draft C and stopped status",
+      "size_bytes": 54905,
+      "exif_entries": 0
+    }
+  ],
+  "historical_evidence": "Earlier stop-inconclusive observations remain historical; this is an additional fixed-version check.",
+  "not_tested": [
+    "Network or model request cancellation",
+    "Exact stop latency or 899/900ms boundary timing in a real browser",
+    "Cross-browser or real mobile device behavior",
+    "Reload persistence of these stop results",
+    "Console or network audit"
+  ],
+  "product_app_executed": false,
+  "source_git_blob": "01d2f02bce717390e011ec5069a9159b4cf86150"
+}

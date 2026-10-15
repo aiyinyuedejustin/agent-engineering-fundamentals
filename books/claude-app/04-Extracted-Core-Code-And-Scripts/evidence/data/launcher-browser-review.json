@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "title": "06 轻入口记录、刷新恢复与移除",
+  "commit": "f240c99f7abcbda760b12eea5dafbb0fa6b91f86",
+  "sourcePath": "books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html",
+  "sourceSha256": "94b5af590991bcfdeabf3807abfdf582c757f7fb886c0d85220446a9bfb3d095",
+  "url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/f240c99f7abcbda760b12eea5dafbb0fa6b91f86/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/06-floating-launcher-template.html",
+  "startedAt": "2026-10-15T08:52:24Z",
+  "finishedAt": "2026-10-15T08:53:41Z",
+  "environment": {
+    "browser": "Cloud Chrome",
+    "viewportCssPx": {
+      "width": 1188,
+      "height": 761
+    },
+    "pageContentWidthCssPx": 1173,
+    "devicePixelRatio": 1,
+    "theme": "light",
+    "palette": "paper"
+  },
+  "storage": {
+    "origin": "https://htmlpreview.github.io",
+    "key": "atelier-captures",
+    "scope": "同一浏览器上下文内，同源预览共享此存储键；URL查询参数中的仓库路径或提交不构成存储隔离。",
+    "initialVisibleCount": 0,
+    "finalVisibleCount": 0,
+    "inspection": "通过页面记录与正常刷新观察恢复；未读取或改写底层存储值。"
+  },
+  "method": "通过页面输入合成文字、选择保存位置、Enter提交、移除按钮及正常刷新操作。刷新后关闭自动打开的面板再检查记录。",
+  "steps": [
+    {
+      "step": "initial-empty",
+      "at": "2026-10-15T08:52:41.033Z",
+      "result": "pass",
+      "count": 0,
+      "recordsTopToBottom": [],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 0 条\n  - paragraph: 这里会放下你刚刚捕捉的想法。"
+    },
+    {
+      "step": "save-A",
+      "at": "2026-10-15T08:52:50.365Z",
+      "result": "pass",
+      "count": 1,
+      "recordsTopToBottom": [
+        {
+          "text": "QA-06-灵感-A",
+          "label": "设计灵感"
+        }
+      ],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 1 条\n  - article:\n    - generic: 设计灵感\n    - paragraph: QA-06-灵感-A\n    - button \"移除记录 QA-06-灵感-A\": 移除"
+    },
+    {
+      "step": "reload-A",
+      "at": "2026-10-15T08:53:05.675Z",
+      "result": "pass",
+      "count": 1,
+      "recordsTopToBottom": [
+        {
+          "text": "QA-06-灵感-A",
+          "label": "设计灵感"
+        }
+      ],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 1 条\n  - article:\n    - generic: 设计灵感\n    - paragraph: QA-06-灵感-A\n    - button \"移除记录 QA-06-灵感-A\": 移除"
+    },
+    {
+      "step": "save-B",
+      "at": "2026-10-15T08:53:13.578Z",
+      "result": "pass",
+      "count": 2,
+      "recordsTopToBottom": [
+        {
+          "text": "QA-06-项目-B",
+          "label": "当前项目"
+        },
+        {
+          "text": "QA-06-灵感-A",
+          "label": "设计灵感"
+        }
+      ],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 2 条\n  - article:\n    - generic: 当前项目\n    - paragraph: QA-06-项目-B\n    - button \"移除记录 QA-06-项目-B\": 移除\n  - article:\n    - generic: 设计灵感\n    - paragraph: QA-06-灵感-A\n    - button \"移除记录 QA-06-灵感-A\": 移除"
+    },
+    {
+      "step": "remove-A",
+      "at": "2026-10-15T08:53:22.571Z",
+      "result": "pass",
+      "count": 1,
+      "recordsTopToBottom": [
+        {
+          "text": "QA-06-项目-B",
+          "label": "当前项目"
+        }
+      ],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 1 条\n  - article:\n    - generic: 当前项目\n    - paragraph: QA-06-项目-B\n    - button \"移除记录 QA-06-项目-B\": 移除"
+    },
+    {
+      "step": "reload-only-B",
+      "at": "2026-10-15T08:53:30.113Z",
+      "result": "pass",
+      "count": 1,
+      "recordsTopToBottom": [
+        {
+          "text": "QA-06-项目-B",
+          "label": "当前项目"
+        }
+      ],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 1 条\n  - article:\n    - generic: 当前项目\n    - paragraph: QA-06-项目-B\n    - button \"移除记录 QA-06-项目-B\": 移除"
+    },
+    {
+      "step": "cleanup-reload-empty",
+      "at": "2026-10-15T08:53:41.069Z",
+      "result": "pass",
+      "count": 0,
+      "recordsTopToBottom": [],
+      "domExcerpt": "  - heading \"刚刚记下\" [level=2]\n  - generic: 0 条\n  - paragraph: 这里会放下你刚刚捕捉的想法。"
+    }
+  ],
+  "finalFocus": "open-launcher",
+  "screenshot": {
+    "filename": "launcher-two-records-f240c99.jpg",
+    "sha256": "2975a04db1a56cf0c2064597e251a84a306485120ba264cbf125b8c398bbf98b",
+    "widthPx": 1173,
+    "heightPx": 903,
+    "observed": "B在上且标签当前项目；A在下且标签设计灵感。图片尺寸为原始文件尺寸，不等于视口尺寸。",
+    "bytes": 38175,
+    "exifEntries": 0
+  },
+  "limitations": [
+    "仅覆盖本次Chrome桌面HTTPS预览与两条合成记录。",
+    "未验证八条上限、损坏存储或存储拒绝/容量满。",
+    "未验证无痕模式、file://、离线或跨设备同步。",
+    "未验证真实输入法、辅助技术或全部快捷键焦点路径。",
+    "截图只支持两条记录的视觉状态；刷新恢复与移除结果以逐步观察记录为据。"
+  ]
+}
