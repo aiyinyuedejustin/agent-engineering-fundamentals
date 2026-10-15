@@ -6,8 +6,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 5200,
-      "sha256": "1e51764d4e82d8d5629c58337c5d6e5efdc98a7c36eb53bb5c4345a8665982dd",
+      "bytes": 5215,
+      "sha256": "ea52e364c3f57c8cc7c8d133b87dc759a03ed473921aecd0528accd852241b8d",
       "source": "original-integration",
       "copy": "modified"
     },
@@ -132,10 +132,10 @@
     },
     {
       "path": "loop-cowork/README.md",
-      "bytes": 1231,
-      "sha256": "c6af43ec7fe3588eca4705cc8d2f17cc19b4f4a5fa4eb8d9a24343248ebf985a",
-      "source": "staging/loop-cowork/README.md",
-      "copy": "portable-readme-edit",
+      "bytes": 3580,
+      "sha256": "797de69ca8f7869e7ed2f4df0e4ef1cec14912ac55f3495f9a0736b42dd9b12f",
+      "source": "original-integration",
+      "copy": "modified",
       "source_sha256": "667ca3cd9ec7c2568bc7a60f582f7b8d1cd392db225517efcc72a43eb57e8b51"
     },
     {
@@ -175,10 +175,10 @@
     },
     {
       "path": "loop-cowork/model.py",
-      "bytes": 8255,
-      "sha256": "3c2b620fd03a5866fa56f3d43aef27683bc46da7b4da664471f929d126eec30e",
-      "source": "staging/loop-cowork/model.py",
-      "copy": "unchanged"
+      "bytes": 8446,
+      "sha256": "9e4f6348665dfbd66ca7318fbef59113cde80d29d544830521bfb5201ef62bae",
+      "source": "original-integration",
+      "copy": "modified"
     },
     {
       "path": "loop-cowork/test_model.py",
@@ -186,6 +186,20 @@
       "sha256": "d1790462098950a4807dabdea63ec0e820e24ffb518985c670610afd893d6711",
       "source": "staging/loop-cowork/test_model.py",
       "copy": "unchanged"
+    },
+    {
+      "path": "loop-cowork/test_owner_binding.py",
+      "bytes": 5608,
+      "sha256": "26e3af38a25c2a59e5e2e37c3ddb305c3b0c75dd665e228772edd468e974ff64",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "loop-cowork/test_owner_binding_audit.py",
+      "bytes": 3053,
+      "sha256": "44f7217048724cb1cf1481db550f069cd94fc5ef64e7ad2f93918f49e95bdc9a",
+      "source": "original-integration",
+      "copy": "new"
     },
     {
       "path": "memory-flags/README.md",

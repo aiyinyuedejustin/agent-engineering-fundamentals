@@ -29,9 +29,11 @@ EDGES = {
 }
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, eq=False)
 class SpawnTicket:
+    """In-process ownership handle, not a serializable authentication token."""
     epoch: int
+    owner: Session = field(repr=False)
 
 
 @dataclass
@@ -55,10 +57,10 @@ class Session:
     def begin(self) -> SpawnTicket:
         self.move(Phase.STARTING)
         self.epoch += 1
-        return SpawnTicket(self.epoch)
+        return SpawnTicket(self.epoch, self)
 
     def attach_process(self, ticket: SpawnTicket) -> bool:
-        if ticket.epoch != self.epoch or self.phase != Phase.STARTING:
+        if ticket.owner is not self or ticket.epoch != self.epoch or self.phase != Phase.STARTING:
             self.events.append("discard stale spawn")
             return False
         self.process = True
@@ -78,7 +80,7 @@ class Session:
         return self.queued.pop(0)
 
     def result(self, ticket: SpawnTicket, *, success: bool, keep_warm: bool) -> str:
-        if ticket.epoch != self.epoch:
+        if ticket.owner is not self or ticket.epoch != self.epoch:
             return "stale"
         if self.phase != Phase.RUNNING:
             return "inactive"

@@ -19,7 +19,7 @@ python3 -B run_tests.py --demos
 | 模块 | 类型 | 观察重点 | 是否另需样本 |
 |---|---|---|---|
 | [protocol-tree](protocol-tree/README.md) | 离线教学示例 | 增量 UTF-8 / SSE、内容归约、兼容标签、对话分支 | 否，演示数据原创 |
-| [loop-cowork](loop-cowork/README.md) | 离线教学示例 | 会话 generation、审批一次消费、逐动作授权、坐标与执行边界 | 否，只模拟内存状态 |
+| [loop-cowork](loop-cowork/README.md) | 离线教学示例 | 会话实例归属与 generation、审批一次消费、逐动作授权、坐标与执行边界 | 否，只模拟内存状态 |
 | [workspace-core](workspace-core/README.md) | 离线教学示例 | artifact 版本选择、内容 epoch、窗口消息入口、工作区显示状态 | 否，不执行 HTML |
 | [memory-flags](memory-flags/README.md) | 离线教学示例 | 同作用域串行修改、乐观回滚、过期请求、能力依赖与访问快照 | 否，无真实存储和服务 |
 | [color-tools](color-tools/README.md) | 可移植分析工具 | CSS 声明提取、SHA-256 与字节锚点、显式配置颜色解析 | 实际提取需要；单元测试不需要 |

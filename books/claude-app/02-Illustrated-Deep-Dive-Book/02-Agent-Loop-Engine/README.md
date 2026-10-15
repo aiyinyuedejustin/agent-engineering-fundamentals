@@ -233,6 +233,9 @@ SDK ProcessTransport 的本地进程 close 也不是瞬间消失：它先结束 
 
 原创 [loop-cowork/model.py](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/model.py) 把四个概念做成无副作用模型：session 状态、spawn ticket、一次性审批关联、执行 owner。测试没有运行 Claude，也不需要任何账号。
 
+这些票据绑定 `begin()` 时的 Session 实例；`attach_process` 和 `result` 同时检查对象身份与 epoch。替换对象即使从 epoch=1 重新计数，也不能接受旧实例票据。这里是原创本地合同加固，不是 Claude 漏洞；owner 不是跨进程认证标识。
+
+
 以下片段调用本书原创模型，展示“回合结束但进程仍暖着”，随后停止使旧结果失效：
 
 ```python
