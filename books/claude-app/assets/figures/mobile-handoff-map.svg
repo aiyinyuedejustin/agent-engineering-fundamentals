@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">移动入口、会话对象与系统交接：原创阅读模型</title>
+<desc id="desc">从应用或系统入口进入会话，区分输入、回答与交付物。按动作分别理解文件系统预览、Design 应用内 Artifacts、短信邮件目标应用由用户检查发送。账户、角色、执行设备和系统权限是独立核对维度。这不是提取的产品状态机。</desc>
+<style>text{font-family:"Noto Sans CJK SC","Noto Sans SC",sans-serif}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#767267"/></marker></defs>
+<rect x="0" y="0" width="1200" height="820" rx="0" fill="#f5f3ec" stroke="none"/>
+<text x="36" y="43" font-size="17" fill="#a65539" font-weight="600">19 / MOBILE SURFACES · 原创阅读模型</text>
+<text x="36" y="89" font-size="31" fill="#25231e" font-weight="700">从手机入口到工作成果：交给谁，先看动作</text>
+<text x="36" y="124" font-size="18" fill="#67645c" font-weight="400">概括文档路径与检查维度；不是产品截图，也不是从应用提取的真实状态机。</text>
+<text x="36" y="175" font-size="21" fill="#25231e" font-weight="600">01  移动入口</text>
+<text x="268" y="175" font-size="21" fill="#25231e" font-weight="600">02  会话里的对象</text>
+<text x="628" y="175" font-size="21" fill="#25231e" font-weight="600">03  三类结果路径</text>
+<rect x="36" y="213" width="188" height="269" rx="15" fill="#efe8dc" stroke="none"/>
+<text x="54" y="249" font-size="21" fill="#25231e" font-weight="600">应用内入口</text>
+<text x="54" y="281" font-size="18" fill="#25231e" font-weight="400">会话 / 新聊天</text>
+<text x="54" y="334" font-size="21" fill="#25231e" font-weight="600">应用外入口</text>
+<text x="54" y="367" font-size="17" fill="#25231e" font-weight="400">Widget / 系统入口</text>
+<text x="54" y="400" font-size="17" fill="#25231e" font-weight="400">聊天 · 拍照 · 听写</text>
+<text x="54" y="451" font-size="16" fill="#67645c" font-weight="400">按平台分别核对</text>
+<path d="M226 346H261" fill="none" stroke="#767267" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="268" y="213" width="276" height="269" rx="15" fill="#ffffff" stroke="#d8d3c6"/>
+<rect x="284" y="231" width="244" height="62" rx="9" fill="#efe8dc" stroke="none"/>
+<text x="301" y="257" font-size="19" fill="#25231e" font-weight="600">输入</text>
+<text x="301" y="280" font-size="17" fill="#25231e" font-weight="400">文字、照片、文档、语音</text>
+<rect x="284" y="306" width="244" height="62" rx="9" fill="#f1f1eb" stroke="none"/>
+<text x="301" y="332" font-size="19" fill="#25231e" font-weight="600">回答</text>
+<text x="301" y="355" font-size="17" fill="#25231e" font-weight="400">围绕当前上下文组织内容</text>
+<rect x="284" y="381" width="244" height="79" rx="9" fill="#e7ece7" stroke="none"/>
+<text x="301" y="408" font-size="19" fill="#25231e" font-weight="600">交付物 / 操作入口</text>
+<text x="301" y="438" font-size="17" fill="#25231e" font-weight="400">文件、设计、待交接内容</text>
+<path d="M546 346H584V250H620" fill="none" stroke="#767267" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M584 346H620" fill="none" stroke="#767267" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M584 346V451H620" fill="none" stroke="#767267" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="628" y="201" width="536" height="96" rx="15" fill="#e8edf0" stroke="none"/>
+<text x="649" y="231" font-size="21" fill="#245b7c" font-weight="600">文件 · 点 Download</text>
+<text x="649" y="263" font-size="20" fill="#25231e" font-weight="400">交给系统预览或另一应用</text>
+<text x="649" y="286" font-size="16" fill="#67645c" font-weight="400">系统边界：离开当前会话表面</text>
+<rect x="628" y="310" width="536" height="96" rx="15" fill="#e7ece7" stroke="none"/>
+<text x="649" y="340" font-size="21" fill="#386044" font-weight="600">Design · 进入 Artifacts</text>
+<text x="649" y="372" font-size="20" fill="#25231e" font-weight="400">应用内全屏查看与编辑</text>
+<text x="649" y="395" font-size="16" fill="#67645c" font-weight="400">修改共享设置：转到 web / desktop</text>
+<rect x="628" y="419" width="536" height="96" rx="15" fill="#f0e4db" stroke="none"/>
+<text x="649" y="449" font-size="21" fill="#984a32" font-weight="600">短信 / 邮件 · 打开目标 App</text>
+<text x="649" y="481" font-size="20" fill="#25231e" font-weight="400">由用户检查并确认发送</text>
+<text x="649" y="504" font-size="16" fill="#67645c" font-weight="400">交接方式按 iOS / Android 文档分别阅读</text>
+<path d="M897 518V548H553" fill="none" stroke="#767267" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+<text x="42" y="545" font-size="19" fill="#67645c" font-weight="400">待验：返回后，能否找回会话位置与文件身份？</text>
+<text x="628" y="575" font-size="17" fill="#67645c" font-weight="400">三条分支按动作选择，不表示一次全部经过。</text>
+<text x="36" y="621" font-size="21" fill="#25231e" font-weight="600">条件层  /  看见入口后，核对相关条件</text>
+<rect x="36" y="642" width="264" height="104" rx="15" fill="#eae7dd" stroke="none"/>
+<text x="53" y="673" font-size="21" fill="#25231e" font-weight="600">账户</text>
+<text x="53" y="703" font-size="17" fill="#25231e" font-weight="400">平台 / 套餐 / 地区</text>
+<text x="53" y="730" font-size="17" fill="#67645c" font-weight="400">系统版本与分批推出</text>
+<rect x="324" y="642" width="264" height="104" rx="15" fill="#eae7dd" stroke="none"/>
+<text x="341" y="673" font-size="21" fill="#25231e" font-weight="600">角色</text>
+<text x="341" y="703" font-size="17" fill="#25231e" font-weight="400">组织角色与服务端权限</text>
+<text x="341" y="730" font-size="17" fill="#67645c" font-weight="400">入口可见 ≠ 调用获准</text>
+<rect x="612" y="642" width="264" height="104" rx="15" fill="#eae7dd" stroke="none"/>
+<text x="629" y="673" font-size="21" fill="#25231e" font-weight="600">执行设备</text>
+<text x="629" y="703" font-size="17" fill="#25231e" font-weight="400">任务在哪里执行？</text>
+<text x="629" y="730" font-size="17" fill="#67645c" font-weight="400">本地任务仍依赖设备</text>
+<rect x="900" y="642" width="264" height="104" rx="15" fill="#eae7dd" stroke="none"/>
+<text x="917" y="673" font-size="21" fill="#25231e" font-weight="600">系统权限</text>
+<text x="917" y="703" font-size="17" fill="#25231e" font-weight="400">按需授权与应用交接</text>
+<text x="917" y="730" font-size="17" fill="#67645c" font-weight="400">拒绝与返回都需验收</text>
+<text x="36" y="786" font-size="17" fill="#67645c" font-weight="400">四项是核对维度，不是固定执行顺序；本图不证明所有账户可用，亦不代替原生实测。</text>
+</svg>
