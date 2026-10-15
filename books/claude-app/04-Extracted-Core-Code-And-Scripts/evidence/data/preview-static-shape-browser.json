@@ -1,0 +1,20 @@
+{
+  "browser": "cloud Chrome",
+  "surface": "HTMLPreview HTTPS",
+  "before_commit": "a35b3e0f1b60e3cea340e63a4e24c56bd5e88778",
+  "before_at": "2026-10-15T04:33:38Z",
+  "fixture": "<div style=\"width:120px;height:120px;background:#c96442\"></div>",
+  "before": {
+    "errorShown": true,
+    "active": "code-editor",
+    "message": "没有可预览的静态内容。脚本与外部嵌入不被允许。点“恢复代码”后可继续。"
+  },
+  "after_commit": "c074d3c18228278b8c6c7cb2cc3ea1f1ca155201",
+  "after_at": "2026-10-15T04:38:40Z",
+  "after": {
+    "errorHidden": true,
+    "active": "preview-tab",
+    "status": "预览已更新 · 静态内容",
+    "screenshotObservation": "A terracotta square is visibly painted in the iframe preview."
+  }
+}

@@ -89,3 +89,11 @@
 | 06：主题控件 Ctrl+K，再 Escape | 回到固定的打开按钮 | 回到实际发起快捷键的主题控件 |
 
 [浏览器检查数据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/template-keyboard-focus-browser.json)。该记录覆盖上述 Chrome/HTTPS 路径；Ctrl/Meta 分支及19项边界回归另由模拟 DOM 测试覆盖，二者分开计数。
+
+## 没有文字的静态布局
+
+![实际预览中绘制的纯 CSS 色块](../../assets/screenshots/preview-static-shape-c074d3c.jpg)
+
+2026-10-15 云端 Chrome：一个只有宽、高与背景色的 div，在 `a35b3e0` 被 textContent 判空而拒绝；`c074d3c` 中同一63字符输入成功更新，图中可见色块，焦点保留在预览标签。[修复前后数据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/preview-static-shape-browser.json)。
+
+输入合同检查“净化后保留了什么”，不推断最终视觉：CSS仍可把有效结构隐藏。静态文字或非STYLE元素可预览；只有样式、空白或被全部移除的内容会保留上一版并提示恢复。32项新增DOM合同检查与这条真实绘制路径分别记录。
