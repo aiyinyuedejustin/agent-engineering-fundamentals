@@ -1,21 +1,7 @@
 /* Paste this read-only expression in the console of one standalone fixture. */
 (() => {
   const rgb = value => `rgb(${value.join(', ')})`;
-  const expectations = document.getElementById('dark-root') ? {
-    'dark-root': { backgroundColor: rgb([241, 173, 165]) },
-    'dark-child': { backgroundColor: rgb([241, 173, 165]) },
-    'dark-no-class': { backgroundColor: 'rgba(0, 0, 0, 0)' },
-    'light-root': { backgroundColor: rgb([244, 246, 239]) },
-    'light-child': { backgroundColor: rgb([244, 246, 239]) },
-    'nested-dark-root': { backgroundColor: rgb([241, 173, 165]) },
-    'nested-dark-child': { backgroundColor: rgb([241, 173, 165]) },
-    'default-root': { backgroundColor: rgb([248, 247, 243]) },
-    'default-child': { backgroundColor: rgb([248, 247, 243]) },
-    'invalid-root': { backgroundColor: rgb([248, 247, 243]) },
-    'invalid-child': { backgroundColor: rgb([248, 247, 243]) },
-    'outside': { backgroundColor: 'rgba(0, 0, 0, 0)' },
-    'foreign-ui': { backgroundColor: 'rgba(0, 0, 0, 0)' }
-  } : {
+  const expectations = {
     'paper-light': { backgroundColor: rgb([248, 247, 243]), color: rgb([38, 37, 31]) },
     'sage-dark': { backgroundColor: rgb([25, 32, 26]), color: rgb([233, 238, 229]) },
     'ocean-light': { backgroundColor: rgb([243, 246, 247]), color: rgb([34, 50, 58]) },
@@ -39,5 +25,5 @@
     const css = getComputedStyle(document.getElementById('outside-heading'));
     checks.push({ id: 'outside-heading', property: 'marginBlockStart > 0', actual: css.marginBlockStart, passed: parseFloat(css.marginBlockStart) > 0 });
   }
-  return { passed: checks.every(c => c.passed), userAgent: navigator.userAgent, scopeApiPresent: typeof CSSScopeRule !== 'undefined', checks };
+  return { passed: checks.every(c => c.passed), userAgent: navigator.userAgent, checks };
 })()

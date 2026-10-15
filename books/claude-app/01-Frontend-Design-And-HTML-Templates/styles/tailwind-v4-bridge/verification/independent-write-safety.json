@@ -1,15 +1,15 @@
 {
   "status": "passed",
-  "generatedAt": "2026-10-15T04:45:47.496Z",
+  "generatedAt": "2026-10-15T04:52:40.327Z",
   "assertions": 11,
-  "authorScriptSha256": "4c1face25fbc26db0acc8fc0ac99547a5019002eb7145eeb0b75682774710400",
+  "authorScriptSha256": "59c42dcc68601aab2ab9e0555aeae72bcd7ba642c67886e150a4f4337a0cc852",
   "tests": [
     {
       "name": "final author verifier succeeds in isolated review-only toolchain shells",
       "status": "passed"
     },
     {
-      "name": "final author verifier retains all 40 assertions",
+      "name": "retained default-only author verifier passes all 36 compile/static assertions",
       "status": "passed"
     },
     {
@@ -48,6 +48,5 @@
       "name": "all reference inputs remain byte-identical through success and failure",
       "status": "passed"
     }
-  ],
-  "scope": "All writes are inside staging/tailwind-bridge-review; existing installed node_modules are read through symlinks. No dependency installation or browser execution."
+  ]
 }

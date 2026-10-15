@@ -1,0 +1,7 @@
+{
+  "sha256": "b4b58d200da167c513d05211f5b3b61aaa09a77b7b9fa534b7dc8367cfebc5a5",
+  "compile_assertions": 40,
+  "status": "passed",
+  "difference_from_independently_reviewed_script": "First comment only; executable body byte-identical.",
+  "reviewed_script_sha256": "4c1face25fbc26db0acc8fc0ac99547a5019002eb7145eeb0b75682774710400"
+}

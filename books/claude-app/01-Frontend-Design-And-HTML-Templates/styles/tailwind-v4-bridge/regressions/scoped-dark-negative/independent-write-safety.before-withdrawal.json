@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "generatedAt": "2026-10-15T04:45:47.496Z",
+  "assertions": 11,
+  "authorScriptSha256": "4c1face25fbc26db0acc8fc0ac99547a5019002eb7145eeb0b75682774710400",
+  "tests": [
+    {
+      "name": "final author verifier succeeds in isolated review-only toolchain shells",
+      "status": "passed"
+    },
+    {
+      "name": "final author verifier retains all 40 assertions",
+      "status": "passed"
+    },
+    {
+      "name": "success cleans only its unique temporary workspace",
+      "status": "passed"
+    },
+    {
+      "name": "existing output directory is rejected",
+      "status": "passed"
+    },
+    {
+      "name": "rejected repeat preserves every existing output byte",
+      "status": "passed"
+    },
+    {
+      "name": "missing explicit toolchain environment is rejected before default-output creation",
+      "status": "passed"
+    },
+    {
+      "name": "omitted --output creates one fresh uniquely named report directory",
+      "status": "passed"
+    },
+    {
+      "name": "intentional compiler failure is reported as failure",
+      "status": "passed"
+    },
+    {
+      "name": "finally cleans unique workspace after compiler failure",
+      "status": "passed"
+    },
+    {
+      "name": "pre-existing fixed work directory and sentinel are preserved",
+      "status": "passed"
+    },
+    {
+      "name": "all reference inputs remain byte-identical through success and failure",
+      "status": "passed"
+    }
+  ],
+  "scope": "All writes are inside staging/tailwind-bridge-review; existing installed node_modules are read through symlinks. No dependency installation or browser execution."
+}

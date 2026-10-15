@@ -40,17 +40,17 @@ npx @tailwindcss/cli -i ./styles/example.entry.css -o ./dist/app.css
 
 桥接保留原配置的语义色、三类字体、三种圆角、浮层阴影、最小控件高度及三档间距；并补上已有令牌里的强边界、状态浅底与遮罩颜色。JSON 是令牌记录，不会被此 CSS 自动读取。不要据此推断 v3/v4 的透明度修饰、默认工具类或所有组合都等价。
 
-## 4. 深色变体是独立选择
+## 4. 深色变体由项目另行配置
 
 默认桥接**不改写 `dark:`**。Tailwind 默认的系统深色媒体查询与这里的 `data-theme` 不是同一个开关。官方数据属性示例按任意深色祖先匹配，内层 `light` 不会自动取消外层命中；原 v3 配置回归也呈现这种行为。[官方 dark-mode 说明](https://tailwindcss.com/docs/dark-mode#using-a-data-attribute)
 
-若项目确实需要 `dark:` 改变角色或布局，可单独导入 `claude-tailwind-v4-dark-scope.css`。它只从 `[data-ui="atelier"][data-theme="dark"]` 开始，在下一个 atelier 根前停止；内层 dark 会建立自己的作用域。它依赖原生 `@scope`，浏览器门槛高于 Tailwind v4 基线，因此默认入口没有启用。作用域只限制选择器，不会切断 `color` 等属性继承；嵌套根仍应设置自身语义样式。[CSS 作用域规范](https://drafts.csswg.org/css-cascade-6/#scoped-styles)
+因此，本适配器推荐普通语义类 `bg-canvas text-ink`，依靠最近的 atelier 根上的变量处理嵌套主题。若确需 `dark:` 切换布局或语义角色，由项目自行选择并验收策略。
 
-本交付已编译该增强，但不得把编译成功称为跨浏览器通过。浏览器验证状态见 `VERIFICATION.zh-CN.md`。旧浏览器项目优先使用普通语义类，或自行选择并验收项目的 dark 策略。
+本次曾试验 `@custom-variant dark` 内嵌 `@scope`，但真实 Chrome 中四个应命中的 dark 元素全部未命中。该增强已撤回，不能作为可用入口；失败源码与旧生成物仅归档在 `regressions/scoped-dark-negative/`，结果见 `verification/browser-results.json`。CLI 编译成功不等于浏览器匹配正确。
 
 ## 5. 验证与许可
 
-`tests/verify.mjs` 在两个独立工具目录重建产物并检查 40 项断言；不安装依赖、不访问网络、只向新报告目录写入。重跑方法见验证说明。`verification/base.compiled.html` 和 `dark.compiled.html` 为无脚本、无外部资源的浏览器验收页。
+`tests/verify.mjs` 在两个独立工具目录重建产物并检查 36 项断言；不安装依赖、不访问网络、只向新报告目录写入。重跑方法见验证说明。`verification/base.compiled.html` 为无脚本、无外部资源的默认桥接验收页；`v3.compiled.html` 用于原配置对照。
 
 “无 Preflight”不等于“没有任何全局 CSS”：Tailwind 仍可能输出 `@property` 注册、`--tw-*` 初始化与常规全局工具类。需要混用其他工具类体系时，仍须评估命名冲突与项目隔离策略。
 

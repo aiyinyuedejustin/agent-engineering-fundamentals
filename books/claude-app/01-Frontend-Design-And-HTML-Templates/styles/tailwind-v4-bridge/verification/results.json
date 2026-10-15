@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-15T04:44:39.419Z",
-  "status": "passed",
+  "generatedAt": "2026-10-15T04:51:54.289Z",
+  "status": "compile-and-static-passed",
   "node": "v24.19.0",
   "compilers": {
     "tailwindcssV4": "4.3.3",
@@ -15,7 +15,7 @@
     "claude-reset-and-base.css": "0437056a41f662ddbbbaea9aa8ea8b4cc0853f73729726cc828704439ee47e7e",
     "design-tokens.json": "a8584cc14a115d04e1c361c20270f0419c1532b82435ea0e5a4484ed3cb1e6e1"
   },
-  "assertions": 40,
+  "assertions": 36,
   "tests": [
     {
       "name": "Fixed compiler versions",
@@ -23,10 +23,6 @@
     },
     {
       "name": "base: CLI exit 0",
-      "status": "passed"
-    },
-    {
-      "name": "dark: CLI exit 0",
       "status": "passed"
     },
     {
@@ -130,7 +126,7 @@
       "status": "passed"
     },
     {
-      "name": "Optional v4 dark compiles into bounded atelier scope",
+      "name": "Rejected scoped-dark enhancement is not a supported import",
       "status": "passed"
     },
     {
@@ -139,10 +135,6 @@
     },
     {
       "name": "base: no global Preflight reset rules",
-      "status": "passed"
-    },
-    {
-      "name": "dark: no global Preflight reset rules",
       "status": "passed"
     },
     {
@@ -168,14 +160,6 @@
     {
       "name": "base: standalone fixture has no scripts or external assets",
       "status": "passed"
-    },
-    {
-      "name": "dark: compiler MIT banner retained",
-      "status": "passed"
-    },
-    {
-      "name": "dark: standalone fixture has no scripts or external assets",
-      "status": "passed"
     }
   ],
   "browserStatus": "Not run by this script. Browser verification is separate; see browser-results.json if present.",
@@ -183,6 +167,6 @@
     "No cross-version equivalence claim.",
     "No all-browser compatibility claim.",
     "No Preflight is not zero global CSS: Tailwind utility custom-property initializers may be global.",
-    "Optional @scope dark variant is not imported by the default bridge."
+    "The rejected scoped-dark experiment had four browser failures and is archived, not a supported import."
   ]
 }

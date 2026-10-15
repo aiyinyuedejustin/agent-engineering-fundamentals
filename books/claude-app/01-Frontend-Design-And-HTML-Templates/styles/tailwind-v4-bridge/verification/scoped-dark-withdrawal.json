@@ -1,0 +1,64 @@
+{
+  "status": "default_core_passed_optional_failed_and_withdrawn",
+  "reportedOn": "2026-10-15",
+  "evidenceSource": "Parent task real cloud Chrome computed-style inspection",
+  "testedRevisionShort": "886d74e",
+  "browser": "Cloud Chrome; exact build not supplied in this report",
+  "defaultBridge": {
+    "status": "Core computed-style checks reported correct",
+    "scope": "base.compiled.html; nested semantic variables, not every browser or variant combination"
+  },
+  "rejectedScopedDark": {
+    "status": "failed_and_withdrawn",
+    "failedExpectations": 4,
+    "failures": [
+      {
+        "id": "dark-root",
+        "property": "backgroundColor",
+        "expected": "rgb(241, 173, 165)",
+        "actual": "rgb(27, 27, 24)"
+      },
+      {
+        "id": "dark-child",
+        "property": "backgroundColor",
+        "expected": "rgb(241, 173, 165)",
+        "actual": "rgb(27, 27, 24)"
+      },
+      {
+        "id": "nested-dark-root",
+        "property": "backgroundColor",
+        "expected": "rgb(241, 173, 165)",
+        "actual": "rgb(23, 33, 39)"
+      },
+      {
+        "id": "nested-dark-child",
+        "property": "backgroundColor",
+        "expected": "rgb(241, 173, 165)",
+        "actual": "rgb(23, 33, 39)"
+      }
+    ],
+    "otherReportedBoundariesCorrect": [
+      "light",
+      "default",
+      "invalid",
+      "outside",
+      "element without dark class"
+    ],
+    "diagnosis": "Nested @scope start is relative to its nesting context. Direct scoped declarations target the scope root with zero specificity; & inside scope denotes :where(:scope), not the captured utility selector. CLI compilation and shape assertions did not establish matching semantics.",
+    "decision": "Withdraw the optional enhancement; retain ordinary token-driven semantic classes. No unverified selector or internal compiler-hoisting workaround shipped.",
+    "sources": [
+      "https://drafts.csswg.org/css-cascade-6/#scope-nesting",
+      "https://drafts.csswg.org/css-cascade-6/#scoped-declarations",
+      "https://drafts.csswg.org/css-cascade-6/#scope-effects"
+    ],
+    "cssomScopeObserved": "@scope (& [data-ui=atelier][data-theme=dark])",
+    "scopeSupportNote": "CSSOM parsed the scope. A tool result for typeof CSSScopeRule is not used to infer unsupported @scope."
+  },
+  "rawEvidence": "browser-results.json",
+  "testedCommit": "886d74eb6668a19456734aabdb7844496abbeead",
+  "retainedBaseArtifactsUnchanged": {
+    "base.compiled.css": "9eaf6d0d036e059935c1c73de3dc35af402ae57c4e23d6a2625b6032cae17a40",
+    "base.compiled.html": "442bb04f81306d67118ee1b2be4d8c9fd725a951840e44192b3de7a8c264ce22"
+  },
+  "rawBrowserReportSha256": "c4f3efb334c5a1f2df1732df3cd3cd24f2da923790d85dd26e1350d52f95a1f5"
+}

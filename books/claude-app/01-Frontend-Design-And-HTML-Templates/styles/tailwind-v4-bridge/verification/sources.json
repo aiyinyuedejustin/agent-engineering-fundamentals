@@ -1,15 +1,65 @@
 {
   "verifiedOn": "2026-10-15",
   "sources": [
-    { "url": "https://tailwindcss.com/docs/upgrade-guide#using-a-javascript-config-file", "finding": "v4 no longer auto-detects JavaScript config; @config is explicit; corePlugins is unsupported." },
-    { "url": "https://tailwindcss.com/docs/preflight#disabling-preflight", "finding": "Use separate theme and utilities imports and omit preflight. source(none) belongs on utilities." },
-    { "url": "https://tailwindcss.com/docs/theme#referencing-other-variables", "finding": "@theme inline places the referenced value in utilities, avoiding alias resolution at the wrong scope." },
-    { "url": "https://tailwindcss.com/docs/dark-mode#using-a-data-attribute", "finding": "Official attribute example activates from a matching dark ancestor; it does not define nearest-theme boundary semantics." },
-    { "url": "https://tailwindcss.com/docs/adding-custom-styles#adding-custom-variants", "finding": "Custom variants support nested rules with @slot." },
-    { "url": "https://drafts.csswg.org/css-cascade-6/#scoped-styles", "finding": "Scoped styles define inclusive roots and exclusive lower boundaries; used here as an optional design, not a Tailwind guarantee." },
-    { "url": "https://drafts.csswg.org/css-nesting/#nesting-at-scope", "finding": "Nested @scope and nested declarations have specific semantics, so browser-level checks are required beyond compilation." },
-    { "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope", "finding": "@scope availability is newer than Tailwind v4 minimum browsers; inheritance is not blocked at the scope boundary." },
-    { "url": "https://registry.npmjs.org/tailwindcss", "finding": "npm view observed latest 4.3.3 and v3-lts 3.4.19." },
-    { "url": "https://registry.npmjs.org/@tailwindcss%2fcli", "finding": "npm view observed latest 4.3.3." }
+    {
+      "url": "https://tailwindcss.com/docs/upgrade-guide#using-a-javascript-config-file",
+      "finding": "v4 no longer auto-detects JavaScript config; @config is explicit; corePlugins is unsupported."
+    },
+    {
+      "url": "https://tailwindcss.com/docs/preflight#disabling-preflight",
+      "finding": "Use separate theme and utilities imports and omit preflight. source(none) belongs on utilities."
+    },
+    {
+      "url": "https://tailwindcss.com/docs/theme#referencing-other-variables",
+      "finding": "@theme inline places the referenced value in utilities, avoiding alias resolution at the wrong scope."
+    },
+    {
+      "url": "https://tailwindcss.com/docs/dark-mode#using-a-data-attribute",
+      "finding": "Official attribute example activates from a matching dark ancestor; it does not define nearest-theme boundary semantics."
+    },
+    {
+      "url": "https://tailwindcss.com/docs/adding-custom-styles#adding-custom-variants",
+      "finding": "Custom variants support nested rules with @slot.",
+      "purpose": "Explanation of the withdrawn experiment; not a supported bridge feature."
+    },
+    {
+      "url": "https://drafts.csswg.org/css-cascade-6/#scoped-styles",
+      "finding": "Scoped styles define inclusive roots and exclusive lower boundaries; used here as an optional design, not a Tailwind guarantee.",
+      "purpose": "Explanation of the withdrawn experiment; not a supported bridge feature."
+    },
+    {
+      "url": "https://drafts.csswg.org/css-nesting/#nesting-at-scope",
+      "finding": "Nested @scope and nested declarations have specific semantics, so browser-level checks are required beyond compilation.",
+      "purpose": "Explanation of the withdrawn experiment; not a supported bridge feature."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@scope",
+      "finding": "@scope availability is newer than Tailwind v4 minimum browsers; inheritance is not blocked at the scope boundary.",
+      "purpose": "Explanation of the withdrawn experiment; not a supported bridge feature."
+    },
+    {
+      "url": "https://registry.npmjs.org/tailwindcss",
+      "finding": "npm view observed latest 4.3.3 and v3-lts 3.4.19."
+    },
+    {
+      "url": "https://registry.npmjs.org/@tailwindcss%2fcli",
+      "finding": "npm view observed latest 4.3.3."
+    },
+    {
+      "url": "https://drafts.csswg.org/css-cascade-6/#scope-nesting",
+      "finding": "A nested scope start is relative to its nesting context."
+    },
+    {
+      "url": "https://drafts.csswg.org/css-cascade-6/#scoped-declarations",
+      "finding": "Direct scoped declarations target the scope root with zero specificity."
+    },
+    {
+      "url": "https://github.com/tailwindlabs/tailwindcss/issues/18961",
+      "finding": "Upstream issue records custom variants with scoped output failing."
+    },
+    {
+      "url": "https://github.com/tailwindlabs/tailwindcss/pull/20369",
+      "finding": "Upstream discusses scope hoisting and & handling. Its merge does not prove the pinned installed package produced corrected output."
+    }
   ]
 }

@@ -2,28 +2,32 @@
 
 核验日期：2026-10-15。范围限定为 Tailwind 3.4.19 与 4.3.3，没有扩展版本矩阵。
 
-## 已通过
+## 最终保留的桥接
 
-- 官方 npm registry 查询：v4 CSS 与独立 CLI 的 latest 标签均为 4.3.3；v3-lts 为 3.4.19，并再次查询该精确版本存在。
-- 安装固定版本，使用 `--ignore-scripts --no-audit --no-fund`，分别放在独立工具目录，不改变六套模板的零依赖入口。
-- v4 默认语义夹具、v4 可选 dark 夹具、v3 原配置快照夹具均实际 CLI 编译，退出码 0。
-- 40 项自动断言通过：语义色、三类字体、三种圆角、最小高度和阴影直接引用局部变量；v4 语义间距；默认桥接未引入作用域变体；可选作用域的精确选择器；v3 selector dark；无全局 Preflight reset；CSS/JSON 五套浅深 palette 一致；快照未改；v4 banner 保留；验收页无脚本与外部资产。
-- v3 的 `corePlugins.preflight = false` 经含 `@tailwind base` 的真实入口验证。生成的全局规则只含工具类运行所需的 `--tw-*` 初始化，不能把它们误判成全局 reset。
-- v4 的关闭方式在入口层移除了 Preflight 导入，不依赖 v3 JS 配置。
+- 官方 npm registry 查询后固定 v4 CSS/CLI 4.3.3、v3 3.4.19，使用 `--ignore-scripts --no-audit --no-fund` 隔离安装，没有改 publication 依赖。
+- 最终主流程只编译 **v4 默认语义夹具与 v3 原配置快照夹具**，均退出 0。
+- **36 项编译/静态断言通过**：语义色、字体、圆角、高度、阴影的局部变量引用；v4 语义间距；默认桥接不引入 dark/scope；撤回增强不可导入；v3 selector dark；无全局 Preflight reset；CSS/JSON palette 一致；快照未改；MIT banner 与无外部资源夹具。
+- v3 的 `preflight: false` 经包含 `@tailwind base` 的真实入口验证。v4 则从入口省略 Preflight 导入，不依赖 v3 JS 配置。生成的 `--tw-*` 初始化不是全局 reset。
+- 独立 cloud Chrome 检查了默认页的 **14 个节点**：嵌套主题颜色、局部字体与圆角、控件高度、间距及容器外原生 margin/list/box 值符合预期。此结论限定本次页面和浏览器。
 
-另有写入安全复验：拒绝已存在的输出目录、被拒绝的重跑不改任何报告字节、独占临时目录已清理，审查原件与六模板哈希仍一致。见 `verification/write-safety.json`。
+最终机器结果：`verification/results.json`。真实浏览器原始报告完整复制在 `verification/browser-results.json`，对应固定提交 `886d74eb6668a19456734aabdb7844496abbeead`。默认适配器和 base 夹具没有因撤回实验而变化。
 
-机器结果：`verification/results.json`。生成的 CSS、工具清单与锁文件都在 `verification/`。`tests/reference/` 是本次只读审查的四个文件快照；`publication-readonly-baseline.json` 记录审查资产与六个模板的 SHA-256，用于比对审查输入。
+写入安全复验另见 `verification/write-safety.json`：已有输出目录被拒绝，失败重跑不改现存报告，独占临时目录清理；当时审查原件与六模板哈希一致。四个只读审查快照在 `tests/reference/`；`publication-readonly-baseline.json` 供比对。
 
-## 浏览器状态与边界
+## 已失败并撤回的 scoped-dark 实验
 
-编译验收与浏览器验收分别记录；当前文件仅确认编译与静态断言。浏览器计算样式结果完成后单列保存。
+浏览器的 13 项背景检查中 **4 失败、9 通过**，不能称为全部通过。四个预期 `rgb(241, 173, 165)` 的节点实际仍是画布色：
 
-默认页 `base.compiled.html` 覆盖浅→深→浅→深嵌套，内层局部字体、圆角、画布覆盖，以及外部标题、按钮、列表、盒模型不被 reset 的检查。
+- `dark-root`、`dark-child`：`rgb(27, 27, 24)`
+- `nested-dark-root`、`nested-dark-child`：`rgb(23, 33, 39)`
 
-可选页 `dark.compiled.html` 覆盖 dark 根本身、后代、内层 light、再次 dark、新的默认 atelier 根、错误大小写和无关组件。`tests/browser-checks.js` 是供控制台执行的一次性只读检查表达式，不嵌入页面。
+CSSOM 实际读到 scope-start 的 `&` 前缀，确认它相对外层工具类解析；直接 scoped declarations 又不是预想的工具类后代规则。已撤去可导入增强、入口推荐与主测试的假阳性结构断言。源码、原生成 CSS/HTML 和旧 40 项静态结果保留在 `regressions/scoped-dark-negative/`，明确作为失败证据。旧静态通过不覆盖真实浏览器失败。
 
-当前不覆盖：Firefox/Safari、旧浏览器、自动跟随系统偏好、框架集成、Portal/Shadow DOM、所有变体组合、alpha 修饰、完整应用视觉回归或原六模板全场景回归。作用域增强不构成默认兼容性承诺。
+CSSOM 已解析 scope，不能依据工具环境的 `typeof CSSScopeRule` 返回值推断浏览器不支持。详见 `verification/scoped-dark-withdrawal.json` 与负例说明中的规范和上游记录。
+
+## 范围限制
+
+主测试不启动浏览器。默认页的 `tests/browser-checks.js` 可供浏览器控制台只读复验，不嵌入页面。本次未覆盖 Firefox/Safari、旧浏览器、系统偏好自动切换、框架集成、Portal/Shadow DOM、全部变体组合、alpha 修饰、完整应用视觉回归或原六模板全场景回归。不承诺 v3/v4 无损兼容。
 
 ## 复跑
 
@@ -35,4 +39,4 @@ TAILWIND_V3_DIR=/absolute/path/to/v3-toolchain \
 node tests/verify.mjs --output /absolute/path/to/new-report-directory
 ```
 
-两个环境变量都必须显式设置。v4 工具目录须以 `v4.package.json` 和 `v4.package-lock.json` 分别命名为 `package.json`、`package-lock.json`；v3 目录同理。`--output` 指定的结果目录必须尚不存在，父目录须已存在；若省略该参数，脚本在交付目录独占创建 `verification-run-*`。现有报告或无关文件不会被覆盖。测试会在 v4 工具目录内用 `mkdtemp` 独占创建临时目录以解析依赖，并在 `finally` 只清理本次创建的临时目录；不复用或删除固定 `work/`，不修改原配置或模板。本交付的 `verification/` 是整理后的本次报告，不是默认覆盖目标。它编译 `tests/reference/tailwind.config.js` 的原字节快照，仅以 CLI `--content` 指定回归夹具。默认的源扫描范围另由原配置负责，不能据此说整套应用内容扫描已通过。
+两个环境变量都必须显式设置。两个工具目录分别把相应 `v4.package.json` / `v3.package.json` 及锁文件命名为 `package.json`、`package-lock.json` 后安装。`--output` 指定的结果目录必须尚不存在，父目录须已存在；若省略该参数，脚本在交付目录独占创建 `verification-run-*`。现有报告或无关文件不会被覆盖。测试会在 v4 工具目录内用 `mkdtemp` 独占创建临时目录以解析依赖，并在 `finally` 只清理本次创建的临时目录；不复用或删除固定 `work/`，不修改原配置或模板。本交付的 `verification/` 是整理后的本次报告，不是默认覆盖目标。它编译 `tests/reference/tailwind.config.js` 的原字节快照，仅以 CLI `--content` 指定回归夹具。默认的源扫描范围另由原配置负责，不能据此说整套应用内容扫描已通过。

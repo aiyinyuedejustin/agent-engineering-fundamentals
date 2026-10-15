@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -43,9 +43,9 @@ function compile(name, dir, packageName, args) {
   writeFileSync(path.join(output, `${name}.cli.log`), `$ node ${cli} ${args.join(' ')}\n${result.stdout || ''}${result.stderr || ''}\nexit=${result.status}\n`);
   check(`${name}: CLI exit 0`, () => assert.equal(result.status, 0, result.stderr));
 }
-for (const kind of ['base', 'dark']) compile(kind, v4, '@tailwindcss/cli', ['-i', path.join(work, 'tests', `${kind}.input.css`), '-o', path.join(output, `${kind}.compiled.css`)]);
+for (const kind of ['base']) compile(kind, v4, '@tailwindcss/cli', ['-i', path.join(work, 'tests', `${kind}.input.css`), '-o', path.join(output, `${kind}.compiled.css`)]);
 compile('v3', v3, 'tailwindcss', ['-c', path.join(root, 'tests/reference/tailwind.config.js'), '-i', path.join(root, 'tests/v3.input.css'), '--content', path.join(root, 'tests/v3.fixture.html'), '-o', path.join(output, 'v3.compiled.css')]);
-const trees = Object.fromEntries(['base', 'dark', 'v3'].map(name => [name, postcss.parse(read(path.join(output, `${name}.compiled.css`)))]));
+const trees = Object.fromEntries(['base', 'v3'].map(name => [name, postcss.parse(read(path.join(output, `${name}.compiled.css`)))]));
 const declarations = (tree, selector, property) => {
   const found = [];
   tree.walkRules(selector, rule => rule.walkDecls(property, decl => found.push(decl.value)));
@@ -73,16 +73,9 @@ check('Default bridge has no custom dark variant or @scope', () => {
   assert.doesNotMatch(source, /@custom-variant|@scope|@config/);
   assert.doesNotMatch(read(path.join(output, 'base.compiled.css')), /@scope|prefers-color-scheme|\.dark\\:/);
 });
-check('Optional v4 dark compiles into bounded atelier scope', () => {
-  let count = 0;
-  trees.dark.walkAtRules('scope', rule => {
-    assert.equal(rule.params, '([data-ui="atelier"][data-theme="dark"]) to ([data-ui="atelier"])');
-    assert.equal(rule.parent.selector, '.dark\\:bg-danger');
-    assert.ok(rule.nodes.some(n => n.type === 'decl' && n.prop === 'background-color' && n.value === 'var(--ui-danger)'));
-    count++;
-  });
-  assert.equal(count, 1);
-  assert.doesNotMatch(read(path.join(output, 'dark.compiled.css')), /prefers-color-scheme/);
+check('Rejected scoped-dark enhancement is not a supported import', () => {
+  assert.equal(existsSync(path.join(root, 'styles/claude-tailwind-v4-dark-scope.css')), false);
+  assert.doesNotMatch(read(path.join(root, 'styles/example.entry.css')), /dark-scope/);
 });
 check('v3 selector dark compiles from original config snapshot', () => {
   const candidates = [];
@@ -119,7 +112,7 @@ check('JSON palette values agree with CSS snapshots', () => {
 check('Reviewed source snapshots unchanged by tests', () => {
   for (const name of sources) assert.equal(hash(path.join(root, 'tests/reference', name)), snapshots[name]);
 });
-for (const name of ['base', 'dark']) {
+for (const name of ['base']) {
   const html = read(path.join(root, 'tests', `${name}.fixture.html`));
   const css = read(path.join(output, `${name}.compiled.css`));
   check(`${name}: compiler MIT banner retained`, () => assert.ok(css.startsWith('/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */')));
@@ -140,7 +133,7 @@ for (const [name, dir] of [['v4', v4], ['v3', v3]]) {
 }
 const report = {
   generatedAt: new Date().toISOString(),
-  status: 'passed',
+  status: 'compile-and-static-passed',
   node: process.version,
   compilers: { tailwindcssV4: pkg(v4, 'tailwindcss').version, tailwindcssCli: pkg(v4, '@tailwindcss/cli').version, tailwindcssV3: pkg(v3, 'tailwindcss').version },
   registry: 'https://registry.npmjs.org/',
@@ -149,10 +142,10 @@ const report = {
   assertions: tests.length,
   tests,
   browserStatus: 'Not run by this script. Browser verification is separate; see browser-results.json if present.',
-  limits: ['No cross-version equivalence claim.', 'No all-browser compatibility claim.', 'No Preflight is not zero global CSS: Tailwind utility custom-property initializers may be global.', 'Optional @scope dark variant is not imported by the default bridge.']
+  limits: ['No cross-version equivalence claim.', 'No all-browser compatibility claim.', 'No Preflight is not zero global CSS: Tailwind utility custom-property initializers may be global.', 'The rejected scoped-dark experiment had four browser failures and is archived, not a supported import.']
 };
 writeFileSync(path.join(output, 'results.json'), JSON.stringify(report, null, 2) + '\n');
-console.log(`${tests.length} assertions passed. Compiled v4.3.3 base/dark + v3.4.19 original config regression. Report: ${output}`);
+console.log(`${tests.length} assertions passed. Compiled retained v4.3.3 base + v3.4.19 original config regression; rejected scoped-dark is not a supported feature. Report: ${output}`);
 } finally {
   // Only this invocation's newly created directory is removed.
   rmSync(work, { recursive: true, force: true });

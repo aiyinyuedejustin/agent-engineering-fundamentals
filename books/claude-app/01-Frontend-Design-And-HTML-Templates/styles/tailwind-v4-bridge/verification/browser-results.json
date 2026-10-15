@@ -1,0 +1,267 @@
+{
+  "date": "2026-10-15",
+  "browser": "cloud Chrome",
+  "surface": "HTMLPreview HTTPS",
+  "commit": "886d74eb6668a19456734aabdb7844496abbeead",
+  "base": {
+    "rows": [
+      {
+        "background": "rgb(248, 247, 243)",
+        "boxSizing": "border-box",
+        "color": "rgb(38, 37, 31)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "paper-light",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "24px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgb(25, 32, 26)",
+        "boxSizing": "border-box",
+        "color": "rgb(233, 238, 229)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "sage-dark",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgb(41, 52, 43)",
+        "boxSizing": "border-box",
+        "color": "rgb(176, 190, 172)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "sage-child",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "14px"
+      },
+      {
+        "background": "rgb(243, 246, 247)",
+        "boxSizing": "border-box",
+        "color": "rgb(34, 50, 58)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "ocean-light",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgb(253, 254, 254)",
+        "boxSizing": "border-box",
+        "color": "rgb(83, 104, 117)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "ocean-child",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgb(38, 28, 36)",
+        "boxSizing": "border-box",
+        "color": "rgb(241, 232, 239)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "plum-dark",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgb(60, 46, 56)",
+        "boxSizing": "border-box",
+        "color": "rgb(200, 175, 192)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "plum-child",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgb(39, 39, 34)",
+        "boxSizing": "border-box",
+        "color": "rgb(255, 255, 255)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "action",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "40px",
+        "padding": "1px 24px",
+        "radius": "8px"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "boxSizing": "border-box",
+        "color": "rgb(38, 37, 31)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "card",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "48px",
+        "radius": "14px"
+      },
+      {
+        "background": "rgb(240, 238, 231)",
+        "boxSizing": "border-box",
+        "color": "rgb(38, 37, 31)",
+        "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
+        "id": "composer",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "72px",
+        "radius": "20px"
+      },
+      {
+        "background": "rgb(1, 2, 3)",
+        "boxSizing": "border-box",
+        "color": "rgb(36, 38, 39)",
+        "font": "monospace",
+        "id": "custom-local",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "17px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "boxSizing": "content-box",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"Times New Roman\"",
+        "id": "outside-heading",
+        "listStyle": "disc",
+        "marginStart": "21.44px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "boxSizing": "content-box",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"Times New Roman\"",
+        "id": "outside-list",
+        "listStyle": "disc",
+        "marginStart": "16px",
+        "minHeight": "0px",
+        "padding": "0px 0px 0px 40px",
+        "radius": "0px"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "boxSizing": "content-box",
+        "color": "rgb(0, 0, 0)",
+        "font": "\"Times New Roman\"",
+        "id": "outside-box",
+        "listStyle": "disc",
+        "marginStart": "0px",
+        "minHeight": "0px",
+        "padding": "0px",
+        "radius": "0px"
+      }
+    ],
+    "viewport": {
+      "dpr": 1,
+      "height": 761,
+      "width": 1188
+    }
+  },
+  "optionalDark": {
+    "rows": [
+      {
+        "background": "rgb(27, 27, 24)",
+        "id": "dark-root",
+        "expected": "rgb(241, 173, 165)",
+        "passed": false
+      },
+      {
+        "background": "rgb(27, 27, 24)",
+        "id": "dark-child",
+        "expected": "rgb(241, 173, 165)",
+        "passed": false
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "id": "dark-no-class",
+        "expected": "rgba(0, 0, 0, 0)",
+        "passed": true
+      },
+      {
+        "background": "rgb(244, 246, 239)",
+        "id": "light-root",
+        "expected": "rgb(244, 246, 239)",
+        "passed": true
+      },
+      {
+        "background": "rgb(244, 246, 239)",
+        "id": "light-child",
+        "expected": "rgb(244, 246, 239)",
+        "passed": true
+      },
+      {
+        "background": "rgb(23, 33, 39)",
+        "id": "nested-dark-root",
+        "expected": "rgb(241, 173, 165)",
+        "passed": false
+      },
+      {
+        "background": "rgb(23, 33, 39)",
+        "id": "nested-dark-child",
+        "expected": "rgb(241, 173, 165)",
+        "passed": false
+      },
+      {
+        "background": "rgb(248, 247, 243)",
+        "id": "default-root",
+        "expected": "rgb(248, 247, 243)",
+        "passed": true
+      },
+      {
+        "background": "rgb(248, 247, 243)",
+        "id": "default-child",
+        "expected": "rgb(248, 247, 243)",
+        "passed": true
+      },
+      {
+        "background": "rgb(248, 247, 243)",
+        "id": "invalid-root",
+        "expected": "rgb(248, 247, 243)",
+        "passed": true
+      },
+      {
+        "background": "rgb(248, 247, 243)",
+        "id": "invalid-child",
+        "expected": "rgb(248, 247, 243)",
+        "passed": true
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "id": "outside",
+        "expected": "rgba(0, 0, 0, 0)",
+        "passed": true
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "id": "foreign-ui",
+        "expected": "rgba(0, 0, 0, 0)",
+        "passed": true
+      }
+    ]
+  },
+  "optionalDarkStatus": "failed: four positive selectors did not activate; remove from reusable entry",
+  "scopeObservation": "Browser CSSOM serializes nested scope-start as & [data-ui=\"atelier\"][data-theme=\"dark\"]."
+}
