@@ -367,3 +367,5 @@ tree.switchSibling('a1b', -1);
 ## 逐步推演
 
 [实战推演：把乐观身份换成正式身份](worked-case.md)逐项展示四张 Map、当前叶子、dangling 与可见路径的变化，并验证发布前的原子拒绝。
+
+[延伸到卷十一：解析片与回调的工作粒度](../11-Performance-And-Streaming/chunk-work-quantum.md)。chunk不等于事件，还意味着一次合法chunk可能装入大量同步工作。

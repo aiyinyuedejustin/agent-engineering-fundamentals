@@ -474,3 +474,7 @@ Claude 客户端值得学习的，不是某个神奇帧率常量，而是持续�
 - [原创实验室](../../04-Extracted-Core-Code-And-Scripts/streaming-performance/README.md)、[可迁移 Skill](../../03-Ready-To-Use-Agent-Skills/high-performance-streaming-ui-skill/SKILL.md)。
 
 本卷不重新展开卷八的 SSE 分帧、会话树、乐观 UUID 对账与上游 buffer；阅读这些部分请回到卷八。这里补的是从文本状态交付之后，真正昂贵的解析、格式化、布局与生命周期。
+
+## 把检查点放进真实工作单元
+
+[实战推演：小事件不等于小工作](chunk-work-quantum.md)从一个包含20,000个合法短事件的输入块出发，比较整块解析与有界分片，并明确字节所有权、取消和失败前缀。

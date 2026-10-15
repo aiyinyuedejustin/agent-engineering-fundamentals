@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;none&#x27;; style-src &#x27;sha256-8y9wuEeToRpC0gqcJTsDjQP9jQvmxpfHTBuFDO+pXnk=&#x27;; img-src data:; font-src &#x27;none&#x27;; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;; frame-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;"><meta name="referrer" content="no-referrer"><meta name="color-scheme" content="light dark"><title>实战推演：两个附件都说“还有空间”，为什么仍会超额？ · 拆开 Claude App</title><style>/* Derived from the original 04-editorial template's paper palette and reading rhythm.
+   System fonts only. No imported resources, JavaScript, or animation. */
+:root{color-scheme:light dark;--canvas:#f8f7f3;--sidebar:#f0eee7;--surface:#fff;--ink:#26251f;--muted:#656258;--line:#d9d6cc;--accent:#a24b33;--soft:#f3e3da;--reading:Georgia,"Times New Roman","Songti SC","STSong",serif;--ui:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+@media(prefers-color-scheme:dark){:root{--canvas:#1b1b18;--sidebar:#23231f;--surface:#2b2b26;--ink:#eeede6;--muted:#b8b5a8;--line:#44443b;--accent:#e2a68b;--soft:#3b2b24}}
+*{box-sizing:border-box}html{scroll-padding-top:24px}body{margin:0;background:var(--canvas);color:var(--ink);font:14px/1.65 var(--ui)}a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}a:hover{color:var(--accent)}:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:2px}.skip{position:fixed;left:12px;top:-100px;padding:12px 18px;background:var(--ink);color:var(--canvas);z-index:5}.skip:focus{top:12px}.topbar{border-bottom:1px solid var(--line);padding:19px max(24px,calc((100vw - 1300px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}.brand{text-decoration:none;display:flex;gap:12px;align-items:center;font-weight:600;letter-spacing:.02em}.brand-mark{display:grid;place-items:center;width:28px;height:32px;border:1px solid var(--accent);color:var(--accent);border-radius:2px 9px 2px 2px;font:19px var(--reading)}.top-links{display:flex;gap:20px;font-size:12px;color:var(--muted)}.top-links a{min-height:30px;display:flex;align-items:center}.layout{max-width:1300px;margin:auto;padding:44px 24px 80px;display:grid;grid-template-columns:210px minmax(0,760px);gap:64px;justify-content:center}.side{min-width:0;position:sticky;top:24px;max-height:calc(100vh - 48px);overflow:auto;scrollbar-width:thin}.eyebrow{font:11px/1.5 var(--ui);letter-spacing:.13em;color:var(--muted);text-transform:uppercase}.side .book-title{font:24px/1.4 var(--reading);margin:12px 0 28px}.side nav{display:grid;gap:4px}.side a{text-decoration:none;color:var(--muted);font-size:13px;padding:6px 0;display:block}.side a[aria-current=page]{color:var(--accent);font-weight:600}.side a:hover{text-decoration:underline}.side details{border-top:1px solid var(--line);margin-top:20px;padding-top:12px}.side summary{cursor:pointer;padding:9px 0;min-height:40px;color:var(--muted);font-size:12px}.side .toc a{font-size:12px;line-height:1.6}.side .toc a.level-3{padding-left:12px}.side .side-note{color:var(--muted);font-size:11px;border-top:1px solid var(--line);padding-top:18px;margin-top:28px}.mobile-nav{display:none}.article{min-width:0;font:18px/1.95 var(--reading);overflow-wrap:anywhere}.article h1{font-weight:400;font-size:clamp(33px,4vw,47px);line-height:1.4;letter-spacing:-.035em;margin:14px 0 30px}.article h2{font-weight:400;font-size:29px;line-height:1.55;margin:50px 0 22px;padding-top:24px;border-top:1px solid var(--line)}.article h3{font-size:22px;font-weight:500;line-height:1.6;margin:32px 0 16px}.article h4,.article h5,.article h6{font:600 17px/1.7 var(--ui);margin:26px 0 14px}.article h1,.article h2,.article h3,.article h4{scroll-margin-top:24px}.article p{margin:0 0 24px}.article h1+p{color:var(--muted);font-size:20px}.article a{color:var(--accent)}.article li{margin:7px 0}.article li p{margin:10px 0}.article ul,.article ol{padding-left:1.5em}.article blockquote{margin:28px 0;padding:4px 0 4px 24px;border-left:2px solid var(--accent);color:var(--muted)}.article blockquote>:last-child{margin-bottom:0}.article hr{border:0;border-top:1px solid var(--line);margin:32px 0}.article img{max-width:100%;height:auto;display:block;background:#fff;border:1px solid var(--line);border-radius:3px;margin:25px 0}.article img.inline-image{display:inline-block;vertical-align:middle}.article code{font:.8em/1.7 var(--mono);padding:2px 4px;background:var(--sidebar);border-radius:3px;overflow-wrap:anywhere}.code-block{margin:25px 0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--sidebar)}.code-label{font:11px/1.7 var(--ui);padding:8px 16px;border-bottom:1px solid var(--line);color:var(--muted);letter-spacing:.03em}.code-block pre{font:13px/1.85 var(--mono);overflow-x:auto;margin:0;padding:18px 20px;white-space:pre;tab-size:2}.code-block code{padding:0;background:transparent;font:inherit;overflow-wrap:normal}.table-scroll{max-width:100%;overflow-x:auto;margin:26px 0;border:1px solid var(--line);border-radius:4px}.article table{border-collapse:collapse;min-width:100%;font:14px/1.8 var(--ui)}.article th,.article td{padding:12px 15px;vertical-align:top;text-align:left;border-bottom:1px solid var(--line);min-width:110px}.article th{background:var(--sidebar);font-weight:600}.article tr:last-child td{border-bottom:0}.article td p{margin:0}.article .align-right{text-align:right}.article .align-center{text-align:center}.article .source-meta{font:12px/1.8 var(--ui);color:var(--muted);padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:30px}.source-meta span{display:block;overflow-wrap:anywhere}.source-meta a{display:inline-block;min-height:28px}.raw-html,.unsupported{white-space:pre-wrap;font:13px/1.8 var(--mono);background:var(--sidebar);padding:14px;overflow-wrap:anywhere}.blocked-link{border-bottom:1px dotted var(--muted)}.image-fallback,.notice{font:13px/1.8 var(--ui);color:var(--muted);padding:14px 17px;background:var(--sidebar);border-radius:4px}.task-state{font:14px var(--ui);margin-right:6px}.endnav{display:flex;justify-content:space-between;gap:28px;border-top:1px solid var(--line);padding-top:25px;margin-top:48px;font:13px/1.8 var(--ui)}.endnav a{max-width:48%;padding:9px 0}.endnav small{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}.footer{max-width:1300px;margin:auto;border-top:1px solid var(--line);padding:22px 24px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:11px}.directory-list{font-family:var(--ui);font-size:14px}.source-page .article{font-family:var(--ui)}.source-page h1{font-family:var(--reading)}.source-page .code-block pre{max-height:none}.sr-only{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+@media(max-width:1050px){.layout{gap:34px;grid-template-columns:185px minmax(0,1fr)}}
+@media(max-width:760px){.topbar{padding:15px 20px;flex-wrap:wrap;gap:8px}.top-links{gap:16px}.layout{display:block;padding:28px 20px 52px}.side{display:none}.mobile-nav{display:block;border-bottom:1px solid var(--line);padding:0 20px;background:var(--sidebar)}.mobile-nav>summary{padding:14px 0;cursor:pointer;min-height:48px}.mobile-nav nav{padding:0 0 18px;display:grid;gap:4px}.mobile-nav a{padding:8px 0;font-size:13px}.mobile-nav .toc a{font-size:12px}.article{font-size:17px;line-height:1.9}.article h1{font-size:33px;margin-top:10px}.article h2{font-size:26px;margin-top:37px}.article h3{font-size:21px}.article h1+p{font-size:18px}.code-block pre{font-size:12px;padding:16px}.article th,.article td{padding:10px;min-width:120px}.footer{padding:20px;flex-wrap:wrap}.article img{margin:20px 0}.article .source-meta{font-size:11px}.endnav{gap:20px}}
+@media print{.topbar,.side,.mobile-nav,.endnav,.skip,.footer{display:none}.layout{display:block;padding:0}.article{font-size:11pt;color:#000}.article h1{font-size:25pt}.article a{color:#000}.code-block pre{white-space:pre-wrap;overflow:visible}.table-scroll{overflow:visible}body{background:#fff}.article img,.code-block{break-inside:avoid}}
+</style></head>
+<body><a class="skip" href="#main">跳到正文</a><header class="topbar"><a class="brand" href="#main"><span class="brand-mark" aria-hidden="true">册</span>拆开 Claude App</a><nav class="top-links" aria-label="阅读工具"><a href="#reader-single-contents">样章目录</a><a href="#reader-single-notes">阅读说明</a><a href="#main">正文 ↓</a></nav></header>
+<details class="mobile-nav"><summary>目录与章节</summary><nav aria-label="全书分区"><a href="#main" aria-current="page">样章首页</a></nav><nav class="toc" aria-label="本页目录"><a class="level-2" href="#%E4%B8%80%E5%85%88%E7%AE%97%E5%8D%95%E4%BD%8D%E8%BF%99%E4%B8%89%E7%A7%8D%E9%95%BF%E5%BA%A6%E4%B8%8D%E6%98%AF%E5%90%8C%E4%B8%80%E7%AC%94%E8%B4%A6">一、先算单位：这三种长度不是同一笔账</a><a class="level-2" href="#%E4%BA%8C%E6%8A%8A%E5%87%86%E5%A4%87%E4%BA%A4%E4%BB%98%E4%B9%9F%E8%AE%B0%E5%85%A5%E8%B4%A6%E6%9C%AC">二、把“准备交付”也记入账本</a><a class="level-2" href="#%E4%B8%89%E7%94%A8%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E4%B8%80%E6%AC%A1%E9%A2%84%E7%95%99%E7%9A%84%E5%AE%8C%E6%95%B4%E5%AF%BF%E5%91%BD">三、用一个对象表达一次预留的完整寿命</a><a class="level-2" href="#%E5%9B%9B%E9%A2%84%E7%AE%97%E6%AD%A3%E7%A1%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E9%99%84%E4%BB%B6%E4%BB%8D%E4%BC%9A%E8%B7%91%E5%88%B0%E6%96%B0%E8%81%8A%E5%A4%A9">四、预算正确，为什么附件仍会跑到新聊天？</a><a class="level-2" href="#%E4%BA%94%E5%88%A0%E9%99%A4%E5%8D%A1%E7%89%87%E5%9B%9E%E6%94%B6%E9%A2%84%E8%A7%88%E4%B8%8E%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%98%AF%E4%B8%89%E6%9D%A1%E8%B7%AF%E5%BE%84">五、删除卡片、回收预览与删除文件是三条路径</a><a class="level-2" href="#%E5%85%AD%E6%8A%8A%E6%9C%AC%E5%8D%B7%E6%8E%A5%E5%88%B0%E5%B7%B2%E6%9C%89%E5%AE%9E%E9%AA%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E5%8F%A6%E8%B5%B7%E4%B8%80%E5%A5%97%E6%9C%AF%E8%AF%AD">六、把本卷接到已有实验，而不是另起一套术语</a><a class="level-2" href="#%E4%B8%83%E7%BB%83%E4%B9%A0%E4%B8%8E%E5%8F%AF%E6%A3%80%E6%9F%A5%E7%9A%84%E7%AD%94%E6%A1%88">七、练习与可检查的答案</a></nav><details><summary>技术全书卷目</summary><nav aria-label="技术卷目录"><a href="#main" aria-current="page">实战推演：两个附件都说“还有空间”，为什么仍会超额？</a></nav></details></details>
+<div class="layout"><aside class="side"><p class="eyebrow">A FIELD GUIDE / 离线阅读</p><p class="book-title">从界面，<br>读到系统。</p><nav aria-label="全书分区"><a href="#main" aria-current="page">样章首页</a></nav><details open><summary>本页目录</summary><nav class="toc" aria-label="本页目录"><a class="level-2" href="#%E4%B8%80%E5%85%88%E7%AE%97%E5%8D%95%E4%BD%8D%E8%BF%99%E4%B8%89%E7%A7%8D%E9%95%BF%E5%BA%A6%E4%B8%8D%E6%98%AF%E5%90%8C%E4%B8%80%E7%AC%94%E8%B4%A6">一、先算单位：这三种长度不是同一笔账</a><a class="level-2" href="#%E4%BA%8C%E6%8A%8A%E5%87%86%E5%A4%87%E4%BA%A4%E4%BB%98%E4%B9%9F%E8%AE%B0%E5%85%A5%E8%B4%A6%E6%9C%AC">二、把“准备交付”也记入账本</a><a class="level-2" href="#%E4%B8%89%E7%94%A8%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E8%A1%A8%E8%BE%BE%E4%B8%80%E6%AC%A1%E9%A2%84%E7%95%99%E7%9A%84%E5%AE%8C%E6%95%B4%E5%AF%BF%E5%91%BD">三、用一个对象表达一次预留的完整寿命</a><a class="level-2" href="#%E5%9B%9B%E9%A2%84%E7%AE%97%E6%AD%A3%E7%A1%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E9%99%84%E4%BB%B6%E4%BB%8D%E4%BC%9A%E8%B7%91%E5%88%B0%E6%96%B0%E8%81%8A%E5%A4%A9">四、预算正确，为什么附件仍会跑到新聊天？</a><a class="level-2" href="#%E4%BA%94%E5%88%A0%E9%99%A4%E5%8D%A1%E7%89%87%E5%9B%9E%E6%94%B6%E9%A2%84%E8%A7%88%E4%B8%8E%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%98%AF%E4%B8%89%E6%9D%A1%E8%B7%AF%E5%BE%84">五、删除卡片、回收预览与删除文件是三条路径</a><a class="level-2" href="#%E5%85%AD%E6%8A%8A%E6%9C%AC%E5%8D%B7%E6%8E%A5%E5%88%B0%E5%B7%B2%E6%9C%89%E5%AE%9E%E9%AA%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E5%8F%A6%E8%B5%B7%E4%B8%80%E5%A5%97%E6%9C%AF%E8%AF%AD">六、把本卷接到已有实验，而不是另起一套术语</a><a class="level-2" href="#%E4%B8%83%E7%BB%83%E4%B9%A0%E4%B8%8E%E5%8F%AF%E6%A3%80%E6%9F%A5%E7%9A%84%E7%AD%94%E6%A1%88">七、练习与可检查的答案</a></nav></details><details><summary>技术全书卷目</summary><nav aria-label="技术卷目录"><a href="#main" aria-current="page">实战推演：两个附件都说“还有空间”，为什么仍会超额？</a></nav></details><p class="side-note">暖纸面，慢一点读。<br>系统字体 · 本地图片 · 只读代码<br>页面查找可用浏览器的 Ctrl / ⌘ F。</p></aside>
+<main id="main" tabindex="-1" class="article"><p class="eyebrow">CLAUDE APP / RESEARCH LIBRARY</p><p class="notice"><strong>排版样章，完整书请运行构建器。</strong><br>只收录附件预算案例与原图；其他本地引用保留为文字。正文直接来自书中的 Markdown。</p><div class="source-meta"><span>02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/worked-case.md</span><a href="#reader-single-source">查看原始 Markdown</a> · 由原文生成</div><h1 id="实战推演两个附件都说还有空间为什么仍会超额" tabindex="-1">实战推演：两个附件都说“还有空间”，为什么仍会超额？</h1>
+<p>输入框已有一份很短的内联文本。用户又粘贴一段中文，同时拖入一个可转成文本的文件。两个异步处理器几乎同时读取剩余额度；它们各自认为放得下，全部结束后却把消息撑过上限。稍后用户切换到新聊天，旧文件的解码结果又试图把附件卡加回来。</p>
+<p>这段经历同时经过两种合同：<strong>预算决定能否进入，归属决定还能写到哪里。</strong> 只加上传进度条，或只在组件卸载时发 abort，都不能独立解决这两个问题。</p>
+<p>本节把 5.4 的预留账本与 5.9 的草稿归属做成一个很小的原创实验。产品事实以 IP13、IP22、IP25–28 的原条件为准。为了能够手算，下面把总预算设为 <strong>12 字节</strong>；这不是产品限制，也不估算模型 token。</p>
+<h2 id="一先算单位这三种长度不是同一笔账" tabindex="-1">一、先算单位：这三种长度不是同一笔账</h2>
+<div class="code-block"><div class="code-label">js · 只读代码</div><pre tabindex="0" aria-label="js · 只读代码"><code>const bytes = value =&gt; new TextEncoder().encode(value).byteLength;
+
+console.log(&#x27;ok&#x27;.length, bytes(&#x27;ok&#x27;));    // 2, 2
+console.log(&#x27;资料&#x27;.length, bytes(&#x27;资料&#x27;)); // 2, 6
+console.log(&#x27;😀&#x27;.length, bytes(&#x27;😀&#x27;));     // 2, 4</code></pre></div>
+<p>JavaScript 的 <code>.length</code> 在这里数 UTF-16 code units；<code>TextEncoder</code> 给出 UTF-8 字节。字符的视觉宽度、用户感知的字数和模型的 token 数还各有自己的规则。若账本用一种单位，准入判断用另一种，最后一次检查再严格也补不回此前错误的预留。</p>
+<p>设已有文本为 <code>ok</code>，占 2 字节；附件 A 为 <code>资料</code>，附件 B 为 <code>图像</code>，各占 6 字节。天真的实现只读已完成列表：</p>
+<div class="code-block"><div class="code-label">text · 只读代码</div><pre tabindex="0" aria-label="text · 只读代码"><code>A 读取：已用 2，新增 6，2 + 6 &lt;= 12，通过。
+B 读取：已用还是 2，新增 6，2 + 6 &lt;= 12，也通过。
+A 完成，然后 B 完成：2 + 6 + 6 = 14，超额。</code></pre></div>
+<p>没有线程并行也会发生这种错误。浏览器在第一个任务的 await 之后可以处理第二个入口；共享数据没有预先记录 A 的承诺。</p>
+<h2 id="二把准备交付也记入账本" tabindex="-1">二、把“准备交付”也记入账本</h2>
+<p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTIwIiBoZWlnaHQ9IjcwNCIgdmlld0JveD0iMCAwIDExMjAgNzA0IiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idGl0bGUgZGVzYyI+Cjx0aXRsZSBpZD0idGl0bGUiPumihOeul+W/hemhu+iuoeeul+WwmuacquWujOaIkOeahOaJv+ivujwvdGl0bGU+PGRlc2MgaWQ9ImRlc2MiPua3seiJsiA9IOW3suaPkOS6pCBV77yb6JOd6ImyID0g5Zyo6YCU6aKE55WZIFLvvJvnqbrmoLwgPSDliankvZnpop3luqbjgII8L2Rlc2M+CjxzdHlsZT50ZXh0IHsgZm9udC1mYW1pbHk6ICdOb3RvIFNhbnMgQ0pLIFNDJywgJ1BpbmdGYW5nIFNDJywgJ01pY3Jvc29mdCBZYUhlaScsIHNhbnMtc2VyaWY7IH08L3N0eWxlPgo8cmVjdCB3aWR0aD0iMTEyMCIgaGVpZ2h0PSI3MDQiIGZpbGw9IiNmN2Y1ZWYiIC8+Cjx0ZXh0IHg9IjM2IiB5PSI0OCIgZm9udC1zaXplPSIyOCIgZmlsbD0iIzI1MmEzMCIgZm9udC13ZWlnaHQ9IjcwMCI+6aKE566X5b+F6aG76K6h566X5bCa5pyq5a6M5oiQ55qE5om/6K+6PC90ZXh0Pgo8dGV4dCB4PSIzNiIgeT0iODAiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiM1ODYxNmEiIGZvbnQtd2VpZ2h0PSI0MDAiPua3seiJsiA9IOW3suaPkOS6pCBV77yb6JOd6ImyID0g5Zyo6YCU6aKE55WZIFLvvJvnqbrmoLwgPSDliankvZnpop3luqbjgII8L3RleHQ+Cjx0ZXh0IHg9IjM2IiB5PSIxMjUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPuaAu+mihOeulyAxMiDlrZfoioLvvJvlt7LmnInmlofmnKwgb2sgPSAy77yM6ZmE5Lu2IEEgLyBCIOWQhOS4uiA2IOS4qiBVVEYtOCDlrZfoioLjgII8L3RleHQ+PHJlY3QgeD0iMzYiIHk9IjE0NiIgd2lkdGg9IjEwNDgiIGhlaWdodD0iNDIiIHJ4PSIxMCIgZmlsbD0iI2U5ZTZkZCIgc3Ryb2tlPSIjYzdjYmM5IiAvPjx0ZXh0IHg9IjUwIiB5PSIxNzUiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI3MDAiPuatpemqpDwvdGV4dD48dGV4dCB4PSIzOTAiIHk9IjE3NSIgZm9udC1zaXplPSIxNyIgZmlsbD0iIzI1MmEzMCIgZm9udC13ZWlnaHQ9IjcwMCI+6LSm5pys5Y2g55So77yI5q+P5qC8IDEg5a2X6IqC77yJPC90ZXh0Pjx0ZXh0IHg9Ijg0MCIgeT0iMTc1IiBmb250LXNpemU9IjE3IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNzAwIj5VIC8gUjwvdGV4dD48dGV4dCB4PSI1MCIgeT0iMjI5IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNDAwIj7liJ3lp4vvvJrlt7LmnIkgb2s8L3RleHQ+PHJlY3QgeD0iMzkwIiB5PSIyMDIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI0MjIiIHk9IjIwMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzM2NGI1YiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjQ1NCIgeT0iMjAyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNDg2IiB5PSIyMDIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI1MTgiIHk9IjIwMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjU1MCIgeT0iMjAyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNTgyIiB5PSIyMDIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI2MTQiIHk9IjIwMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjY0NiIgeT0iMjAyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNjc4IiB5PSIyMDIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI3MTAiIHk9IjIwMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9Ijc0MiIgeT0iMjAyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHRleHQgeD0iODQwIiB5PSIyMjkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPjIgLyAwPC90ZXh0Pjx0ZXh0IHg9IjUwIiB5PSIyODciIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPkEg6aKE55WZIDYg5a2X6IqCPC90ZXh0PjxyZWN0IHg9IjM5MCIgeT0iMjYwIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjMzY0YjViIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNDIyIiB5PSIyNjAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI0NTQiIHk9IjI2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzc2YTlkMSIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjQ4NiIgeT0iMjYwIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjNzZhOWQxIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNTE4IiB5PSIyNjAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiM3NmE5ZDEiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI1NTAiIHk9IjI2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzc2YTlkMSIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjU4MiIgeT0iMjYwIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjNzZhOWQxIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNjE0IiB5PSIyNjAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiM3NmE5ZDEiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI2NDYiIHk9IjI2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjY3OCIgeT0iMjYwIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNzEwIiB5PSIyNjAiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI3NDIiIHk9IjI2MCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjx0ZXh0IHg9Ijg0MCIgeT0iMjg3IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNDAwIj4yIC8gNjwvdGV4dD48dGV4dCB4PSI1MCIgeT0iMzQ1IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNDAwIj5CIOS5n+imgSA277ya5ouS57ud5YaF6IGUPC90ZXh0PjxyZWN0IHg9IjM5MCIgeT0iMzE4IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjMzY0YjViIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNDIyIiB5PSIzMTgiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI0NTQiIHk9IjMxOCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzc2YTlkMSIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjQ4NiIgeT0iMzE4IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjNzZhOWQxIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNTE4IiB5PSIzMTgiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiM3NmE5ZDEiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI1NTAiIHk9IjMxOCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzc2YTlkMSIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjU4MiIgeT0iMzE4IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjNzZhOWQxIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNjE0IiB5PSIzMTgiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiM3NmE5ZDEiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI2NDYiIHk9IjMxOCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjY3OCIgeT0iMzE4IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNzEwIiB5PSIzMTgiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI3NDIiIHk9IjMxOCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjx0ZXh0IHg9Ijg0MCIgeT0iMzQ1IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNDAwIj4yIC8gNjwvdGV4dD48dGV4dCB4PSI1MCIgeT0iNDAzIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNDAwIj5BIOWPlua2iO+8mumHiuaUvumihOeVmTwvdGV4dD48cmVjdCB4PSIzOTAiIHk9IjM3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzM2NGI1YiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjQyMiIgeT0iMzc2IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjMzY0YjViIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNDU0IiB5PSIzNzYiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI0ODYiIHk9IjM3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjUxOCIgeT0iMzc2IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNTUwIiB5PSIzNzYiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI1ODIiIHk9IjM3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjYxNCIgeT0iMzc2IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNjQ2IiB5PSIzNzYiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI2NzgiIHk9IjM3NiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjcxMCIgeT0iMzc2IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNzQyIiB5PSIzNzYiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48dGV4dCB4PSI4NDAiIHk9IjQwMyIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzI1MmEzMCIgZm9udC13ZWlnaHQ9IjQwMCI+MiAvIDA8L3RleHQ+PHRleHQgeD0iNTAiIHk9IjQ2MSIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzI1MmEzMCIgZm9udC13ZWlnaHQ9IjQwMCI+QiDph43or5XvvJrph43mlrDpooTnlZk8L3RleHQ+PHJlY3QgeD0iMzkwIiB5PSI0MzQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI0MjIiIHk9IjQzNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzM2NGI1YiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjQ1NCIgeT0iNDM0IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjNzZhOWQxIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNDg2IiB5PSI0MzQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiM3NmE5ZDEiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI1MTgiIHk9IjQzNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzc2YTlkMSIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjU1MCIgeT0iNDM0IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjNzZhOWQxIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNTgyIiB5PSI0MzQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiM3NmE5ZDEiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI2MTQiIHk9IjQzNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzc2YTlkMSIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjY0NiIgeT0iNDM0IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNjc4IiB5PSI0MzQiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI3MTAiIHk9IjQzNCIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9Ijc0MiIgeT0iNDM0IiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHRleHQgeD0iODQwIiB5PSI0NjEiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPjIgLyA2PC90ZXh0Pjx0ZXh0IHg9IjUwIiB5PSI1MTkiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPkIg5o+Q5Lqk77ya6aKd5bqm6L2s56e7PC90ZXh0PjxyZWN0IHg9IjM5MCIgeT0iNDkyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjMzY0YjViIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNDIyIiB5PSI0OTIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI0NTQiIHk9IjQ5MiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzM2NGI1YiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjQ4NiIgeT0iNDkyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjMzY0YjViIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNTE4IiB5PSI0OTIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI1NTAiIHk9IjQ5MiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iIzM2NGI1YiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjU4MiIgeT0iNDkyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjMzY0YjViIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNjE0IiB5PSI0OTIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiMzNjRiNWIiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI2NDYiIHk9IjQ5MiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjxyZWN0IHg9IjY3OCIgeT0iNDkyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzEiIHJ4PSIzIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHJlY3QgeD0iNzEwIiB5PSI0OTIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzMSIgcng9IjMiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2M3Y2JjOSIgLz48cmVjdCB4PSI3NDIiIHk9IjQ5MiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjMxIiByeD0iMyIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjYzdjYmM5IiAvPjx0ZXh0IHg9Ijg0MCIgeT0iNTE5IiBmb250LXNpemU9IjE4IiBmaWxsPSIjMjUyYTMwIiBmb250LXdlaWdodD0iNDAwIj44IC8gMDwvdGV4dD48cmVjdCB4PSIzNiIgeT0iNTY2IiB3aWR0aD0iMTA0OCIgaGVpZ2h0PSI4OCIgcng9IjEwIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNjN2NiYzkiIC8+PHRleHQgeD0iNTQiIHk9IjU5NSIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzI1MmEzMCIgZm9udC13ZWlnaHQ9IjcwMCI+5Lik5p2h54us56uL5LiN5Y+Y6YePPC90ZXh0Pjx0ZXh0IHg9IjU0IiB5PSI2MjEiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPumihOeul++8muW3suaPkOS6pCBVICsg5Zyo6YCU6aKE55WZIFIg4omkIDEy44CC5b2S5bGe77ya5Y+q5o6l5Y+X5b2T5YmN6I2J56i/5Luj5qyh55qE5a6M5oiQ5Zue6LCD44CCPC90ZXh0Pjx0ZXh0IHg9IjU0IiB5PSI2NDYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMyNTJhMzAiIGZvbnQtd2VpZ2h0PSI0MDAiPuWPlua2iOWFiOmHiuaUvumihOeVme+8m+aZmuWIsOWbnuiwg+WGjeasoeajgOafpeS7o+asoeOAguS4pOiAhee8uuS4gO+8jOmDveS8mueVmeS4i+mUmeivr+eKtuaAgeOAgjwvdGV4dD4KPHRleHQgeD0iMzYiIHk9IjY4MiIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzU4NjE2YSIgZm9udC13ZWlnaHQ9IjQwMCI+5Y6f5Yib5pWZ5a2m5qih5Z6LIMK3IOWQiOaIkOS6i+S7tuS4juaVsOWAvCDCtyDkuI3ooajnpLrkuqflk4HnmoTnnJ/lrp7ov5DooYzmtYvph488L3RleHQ+Cjwvc3ZnPg==" alt="已提交、已预留与释放组成的原创附件预算图" loading="lazy" decoding="async"></p>
+<p><em>图：深色块代表已提交数据，蓝色块代表在途预留。预算检查同时计算两者。取消释放预留；完成把同一份额度从预留转到已提交，不重复计数。</em></p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">事件</th><th scope="col" class="align-right">已提交 U</th><th scope="col" class="align-right">预留 R</th><th scope="col" class="align-right">新需求 N</th><th scope="col">判定与后续</th></tr></thead><tbody><tr><td>初始已有 <code>ok</code></td><td class="align-right">2</td><td class="align-right">0</td><td class="align-right">0</td><td>总量 2</td></tr><tr><td>A 准备进入</td><td class="align-right">2</td><td class="align-right">0</td><td class="align-right">6</td><td>2 + 0 + 6 ≤ 12，预留 A</td></tr><tr><td>B 准备进入</td><td class="align-right">2</td><td class="align-right">6</td><td class="align-right">6</td><td>2 + 6 + 6 &gt; 12，走文件或明确拒绝</td></tr><tr><td>A 被取消</td><td class="align-right">2</td><td class="align-right">6 → 0</td><td class="align-right">0</td><td>释放一次；再次清理不再扣除</td></tr><tr><td>重试 B</td><td class="align-right">2</td><td class="align-right">0 → 6</td><td class="align-right">6</td><td>新的一次准入成功</td></tr><tr><td>B 完成</td><td class="align-right">2 → 8</td><td class="align-right">6 → 0</td><td class="align-right">0</td><td>同一次同步状态转移，总量仍为 8</td></tr></tbody></table></div>
+<p>这个模型在拿到确定的清洁文本后才预留精确字节；它没有覆盖未知解码长度的估计。如果实现想在解码前预留，必须另定义保守上界，以及实际大小超过预留时的重新准入规则。</p>
+<p><code>commit</code> 的责任也应写清：它消费 pending token，并把对应字节记入 committed。<code>release</code> 只能消费仍 pending 的 token。两者共享一份 token 状态，完成之后再触发取消，不会把已经提交的数据从账本里凭空减掉。</p>
+<h2 id="三用一个对象表达一次预留的完整寿命" tabindex="-1">三、用一个对象表达一次预留的完整寿命</h2>
+<p>完整实现见 <span class="blocked-link" title="链接未收录或不允许打开">context_budget.mjs</span>。下面两个使用片段均以 <code>04-Extracted-Core-Code-And-Scripts/worked-cases/</code> 为工作目录，保存为 <code>.mjs</code> 后用 Node 运行，或通过 <code>node --input-type=module</code> 从标准输入执行：</p>
+<div class="code-block"><div class="code-label">js · 只读代码</div><pre tabindex="0" aria-label="js · 只读代码"><code>import { InlineBudget } from &#x27;./context_budget.mjs&#x27;;
+
+const budget = new InlineBudget(12);
+budget.reserve(&#x27;existing&#x27;, &#x27;ok&#x27;).commit();
+
+const a = budget.reserve(&#x27;a&#x27;, &#x27;资料&#x27;);
+const b = budget.reserve(&#x27;b&#x27;, &#x27;图像&#x27;);
+console.assert(a !== null);
+console.assert(b === null);
+console.assert(budget.used === 2 &amp;&amp; budget.reserved === 6);
+
+a.release();
+a.release(); // 重复清理无害
+const retry = budget.reserve(&#x27;b&#x27;, &#x27;图像&#x27;);
+retry.commit();
+console.assert(budget.used === 8 &amp;&amp; budget.reserved === 0);</code></pre></div>
+<p>预留失败返回的是“内联路线不能接纳”。它不意味着必须上传，也不意味着已取得上传许可。真实调用方还要检查文件能力、当前路线与发送归属；没有可用文件路线时应明确拒绝并保留用户输入。本实验只返回 <code>file-or-reject</code>，不伪造服务器文件引用。</p>
+<p>在同一个 JavaScript realm 中，预留检查与写入 Map 必须放在没有 await 的同步段里。若多个 worker、标签页或服务实例共享额度，本地 Map 就不够了，还需要共享存储的原子操作或服务端仲裁。</p>
+<h2 id="四预算正确为什么附件仍会跑到新聊天" tabindex="-1">四、预算正确，为什么附件仍会跑到新聊天？</h2>
+<p>预算只说明能否占用空间，不说明这份结果现在属于谁。给每份草稿一个 owner，再给它的工作周期一个 epoch：任务开始时捕获 epoch；完成时先检查是否仍匹配，然后才提交。</p>
+<div class="code-block"><div class="code-label">js · 只读代码</div><pre tabindex="0" aria-label="js · 只读代码"><code>import { DraftOwner } from &#x27;./context_budget.mjs&#x27;;
+
+const oldDraft = new DraftOwner(&#x27;conversation-A/draft-1&#x27;, 12);
+const task = oldDraft.begin(&#x27;a&#x27;, &#x27;资料&#x27;);
+
+oldDraft.invalidate(); // 导航使在途结果失效，并释放本草稿的预留
+const newDraft = new DraftOwner(&#x27;conversation-B/draft-1&#x27;, 12);
+
+console.assert(task.complete() === false);
+console.assert(oldDraft.budget.reserved === 0);
+console.assert(newDraft.ready.size === 0);</code></pre></div>
+<p>这里同时做了两件事。主动失效释放预留，避免一个永远不再回调的任务占着额度；晚到回调仍要检查 epoch，避免它绕过取消继续提交。AbortController 在真正接入读取或上传时也很有用，但“已发送取消信号”不是“不可能再收到回调”的证明。</p>
+<p>这个 owner 是原创简化：它代表一份草稿，不处理已经交给发送队列持有的任务。原客户端有持有、等待接受和有效发送等更细的归属，不能把本例的 <code>invalidate()</code> 直接套成“每次卸载都取消全部附件”。</p>
+<h2 id="五删除卡片回收预览与删除文件是三条路径" tabindex="-1">五、删除卡片、回收预览与删除文件是三条路径</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="表格，可横向滚动"><table><thead><tr><th scope="col">资源</th><th scope="col">本例或实际应用中的所有者</th><th scope="col">何时可以释放</th></tr></thead><tbody><tr><td>尚未提交的字节预留</td><td>当前任务 token</td><td>失败、取消、失效；或者转为 committed</td></tr><tr><td>已提交的内联附件</td><td>草稿/发送记录</td><td>明确移除或该记录生命周期结束</td></tr><tr><td>object URL</td><td>预览订阅者集合</td><td>最后一个使用者离开</td></tr><tr><td>服务器文件</td><td>远端记录及所有引用者</td><td>经过资源归属与删除条件判断</td></tr></tbody></table></div>
+<p>本模型的 <code>invalidate()</code> 保留已提交的旧草稿数据；创建新草稿也不会把它复制过去。<code>budget.remove(id)</code> 仅删除本地 committed 记账，不调用远端删除。这样的窄接口能让测试说清自己验证了什么。</p>
+<h2 id="六把本卷接到已有实验而不是另起一套术语" tabindex="-1">六、把本卷接到已有实验，而不是另起一套术语</h2>
+<p>本例的 epoch 与第 2 卷的 spawn ticket、<span class="blocked-link" title="链接未收录或不允许打开">workspace-core 的 ContentEpoch</span>解决相同的归属问题，但保护的对象不同：初始化、预览正文、附件草稿不能共用一个全局 generation。每个 owner 的新旧关系应只使自己的工作失效。</p>
+<p>接入界面时，可沿前端工作台现有的 <code>cancelTimer()</code> generation 守卫继续读：<span class="blocked-link" title="链接未收录或不允许打开">状态实现</span>。工作台只模拟回复，并未实现附件上传。练习目标是接上本实验的状态投影，而不是把那个 demo 误写成已具备完整文件管线。</p>
+<h2 id="七练习与可检查的答案" tabindex="-1">七、练习与可检查的答案</h2>
+<p>在书根目录执行：</p>
+<div class="code-block"><div class="code-label">sh · 只读代码</div><pre tabindex="0" aria-label="sh · 只读代码"><code>node 04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.mjs
+node --test 04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.test.mjs</code></pre></div>
+<p>先预测这些变化，再看测试结果：</p>
+<ol><li>把 <code>资料</code> 换成两个 emoji，A 和 B 的准入会怎样变化？</li><li>B 先完成再触发 cancel，能否把 used 从 8 减回 2？</li><li>A 的解码 Promise 永远不返回，导航时额度会不会一直占用？</li><li>旧草稿已有完成附件，导航是否等于删除这些附件？</li></ol>
+<p>参考判断：两个常见 emoji 各占 4 个 UTF-8 字节，应按具体字符串实际编码后计算；本例两个 <code>😀</code> 为 8 字节。commit 后 cancel 不再消费 pending token，所以不减少 used。导航显式释放 pending，不依赖 Promise 再次回调。已经提交的数据仍属于旧草稿，是否持久化、何时删除，要由草稿/发送所有权另作决定。</p>
+<p>11 个确定性测试分别覆盖单位、同时准入、边界相等、重复身份、重复释放、提交转移、取消后重试、换聊天、晚到回调和已提交数据保留。它们没有上传文件，没有复现 OCR，也没有测量模型上下文容量。</p>
+<section id="reader-single-contents"><h2>样章目录</h2><nav aria-label="同页样章目录"><p><a href="#一先算单位这三种长度不是同一笔账">一、先算单位：这三种长度不是同一笔账</a></p><p><a href="#二把准备交付也记入账本">二、把“准备交付”也记入账本</a></p><p><a href="#三用一个对象表达一次预留的完整寿命">三、用一个对象表达一次预留的完整寿命</a></p><p><a href="#四预算正确为什么附件仍会跑到新聊天">四、预算正确，为什么附件仍会跑到新聊天？</a></p><p><a href="#五删除卡片回收预览与删除文件是三条路径">五、删除卡片、回收预览与删除文件是三条路径</a></p><p><a href="#六把本卷接到已有实验而不是另起一套术语">六、把本卷接到已有实验，而不是另起一套术语</a></p><p><a href="#七练习与可检查的答案">七、练习与可检查的答案</a></p></nav></section><section id="reader-single-notes"><h2>单文件阅读说明</h2><p>这是固定附件预算案例的排版样章。CSS 与已验证 SVG 都包含在本文件内，页面不加载脚本、字体或网络资源。原文中保留的外部来源，仅在主动点击时打开。</p><p>目录、阅读说明和原文均使用同页锚点。展开下面的原文区可核对内容；浏览器查找、缩放、打印和代码横向滚动仍可使用。完整书请运行主构建器。</p></section><section id="reader-single-source"><h2>原始 Markdown</h2><details><summary>展开只读原文</summary><div class="code-block"><pre tabindex="0" aria-label="样章原始 Markdown"><code># 实战推演：两个附件都说“还有空间”，为什么仍会超额？
+
+输入框已有一份很短的内联文本。用户又粘贴一段中文，同时拖入一个可转成文本的文件。两个异步处理器几乎同时读取剩余额度；它们各自认为放得下，全部结束后却把消息撑过上限。稍后用户切换到新聊天，旧文件的解码结果又试图把附件卡加回来。
+
+这段经历同时经过两种合同：**预算决定能否进入，归属决定还能写到哪里。** 只加上传进度条，或只在组件卸载时发 abort，都不能独立解决这两个问题。
+
+本节把 5.4 的预留账本与 5.9 的草稿归属做成一个很小的原创实验。产品事实以 IP13、IP22、IP25–28 的原条件为准。为了能够手算，下面把总预算设为 **12 字节**；这不是产品限制，也不估算模型 token。
+
+## 一、先算单位：这三种长度不是同一笔账
+
+```js
+const bytes = value =&gt; new TextEncoder().encode(value).byteLength;
+
+console.log(&#x27;ok&#x27;.length, bytes(&#x27;ok&#x27;));    // 2, 2
+console.log(&#x27;资料&#x27;.length, bytes(&#x27;资料&#x27;)); // 2, 6
+console.log(&#x27;😀&#x27;.length, bytes(&#x27;😀&#x27;));     // 2, 4
+```
+
+JavaScript 的 `.length` 在这里数 UTF-16 code units；`TextEncoder` 给出 UTF-8 字节。字符的视觉宽度、用户感知的字数和模型的 token 数还各有自己的规则。若账本用一种单位，准入判断用另一种，最后一次检查再严格也补不回此前错误的预留。
+
+设已有文本为 `ok`，占 2 字节；附件 A 为 `资料`，附件 B 为 `图像`，各占 6 字节。天真的实现只读已完成列表：
+
+```text
+A 读取：已用 2，新增 6，2 + 6 &lt;= 12，通过。
+B 读取：已用还是 2，新增 6，2 + 6 &lt;= 12，也通过。
+A 完成，然后 B 完成：2 + 6 + 6 = 14，超额。
+```
+
+没有线程并行也会发生这种错误。浏览器在第一个任务的 await 之后可以处理第二个入口；共享数据没有预先记录 A 的承诺。
+
+## 二、把“准备交付”也记入账本
+
+![已提交、已预留与释放组成的原创附件预算图](../../assets/figures/context-budget-ledger.svg)
+
+*图：深色块代表已提交数据，蓝色块代表在途预留。预算检查同时计算两者。取消释放预留；完成把同一份额度从预留转到已提交，不重复计数。*
+
+| 事件 | 已提交 U | 预留 R | 新需求 N | 判定与后续 |
+|---|---:|---:|---:|---|
+| 初始已有 `ok` | 2 | 0 | 0 | 总量 2 |
+| A 准备进入 | 2 | 0 | 6 | 2 + 0 + 6 ≤ 12，预留 A |
+| B 准备进入 | 2 | 6 | 6 | 2 + 6 + 6 &gt; 12，走文件或明确拒绝 |
+| A 被取消 | 2 | 6 → 0 | 0 | 释放一次；再次清理不再扣除 |
+| 重试 B | 2 | 0 → 6 | 6 | 新的一次准入成功 |
+| B 完成 | 2 → 8 | 6 → 0 | 0 | 同一次同步状态转移，总量仍为 8 |
+
+这个模型在拿到确定的清洁文本后才预留精确字节；它没有覆盖未知解码长度的估计。如果实现想在解码前预留，必须另定义保守上界，以及实际大小超过预留时的重新准入规则。
+
+`commit` 的责任也应写清：它消费 pending token，并把对应字节记入 committed。`release` 只能消费仍 pending 的 token。两者共享一份 token 状态，完成之后再触发取消，不会把已经提交的数据从账本里凭空减掉。
+
+## 三、用一个对象表达一次预留的完整寿命
+
+完整实现见 [context_budget.mjs](../../04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.mjs)。下面两个使用片段均以 `04-Extracted-Core-Code-And-Scripts/worked-cases/` 为工作目录，保存为 `.mjs` 后用 Node 运行，或通过 `node --input-type=module` 从标准输入执行：
+
+```js
+import { InlineBudget } from &#x27;./context_budget.mjs&#x27;;
+
+const budget = new InlineBudget(12);
+budget.reserve(&#x27;existing&#x27;, &#x27;ok&#x27;).commit();
+
+const a = budget.reserve(&#x27;a&#x27;, &#x27;资料&#x27;);
+const b = budget.reserve(&#x27;b&#x27;, &#x27;图像&#x27;);
+console.assert(a !== null);
+console.assert(b === null);
+console.assert(budget.used === 2 &amp;&amp; budget.reserved === 6);
+
+a.release();
+a.release(); // 重复清理无害
+const retry = budget.reserve(&#x27;b&#x27;, &#x27;图像&#x27;);
+retry.commit();
+console.assert(budget.used === 8 &amp;&amp; budget.reserved === 0);
+```
+
+预留失败返回的是“内联路线不能接纳”。它不意味着必须上传，也不意味着已取得上传许可。真实调用方还要检查文件能力、当前路线与发送归属；没有可用文件路线时应明确拒绝并保留用户输入。本实验只返回 `file-or-reject`，不伪造服务器文件引用。
+
+在同一个 JavaScript realm 中，预留检查与写入 Map 必须放在没有 await 的同步段里。若多个 worker、标签页或服务实例共享额度，本地 Map 就不够了，还需要共享存储的原子操作或服务端仲裁。
+
+## 四、预算正确，为什么附件仍会跑到新聊天？
+
+预算只说明能否占用空间，不说明这份结果现在属于谁。给每份草稿一个 owner，再给它的工作周期一个 epoch：任务开始时捕获 epoch；完成时先检查是否仍匹配，然后才提交。
+
+```js
+import { DraftOwner } from &#x27;./context_budget.mjs&#x27;;
+
+const oldDraft = new DraftOwner(&#x27;conversation-A/draft-1&#x27;, 12);
+const task = oldDraft.begin(&#x27;a&#x27;, &#x27;资料&#x27;);
+
+oldDraft.invalidate(); // 导航使在途结果失效，并释放本草稿的预留
+const newDraft = new DraftOwner(&#x27;conversation-B/draft-1&#x27;, 12);
+
+console.assert(task.complete() === false);
+console.assert(oldDraft.budget.reserved === 0);
+console.assert(newDraft.ready.size === 0);
+```
+
+这里同时做了两件事。主动失效释放预留，避免一个永远不再回调的任务占着额度；晚到回调仍要检查 epoch，避免它绕过取消继续提交。AbortController 在真正接入读取或上传时也很有用，但“已发送取消信号”不是“不可能再收到回调”的证明。
+
+这个 owner 是原创简化：它代表一份草稿，不处理已经交给发送队列持有的任务。原客户端有持有、等待接受和有效发送等更细的归属，不能把本例的 `invalidate()` 直接套成“每次卸载都取消全部附件”。
+
+## 五、删除卡片、回收预览与删除文件是三条路径
+
+| 资源 | 本例或实际应用中的所有者 | 何时可以释放 |
+|---|---|---|
+| 尚未提交的字节预留 | 当前任务 token | 失败、取消、失效；或者转为 committed |
+| 已提交的内联附件 | 草稿/发送记录 | 明确移除或该记录生命周期结束 |
+| object URL | 预览订阅者集合 | 最后一个使用者离开 |
+| 服务器文件 | 远端记录及所有引用者 | 经过资源归属与删除条件判断 |
+
+本模型的 `invalidate()` 保留已提交的旧草稿数据；创建新草稿也不会把它复制过去。`budget.remove(id)` 仅删除本地 committed 记账，不调用远端删除。这样的窄接口能让测试说清自己验证了什么。
+
+## 六、把本卷接到已有实验，而不是另起一套术语
+
+本例的 epoch 与第 2 卷的 spawn ticket、[workspace-core 的 ContentEpoch](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/workspace-core/workspaces-model.mjs)解决相同的归属问题，但保护的对象不同：初始化、预览正文、附件草稿不能共用一个全局 generation。每个 owner 的新旧关系应只使自己的工作失效。
+
+接入界面时，可沿前端工作台现有的 `cancelTimer()` generation 守卫继续读：[状态实现](../../01-Frontend-Design-And-HTML-Templates/interactive-study/demo.js)。工作台只模拟回复，并未实现附件上传。练习目标是接上本实验的状态投影，而不是把那个 demo 误写成已具备完整文件管线。
+
+## 七、练习与可检查的答案
+
+在书根目录执行：
+
+```sh
+node 04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.mjs
+node --test 04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.test.mjs
+```
+
+先预测这些变化，再看测试结果：
+
+1. 把 `资料` 换成两个 emoji，A 和 B 的准入会怎样变化？
+2. B 先完成再触发 cancel，能否把 used 从 8 减回 2？
+3. A 的解码 Promise 永远不返回，导航时额度会不会一直占用？
+4. 旧草稿已有完成附件，导航是否等于删除这些附件？
+
+参考判断：两个常见 emoji 各占 4 个 UTF-8 字节，应按具体字符串实际编码后计算；本例两个 `😀` 为 8 字节。commit 后 cancel 不再消费 pending token，所以不减少 used。导航显式释放 pending，不依赖 Promise 再次回调。已经提交的数据仍属于旧草稿，是否持久化、何时删除，要由草稿/发送所有权另作决定。
+
+11 个确定性测试分别覆盖单位、同时准入、边界相等、重复身份、重复释放、提交转移、取消后重试、换聊天、晚到回调和已提交数据保留。它们没有上传文件，没有复现 OCR，也没有测量模型上下文容量。
+</code></pre></div></details></section><section id="reader-single-figure"><h2>原始图源</h2><details><summary>展开只读 SVG 源码</summary><div class="code-block"><pre tabindex="0" aria-label="样章原始 SVG"><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1120&quot; height=&quot;704&quot; viewBox=&quot;0 0 1120 704&quot; role=&quot;img&quot; aria-labelledby=&quot;title desc&quot;&gt;
+&lt;title id=&quot;title&quot;&gt;预算必须计算尚未完成的承诺&lt;/title&gt;&lt;desc id=&quot;desc&quot;&gt;深色 = 已提交 U；蓝色 = 在途预留 R；空格 = 剩余额度。&lt;/desc&gt;
+&lt;style&gt;text { font-family: &#x27;Noto Sans CJK SC&#x27;, &#x27;PingFang SC&#x27;, &#x27;Microsoft YaHei&#x27;, sans-serif; }&lt;/style&gt;
+&lt;rect width=&quot;1120&quot; height=&quot;704&quot; fill=&quot;#f7f5ef&quot;/&gt;
+&lt;text x=&quot;36&quot; y=&quot;48&quot; font-size=&quot;28&quot; fill=&quot;#252a30&quot; font-weight=&quot;700&quot;&gt;预算必须计算尚未完成的承诺&lt;/text&gt;
+&lt;text x=&quot;36&quot; y=&quot;80&quot; font-size=&quot;16&quot; fill=&quot;#58616a&quot; font-weight=&quot;400&quot;&gt;深色 = 已提交 U；蓝色 = 在途预留 R；空格 = 剩余额度。&lt;/text&gt;
+&lt;text x=&quot;36&quot; y=&quot;125&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;总预算 12 字节；已有文本 ok = 2，附件 A / B 各为 6 个 UTF-8 字节。&lt;/text&gt;&lt;rect x=&quot;36&quot; y=&quot;146&quot; width=&quot;1048&quot; height=&quot;42&quot; rx=&quot;10&quot; fill=&quot;#e9e6dd&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;50&quot; y=&quot;175&quot; font-size=&quot;17&quot; fill=&quot;#252a30&quot; font-weight=&quot;700&quot;&gt;步骤&lt;/text&gt;&lt;text x=&quot;390&quot; y=&quot;175&quot; font-size=&quot;17&quot; fill=&quot;#252a30&quot; font-weight=&quot;700&quot;&gt;账本占用（每格 1 字节）&lt;/text&gt;&lt;text x=&quot;840&quot; y=&quot;175&quot; font-size=&quot;17&quot; fill=&quot;#252a30&quot; font-weight=&quot;700&quot;&gt;U / R&lt;/text&gt;&lt;text x=&quot;50&quot; y=&quot;229&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;初始：已有 ok&lt;/text&gt;&lt;rect x=&quot;390&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;422&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;454&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;486&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;518&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;550&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;582&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;614&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;646&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;678&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;710&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;742&quot; y=&quot;202&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;840&quot; y=&quot;229&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;2 / 0&lt;/text&gt;&lt;text x=&quot;50&quot; y=&quot;287&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;A 预留 6 字节&lt;/text&gt;&lt;rect x=&quot;390&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;422&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;454&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;486&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;518&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;550&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;582&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;614&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;646&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;678&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;710&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;742&quot; y=&quot;260&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;840&quot; y=&quot;287&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;2 / 6&lt;/text&gt;&lt;text x=&quot;50&quot; y=&quot;345&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;B 也要 6：拒绝内联&lt;/text&gt;&lt;rect x=&quot;390&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;422&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;454&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;486&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;518&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;550&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;582&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;614&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;646&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;678&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;710&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;742&quot; y=&quot;318&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;840&quot; y=&quot;345&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;2 / 6&lt;/text&gt;&lt;text x=&quot;50&quot; y=&quot;403&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;A 取消：释放预留&lt;/text&gt;&lt;rect x=&quot;390&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;422&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;454&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;486&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;518&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;550&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;582&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;614&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;646&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;678&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;710&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;742&quot; y=&quot;376&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;840&quot; y=&quot;403&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;2 / 0&lt;/text&gt;&lt;text x=&quot;50&quot; y=&quot;461&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;B 重试：重新预留&lt;/text&gt;&lt;rect x=&quot;390&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;422&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;454&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;486&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;518&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;550&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;582&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;614&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#76a9d1&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;646&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;678&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;710&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;742&quot; y=&quot;434&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;840&quot; y=&quot;461&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;2 / 6&lt;/text&gt;&lt;text x=&quot;50&quot; y=&quot;519&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;B 提交：额度转移&lt;/text&gt;&lt;rect x=&quot;390&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;422&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;454&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;486&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;518&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;550&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;582&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;614&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#364b5b&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;646&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;678&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;710&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;rect x=&quot;742&quot; y=&quot;492&quot; width=&quot;28&quot; height=&quot;31&quot; rx=&quot;3&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;840&quot; y=&quot;519&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;8 / 0&lt;/text&gt;&lt;rect x=&quot;36&quot; y=&quot;566&quot; width=&quot;1048&quot; height=&quot;88&quot; rx=&quot;10&quot; fill=&quot;#fff&quot; stroke=&quot;#c7cbc9&quot;/&gt;&lt;text x=&quot;54&quot; y=&quot;595&quot; font-size=&quot;18&quot; fill=&quot;#252a30&quot; font-weight=&quot;700&quot;&gt;两条独立不变量&lt;/text&gt;&lt;text x=&quot;54&quot; y=&quot;621&quot; font-size=&quot;17&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;预算：已提交 U + 在途预留 R ≤ 12。归属：只接受当前草稿代次的完成回调。&lt;/text&gt;&lt;text x=&quot;54&quot; y=&quot;646&quot; font-size=&quot;17&quot; fill=&quot;#252a30&quot; font-weight=&quot;400&quot;&gt;取消先释放预留；晚到回调再次检查代次。两者缺一，都会留下错误状态。&lt;/text&gt;
+&lt;text x=&quot;36&quot; y=&quot;682&quot; font-size=&quot;14&quot; fill=&quot;#58616a&quot; font-weight=&quot;400&quot;&gt;原创教学模型 · 合成事件与数值 · 不表示产品的真实运行测量&lt;/text&gt;
+&lt;/svg&gt;</code></pre></div></details></section><details><summary>查看生成记录</summary><div class="code-block"><pre tabindex="0" aria-label="单文件生成记录"><code>{
+  &quot;embeddedSvgSha256&quot;: &quot;c6409aa595bfd138d275706ee9fdf91594cd15601e8dd5ff825b405133babde9&quot;,
+  &quot;mode&quot;: &quot;self-contained-fixed-preview&quot;,
+  &quot;singleCompilerInputs&quot;: [
+    {
+      &quot;path&quot;: &quot;build-preview-single.mjs&quot;,
+      &quot;sha256&quot;: &quot;16db46d782622e6d4e1b0bb9e64be94bb147c0719b12e2bb4afb1427f9776e6a&quot;
+    },
+    {
+      &quot;path&quot;: &quot;single_page.py&quot;,
+      &quot;sha256&quot;: &quot;ec9b5411e12c6b4a5872f15119a6d8e0a34a246e7ba71f941c61976e1ef1b71d&quot;
+    }
+  ],
+  &quot;source&quot;: {
+    &quot;compilerInputs&quot;: [
+      {
+        &quot;path&quot;: &quot;build.mjs&quot;,
+        &quot;sha256&quot;: &quot;0219cab2b88aad1885f13eedb8776c3e702aae7144a01e41018f0db6d29de09c&quot;
+      },
+      {
+        &quot;path&quot;: &quot;svg_check.py&quot;,
+        &quot;sha256&quot;: &quot;585fee9c0b94840153344e18fe19615aa383c7a511f8ac8e589957f0a81eef49&quot;
+      },
+      {
+        &quot;path&quot;: &quot;reader.css&quot;,
+        &quot;sha256&quot;: &quot;f32f70b84793a11a42d20a9c253b038d03fd8d0be6c697c74c1b850cefa95e79&quot;
+      },
+      {
+        &quot;path&quot;: &quot;vendor/marked.mjs&quot;,
+        &quot;sha256&quot;: &quot;6540aa2544be84b3abdd9424fa287120e9ed7c7600512dd92c097493121a5951&quot;
+      }
+    ],
+    &quot;documents&quot;: 1,
+    &quot;entry&quot;: &quot;02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/worked-case.md&quot;,
+    &quot;excluded&quot;: [],
+    &quot;format&quot;: 1,
+    &quot;images&quot;: 1,
+    &quot;inputs&quot;: [
+      {
+        &quot;path&quot;: &quot;02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/worked-case.md&quot;,
+        &quot;sha256&quot;: &quot;60fac9e771d9904e1cb34adcd86566d20f9ef5791fa77048f88821987b5fb69e&quot;
+      },
+      {
+        &quot;path&quot;: &quot;assets/figures/context-budget-ledger.svg&quot;,
+        &quot;sha256&quot;: &quot;865d60dfee9f8dbb94993ca705b78b7e6ef435538672aabbb1a5ac65b239a594&quot;
+      }
+    ],
+    &quot;mode&quot;: &quot;typesetting-preview&quot;,
+    &quot;parser&quot;: &quot;marked 16.4.2 (lexer only; vendored)&quot;,
+    &quot;renderer&quot;: &quot;0.1.0&quot;,
+    &quot;sourceFingerprint&quot;: &quot;f63cba1903cce858ba6a52e0631ab63faa5c9504e5fd8b8d20d3a87dcfd0d72b&quot;,
+    &quot;warnings&quot;: [
+      {
+        &quot;source&quot;: &quot;02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/worked-case.md&quot;,
+        &quot;target&quot;: &quot;../../01-Frontend-Design-And-HTML-Templates/interactive-study/demo.js&quot;,
+        &quot;type&quot;: &quot;missing-local-target&quot;
+      },
+      {
+        &quot;source&quot;: &quot;02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/worked-case.md&quot;,
+        &quot;target&quot;: &quot;../../04-Extracted-Core-Code-And-Scripts/core-code-lab/workspace-core/workspaces-model.mjs&quot;,
+        &quot;type&quot;: &quot;missing-local-target&quot;
+      },
+      {
+        &quot;source&quot;: &quot;02-Illustrated-Deep-Dive-Book/05-Context-And-File-Pipeline/worked-case.md&quot;,
+        &quot;target&quot;: &quot;../../04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.mjs&quot;,
+        &quot;type&quot;: &quot;missing-local-target&quot;
+      }
+    ]
+  },
+  &quot;styleSha256Base64&quot;: &quot;8y9wuEeToRpC0gqcJTsDjQP9jQvmxpfHTBuFDO+pXnk=&quot;
+}</code></pre></div></details></main></div>
+<footer class="footer"><span>拆开 Claude App · 静态阅读版</span><span>从 Markdown 生成 · 内容以原文为准 · <a href="#main">回到正文 ↑</a></span></footer></body></html>

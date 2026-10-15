@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc">
+<title id="title">版本前提挡住旧写入，回执只证明那一次</title>
+<desc id="desc">原创合成单资源模型，不代表 Claude 的真实服务端协议。A 与 B 同读 r7，值为 enabled=true、label=original。A 带 r7 条件关闭 enabled，成功产生 r8。B 仍带 r7 修改 label 时发生冲突，资源保持 r8。B 重新读取 r8，只把 label=renamed 的意图应用到当前值，用新操作身份和 r8 条件提交，得到 r9，值为 enabled=false、label=renamed。之后 A 使用相同 operationId、原 r7 前提和原 payload 重放，只返回 A 当时提交成功的 r8 回执，不再写入。当前资源仍为 r9，旧回执不能覆盖当前 r9 快照。</desc>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}</style>
+<defs><marker id="arrow-muted" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#68665c"/></marker><marker id="arrow-sage" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#40634d"/></marker><marker id="arrow-rust" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#984a36"/></marker><marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#395d70"/></marker></defs>
+<rect x="0" y="0" width="1000" height="650" rx="0" fill="#f5f1e8"/>
+<text id="text-1" x="36" y="35" font-size="14" fill="#984a36" font-weight="600" text-anchor="start">原创合成模型 · 条件写入与重放</text>
+<text id="text-2" x="36" y="80" font-size="30" fill="#29291f" font-weight="700" text-anchor="start">版本前提挡住旧写入，回执只证明那一次</text>
+<text id="text-3" x="36" y="111" font-size="17" fill="#68665c" font-weight="400" text-anchor="start">A、B 是独立客户端；状态字段为 enabled / label。</text>
+<text id="text-4" x="59" y="151" font-size="16" fill="#68665c" font-weight="600" text-anchor="start">客户端动作</text>
+<text id="text-5" x="677" y="151" font-size="16" fill="#68665c" font-weight="600" text-anchor="start">权威资源</text>
+<rect x="36" y="166" width="928" height="59" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<circle cx="64" cy="195.5" r="15" fill="#e7edf0"/>
+<text id="text-6" x="64" y="202" font-size="18" fill="#395d70" font-weight="700" text-anchor="middle">1</text>
+<text id="text-7" x="92" y="191" font-size="20" fill="#29291f" font-weight="600" text-anchor="start">A、B 同读 r7</text>
+<text id="text-8" x="92" y="214" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">各自保留同一份旧草稿。</text>
+<path d="M613 195.5H654" fill="none" stroke="#395d70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-blue)"/>
+<rect x="670" y="172" width="281" height="47" rx="8" fill="#e7edf0"/>
+<text id="text-9" x="681" y="192" font-size="20" fill="#395d70" font-weight="700" text-anchor="start">r7</text>
+<text id="text-10" x="681" y="211" font-size="15" fill="#395d70" font-weight="400" text-anchor="start">enabled=true  ·  label=original</text>
+<rect x="36" y="233" width="928" height="59" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<circle cx="64" cy="262.5" r="15" fill="#e6eee5"/>
+<text id="text-11" x="64" y="269" font-size="18" fill="#40634d" font-weight="700" text-anchor="middle">2</text>
+<text id="text-12" x="92" y="258" font-size="20" fill="#29291f" font-weight="600" text-anchor="start">A：带 r7 条件，关闭 enabled</text>
+<text id="text-13" x="92" y="281" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">前提仍成立 → 接受这次提交。</text>
+<path d="M613 262.5H654" fill="none" stroke="#40634d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-sage)"/>
+<rect x="670" y="239" width="281" height="47" rx="8" fill="#e6eee5"/>
+<text id="text-14" x="681" y="259" font-size="20" fill="#40634d" font-weight="700" text-anchor="start">r8</text>
+<text id="text-15" x="681" y="278" font-size="15" fill="#40634d" font-weight="400" text-anchor="start">enabled=false  ·  label=original</text>
+<rect x="36" y="300" width="928" height="59" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<circle cx="64" cy="329.5" r="15" fill="#f3e4dc"/>
+<text id="text-16" x="64" y="336" font-size="18" fill="#984a36" font-weight="700" text-anchor="middle">3</text>
+<text id="text-17" x="92" y="325" font-size="20" fill="#29291f" font-weight="600" text-anchor="start">B：仍带旧 r7，修改 label</text>
+<text id="text-18" x="92" y="348" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">前提已过期 → conflict，不修改资源。</text>
+<path d="M613 329.5H654" fill="none" stroke="#984a36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-rust)"/>
+<path d="M627 320L641 339M641 320L627 339" fill="none" stroke="#984a36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="670" y="306" width="281" height="47" rx="8" fill="#f3e4dc"/>
+<text id="text-19" x="681" y="326" font-size="20" fill="#984a36" font-weight="700" text-anchor="start">仍为 r8</text>
+<text id="text-20" x="681" y="345" font-size="15" fill="#984a36" font-weight="400" text-anchor="start">enabled=false  ·  label=original</text>
+<rect x="36" y="367" width="928" height="59" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<circle cx="64" cy="396.5" r="15" fill="#e6eee5"/>
+<text id="text-21" x="64" y="403" font-size="18" fill="#40634d" font-weight="700" text-anchor="middle">4</text>
+<text id="text-22" x="92" y="392" font-size="20" fill="#29291f" font-weight="600" text-anchor="start">B：在 r8 上只应用 label 意图</text>
+<text id="text-23" x="92" y="415" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">新操作身份 + r8 条件 → 接受重基提议。</text>
+<path d="M613 396.5H654" fill="none" stroke="#40634d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-sage)"/>
+<rect x="670" y="373" width="281" height="47" rx="8" fill="#e6eee5"/>
+<text id="text-24" x="681" y="393" font-size="20" fill="#40634d" font-weight="700" text-anchor="start">r9</text>
+<text id="text-25" x="681" y="412" font-size="15" fill="#40634d" font-weight="400" text-anchor="start">enabled=false  ·  label=renamed</text>
+<rect x="36" y="447" width="928" height="153" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<circle cx="64" cy="473" r="15" fill="#f3ebd5"/>
+<text id="text-26" x="64" y="479" font-size="18" fill="#856326" font-weight="700" text-anchor="middle">5</text>
+<text id="text-27" x="92" y="480" font-size="21" fill="#29291f" font-weight="600" text-anchor="start">A 重放原请求：返回过去的回执，不再次写入</text>
+<rect x="56" y="499" width="395" height="81" rx="9" fill="#f3ebd5"/>
+<text id="text-28" x="74" y="530" font-size="23" fill="#856326" font-weight="700" text-anchor="start">A 原操作重放 → 原回执 r8</text>
+<text id="text-29" x="74" y="558" font-size="16" fill="#68665c" font-weight="400" text-anchor="start">同一操作身份、原 r7 前提、原载荷</text>
+<path d="M466 525H546" fill="none" stroke="#984a36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-rust)" stroke-dasharray="5 5"/>
+<path d="M495 515L511 535M511 515L495 535" fill="none" stroke="#984a36" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text id="text-30" x="505" y="559" font-size="15" fill="#984a36" font-weight="600" text-anchor="middle">不可覆盖</text>
+<rect x="560" y="499" width="384" height="81" rx="9" fill="#e6eee5"/>
+<text id="text-31" x="578" y="530" font-size="23" fill="#40634d" font-weight="700" text-anchor="start">当前资源仍为 r9</text>
+<text id="text-32" x="578" y="558" font-size="17" fill="#40634d" font-weight="400" text-anchor="start">enabled=false  ·  label=renamed</text>
+<text id="text-33" x="36" y="631" font-size="16" fill="#68665c" font-weight="400" text-anchor="start">回执记录那一次的结果；当前值仍需读取权威资源。教学轨迹不代表真实产品协议。</text>
+</svg>
