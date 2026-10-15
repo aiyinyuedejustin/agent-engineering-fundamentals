@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2026-10-15T04:36:38.579Z",
+  "file": "03-split-artifact-ide-template.html",
+  "sha256": "c03dcd318877d8693721954efe9499779ab10af2e6b12f8abbe029c570d3538a",
+  "runner": {
+    "node": "v24.19.0",
+    "jsdom": "26.1.0"
+  },
+  "scope": "Local jsdom DOM/input contracts only; resource loading disabled. CSP strings inspected, never claimed as enforced. Retained static structure is not proof of rendered visibility.",
+  "summary": {
+    "total": 32,
+    "passed": 32,
+    "failed": 0
+  },
+  "results": [
+    {
+      "id": "INPUT-01",
+      "title": "Text-free CSS shape is supported static layout content",
+      "result": "pass",
+      "elapsedMs": 232
+    },
+    {
+      "id": "INPUT-02",
+      "title": "HR is retained without requiring neighboring text",
+      "result": "pass",
+      "elapsedMs": 78
+    },
+    {
+      "id": "INPUT-03",
+      "title": "CSS generated content may accompany text-free static structure",
+      "result": "pass",
+      "elapsedMs": 66
+    },
+    {
+      "id": "INPUT-04",
+      "title": "Empty layout skeletons are accepted; no rendered visibility inference",
+      "result": "pass",
+      "elapsedMs": 67
+    },
+    {
+      "id": "INPUT-05",
+      "title": "CSS-hidden static structure remains valid under the structural contract",
+      "result": "pass",
+      "elapsedMs": 61
+    },
+    {
+      "id": "INPUT-06",
+      "title": "Empty input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 46
+    },
+    {
+      "id": "INPUT-07",
+      "title": "Whitespace-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 46
+    },
+    {
+      "id": "INPUT-08",
+      "title": "Comment-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 42
+    },
+    {
+      "id": "INPUT-09",
+      "title": "Stylesheet-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 41
+    },
+    {
+      "id": "INPUT-10",
+      "title": "Several stylesheets and whitespace preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 54
+    },
+    {
+      "id": "INPUT-11",
+      "title": "Removed script-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 37
+    },
+    {
+      "id": "INPUT-12",
+      "title": "Removed SVG-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 33
+    },
+    {
+      "id": "INPUT-13",
+      "title": "Removed data-image-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 45
+    },
+    {
+      "id": "INPUT-14",
+      "title": "Removed inert nested-template input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 42
+    },
+    {
+      "id": "INPUT-15",
+      "title": "Removed form-only input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 41
+    },
+    {
+      "id": "INPUT-16",
+      "title": "Over-limit input preserves last-good frame and reports rejection",
+      "result": "pass",
+      "elapsedMs": 46
+    },
+    {
+      "id": "INPUT-17",
+      "title": "The 100,000-character input boundary is inclusive",
+      "result": "pass",
+      "elapsedMs": 52
+    },
+    {
+      "id": "INPUT-18",
+      "title": "99,999 characters remain supported",
+      "result": "pass",
+      "elapsedMs": 60
+    },
+    {
+      "id": "INPUT-19",
+      "title": "Plain text and escaped tags stay literal",
+      "result": "pass",
+      "elapsedMs": 101
+    },
+    {
+      "id": "INPUT-20",
+      "title": "Broken HTML nesting is normalized to retained static elements",
+      "result": "pass",
+      "elapsedMs": 56
+    },
+    {
+      "id": "INPUT-21",
+      "title": "Raw style termination cannot preserve a subsequent script",
+      "result": "pass",
+      "elapsedMs": 38
+    },
+    {
+      "id": "INPUT-22",
+      "title": "Active elements, navigation, event handlers and URL attributes are removed",
+      "result": "pass",
+      "elapsedMs": 43
+    },
+    {
+      "id": "INPUT-23",
+      "title": "SVG foreignObject and MathML trees are removed as complete subtrees",
+      "result": "pass",
+      "elapsedMs": 47
+    },
+    {
+      "id": "INPUT-24",
+      "title": "Data-image and local-fragment image URLs are removed with IMG nodes",
+      "result": "pass",
+      "elapsedMs": 51
+    },
+    {
+      "id": "INPUT-25",
+      "title": "CSS URLs remain in CSS; image blocking belongs to iframe CSP",
+      "result": "pass",
+      "elapsedMs": 58
+    },
+    {
+      "id": "INPUT-26",
+      "title": "Escaped CSS url tokens are retained; no false DOM-sanitizer guarantee",
+      "result": "pass",
+      "elapsedMs": 46
+    },
+    {
+      "id": "INPUT-27",
+      "title": "CSS imports and font URLs remain text; network enforcement is CSP responsibility",
+      "result": "pass",
+      "elapsedMs": 44
+    },
+    {
+      "id": "INPUT-28",
+      "title": "Malformed CSS is not a parser-level HTML failure",
+      "result": "pass",
+      "elapsedMs": 53
+    },
+    {
+      "id": "INPUT-29",
+      "title": "500 nested retained nodes still preserve the innermost text",
+      "result": "pass",
+      "elapsedMs": 270
+    },
+    {
+      "id": "INPUT-30",
+      "title": "Repeated rejection then a valid graphic preserves and replaces the expected document",
+      "result": "pass",
+      "elapsedMs": 65
+    },
+    {
+      "id": "INPUT-31",
+      "title": "No-text graphic replaces previous good content via keyboard shortcut",
+      "result": "pass",
+      "elapsedMs": 47
+    },
+    {
+      "id": "INPUT-32",
+      "title": "Error restore returns a valid no-text static layout",
+      "result": "pass",
+      "elapsedMs": 44
+    }
+  ]
+}

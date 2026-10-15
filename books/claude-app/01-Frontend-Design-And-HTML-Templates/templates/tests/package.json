@@ -4,7 +4,7 @@
   "private": true,
   "description": "Static and simulated DOM checks for six original offline templates",
   "scripts": {
-    "test": "node run.cjs && node edge.cjs && node preview-lifecycle.cjs && node editorial-navigation.cjs && node active-section.cjs && node --test keyboard-focus.test.cjs"
+    "test": "node run.cjs && node edge.cjs && node preview-lifecycle.cjs && node editorial-navigation.cjs && node active-section.cjs && node --test keyboard-focus.test.cjs && node preview-input-contracts.cjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0"
