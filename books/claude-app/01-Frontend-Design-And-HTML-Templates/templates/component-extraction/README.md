@@ -8,6 +8,19 @@
 
 图：第一次拆分只移动文件；第二次迁移才改变资源所有权。右侧是教学合同，不是产品运行截图。
 
+## 给 HTML 预览器的单文件入口
+
+[preview-single.html](preview-single.html) 仅供会重写外链脚本加载顺序的 HTML 预览器使用。它由 [build-preview.cjs](build-preview.cjs) 从现有 demo.html、三份 CSS 和 scoped-chat.js 原样内联生成，初始化脚本仍在组件源码之后；没有第二份手写业务逻辑。日常嵌入和原生同源/file 路径验证仍使用 [demo.html](demo.html)。预览器失败不能直接推断原生页面失败。
+
+生成物不手工编辑。在本目录运行下列命令，输出父目录须存在、文件须不存在；工具以 wx 创建，不覆盖已有文件或链接：
+
+```sh
+node build-preview.cjs . /tmp/atelier-component-preview.html
+NODE_PATH="$PWD/../tests/node_modules" node --test test-preview.cjs
+```
+
+固定三条 CSS 路径、一个组件 script 路径和出现次数都受检查；CSS 或 JS 含对应 HTML 结束标记时拒绝生成，避免把源码意外变成新 HTML 节点。[test-preview.cjs](test-preview.cjs) 检查内联内容及顺序、双实例初始化、关闭标签反例、重复/未知资源，以及输出抢占时内容保留。模拟 DOM 通过不代替实际预览器、布局或原生 file URL 验收。
+
 ## 1. 先对模板 02 做“行为不变”的文件拆分
 
 从 `templates/` 目录运行以下命令（Node.js 20+，输出目录必须不存在，其父目录必须已存在）：
