@@ -131,3 +131,7 @@ Tailwind v4 已转向 CSS-first，JavaScript 配置不会自动发现，需要�
 ![搜索定位后正文与目录均为配色与主题](../../assets/screenshots/editorial-active-search-6cab783.jpg)
 
 普通滚动只更新当前项，不重写最近一次导航的URL片段。此次为单一桌面视口的针对性复验，不包括file URL、窄屏、缩放、真实输入法或辅助技术。
+
+## 内嵌令牌同步
+
+[令牌同步检查器](token-parity/README.md)核对六页内嵌声明与共享CSS/JSON，覆盖60个配色与主题单元。它与交互、浏览器绘制分别验证；检查器有独立95项自测，不计入203项模板交互检查。

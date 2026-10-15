@@ -116,3 +116,5 @@
 ## Tailwind 3 与 4 的接入边界
 
 现有 `tailwind.config.js` 使用3.4格式。v4的 `@config` 不会恢复已经取消的 `corePlugins`，因此关闭Preflight必须在CSS入口处完成。[v4 CSS-first桥接](tailwind-v4-bridge/README.md)提供原有局部令牌到工具类的映射、无Preflight入口、固定版本编译测试及嵌套主题的浏览器验收；未通过浏览器的作用域变体已移入反例附录。普通语义色类已能随容器切主题，六套原生HTML无需迁移。
+
+共享变量与单文件模板需要一起更新；[令牌同步检查](../templates/token-parity/README.md)会比较规则、选择器、媒体条件、声明值与顺序，并显式拒绝未建模的外部样式和转义声明。
