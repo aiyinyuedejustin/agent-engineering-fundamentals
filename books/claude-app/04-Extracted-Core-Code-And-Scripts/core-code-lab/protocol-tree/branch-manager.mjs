@@ -63,8 +63,10 @@ export class ConversationBranches {
     messages = messages.map(clone);
     // Atomic validation is an intentional hardening in this teaching version.
     const proposed = new Map(this.messageByUuid);
+    // 隐藏的待答消息仍占用身份；显示过滤不能释放它的 UUID。
+    const reservedDangling = new Set(this.danglingHumanMessages.map(message => message.uuid));
     for (const message of messages) {
-      if (!message.uuid || message.uuid === ROOT || proposed.has(message.uuid)) throw new Error('Duplicate or reserved UUID');
+      if (!message.uuid || message.uuid === ROOT || proposed.has(message.uuid) || reservedDangling.has(message.uuid)) throw new Error('Duplicate or reserved UUID');
       if (!message.parent_message_uuid) throw new Error('Parent UUID required');
       proposed.set(message.uuid, message);
     }

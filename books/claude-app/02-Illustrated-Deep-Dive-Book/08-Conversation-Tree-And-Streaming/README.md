@@ -113,6 +113,14 @@ sequenceDiagram
 
 不能仅凭“主路径最后一条是 assistant”就判断当前完全空闲，也不能把所有悬空 human 平铺成已经完成的对话。相邻的多设备同步路径还会查看 updated time、当前 leaf 是否已知及本地是否正在写入，再决定是否重新读取会话。[PT-53]
 
+### 显示分区不能释放消息身份
+
+在本书原创模型中，暂不展示的human仍占用UUID。如果append只查主Map，调用者就能新建一条同UUID的assistant，而隐藏集合里还保存着原human；重新组合完整会话时，两个不同记录争用同一个主键。
+
+所以身份检查覆盖主树与隐藏集合，批量写入先整体校验，再更新四张Map和当前leaf。编辑与重试复用同一检查入口；批次的最后一项冲突，也不能让前面的合法项留下半次修改。这与“把隐藏消息恢复显示”是两种操作，后者需要另行定义原子迁移合同。
+
+[可运行反例](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/protocol-tree/test/branch-reserved.test.mjs)中的8项主测试，加[独立引用保持检查](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/protocol-tree/test/branch-reserved.audit.test.mjs)，覆盖append/edit/retry冲突、批量回滚和显示选项。这里说明原创模型的身份合同，不是目标产品缺陷复现。
+
 ## 5. 发送、编辑、重试是三种不同的树操作
 
 ### 5.1 普通发送：先创建可识别的乐观节点

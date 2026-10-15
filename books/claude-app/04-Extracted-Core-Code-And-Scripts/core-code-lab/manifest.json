@@ -224,17 +224,17 @@
     },
     {
       "path": "protocol-tree/README.md",
-      "bytes": 4574,
-      "sha256": "dcd9edd552412c6884e59a7d2e6b15f84d7f9847fd41b399db123ed6819cc033",
-      "source": "staging/protocol-tree/README.md",
-      "copy": "updated-after-adversarial-tests"
+      "bytes": 4863,
+      "sha256": "8e3080b9216f798da1fe0c4de2033e877cd25ba3c3d1cb7ea06683adac545dd5",
+      "source": "original-integration",
+      "copy": "modified"
     },
     {
       "path": "protocol-tree/branch-manager.mjs",
-      "bytes": 7522,
-      "sha256": "e58f07a26125f2b6b5b44cffdec2c57076121c351a341ffc09a8c350801b53b9",
-      "source": "staging/protocol-tree/branch-manager.mjs",
-      "copy": "updated-after-adversarial-tests"
+      "bytes": 7740,
+      "sha256": "9db2aaafd25baa13ed0cc1dacc1692e218d56ed09e0c596b4ed507873b97b97a",
+      "source": "original-integration",
+      "copy": "modified"
     },
     {
       "path": "protocol-tree/content-reducer.mjs",
@@ -277,6 +277,20 @@
       "copy": "new",
       "bytes": 10609,
       "sha256": "8b7f25384772109789407fa06aee7de0a94c099e93f96fc3a39358c0b790ca5d"
+    },
+    {
+      "path": "protocol-tree/test/branch-reserved.audit.test.mjs",
+      "bytes": 1114,
+      "sha256": "717f112a9a1555476d6a84deec6a5a80ea3be3ed61c82863bc98b3454e0e3e85",
+      "source": "original-integration",
+      "copy": "new"
+    },
+    {
+      "path": "protocol-tree/test/branch-reserved.test.mjs",
+      "bytes": 2477,
+      "sha256": "4c4d3762ee503e32bc290229b436908a2435d51db532e94a3913e0fb0c94b3a6",
+      "source": "original-integration",
+      "copy": "new"
     },
     {
       "path": "protocol-tree/test/branches.test.mjs",
