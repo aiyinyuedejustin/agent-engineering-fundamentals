@@ -1,0 +1,21 @@
+{
+  "date_utc": "2026-10-15",
+  "tag": "napi@2.16.17",
+  "repository": "napi-rs/napi-rs",
+  "source_files": [
+    {
+      "path": "crates/napi/src/async_work.rs",
+      "blob_sha": "7a9a43e3af496e460c2806c88519aff95e8a1a5e",
+      "url": "https://github.com/napi-rs/napi-rs/blob/napi@2.16.17/crates/napi/src/async_work.rs"
+    },
+    {
+      "path": "crates/napi/src/bindgen_runtime/js_values/task.rs",
+      "blob_sha": "f4facfa5067c44dc3045f36a0e2f857adecf318c",
+      "url": "https://github.com/napi-rs/napi-rs/blob/napi@2.16.17/crates/napi/src/bindgen_runtime/js_values/task.rs"
+    }
+  ],
+  "sample_version_clue_count": 9,
+  "sample_version_clue_dump_contiguous": true,
+  "sample_source_binding": "not proven",
+  "artifact_sha256": "85549bb5418d25616d4b602c5eccd097e946825b0dfe23cb1f9d515f3d1e109b"
+}
