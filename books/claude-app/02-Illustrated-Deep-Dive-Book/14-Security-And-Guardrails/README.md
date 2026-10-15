@@ -55,7 +55,7 @@ workspace Bash 接收 command 字符串，执行路径将其交给 `bash -c`。�
 ### 2.2 语法、语义与权限是三个不同输出
 
 ```mermaid
-flowchart LR
+flowchart TB
     Text["原始输入"] --> Parse{"语法可明确解析？"}
     Parse -->|"否"| Stop["拒绝或请求改写"]
     Parse -->|"是"| AST["命令结构或结构化 argv"]

@@ -54,7 +54,7 @@ frame-shell dictation 指定一个 packaged capture worklet。该 worklet读取�
 Web Audio 的工作线程与主线程分工，是浏览器提供的机制；具体 product facade 怎样使用它，需要调用链证据。[W3C Web Audio API](https://www.w3.org/TR/webaudio-1.1/)
 
 ```mermaid
-flowchart LR
+flowchart TB
     MIC[MediaStream] --> SRC[MediaStreamSource]
     SRC --> CAP[SDK capture worklet]
     CAP -->|Float32 block + sample rate| FRAME[SDK framing / codec / transport]
