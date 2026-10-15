@@ -18,7 +18,7 @@
 
 ![流式性能分层边界](../../assets/figures/performance-streaming-render-boundaries.svg)
 
-图中只表达选定源码的职责关系。不同 surface、加载状态和功能开关可以走不同分支；不能据此绘制一个虚构的、全部模块同时生效的“Claude 全平台统一管线”。
+图中按职责组织选定源码。具体经过哪些模块，取决于 surface、加载状态与功能开关；各分支并非同时生效。
 
 ## 2. 先确定“快”究竟在测什么
 
@@ -63,7 +63,7 @@ chat reply wrapper 传入 useStreamingFadeIn=true，同时传递 isStreaming、h
 | 请求，loader 当时 pending | react-markdown fallback | 有意避免在当前挂载中切换 renderer |
 | 请求，loader 当时非 pending | streaming renderer | 可以使用下述分块与揭示机制 |
 
-源码的 telemetry 直接区分 streaming_md、react_md_fallback、react_md。这个分类恰好提示研究者：不要只从某个组件名字推断所有用户当前走的路径。[PF-03]
+源码的 telemetry 用 streaming_md、react_md_fallback、react_md 区分这三条路径；分析渲染行为时，也应按实际分支分别观察。[PF-03]
 
 ### 3.2 两层“平滑”解决两个不同问题
 
@@ -79,7 +79,7 @@ chat reply wrapper 传入 useStreamingFadeIn=true，同时传递 isStreaming、h
 
 所见默认参数是 stepChars=22、targetLagMs=550、minStepMs=25、maxStepMs=150。它们属于这个 helper 的算法参数；550ms 不是实测网络延迟，22 也不是 token 数。JavaScript 的字符串位置通常以 UTF-16 code units 表示，不能把它直接翻译成汉字数或 Unicode grapheme 数。[PF-04]
 
-性能与体验的取舍在这里非常具体：较慢揭示可以压低瞬时更新量、减少半个语法结构闪烁，但也可能增加“数据早已到达、用户还没看完”的尾部等待。任何移植都应该测量这部分人为等待，而不是只夸动画顺滑。
+较慢揭示可以压低瞬时更新量、减少半个语法结构闪烁，也可能增加“数据早已到达、用户还没看完”的尾部等待。移植时，应把这部分人为等待纳入测量。
 
 ## 4. 解析范围：稳定前缀与活动尾块
 
@@ -173,7 +173,7 @@ provenSafe 必须对应明确的限制与测试，而不是“看起来是纯文
 
 分块组件具有专门的 memo 比较逻辑，比较 text、boundaries、settled、HAST、fast-path 开关与 word-fade 参数等；settled 与 streaming 阶段对 processor/options/components 的复用条件不同。[PF-13]
 
-这至少说明优化对象不是一个“整份聊天记录的大组件”。不过，仅看 memo 也无法得出“稳定块绝不会重渲染”：Context、父级身份、组件内部 state 和不同分支都可能影响工作。
+memo 将复用判断细化到块；稳定块是否重渲染，仍取决于 Context、父级身份、组件内部 state 和所在分支。
 
 移植时应把三个问题分开验收：
 
@@ -187,7 +187,7 @@ provenSafe 必须对应明确的限制与测试，而不是“看起来是纯文
 
 ### 7.1 工厂、调用者、资产三点闭合
 
-这里不只搜到了 Worker 字样：
+高亮 Worker 的静态调用链连接了三个位置：
 
 1. chat 初始化注册 shared highlight host。
 2. host factory 构造名为 shiki-highlight 的 module Worker。
@@ -311,7 +311,7 @@ Markdown deferred mode 给直接子块设置 content-visibility:auto 和按内�
 
 流式表格不断增加行时，浏览器可能重新分配列宽，引起整张表和后续内容跳动。所见 table hook 记录行数、末行长度、先前宽度、可用空间和列宽；在满足条件时跳过新的完整测量，并按行数增长调整采样间隔。只有宽度差异足够大或溢出条件需要时，才更新 min-width。[PF-42]
 
-这是一种很值得迁移的细节：文本解析优化解决不了列宽抖动。另一方面，代码确实仍然调用 layout reads；不能说“表格从不强制布局”。应以实际 layout/recalculate style trace 判断改动是否减少同步布局成本。
+列宽抖动需要独立于文本解析的布局策略。上述策略仍会调用 layout reads，其同步布局成本是否降低，应通过实际 layout/recalculate style trace 判断。
 
 建议测试至少包括：窄窗口、超长不可换行内容、中途变更列数、删除行、切换字体、代码单元格和高倍缩放。
 

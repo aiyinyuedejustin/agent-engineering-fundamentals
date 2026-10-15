@@ -100,7 +100,7 @@ function filter(id, value) { $(id).value = value; $(id).dispatchEvent(new w.Even
   Object.defineProperty(w.navigator, 'clipboard', {configurable: true, value: {writeText: async () => { throw Error('denied'); }}});
   click('.card-copy');
   await new Promise(resolve => setImmediate(resolve));
-  test('Clipboard denial is reported truthfully', () => assert($('toast').textContent.includes('未允许复制')));
+  test('Clipboard denial is reported truthfully', () => assert($('toast').textContent.includes('自动复制未完成')));
   test('No network attempts or runtime errors', () => { assert.deepEqual(network, []); assert.deepEqual(errors, []); });
   console.log(JSON.stringify({status: 'passed', tests: results.length, results,
     scope: 'Simulated DOM only. Does not validate real-browser rendering, native clipboard/dialog or CSS color conversion.'}, null, 2));

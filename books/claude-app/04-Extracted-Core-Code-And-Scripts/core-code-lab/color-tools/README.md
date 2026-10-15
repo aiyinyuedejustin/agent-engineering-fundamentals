@@ -227,3 +227,13 @@ python3 "$TOOLS/tests/verify_resolution_baseline.py" \
 ```
 
 原 test_browser_dom.cjs 用于不带扩展的基线；test_resolution_browser_dom.cjs 用于已追加扩展的页面。后者覆盖19条派生复制、全部23条原声明复制、14个新增HEX、5个超域值、4个上下文值、独立CSV列和拒绝剪贴板。DOM测试不是实际浏览器像素、原生剪贴板/对话框或已登录产品验证。
+
+### 手动复制兼容性检查
+
+离线色表详情提供始终可选取的只读文本框，可用“全选待复制文本”后按 Ctrl+C / ⌘C。自动复制只调用写入API，不请求读取权限；兼容路径使用当前详情对话框作为临时文本框宿主，并保证清理及焦点恢复。请求完成提示不等同于已核验系统或远程剪贴板粘贴结果。
+
+```sh
+node "$TOOLS/tests/test_copy_fallback_dom.cjs" "/path/to/generated/index.html"
+```
+
+此项是使用合成写入结果的DOM回归，不读取真实剪贴板；覆盖模态宿主、抛错清理、焦点恢复、重复操作、手动选取和原数据不变。
