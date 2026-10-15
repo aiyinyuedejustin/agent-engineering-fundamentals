@@ -425,10 +425,10 @@ const recoveredPdfPoint = apply(invert(viewport.matrix), cssPoint);
 先进入上述 `04-Extracted-Core-Code-And-Scripts/native-voice-geometry/` 实验目录，再运行：
 
 ```sh
-node --test models.test.mjs
+node --test models.test.mjs adversarial.test.mjs
 ```
 
-本次结果为 61 个测试通过。其中 PDF round-trip 测试在六种等价/正交角度和多种缩放下生成 360 组点，要求正向再逆向回到原点；还单独测试矩形 shear、非零 crop、DPR、右下边界、NaN、退化矩阵和 stale capture。
+本次结果为 71 个测试通过。其中 PDF round-trip 测试在六种等价/正交角度和多种缩放下生成 360 组点，要求正向再逆向回到原点；还单独测试矩形 shear、非零 crop、DPR、右下边界、NaN、退化矩阵和 stale capture。
 
 音频测试则验证：
 
@@ -437,6 +437,8 @@ node --test models.test.mjs
 - 中途缺口只在音频恢复时计数一次。
 - 播放时长不包含 zero-fill 或尚未消费的队列。
 - stop/interrupt 后，旧 epoch 的回包被忽略。
+
+另有 10 个数值域回归覆盖极小/极大尺度逆变换、各向异性、Float32 边界及整批溢出拒绝。这些测试扩展原创模型的数值可靠性，不表示极值输入常见于真实设备。
 
 这些是原创逻辑模型的测试结果，不是 Claude 在真实浏览器、麦克风、声卡或多显示器桌面上的运行结果。实时线程性能、codec 音质、硬件时延、OS 权限与网络拥塞都需要另一种获准实验。
 

@@ -12,7 +12,7 @@ description: Build or refine calm, reading-first chat and knowledge interfaces i
 ## Workflow
 
 1. 明确当前主要活动：阅读、输入、导航、检查作品。先以灰度建立四者的层级，再上色。确认目标语言、窄屏行为、主题与实际内容长度。
-2. 阅读 [参数与来源边界](references/design-contract.md)。表内参数属于指定版本和选择器；不要把旧 HSL、v2、CDS 和桌面框架混成一个「官方统一值」。需要复核精确来源时再读 [静态令牌记录](references/observed-tokens.json)。
+2. 阅读 [参数与来源边界](references/design-contract.md)。表内参数属于指定版本和选择器；不要把旧 HSL、v2、CDS 和桌面框架混成一个「官方统一值」。常用精选事实见 [静态令牌记录](references/observed-tokens.json)；本书已发布选定 profile 的完整 1341 条色表及推导扩展随包保存在 [color-catalog.json](references/color-catalog.json)，按 [色表取值指南](references/color-catalog-guide.md) 使用。完整仅指该选定范围，不是所有运行时 CSS。
 3. 用 [原创 tokens.css](assets/tokens.css) 与 [skeleton.html](assets/skeleton.html) 起步；二者可一同复制到项目。本地字体、无外部依赖，不需要本书其他文件。若接入已有组件库，映射语义令牌而非整份覆盖全局 CSS。
 4. 先落实阅读宽度、正文/操作字体、composer 状态与 focus-visible，再做装饰。中文正文单独决定黑体或宋体；不要以 Latin serif 名称推断中文字形。需要模态窗口或紧凑设置时，再读 [交互与密度契约](references/interaction-contracts.md) 和 [原创可运行小例](assets/interaction-recipes.html)。
 5. 实现空态、长内容、附件处理中、失败可重试、生成中、取消后等真实状态。只实现当前产品确实存在的状态，不为清单虚构模型、附件或网络流程。骨架只示范布局与本地交互，接模型前清楚区分本地提交和实际完成。

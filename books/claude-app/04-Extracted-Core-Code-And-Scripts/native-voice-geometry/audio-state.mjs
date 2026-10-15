@@ -33,8 +33,12 @@ export class PcmFrameAssembler {
   push(samples) {
     // Snapshot once, then validate all input before mutating assembly state.
     const batch=Array.from(samples);
-    for (const sample of batch) {
+    for (let i=0;i<batch.length;i++) {
+      const sample=batch[i];
       if (!Number.isFinite(sample)) throw new TypeError('Invalid sample');
+      const converted=Math.fround(sample);
+      if (!Number.isFinite(converted)) throw new RangeError('Sample is not representable as finite Float32');
+      batch[i]=converted;
     }
     const frames=[];
     for (const sample of batch) {

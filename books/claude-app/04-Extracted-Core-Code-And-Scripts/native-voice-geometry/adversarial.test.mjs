@@ -115,3 +115,45 @@ test('stress: unequal display scales independently use x=2 and y=3',()=>{
   assert.deepEqual(mapDisplayPoint([250,150],f,'c'),{x:-500,y:-450,displayId:'left'});
   assert.deepEqual(mapDisplayPoint([50,50],f,'c','percent-0-100'),{x:-500,y:-450,displayId:'left'});
 });
+
+test('numeric domain: condition-one subnormal determinant has an accurate inverse',()=>{
+  for(const s of [2e-162,1e-160,1e-200,1e-300]){
+    const m=[s,0,0,s,0,0];const back=apply(invert(m),apply(m,[1,-2]));close(back[0],1);close(back[1],-2);
+  }
+});
+test('numeric domain: huge uniform scale has a representable inverse',()=>{
+  const m=[1e200,0,0,1e200,0,0],back=apply(invert(m),apply(m,[1,-2]));close(back[0],1);close(back[1],-2);
+});
+test('numeric domain: separate row normalization preserves anisotropic diagonals',()=>{
+  const m=[1e-200,0,0,1e200,0,0],back=apply(invert(m),apply(m,[2,3]));close(back[0],2);close(back[1],3);
+});
+test('numeric domain: tiny scaled shear and translation retain round trip',()=>{
+  const s=2e-162,m=[2*s,s,-s,3*s,7*s,-11*s],back=apply(invert(m),apply(m,[3,5]));close(back[0],3);close(back[1],5);
+});
+test('numeric domain: singular rows and nonrepresentable inverse remain rejected',()=>{
+  for(const m of [[0,0,0,1,0,0],[1,2,2,4,0,0],[1e-309,0,0,1,0,0]])assert.throws(()=>invert(m),RangeError);
+});
+test('numeric domain: finite Float32 extrema and subnormal samples are preserved',()=>{
+  const a=new PcmFrameAssembler(1000,4),input=[3.4028234663852886e38,-3.4028234663852886e38,2**-149,-(2**-149)];
+  assert.deepEqual([...a.push(input)[0].samples],input);
+});
+test('numeric domain: Float32 overflow rejects the complete batch atomically',()=>{
+  const a=new PcmFrameAssembler(1000,2);a.push([.25]);
+  assert.throws(()=>a.push([.5,1e39]),RangeError);assert.equal(a.pendingSamples,1);
+  const first=a.push([.75])[0];assert.equal(first.sequence,0);assert.equal(first.startSample,0);assert.deepEqual([...first.samples],[.25,.75]);
+});
+test('numeric domain: either-sign Float32 overflow cannot contaminate a tail',()=>{
+  for(const x of [1e39,-1e39]){
+    const a=new PcmFrameAssembler(1000,3);a.push([.25]);assert.throws(()=>a.push([x]),RangeError);assert.deepEqual([...a.finish()],[.25]);
+  }
+});
+
+test('numeric domain: fallback preserves extreme off-axis coefficients',()=>{
+  const m=[1e308,1e308,1e-308,2e-308,0,0],inverse=invert(m);
+  assert.ok(inverse.every(Number.isFinite));
+  const back=apply(inverse,apply(m,[0,1]));close(back[0],0);close(back[1],1);
+});
+test('numeric domain: fallback preserves representable translation after cancellation',()=>{
+  const inverse=invert([.5,.25,.25,.5,1e308,1e308]);
+  assert.ok(inverse.every(Number.isFinite));assert.equal(inverse[4],-1.3333333333333333e308);assert.equal(inverse[5],-1.3333333333333333e308);
+});

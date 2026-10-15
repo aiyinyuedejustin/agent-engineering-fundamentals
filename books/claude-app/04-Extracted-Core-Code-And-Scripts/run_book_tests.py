@@ -41,6 +41,7 @@ def commands(include_skills=False):
         if not files:
             raise RuntimeError('未找到 skills 的独立复制测试。')
         jobs.append(('portable-skills', location, [node, '--test', *map(str, files)]))
+        jobs.append(('portable-color-catalog-sync', ROOT / 'tests', [node, '--test', str(ROOT / 'tests/portable-color-catalog-sync.test.mjs')]))
     return jobs
 
 def main():

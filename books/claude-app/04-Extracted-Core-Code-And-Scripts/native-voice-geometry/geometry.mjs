@@ -58,9 +58,24 @@ export function compose(outer, inner) {
 }
 export function invert(matrix) {
   apply(matrix, [0,0]);
-  const [a,b,c,d,e,f] = matrix, det = a*d-b*c;
-  if (!Number.isFinite(det) || det === 0) throw new RangeError('Singular or unrepresentable transform');
-  const inverse = [d/det,-b/det,-c/det,a/det,(c*f-d*e)/det,(b*e-a*f)/det];
+  const [a,b,c,d,e,f] = matrix;
+  // Normalize each row: a tiny/huge uniform scale must not under/overflow det.
+  // Separate row scales also preserve representable anisotropic diagonals.
+  const sx=Math.max(Math.abs(a),Math.abs(c)), sy=Math.max(Math.abs(b),Math.abs(d));
+  if (sx === 0 || sy === 0) throw new RangeError('Singular transform');
+  const an=a/sx, cn=c/sx, bn=b/sy, dn=d/sy, det=an*dn-bn*cn;
+  const lostCoefficient=(a!==0&&an===0)||(b!==0&&bn===0)||(c!==0&&cn===0)||(d!==0&&dn===0);
+  if (!lostCoefficient && Number.isFinite(det) && det !== 0) {
+    const ia=(dn/det)/sx, ib=(-bn/det)/sx, ic=(-cn/det)/sy, id=(an/det)/sy;
+    const inverse=[ia,ib,ic,id,-(ia*e+ic*f),-(ib*e+id*f)];
+    if (inverse.every(Number.isFinite)) return inverse;
+  }
+  // Row normalization can lose an extreme off-axis coefficient; inverse-times-
+  // translation can also overflow before cancellation. Preserve a finite
+  // cofactor result in those cases instead of rejecting formerly valid input.
+  const directDet=a*d-b*c;
+  if (!Number.isFinite(directDet) || directDet === 0) throw new RangeError('Singular or unrepresentable transform');
+  const inverse=[d/directDet,-b/directDet,-c/directDet,a/directDet,(c*f-d*e)/directDet,(b*e-a*f)/directDet];
   if (!inverse.every(Number.isFinite)) throw new RangeError('Unrepresentable inverse');
   return inverse;
 }
