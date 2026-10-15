@@ -17,14 +17,26 @@
     {
       "path": "ASAR-VALIDATION.md",
       "origin": "original-tool-or-documentation",
-      "bytes": 5481,
-      "sha256": "95f8497adb0af97c7ea71bb832a350360e428a7ae49ba931ea81dcef9090ebfb"
+      "bytes": 5950,
+      "sha256": "1e581a94f574b427a7093e47cfdb304404944c036c2deac339fffb52a72c06de"
+    },
+    {
+      "path": "LINUX-ASAR-VALIDATION.json",
+      "origin": "original-tool-or-documentation",
+      "bytes": 9046,
+      "sha256": "d883ee41adb87d4a0b552ec0010ab0f65538636d377e02af932ad06d8000522e"
+    },
+    {
+      "path": "LINUX-ASAR-VALIDATION.md",
+      "origin": "original-tool-or-documentation",
+      "bytes": 4863,
+      "sha256": "1f7e9224149d9c8a07d28feba3ab14a002ab87eb7699cbb78f1955bdd78b1b90"
     },
     {
       "path": "README.md",
       "origin": "original-tool-or-documentation",
-      "bytes": 21353,
-      "sha256": "6f88e9805831e9b0f9023c8fee479a9b9a8e50f8259e1833acf69393acd9b277"
+      "bytes": 21616,
+      "sha256": "555fa0bcaba67d03367ac6c1aa9ed3e9d75b08a3f93d0742ed9095bcdfdef84c"
     },
     {
       "path": "SOURCE-NOTES.md",

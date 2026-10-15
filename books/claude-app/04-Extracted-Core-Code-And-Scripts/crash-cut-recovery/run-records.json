@@ -1,0 +1,3080 @@
+{
+  "scope": "original single-writer logical process-stop/restart model",
+  "excluded": [
+    "hardware power loss",
+    "fsync durability",
+    "Claude execution proof",
+    "concurrent writers",
+    "in-place write fallback"
+  ],
+  "synthetic_torn_files": [
+    "C1: fixed candidate prefix",
+    "C3: fixed journal prefix"
+  ],
+  "generated_at_utc": "2026-10-15T01:52:21.472644+00:00",
+  "source_sha256": {
+    "protocol.py": "2780d6bd68117fcccfeddc4e0f83455e64fcdda0915cd1e1c2809bcd85f21e50",
+    "lab.py": "d9fa5be7d2de911d7a3ce868327db64a361e3df4daae93db8ee62e0027947f24",
+    "test_crash_cuts.py": "b4adc716e7253a87b28e4ddf9f89863d5faf8572a7b53d12ef2f95d05d9b856f"
+  },
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "case_count": 16,
+  "cases": [
+    {
+      "case": "C0",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C0",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141283,
+              "mtime_ns": 1792029139108995924,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141283,
+            "mtime_ns": 1792029139108995924,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "idle",
+            "action": "no-intent",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141283,
+                "mtime_ns": 1792029139108995924,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "idle",
+            "action": "no-intent",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141283,
+                "mtime_ns": 1792029139108995924,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C1",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C1",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141286,
+              "mtime_ns": 1792029139239307762,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 14,
+              "sha256": "9f5a0b712f451cd15e1e0b7e0a17852882444ff3524db6a55b2f7f0cc8acea36",
+              "inode": 141287,
+              "mtime_ns": 1792029139274316313,
+              "json": "unknown: invalid JSON"
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141286,
+            "mtime_ns": 1792029139239307762,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 14,
+            "sha256": "9f5a0b712f451cd15e1e0b7e0a17852882444ff3524db6a55b2f7f0cc8acea36",
+            "inode": 141287,
+            "mtime_ns": 1792029139274316313,
+            "json": "unknown: invalid JSON"
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "idle",
+            "action": "no-intent",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141286,
+                "mtime_ns": 1792029139239307762,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 14,
+                "sha256": "9f5a0b712f451cd15e1e0b7e0a17852882444ff3524db6a55b2f7f0cc8acea36",
+                "inode": 141287,
+                "mtime_ns": 1792029139274316313,
+                "json": "unknown: invalid JSON"
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "idle",
+            "action": "no-intent",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141286,
+                "mtime_ns": 1792029139239307762,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 14,
+                "sha256": "9f5a0b712f451cd15e1e0b7e0a17852882444ff3524db6a55b2f7f0cc8acea36",
+                "inode": 141287,
+                "mtime_ns": 1792029139274316313,
+                "json": "unknown: invalid JSON"
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C2",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C2",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141302,
+              "mtime_ns": 1792029139373015606,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141303,
+              "mtime_ns": 1792029139406043529,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141302,
+            "mtime_ns": 1792029139373015606,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141303,
+            "mtime_ns": 1792029139406043529,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "idle",
+            "action": "no-intent",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141302,
+                "mtime_ns": 1792029139373015606,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141303,
+                "mtime_ns": 1792029139406043529,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "idle",
+            "action": "no-intent",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141302,
+                "mtime_ns": 1792029139373015606,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141303,
+                "mtime_ns": 1792029139406043529,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C3",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C3",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141306,
+              "mtime_ns": 1792029139495034408,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141307,
+              "mtime_ns": 1792029139531382823,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 121,
+              "sha256": "71a5d305b308aea0d7972250c729296b86f5d58bdba6583676da09f44ff85ed6",
+              "inode": 141308,
+              "mtime_ns": 1792029139531477408,
+              "json": "unknown: invalid JSON"
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141306,
+            "mtime_ns": 1792029139495034408,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141307,
+            "mtime_ns": 1792029139531382823,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 121,
+            "sha256": "71a5d305b308aea0d7972250c729296b86f5d58bdba6583676da09f44ff85ed6",
+            "inode": 141308,
+            "mtime_ns": 1792029139531477408,
+            "json": "unknown: invalid JSON"
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "invalid-journal",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141306,
+                "mtime_ns": 1792029139495034408,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141307,
+                "mtime_ns": 1792029139531382823,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 121,
+                "sha256": "71a5d305b308aea0d7972250c729296b86f5d58bdba6583676da09f44ff85ed6",
+                "inode": 141308,
+                "mtime_ns": 1792029139531477408,
+                "json": "unknown: invalid JSON"
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "invalid-journal",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141306,
+                "mtime_ns": 1792029139495034408,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141307,
+                "mtime_ns": 1792029139531382823,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 121,
+                "sha256": "71a5d305b308aea0d7972250c729296b86f5d58bdba6583676da09f44ff85ed6",
+                "inode": 141308,
+                "mtime_ns": 1792029139531477408,
+                "json": "unknown: invalid JSON"
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C4",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141311,
+              "mtime_ns": 1792029139615097742,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141312,
+              "mtime_ns": 1792029139653322545,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141313,
+              "mtime_ns": 1792029139653369965,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141311,
+            "mtime_ns": 1792029139615097742,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141312,
+            "mtime_ns": 1792029139653322545,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141313,
+            "mtime_ns": 1792029139653369965,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "installed-candidate",
+            "target_replacements": 1,
+            "receipt_writes": 1
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141312,
+                "mtime_ns": 1792029139653322545,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141314,
+                "mtime_ns": 1792029139693314928,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141312,
+                "mtime_ns": 1792029139653322545,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141314,
+                "mtime_ns": 1792029139693314928,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C5",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C5",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141330,
+              "mtime_ns": 1792029139782325728,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141331,
+              "mtime_ns": 1792029139782373114,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "new",
+            "revision": 8
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141330,
+            "mtime_ns": 1792029139782325728,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141331,
+            "mtime_ns": 1792029139782373114,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "new",
+          "revision": 8
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "finalized-installed",
+            "target_replacements": 0,
+            "receipt_writes": 1
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141330,
+                "mtime_ns": 1792029139782325728,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141332,
+                "mtime_ns": 1792029139825112935,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141330,
+                "mtime_ns": 1792029139782325728,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141332,
+                "mtime_ns": 1792029139825112935,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C6",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C6",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141336,
+              "mtime_ns": 1792029139907744748,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141337,
+              "mtime_ns": 1792029139907791354,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            },
+            "receipt.json": {
+              "bytes": 161,
+              "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+              "inode": 141338,
+              "mtime_ns": 1792029139907895351,
+              "json": {
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "revision": 8,
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "new",
+            "revision": 8
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141336,
+            "mtime_ns": 1792029139907744748,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141337,
+            "mtime_ns": 1792029139907791354,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          },
+          "receipt.json": {
+            "bytes": 161,
+            "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+            "inode": 141338,
+            "mtime_ns": 1792029139907895351,
+            "json": {
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "revision": 8,
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "new",
+          "revision": 8
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "finalized-installed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141336,
+                "mtime_ns": 1792029139907744748,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141338,
+                "mtime_ns": 1792029139907895351,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141336,
+                "mtime_ns": 1792029139907744748,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141338,
+                "mtime_ns": 1792029139907895351,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "C7",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C7",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141342,
+              "mtime_ns": 1792029140028744496,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "receipt.json": {
+              "bytes": 161,
+              "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+              "inode": 141344,
+              "mtime_ns": 1792029140029065949,
+              "json": {
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "revision": 8,
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "new",
+            "revision": 8
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141342,
+            "mtime_ns": 1792029140028744496,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "receipt.json": {
+            "bytes": 161,
+            "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+            "inode": 141344,
+            "mtime_ns": 1792029140029065949,
+            "json": {
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "revision": 8,
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "new",
+          "revision": 8
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141342,
+                "mtime_ns": 1792029140028744496,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141344,
+                "mtime_ns": 1792029140029065949,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141342,
+                "mtime_ns": 1792029140028744496,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141344,
+                "mtime_ns": 1792029140029065949,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "stale-journal-vs-r9",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141347,
+              "mtime_ns": 1792029140124759102,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141348,
+              "mtime_ns": 1792029140160071232,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141349,
+              "mtime_ns": 1792029140160128897,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": "newer-target",
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 37,
+            "sha256": "613bbfe876ba286597152ff7714c64d9178a6b6e3c8436f48e37bc2ad0b3d0eb",
+            "inode": 141347,
+            "mtime_ns": 1792029140162700891,
+            "json": {
+              "label": "third-party",
+              "revision": 9
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141348,
+            "mtime_ns": 1792029140160071232,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141349,
+            "mtime_ns": 1792029140160128897,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "third-party",
+          "revision": 9
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "base-conflict",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 37,
+                "sha256": "613bbfe876ba286597152ff7714c64d9178a6b6e3c8436f48e37bc2ad0b3d0eb",
+                "inode": 141347,
+                "mtime_ns": 1792029140162700891,
+                "json": {
+                  "label": "third-party",
+                  "revision": 9
+                }
+              },
+              "candidate.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141348,
+                "mtime_ns": 1792029140160071232,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141349,
+                "mtime_ns": 1792029140160128897,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "third-party",
+              "revision": 9
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "base-conflict",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 37,
+                "sha256": "613bbfe876ba286597152ff7714c64d9178a6b6e3c8436f48e37bc2ad0b3d0eb",
+                "inode": 141347,
+                "mtime_ns": 1792029140162700891,
+                "json": {
+                  "label": "third-party",
+                  "revision": 9
+                }
+              },
+              "candidate.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141348,
+                "mtime_ns": 1792029140160071232,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141349,
+                "mtime_ns": 1792029140160128897,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "third-party",
+              "revision": 9
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "corrupt-candidate",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141352,
+              "mtime_ns": 1792029140248415848,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141353,
+              "mtime_ns": 1792029140283117419,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141354,
+              "mtime_ns": 1792029140283165887,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": "corrupt-candidate",
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141352,
+            "mtime_ns": 1792029140248415848,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 33,
+            "sha256": "9cdde699c9e2676c4f95fa82b380830266d3a4f72311588ec72183d13c79953d",
+            "inode": 141353,
+            "mtime_ns": 1792029140284624647,
+            "json": {
+              "revision": 8,
+              "label": "damaged"
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141354,
+            "mtime_ns": 1792029140283165887,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "invalid-material",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141352,
+                "mtime_ns": 1792029140248415848,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 33,
+                "sha256": "9cdde699c9e2676c4f95fa82b380830266d3a4f72311588ec72183d13c79953d",
+                "inode": 141353,
+                "mtime_ns": 1792029140284624647,
+                "json": {
+                  "revision": 8,
+                  "label": "damaged"
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141354,
+                "mtime_ns": 1792029140283165887,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "invalid-material",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "inode": 141352,
+                "mtime_ns": 1792029140248415848,
+                "json": {
+                  "label": "old",
+                  "revision": 7
+                }
+              },
+              "candidate.json": {
+                "bytes": 33,
+                "sha256": "9cdde699c9e2676c4f95fa82b380830266d3a4f72311588ec72183d13c79953d",
+                "inode": 141353,
+                "mtime_ns": 1792029140284624647,
+                "json": {
+                  "revision": 8,
+                  "label": "damaged"
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141354,
+                "mtime_ns": 1792029140283165887,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "old",
+              "revision": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "wrong-operation-receipt",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C5",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141370,
+              "mtime_ns": 1792029140432483914,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141371,
+              "mtime_ns": 1792029140432527184,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "new",
+            "revision": 8
+          }
+        }
+      },
+      "mutation": "wrong-receipt",
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141370,
+            "mtime_ns": 1792029140432483914,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141371,
+            "mtime_ns": 1792029140432527184,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          },
+          "receipt.json": {
+            "bytes": 172,
+            "sha256": "776ec889f86014ce899f03e575cb08683cfd4366945a9599b4f05e1257de6291",
+            "inode": 141372,
+            "mtime_ns": 1792029140433491651,
+            "json": {
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "operationId": "different-operation",
+              "resource": "synthetic-settings",
+              "revision": 8,
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "new",
+          "revision": 8
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "receipt-conflict",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141370,
+                "mtime_ns": 1792029140432483914,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141371,
+                "mtime_ns": 1792029140432527184,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              },
+              "receipt.json": {
+                "bytes": 172,
+                "sha256": "776ec889f86014ce899f03e575cb08683cfd4366945a9599b4f05e1257de6291",
+                "inode": 141372,
+                "mtime_ns": 1792029140433491651,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "different-operation",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "rejected",
+            "action": "receipt-conflict",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141370,
+                "mtime_ns": 1792029140432483914,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141371,
+                "mtime_ns": 1792029140432527184,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              },
+              "receipt.json": {
+                "bytes": 172,
+                "sha256": "776ec889f86014ce899f03e575cb08683cfd4366945a9599b4f05e1257de6291",
+                "inode": 141372,
+                "mtime_ns": 1792029140433491651,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "different-operation",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "rename-refused",
+      "writer": {
+        "mode": "write",
+        "checkpoint": null,
+        "exit_code": 0,
+        "stop_method": "normal-exit",
+        "event": "result",
+        "result": {
+          "status": "rejected",
+          "action": "rename-refused",
+          "target_replacements": 0,
+          "receipt_writes": 0
+        },
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141375,
+              "mtime_ns": 1792029140538430725,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141376,
+              "mtime_ns": 1792029140586378573,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141377,
+              "mtime_ns": 1792029140586437277,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141375,
+            "mtime_ns": 1792029140538430725,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141376,
+            "mtime_ns": 1792029140586378573,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141377,
+            "mtime_ns": 1792029140586437277,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "installed-candidate",
+            "target_replacements": 1,
+            "receipt_writes": 1
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141376,
+                "mtime_ns": 1792029140586378573,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141378,
+                "mtime_ns": 1792029140632061842,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141376,
+                "mtime_ns": 1792029140586378573,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141378,
+                "mtime_ns": 1792029140632061842,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "recovery-stops-after-rename",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141381,
+              "mtime_ns": 1792029140691142634,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141382,
+              "mtime_ns": 1792029140739354031,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141383,
+              "mtime_ns": 1792029140739402544,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141381,
+            "mtime_ns": 1792029140691142634,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141382,
+            "mtime_ns": 1792029140739354031,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141383,
+            "mtime_ns": 1792029140739402544,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": "R_RENAME",
+          "exit_code": -15,
+          "stop_method": "Popen.terminate-after-checkpoint-handshake",
+          "event": "paused",
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141382,
+                "mtime_ns": 1792029140739354031,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141383,
+                "mtime_ns": 1792029140739402544,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "finalized-installed",
+            "target_replacements": 0,
+            "receipt_writes": 1
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141382,
+                "mtime_ns": 1792029140739354031,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141384,
+                "mtime_ns": 1792029140825450176,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141382,
+                "mtime_ns": 1792029140739354031,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141384,
+                "mtime_ns": 1792029140825450176,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "recovery-stops-after-receipt",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141387,
+              "mtime_ns": 1792029140890875987,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141388,
+              "mtime_ns": 1792029140929710923,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141389,
+              "mtime_ns": 1792029140929757274,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141387,
+            "mtime_ns": 1792029140890875987,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141388,
+            "mtime_ns": 1792029140929710923,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141389,
+            "mtime_ns": 1792029140929757274,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": "R_RECEIPT",
+          "exit_code": -15,
+          "stop_method": "Popen.terminate-after-checkpoint-handshake",
+          "event": "paused",
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141388,
+                "mtime_ns": 1792029140929710923,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141389,
+                "mtime_ns": 1792029140929757274,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141390,
+                "mtime_ns": 1792029140965488031,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "finalized-installed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141388,
+                "mtime_ns": 1792029140929710923,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141390,
+                "mtime_ns": 1792029140965488031,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141388,
+                "mtime_ns": 1792029140929710923,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141390,
+                "mtime_ns": 1792029140965488031,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "recovery-stops-after-commit",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141393,
+              "mtime_ns": 1792029141054536405,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141394,
+              "mtime_ns": 1792029141098519783,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141395,
+              "mtime_ns": 1792029141098571643,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141393,
+            "mtime_ns": 1792029141054536405,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141394,
+            "mtime_ns": 1792029141098519783,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141395,
+            "mtime_ns": 1792029141098571643,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": "R_COMMIT",
+          "exit_code": -15,
+          "stop_method": "Popen.terminate-after-checkpoint-handshake",
+          "event": "paused",
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141394,
+                "mtime_ns": 1792029141098519783,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141396,
+                "mtime_ns": 1792029141133267201,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141394,
+                "mtime_ns": 1792029141098519783,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141396,
+                "mtime_ns": 1792029141133267201,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141394,
+                "mtime_ns": 1792029141098519783,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141396,
+                "mtime_ns": 1792029141133267201,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "recovery-stops-twice",
+      "writer": {
+        "mode": "write",
+        "checkpoint": "C4",
+        "exit_code": -15,
+        "stop_method": "Popen.terminate-after-checkpoint-handshake",
+        "event": "paused",
+        "state": {
+          "files": {
+            "settings.json": {
+              "bytes": 29,
+              "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "inode": 141399,
+              "mtime_ns": 1792029141227846846,
+              "json": {
+                "label": "old",
+                "revision": 7
+              }
+            },
+            "candidate.json": {
+              "bytes": 29,
+              "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "inode": 141400,
+              "mtime_ns": 1792029141259614656,
+              "json": {
+                "label": "new",
+                "revision": 8
+              }
+            },
+            "intent.json": {
+              "bytes": 243,
+              "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+              "inode": 141401,
+              "mtime_ns": 1792029141259664436,
+              "json": {
+                "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "nextRevision": 8,
+                "operationId": "op-r7-r8",
+                "resource": "synthetic-settings",
+                "schema": 1
+              }
+            }
+          },
+          "target": {
+            "label": "old",
+            "revision": 7
+          }
+        }
+      },
+      "mutation": null,
+      "before_recovery": {
+        "files": {
+          "settings.json": {
+            "bytes": 29,
+            "sha256": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+            "inode": 141399,
+            "mtime_ns": 1792029141227846846,
+            "json": {
+              "label": "old",
+              "revision": 7
+            }
+          },
+          "candidate.json": {
+            "bytes": 29,
+            "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+            "inode": 141400,
+            "mtime_ns": 1792029141259614656,
+            "json": {
+              "label": "new",
+              "revision": 8
+            }
+          },
+          "intent.json": {
+            "bytes": 243,
+            "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+            "inode": 141401,
+            "mtime_ns": 1792029141259664436,
+            "json": {
+              "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+              "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+              "nextRevision": 8,
+              "operationId": "op-r7-r8",
+              "resource": "synthetic-settings",
+              "schema": 1
+            }
+          }
+        },
+        "target": {
+          "label": "old",
+          "revision": 7
+        }
+      },
+      "recoveries": [
+        {
+          "mode": "recover",
+          "checkpoint": "R_RENAME",
+          "exit_code": -15,
+          "stop_method": "Popen.terminate-after-checkpoint-handshake",
+          "event": "paused",
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141400,
+                "mtime_ns": 1792029141259614656,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141401,
+                "mtime_ns": 1792029141259664436,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": "R_RECEIPT",
+          "exit_code": -15,
+          "stop_method": "Popen.terminate-after-checkpoint-handshake",
+          "event": "paused",
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141400,
+                "mtime_ns": 1792029141259614656,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "intent.json": {
+                "bytes": 243,
+                "sha256": "1ef3e30a78464eaeec48d42605b28818deb24fb73c2b2a008acc10e6da4514b6",
+                "inode": 141401,
+                "mtime_ns": 1792029141259664436,
+                "json": {
+                  "baseHash": "c946ca5f8c3b6178fb6fea4687ad809373daa538e9f31b09c7a56188b48a3cd3",
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "nextRevision": 8,
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "schema": 1
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141402,
+                "mtime_ns": 1792029141370283847,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "finalized-installed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141400,
+                "mtime_ns": 1792029141259614656,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141402,
+                "mtime_ns": 1792029141370283847,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        },
+        {
+          "mode": "recover",
+          "checkpoint": null,
+          "exit_code": 0,
+          "stop_method": "normal-exit",
+          "event": "result",
+          "result": {
+            "status": "committed",
+            "action": "already-committed",
+            "target_replacements": 0,
+            "receipt_writes": 0
+          },
+          "state": {
+            "files": {
+              "settings.json": {
+                "bytes": 29,
+                "sha256": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                "inode": 141400,
+                "mtime_ns": 1792029141259614656,
+                "json": {
+                  "label": "new",
+                  "revision": 8
+                }
+              },
+              "receipt.json": {
+                "bytes": 161,
+                "sha256": "7e310b0ed9237e7082dabef1dd734ae8906e24cd8cd84ffbfd6f91018953d3ea",
+                "inode": 141402,
+                "mtime_ns": 1792029141370283847,
+                "json": {
+                  "nextHash": "92f3cb8eb03ab4f86fb6025c976e986ebc2bd1e405926ccd4865053e92a7acc1",
+                  "operationId": "op-r7-r8",
+                  "resource": "synthetic-settings",
+                  "revision": 8,
+                  "schema": 1
+                }
+              }
+            },
+            "target": {
+              "label": "new",
+              "revision": 8
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

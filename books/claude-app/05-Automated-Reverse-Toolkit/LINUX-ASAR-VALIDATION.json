@@ -1,0 +1,227 @@
+{
+  "schema": "original-linux-asar-sidecar-validation-report/v1",
+  "validation_date_utc": "2026-10-15",
+  "status": "PASS_WITH_SCAN_COVERAGE_LIMITATIONS",
+  "original_metadata_only": true,
+  "sample": {
+    "application": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux",
+    "architecture": "amd64",
+    "asar_sha256": "3d4aea62ccf045ea88d3e92ce728e23aa01c965f25eda450f6369e7557848395",
+    "asar_bytes": 49024278,
+    "header_json_sha256": "67080b3277287a656478f0db761c0fe1d3e3fee730217376ca27951a31df1d7d",
+    "historic_outer_package": {
+      "Package": "claude-desktop",
+      "Version": "2.37337.1",
+      "Architecture": "amd64",
+      "Size": "182483892",
+      "SHA256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14",
+      "Filename": "pool/main/c/claude-desktop/claude-desktop_2.37337.1_amd64.deb"
+    }
+  },
+  "provenance": {
+    "prior_linux_integrity_failure_found": false,
+    "historic_linux_rea_ok": true,
+    "historic_linux_integrity_policy": "fail",
+    "historic_linux_integrity_contradictions": [],
+    "historic_apt_signature_report": {
+      "status": "good",
+      "fingerprint": "31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE",
+      "fingerprint_source": "https://code.claude.com/docs/en/desktop-linux",
+      "verification_keyring": "isolated workspace only; no OS trust modified",
+      "Packages_sha256": "0f30928df65f247ed47a2d87d3fd539abdceb2f033e4fad4aa1ec28ea3cdc76c",
+      "Packages_matches_signed_InRelease": true
+    },
+    "scope": "Existing APT verification report reviewed; no fresh download, key trust, signature or outer-package lineage validation in this run. GPG reported Good signature and unknown owner trust.",
+    "fresh_publisher_authentication": false,
+    "failed_windows_macos_companions_read_or_retried": false
+  },
+  "toolkit": {
+    "entrypoint": "05-Automated-Reverse-Toolkit/reverse_toolkit.py",
+    "adapter": "bounded-asar-v1",
+    "sidecar_contract": "explicit-exact-asar-sidecar/v1",
+    "manifest_entries_verified_before_and_after": 30,
+    "source_hashes": {
+      "diff-versions.py": "1404955fdd0aa8a5d64c85de9d19b37d7445c83cdb1c61de9ccf87364984bf93",
+      "reverse_toolkit.py": "d644ebd68f794a3b403f8c09e5ed112741f7438b5f673341a12757634c56191b",
+      "toolkit/asar.py": "d9351f3930ea790df42f8a33a5a3d3447bb95326a9e8f50e75d41292f0fd5e25",
+      "toolkit/asar_sidecar.py": "6e633eaec32892ffe0c19c59ea4e7f728958f7633886593c2f58463e478190eb",
+      "toolkit/safeio.py": "337084045c6f0ed701b268d11ee5b3bd1940e274d0c7073ec32cd99e59e77b19"
+    },
+    "limits": {
+      "max_archive_bytes": 268435456,
+      "max_central_bytes": 16777216,
+      "max_depth": 64,
+      "max_file_bytes": 67108864,
+      "max_files": 20000,
+      "max_ratio": 200,
+      "max_records": 200000,
+      "max_total_bytes": 536870912
+    },
+    "limits_raised": false
+  },
+  "inspect": {
+    "exit_code": 0,
+    "declared_entries": 530,
+    "packed_files": 486,
+    "unpacked_files": 3,
+    "declared_member_integrity_verified": false,
+    "extractable_within_default_packed_only_subset": false,
+    "exclusions": [
+      {
+        "path": "node_modules/@ant/claude-native/claude-native-binding.node",
+        "reason": "unpacked-sidecar-not-read"
+      },
+      {
+        "path": "node_modules/node-pty/prebuilds/linux-x64/pty.node",
+        "reason": "unpacked-sidecar-not-read"
+      },
+      {
+        "path": "resources/github-mcp/github-mcp-server",
+        "reason": "unpacked-sidecar-not-read"
+      }
+    ],
+    "note": "inspect-asar is metadata-only and has no --unpacked-dir option."
+  },
+  "explicit_extraction": {
+    "exit_code": 0,
+    "scope": "asar-declared-packed-and-unpacked-v1",
+    "declared_files": 489,
+    "packed_files": 486,
+    "unpacked_files": 3,
+    "actual_output_files": 489,
+    "actual_output_directories": 41,
+    "all_declared_sizes_file_and_block_sha256_passed": true,
+    "output_member_hashes_match_historical_successful_linux_extraction": true,
+    "expanded_bytes": 81280912,
+    "packed_logical_bytes": 51247344,
+    "sidecar_bytes": 30033568,
+    "shared_range_aliases": 25,
+    "sidecar_inventory_complete": true,
+    "missing": [],
+    "extra": [],
+    "invalid": [],
+    "sidecar_manifest_sha256": "81e63f69576388029f5903d52d8d7a6cbcfe683f14912570835fbb1766728fd7",
+    "sidecar_members": [
+      {
+        "declared_integrity": true,
+        "path": "node_modules/@ant/claude-native/claude-native-binding.node",
+        "sha256": "c3934f38ec5de0a2b6ef31641c28d8bec2fb125ff6a3a39b6dba84d9885cbca6",
+        "size": 10026272
+      },
+      {
+        "declared_integrity": true,
+        "path": "node_modules/node-pty/prebuilds/linux-x64/pty.node",
+        "sha256": "123792d8f22f36d519b21dfb6f4b716f9b18b9e579085ea2840d0773d88d35fd",
+        "size": 75976
+      },
+      {
+        "declared_integrity": true,
+        "path": "resources/github-mcp/github-mcp-server",
+        "sha256": "a649c80070fe9cb4e002b7bc37f54df8f9bdd46a8e90ae7ee5684ce901779f6f",
+        "size": 19931320
+      }
+    ],
+    "atomic_delivery_confirmed": true,
+    "output_root_mode": "0o700",
+    "all_output_files_mode_0600": true
+  },
+  "same_version_smoke": {
+    "exit_code": 0,
+    "comparison_kind": "same Linux version and same exact archive/sidecar on both sides; control only",
+    "both_adapters_declared_member_integrity_verified": true,
+    "both_adapters_complete_asar_declared_scope": true,
+    "snapshots_byte_identical": true,
+    "snapshot_records_per_side": 3761,
+    "file_status_counts_per_side": {
+      "hashed-only": 44,
+      "scan-incomplete": 18,
+      "scanned": 427
+    },
+    "semantic_scan_complete": false,
+    "scanner_rejection_count_per_side": 18,
+    "scanner_rejection_type": "ToolkitError",
+    "scanner_rejection_reason": "scanner-rejected-input; specific lexer failure/budget cause not exposed by this report and not inferred",
+    "all_three_native_companions_hashed_only": true,
+    "file_diff_counts": {
+      "added": 0,
+      "changed": 0,
+      "possible_moves": 0,
+      "removed": 0,
+      "unresolved": 0
+    },
+    "inventory_change_counts": {
+      "css_palettes": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0,
+        "unchanged_keys": 714
+      },
+      "css_tokens": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0,
+        "unchanged_keys": 2417
+      },
+      "flags": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0,
+        "unchanged_keys": 0
+      },
+      "telemetry": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0,
+        "unchanged_keys": 1
+      },
+      "tool_contracts": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0,
+        "unchanged_keys": 4
+      }
+    },
+    "warnings": [
+      "old scan has coverage gaps; absence is not proof of removal.",
+      "new scan has coverage gaps; absence is not proof of removal."
+    ],
+    "assertion_boundary": "Zero differences only in the observed static records of identical inputs. This does not establish complete semantic coverage, functionality equality, or across-version detection."
+  },
+  "postflight": {
+    "input_metadata_unchanged": true,
+    "toolkit_manifest_unchanged": true,
+    "all_created_objects_private": true,
+    "mode_counts_before_report_write": {
+      "directory:0o700": 130,
+      "file:0o600": 1483
+    },
+    "failures": [],
+    "target_code_executed_or_imported": false,
+    "new_downloads_or_installs": false,
+    "publication_modified": false
+  },
+  "limits_and_unverified": [
+    "Complete coverage applies only to ASAR-declared packed and unpacked entries, not the entire application, ion-dist, OS installation, runtime behavior or publisher authenticity.",
+    "ASAR declared hashes are internal consistency checks; this run reviewed existing APT signature reports without independently revalidating the signature/download/extraction lineage.",
+    "No live Windows/macOS companion action and no inference that their known mismatches are fixed.",
+    "Single-package extraction and one identical-input two-side smoke do not test different real versions.",
+    "18 selected text files per snapshot remain scan-incomplete and 44 files are hashed-only; 427 scanned files are limited to this toolkit's literal candidate grammar.",
+    "No capacity increase, alternate extractor, declaration modification, target import, executable invocation or target code evaluation occurred.",
+    "The 489-file output and complete snapshot/diff reports remain private; only this reduced original metadata summary is intended for review."
+  ],
+  "evidence_files": {
+    "preflight": "preflight.json",
+    "inspect_stdout": "inspect.json",
+    "unpack_stdout": "unpack.json",
+    "output_member_hash_verification": "output-verification.json",
+    "same_version_smoke_stdout": "smoke.json",
+    "same_version_smoke_run": "private-same-version-smoke/run.json",
+    "same_version_smoke_diff": "private-same-version-smoke/report/diff.json"
+  },
+  "private_output_directories": [
+    "private-output",
+    "private-same-version-smoke"
+  ]
+}

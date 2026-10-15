@@ -60,3 +60,5 @@ python3 -B run_book_tests.py --skills
 - [出版物完整性检查器](scripts/publication-checks/README.md)：只读检查必需目录、阅读链接与三份已登记清单；39 项合成测试，输出结构化报告。
 
 - [条件写入与流式工作粒度](worked-cases/concurrency-and-streaming/README.md)：27项实现测试与16项独立合同复核，覆盖旧快照覆盖、重基、历史回执，以及大输入块的分片检查点。
+
+- [逻辑崩溃与恢复实验](crash-cut-recovery/README.md)：35个测试方法，在自有临时目录与子进程中检查write、rename、commit之间的恢复合同；不等同掉电耐久性。

@@ -144,6 +144,56 @@ journal 是写入过程留下的恢复记录。本包 store 的 `.journal` 携�
 
 包内 store 库有版本迁移与迁移失败回滚能力，但本次追踪的主 config store 构造没有注册 migrations 表。应用配置校验前清理旧 sidebar 值和不合法枚举，仅支持“兼容性归一化”的结论。不能把依赖能力写成主设置已采用完整版本迁移体系，更不能把这条数据迁移回滚写成安装包版本回滚。[SET-10](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)
 
+### 小实验：write、rename、commit 之间停下，重启后该读到什么？
+
+本节新增的是**原创教学模型**。SET-07 的 private-file writer 与 SET-08 的 store/journal 是两条产品路线，不能把它们拼成一条“已经还原的 Claude 写入算法”。下面不使用产品格式、运行时、账户或真实配置。
+
+让一个独立 Python 子进程把合成配置从 r7 改成 r8。我们不按时间猜测它走到哪里：子进程在指定阶段完成后发出握手并暂停，父进程收到握手，才通过自己创建的 Popen handle 终止它；恢复由一个新子进程执行。全部数据只存在于父进程自己的 TemporaryDirectory。
+
+![写完、替换完成与提交完成的不同恢复合同](../../assets/figures/crash-cuts-and-recovery.svg)
+
+#### 三个完成点，三个不同承诺
+
+```text
+r7 target
+  → 写完 candidate，并读回核对摘要           [C2: writeComplete]
+  → 写完 intent，固定 baseHash / nextHash   [C4: 可恢复的意图]
+  → 同目录 replace candidate → target      [C5: renameComplete]
+  → 核对 r8，写匹配的 receipt               [C6]
+  → 退休 intent                             [C7: commitComplete]
+```
+
+writeComplete 只表示候选写入与读回校验完成；renameComplete 表示正式路径已能读到新内容；commitComplete 才表示本模型的目标、回执、清理合同全部满足。这里的 commit 是应用自定语义，不是操作系统额外提供的耐久性原语。receipt 是本地合成记账，不表示调用方已收到成功响应，也不涵盖外部副作用“恰好一次”。
+
+先比较最容易混淆的三个切点：
+
+| 停在何处 | 停止后留下什么 | 新进程如何恢复 |
+|---|---|---|
+| C2：写完候选 | target=r7，candidate=r8，没有 intent | 保留 r7；只有准备材料，不能自动创造提交意图 |
+| C4：写完 intent | target=r7，candidate=r8，完整 intent | baseHash 与候选 nextHash 都匹配才替换，再写回执 |
+| C5：完成替换 | target=r8，完整 intent，没有 candidate/receipt | 识别已安装，只补回执与清理，不再替换 target |
+
+**完整 intent 是允许恢复继续提交的决策点，仍不等于提交已经完成。** 这是本实验选择的合同，不是所有产品必须遵守的规则。
+
+#### 恢复器判断的是事实，不是“文件在不在”
+
+完整且合法的 intent 只允许两条成功路径：
+
+1. targetHash 已等于 nextHash：优先判为已安装，验证或补齐匹配的 receipt，再退休 intent。
+2. targetHash 等于 baseHash，且 candidate 的摘要、JSON 结构和 revision 都符合意图：安装候选，再完成记账。
+
+其他组合拒绝提交。恢复入口知道本实验要确认的完整操作：operationId 及 r7→r8 对应的摘要、版本等字段；journal 必须与它一致，receipt 必须匹配其完整回执。即使 intent 已退休，也不能拿另一次操作，或同 ID、不同内容的回执确认这次请求。哈希检查区分“字节是否一致”和“这份意图是否仍适用于当前目标”，但它不是来源认证，也没有替代并发仲裁。
+
+本次运行还验证了三种反例：旧 r7→r8 意图不能覆盖已变成 r9 的目标；完整意图不能授权安装损坏候选；恢复先停在 rename 后，再停在 receipt 后，第三次仍能完成，第四次不再替换目标或重写回执。损坏 journal、错误回执均保留现场并拒绝，不靠猜测修复。
+
+#### 读结果时不要跨过证据边界
+
+C1/C3 的半文件是程序主动写入固定前缀的**合成 torn file**。进程停止时操作系统还在运行，页缓存也可能存在；本实验没有调用 fsync，没有模拟断电，没有观察任意 I/O 指令内部的崩溃，也没有证明 Claude 的实际恢复行为。Linux 文档分别讨论 [rename 的替换可见性](https://man7.org/linux/man-pages/man2/rename.2.html) 与 [fsync 及目录项同步](https://man7.org/linux/man-pages/man2/fsync.2.html)；“正式名字已切换”不能替代一份持久顺序证明。
+
+本模型假设单 writer。读取摘要再 replace 之间没有并发修改；若允许另一个 writer 插入修改，就必须另行设计锁、仲裁或条件提交。故意制造 r9 的案例检验的是**恢复开始前已有的新状态**，不是并发写入的完整解决方案。
+
+完整代码、八切点矩阵、运行命令和机器记录见 [实验说明](../../04-Extracted-Core-Code-And-Scripts/crash-cut-recovery/README.md)。复习时只问一句：如果一个 API 在 C2、C5、C7 分别返回成功，它承诺给调用方的究竟是哪件事？
+
 ### 窗口恢复重新解释旧坐标
 
 所追踪的窗口几何服务采用约 1 秒防抖、串行写入链与关闭时 flush；跳过最小化状态，校验尺寸，并按当前显示器工作区重新安置失效位置。[SET-11](../../04-Extracted-Core-Code-And-Scripts/evidence/data/settings-resilience.json)

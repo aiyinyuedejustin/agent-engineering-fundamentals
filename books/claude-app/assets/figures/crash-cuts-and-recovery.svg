@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650" role="img" aria-labelledby="title desc">
+<title id="title">写完、替换、提交：五个暂停点的恢复承诺</title>
+<desc id="desc">原创单 writer 逻辑崩溃恢复教学模型，不是 Claude 的实现或断电持久性保证。C2 writeComplete：候选写完并读回核对，target 为 r7、candidate 为 r8，无 intent；恢复保留 r7，不安装孤儿候选。C4 完整 intent 写完：target 为 r7、candidate 为 r8，意图完整；只有合法 intent 与预期操作一致，targetHash 等于 baseHash，候选摘要、JSON 结构、revision 都匹配，才安装候选，再写 receipt 并退休 intent。C5 renameComplete：target 已为 r8，candidate 已无，intent 完整，receipt 尚无；恢复优先识别已安装，补匹配回执并退休 intent，不再替换 target。C6 匹配 receipt 已写完：target 为 r8，intent 尚在；恢复验证匹配回执，只退休 intent，不重复替换或重写回执。C7 commitComplete：target 为 r8，匹配 receipt 存在，intent 已退休；确认 already-committed，不再写入，但调用方可能还没有收到成功回复。各行的替换与回执写入计数仅指首次恢复子进程，依次为 0/0、1/1、0/1、0/0、0/0，不是跨崩溃的持久总账。错误回执或冲突状态不能按成功路径继续。本模型无 fsync、无硬件断电测试，不证明持久顺序或外部副作用恰好一次。</desc>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",sans-serif}</style>
+<defs><marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#395d70"/></marker><marker id="arrow-gold" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#856326"/></marker><marker id="arrow-sage" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4.5L0 9Z" fill="#40634d"/></marker></defs>
+<rect x="0" y="0" width="1000" height="650" rx="0" fill="#f5f1e8"/>
+<text id="text-1" x="36" y="35" font-size="14" fill="#984a36" font-weight="600" text-anchor="start">原创合成实验 · 确定阶段之间停止，再启动</text>
+<text id="text-2" x="36" y="79" font-size="31" fill="#29291f" font-weight="700" text-anchor="start">写完 ≠ 替换完成 ≠ 提交完成</text>
+<text id="text-3" x="36" y="109" font-size="17" fill="#68665c" font-weight="400" text-anchor="start">完整候选不能自动提交；恢复看留下的事实，不猜上次走到了哪里。</text>
+<text id="text-4" x="54" y="147" font-size="16" fill="#68665c" font-weight="600" text-anchor="start">已完成阶段</text>
+<text id="text-5" x="320" y="147" font-size="16" fill="#68665c" font-weight="600" text-anchor="start">停止后留下的事实</text>
+<text id="text-6" x="652" y="147" font-size="16" fill="#68665c" font-weight="600" text-anchor="start">首次恢复动作</text>
+<rect x="36" y="160" width="928" height="63" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<rect x="48" y="174" width="41" height="32" rx="9" fill="#e7edf0"/>
+<text id="text-7" x="68.5" y="196" font-size="17" fill="#395d70" font-weight="700" text-anchor="middle">C2</text>
+<text id="text-8" x="102" y="186" font-size="20" fill="#395d70" font-weight="700" text-anchor="start">writeComplete</text>
+<text id="text-9" x="102" y="209" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">候选写完并读回核对</text>
+<text id="text-10" x="320" y="186" font-size="18" fill="#29291f" font-weight="600" text-anchor="start">target r7 · candidate r8</text>
+<text id="text-11" x="320" y="209" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">无 intent · 无 receipt</text>
+<path d="M608 191H635" fill="none" stroke="#395d70" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+<text id="text-12" x="652" y="186" font-size="19" fill="#395d70" font-weight="700" text-anchor="start">保留 r7，不安装候选</text>
+<text id="text-13" x="652" y="209" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">无提交意图</text>
+<rect x="875" y="194" width="72" height="21" rx="5" fill="#e7edf0"/>
+<text id="text-14" x="911" y="210" font-size="14" fill="#395d70" font-weight="600" text-anchor="middle">0 / 0</text>
+<rect x="36" y="230" width="928" height="63" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<rect x="48" y="244" width="41" height="32" rx="9" fill="#f3ebd5"/>
+<text id="text-15" x="68.5" y="266" font-size="17" fill="#856326" font-weight="700" text-anchor="middle">C4</text>
+<text id="text-16" x="102" y="256" font-size="20" fill="#856326" font-weight="700" text-anchor="start">完整 intent</text>
+<text id="text-17" x="102" y="279" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">允许恢复继续的决策点</text>
+<text id="text-18" x="320" y="256" font-size="18" fill="#29291f" font-weight="600" text-anchor="start">target r7 · candidate r8</text>
+<text id="text-19" x="320" y="279" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">完整 intent · 无 receipt</text>
+<path d="M608 261H635" fill="none" stroke="#856326" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-gold)"/>
+<text id="text-20" x="652" y="256" font-size="19" fill="#856326" font-weight="700" text-anchor="start">验证前提与候选 → 安装 r8</text>
+<text id="text-21" x="652" y="279" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">写回执，退休 intent</text>
+<rect x="875" y="264" width="72" height="21" rx="5" fill="#f3ebd5"/>
+<text id="text-22" x="911" y="280" font-size="14" fill="#856326" font-weight="600" text-anchor="middle">1 / 1</text>
+<rect x="36" y="300" width="928" height="63" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<rect x="48" y="314" width="41" height="32" rx="9" fill="#e6eee5"/>
+<text id="text-23" x="68.5" y="336" font-size="17" fill="#40634d" font-weight="700" text-anchor="middle">C5</text>
+<text id="text-24" x="102" y="326" font-size="20" fill="#40634d" font-weight="700" text-anchor="start">renameComplete</text>
+<text id="text-25" x="102" y="349" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">正式路径已是新内容</text>
+<text id="text-26" x="320" y="326" font-size="18" fill="#29291f" font-weight="600" text-anchor="start">target r8 · candidate 已无</text>
+<text id="text-27" x="320" y="349" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">完整 intent · 无 receipt</text>
+<path d="M608 331H635" fill="none" stroke="#40634d" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-sage)"/>
+<text id="text-28" x="652" y="326" font-size="19" fill="#40634d" font-weight="700" text-anchor="start">已安装，不重复替换</text>
+<text id="text-29" x="652" y="349" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">补回执，退休 intent</text>
+<rect x="875" y="334" width="72" height="21" rx="5" fill="#e6eee5"/>
+<text id="text-30" x="911" y="350" font-size="14" fill="#40634d" font-weight="600" text-anchor="middle">0 / 1</text>
+<rect x="36" y="370" width="928" height="63" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<rect x="48" y="384" width="41" height="32" rx="9" fill="#e6eee5"/>
+<text id="text-31" x="68.5" y="406" font-size="17" fill="#40634d" font-weight="700" text-anchor="middle">C6</text>
+<text id="text-32" x="102" y="396" font-size="20" fill="#40634d" font-weight="700" text-anchor="start">匹配 receipt</text>
+<text id="text-33" x="102" y="419" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">此操作的回执已写完</text>
+<text id="text-34" x="320" y="396" font-size="18" fill="#29291f" font-weight="600" text-anchor="start">target r8 · receipt 匹配</text>
+<text id="text-35" x="320" y="419" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">intent 尚在 · candidate 已无</text>
+<path d="M608 401H635" fill="none" stroke="#40634d" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-sage)"/>
+<text id="text-36" x="652" y="396" font-size="19" fill="#40634d" font-weight="700" text-anchor="start">验证回执，只退休 intent</text>
+<text id="text-37" x="652" y="419" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">不替换，也不重写回执</text>
+<rect x="875" y="404" width="72" height="21" rx="5" fill="#e6eee5"/>
+<text id="text-38" x="911" y="420" font-size="14" fill="#40634d" font-weight="600" text-anchor="middle">0 / 0</text>
+<rect x="36" y="440" width="928" height="63" rx="12" fill="#fffdf7" stroke="#d8d0bf" stroke-width="1.2"/>
+<rect x="48" y="454" width="41" height="32" rx="9" fill="#e6eee5"/>
+<text id="text-39" x="68.5" y="476" font-size="17" fill="#40634d" font-weight="700" text-anchor="middle">C7</text>
+<text id="text-40" x="102" y="466" font-size="20" fill="#40634d" font-weight="700" text-anchor="start">commitComplete</text>
+<text id="text-41" x="102" y="489" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">目标、回执、清理均满足</text>
+<text id="text-42" x="320" y="466" font-size="18" fill="#29291f" font-weight="600" text-anchor="start">target r8 · receipt 匹配</text>
+<text id="text-43" x="320" y="489" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">intent 已退休 · candidate 已无</text>
+<path d="M608 471H635" fill="none" stroke="#40634d" stroke-width="2" stroke-linecap="round" marker-end="url(#arrow-sage)"/>
+<text id="text-44" x="652" y="466" font-size="19" fill="#40634d" font-weight="700" text-anchor="start">确认已提交，不再写入</text>
+<text id="text-45" x="652" y="489" font-size="15" fill="#68665c" font-weight="400" text-anchor="start">already-committed</text>
+<rect x="875" y="474" width="72" height="21" rx="5" fill="#e6eee5"/>
+<text id="text-46" x="911" y="490" font-size="14" fill="#40634d" font-weight="600" text-anchor="middle">0 / 0</text>
+<text id="text-47" x="36" y="527" font-size="14" fill="#68665c" font-weight="400" text-anchor="start">右侧计数 = 本次恢复的「替换 / 回执写入」；不含停止前已完成的动作。</text>
+<rect x="36" y="539" width="928" height="49" rx="10" fill="#f3ebd5"/>
+<text id="text-48" x="56" y="571" font-size="23" fill="#856326" font-weight="700" text-anchor="start">C7：提交已完成 ≠ 回复已送达</text>
+<text id="text-49" x="571" y="570" font-size="16" fill="#68665c" font-weight="400" text-anchor="start">本地 receipt 不能证明调用方已收到成功回复。</text>
+<text id="text-50" x="36" y="611" font-size="14" fill="#68665c" font-weight="400" text-anchor="start">成功路径须匹配预期操作；C4 还需核对 baseHash、候选摘要、JSON 结构与 revision。</text>
+<text id="text-51" x="36" y="637" font-size="14" fill="#68665c" font-weight="400" text-anchor="start">原创单 writer 教学模型，非 Claude 实现；无 fsync、无掉电测试，不证明断电持久性。</text>
+</svg>

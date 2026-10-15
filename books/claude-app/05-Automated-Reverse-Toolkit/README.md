@@ -228,3 +228,7 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpack
 默认不读取任何 companion。显式 opt-in 后，只允许 ASAR 声明的外置文件、外置目录和必要祖先目录；缺失、额外内容（包括空目录）、链接/特殊文件、大小或声明哈希不匹配、输入变动都会整体失败，没有绕过开关。原子交付前才返回成功；失败不产出残缺差分。
 
 此候选实现目前只在 Linux 通过原创合成验证，需要 POSIX no-follow 与 descriptor-relative 原语，Windows sidecar 尚不支持。完整文件清单覆盖不等于完整应用或发布方认证；原生文件的语义不会因此被静态扫描器解析。详见 [显式配套目录合同](SUPPORT.md#显式配套目录精确匹配整体成功或整体失败)。
+
+## 真实样本验证
+
+[Linux 2.37337.1显式ASAR配套](LINUX-ASAR-VALIDATION.md)：489个声明文件完整性通过，同字节双输入流程完成；语义扫描仍保留18个不完整文件，报告未抹掉覆盖缺口。验证没有执行产品代码。

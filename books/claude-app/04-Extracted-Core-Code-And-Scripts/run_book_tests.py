@@ -28,6 +28,7 @@ def commands(include_skills=False):
     jobs.append(('worked-cases-python', ROOT / 'worked-cases', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_worked_cases.py']))
     jobs.append(('worked-cases-node', ROOT / 'worked-cases', [node, '--test', *map(str, sorted((ROOT / 'worked-cases').glob('context_budget*.test.mjs')))]))
     jobs.append(('telemetry-metrics', BOOK / '02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_metrics_lab.py']))
+    jobs.append(('crash-cut-recovery', ROOT / 'crash-cut-recovery', [sys.executable, '-B', '-m', 'unittest', 'discover', '-s', '.', '-p', 'test_*.py', '-v']))
     if include_skills:
         location = BOOK / '03-Ready-To-Use-Agent-Skills'
         files = sorted(location.rglob('*.test.mjs'))
