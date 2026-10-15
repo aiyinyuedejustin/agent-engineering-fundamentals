@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>两个有边界的原创组件</title>
+<link rel="stylesheet" href="../../styles/claude-tokens.css"><link rel="stylesheet" href="../../styles/claude-reset-and-base.css"><link rel="stylesheet" href="scoped-chat.css">
+<body><h1>两个组件，一个宿主</h1><p>分别切主题、输入草稿；把焦点留在某一组件按 Ctrl/⌘+K。此示例不发网络请求。</p><button id="host">宿主按钮：此处快捷键不归组件所有</button>
+<section aria-label="左侧工作区"></section><section aria-label="右侧工作区"></section>
+<button id="remount">卸载并重新挂载左侧</button>
+<script src="scoped-chat.js"></script><script>
+const roots = document.querySelectorAll('section');
+let left = AtelierScopedChat.mount(roots[0], {namespace:'example:left'});
+const right = AtelierScopedChat.mount(roots[1], {namespace:'example:right'});
+document.getElementById('remount').onclick = () => { left.unmount(); left = AtelierScopedChat.mount(roots[0], {namespace:'example:left'}); };
+</script></body></html>

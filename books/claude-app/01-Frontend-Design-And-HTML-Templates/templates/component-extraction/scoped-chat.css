@@ -1,0 +1,8 @@
+/* 只用于本例。不要把整页 .btn / .container / details / kbd 原封不动导入宿主。 */
+[data-scoped-chat] { padding: 20px; border: 1px solid var(--ui-line); border-radius: 16px; }
+[data-scoped-chat] .mini-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+[data-scoped-chat] :is(button,select,textarea) { border: 1px solid var(--ui-line-strong); border-radius: 8px; padding: 8px; background: var(--ui-surface); }
+[data-scoped-chat] form { display: grid; gap: 8px; }
+[data-scoped-chat] textarea { min-height: 80px; resize: vertical; }
+[data-scoped-chat] [data-role="messages"] { min-height: 80px; overflow-wrap: anywhere; }
+[data-scoped-chat] [data-role="user"] { background: var(--ui-sidebar); padding: 10px; }

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" role="img" aria-labelledby="title desc">
+<title id="title">整页拆分与局部挂载是两次不同的边界迁移</title><desc id="desc">左侧整页保留 document 根与全局监听，仅改变文件组织。右侧两个独立容器分别拥有主题、ID、存储与取消资源；共享的是文档平台能力，宿主拥有全局快捷键策略。</desc>
+<rect width="960" height="480" rx="16" fill="#f8f7f3"/>
+<g font-family="system-ui,sans-serif" fill="#2e3028"><text x="28" y="40" font-size="24">先保行为，再收窄所有权</text>
+<rect x="28" y="64" width="290" height="344" rx="12" fill="#fff" stroke="#8d9776"/><text x="48" y="99" font-size="20">① 整页外链拆分</text><text x="48" y="138" font-size="16">index.html + CSS + page.js</text><text x="48" y="178" font-size="16">根：documentElement</text><text x="48" y="214" font-size="16">查询：document</text><text x="48" y="250" font-size="16">存储：atelier-* 同源共享</text><text x="48" y="286" font-size="16">快捷键：document</text><text x="48" y="338" font-size="16">适合：独立页面 / 路由文档</text><text x="48" y="374" font-size="16">仍不能直接并排挂载</text>
+<path d="M330 230h46m-12-10 12 10-12 10" fill="none" stroke="#687653" stroke-width="3"/>
+<rect x="390" y="64" width="542" height="344" rx="12" fill="#f0eee7" stroke="#8d9776"/><text x="410" y="99" font-size="20">② 宿主文档：分配容器与存储键</text>
+<rect x="410" y="120" width="240" height="204" rx="8" fill="#fff"/><rect x="670" y="120" width="240" height="204" rx="8" fill="#eaf0e5"/>
+<text x="428" y="151" font-size="18">root A · light / paper</text><text x="428" y="187" font-size="16">ID A-* · namespace A</text><text x="428" y="223" font-size="16">焦点在 A → K 只归 A</text><text x="428" y="259" font-size="16">timer / listeners / media</text><text x="428" y="295" font-size="16">unmount → 取消并清理</text>
+<text x="688" y="151" font-size="18">root B · dark / sage</text><text x="688" y="187" font-size="16">ID B-* · namespace B</text><text x="688" y="223" font-size="16">焦点在 B → K 只归 B</text><text x="688" y="259" font-size="16">timer / listeners / media</text><text x="688" y="295" font-size="16">卸载 A 不改变 B</text>
+<text x="410" y="361" font-size="16">document 平台能力仍共享：focus / dialog / clipboard</text><text x="410" y="390" font-size="16">宿主按钮聚焦 → 组件不接管快捷键</text><text x="28" y="450" font-size="15">原创边界图，非浏览器截图；DOM 合同不证明布局、原生 IME、焦点圈或 CSP 执行。</text></g></svg>
