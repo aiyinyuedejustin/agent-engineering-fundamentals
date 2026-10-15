@@ -7,7 +7,7 @@
 本卷范围是 Claude Desktop 2.37337.1 的 classic chat C1/C2、SSE 与相关解析路径。hub/C3、Code/Cowork、语音及服务端上下文另有边界；详见[证据索引](#证据索引)。[PT-05、PT-27、PT-54]
 
 ```mermaid
-flowchart LR
+flowchart TB
     A[用户输入与界面状态] --> B[客户端请求构造]
     B --> C[服务端处理边界]
     C --> D[SSE 字节流]

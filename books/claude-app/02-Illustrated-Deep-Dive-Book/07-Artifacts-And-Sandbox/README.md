@@ -19,20 +19,28 @@ Artifact 同时有三种身份：对话中的一份结果、可以切换的内�
 
 这里的 chrome 指包围文档的标题栏、工具栏与控制区，不是 Google Chrome 浏览器。
 
+**对话 artifact 面板路径**
+
 ```mermaid
-flowchart LR
-    Conversation["对话中的 artifact 引用"] --> Selection["选择版本并解析正文"]
-    Selection --> Gate{"类型与流式状态"}
+flowchart TB
+    Conversation["对话中的<br/>artifact 引用"] --> Selection["选择版本<br/>并解析正文"]
+    Selection --> Gate{"类型与<br/>流式状态"}
     Gate --> Source["本地源码视图"]
-    Gate --> Markdown["本地 Markdown 视图"]
-    Gate --> Host["富内容 iframe 宿主"]
-    Host <-->|"RPC、内容投递与确认"| Renderer["配置的远端渲染器"]
-    Renderer -. "本卷未恢复" .-> Runtime["编译、加载、执行与渲染"]
-    Workspace["文档工作区外框"] <-->|"同源 chrome 状态与命令"| Page["嵌入编辑页面"]
+    Gate --> Markdown["本地 Markdown<br/>视图"]
+    Gate --> Host["富内容 iframe<br/>宿主"]
+    Host <-->|"RPC、内容投递<br/>与确认"| Renderer["配置的<br/>远端渲染器"]
+    Renderer -. "本卷未恢复" .-> Runtime["编译、加载、<br/>执行与渲染"]
+```
+
+**文档 frame 工作区路径**
+
+```mermaid
+flowchart TB
+    Workspace["文档工作区外框"] <-->|"同源 chrome<br/>状态与命令"| Page["嵌入编辑页面"]
     Page -. "本卷未恢复" .-> Backend["保存与协同后端"]
 ```
 
-图 1：上半部把正文交给渲染器；下半部控制一个会报告自身状态的文档页面。把两者压进同一个 `iframeState`，会同时模糊交互责任与安全边界。
+图 1：上图把正文交给渲染器；下图控制一个会报告自身状态的文档页面。把两者压进同一个 `iframeState`，会同时模糊交互责任与安全边界。
 
 富内容路径覆盖 HTML、React、SVG、Mermaid。Code 与 Markdown 使用本地展示组件；纯文本走源码展示。不能因为它们都叫 artifact，就推定都经过同一个编译器。[W03, W24]
 
