@@ -22,7 +22,7 @@ export function pcm16le(samples) {
   return bytes;
 }
 export class PcmFrameAssembler {
-  #pending=[]; #sequence=0;
+  #pending=[]; #sequence=0; #finished=false;
   constructor(sampleRate, durationMs) {
     if (!Number.isSafeInteger(sampleRate) || sampleRate<=0 || !Number.isFinite(durationMs) || durationMs<=0)
       throw new RangeError('Invalid audio format');
@@ -31,8 +31,12 @@ export class PcmFrameAssembler {
     this.sampleRate=sampleRate;
   }
   push(samples) {
+    // finish 关闭这一条采样流；在读取输入前拒绝后续写入。
+    if (this.#finished) throw new Error('PCM stream is finished');
     // Snapshot once, then validate all input before mutating assembly state.
     const batch=Array.from(samples);
+    // 用户迭代器可能在展开输入时调用 finish，再次确认流仍开放。
+    if (this.#finished) throw new Error('PCM stream is finished');
     for (let i=0;i<batch.length;i++) {
       const sample=batch[i];
       if (!Number.isFinite(sample)) throw new TypeError('Invalid sample');
@@ -54,7 +58,13 @@ export class PcmFrameAssembler {
     return frames;
   }
   get pendingSamples(){return this.#pending.length;}
-  finish(){const tail=Float32Array.from(this.#pending);this.#pending=[];return tail;}
+  finish(){
+    if (this.#finished) return new Float32Array(0);
+    const tail=Float32Array.from(this.#pending);
+    this.#pending=[];
+    this.#finished=true;
+    return tail;
+  }
 }
 export class EnvelopeHistory {
   #history=[]; #level=0;
