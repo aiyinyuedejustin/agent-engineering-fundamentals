@@ -1,0 +1,699 @@
+{
+  "result": "PASS",
+  "scope": "Original synthetic inputs only; genuine external CLI and bounded API probes",
+  "official_registry_metadata_url": "https://registry.npmjs.org/acorn/8.17.0",
+  "dependency": {
+    "name": "acorn",
+    "version": "8.17.0",
+    "resolved": "https://registry.npmjs.org/acorn/-/acorn-8.17.0.tgz",
+    "integrity": "sha512-xRQbDb9BnwDafYNn6Vwl839DYVjqXYb1XVGtWAZ1kcDc6iwAL4hg3B1dZlRiuENFeO2H53gFG3in621AdERVAg==",
+    "cached_tarball_sha512_verified": true,
+    "installed_package_and_module_match_verified_tarball": true,
+    "module_sha256": "b373ccd10e9deb63654289f73216eeefcaf0405d9ee24289aabf596b91b4c318",
+    "testing_only": false,
+    "transitive_dependencies": 0,
+    "lifecycle_scripts": "disabled via --ignore-scripts"
+  },
+  "runtime": {
+    "node": "v24.19.0",
+    "python": "3.12.14",
+    "platform": "linux"
+  },
+  "implementation_sha256": {
+    "ast_candidates.py": "42de4412758e4c9f101e446482f9f4dab9d3179d00a780d83f7a2bd0b8a807cd",
+    "ast_worker.cjs": "6def4a9a4df09ed6e3a1ed101748b3987e34a4e12569b51d275eab8487db56e5",
+    "tests/fixtures.json": "3c26b774084b0f6dbf3cca8d99b9709f71d93a75cac792329def9869cf4fd183"
+  },
+  "fixture_cli_count": 52,
+  "fixture_cli_status_counts": {
+    "scanned": 45,
+    "scan-incomplete": 7
+  },
+  "all_cli_count": 60,
+  "bounded_api_probe_count": 7,
+  "target_execution_sentinel_absent": true,
+  "nonexistent_static_dynamic_imports_not_resolved": true,
+  "real_product_files_parsed": 0,
+  "publication_modified": false,
+  "semantic_completeness_proven": false,
+  "legacy_coverage_modified": false,
+  "bounded_api_probes": [
+    {
+      "id": "tokens-exact",
+      "status": "scanned",
+      "expected_issue": null
+    },
+    {
+      "id": "tokens-over",
+      "status": "scan-incomplete",
+      "expected_issue": "ast-token-bound-exceeded"
+    },
+    {
+      "id": "shorthand-exact",
+      "status": "scanned",
+      "expected_issue": null
+    },
+    {
+      "id": "shorthand-over",
+      "status": "scan-incomplete",
+      "expected_issue": "ast-node-bound-exceeded"
+    },
+    {
+      "id": "depth-over",
+      "status": "scan-incomplete",
+      "expected_issue": "ast-depth-bound-exceeded"
+    },
+    {
+      "id": "records-over",
+      "status": "scan-incomplete",
+      "expected_issue": "ast-record-bound-exceeded"
+    },
+    {
+      "id": "output-over",
+      "status": "scan-incomplete",
+      "expected_issue": "ast-output-bound-exceeded"
+    }
+  ],
+  "cases": [
+    {
+      "id": "trap-nested-template-raw",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "7d1321a4d5cfc2754b92a560030f16a4c0c4354958cd4112ce8564806991efe2",
+      "report_sha256": "4f26bd08e49af39cb19db5aebe3a07dd923a2a24759a19e64771cbfdbf49c344",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "control-after-nested-template-raw",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "b0aa2afb6c1d4d56acd54c4a9e6ced5c370587e7bdf2edb7d5024789444f08df",
+      "report_sha256": "0077edbe21db51966ec15ffa989d8bf02181ff359f3ec3b033d9f6a621ede449",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "trap-return-string-division",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "b1dfad72ee81a02760d2636a1003f7a1dd7f769a07a2ba9a5e1d0c56696e20f2",
+      "report_sha256": "df80313f779ad031288929574f1ef69b066e65b273e63077cc95d90e714fe76c",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "control-after-return-string-division",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "a03260e8d5d783afea13f41f3d8fdb0202d334cb2246b0f18543cb7c27679b70",
+      "report_sha256": "45f190bd5156b511cf2c6335b6b17c258437b65216c0bedb7bb4e2e02aae605b",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "trap-regex-after-arrow",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "ef552a45a49b32d690aa4acf61a6ecaa394b0bd5ed88d70de176a5a7f27a3d57",
+      "report_sha256": "050b456db2e7ff4dbc81ac8072107824f56bb5ba0923d72816eede8f41d53ab3",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "control-after-regex-after-arrow",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "bd7b99c05ab5314862e7a96f971b8a8b2a0ccf77c3171149887afc186f3985bf",
+      "report_sha256": "f4fb83536f24f6a92de1d6de500effa69d3a9b9ca55e0ec39640f7eee7aa2641",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "trap-regex-after-and",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "38fe79ef0fcac0dd9bcb23b0fea560ebfa2870e569beb766d7b84eee823083d0",
+      "report_sha256": "b985764118de11bf35e60cbd95e23d009b4ce89ba316250856d4a200b4c28afa",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "control-after-regex-after-and",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "50de3fef0ffa29bf38f0d1972cf3ce764568c047030f9fe3024c640e2ce87cae",
+      "report_sha256": "aaa2c944aa14efd9e5d5c9a9b603a696b09597b475d8c6d39e439cbee978217a",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "trap-regex-after-control-header",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "549338f5b2d71314de3e0404bac87d23c13250d41b12ad7869b7df3da820d456",
+      "report_sha256": "5a2843831e41afe1c1489d42d0ee96ebed092d1ac874bcf3107d40ce4e36692c",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "control-after-regex-after-control-header",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "4a981c31076d7ad020e0c3e162170ae4ee75e13884f0a775aec1c5b710dd3497",
+      "report_sha256": "236c163cdf8cfbb32220fd2b9c2c3f7b6e54364b97d790f0bdc3f2ef2cebc34c",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "calls-direct-three-categories",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "1236706e1d3a8cace951a264173b2d2b89d8d354208516ccc29be2190d6f2cd6",
+      "report_sha256": "6c85b8bfef7269f96c02f390b5785bb094831d42aa1d03546fcc45fa17f7d01a",
+      "records": 3,
+      "issues": []
+    },
+    {
+      "id": "calls-member-three-categories",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "d5ac8586f8d88ec44f45c6a02272918f5c9c6872e2d01ee6e8c31d25bfd048f0",
+      "report_sha256": "97691cc67429ea4ccda453b8a277987b1c07c338562476402bea519c337d4937",
+      "records": 3,
+      "issues": []
+    },
+    {
+      "id": "call-plain-template-argument",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "b8714051310f4d3c8b435217972cd2534a9a99af29e17bd6bc59b281d2a9529e",
+      "report_sha256": "0ce5a5a958fced04753b4dcf60f7566441607ed67a2878b238cacee42b55e0ba",
+      "records": 3,
+      "issues": []
+    },
+    {
+      "id": "call-inside-template-interpolation",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "82d4bad9f797628cb04c8bc51a29aff18cc949676ccdbe89c2a751d60fd90c45",
+      "report_sha256": "c697c4bf77724deab12311746aa6ed1ab51b87af9982bb8b3aef594c8cffb381",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "call-inside-nested-template-interpolation",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "7acad5984f968c0f75f38c18e7db8df3e5696b2325b5944b207b67e21bab5168",
+      "report_sha256": "d8613451b88217385821c2c6521a2d55229e388b1bbfcf6f5e01a5e396138a23",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "call-in-interpolated-name-expression",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "fa43f165ece868ab5904d3d8f71bbc37c1815cfadbc7cad4f1b68a36a3ea23b4",
+      "report_sha256": "e4569de359c4f3286d0db21f35658b80362bf09cc368bd71c3e892ab5c5e8b9f",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "comments-and-trivia-around-real-call",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "bf3e03866955dac319e5b8146a97a0bb3ff4f284ac6f483da04d8b98583448d5",
+      "report_sha256": "474502c62beb084c0070c6faf7762239780d8d914bed488ad7925fa4af512422",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "all-default-call-spellings",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "ce7061b3d597941db82341ce4f34307ba63ffcfad43ef71c6cb8fc41b1dfe22b",
+      "report_sha256": "c6f4366fa0c278c865373885255a8f232e06a925a7e9d929bf4525626c4abac2",
+      "records": 17,
+      "issues": []
+    },
+    {
+      "id": "negative-line-and-block-comments",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "184ed28ad66d790696fb1591f3a1dca8451e14509c4e332276a597180bb8c0a3",
+      "report_sha256": "1d5522a89345329d499deade93b5dce52bbafcd2ad151fc7c0ac753a5f6a0cd5",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-plain-quoted-strings",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "d85062bd8af6b3b0909bd6ab50ba195469513b394d9b2e300148b1d77803479f",
+      "report_sha256": "19ecdf86558b537f9b1df45b77f9bdfbf8c8c1bd2bd1ca1f0b4373742130f294",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-plain-template-raw",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "b4b5e0e28a794806ef764cb195c3cb37e85c8b190489df12c0f78f5d51ea13ea",
+      "report_sha256": "07e3fa748ceaecbab23bd6c1a6e7d22f4dc3561c774b824adffeb09c105bb5fa",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-regex-literal",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "4b566f4f79712bccfd9bb3db250a469eb78c70ae7ac4674d6a779b3e1f039e09",
+      "report_sha256": "ff2a80e1a0b09c4a71ddf7b3aafd1ee0aa15ebd11c139d541d017fd188bf5c4f",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-dynamic-first-arguments",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "cb9c60e7b62d8060c3932ca5e01ac135180032e151b2bbb168e9d8e62973f37b",
+      "report_sha256": "e96d6b1b9a2c061837286482b28f061583ad71e9e1af3521d04225c97796feeb",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-concatenated-first-arguments",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "8bf42dcf29131f57a00052c1e13999593be7350f1f0be5ff425ba7982f5cb143",
+      "report_sha256": "d3b591304fbe1c3932d5431d8c92f72d2c38884e0cd03d29c21b76b6d25f81bc",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-interpolated-first-arguments",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "a94c6f182b939f61abc384e2e2b7c399cb60d595ac69c55aade2aa9084b9f796",
+      "report_sha256": "33fb34d3b74c30159f44dd8375137b0a7f3f3df88bfe6908fdfc8dbb7a6c883e",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-escaped-quoted-first-arguments",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "9c6267e0a8067d412e03ee1b8678a5e783c85c29b71daaf76c3cdf527ed24b53",
+      "report_sha256": "9583a6f7270cdc27f54907b90b7b87231a0c204467865c5f3402cb82cb641fb9",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-escaped-template-first-arguments",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "c86fb2e00edbc15562f7aedb47c724dba26de01bc9505a6f07963742b743ff12",
+      "report_sha256": "9a380778c6cbe4e53a963d3169d3851f3caa2336609f3fbd1d814aef144f1ad8",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-computed-callees",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "f39025417915c479d30f3e33c78d66f62ef67cd7e3b249d745b6076c1ca16575",
+      "report_sha256": "5a6e6ae8cda17bb54d117cd6339803de8b8f9eabd1fd6f12896b1dfa1df75b63",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-dynamic-and-aliased-callees",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "f594964e08eb33c1df05c760b23451dcd9214877967120675026eb4ee1c48287",
+      "report_sha256": "3067e2d3c94a05ae4990431d9166ba5a43cc614680d0f26b3db2a556c91b736d",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-new-and-tagged-expressions",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "794bdee3aed937b9a28eaf45a7de1f3c3640915c170bb56f99c3ec80134a5c9b",
+      "report_sha256": "80ba57cacceb4e88f77eb57451c58934308b2a987eb3fc7ae6060f8521b8d9f6",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-function-and-object-method-definitions",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "87a1dceb628d83c47cb6a39166c6dfde1f7799a11574a7b664b991ba56404253",
+      "report_sha256": "1dc938eacc4e5eed65031d19095840eefb94b4e05f9eed1777a0dd3d8711029f",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-getters-and-setters",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "513baa39b3ba9cf97ae92ad973d26691ae1a43e19fe3416f5f60e667b727e550",
+      "report_sha256": "52eef4c5fb0935a413fe8b3f824637c5f852ae0b3dda0743d3a706161b921195",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-no-arguments-and-nonstrings",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "da9fb70fb91fc8922b147c1074607614d815200a9c08d372025976984cf1f844",
+      "report_sha256": "634373dd436b8ad473e1f3057cda4d46dfc86dbbaf596bb11a6d842ccdf01c6b",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "object-all-default-schema-markers",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "50f79e81d8849364e5185da454c4298fe34f7a257f0e315e3e047f9006c9d88d",
+      "report_sha256": "81712ad918e33af8d807f4e120ef4a1c2ee70ef3038f4d3d9de9901c0332db65",
+      "records": 5,
+      "issues": []
+    },
+    {
+      "id": "object-all-default-event-fields",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "bcde4a0d8b17138ba74789cd918de4b9f24e935cdef25a8258edfd782b439390",
+      "report_sha256": "86351a54525d238ff1f5b7c30fb17b6bf4f7fcdc36f6751527147749020b42b9",
+      "records": 4,
+      "issues": []
+    },
+    {
+      "id": "object-quoted-keys-and-template-value",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "e4efd8fcc0ec78f2d8834c6db8ec6e4b4b4d1be40a8d2c12184894236e9ddc07",
+      "report_sha256": "a52c1a70040f1476b1299f299cd34a3867693cae8f2fe455345fa74f1c8d09ca",
+      "records": 2,
+      "issues": []
+    },
+    {
+      "id": "object-nested-real-init-properties",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "d18ed42912cbd109ac49d80c62fab75f3bc50adfef71871cef59b7b2fb3d2f62",
+      "report_sha256": "088fad8dafab183f848f9cb127a1dcef0d24c75f14c99b5a98e9d070ce78046d",
+      "records": 2,
+      "issues": []
+    },
+    {
+      "id": "negative-object-dynamic-event-values",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "e8bd2a0e5bb9a600d6c733a00af67925f9032343767ba1793701ccfba72a82dc",
+      "report_sha256": "f7540580211df1117f6d18d97f81ca9237f2dd63bcae8e8d594948c805ad8355",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-computed-object-keys",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "cfbe1a228b48e4635fa130351e8a65d821e471e5ce9c432e6e36a972444e4c3e",
+      "report_sha256": "75cf35fb1e2b850a99f57c6a6058f7e6fc1434251d7577faf51a4d14a5f3fde0",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "negative-labels-and-object-patterns",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "19a0c62e1d612a1043788a8597ec99f5a72e6ceff5e94464f0a926f51192a8e2",
+      "report_sha256": "852aaf01e794f552a29f37646c7f3bf120e613fe91e2e06163ce38ff3532766e",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "real-call-inside-object-method",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "f0db22e75ed7dd5e7a94be099ed09f539e027eadd45d09124ac93aef3a1a3e82",
+      "report_sha256": "60e09c9f5c9f58e16dcf95a2561b98bf9ed466683ecb32058136f51248eac10a",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "schema-marker-not-tool-association",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "2eea9f028e09eb5f8d0e2044c489a83710c62d51c70ffee404cec58e67debac9",
+      "report_sha256": "5516dc82cb9c891242796df091fb657eb1df4e6145cb8245c09a74b400c9da86",
+      "records": 2,
+      "issues": []
+    },
+    {
+      "id": "name-length-exactly-256",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "e5eb62857f7a19f222184b08945e64576a6fc1140e71d44e32ee661594c3d378",
+      "report_sha256": "a08043d2bb1aa139d1c3f5405a7767e50994cdf28048a067bba89d8fc33b2d7a",
+      "records": 2,
+      "issues": []
+    },
+    {
+      "id": "name-length-over-256",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "febed9306ca1989dbd89fd9b99128f3670b77154fca5199a2e7ea0e12e00dfa4",
+      "report_sha256": "97532d4149ecc3a04624e0b85b1fa98c1fa950a536a5b32590de8fa5fb9de981",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "unicode-and-emoji-byte-anchors",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "0a9c5602b6dd2a00ef1bbc5674e995839ca0a590f86a07357a4c9714acbadbee",
+      "report_sha256": "551563c731c247737d91fa6a5a8f472b5f264f10a4279a30b42f2b2e7c44859a",
+      "records": 2,
+      "issues": []
+    },
+    {
+      "id": "incomplete-malformed-missing-argument",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "77e029baae01178f4fd3154f4e9ca7608bae0baecbd2fb11c6ca4cac02105de5",
+      "report_sha256": "6a9b61728ccbdb161cd93a47592b8393f238f078e28f395e4a8f9fcc8272f8ba",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "incomplete-unclosed-string",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "6f548921700f69fd4d869a6a827fbd46f1ae7fd5914ad72c975ba1e9375de857",
+      "report_sha256": "83e03f54aa5f5cdea15f634de0dff0c720eb40c5eba3b674d0ad795d256ec008",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "incomplete-unclosed-template",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "50d8fb7cf5dc62242acc3827076d7b0001d363c69e0bf2c2cc93a57f1ff9f2b7",
+      "report_sha256": "41740fca5e90eb3a4df645cb8bb789fbd2af72cffa3af49a48c8bd49c14f88e9",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "incomplete-unclosed-block-comment",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "bcfea890f312d1beeedd286eff879e3312b1aea9a1ceb99aca56b2272a645154",
+      "report_sha256": "bdc55dbf0d2c2071c9e0ccd2a0f8740769391336b2eb3298c10079c7c569335b",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "incomplete-typescript-annotation",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "256d75aca5b5c01c045e75bcd9d1b9e5743f0b7c8fe6fc60fbd32ffbd2c973e1",
+      "report_sha256": "7cb82ea42e332f21b571c5bbf2df77e9dad08d6dd0a6af3662554c434b70be42",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "incomplete-typescript-interface",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "38583746f79738ec190e4766cc36cc2fc57902b5e66e4689a7992e9c8c6aaf51",
+      "report_sha256": "549f3159a9b277cb3e423f68a909c111226777ecaafabf86610eb0edadff4982",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "incomplete-jsx-element",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "03fe9ab96d37b43d05e1899cb700c525fbbd4e34dfd2bd525baf88f0270a0955",
+      "report_sha256": "b4795cb819914c047f5519c811842eeafc61484904cf22f29f9c84800a2b93f2",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "no-target-execution",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "b35fdcf755abfb27e5efa6405cc22e56b626bba112cb6336d456af10365118c4",
+      "report_sha256": "65a6e5598cd70c0f772fef4285ada5e1eef706ea468ec3163062c4c3d06040f6",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "script-success",
+      "source_type": "script",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "ceec8578dba977268f91733b729bbacff7fb09dc79c1ef259d5896bd984562a9",
+      "report_sha256": "47d0174ff9eeb7f6ae0fc55a4334f8cf7b6361478e9682482e18a148b3d9aa0c",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "script-export-rejected",
+      "source_type": "script",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "5dd25e250435ab2d434e779fa4ece76e13b4f56fd8b3578b6ccac531712bd642",
+      "report_sha256": "ac63baf1cbf5e673e0dc249a3f307f999419730dfde58bbc1da5c9d11a5de8af",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "ecma2025-using-rejected",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "7a6f20d74aed16d8f0d5b1828a2c47e75ef11e69641709f066918fc63e22de3f",
+      "report_sha256": "01df81c0396feae1fde9cbbe8dde655eda1b3b37e9033bcfcf5d2c706ebeed14",
+      "records": 0,
+      "issues": [
+        "ast-syntax-rejected"
+      ]
+    },
+    {
+      "id": "unicode-bom",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "8d4353feb74a756aa442137b75e520412e917ae2c9f7f2b6c8d030c3072549f0",
+      "report_sha256": "b835093fc42d75837d7f47c18d5da54926903ff500722f5019a78746e856649c",
+      "records": 1,
+      "issues": []
+    },
+    {
+      "id": "twenty-thousand-calls",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "fd66ebe3aa5f233018c00a519966b206cc237d3c19dd5191703748cc99ada95e",
+      "report_sha256": "4775855fabe97c4c0b438addef5bd36d9babadcf2a16a81e2c13b7d4bf7c6e50",
+      "records": 20000,
+      "issues": []
+    },
+    {
+      "id": "million-token-exact",
+      "source_type": "module",
+      "status": "scanned",
+      "exit_code": 0,
+      "input_sha256": "319bf0b85f629e2ab668a7e95684c331e7ec484f9f06c6105a776e483c06c739",
+      "report_sha256": "6801b603154d067d5fe40f624de48eb25ad0984483bdfb9e6a506f5fbba3d09e",
+      "records": 0,
+      "issues": []
+    },
+    {
+      "id": "million-token-over",
+      "source_type": "module",
+      "status": "scan-incomplete",
+      "exit_code": 2,
+      "input_sha256": "669f772b0a16a466fd14a9ce20063f8b70ba4cbbd5408500d42c7d03c4fd5768",
+      "report_sha256": "ba1bd16ce4d5b87042998458d81194e493b449a2d170dd7386a7a298476a2705",
+      "records": 0,
+      "issues": [
+        "ast-token-bound-exceeded"
+      ]
+    }
+  ]
+}

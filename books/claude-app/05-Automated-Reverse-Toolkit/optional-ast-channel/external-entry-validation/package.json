@@ -1,0 +1,8 @@
+{
+  "name": "original-external-ast-entry-validation",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "acorn": "8.17.0"
+  }
+}

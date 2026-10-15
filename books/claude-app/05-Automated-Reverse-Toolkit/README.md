@@ -278,4 +278,4 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpack
 
 ## 可选实验：用语法树交叉检查候选
 
-[独立 AST 候选通道](optional-ast-channel/README.md) 用真实 JavaScript 语法节点排除五类原创词法反例。它保留独立 schema、预算和结果，不更改默认扫描器及其已报告缺口。当前89项测试使用明确标记的 Node 内部 Acorn 8.17.0；正式外置 Acorn 入口的成功路径尚待验证，不能当成默认工具箱的生产替代品。
+[独立 AST 候选通道](optional-ast-channel/README.md) 用真实 JavaScript 语法节点排除五类原创词法反例。它保留独立 schema、预算和结果，不更改默认扫描器及其已报告缺口。原有89项测试使用明确标记的 Node 内部 Acorn 8.17.0。[正式外置入口验证](optional-ast-channel/external-entry-validation/REPORT.zh.md)另用官方 Acorn 8.17.0 完成52个既有 fixture、8个额外CLI场景和7个预算探针；两个测试口径分别保留。独立通道仍只报告受限语法候选，不替换默认工具箱的覆盖口径。
