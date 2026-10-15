@@ -256,7 +256,7 @@ host-loop 的 Bash/WebFetch alias 是名称路由关系，不是 CLI 原始工�
 - `contract-lab.mjs`：严格类型/数组长度/数值枚举/union 的小型校验器、有限适配损失报告器，以及 schema→语义→授权→dispatch 的原创路由器。
 - `test/contract-lab.test.mjs`：24 个行为测试，涵盖整数、数值 enum、union、required、未知字段、先校验后授权、批处理和授权变更。
 
-运行行为测试：
+先进入上述 `04-Extracted-Core-Code-And-Scripts/tool-contracts/` 实验目录，再运行行为测试：
 
 ```sh
 node --test test/contract-lab.test.mjs

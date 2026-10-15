@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1360" viewBox="0 0 1440 1360" role="img" aria-labelledby="title desc">
+<title id="title">八个任务，十一次尝试：成功与价值不能共用分母</title><desc id="desc">原创合成队列。八个已成熟合格任务包含十一次尝试，尝试结果为成功四次、失败五次、取消一次、未知一次；任务权威终态为成功四个、失败两个、取消一个、未知一个；两个成功任务有价值确认。重试仅增加尝试数，不增加任务数。</desc>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}.mono{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 5L0 10Z" fill="#67645c"/></marker></defs>
+<rect x="0" y="0" width="1440" height="1360" rx="0" fill="#f5f3ec"/>
+<text id="text-1" x="60" y="56" font-size="18" fill="#a65539" font-weight="600" text-anchor="start">卷 12 · 遥测与产品指标 / 原创合成例子</text>
+<text id="text-2" x="60" y="110" font-size="37" fill="#25231e" font-weight="700" text-anchor="start">8 个任务，11 次尝试：成功还要再问价值</text>
+<text id="text-3" x="60" y="151" font-size="22" fill="#67645c" font-weight="400" text-anchor="start">同一成熟队列，同一观察窗口。这里的数字全部为教学设定，不是线上实测或官方 KPI。</text>
+<rect x="60" y="179" width="1320" height="88" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text id="text-4" x="84" y="214" font-size="21" fill="#a65539" font-weight="700" text-anchor="start">本例契约</text>
+<text id="text-5" x="208" y="214" font-size="21" fill="#25231e" font-weight="400" text-anchor="start">8 个任务均已提交、合格且完整观察 W；按 task_id 归组，重试产生新的 attempt_id。</text>
+<text id="text-6" x="208" y="248" font-size="21" fill="#25231e" font-weight="400" text-anchor="start">任务终态另由 task_closed 判定；价值确认要求成功后取得预先约定的有效证据。</text>
+<rect x="60" y="292" width="1320" height="548" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="60" y="292" width="1320" height="60" rx="13" fill="#e7edf0"/>
+<text id="text-7" x="90" y="332" font-size="22" fill="#436879" font-weight="650" text-anchor="start">任务</text>
+<text id="text-8" x="240" y="332" font-size="22" fill="#436879" font-weight="650" text-anchor="start">第 1 次尝试</text>
+<text id="text-9" x="507" y="332" font-size="22" fill="#436879" font-weight="650" text-anchor="start">重试尝试</text>
+<text id="text-10" x="788" y="332" font-size="22" fill="#436879" font-weight="650" text-anchor="start">任务权威终态</text>
+<text id="text-11" x="1100" y="332" font-size="22" fill="#436879" font-weight="650" text-anchor="start">价值确认</text>
+<text id="text-12" x="90" y="390" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T1</text>
+<rect x="240" y="361" width="110" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-13" x="295.0" y="390" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<text id="text-14" x="562" y="390" font-size="22" fill="#67645c" font-weight="400" text-anchor="middle">—</text>
+<rect x="788" y="361" width="144" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-15" x="860.0" y="390" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<rect x="1100" y="361" width="142" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-16" x="1171" y="390" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">有确认</text>
+<rect x="62" y="413" width="1316" height="57" rx="0" fill="#f7f6f1"/>
+<text id="text-17" x="90" y="448" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T2</text>
+<rect x="240" y="419" width="110" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-18" x="295.0" y="448" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<rect x="507" y="419" width="110" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-19" x="562.0" y="448" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<rect x="788" y="419" width="144" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-20" x="860.0" y="448" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<rect x="1100" y="419" width="142" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-21" x="1171" y="448" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">有确认</text>
+<text id="text-22" x="90" y="506" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T3</text>
+<rect x="240" y="477" width="110" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-23" x="295.0" y="506" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<text id="text-24" x="562" y="506" font-size="22" fill="#67645c" font-weight="400" text-anchor="middle">—</text>
+<rect x="788" y="477" width="144" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-25" x="860.0" y="506" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<text id="text-26" x="1100" y="506" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">未确认</text>
+<rect x="62" y="529" width="1316" height="57" rx="0" fill="#f7f6f1"/>
+<text id="text-27" x="90" y="564" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T4</text>
+<rect x="240" y="535" width="110" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-28" x="295.0" y="564" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<rect x="507" y="535" width="110" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-29" x="562.0" y="564" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<rect x="788" y="535" width="144" height="41" rx="8" fill="#e7ece7"/>
+<text id="text-30" x="860.0" y="564" font-size="21" fill="#466957" font-weight="600" text-anchor="middle">成功</text>
+<text id="text-31" x="1100" y="564" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">未确认</text>
+<text id="text-32" x="90" y="622" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T5</text>
+<rect x="240" y="593" width="110" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-33" x="295.0" y="622" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<rect x="507" y="593" width="110" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-34" x="562.0" y="622" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<rect x="788" y="593" width="144" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-35" x="860.0" y="622" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<text id="text-36" x="1100" y="622" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">未确认</text>
+<rect x="62" y="645" width="1316" height="57" rx="0" fill="#f7f6f1"/>
+<text id="text-37" x="90" y="680" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T6</text>
+<rect x="240" y="651" width="110" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-38" x="295.0" y="680" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<text id="text-39" x="562" y="680" font-size="22" fill="#67645c" font-weight="400" text-anchor="middle">—</text>
+<rect x="788" y="651" width="144" height="41" rx="8" fill="#f2e4dc"/>
+<text id="text-40" x="860.0" y="680" font-size="21" fill="#a65539" font-weight="600" text-anchor="middle">失败</text>
+<text id="text-41" x="1100" y="680" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">未确认</text>
+<text id="text-42" x="90" y="738" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T7</text>
+<rect x="240" y="709" width="110" height="41" rx="8" fill="#f2ebd8"/>
+<text id="text-43" x="295.0" y="738" font-size="21" fill="#8b692d" font-weight="600" text-anchor="middle">取消</text>
+<text id="text-44" x="562" y="738" font-size="22" fill="#67645c" font-weight="400" text-anchor="middle">—</text>
+<rect x="788" y="709" width="144" height="41" rx="8" fill="#f2ebd8"/>
+<text id="text-45" x="860.0" y="738" font-size="21" fill="#8b692d" font-weight="600" text-anchor="middle">取消</text>
+<text id="text-46" x="1100" y="738" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">未确认</text>
+<rect x="62" y="761" width="1316" height="57" rx="0" fill="#f7f6f1"/>
+<text id="text-47" x="90" y="796" font-size="22" fill="#25231e" font-weight="600" text-anchor="start" class="mono">T8</text>
+<rect x="240" y="767" width="110" height="41" rx="8" fill="#f5f3ec"/>
+<text id="text-48" x="295.0" y="796" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">未知</text>
+<text id="text-49" x="562" y="796" font-size="22" fill="#67645c" font-weight="400" text-anchor="middle">—</text>
+<rect x="788" y="767" width="144" height="41" rx="8" fill="#f5f3ec"/>
+<text id="text-50" x="860.0" y="796" font-size="21" fill="#67645c" font-weight="600" text-anchor="middle">未知</text>
+<text id="text-51" x="1100" y="796" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">未确认</text>
+<path d="M206 352V824" fill="none" stroke="#d9d5cb" stroke-width="1"/>
+<path d="M470 352V824" fill="none" stroke="#d9d5cb" stroke-width="1"/>
+<path d="M748 352V824" fill="none" stroke="#d9d5cb" stroke-width="1"/>
+<path d="M1057 352V824" fill="none" stroke="#d9d5cb" stroke-width="1"/>
+<rect x="60" y="858" width="1320" height="65" rx="12" fill="#f2ebd8"/>
+<text id="text-52" x="84" y="899" font-size="25" fill="#8b692d" font-weight="650" text-anchor="start">重试只加尝试：8 次首次尝试 + 3 次重试 = 11 次尝试；逻辑任务分母仍是 8。</text>
+<rect x="60" y="948" width="420" height="229" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text id="text-53" x="84" y="989" font-size="26" fill="#436879" font-weight="700" text-anchor="start">尝试成功率</text>
+<text id="text-54" x="84" y="1041" font-size="34" fill="#436879" font-weight="700" text-anchor="start">4 / 11 ≈ 36.4%</text>
+<text id="text-55" x="84" y="1080" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">窗口内成功的尝试 / 已启动尝试</text>
+<text id="text-56" x="84" y="1118" font-size="18" fill="#25231e" font-weight="400" text-anchor="start">4 成功 + 5 失败 + 1 取消 + 1 未知</text>
+<text id="text-57" x="84" y="1147" font-size="18" fill="#25231e" font-weight="400" text-anchor="start">这里只说明执行尝试的可靠性。</text>
+<rect x="510" y="948" width="420" height="229" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text id="text-58" x="534" y="989" font-size="26" fill="#466957" font-weight="700" text-anchor="start">任务最终成功率</text>
+<text id="text-59" x="534" y="1041" font-size="34" fill="#466957" font-weight="700" text-anchor="start">4 / 8 = 50%</text>
+<text id="text-60" x="534" y="1080" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">成功任务 / 已成熟合格任务</text>
+<text id="text-61" x="534" y="1118" font-size="18" fill="#25231e" font-weight="400" text-anchor="start">4 成功 + 2 失败 + 1 取消 + 1 未知</text>
+<text id="text-62" x="534" y="1147" font-size="18" fill="#25231e" font-weight="400" text-anchor="start">任务契约独立于尝试结果。</text>
+<rect x="960" y="948" width="420" height="229" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text id="text-63" x="984" y="989" font-size="26" fill="#a65539" font-weight="700" text-anchor="start">有证据的价值任务率</text>
+<text id="text-64" x="984" y="1041" font-size="34" fill="#a65539" font-weight="700" text-anchor="start">2 / 8 = 25%</text>
+<text id="text-65" x="984" y="1080" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">有价值确认的成功任务 / 同一分母</text>
+<text id="text-66" x="984" y="1118" font-size="18" fill="#25231e" font-weight="400" text-anchor="start">2 个任务有价值确认，且属于成功集。</text>
+<text id="text-67" x="984" y="1147" font-size="18" fill="#25231e" font-weight="400" text-anchor="start">成功与“用户得到了价值”分开记。</text>
+<rect x="60" y="1200" width="1320" height="105" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<text id="text-68" x="84" y="1239" font-size="26" fill="#25231e" font-weight="700" text-anchor="start">未知不是确定失败；未确认也不代表没有价值。</text>
+<text id="text-69" x="84" y="1277" font-size="21" fill="#67645c" font-weight="400" text-anchor="start">本例取消与未知均留在任务分母。尝试按任务窗口截取；窗口内未见尝试终态者归为未知。</text>
+<text id="text-70" x="60" y="1334" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">阅读位置：§9.2、§10.1、§10.3。示例独立于 metrics-lab 固定样本，数值不用于描述该样本。</text>
+</svg>

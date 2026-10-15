@@ -1,0 +1,36 @@
+sequenceDiagram
+    participant U as 调用者
+    participant H as 宿主与双账本
+    participant W as 底层工作
+    participant D as 当前内容/通道
+    Note over H,D: c1 / e1 / A 已确认；RPC=0，work=0
+    U->>H: t1：r1，deadline=t6
+    H->>W: 启动合成只读工作
+    Note over H,W: RPC=1，work=1
+    H-->>U: t6：TIMEOUT；交付权关闭
+    H->>W: 请求取消（不等于已停止）
+    Note over H,W: RPC=0，work=1
+    W-->>H: t7：received ACK，只确认收到了请求
+    D->>H: t8：B 成为 e2 并确认
+    U->>H: 请求 r2
+    H-->>U: WORK_BUSY，底层工作槽尚未释放
+    W-->>H: t9：r1 实际完成，产生候选结果
+    Note over H,W: work=0；完成不重开交付权
+    H->>H: t10：实际交付前复查
+    Note over H,D: REPLY_CLOSED + STALE_CONTENT + DEADLINE；丢弃 A 数据
+    U->>H: t11：r2，现在可启动
+    H->>W: 启动新工作
+    U->>H: t12：取消 r2
+    H-->>U: CANCELLED；RPC=0，work=1
+    H->>W: 请求取消
+    W-->>H: t13：received ACK
+    W-->>H: t14：stopped ACK，可信适配器确认工作终止
+    Note over H,W: work=0；重复终止回调不再释放
+    U->>H: t16：r3
+    H->>W: 启动新工作
+    W-->>H: t17：工作完成，回调排队
+    Note over H: RPC=1，work=0
+    D->>H: t18：关闭 c1，打开 c2；B 在新通道重确认
+    H-->>U: CHANNEL_CLOSED；RPC=0
+    H->>H: t19：旧 c1 回调尝试交付
+    Note over H,D: 旧通道与旧收据拒绝；不能因工作已完成而放行

@@ -49,9 +49,11 @@ A 完成，然后 B 完成：2 + 6 + 6 = 14，超额。
 
 ## 三、用一个对象表达一次预留的完整寿命
 
-完整实现见 [context_budget.mjs](../../04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.mjs)。下面是它的用法：
+完整实现见 [context_budget.mjs](../../04-Extracted-Core-Code-And-Scripts/worked-cases/context_budget.mjs)。下面两个使用片段均以 `04-Extracted-Core-Code-And-Scripts/worked-cases/` 为工作目录，保存为 `.mjs` 后用 Node 运行，或通过 `node --input-type=module` 从标准输入执行：
 
 ```js
+import { InlineBudget } from './context_budget.mjs';
+
 const budget = new InlineBudget(12);
 budget.reserve('existing', 'ok').commit();
 
@@ -77,6 +79,8 @@ console.assert(budget.used === 8 && budget.reserved === 0);
 预算只说明能否占用空间，不说明这份结果现在属于谁。给每份草稿一个 owner，再给它的工作周期一个 epoch：任务开始时捕获 epoch；完成时先检查是否仍匹配，然后才提交。
 
 ```js
+import { DraftOwner } from './context_budget.mjs';
+
 const oldDraft = new DraftOwner('conversation-A/draft-1', 12);
 const task = oldDraft.begin('a', '资料');
 

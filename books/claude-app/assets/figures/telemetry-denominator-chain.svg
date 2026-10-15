@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1230" viewBox="0 0 1440 1230" role="img" aria-labelledby="title desc">
+<title id="title">从发出事件到任务分母，中间有六道口径</title><desc id="desc">原创指标设计图，非官方指标和线上测量。发出不保证送达；运输去重、业务阶段去重与保留真实重试是不同动作。分析还要关联逻辑任务、预先定义资格与完整观察窗口，最终只按成熟合格任务去重计数，保留失败、取消和未知。</desc>
+<style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif}.mono{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 5L0 10Z" fill="#67645c"/></marker></defs>
+<rect x="0" y="0" width="1440" height="1230" rx="0" fill="#f5f3ec"/>
+<text id="text-1" x="60" y="56" font-size="18" fill="#a65539" font-weight="600" text-anchor="start">卷 12 · 遥测与产品指标 / 原创学习图</text>
+<text id="text-2" x="60" y="110" font-size="37" fill="#25231e" font-weight="700" text-anchor="start">从发出事件到任务分母，中间有六道口径</text>
+<text id="text-3" x="60" y="151" font-size="23" fill="#67645c" font-weight="400" text-anchor="start">事件记录回答“观测到了什么”；任务分母回答“我们在评价谁”。</text>
+<text id="text-4" x="60" y="207" font-size="24" fill="#25231e" font-weight="650" text-anchor="start">A  记录层：先核实事件是否送达、是否重复</text>
+<rect x="60" y="231" width="420" height="302" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="82" y="253" width="50" height="42" rx="10" fill="#f2e4dc"/>
+<text id="text-5" x="107" y="282" font-size="22" fill="#a65539" font-weight="700" text-anchor="middle">01</text>
+<text id="text-6" x="148" y="285" font-size="29" fill="#25231e" font-weight="700" text-anchor="start">发出</text>
+<text id="text-7" x="84" y="327" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">event / 记录对象</text>
+<text id="text-8" x="84" y="371" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">源码里的调用点，不是运行次数。</text>
+<text id="text-9" x="84" y="405" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">运行时调用还要经过同意检查、</text>
+<text id="text-10" x="84" y="439" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">抑制、清理与队列。</text>
+<rect x="82" y="469" width="376" height="43" rx="9" fill="#f2e4dc"/>
+<text id="text-11" x="270" y="498" font-size="20" fill="#a65539" font-weight="600" text-anchor="middle">已调用 ≠ 已送出</text>
+<rect x="510" y="231" width="420" height="302" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="532" y="253" width="50" height="42" rx="10" fill="#e7edf0"/>
+<text id="text-12" x="557" y="282" font-size="22" fill="#436879" font-weight="700" text-anchor="middle">02</text>
+<text id="text-13" x="598" y="285" font-size="29" fill="#25231e" font-weight="700" text-anchor="start">送达</text>
+<text id="text-14" x="534" y="327" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">delivery / 运输过程</text>
+<text id="text-15" x="534" y="371" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">网络失败可能导致丢失或重发。</text>
+<text id="text-16" x="534" y="405" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">同一个事件对象可以送达多次；</text>
+<text id="text-17" x="534" y="439" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">还需要接收与落库证据。</text>
+<rect x="532" y="469" width="376" height="43" rx="9" fill="#e7edf0"/>
+<text id="text-18" x="720" y="498" font-size="20" fill="#436879" font-weight="600" text-anchor="middle">已送出 ≠ 唯一落库</text>
+<rect x="960" y="231" width="420" height="302" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="982" y="253" width="50" height="42" rx="10" fill="#e7ece7"/>
+<text id="text-19" x="1007" y="282" font-size="22" fill="#466957" font-weight="700" text-anchor="middle">03</text>
+<text id="text-20" x="1048" y="285" font-size="29" fill="#25231e" font-weight="700" text-anchor="start">去重</text>
+<text id="text-21" x="984" y="327" font-size="19" fill="#67645c" font-weight="400" text-anchor="start">identity / 记录身份</text>
+<text id="text-22" x="984" y="371" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">同一 event_id：去运输重放。</text>
+<text id="text-23" x="984" y="405" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">不同 ID 的重复阶段：按契约处理。</text>
+<text id="text-24" x="984" y="439" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">真实 attempt 重试：保留并关联。</text>
+<rect x="982" y="469" width="376" height="43" rx="9" fill="#e7ece7"/>
+<text id="text-25" x="1170" y="498" font-size="20" fill="#466957" font-weight="600" text-anchor="middle">去重不能删掉真实重试</text>
+<path d="M484 385H505" fill="none" stroke="#67645c" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M934 385H955" fill="none" stroke="#67645c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="60" y="557" width="1320" height="68" rx="12" fill="#f2ebd8"/>
+<text id="text-26" x="85" y="586" font-size="19" fill="#8b692d" font-weight="700" text-anchor="start">证据边界</text>
+<text id="text-27" x="210" y="586" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">本次静态研究看到客户端代码路径；真实送达率、落库结果与线上数量均未知。</text>
+<text id="text-28" x="210" y="612" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">下面是面向自建产品的分析设计，不代表这些记录已经进入同一个数据仓库。</text>
+<text id="text-29" x="60" y="678" font-size="24" fill="#25231e" font-weight="650" text-anchor="start">B  分析层：换成任务单位，再定义可比较的集合</text>
+<rect x="60" y="702" width="420" height="302" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="82" y="724" width="50" height="42" rx="10" fill="#e7edf0"/>
+<text id="text-30" x="107" y="753" font-size="22" fill="#436879" font-weight="700" text-anchor="middle">04</text>
+<text id="text-31" x="148" y="756" font-size="27" fill="#25231e" font-weight="700" text-anchor="start">关联逻辑任务</text>
+<text id="text-32" x="84" y="798" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">task_id ≠ attempt_id</text>
+<text id="text-33" x="84" y="842" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">一个任务可以包含多个执行尝试。</text>
+<text id="text-34" x="84" y="876" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">请求、工具调用与运输记录，</text>
+<text id="text-35" x="84" y="910" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">都需要映射回原来的逻辑任务。</text>
+<rect x="82" y="940" width="376" height="43" rx="9" fill="#e7edf0"/>
+<text id="text-36" x="270" y="969" font-size="20" fill="#436879" font-weight="600" text-anchor="middle">运输重发不新增尝试</text>
+<rect x="510" y="702" width="420" height="302" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="532" y="724" width="50" height="42" rx="10" fill="#f2ebd8"/>
+<text id="text-37" x="557" y="753" font-size="22" fill="#8b692d" font-weight="700" text-anchor="middle">05</text>
+<text id="text-38" x="598" y="756" font-size="27" fill="#25231e" font-weight="700" text-anchor="start">固定队列与窗口</text>
+<text id="text-39" x="534" y="798" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">资格先于结果定义</text>
+<text id="text-40" x="534" y="842" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">先确定同意范围、提交时间与资格。</text>
+<text id="text-41" x="534" y="876" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">固定观察窗口 W、分析截止时间 T。</text>
+<text id="text-42" x="534" y="910" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">仅纳入：提交时间 + W ≤ T。</text>
+<rect x="532" y="940" width="376" height="43" rx="9" fill="#f2ebd8"/>
+<text id="text-43" x="720" y="969" font-size="20" fill="#8b692d" font-weight="600" text-anchor="middle">尚未成熟：另报，等待</text>
+<rect x="960" y="702" width="420" height="302" rx="14" fill="#fcfcfa" stroke="#d9d5cb" stroke-width="1.5"/>
+<rect x="982" y="724" width="50" height="42" rx="10" fill="#e7ece7"/>
+<text id="text-44" x="1007" y="753" font-size="22" fill="#466957" font-weight="700" text-anchor="middle">06</text>
+<text id="text-45" x="1048" y="756" font-size="27" fill="#25231e" font-weight="700" text-anchor="start">只数一次任务</text>
+<text id="text-46" x="984" y="798" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">distinct eligible task_id</text>
+<text id="text-47" x="984" y="842" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">分母来自合格提交任务登记。</text>
+<text id="text-48" x="984" y="876" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">同一任务的重试不增加分母；</text>
+<text id="text-49" x="984" y="910" font-size="20" fill="#25231e" font-weight="400" text-anchor="start">失败、取消与未知仍分别保留。</text>
+<rect x="982" y="940" width="376" height="43" rx="9" fill="#e7ece7"/>
+<text id="text-50" x="1170" y="969" font-size="20" fill="#466957" font-weight="600" text-anchor="middle">不能只数有结束事件的任务</text>
+<path d="M484 856H505" fill="none" stroke="#67645c" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M934 856H955" fill="none" stroke="#67645c" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="60" y="1030" width="1320" height="131" rx="14" fill="#e7ece7"/>
+<text id="text-51" x="86" y="1071" font-size="29" fill="#466957" font-weight="700" text-anchor="start">最终分母 = 同一口径下，已成熟的合格逻辑任务数</text>
+<text id="text-52" x="86" y="1111" font-size="22" fill="#25231e" font-weight="400" text-anchor="start">分子必须来自这个任务集合。未知终态不进入成功分子，也不能悄悄从分母中消失。</text>
+<text id="text-53" x="86" y="1143" font-size="20" fill="#67645c" font-weight="400" text-anchor="start">登记缺失、身份冲突与隔离任务还要单独报告；观测到的队列不能直接外推为全部用户。</text>
+<text id="text-54" x="60" y="1201" font-size="18" fill="#67645c" font-weight="400" text-anchor="start">阅读位置：§5.3–5.4、§10、§14。箭头为原创口径设计，不是服务器架构还原。</text>
+</svg>

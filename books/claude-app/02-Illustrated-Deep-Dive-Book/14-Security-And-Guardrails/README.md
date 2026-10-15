@@ -1,12 +1,12 @@
 # 第 14 卷：Security & Guardrails——让内容停在内容层，让权限落到执行边界
 
-一份文档可以告诉代理“接下来做什么”，但文档本身不应拥有批准动作的权力。一条命令可以看起来只读，却通过参数、工作目录或执行程序触及另一种资源。一个 iframe 可以允许脚本运行，同时仍然不能读取对话文件。这些不是互相矛盾的规则，而是三种不同的问题：谁提出意图、谁拥有授权、谁真正执行。
+一份文档可以告诉代理“接下来做什么”，但文档本身不应拥有批准动作的权力。一条命令可以看起来只读，却通过参数、工作目录或执行程序触及另一种资源。一个 iframe 可以允许脚本运行，同时仍然不能读取对话文件。理解这些机制，需要分别追踪谁提出意图、谁拥有授权、谁真正执行。
 
-本卷把前面各卷分散的安全机制串成一条可检查的路径，并补充命令语义、文件身份、Markdown 外部出口与条件式安全存储。目标不是列一张“产品很安全”的功能表，而是回答：一个不可信输入要经过哪些转换，才能变成一个有副作用的操作；每个判断究竟证明了什么。
+本卷把前面各卷分散的安全机制串成一条可检查的路径，并补充命令语义、文件身份、Markdown 外部出口与条件式安全存储。主线是追踪从不可信输入到有副作用操作之间的转换，并说明每个安全判断的作用与局限。
 
 版本范围：Claude Desktop 2.37337.1。正文区分固定样本中的静态机制、官方 API 契约与原创工程模型。
 
-前置阅读：[第 2 卷的审批通道](../02-Agent-Loop-Engine/README.md)、[第 3 卷的主机与 VM](../03-Computer-Use-And-Cowork/README.md)、[第 6 卷的扩展权限](../06-MCP-Host-Internals/README.md)、[第 7 卷的内容确认与 iframe](../07-Artifacts-And-Sandbox/README.md)、[第 17 卷的持久化与诊断](../17-State-Recovery-And-Updates/README.md)。本卷不重新证明那些机制，而是检查它们连接时最容易丢失的约束。
+前置阅读：[第 2 卷的审批通道](../02-Agent-Loop-Engine/README.md)、[第 3 卷的主机与 VM](../03-Computer-Use-And-Cowork/README.md)、[第 6 卷的扩展权限](../06-MCP-Host-Internals/README.md)、[第 7 卷的内容确认与 iframe](../07-Artifacts-And-Sandbox/README.md)、[第 17 卷的持久化与诊断](../17-State-Recovery-And-Updates/README.md)。本卷重点检查这些机制连接时最容易丢失的约束。
 
 ## 1. 安全架构要画两条线：数据流与授权流
 
@@ -370,6 +370,8 @@ Linux 启动提示受 CI、既有已提示状态、pending 状态与已登录账
 ## 9. 原创实验：把最容易混淆的边界做成 68 个断言
 
 代码位于 [security-guardrails](../../04-Extracted-Core-Code-And-Scripts/security-guardrails/README.md)。仅使用 Node 内建模块，无第三方依赖。实验不导入目标应用、不执行 shell、不访问网络、不读取或改写真实文件。
+
+从本书根目录 `books/claude-app/` 执行：
 
 ```sh
 cd 04-Extracted-Core-Code-And-Scripts/security-guardrails

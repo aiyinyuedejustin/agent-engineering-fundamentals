@@ -46,6 +46,8 @@ MCP 是这条链中交换消息的协议；MCPB 描述扩展怎样打包与安�
 本书的 [ApprovalDesk](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/model.py) 已经解决一次消费与参数摘要匹配。新的 [mcp_binding.py](../../04-Extracted-Core-Code-And-Scripts/worked-cases/mcp_binding.py) 只在它外面补一个绑定对象：
 
 ```python
+from dataclasses import dataclass
+
 @dataclass(frozen=True)
 class Binding:
     server: str
@@ -57,7 +59,11 @@ class Binding:
 
 准备审批时，对 `Binding + arguments` 的确定性 JSON 表达计算摘要，放进 ApprovalDesk。消费决定时，从当前绑定和即将使用的参数重新计算摘要。摘要不同，就不能消费为 allow。
 
+在 `04-Extracted-Core-Code-And-Scripts/worked-cases/` 目录中独立运行下面的片段：
+
 ```python
+from mcp_binding import Binding, MockHost
+
 old = Binding("notes", "extension:sample", 1, 1, "read_note")
 host = MockHost(old, policy="allow")
 args = {"path": "notes/meeting.txt"}

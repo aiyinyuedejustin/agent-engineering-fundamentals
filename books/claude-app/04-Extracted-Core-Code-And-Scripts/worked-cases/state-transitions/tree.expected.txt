@@ -1,0 +1,6 @@
+before: h0 > a0 > opt:h1 > opt:a1
+after:  h0 > a0 > h1 > a1
+a0 children: h-old, h1
+selected a0: 1
+dangling: h-wait
+old snapshot unchanged: true

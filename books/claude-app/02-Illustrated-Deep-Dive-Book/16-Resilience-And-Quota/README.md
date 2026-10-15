@@ -260,9 +260,11 @@ stateDiagram-v2
 
 ### 6.3 用一个原创反例理解身份的重要性
 
-实验中的模拟服务端保存 `turnId → payload + result`：
+实验中的模拟服务端保存 `turnId → payload + result`。以下片段以 `04-Extracted-Core-Code-And-Scripts/resilience-quota/` 为工作目录，保存为 `.mjs` 后运行，或使用 `node --input-type=module`：
 
 ```js
+import { IdempotentServer } from './recovery-state.mjs';
+
 const server = new IdempotentServer();
 server.submit('turn-1', '整理会议记录'); // 服务端已提交，假设回包丢失
 server.submit('turn-1', '整理会议记录'); // 返回既有结果
@@ -509,7 +511,11 @@ t0  开始读取旧草稿 A
 
 目标实现包含 seed 优先级、merge、暂存输入与重新读取等较复杂处理。本书不把它简化为一句“最后写入者赢”。原创实验采用更容易验证的编辑 revision：开始读取时记录 revision，返回时如果已经有新编辑就保留新输入。
 
+此片段同样在 `resilience-quota/` 目录中按 ESM 运行：
+
 ```js
+import { DraftHydration } from './recovery-state.mjs';
+
 const draft = new DraftHydration({ account: 'a', session: 's' });
 const ticket = draft.begin();
 draft.edit('读取期间新写的内容');
@@ -543,10 +549,12 @@ stateDiagram-v2
 
 ## 14. 原创实验：把恢复设计写成可失败的测试
 
-实验目录是 [resilience-expansion](../../04-Extracted-Core-Code-And-Scripts/resilience-quota/README.md)。全部代码原创，无第三方运行依赖，不导入目标 bundle，不访问网络，不创建真实聊天或账户数据。
+实验目录是 [resilience-quota](../../04-Extracted-Core-Code-And-Scripts/resilience-quota/README.md)。全部代码原创，无第三方运行依赖，不导入目标 bundle，不访问网络，不创建真实聊天或账户数据。
+
+从本书根目录 `books/claude-app/` 执行：
 
 ```bash
-cd staging/resilience-expansion
+cd 04-Extracted-Core-Code-And-Scripts/resilience-quota
 node --test --test-reporter=tap test/*.test.mjs
 node demo.mjs
 ```

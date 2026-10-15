@@ -1,6 +1,6 @@
 # 第 11 卷：流式性能——从“收到文字”到“完成阅读”的分层调度
 
-版本范围：Claude Desktop 2.37337.1。这里按静态调用链拆解性能机制，并用原创模型验证调度合同。
+本卷沿着文本交付、Markdown 解析、富内容格式化与屏幕更新，解释如何缩小每次变化触发的工作。范围为 Claude Desktop 2.37337.1 的静态调用链；配套原创模型用于验证调度合同。
 
 ## 1. 最重要的结论：高性能来自缩小变化范围
 
@@ -14,7 +14,7 @@
 4. 屏幕层根据内容类型采用渐进挂载、content-visibility、代码行虚拟化等不同策略。
 5. 生命周期层限制缓存、关闭流、撤销旧任务、清理 timer 和 observer，防止性能优化本身积累成本。[PF-01–47]
 
-需要修正一个容易从卷八读出的过度概括：**classic 上游设置 dont_smooth=true，并不证明下游 Markdown 没有自己的揭示调度。** 上游 buffer 与 Markdown 呈现层不是同一个对象。本卷发现 chat reply wrapper 明确请求 useStreamingFadeIn，StandardMarkDown 再根据挂载时的加载状态选择对应路径。[PF-01–05；卷八 PT-08]
+**classic 上游设置 dont_smooth=true，并不证明下游 Markdown 没有自己的揭示调度。** chat reply wrapper 明确请求 useStreamingFadeIn，StandardMarkDown 再根据挂载时的加载状态选择对应路径。阅读卷八的上游 buffer 时，应将这两个调度层分开。[PF-01–05；卷八 PT-08]
 
 ![流式性能分层边界](../../assets/figures/performance-streaming-render-boundaries.svg)
 
@@ -365,8 +365,12 @@ LatestWorkerLane 故意使用“可替换的完整格式化任务”，而不是
 
 ### 12.2 一段最小集成
 
+下面是集成骨架，导入路径相对于 `04-Extracted-Core-Code-And-Scripts/streaming-performance/`；完整可运行演示见该目录的 [simulate.mjs](../../04-Extracted-Core-Code-And-Scripts/streaming-performance/simulate.mjs)。
+
 ```js
-// 原创模型；完整实现见 lab/model.mjs。
+import { SnapshotPresenter, StableBlocks } from './model.mjs';
+
+const blocks = new StableBlocks({ finalParser: parseMarkdown });
 const presenter = new SnapshotPresenter({
   clock: {
     schedule: (fn, ms) => setTimeout(fn, ms),
@@ -384,11 +388,11 @@ presenter.accept(reducer.currentText());
 presenter.accept(reducer.finalText(), { terminal: true });
 ```
 
-示例中的 reducer 与 render 是接入点，不是实验已经实现的服务端或 Markdown UI。模型的 24/160ms 参数是教学选择，与产品源码常量无关。
+示例中的 reducer、parseMarkdown 与 render 是由调用方提供的接入点，不是实验已经实现的服务端或 Markdown UI。模型的 24/160ms 参数是教学选择，与产品源码常量无关。
 
 ### 12.3 模拟结果怎样读
 
-固定语料为 4,885 UTF-16 code units，按小批输入形成 543 次更新。模型得到 69 次 commit；“每次全文解析”的逻辑输入累计为 1,329,262 code units，而“稳定块 + 尾部 + 最终全文”的累计为 10,622。[lab/simulation-result.json]
+固定语料为 4,885 UTF-16 code units，按小批输入形成 543 次更新。模型得到 69 次 commit；“每次全文解析”的逻辑输入累计为 1,329,262 code units，而“稳定块 + 尾部 + 最终全文”的累计为 10,622。[模拟结果](../../04-Extracted-Core-Code-And-Scripts/streaming-performance/simulation-result.json)
 
 这组差异同时包含快照合并与分块复用的贡献。独立复核增加了同样 69 次 commit、但每次仍全文解析的对照，其累计为 169,513 code units；这仍只是逻辑工作量账本。
 

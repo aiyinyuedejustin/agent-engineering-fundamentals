@@ -44,9 +44,13 @@
 
 ## 三、让读者亲自跑出这七行
 
-完整场景在 [loop_timeline.py](../../04-Extracted-Core-Code-And-Scripts/worked-cases/loop_timeline.py)。它导入既有的 [loop-cowork/model.py](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/model.py)，没有复制状态机。
+完整场景在 [loop_timeline.py](../../04-Extracted-Core-Code-And-Scripts/worked-cases/loop_timeline.py)。它导入既有的 [loop-cowork/model.py](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/loop-cowork/model.py)，没有复制状态机。下面两个 Python 片段均可在 `04-Extracted-Core-Code-And-Scripts/worked-cases/` 目录中独立运行。
 
 ```python
+from existing_lab import load_loop_lab
+
+lab = load_loop_lab()
+session = lab.Session()
 old = session.begin()
 session.submit("message-A")
 session.stop()
@@ -69,6 +73,11 @@ assert session.process is True
 再放进两个并行会话：A 的审批卡请求写文件，B 的审批卡请求另一项工作。停止 A 应消费或拒绝 A 的等待，同时保留 B。用户随后点击旧 A 卡，返回 missing；B 卡仍能正常回答。
 
 ```python
+from existing_lab import load_loop_lab
+
+lab = load_loop_lab()
+Approval = lab.Approval
+desk = lab.ApprovalDesk()
 desk.ask(Approval("card-A", "session-A", "write-note", "digest-A"))
 desk.ask(Approval("card-B", "session-B", "write-note", "digest-B"))
 assert desk.cancel_session("session-A") == 1

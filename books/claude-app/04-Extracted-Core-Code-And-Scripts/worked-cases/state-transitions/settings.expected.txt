@@ -1,0 +1,12 @@
+00 initial {"enabled":false,"mode":"summary","revision":7}
+01 both-submitted {"enabled":false,"mode":"summary","revision":7}
+02 cache-write {"org":"org-a","enabled":true,"mode":"summary","revision":7}
+03 cache-write {"org":"org-a","enabled":false,"mode":"summary","revision":7}
+04 cache-write {"org":"org-a","enabled":false,"mode":"topics","revision":7}
+05 second-save-starts-after-rollback {"enabled":false,"mode":"topics","revision":7}
+06 cache-write {"org":"org-a","enabled":false,"mode":"topics","revision":8,"serverNormalized":true}
+07 queue-drained {"pendingScopes":0}
+08 refresh-a-start {"org":"org-a","oldAllowExpired":true}
+09 switch-to-b {"org":"org-b","snapshot":null}
+10 current-b-deny {"org":"org-b","checkedAt":1001,"state":"blocked_by_org_admin","allowed":false}
+11 late-a-allow-ignored {"startA":false,"current":{"org":"org-b","checkedAt":1001,"state":"blocked_by_org_admin","allowed":false}}

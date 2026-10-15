@@ -78,7 +78,7 @@
 
 ## 使用这份材料
 
-下载 `books/claude-app/` 即可保留书、图和示例。原创代码用于解释机制和独立开发；产品源码定位、版本范围与核验记录集中在[证据附录](04-Extracted-Core-Code-And-Scripts/evidence/README.md)，不打断正文。
+下载 `books/claude-app/` 即可保留书、图和示例。本文所说的“本书根目录”是包含 `01-Frontend-Design-And-HTML-Templates/`、`02-Illustrated-Deep-Dive-Book/` 等目录的 `books/claude-app/`；若检出的是整个仓库，先执行 `cd books/claude-app`。原创代码用于解释机制和独立开发；产品源码定位、版本范围与核验记录集中在[证据附录](04-Extracted-Core-Code-And-Scripts/evidence/README.md)，不打断正文。
 
 主样本：Claude Desktop 2.37337.1，覆盖 Linux、Windows、macOS 包；公开移动端与网页资料按各自来源日期记录。[来源索引](04-Extracted-Core-Code-And-Scripts/evidence/sources.md)
 

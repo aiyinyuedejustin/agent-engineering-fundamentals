@@ -3,26 +3,27 @@
   "scope": "Original synthetic client-state teaching UI, not a Claude screen reproduction or a claim about current product behavior",
   "validated_on": "2026-10-15",
   "files": {
-    "index.html": "6ed788f38951d0cc6bbdd7a76518570d6dc702c9b377310b11b05768b342d389",
-    "README.md": "d6b53e8d454f89bbd310747aaddffc9465b1456d7d37db0bb584c1a565a6b479",
-    "test.cjs": "ffd1b6d03121f1af8c7ee133a4bda10ce2d3febfe95f98304151288a67ff54a4"
+    "index.html": "b30997f62197113428b2a6c64ef40b814c2a225167edf7c0e4d12c8837a59ed1",
+    "README.md": "ce5e773d1bab61e6986c82c8ca2e7a03cf97175b625dbfb26c1a2d38d6a92489",
+    "test.cjs": "4be4f217fe219b43e04d6aa40821e902ec6ee1ebb500444008ea2d44fee77eb5"
   },
   "original_source": {
     "html_sha256": "6ed788f38951d0cc6bbdd7a76518570d6dc702c9b377310b11b05768b342d389",
-    "html_preserved_unchanged": true,
+    "html_preserved_unchanged": false,
     "supporting_file_changes": [
       "Portable jsdom import and file URL handling in tests",
-      "Public Chinese README, clean-directory dependency instructions, and relative reading links"
+      "Public Chinese README, clean-directory dependency instructions, and relative reading links",
+      "Browser-observed budget rejection copy clarified as the previous admission check; one added regression"
     ]
   },
   "node_jsdom": {
     "status": "passed",
-    "checks": 21,
-    "passed": 21,
+    "checks": 22,
+    "passed": 22,
     "failed": 0,
     "node_version": "24.19.0",
     "jsdom_version": "26.1.0",
-    "dependency_setup": "Clean temporary directory; pinned npm package installed from the existing npm cache with lifecycle scripts disabled",
+    "dependency_setup": "Existing pinned jsdom 26.1.0 installation; no new dependency installation for this regression",
     "reproduce": "See README.md for clean-directory installation and test commands",
     "includes": [
       "Actual UTF-8 accounting and concurrent admission",

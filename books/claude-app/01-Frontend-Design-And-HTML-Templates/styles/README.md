@@ -1,12 +1,14 @@
 # 原创语义组件
 
-这组文件服务于 `../demo/` 中的独立界面研究。它们不是官方 Claude 组件，不依赖任何提取的产品源码。
+这组文件服务于 [interactive-study](../interactive-study/README.md) 中的独立界面研究。它们不是官方 Claude 组件，不依赖任何提取的产品源码。
 
 ## 加载顺序
 
+从 `interactive-study/` 中的 HTML 页面加载；复制到其他目录时按新位置调整相对路径：
+
 ```html
-<link rel="stylesheet" href="components/tokens.css">
-<link rel="stylesheet" href="components/components.css">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
 ```
 
 在根元素上设置 `data-theme="light"` 或 `data-theme="dark"`。主题切换只改变语义变量；组件不需要知道具体颜色。
@@ -17,7 +19,7 @@
 2. `components.css` 实现按钮、字段、提示、卡片、分段控件、开关与模态窗口的基础外观。
 3. 业务页面负责布局、内容、状态转换、焦点管理与错误恢复。
 
-变量名称是本研究原创。部分色彩字面值来自静态声明观察；它们的具体语义分配以及新增值都属于研究实现，而不是官方默认样式。来源与限制见 `../demo/README.md`。
+变量名称是本研究原创。部分色彩字面值来自静态声明观察；它们的具体语义分配以及新增值都属于研究实现，而不是官方默认样式。来源与限制见 [交互研究说明](../interactive-study/README.md)。
 
 ## 示例
 
@@ -96,9 +98,9 @@
 
 `.study-quick-entry` 是单独的横向容器，包含 `.study-quick-context` select、textarea 与 `.study-button`；不要套在主 Composer 上，也不要把该例的 48 px / 12 px 几何当作产品的 56 px / 16 px 证据值。示例的输入目标是页面内存，调用方需明确其去向和生命周期。
 
-完整 HTML 在 `demo/index.html` 的 `#quick-entry-example`，行为在 `demo/demo.js` 的 `captureQuickEntry`、`setQuickEntryOpen` 与 `resetQuickEntry`。CSS 不提供提交、验证、IME 保护或焦点恢复，复用时需一并实现这些职责。原始输入只能进入 textContent 等文字接口，不拼进 HTML。
+完整 HTML 在 [interactive-study/index.html](../interactive-study/index.html#quick-entry-example)，行为在 [interactive-study/demo.js](../interactive-study/demo.js) 的 `captureQuickEntry`、`setQuickEntryOpen` 与 `resetQuickEntry`。CSS 不提供提交、验证、IME 保护或焦点恢复，复用时需一并实现这些职责。原始输入只能进入 textContent 等文字接口，不拼进 HTML。
 
-这三项都是研究中的独立适配；模拟测试只证明声明与事件路径，真实浏览器布局、原生输入法和辅助技术仍需验证。详见 `../tests/phase2-components/README.md`。
+这三项都是研究中的独立适配；模拟测试只证明声明与事件路径，真实浏览器布局、原生输入法和辅助技术仍需验证。详见 [第二阶段测试](../../04-Extracted-Core-Code-And-Scripts/tests/phase2-components/README.md)。
 
 ## 实用约束
 

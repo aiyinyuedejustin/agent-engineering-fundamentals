@@ -36,6 +36,8 @@
 
 ## 一页阅读准备
 
+先读 [阅读准备：三个异步边界](Reading-Preparation/README.md)，理解 await 后的身份、截止时间与取消、接纳与完成，再按下列路线进入正文。
+
 ### 需要哪些基础
 
 能阅读 JavaScript 对象、数组、函数和 async/await 即可开始。遇到异步迭代、事件监听、AbortController、React 状态或缓存时，先按“输入是什么、状态由谁持有、什么时候失效”读图，再回看代码。第 2、3 卷的练习使用 Python；运行全部原创实验需要 Node.js 20+ 和 Python 3.10+，不需要 Claude 账号或产品文件。颜色分析工具的实际提取另需合法取得的样本，默认合成测试不需要。
@@ -64,6 +66,5 @@
 
 [证据方法与复现范围](../04-Extracted-Core-Code-And-Scripts/evidence/README.md)说明如何区分静态事实、公开说明与实际观察。[本轮纠错摘要](../04-Extracted-Core-Code-And-Scripts/evidence/data/book-corrections.json)记录纳入本书的 20 项已复核修正；各卷的证据链接保留具体条件与短定位。出版物不附安装包、完整模块、完整专有提示词、原始提取图或账户数据。
 
-[返回全仓导航](../README.md) · [先看前端设计](../01-Frontend-Design-And-HTML-Templates/README.md)
+[返回本书导航](../README.md) · [先看前端设计](../01-Frontend-Design-And-HTML-Templates/README.md)
 
-- [阅读准备：三个异步边界](Reading-Preparation/README.md)：await 后的身份、截止时间与取消、接纳与完成。

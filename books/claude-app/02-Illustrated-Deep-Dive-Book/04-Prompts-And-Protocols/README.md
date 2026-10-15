@@ -2,7 +2,7 @@
 
 ## 1. 先拆开四种常被混写的东西
 
-Claude 客户端中的“协议”不是一个巨大的 JSON Schema。至少需要区分四层：客户端向服务端提交的请求对象、传输层事件帧、逐步形成的内容块，以及从内容块中提取的产品对象。提示词又穿过这些层：它可以是用户文字，可以是客户端生成的上下文片段，也可以是一个请求字段；仅凭字符串里出现 `<system-reminder>`，不能判定该消息拥有 system 角色。
+理解 Claude 客户端的协议，需要区分四层：客户端向服务端提交的请求对象、传输层事件帧、逐步形成的内容块，以及从内容块中提取的产品对象。提示词又穿过这些层：它可以是用户文字，可以是客户端生成的上下文片段，也可以是一个请求字段；仅凭字符串里出现 `<system-reminder>`，不能判定该消息拥有 system 角色。
 
 本卷范围是 Claude Desktop 2.37337.1 的 classic chat C1/C2、SSE 与相关解析路径。hub/C3、Code/Cowork、语音及服务端上下文另有边界；详见[证据索引](#证据索引)。[PT-05、PT-27、PT-54]
 
@@ -247,9 +247,12 @@ thinking helper 会移除完整或未闭合的 legacy thinking 区段，并抑�
 - `legacy-tags.mjs`：数据型的 legacy tag 状态机，绝不生成 HTML 或执行 Artifact
 - `branch-manager.mjs`：单父消息树与版本切换，详见卷八
 
-以下是原创测试驱动的组合方式：
+以下是原创测试驱动的集成骨架，导入路径相对于 `04-Extracted-Core-Code-And-Scripts/core-code-lab/protocol-tree/`；完整可运行示例见该目录的 [demo.mjs](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/protocol-tree/demo.mjs)：
 
 ```js
+import { ContentReducer } from './content-reducer.mjs';
+import { consumeChunks } from './incremental-sse.mjs';
+
 const reducer = new ContentReducer(snapshot => renderData(snapshot));
 await consumeChunks(chunks, frame => {
   if (!frame.data || frame.event === 'ping') return;
@@ -262,7 +265,7 @@ await consumeChunks(chunks, frame => {
 });
 ```
 
-`renderData` 是使用者提供的回调；示例仅组合数据处理，不连接网络或真实账号，不导入目标 bundle，也不执行工具。实验独立增加资源上限、严格 retry 数字检查，并保留开头的空 data 值及其换行。这些规则与目标实现不同，用于验证机制的组合与测试方法。
+`chunks` 是使用者提供的字节输入，`renderData` 与 `workBudget` 是使用者提供的回调；示例仅组合数据处理，不连接网络或真实账号，不导入目标 bundle，也不执行工具。实验独立增加资源上限、严格 retry 数字检查，并保留开头的空 data 值及其换行。这些规则与目标实现不同，用于验证机制的组合与测试方法。
 
 ## 9. 本卷结论
 

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+<title id="title">超时结束等待，未必结束工作</title>
+<desc id="desc">原创合成时间线：t1 开始请求，t6 超时释放 RPC 等待槽但工作继续，t7 只收到取消回执，t8 内容替换，t9 实际完成才释放工作槽，t10 丢弃迟到结果。下方区分取消请求、收到请求、已停止三种状态及其资源释放权限。</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#55657b"/></marker>
+  <style>
+    text{font-family:"Noto Sans CJK SC","Noto Sans",sans-serif;fill:#18283f}
+    .title{font-size:34px;font-weight:700}.sub{font-size:19px;fill:#52647b}
+    .label{font-size:21px;font-weight:700}.body{font-size:19px}.small{font-size:17px;fill:#52647b}
+    .white{fill:white}.mono{font-family:monospace;font-size:18px}.axis{font-size:18px;fill:#52647b}
+  </style>
+</defs>
+<rect width="1440" height="1040" fill="#f3f6fa"/>
+<text x="60" y="64" class="title">超时撤销交付权，工作寿命另算</text>
+<text x="60" y="102" class="sub">原创确定性实验 · 数值均为教学设定 · 两种 lease：等待响应 / 实际工作</text>
+<rect x="40" y="128" width="1360" height="476" rx="18" fill="white" stroke="#d9e2ee"/>
+<text x="70" y="171" class="label">r1：底层工作忽略取消，直到实际完成</text>
+<path d="M280 207 H1250" stroke="#9baac0" stroke-width="2" marker-end="url(#arrow)"/>
+<g class="axis" text-anchor="middle">
+<text x="280" y="198">t0</text><text x="370" y="198">t1</text><text x="820" y="198">t6</text>
+<text x="910" y="198">t7</text><text x="1000" y="198">t8</text><text x="1090" y="198">t9</text><text x="1180" y="198">t10</text>
+</g>
+<g stroke="#e8edf4" stroke-dasharray="4 5">
+<path d="M370 216 V568"/><path d="M910 216 V568"/><path d="M1000 216 V568"/><path d="M1090 216 V568"/><path d="M1180 216 V568"/>
+</g>
+<path d="M820 216 V568" stroke="#d35f38" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="70" y="260" class="label">内容身份</text>
+<rect x="280" y="230" width="720" height="44" rx="7" fill="#dcebf7"/>
+<rect x="1000" y="230" width="250" height="44" rx="7" fill="#3469a1"/>
+<text x="570" y="260" class="body">c1 / e1 / A 已确认</text>
+<text x="1056" y="260" class="body white">e2 / B 已确认</text>
+<text x="70" y="347" class="label">RPC 等待槽</text>
+<rect x="370" y="315" width="450" height="46" rx="7" fill="#326d8e"/>
+<rect x="820" y="315" width="430" height="46" rx="7" fill="#ecf0f5"/>
+<text x="504" y="346" class="body white">pending · 占用 1</text>
+<text x="881" y="346" class="body">TIMEOUT · 已释放 · 占用 0</text>
+<text x="70" y="431" class="label">实际工作槽</text>
+<rect x="370" y="400" width="450" height="46" rx="7" fill="#388071"/>
+<rect x="820" y="400" width="270" height="46" fill="#f2bf71"/>
+<rect x="1090" y="400" width="160" height="46" rx="7" fill="#ecf0f5"/>
+<text x="486" y="430" class="body white">running · 占用 1</text>
+<text x="853" y="430" class="body">超时后仍占用 1</text>
+<text x="1120" y="430" class="body">完成 → 0</text>
+<text x="70" y="518" class="label">取消状态</text>
+<path d="M820 496 H1090" stroke="#c68b30" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="820" cy="496" r="6" fill="#c68b30"/><circle cx="910" cy="496" r="6" fill="#c68b30"/>
+<text x="775" y="536" class="small">请求已发</text><text x="906" y="563" class="small">received：只证明收到了</text>
+<text x="1120" y="510" class="label" fill="#a94739">×</text><text x="1150" y="510" class="small">迟到结果</text>
+<text x="1107" y="538" class="small">交付前再次拒绝</text>
+<text x="70" y="574" class="small">t8 的新读取仍返回 WORK_BUSY：等待槽空闲不能证明执行资源空闲。</text>
+<rect x="40" y="625" width="1360" height="280" rx="18" fill="white" stroke="#d9e2ee"/>
+<text x="70" y="667" class="label">取消不是一个布尔值：这三条消息能证明的事情不同</text>
+<rect x="70" y="697" width="378" height="174" rx="12" fill="#eef3f9"/>
+<text x="94" y="731" class="label">1. requested</text><text x="94" y="765" class="body">宿主已发出取消信号</text>
+<text x="94" y="802" class="small">交付权关闭；RPC lease 释放</text><text x="94" y="835" class="small">work lease 仍保留</text>
+<path d="M458 779 H485" stroke="#55657b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="500" y="697" width="378" height="174" rx="12" fill="#fff2dc"/>
+<text x="524" y="731" class="label">2. received ACK</text><text x="524" y="765" class="body">工作方确认看到了请求</text>
+<text x="524" y="802" class="small">仍可能运行、清理或提交中</text><text x="524" y="835" class="small">不授权释放 work lease</text>
+<path d="M888 779 H915" stroke="#55657b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="930" y="697" width="440" height="174" rx="12" fill="#e3f1ed"/>
+<text x="954" y="731" class="label">3. stopped ACK / 实际完成</text><text x="954" y="765" class="body">可信执行适配器报告终态</text>
+<text x="954" y="802" class="small">work lease 恰好释放一次</text><text x="954" y="835" class="small">不等于过去的外部副作用已回滚</text>
+<rect x="40" y="927" width="1360" height="75" rx="12" fill="#1c354e"/>
+<text x="70" y="958" class="body white">交付栅栏：响应仍待结算 + 同一通道 + 当前内容收据有效 + now &lt; deadline</text>
+<text x="70" y="985" class="small white">工作完成只提供候选结果；只有实际交付时全部条件成立，结果才能进入当前预览。</text>
+<text x="60" y="1027" class="small">模型没有执行 iframe、网络请求或 Claude renderer；资源计数只表示教学适配器的本地 lease。</text>
+</svg>

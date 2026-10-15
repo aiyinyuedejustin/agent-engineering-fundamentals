@@ -1,0 +1,578 @@
+{
+  "rows": [
+    {
+      "event": "确认 A",
+      "at": 0,
+      "channel": 1,
+      "content": {
+        "epoch": 1,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 0,
+        "released": 0
+      },
+      "work": {
+        "used": 0,
+        "acquired": 0,
+        "released": 0
+      },
+      "result": null
+    },
+    {
+      "event": "r1 开始，deadline=6",
+      "at": 1,
+      "channel": 1,
+      "content": {
+        "epoch": 1,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 1,
+        "acquired": 1,
+        "released": 0
+      },
+      "work": {
+        "used": 1,
+        "acquired": 1,
+        "released": 0
+      },
+      "id": "r1",
+      "reply": "pending",
+      "worker": "running",
+      "cancel": "none",
+      "result": null
+    },
+    {
+      "event": "r1 deadline 到期",
+      "at": 6,
+      "channel": 1,
+      "content": {
+        "epoch": 1,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "work": {
+        "used": 1,
+        "acquired": 1,
+        "released": 0
+      },
+      "id": "r1",
+      "reply": "TIMEOUT",
+      "worker": "running",
+      "cancel": "requested",
+      "result": null
+    },
+    {
+      "event": "只确认收到取消请求",
+      "at": 7,
+      "channel": 1,
+      "content": {
+        "epoch": 1,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "work": {
+        "used": 1,
+        "acquired": 1,
+        "released": 0
+      },
+      "id": "r1",
+      "reply": "TIMEOUT",
+      "worker": "running",
+      "cancel": "received",
+      "result": null
+    },
+    {
+      "event": "确认 B；新读取仍因工作槽满而拒绝",
+      "at": 8,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "work": {
+        "used": 1,
+        "acquired": 1,
+        "released": 0
+      },
+      "id": "r1",
+      "reply": "TIMEOUT",
+      "worker": "running",
+      "cancel": "received",
+      "result": {
+        "accepted": false,
+        "reason": "WORK_BUSY"
+      }
+    },
+    {
+      "event": "r1 底层完成",
+      "at": 9,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "work": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "id": "r1",
+      "reply": "TIMEOUT",
+      "worker": "completed",
+      "cancel": "received",
+      "result": null
+    },
+    {
+      "event": "投递 r1 的迟到结果",
+      "at": 10,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "work": {
+        "used": 0,
+        "acquired": 1,
+        "released": 1
+      },
+      "id": "r1",
+      "reply": "TIMEOUT",
+      "worker": "completed",
+      "cancel": "received",
+      "result": {
+        "accepted": false,
+        "reasons": [
+          "REPLY_CLOSED",
+          "STALE_CONTENT",
+          "DEADLINE"
+        ]
+      }
+    },
+    {
+      "event": "r2 现在能开始",
+      "at": 11,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 1,
+        "acquired": 2,
+        "released": 1
+      },
+      "work": {
+        "used": 1,
+        "acquired": 2,
+        "released": 1
+      },
+      "id": "r2",
+      "reply": "pending",
+      "worker": "running",
+      "cancel": "none",
+      "result": null
+    },
+    {
+      "event": "用户取消 r2",
+      "at": 12,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 2,
+        "released": 2
+      },
+      "work": {
+        "used": 1,
+        "acquired": 2,
+        "released": 1
+      },
+      "id": "r2",
+      "reply": "CANCELLED",
+      "worker": "running",
+      "cancel": "requested",
+      "result": null
+    },
+    {
+      "event": "r2 只确认收到取消",
+      "at": 13,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 2,
+        "released": 2
+      },
+      "work": {
+        "used": 1,
+        "acquired": 2,
+        "released": 1
+      },
+      "id": "r2",
+      "reply": "CANCELLED",
+      "worker": "running",
+      "cancel": "received",
+      "result": null
+    },
+    {
+      "event": "r2 确认工作已停",
+      "at": 14,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 2,
+        "released": 2
+      },
+      "work": {
+        "used": 0,
+        "acquired": 2,
+        "released": 2
+      },
+      "id": "r2",
+      "reply": "CANCELLED",
+      "worker": "stopped",
+      "cancel": "stopped",
+      "result": null
+    },
+    {
+      "event": "重复终止与完成回调无效",
+      "at": 15,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 2,
+        "released": 2
+      },
+      "work": {
+        "used": 0,
+        "acquired": 2,
+        "released": 2
+      },
+      "id": "r2",
+      "reply": "CANCELLED",
+      "worker": "stopped",
+      "cancel": "stopped",
+      "result": {
+        "duplicateAck": false,
+        "lateFinish": false
+      }
+    },
+    {
+      "event": "r3 开始",
+      "at": 16,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 1,
+        "acquired": 3,
+        "released": 2
+      },
+      "work": {
+        "used": 1,
+        "acquired": 3,
+        "released": 2
+      },
+      "id": "r3",
+      "reply": "pending",
+      "worker": "running",
+      "cancel": "none",
+      "result": null
+    },
+    {
+      "event": "r3 完成，响应尚未投递",
+      "at": 17,
+      "channel": 1,
+      "content": {
+        "epoch": 2,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 1,
+        "acquired": 3,
+        "released": 2
+      },
+      "work": {
+        "used": 0,
+        "acquired": 3,
+        "released": 3
+      },
+      "id": "r3",
+      "reply": "pending",
+      "worker": "completed",
+      "cancel": "none",
+      "result": null
+    },
+    {
+      "event": "新通道重新确认 B",
+      "at": 18,
+      "channel": 2,
+      "content": {
+        "epoch": 1,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 3,
+        "released": 3
+      },
+      "work": {
+        "used": 0,
+        "acquired": 3,
+        "released": 3
+      },
+      "id": "r3",
+      "reply": "CHANNEL_CLOSED",
+      "worker": "completed",
+      "cancel": "none",
+      "result": null
+    },
+    {
+      "event": "旧通道的 r3 回调到达",
+      "at": 19,
+      "channel": 2,
+      "content": {
+        "epoch": 1,
+        "accepted": true
+      },
+      "rpc": {
+        "used": 0,
+        "acquired": 3,
+        "released": 3
+      },
+      "work": {
+        "used": 0,
+        "acquired": 3,
+        "released": 3
+      },
+      "id": "r3",
+      "reply": "CHANNEL_CLOSED",
+      "worker": "completed",
+      "cancel": "none",
+      "result": {
+        "accepted": false,
+        "reasons": [
+          "REPLY_CLOSED",
+          "OLD_CHANNEL",
+          "STALE_CONTENT"
+        ]
+      }
+    }
+  ],
+  "journal": [
+    {
+      "at": 0,
+      "event": "channel-opened",
+      "id": null,
+      "generation": 1
+    },
+    {
+      "at": 0,
+      "event": "content-posted",
+      "id": null,
+      "epoch": 1
+    },
+    {
+      "at": 0,
+      "event": "content-ack",
+      "id": null,
+      "accepted": true
+    },
+    {
+      "at": 1,
+      "event": "admitted",
+      "id": "r1",
+      "deadlineAt": 6
+    },
+    {
+      "at": 6,
+      "event": "reply-settled",
+      "id": "r1",
+      "status": "TIMEOUT"
+    },
+    {
+      "at": 6,
+      "event": "cancel-requested",
+      "id": "r1"
+    },
+    {
+      "at": 7,
+      "event": "cancel-ack",
+      "id": "r1",
+      "kind": "received"
+    },
+    {
+      "at": 8,
+      "event": "content-posted",
+      "id": null,
+      "epoch": 2
+    },
+    {
+      "at": 8,
+      "event": "content-ack",
+      "id": null,
+      "accepted": true
+    },
+    {
+      "at": 8,
+      "event": "admission-denied",
+      "id": "r2",
+      "reason": "WORK_BUSY"
+    },
+    {
+      "at": 9,
+      "event": "work-finished",
+      "id": "r1"
+    },
+    {
+      "at": 10,
+      "event": "result-dropped",
+      "id": "r1",
+      "reasons": [
+        "REPLY_CLOSED",
+        "STALE_CONTENT",
+        "DEADLINE"
+      ]
+    },
+    {
+      "at": 11,
+      "event": "admitted",
+      "id": "r2",
+      "deadlineAt": 21
+    },
+    {
+      "at": 12,
+      "event": "reply-settled",
+      "id": "r2",
+      "status": "CANCELLED"
+    },
+    {
+      "at": 12,
+      "event": "cancel-requested",
+      "id": "r2"
+    },
+    {
+      "at": 13,
+      "event": "cancel-ack",
+      "id": "r2",
+      "kind": "received"
+    },
+    {
+      "at": 14,
+      "event": "cancel-ack",
+      "id": "r2",
+      "kind": "stopped"
+    },
+    {
+      "at": 16,
+      "event": "admitted",
+      "id": "r3",
+      "deadlineAt": 30
+    },
+    {
+      "at": 17,
+      "event": "work-finished",
+      "id": "r3"
+    },
+    {
+      "at": 18,
+      "event": "reply-settled",
+      "id": "r3",
+      "status": "CHANNEL_CLOSED"
+    },
+    {
+      "at": 18,
+      "event": "channel-closed",
+      "id": null
+    },
+    {
+      "at": 18,
+      "event": "channel-opened",
+      "id": null,
+      "generation": 2
+    },
+    {
+      "at": 18,
+      "event": "content-posted",
+      "id": null,
+      "epoch": 1
+    },
+    {
+      "at": 18,
+      "event": "content-ack",
+      "id": null,
+      "accepted": true
+    },
+    {
+      "at": 19,
+      "event": "result-dropped",
+      "id": "r3",
+      "reasons": [
+        "REPLY_CLOSED",
+        "OLD_CHANNEL",
+        "STALE_CONTENT"
+      ]
+    }
+  ],
+  "delivered": [],
+  "final": {
+    "at": 19,
+    "channel": 2,
+    "content": {
+      "epoch": 1,
+      "accepted": true
+    },
+    "rpc": {
+      "used": 0,
+      "acquired": 3,
+      "released": 3
+    },
+    "work": {
+      "used": 0,
+      "acquired": 3,
+      "released": 3
+    }
+  }
+}

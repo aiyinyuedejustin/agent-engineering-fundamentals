@@ -363,3 +363,7 @@ tree.switchSibling('a1b', -1);
 静态范围为 Claude Desktop Linux amd64 2.37337.1；研究未运行目标应用或探测端点，客户端树结构不证明数据库设计，通用 helper 的存在不证明所有 surface 使用它。PT 编号对应 [protocol-tree-streaming.json](../../04-Extracted-Core-Code-And-Scripts/evidence/data/protocol-tree-streaming.json)；可读实现与测试位于配套 [protocol-tree](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/protocol-tree/README.md) 目录。哈希、短锚点、偏移和分析范围集中保存在证据文件，正文不再堆叠审计过程。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 逐步推演
+
+[实战推演：把乐观身份换成正式身份](worked-case.md)逐项展示四张 Map、当前叶子、dangling 与可见路径的变化，并验证发布前的原子拒绝。

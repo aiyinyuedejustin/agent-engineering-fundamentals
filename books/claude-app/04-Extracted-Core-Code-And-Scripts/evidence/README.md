@@ -50,10 +50,10 @@ REA 如因完整性检查停止，就保留失败及范围，不为了完成报�
 
 ### 复核这份书的精选证据
 
-准备好相同版本、已解包的官方资源后，可运行仅使用 Python 标准库的验证器：
+准备好相同版本、已解包的官方资源后，从本书根目录 `books/claude-app/` 运行仅使用 Python 标准库的验证器：
 
 ```sh
-python3 scripts/verify_evidence.py \
+python3 -B 04-Extracted-Core-Code-And-Scripts/scripts/verify_evidence.py \
   --resources /path/to/resources \
   --asar-root /path/to/extracted-app-asar
 ```

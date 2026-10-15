@@ -4,7 +4,7 @@
 
 ## 已运行
 
-- 从与工具目录不同的工作目录运行 `python3 -B run_tests.py`：**62 项通过，0 失败**。
+- 从与工具目录不同的工作目录，使用 `run_tests.py` 的绝对路径运行 `python3 -B /path/to/05-Automated-Reverse-Toolkit/run_tests.py`：**86 项通过，0 失败**。
 - 端到端合成目录比较：产生 `before.json`、`after.json`、`diff.json`、`diff.md`。
 - 再用两个快照运行 `diff`：JSON 和 Markdown 与直接 `compare` **字节一致**。
 - 相同输入复制到另一绝对路径：完整快照一致。

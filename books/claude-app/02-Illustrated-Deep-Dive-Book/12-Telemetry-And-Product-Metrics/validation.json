@@ -25,9 +25,12 @@
     "max_file_bytes": 144110
   },
   "metrics_lab": {
-    "unit_tests": 26,
-    "passed": 26,
-    "cli_sample_matches_saved_output": true
+    "unit_tests": 74,
+    "passed": 74,
+    "cli_sample_matches_saved_output": true,
+    "original_test_methods_unchanged": 26,
+    "additional_test_methods": 48,
+    "adversarial_cli_sample_matches_saved_output": true
   },
   "diagrams": {
     "status": "pass",
@@ -40,18 +43,18 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 38945,
-      "sha256": "aac92908a1b557df0206b100be6f627ee8ab93cb65836a3192738c3cce106f6d"
+      "bytes": 43625,
+      "sha256": "cae7abcc30a3a62af7114eb8d887abf87206e911d9d5ffb11982a44302942201"
     },
     {
       "path": "metrics-lab/README.md",
-      "bytes": 2204,
-      "sha256": "45282418c3d4a6653f504efdce5be65879862da425d8c0a33a3450f5947cb61c"
+      "bytes": 9561,
+      "sha256": "0c945e812abf69e05c14b7c8f545e9d9cfc8fb5998a0e4e4070023d4ae4a2f4b"
     },
     {
       "path": "metrics-lab/metrics_lab.py",
-      "bytes": 8157,
-      "sha256": "3d27246a74326782385f183ee803fdbf67b535083cff8d9e1cbb56c38dc53375"
+      "bytes": 14020,
+      "sha256": "121ba2293ce4ee281ca11a72218a49700f36b0167eb131550957022b99aeeed9"
     },
     {
       "path": "metrics-lab/sample-events.jsonl",
@@ -60,13 +63,13 @@
     },
     {
       "path": "metrics-lab/sample-result.json",
-      "bytes": 1007,
-      "sha256": "6401155332cb122d9e60857db39591962646fd31cf5a14007887dc53ab164ba9"
+      "bytes": 2240,
+      "sha256": "8dc8ee000e6c0d958e28cfa62c35015cc05b28cc8194e0dcd5e7472330974faa"
     },
     {
       "path": "metrics-lab/test_metrics_lab.py",
-      "bytes": 5913,
-      "sha256": "0c334711eb9d63932b6cf28764fc5a0fe0e9f35a2d1073fd051c7c55a9847810"
+      "bytes": 25065,
+      "sha256": "f42624719e9d70b003d6332bdff5c8e91ff8fae86caa4559c206b2b0f8645296"
     },
     {
       "path": "telemetry-evidence/README.md",
@@ -202,6 +205,16 @@
       "path": "telemetry-evidence/unknown-names-01.md",
       "bytes": 59155,
       "sha256": "a30d285b45c806fc219058387d5afdb4d3899cd16f73cb7b1c3705e57145d6a1"
+    },
+    {
+      "path": "metrics-lab/adversarial-events.jsonl",
+      "bytes": 5905,
+      "sha256": "655a4302abbf1c22c19ec4052bd56fe9bba7b5cb59b8a6b45b169693d5ea5281"
+    },
+    {
+      "path": "metrics-lab/adversarial-result.json",
+      "bytes": 2480,
+      "sha256": "55837cd4bd097fc08639a2fa88674d751a881e2acd5bd6e0d8c2d772b0195d42"
     }
   ],
   "independent_review": {

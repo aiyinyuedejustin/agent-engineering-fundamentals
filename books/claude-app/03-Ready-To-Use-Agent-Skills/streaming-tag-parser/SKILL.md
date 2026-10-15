@@ -30,7 +30,11 @@ description: Implement or review incremental SSE framing, streamed JSON assembly
 
 ## Code seed
 
+下面是集成骨架，导入路径相对于本技能目录；chunks、validateEvent 与 applyEvent 由调用方提供。
+
 ```js
+import { SSEDecoder } from './assets/parser.mjs';
+
 const sse = new SSEDecoder();
 for await (const bytes of chunks) {
   for (const frame of sse.push(bytes)) {

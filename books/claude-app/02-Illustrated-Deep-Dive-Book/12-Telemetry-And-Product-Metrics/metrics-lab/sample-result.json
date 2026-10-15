@@ -28,16 +28,51 @@
   "ttfo_p95_ms": 400,
   "completion_observed_count": 1,
   "completion_p95_ms": 500,
+  "cohort_accounting": {
+    "observed_task_keys": 4,
+    "excluded_consent_tasks": 0,
+    "orphan_tasks": 0,
+    "ambiguous_submission_tasks": 0,
+    "ineligible_tasks": 0,
+    "right_censored_tasks": 1,
+    "mature_eligible_consented_tasks": 3,
+    "included_tasks": 3,
+    "quarantined_mature_eligible_tasks": 0,
+    "quarantine_fraction_of_candidates": 0.0
+  },
+  "success_fraction_sensitivity": {
+    "denominator": 3,
+    "confirmed_successes": 1,
+    "uncertain_outcomes": 1,
+    "lower": 0.3333333333333333,
+    "upper": 0.6666666666666666
+  },
+  "attempt_coverage": {
+    "observed_attempt_ids": 3,
+    "attempt_ids_with_start": 3,
+    "attempt_ids_with_finish": 1,
+    "attempt_ids_missing_start": 0,
+    "attempt_ids_missing_finish": 2,
+    "tasks_without_attempt_evidence": 1
+  },
   "quality": {
     "duplicate_deliveries": 1,
     "events_after_horizon": 0,
     "events_before_start": 0,
-    "right_censored_tasks": 1
+    "logical_attempt_finish_duplicates": 0,
+    "logical_attempt_start_duplicates": 0,
+    "logical_close_duplicates": 0,
+    "right_censored_tasks": 1,
+    "uncredited_value_confirmations": 0
   },
+  "quarantine_reasons": {},
   "limitations": [
     "No population extrapolation from consented traffic",
     "Unknown outcome is not an observed failure",
     "Quantiles describe observed output/completion only",
+    "Retry count means multiple observed attempt starts, not verified sequential retries",
+    "Missing attempt events are diagnosed, not reconstructed",
+    "Sensitivity bounds cover candidates only, not consent exclusions or missing submissions",
     "No causal lift or confidence intervals are computed"
   ]
 }

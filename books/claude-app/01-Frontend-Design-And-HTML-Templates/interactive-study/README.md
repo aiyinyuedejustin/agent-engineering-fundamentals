@@ -6,15 +6,15 @@
 
 ## 运行
 
-直接用现代浏览器打开 `demo/index.html`。不需要安装依赖、启动服务器、登录、联网、API key 或编译。
+直接用现代浏览器打开本目录的 [index.html](index.html)。不需要安装依赖、启动服务器、登录、联网、API key 或编译。
 
-若希望通过本地 HTTP 查看，在仓库根目录执行：
+若希望通过本地 HTTP 查看，先进入本书根目录 `books/claude-app/`，再执行：
 
 ```sh
-python3 -m http.server 8000
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-然后打开 `http://localhost:8000/demo/`。服务仅用于本地静态文件查看，不是应用后端。
+然后打开 `http://127.0.0.1:8000/01-Frontend-Design-And-HTML-Templates/interactive-study/`。服务仅用于本地静态文件查看，不是应用后端。
 
 兼容目标为支持 `dialog`、CSS 自定义属性、`inert`、`matchMedia` 与 `dvh` 的现代 Chromium、Firefox、Safari。页面不加载外部字体、图标包、CDN、分析脚本或其他远程资源。
 
@@ -34,13 +34,15 @@ python3 -m http.server 8000
 
 ## 目录与复用
 
+以下目录相对于 `01-Frontend-Design-And-HTML-Templates/`：
+
 ```text
-components/
+styles/
   tokens.css       颜色、字体、间距、形状、动效的语义变量
   components.css   原创基础控件与容器；不包含页面布局
   README.md        组件调用和设计约束
 
-demo/
+interactive-study/
   index.html       中文页面结构、原生表单、图标路径
   demo.css         这份研究页面独有的组合与响应式布局
   demo.js          本地状态机、导航、主题与无障碍行为
@@ -48,7 +50,7 @@ demo/
   README.md        本文
 ```
 
-代码使用普通 HTML、CSS、JavaScript；不依赖 React 或其他框架。要复用视觉 primitives，按顺序加载 `components/tokens.css` 与 `components/components.css`，再写自己的布局与业务逻辑。不要把 `demo.js` 当作真实 AI 会话后端。
+代码使用普通 HTML、CSS、JavaScript；不依赖 React 或其他框架。要复用视觉 primitives，从本目录页面按顺序加载 `../styles/tokens.css` 与 `../styles/components.css`，再写自己的布局与业务逻辑。不要把 `demo.js` 当作真实 AI 会话后端。
 
 ## 证据与原创提案的边界
 
@@ -95,7 +97,7 @@ demo/
 
 消息大小是另一条轴：小 / 中 / 大为 14 / 16 / 18 px，默认中，行高系数为 1.9。助手初始示例的开篇段落在该尺寸上再加 2 px；流式正文与普通正文使用所选尺寸。消息操作仍使用自己的 11 px，内容预览卡恢复操作字体。输入区与 Quick Entry 不消费消息字号。
 
-这组 40 / 48 px 值是原创教学选择。所检 CDS 默认 / comfortable 控件声明换算为 24 / 32 px；本例没有照搬该几何，也没有恢复其 rem-scale、全部组件密度或运行时偏好。证据关联见 `data/design-token-summary.json` 的 density 与 `data/design-component-rules.json` 的 message_text_preferences；关联说明研究起点，不证明实现相同。
+这组 40 / 48 px 值是原创教学选择。所检 CDS 默认 / comfortable 控件声明换算为 24 / 32 px；本例没有照搬该几何，也没有恢复其 rem-scale、全部组件密度或运行时偏好。证据关联见 [design-token-summary.json](../../04-Extracted-Core-Code-And-Scripts/evidence/data/design-token-summary.json) 的 density 与 [design-component-rules.json](../../04-Extracted-Core-Code-And-Scripts/evidence/data/design-component-rules.json) 的 message_text_preferences；关联说明研究起点，不证明实现相同。
 
 选择只存在本页 DOM 内存，不新增 localStorage 键。切换主题、章节、重置对话不会改变这两项；刷新恢复紧凑和中号。CSS 变量和界面数值在新增静态测试中互相核对，但真实计算样式、命中区域、字体与窄屏换行仍须浏览器检查。
 

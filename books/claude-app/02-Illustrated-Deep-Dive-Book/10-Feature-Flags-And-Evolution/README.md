@@ -264,3 +264,7 @@ bootstrap hydration 先从响应取出组织标识与 `current_user_access`，�
 - 本卷没有从内部代号推断未宣布功能、上线时间、服务器分流算法或安全保证。公开文档与包内机制分别引用，不用其中一种证据替另一种补空白。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 逐步推演
+
+[跨卷实战：旧组织的 allow 为什么必须被忽略](../09-Memory-Projects-And-Styles/worked-case.md)把组织身份、请求代次与新鲜度放在同一条可运行轨迹中。

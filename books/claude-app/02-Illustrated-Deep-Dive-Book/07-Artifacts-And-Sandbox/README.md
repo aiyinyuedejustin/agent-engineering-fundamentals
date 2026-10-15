@@ -426,7 +426,7 @@ stateDiagram-v2
 
 配套 [workspace-core 目录](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/workspace-core/README.md)含纯 JavaScript 教学模型、测试和演示，没有第三方依赖。它覆盖版本选择、类型/流式门控、内容 epoch、window 入口校验、最小化恢复，以及明确标为改进建议的 deadline 包装。
 
-从仓库根目录运行：
+从本书根目录 `books/claude-app/` 运行：
 
 ```sh
 cd 04-Extracted-Core-Code-And-Scripts/core-code-lab/workspace-core
@@ -459,3 +459,7 @@ node demo.mjs
 本卷最值得带走的不是预览窗的样式，而是六条分开的责任：选哪一版、用哪段正文、何时能预览、哪份内容已确认、谁获准使用能力、界面应如何恢复。把这些边界说清并写成测试，工作区才能在旧回执、快速切换、流式更新和失败交叠时仍然可解释。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 逐步推演
+
+[预览读取超时以后，究竟还有什么在运行？](worked-case.md)用双资源账本区分响应截止、取消确认、底层工作与迟到交付，并给出 16 行时间线和可运行测试。

@@ -104,3 +104,12 @@ test('deterministic stress trace preserves accounting and ownership invariants',
   const a=setup(),m=a.model();let seed=2171;const rnd=n=>{seed=(seed*1664525+1013904223)>>>0;return seed%n;};const fixtures=['note','short','long','pdf','image'];
   for(let i=0;i<500;i++){const r=m.records[rnd(Math.max(1,m.records.length))];switch(rnd(8)){case 0:m.add(fixtures[rnd(5)]);break;case 1:m.advance();break;case 2:if(r)m.cancel(r.id);break;case 3:if(r)m.retry(r.id);break;case 4:m.deliverLate();break;case 5:m.changeContext('account-'+rnd(2),'draft-'+rnd(2));break;case 6:m.send();break;case 7:if(r&&r.ticket)m.complete(r.ticket);break;}invariants(m);}a.close();
 });
+
+test('budget rejection records its check time rather than claiming current capacity',()=>{
+  const a=setup();a.click('[data-scenario="budget"]');
+  assert.match(a.state().records[1].reason,/上次检查时剩余 30 B/);
+  a.click('#cancel-'+a.state().records[0].id);
+  assert.equal(a.state().reserved,0);assert.equal(a.state().confirmed,0);
+  assert.match(a.state().records[1].reason,/上次检查时剩余 30 B/);
+  assert(!a.state().records[1].reason.includes('当前只剩'));a.close();
+});

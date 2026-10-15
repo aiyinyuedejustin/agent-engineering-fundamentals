@@ -4,7 +4,7 @@ Identifiers in this lab must be synthetic or purpose-scoped pseudonyms.
 """
 from __future__ import annotations
 from collections import defaultdict
-from math import ceil, isfinite
+from math import ceil
 import json
 import re
 import sys
@@ -44,8 +44,7 @@ def valid_event(event):
             'time must be nonnegative integer milliseconds')
     require(type(event['consent']) is bool, 'consent must be boolean')
     probability = event['sample_probability']
-    require(type(probability) in (int, float) and isfinite(probability)
-            and probability == 1, 'lab requires complete unsampled task cohort')
+    require(type(probability) in (int, float) and probability == 1, 'lab requires complete unsampled task cohort')
     props = event['properties']
     require(isinstance(props, dict) and set(props) == PROPS[event['name']],
             'missing or unknown property')
@@ -70,13 +69,53 @@ def percentile_nearest_rank(values, p):
     values = sorted(values)
     return values[max(0, ceil(len(values) * p) - 1)]
 
+def inspect_chronology(window, counters):
+    """Check observed contradictions, without inventing missing attempt events.
+
+    A task close ends execution and visible-output activity. Its business timestamp
+    and outcome are immutable, including when re-emitted with a new event ID.
+    Equality is allowed because millisecond timestamps do not establish tie order.
+    Attempt finishes describe execution, so output can become visible afterwards,
+    provided that it is no later than the task close.
+    """
+    reasons = set()
+    closes = [e for e in window if e['name'] == 'task_closed']
+    close_signatures = {(e['time_ms'], e['properties']['outcome']) for e in closes}
+    if len(close_signatures) > 1:
+        reasons.add('conflicting_task_closes')
+    counters['logical_close_duplicates'] += len(closes) - len(close_signatures)
+    terminal = min(closes, key=lambda e: (e['time_ms'], e['properties']['outcome'])) if closes else None
+    attempts = defaultdict(lambda: {'starts': [], 'finishes': [], 'visible': []})
+    phase = {'attempt_started': 'starts', 'attempt_finished': 'finishes',
+             'first_output_visible': 'visible'}
+    for e in window:
+        if e['name'] not in phase:
+            continue
+        attempts[e['properties']['attempt_id']][phase[e['name']]].append(e)
+        if terminal and e['time_ms'] > terminal['time_ms']:
+            reasons.add('activity_after_task_close')
+    for evidence in attempts.values():
+        starts = {e['time_ms'] for e in evidence['starts']}
+        finishes = {(e['time_ms'], e['properties']['outcome']) for e in evidence['finishes']}
+        counters['logical_attempt_start_duplicates'] += len(evidence['starts']) - len(starts)
+        counters['logical_attempt_finish_duplicates'] += len(evidence['finishes']) - len(finishes)
+        if len(starts) > 1:
+            reasons.add('conflicting_attempt_starts')
+        if len(finishes) > 1:
+            reasons.add('conflicting_attempt_finishes')
+        if starts and any(e['time_ms'] < min(starts)
+                          for e in evidence['finishes'] + evidence['visible']):
+            reasons.add('attempt_activity_before_start')
+    return reasons, terminal, attempts
+
+
 def aggregate(events, *, as_of_ms, horizon_ms=600_000):
     require(type(as_of_ms) is int and as_of_ms >= 0, 'invalid analysis clock')
     require(type(horizon_ms) is int and horizon_ms > 0, 'invalid horizon')
-    unique, counters = {}, defaultdict(int)
+    unique, counters, quarantine_reasons = {}, defaultdict(int), defaultdict(int)
     for raw in events:
         e = valid_event(raw)
-        # A producer must keep event_id stable across a delivery retry.
+        # A producer must keep event_id and its entire envelope stable on retry.
         identity = (e['user_id'], e['event_id'])
         if identity in unique:
             require(unique[identity] == e, 'conflicting event_id reuse')
@@ -88,55 +127,107 @@ def aggregate(events, *, as_of_ms, horizon_ms=600_000):
         if e['time_ms'] > as_of_ms:
             counters['future_events'] += 1
             continue
+        tasks[e['user_id'], e['task_id']].append(e)
         if not e['consent']:
             counters['nonconsenting_events'] += 1
-            continue
-        tasks[e['user_id'], e['task_id']].append(e)
+
+    # These mutually exclusive buckets reconcile all observed task keys. Only
+    # uniquely anchored, mature, eligible, fully consented tasks enter candidates.
+    cohort = {k: 0 for k in ('observed_task_keys', 'excluded_consent_tasks',
+              'orphan_tasks', 'ambiguous_submission_tasks', 'ineligible_tasks',
+              'right_censored_tasks', 'mature_eligible_consented_tasks',
+              'included_tasks', 'quarantined_mature_eligible_tasks')}
+    cohort['observed_task_keys'] = len(tasks)
+    coverage = {k: 0 for k in ('observed_attempt_ids', 'attempt_ids_with_start',
+                'attempt_ids_with_finish', 'attempt_ids_missing_start',
+                'attempt_ids_missing_finish', 'tasks_without_attempt_evidence')}
     ttfo, completion, units = [], [], []
     for key, rows in sorted(tasks.items()):
+        consent_states = {e['consent'] for e in rows}
+        if False in consent_states:
+            # Do not reconstruct a partial cohort from the consent=True subset.
+            # Inspect no eligibility or outcome from this excluded task.
+            counters['mixed_consent_tasks' if True in consent_states else 'nonconsenting_tasks'] += 1
+            cohort['excluded_consent_tasks'] += 1
+            continue
         starts = [e for e in rows if e['name'] == 'task_submitted']
         if not starts:
             counters['orphan_tasks'] += 1
+            cohort['orphan_tasks'] += 1
             continue
-        # Two distinct submissions for the same logical task are ambiguous.
+        # Two distinct submissions cannot establish an unambiguous cohort anchor.
         if len(starts) != 1:
             counters['quarantined_tasks'] += 1
+            quarantine_reasons['ambiguous_submission'] += 1
+            cohort['ambiguous_submission_tasks'] += 1
             continue
         start = starts[0]
         if not start['properties']['eligible']:
             counters['ineligible_tasks'] += 1
+            cohort['ineligible_tasks'] += 1
             continue
         stop = start['time_ms'] + horizon_ms
         if stop > as_of_ms:
             counters['right_censored_tasks'] += 1
+            cohort['right_censored_tasks'] += 1
             continue
-        window = [e for e in rows if start['time_ms'] <= e['time_ms'] <= stop]
-        counters['events_before_start'] += sum(e['time_ms'] < start['time_ms'] for e in rows)
+        cohort['mature_eligible_consented_tasks'] += 1
+        before_start = sum(e['time_ms'] < start['time_ms'] for e in rows)
+        counters['events_before_start'] += before_start
         counters['events_after_horizon'] += sum(e['time_ms'] > stop for e in rows)
-        closed = [e for e in window if e['name'] == 'task_closed']
-        outcomes = {e['properties']['outcome'] for e in closed}
-        if len(outcomes) > 1:
+        window = [e for e in rows if start['time_ms'] <= e['time_ms'] <= stop]
+        reasons, terminal, attempt_evidence = inspect_chronology(window, counters)
+        if before_start:
+            reasons.add('event_before_task_submission')
+        if reasons:
             counters['quarantined_tasks'] += 1
+            cohort['quarantined_mature_eligible_tasks'] += 1
+            for reason in reasons:
+                quarantine_reasons[reason] += 1
             continue
-        # A single logical close may be repeated under different event IDs.
-        terminal = min(closed, key=lambda e: e['time_ms']) if closed else None
+
         outcome = terminal['properties']['outcome'] if terminal else 'unknown'
-        visible = [e for e in window if e['name'] == 'first_output_visible'
-                   and (terminal is None or e['time_ms'] <= terminal['time_ms'])]
-        confirmations = [e for e in window if e['name'] == 'value_confirmed'
-                         and terminal and e['time_ms'] >= terminal['time_ms']]
+        visible = [e for e in window if e['name'] == 'first_output_visible']
+        # A confirmation is a signal, not authority to synthesize success/close.
+        # Early/unattributable signals remain explicit diagnostics, not credits.
+        signals = [e for e in window if e['name'] == 'value_confirmed']
+        confirmations = [e for e in signals if terminal and outcome == 'success'
+                         and e['time_ms'] >= terminal['time_ms']]
+        counters['uncredited_value_confirmations'] += len(signals) - len(confirmations)
         success = outcome == 'success'
         value = success and bool(confirmations)
         if visible:
             ttfo.append(min(e['time_ms'] for e in visible) - start['time_ms'])
         if success:
             completion.append(terminal['time_ms'] - start['time_ms'])
-        attempts = {e['properties']['attempt_id'] for e in window
-                    if e['name'] == 'attempt_started'}
+        started_attempts = sum(bool(evidence['starts']) for evidence in attempt_evidence.values())
+        finished_attempts = sum(bool(evidence['finishes']) for evidence in attempt_evidence.values())
+        coverage['observed_attempt_ids'] += len(attempt_evidence)
+        coverage['attempt_ids_with_start'] += started_attempts
+        coverage['attempt_ids_with_finish'] += finished_attempts
+        coverage['attempt_ids_missing_start'] += len(attempt_evidence) - started_attempts
+        coverage['attempt_ids_missing_finish'] += len(attempt_evidence) - finished_attempts
+        coverage['tasks_without_attempt_evidence'] += not bool(attempt_evidence)
         units.append({'key': key, 'visible': bool(visible), 'success': success,
-                      'value': value, 'outcome': outcome, 'attempts': len(attempts)})
+                      'value': value, 'outcome': outcome, 'attempts': started_attempts})
     n = len(units)
+    cohort['included_tasks'] = n
+    candidates = cohort['mature_eligible_consented_tasks']
+    quarantined = cohort['quarantined_mature_eligible_tasks']
     counts = {k: sum(u[k] for u in units) for k in ('visible', 'success', 'value')}
+    outcomes = {k: sum(u['outcome'] == k for u in units)
+                for k in ('success', 'failure', 'cancelled', 'unknown')}
+    # Worst-case outcome assignments for this fixed candidate cohort, not a
+    # statistical interval or a correction for missing/consent-excluded tasks.
+    uncertain = quarantined + outcomes['unknown']
+    cohort['quarantine_fraction_of_candidates'] = quarantined / candidates if candidates else None
+    sensitivity = {
+        'denominator': candidates,
+        'confirmed_successes': counts['success'],
+        'uncertain_outcomes': uncertain,
+        'lower': counts['success'] / candidates if candidates else None,
+        'upper': (counts['success'] + uncertain) / candidates if candidates else None,
+    }
     sequential = {
         'submitted': n,
         'visible': counts['visible'],
@@ -148,24 +239,31 @@ def aggregate(events, *, as_of_ms, horizon_ms=600_000):
         'marginal_counts': counts,
         'marginal_rates': {k: (v / n if n else None) for k, v in counts.items()},
         'sequential_funnel': sequential,
-        'outcomes': {k: sum(u['outcome'] == k for u in units)
-                     for k in ('success', 'failure', 'cancelled', 'unknown')},
+        'outcomes': outcomes,
         'retry_task_count': sum(u['attempts'] > 1 for u in units),
         'ttfo_observed_count': len(ttfo),
         'ttfo_p50_ms': percentile_nearest_rank(ttfo, .5),
         'ttfo_p95_ms': percentile_nearest_rank(ttfo, .95),
         'completion_observed_count': len(completion),
         'completion_p95_ms': percentile_nearest_rank(completion, .95),
+        'cohort_accounting': cohort,
+        'success_fraction_sensitivity': sensitivity,
+        'attempt_coverage': coverage,
         'quality': dict(sorted(counters.items())),
+        'quarantine_reasons': dict(sorted(quarantine_reasons.items())),
         'limitations': ['No population extrapolation from consented traffic',
                        'Unknown outcome is not an observed failure',
                        'Quantiles describe observed output/completion only',
+                       'Retry count means multiple observed attempt starts, not verified sequential retries',
+                       'Missing attempt events are diagnosed, not reconstructed',
+                       'Sensitivity bounds cover candidates only, not consent exclusions or missing submissions',
                        'No causal lift or confidence intervals are computed'],
     }
 
 if __name__ == '__main__':
     # Explicit cutoff makes repeated analyses reproducible.
-    require(len(sys.argv) == 3, 'usage: metrics_lab.py events.jsonl AS_OF_MS')
+    require(len(sys.argv) in (3, 4), 'usage: metrics_lab.py events.jsonl AS_OF_MS [HORIZON_MS]')
     with open(sys.argv[1], encoding='utf8') as f:
         rows = [json.loads(line) for line in f if line.strip()]
-    print(json.dumps(aggregate(rows, as_of_ms=int(sys.argv[2])), indent=2))
+    horizon = int(sys.argv[3]) if len(sys.argv) == 4 else 600_000
+    print(json.dumps(aggregate(rows, as_of_ms=int(sys.argv[2]), horizon_ms=horizon), indent=2))

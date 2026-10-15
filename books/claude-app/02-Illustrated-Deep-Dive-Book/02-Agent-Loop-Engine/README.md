@@ -1,6 +1,6 @@
 # Vol. 2 · AgentLoopEngine：把一次任务拆成可管理的回合
 
-Claude Desktop 的本地代理不是 renderer 里的一条 `while` 循环。可见的客户端实现把工作分给四层：页面发起会话，主进程管理会话与权限，Agent SDK 搬运双向消息，Claude Code 进程执行代理工作。主进程同时为一部分工具提供 MCP server，所以有些工具执行又会从 CLI 回到主进程。
+Claude Desktop 的本地代理由四层协作：页面发起会话，主进程管理会话与权限，Agent SDK 搬运双向消息，Claude Code 进程执行代理工作。主进程同时为一部分工具提供 MCP server，所以有些工具执行又会从 CLI 回到主进程。
 
 本卷以 Linux amd64 2.37337.1 客户端为范围，用 AgentLoopEngine 解释这个协作层，并非原始类名；服务器生成逻辑不在此范围。版本与证据见[附录](#附录)。[AL-01]
 

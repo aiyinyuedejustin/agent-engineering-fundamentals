@@ -13,9 +13,12 @@ BOOK = ROOT.parent
 def commands(include_skills=False):
     node = shutil.which('node')
     if not node:
-        raise RuntimeError('需要 Node.js 20+，请先把 node 放入 PATH。')
+        raise RuntimeError('需要 Node.js 22+，请先把 node 放入 PATH。')
+    version = subprocess.check_output([node, '--version'], text=True).strip()
+    if int(version.lstrip('v').split('.')[0]) < 22:
+        raise RuntimeError('完整测试集合需要 Node.js 22+；预览超时实验使用内置虚拟定时器接口。')
     jobs = [('core-code-lab', ROOT / 'core-code-lab', [sys.executable, '-B', 'run_tests.py'])]
-    for folder, pattern in [('async-reading-primer', '*.test.mjs'), ('shell-lifecycle', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
+    for folder, pattern in [('worked-cases/sandbox-timeout', '*.test.mjs'), ('worked-cases/state-transitions', '*.test.mjs'), ('async-reading-primer', '*.test.mjs'), ('shell-lifecycle', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
                             ('streaming-performance', 'test/*.test.mjs'), ('security-guardrails', '*.test.mjs'), ('native-voice-geometry', '*.test.mjs'), ('resilience-quota', 'test/*.test.mjs')]:
         location = ROOT / folder
         files = sorted(location.glob(pattern))

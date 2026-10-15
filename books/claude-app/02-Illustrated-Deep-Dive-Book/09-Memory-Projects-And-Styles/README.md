@@ -282,3 +282,7 @@ await applyQueuedOptimistic(
 - 正文图、表与学习代码均为原创，未附分发包、原始 bundle 或完整提示词。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 逐步推演
+
+[实战推演：两次设置更新，一次回滚，一个迟到的允许](worked-case.md)逐步运行同组织队列、失败回滚和切组织后的过期响应处理。
