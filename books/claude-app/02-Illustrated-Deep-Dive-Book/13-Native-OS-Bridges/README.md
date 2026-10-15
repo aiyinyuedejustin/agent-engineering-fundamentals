@@ -181,7 +181,7 @@ Linux build 有一条具体的 argv 保护路线：按 UTF-8 字节累计参数�
 - 窗口句柄相同。
 - 进程 ID 相同。
 - 先前 elementId 非空，而且当前 elementId 相同。
-- 当前仍符合可写条件。
+- 当前 probe 的 takesText 为真，或原始 probe 的 siteEditor 字段不为 undefined；这是该辅助函数保留的特殊编辑器分支。
 - selection 文本与原先一致。
 
 它还对 lastResult 路线检查上次文本是否仍处在预期位置。检查失败时保留生成结果、提示目标改变，不继续当作可插入。
@@ -197,6 +197,8 @@ sameEditTarget(before, after)
 ```
 
 测试故意一次只改变一个字段。这样才能知道判断依赖的是哪个身份，不会被一个“看起来仍在同一 app”的宽松条件掩盖。
+
+教学模型在这一点更严格：它要求当前 editable 为 true，没有复刻目标辅助函数的 siteEditor 例外。
 
 ### 拒绝理由也属于交互设计
 
@@ -252,7 +254,7 @@ macOS 调用层分别检查 accessibility 与 screen recording。某些 app 还�
 
 app-scoped adapter 先做 AX probe，得到 outcome、reasonCode、角色、错误、原内容等信息。随后才决定是否可以采用 raw-input fallback。[NB-17]
 
-可见实现对未知 reasonCode 阻断；某些已分类理由也禁止回落。针对已列出元素的动作，如果当前位置已经对应其他元素，不能简单改成盲点坐标。真正进入 fallback 前，还要核对窗口 owner 与获准 app 一致，并考虑用户正在输入、secure input 与取消条件。
+在 outcome 为 unsupported 且 reasonCode 非空时，未分类理由会阻止回落；某些已分类理由也明确禁止回落。另有针对 ineffective click 的特定 AX error 分支，不能把所有 outcome 都概括成同一个 reasonCode 判断。针对已列出元素的动作，如果当前位置已经对应其他元素，不能简单改成盲点坐标。真正进入 fallback 前，还要核对窗口 owner 与获准 app 一致，并考虑用户正在输入、secure input 与取消条件。
 
 ```mermaid
 flowchart TD

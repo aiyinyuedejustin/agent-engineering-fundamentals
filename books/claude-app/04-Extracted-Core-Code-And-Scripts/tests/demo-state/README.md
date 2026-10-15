@@ -4,7 +4,7 @@ This harness tests the **original local study demo**, not Claude or an authentic
 
 ## Reproduce
 
-From the downloaded book root (the directory containing `README.md`, `demo`, `components`, `data` and `tests`), with Node.js 18 or newer and npm installed:
+From the downloaded publication root (the directory containing `README.md`, `01-Frontend-Design-And-HTML-Templates` and `04-Extracted-Core-Code-And-Scripts`), with Node.js 18 or newer and npm installed:
 
 ```sh
 npm install --prefix 04-Extracted-Core-Code-And-Scripts/tests/demo-state --ignore-scripts --no-audit --no-fund

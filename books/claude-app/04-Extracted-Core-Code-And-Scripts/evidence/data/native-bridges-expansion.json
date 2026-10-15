@@ -340,7 +340,7 @@
           "occurrence_zero_based": 0
         }
       ],
-      "qualification": "缩小过期目标窗口风险；校验与 paste 间仍非原子。",
+      "qualification": "缩小过期目标窗口风险；校验与 paste 间仍非原子。 可写条件为当前 takesText 或原始 siteEditor 不为 undefined；原创模型只采用更严格的 editable=true。",
       "related_evidence": []
     },
     {
@@ -451,7 +451,7 @@
     },
     {
       "id": "NB-17",
-      "finding": "app-scoped 动作先 AX probe，再由分类策略决定是否允许 raw-input fallback；未知 reasonCode 阻断，fallback 前核对窗口归属与可定位条件。",
+      "finding": "app-scoped 动作先 AX probe，再由分类策略决定是否允许 raw-input fallback；outcome=unsupported 且非空 reasonCode 未分类时阻断，ineffective click 的特定 AX error 另有分支，fallback 前核对窗口归属与可定位条件。",
       "evidence_kind": "observed-static-caller",
       "anchors": [
         {
@@ -640,5 +640,6 @@
       "role": "public connector taxonomy"
     }
   ],
-  "verified_anchor_count": 47
+  "verified_anchor_count": 47,
+  "semantic_review": "2026-10-15: refined conditional fallback, editor exception, or cache-age semantics; anchors unchanged."
 }

@@ -22,6 +22,8 @@ def commands(include_skills=False):
         if not files:
             raise RuntimeError(f'缺少已声明的测试：{folder}/{pattern}')
         jobs.append((folder, location, [node, '--test', *map(str, files)]))
+    jobs.append(('worked-cases-python', ROOT / 'worked-cases', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_worked_cases.py']))
+    jobs.append(('worked-cases-node', ROOT / 'worked-cases', [node, '--test', 'context_budget.test.mjs']))
     if include_skills:
         location = BOOK / '03-Ready-To-Use-Agent-Skills'
         files = sorted(location.rglob('*.test.mjs'))

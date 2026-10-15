@@ -363,3 +363,7 @@ sequenceDiagram
 静态范围为 Claude Desktop Linux amd64 2.37337.1 的选定 `ion-dist` 路径。IP 编号见[结构化证据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/input-pipeline.json)，含文件哈希、字节锚点与适用条件。研究以 REA 和惰性语法分析读取代码，未运行目标应用、上传文件、调用包内 API 或启用麦克风；服务器提示词构造与当前托管页面保持独立边界。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 动手推演
+
+[完整案例：状态表、可运行代码与预测练习](worked-case.md)把本卷的异步边界放到同一条时间线上。

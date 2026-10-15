@@ -615,7 +615,7 @@
     },
     {
       "id": "PF-27",
-      "claim": "Highlight prefix cache has a 64-entry threshold, four-million-character accounting target and 30-minute retention; one remaining oversized entry is allowed by the eviction condition.",
+      "claim": "Highlight prefix cache has a 64-entry threshold, four-million UTF-16-code-unit accounting target and a 30-minute stale-age threshold, not exact expiry; scheduled cleanup adds about one minute and lookup can select before cleanup. One remaining oversized entry is allowed.",
       "evidence_kind": "observed-source",
       "file": "assets/v1/shared-11-BoE9JQRc.js",
       "anchor": "var pg=64,mg=4e6,hg=18e5",
@@ -1089,5 +1089,6 @@
       "pendingTimers": 0,
       "caveat": "Counts logical parser input only; no real parser, DOM, Worker startup, string-copy, GC or paint cost is timed."
     }
-  }
+  },
+  "semantic_review": "2026-10-15: refined conditional fallback, editor exception, or cache-age semantics; anchors unchanged."
 }

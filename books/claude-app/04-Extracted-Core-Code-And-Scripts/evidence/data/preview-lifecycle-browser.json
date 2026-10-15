@@ -1,0 +1,76 @@
+{
+  "observed_at_utc": "2026-10-15T00:14:10Z",
+  "baseline_commit": "ac7ec2ecbde826d6412b33191b09c909cbefe417",
+  "fixed_commit": "254e723171738c9e838ac2a930f608b097fa6091",
+  "browser": "own cloud Chrome",
+  "surface": "public htmlpreview.github.io immutable viewer",
+  "fixed_url": "https://htmlpreview.github.io/?https://github.com/aiyinyuedejustin/agent-engineering-fundamentals/blob/254e723171738c9e838ac2a930f608b097fa6091/books/claude-app/01-Frontend-Design-And-HTML-Templates/templates/03-split-artifact-ide-template.html",
+  "baseline_finding": {
+    "trigger": "Fresh initial render -> Code -> Preview, without source change",
+    "visible_only_updates": "Unchanged refresh and title instruction rendered correctly before hiding iframe",
+    "failure": "Frame pixels blank; correct complete srcdoc DOM; visible/block computed styles; outer iframe 669x480 but inner document rects all zero",
+    "recovery_attempt": "Updating the existing frame and ordinary splitter resize did not recover it",
+    "interpretation": "Reused hidden-frame navigation/rendering lifecycle failure in tested viewer/browser path; not established as universal Chromium bug"
+  },
+  "checks": [
+    {
+      "id": "BR-LIFE-01",
+      "result": "pass",
+      "observation": "Initial preview and Code -> Preview with unchanged source visibly render after remount."
+    },
+    {
+      "id": "BR-LIFE-02",
+      "result": "pass",
+      "observation": "Exact comment/style/h1 source plus title instruction while Code visible renders 真正的标题; heading class hero and id heading preserved; comment/style samples unchanged in editor; heading rectangle 653x46."
+    },
+    {
+      "id": "BR-LIFE-03",
+      "result": "pass",
+      "observation": "Three additional Code -> Preview cycles render expected title with nonzero geometry each time."
+    },
+    {
+      "id": "BR-LIFE-04",
+      "result": "pass",
+      "observation": "Empty input shows validation error while preserving identical last-good srcdoc and visibly rendered heading after returning to Preview."
+    },
+    {
+      "id": "BR-LIFE-05",
+      "result": "pass",
+      "observation": "Unsupported script-only input preserves identical last-good srcdoc and nonzero rendered heading."
+    },
+    {
+      "id": "BR-LIFE-06",
+      "result": "pass",
+      "observation": "100001-character input is rejected while preserving identical last-good srcdoc and nonzero rendered heading."
+    },
+    {
+      "id": "BR-LIFE-07",
+      "result": "pass",
+      "observation": "Reset recovers original Room for something good preview."
+    },
+    {
+      "id": "BR-LIFE-08",
+      "result": "pass",
+      "observation": "Built-in error -> Restore code -> Control+Enter recovers original visible preview."
+    },
+    {
+      "id": "BR-LIFE-09",
+      "result": "pass",
+      "observation": "Exactly one iframe remains, sandbox empty, referrerpolicy no-referrer, no src URL; no application warning/error observed. One browser-extension metadata error appears in console."
+    }
+  ],
+  "simulated_tests": {
+    "existing_static_and_dom": 80,
+    "existing_edge": 25,
+    "new_lifecycle": 8,
+    "passed": 113,
+    "failed": 0,
+    "not_equivalent_to_browser_checks": true
+  },
+  "limitations": [
+    "Only the cloud Chrome plus htmlpreview path was tested, not local file/offline, native Safari/Firefox or other environments.",
+    "Viewer rewrites script markup in loaded source; built-in unsupported-script fixture included type=text/htmlpreview.",
+    "Security attributes/CSP unchanged and DOM inspected; no general security audit or exhaustive CSP enforcement test claimed.",
+    "Iframe identity retention on invalid source is explicitly tested in jsdom; browser checks verify unchanged srcdoc and visible retained document."
+  ]
+}

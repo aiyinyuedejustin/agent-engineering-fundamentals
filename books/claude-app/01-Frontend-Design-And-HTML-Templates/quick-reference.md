@@ -68,4 +68,4 @@ Quick Entry：输入、会话上下文、提交同轴；所检独立窗口声明
 3. 进入“组件图谱”，触发输入错误并打开 dialog；再在“状态”里发送、停止、模拟失败、重试，观察草稿与按钮名称。
 4. 嵌入自己的页面前收束 CSS 作用域。[components.css](styles/components.css) 仍含 body、button、p、focus 等全局规则，前缀不提供完整隔离。
 
-研究基准：2026-10-14；主要样本 Claude Desktop Linux 2.37337.1。数据是静态观察，图与 demo 是原创；未登录运行 Claude。demo 已通过 46 项模拟 DOM、6 项静态检查，真实浏览器布局、中文 IME、字体与辅助技术仍未验收。[证据图例](README.md#证据图例) · [测试报告](../04-Extracted-Core-Code-And-Scripts/evidence/data/demo-state-test.md)
+研究基准：2026-10-14；主要样本 Claude Desktop Linux 2.37337.1。数据是静态观察，图与 demo 是原创；未登录运行 Claude。这里的交互工作台有 46 项基础、32 项新增模拟 DOM 检查，以及 6 项基础、10 项新增静态检查；不包含六套独立 HTML 模板的测试。[初版浏览器记录](../04-Extracted-Core-Code-And-Scripts/evidence/data/demo-browser-baseline.json)仅覆盖提交 520db1b 的指定场景；新增密度、阅读与 Quick Entry 机制仍需真实浏览器复验，中文 IME、字体与辅助技术也未完成验收。[证据图例](README.md#证据图例) · [基础测试报告](../04-Extracted-Core-Code-And-Scripts/evidence/data/demo-state-test.md) · [新增测试范围](../04-Extracted-Core-Code-And-Scripts/tests/phase2-components/README.md)

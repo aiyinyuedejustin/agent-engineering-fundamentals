@@ -273,3 +273,7 @@ AL-01..25 对应启动、权限、消息、恢复和结束机制。下一卷继�
 静态范围为 Claude Desktop Linux amd64 2.37337.1，包含随包分发的其他平台条件分支。AL/CU 编号见[结构化证据](../../04-Extracted-Core-Code-And-Scripts/evidence/data/agent-loop-cowork.json)。研究未运行目标应用或探测端点；客户端协作层不证明服务器模型生成实现。
 
 [返回全书目录](../README.md) · [阅读前提与术语](../README.md#一页阅读准备) · [原创代码实验室](../../04-Extracted-Core-Code-And-Scripts/core-code-lab/README.md)
+
+## 动手推演
+
+[完整案例：状态表、可运行代码与预测练习](worked-case.md)把本卷的异步边界放到同一条时间线上。

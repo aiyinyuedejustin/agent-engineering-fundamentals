@@ -71,3 +71,9 @@
 ## 验收记录
 
 静态与模拟 DOM 测试在 `tests/results.json`，每次运行更新文件哈希。真实截图应在浏览器验收后另行登记来源 URL、视口、主题与时间。截图只证明该画面的渲染，不单独证明键盘、输入法或安全边界。
+
+## 隐藏预览的生命周期回归
+
+2026-10-15，在云端 Chrome 的不可变 HTML Preview 页面核验提交 254e723：初次加载、Code/Preview 来回切换、保留 H1 属性的标题修改、无效/过大输入保留上一版、重置、错误恢复和键盘更新共 9 项通过。修复方式为有效更新时重新挂载保持原 sandbox/CSP 的 iframe；无效输入不替换已有文档。
+
+[完整浏览器记录](../../04-Extracted-Core-Code-And-Scripts/evidence/data/preview-lifecycle-browser.json)与 113 项静态/模拟 DOM 测试分开计数。这次浏览器结果覆盖该 Chrome/查看器路径，不代表各浏览器或 file:// 模式。

@@ -324,13 +324,15 @@ Markdown deferred mode 给直接子块设置 content-visibility:auto 和按内�
 | 所见资源 | 所有者与释放机制 | 注意事项 |
 |---|---|---|
 | Markdown settled tree cache | 模块级 LRU，500 项、约 8MiB 总估算、约 2MiB 单项 | 估算值不是浏览器真实 retained heap |
-| highlight prefix cache | 64 项、约 400 万字符目标、30 分钟寿命 | 条件允许最后一个超大条目继续存在 |
+| highlight prefix cache | 64 项、约 400 万 UTF-16 code units 目标、30 分钟陈旧阈值 | 可保留最后一个超大条目；清理并非精确到期 |
 | final-token cache | 2,000 项、100 万字符、寿命清理 | 与组件 dispose 不同 |
 | Worker stream | streamId → grammar/open line；close 删除 | 不等于 terminate 全局 Worker |
 | Mermaid success cache | 48 项、400 万 SVG 字符、单项 512,000 字符 | width tolerance、scope 替换后重新 sanitize |
 | pending render / timer | 组件或 controller | cleanup、epoch、abort 分别负责不同阶段 |
 
 以上容量只描述本次看到的 cache accounting。[PF-16、22、27–28、32、45]
+
+其中 30 分钟是清理判断的年龄阈值。定时清理还加入约一分钟余量，并受实际调度影响；前缀查找也可以先选中候选再清理。因此它不是“到第 30 分钟必定移除或绝不复用”的硬期限。
 
 ### 11.2 有容量 cap 仍不等于没有泄漏
 
@@ -387,6 +389,8 @@ presenter.accept(reducer.finalText(), { terminal: true });
 ### 12.3 模拟结果怎样读
 
 固定语料为 4,885 UTF-16 code units，按小批输入形成 543 次更新。模型得到 69 次 commit；“每次全文解析”的逻辑输入累计为 1,329,262 code units，而“稳定块 + 尾部 + 最终全文”的累计为 10,622。[lab/simulation-result.json]
+
+这组差异同时包含快照合并与分块复用的贡献。独立复核增加了同样 69 次 commit、但每次仍全文解析的对照，其累计为 169,513 code units；这仍只是逻辑工作量账本。
 
 这个结果证明测试语料上的工作量账本差异，**不证明真实应用快了 99.2%**。模型没有执行完整 Markdown parser，没有计算字符串复制、React、Worker 启动、GC、布局、绘制或真实设备竞争。特别长的单块输入也可能显著削弱分块收益。
 
