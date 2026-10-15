@@ -19,6 +19,8 @@
 
 - [第 11 卷：流式性能与分层调度](11-Performance-And-Streaming/README.md)：稳定块与尾块、高亮 Worker、图表队列、虚拟化与资源生命周期。
 
+- [第 12 卷：遥测事件与指标设计](12-Telemetry-And-Product-Metrics/README.md)：事件字典、触发合同、分母选择与原创指标实验。
+
 - [第 13 卷：原生系统桥接](13-Native-OS-Bridges/README.md)：快捷键、系统入口、选择文本与编辑目标重验证。
 - [第 14 卷：安全防线与执行边界](14-Security-And-Guardrails/README.md)：内容信任、命令语义、资源身份、外链与敏感字段存储。
 
@@ -63,3 +65,5 @@
 [证据方法与复现范围](../04-Extracted-Core-Code-And-Scripts/evidence/README.md)说明如何区分静态事实、公开说明与实际观察。[本轮纠错摘要](../04-Extracted-Core-Code-And-Scripts/evidence/data/book-corrections.json)记录纳入本书的 20 项已复核修正；各卷的证据链接保留具体条件与短定位。出版物不附安装包、完整模块、完整专有提示词、原始提取图或账户数据。
 
 [返回全仓导航](../README.md) · [先看前端设计](../01-Frontend-Design-And-HTML-Templates/README.md)
+
+- [阅读准备：三个异步边界](Reading-Preparation/README.md)：await 后的身份、截止时间与取消、接纳与完成。

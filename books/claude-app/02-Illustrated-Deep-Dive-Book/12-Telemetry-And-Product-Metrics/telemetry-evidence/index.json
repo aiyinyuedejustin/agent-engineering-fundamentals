@@ -1,0 +1,954 @@
+{
+  "schema": "original-telemetry-metrics-study/v1",
+  "research_date": "2026-10-15",
+  "target": {
+    "product": "Claude Desktop",
+    "version": "2.37337.1",
+    "platform": "Linux amd64",
+    "package_sha256": "41745b0914f0ff51631a1ff1bb403b836bf5c995845cca6742dd39bca3a2da14"
+  },
+  "scope": {
+    "target": "Claude Desktop Linux 2.37337.1",
+    "targets": "All direct .js files in ion-dist/assets/v1 and app.asar/.vite/build; nested workers and renderer-specific assets excluded",
+    "payloads": "All AST ObjectProperty event_key fields; sink association only when direct call and supported binding path resolve",
+    "calls": "Verified analytics hook/direct track, mutation/visibility wrapper, Health outcome wrapper, desktop Q/Jk/jB and direct imports xL/bL, plus explicit Sentry member calls in main desktop bundle",
+    "exclusions": [
+      "Target not executed",
+      "No login or endpoint access",
+      "No dataflow through arbitrary functions, reflection, computed import or reassignment",
+      "No claim of runtime reachability or exhaustive product events",
+      "Statsig substring markers do not identify SDK events",
+      "Datadog RUM performance addAction/addTiming paths, including chat.formatter_wait and chat.code_stream_render; see Vol.11"
+    ],
+    "offsets": "UTF-8 bytes, zero-based end-exclusive"
+  },
+  "statistics": {
+    "files": 3782,
+    "parse_failures": 0,
+    "calls": 4162,
+    "payloads": 3281,
+    "literal_payloads": 2986,
+    "unique_literal_payload_names": 2224,
+    "calls_by_sink": {
+      "analytics_track": 2876,
+      "analytics_visibility": 7,
+      "health_outcome": 139,
+      "analytics_mutation": 3,
+      "cowork_event": 260,
+      "desktop_event": 840,
+      "sentry_member_call": 3,
+      "sentry_exception": 14,
+      "sentry_message": 7,
+      "desktop_forwarder": 13
+    }
+  },
+  "dictionary_statistics": {
+    "analytics_payload": 2287,
+    "desktop_event": 641,
+    "health_action": 93
+  },
+  "warnings": [
+    "Syntactic site counts are not delivered event counts or active users",
+    "Field unions and fields_at_every_recorded_site are not required wire schemas",
+    "Literal names do not establish runtime use, feature availability, vendor ownership, or internal north-star metrics",
+    "Dynamic identifier/member/template names and arbitrary wrapper flows remain unresolved",
+    "Binding association uses lexical initializers and direct imports; reassigned identifier bindings are excluded",
+    "recorded_spreads and recorded_spread_count count retained conditional or unresolved spread annotations, not unknown key sets or every SpreadElement. Literal object spreads are flattened. Numeric values, IDs, and field annotations are unchanged from the initial projection."
+  ],
+  "anchors": [
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "ga",
+      "offset": 8842,
+      "end_offset": 8847,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "number": 50
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "_a",
+      "offset": 8848,
+      "end_offset": 8854,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "number": 100
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "va",
+      "offset": 8855,
+      "end_offset": 8861,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "number": 60000
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "ya",
+      "offset": 8862,
+      "end_offset": 8868,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "number": 10000
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "xa",
+      "offset": 8876,
+      "end_offset": 8880,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "number": 5
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Ba",
+      "offset": 9305,
+      "end_offset": 9359,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Ua",
+      "offset": 9428,
+      "end_offset": 9595,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Wa",
+      "offset": 9596,
+      "end_offset": 9602,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "number": 30000
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Ga",
+      "offset": 9603,
+      "end_offset": 9822,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Ka",
+      "offset": 9822,
+      "end_offset": 9895,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "qa",
+      "offset": 9935,
+      "end_offset": 10433,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Ja",
+      "offset": 10433,
+      "end_offset": 11520,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "$a",
+      "offset": 11764,
+      "end_offset": 14186,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "mo",
+      "offset": 15802,
+      "end_offset": 20572,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1",
+      "literal_map": {
+        "login": "auth.login",
+        "signup": "auth.signup",
+        "logout": "auth.logout",
+        "phoneCodeSent": "auth.phone_code_send",
+        "conversationCreated": "chat.conversation_create",
+        "incognitoConversationCreated": "chat.incognito_conversation_create",
+        "conversationOpened": "chat.conversation_open",
+        "notificationOpened": "chat.notification_open",
+        "conversationSearch": "chat.conversation_search",
+        "fileUpload": "chat.file_upload",
+        "projectCreated": "chat.project_create",
+        "projectFileUpload": "chat.project_file_upload",
+        "messageSent": "chat.message_send",
+        "messageStreamCompleted": "chat.message_stream_complete",
+        "turnCompleted": "chat.turn_complete",
+        "hubSendFailing": "chat.hub_send_failing",
+        "hubSendThrottled": "chat.hub_send_throttled",
+        "modelSwitched": "chat.model_switch",
+        "connectorAdded": "chat.connector_add",
+        "paidConversion": "page.paid_conversion",
+        "projectsLoaded": "page.projects_load",
+        "recentsLoaded": "page.recents_load",
+        "upgradeLoaded": "page.upgrade_load",
+        "onboardingStarted": "page.onboarding_start",
+        "onboardingCompleted": "page.onboarding_complete",
+        "planUpgraded": "billing.plan_upgrade",
+        "subscriptionCanceled": "billing.subscription_cancel",
+        "orgCreated": "team.org_create",
+        "inviteSent": "team.invite_send",
+        "enterpriseOrgCreated": "enterprise.org_create",
+        "coworkMessageSend": "cowork.message_send",
+        "coworkConversationCreate": "cowork.conversation_create",
+        "coworkTabLoad": "cowork.tab_load",
+        "coworkDispatchLoad": "cowork.dispatch_load",
+        "coworkConversationOpen": "cowork.conversation_open",
+        "coworkProjectsLoad": "cowork.projects_load",
+        "coworkProjectCreate": "cowork.project_create",
+        "coworkElevatedAuthStepUp": "cowork.elevated_auth_step_up",
+        "coworkStaleLoginReturn": "cowork.stale_login_return",
+        "coworkPasskeyEnrollOffer": "cowork.passkey_enroll_offer",
+        "codeSessionCreate": "code.session_create",
+        "codeSessionResume": "code.session_resume",
+        "codeSessionDurability": "code.session_durability",
+        "coworkArtifactOpen": "cowork.artifact_open",
+        "coworkFileAttach": "cowork.file_attach",
+        "coworkArtifactRender": "cowork.artifact_render",
+        "codeArtifactRender": "code.artifact_render",
+        "coworkMessageReply": "cowork.message_reply",
+        "codeMessageReply": "code.message_reply",
+        "coworkSessionStart": "cowork.session_start",
+        "codeMessageSend": "code.message_send",
+        "codeTurnComplete": "code.turn_complete",
+        "coworkTurnComplete": "cowork.turn_complete",
+        "codeTabLoad": "code.tab_load",
+        "codeChannelCreate": "code.channel_create",
+        "codeChannelMessageSend": "code.channel_message_send",
+        "codeChannelStreamOpen": "code.channel_stream_open",
+        "codeChannelThreadOpen": "code.channel_thread_open",
+        "codeChannelHomeOpen": "code.channel_home_open",
+        "codeChannelThreadWalk": "code.channel_thread_walk",
+        "codeChannelPanelCrash": "code.channel_panel_crash",
+        "codeChannelStreamReconnect": "code.channel_stream_reconnect",
+        "codeChannelWorkingState": "code.channel_working_state",
+        "codeChannelPaneRender": "code.channel_pane_render",
+        "codeChannelArtifactOpen": "code.channel_artifact_open",
+        "codeChannelOverviewTabSwitch": "code.channel_overview_tab_switch",
+        "codeChannelDialogOpen": "code.channel_dialog_open",
+        "codeChannelTurnStop": "code.channel_turn_stop",
+        "codeChannelThreadResolve": "code.channel_thread_resolve",
+        "codeChannelFileAttach": "code.channel_file_attach",
+        "artifactsScreenshotCapture": "artifacts.screenshot_capture",
+        "mcpAppWidgetRender": "mcp_app.widget_render",
+        "mcpConnectorConnect": "mcp.connector_connect",
+        "mcpConnectorToolsList": "mcp.connector_tools_list",
+        "coworkMcpToolCall": "cowork.mcp_tool_call",
+        "voiceSessionStart": "voice.session_start",
+        "voiceTurnComplete": "voice.turn_complete",
+        "voiceTurnResponded": "voice.turn_responded",
+        "voiceSessionEnd": "voice.session_end",
+        "voiceDictation": "voice.dictation",
+        "voiceReadAloud": "voice.read_aloud",
+        "securityLoaded": "page.security_load",
+        "securitySettingsLoaded": "page.security_settings_load",
+        "securityGithubAccessIssue": "security.github_access_issue",
+        "securityScanCreated": "security.scan_create",
+        "securityFindingsLoaded": "security.findings_load",
+        "securityFixCreated": "security.fix_create",
+        "securityFindingTriaged": "security.finding_triage",
+        "siteTestPageLoaded": "page.site_test_load",
+        "siteTestRunDispatched": "site_test.run_dispatch",
+        "siteTestSpecSaved": "site_test.spec_save",
+        "siteTestTargetVerified": "site_test.target_verify",
+        "siteTestTargetCreated": "site_test.target_create",
+        "portalProgramsLoad": "portal.programs_load",
+        "portalApplyStart": "portal.apply_start",
+        "portalApplyStepAdvance": "portal.apply_step_advance",
+        "portalApplySubmit": "portal.apply_submit",
+        "portalStatusLoad": "portal.status_load",
+        "adminBootstrapLoad": "admin.bootstrap_load",
+        "adminOrganizationsLoad": "admin.organizations_load",
+        "appCrash": "app.crash",
+        "gatedPageFailureShown": "app.gated_page_failure_shown",
+        "appBootstrap": "app.bootstrap",
+        "navigationLoop": "client.navigation_loop",
+        "renderLoop": "client.render_loop",
+        "ssoCallbackError": "auth.sso_callback_error",
+        "accountSwitch": "auth.account_switch",
+        "accountSwitchReady": "auth.account_switch_ready",
+        "accountAdd": "auth.account_add",
+        "accountMismatch409": "auth.account_mismatch_409",
+        "accountOverlayShown": "auth.account_overlay_shown",
+        "sessionExpired": "auth.session_expired"
+      }
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "So",
+      "offset": 23613,
+      "end_offset": 24001,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-25-BQdcIBNa.js",
+      "symbol": "Co",
+      "offset": 24001,
+      "end_offset": 27530,
+      "sha256": "797a3809e11f9640317b48a615def40729d5e5e9f591a33588ef1c6e913a1fc1"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "Yv",
+      "offset": 113957,
+      "end_offset": 114066,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "Xv",
+      "offset": 114066,
+      "end_offset": 114117,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "Zv",
+      "offset": 114121,
+      "end_offset": 114269,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc",
+      "literal_map": {}
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "Qv",
+      "offset": 114270,
+      "end_offset": 114281,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "tP",
+      "offset": 293437,
+      "end_offset": 296186,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "nP",
+      "offset": 296186,
+      "end_offset": 296210,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "iP",
+      "offset": 296272,
+      "end_offset": 296559,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "shared-52-DOMr1cuc.js",
+      "symbol": "aP",
+      "offset": 296559,
+      "end_offset": 296849,
+      "sha256": "db63aefe13e740203edee3906f387f2a6546621901b8c68a5ae28848fd7786cc"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "MYe",
+      "offset": 1008782,
+      "end_offset": 1009516,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "Vk",
+      "offset": 2955567,
+      "end_offset": 2955899,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "Wk",
+      "offset": 2956507,
+      "end_offset": 2956562,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "Gk",
+      "offset": 2956562,
+      "end_offset": 2956775,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "dTn",
+      "offset": 2957131,
+      "end_offset": 2958484,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "gTn",
+      "offset": 2958600,
+      "end_offset": 2959461,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "Jk",
+      "offset": 2961028,
+      "end_offset": 2961153,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "OTn",
+      "offset": 2961153,
+      "end_offset": 2961335,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "Q",
+      "offset": 2961405,
+      "end_offset": 2961757,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    },
+    {
+      "file": "index.chunk-ny8j26BQ.js",
+      "symbol": "RTn",
+      "offset": 2962730,
+      "end_offset": 2964690,
+      "sha256": "d241a58d6a392b2074afb85713b9a7210cac511d068c30cb182552775e4ee512"
+    }
+  ],
+  "health_action_map": {
+    "login": "auth.login",
+    "signup": "auth.signup",
+    "logout": "auth.logout",
+    "phoneCodeSent": "auth.phone_code_send",
+    "conversationCreated": "chat.conversation_create",
+    "incognitoConversationCreated": "chat.incognito_conversation_create",
+    "conversationOpened": "chat.conversation_open",
+    "notificationOpened": "chat.notification_open",
+    "conversationSearch": "chat.conversation_search",
+    "fileUpload": "chat.file_upload",
+    "projectCreated": "chat.project_create",
+    "projectFileUpload": "chat.project_file_upload",
+    "messageSent": "chat.message_send",
+    "messageStreamCompleted": "chat.message_stream_complete",
+    "turnCompleted": "chat.turn_complete",
+    "hubSendFailing": "chat.hub_send_failing",
+    "hubSendThrottled": "chat.hub_send_throttled",
+    "modelSwitched": "chat.model_switch",
+    "connectorAdded": "chat.connector_add",
+    "paidConversion": "page.paid_conversion",
+    "projectsLoaded": "page.projects_load",
+    "recentsLoaded": "page.recents_load",
+    "upgradeLoaded": "page.upgrade_load",
+    "onboardingStarted": "page.onboarding_start",
+    "onboardingCompleted": "page.onboarding_complete",
+    "planUpgraded": "billing.plan_upgrade",
+    "subscriptionCanceled": "billing.subscription_cancel",
+    "orgCreated": "team.org_create",
+    "inviteSent": "team.invite_send",
+    "enterpriseOrgCreated": "enterprise.org_create",
+    "coworkMessageSend": "cowork.message_send",
+    "coworkConversationCreate": "cowork.conversation_create",
+    "coworkTabLoad": "cowork.tab_load",
+    "coworkDispatchLoad": "cowork.dispatch_load",
+    "coworkConversationOpen": "cowork.conversation_open",
+    "coworkProjectsLoad": "cowork.projects_load",
+    "coworkProjectCreate": "cowork.project_create",
+    "coworkElevatedAuthStepUp": "cowork.elevated_auth_step_up",
+    "coworkStaleLoginReturn": "cowork.stale_login_return",
+    "coworkPasskeyEnrollOffer": "cowork.passkey_enroll_offer",
+    "codeSessionCreate": "code.session_create",
+    "codeSessionResume": "code.session_resume",
+    "codeSessionDurability": "code.session_durability",
+    "coworkArtifactOpen": "cowork.artifact_open",
+    "coworkFileAttach": "cowork.file_attach",
+    "coworkArtifactRender": "cowork.artifact_render",
+    "codeArtifactRender": "code.artifact_render",
+    "coworkMessageReply": "cowork.message_reply",
+    "codeMessageReply": "code.message_reply",
+    "coworkSessionStart": "cowork.session_start",
+    "codeMessageSend": "code.message_send",
+    "codeTurnComplete": "code.turn_complete",
+    "coworkTurnComplete": "cowork.turn_complete",
+    "codeTabLoad": "code.tab_load",
+    "codeChannelCreate": "code.channel_create",
+    "codeChannelMessageSend": "code.channel_message_send",
+    "codeChannelStreamOpen": "code.channel_stream_open",
+    "codeChannelThreadOpen": "code.channel_thread_open",
+    "codeChannelHomeOpen": "code.channel_home_open",
+    "codeChannelThreadWalk": "code.channel_thread_walk",
+    "codeChannelPanelCrash": "code.channel_panel_crash",
+    "codeChannelStreamReconnect": "code.channel_stream_reconnect",
+    "codeChannelWorkingState": "code.channel_working_state",
+    "codeChannelPaneRender": "code.channel_pane_render",
+    "codeChannelArtifactOpen": "code.channel_artifact_open",
+    "codeChannelOverviewTabSwitch": "code.channel_overview_tab_switch",
+    "codeChannelDialogOpen": "code.channel_dialog_open",
+    "codeChannelTurnStop": "code.channel_turn_stop",
+    "codeChannelThreadResolve": "code.channel_thread_resolve",
+    "codeChannelFileAttach": "code.channel_file_attach",
+    "artifactsScreenshotCapture": "artifacts.screenshot_capture",
+    "mcpAppWidgetRender": "mcp_app.widget_render",
+    "mcpConnectorConnect": "mcp.connector_connect",
+    "mcpConnectorToolsList": "mcp.connector_tools_list",
+    "coworkMcpToolCall": "cowork.mcp_tool_call",
+    "voiceSessionStart": "voice.session_start",
+    "voiceTurnComplete": "voice.turn_complete",
+    "voiceTurnResponded": "voice.turn_responded",
+    "voiceSessionEnd": "voice.session_end",
+    "voiceDictation": "voice.dictation",
+    "voiceReadAloud": "voice.read_aloud",
+    "securityLoaded": "page.security_load",
+    "securitySettingsLoaded": "page.security_settings_load",
+    "securityGithubAccessIssue": "security.github_access_issue",
+    "securityScanCreated": "security.scan_create",
+    "securityFindingsLoaded": "security.findings_load",
+    "securityFixCreated": "security.fix_create",
+    "securityFindingTriaged": "security.finding_triage",
+    "siteTestPageLoaded": "page.site_test_load",
+    "siteTestRunDispatched": "site_test.run_dispatch",
+    "siteTestSpecSaved": "site_test.spec_save",
+    "siteTestTargetVerified": "site_test.target_verify",
+    "siteTestTargetCreated": "site_test.target_create",
+    "portalProgramsLoad": "portal.programs_load",
+    "portalApplyStart": "portal.apply_start",
+    "portalApplyStepAdvance": "portal.apply_step_advance",
+    "portalApplySubmit": "portal.apply_submit",
+    "portalStatusLoad": "portal.status_load",
+    "adminBootstrapLoad": "admin.bootstrap_load",
+    "adminOrganizationsLoad": "admin.organizations_load",
+    "appCrash": "app.crash",
+    "gatedPageFailureShown": "app.gated_page_failure_shown",
+    "appBootstrap": "app.bootstrap",
+    "navigationLoop": "client.navigation_loop",
+    "renderLoop": "client.render_loop",
+    "ssoCallbackError": "auth.sso_callback_error",
+    "accountSwitch": "auth.account_switch",
+    "accountSwitchReady": "auth.account_switch_ready",
+    "accountAdd": "auth.account_add",
+    "accountMismatch409": "auth.account_mismatch_409",
+    "accountOverlayShown": "auth.account_overlay_shown",
+    "sessionExpired": "auth.session_expired"
+  },
+  "parse_failures": [],
+  "export_maps": {
+    "shared-52-DOMr1cuc.js": {
+      "Is": "analytics_hook",
+      "Ls": "analytics_mutation",
+      "rm": "analytics_track",
+      "zs": "analytics_visibility"
+    },
+    "shared-25-BQdcIBNa.js": {
+      "$h": "health_outcome"
+    },
+    "index.chunk-ny8j26BQ.js": {
+      "xL": "desktop_event",
+      "bL": "cowork_event",
+      "gL": "desktop_registry"
+    }
+  },
+  "rea": {
+    "evidence_id": "ev_0d5842e3796103218387a15bc0d31a74c01ae90d8d67a702e0620dc2127de709",
+    "tool": "REA 6.5.0",
+    "parameters": {
+      "format": "auto",
+      "integrity_policy": "fail",
+      "max_semantic_nodes": 6000,
+      "max_semantic_nodes_per_file": 3000,
+      "source_paths": [
+        "assets/v1/shared-25-BQdcIBNa.js",
+        "assets/v1/shared-52-DOMr1cuc.js"
+      ],
+      "max_heap_mb": 512,
+      "analysis_timeout_ms": 45000
+    },
+    "raw_bytes": 91140296,
+    "raw_sha256": "3d7da021851cb684ffb5cfea54e687754d5d2d73aae784627591426059d377b3",
+    "limitations": [
+      "Caller-selected source analysis leaves 3494 inventoried files outside analysis scope. Inventory identity covers the complete artifact; relationships through unselected sources remain unknown.",
+      "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+      "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+      "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+      "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+      "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+      "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+    ],
+    "statistics": {
+      "relevant_files": 3496,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 785834,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 2,
+      "visited_ast_nodes": 212832,
+      "findings": 2800,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "source_selection": {
+      "requested_paths": [
+        "assets/v1/shared-25-BQdcIBNa.js",
+        "assets/v1/shared-52-DOMr1cuc.js"
+      ],
+      "unselected_files": 3494
+    },
+    "application_coverage": {
+      "status": "partial",
+      "truncated": false,
+      "omitted_count": null,
+      "limits": []
+    },
+    "semantic_coverage": {
+      "status": "partial",
+      "truncated": true,
+      "omitted_nodes": null,
+      "omitted_relations": null,
+      "limits": [
+        {
+          "name": "semantic_graph_file_node_ceiling",
+          "value": 3000,
+          "unit": "items"
+        },
+        {
+          "name": "semantic_graph_node_ceiling",
+          "value": 6000,
+          "unit": "items"
+        }
+      ],
+      "families": [
+        {
+          "family": "boundary",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "call-flow",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 12012
+        },
+        {
+          "family": "child-process",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "closure",
+          "status": "partial",
+          "retained_relations": 113,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "configuration",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "data-flow",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 4198
+        },
+        {
+          "family": "event",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "object-flow",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 20129
+        },
+        {
+          "family": "promise-ownership",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "request",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "resource-lifecycle",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3463
+        },
+        {
+          "family": "timer",
+          "status": "partial",
+          "retained_relations": 0,
+          "omitted_relations": null,
+          "unknown_id_count": 3486
+        }
+      ]
+    }
+  },
+  "external_sources": [
+    {
+      "title": "Statsig: Understanding Experiments",
+      "url": "https://docs.statsig.com/statsig-warehouse-native/features/understanding-experiments",
+      "use": "Exposure-relative windows and mature cohorts; not evidence of Claude internal experiments"
+    },
+    {
+      "title": "Statsig: Experiment Options",
+      "url": "https://docs.statsig.com/statsig-warehouse-native/features/experiment-options",
+      "use": "Randomization units, qualifying event filters, sequential and multiple-testing options"
+    },
+    {
+      "title": "OpenTelemetry GenAI Metrics v1.37.0",
+      "url": "https://github.com/open-telemetry/semantic-conventions/blob/v1.37.0/docs/gen-ai/gen-ai-metrics.md",
+      "use": "Version-pinned Development specification: token usage, operation duration and server TTFT are distinct"
+    },
+    {
+      "title": "Sentry JavaScript maintainer discussion 10333",
+      "url": "https://github.com/getsentry/sentry-javascript/discussions/10333",
+      "use": "Error and trace sampling are separate controls; no claim of installed sample rates"
+    }
+  ],
+  "serialization": "columnar/v1",
+  "id_rules": "IDs index the concatenation of row shards in listed order; start_index is global within that table. site_id is a string key, not a numeric row index. Null means not supplied/not applicable, not zero.",
+  "all_input_manifest_sha256": "075494df23e5773c8b3521ec60749670d78c489d616eb3c5690e3d19d337fdb8",
+  "parts": {
+    "sources": [
+      "sources-01.json"
+    ],
+    "name_forms": [
+      "name-forms-01.json",
+      "name-forms-02.json"
+    ],
+    "field_forms": [
+      "field-forms-01.json",
+      "field-forms-02.json",
+      "field-forms-03.json"
+    ],
+    "shapes": [
+      "shapes-01.json"
+    ],
+    "sites": [
+      "sites-01.json",
+      "sites-02.json",
+      "sites-03.json",
+      "sites-04.json",
+      "sites-05.json"
+    ],
+    "dictionary": [
+      "dictionary-01.json",
+      "dictionary-02.json",
+      "dictionary-03.json",
+      "dictionary-04.json",
+      "dictionary-05.json",
+      "dictionary-06.json"
+    ],
+    "unknown_names": [
+      "unknown-names-01.json"
+    ],
+    "partial_names": [
+      "partial-names-01.json"
+    ]
+  },
+  "human_dictionary_pages": [
+    "analytics_payload-01.md",
+    "analytics_payload-02.md",
+    "desktop_event-01.md",
+    "health_action-01.md",
+    "unknown-names-01.md"
+  ],
+  "sentry_capture_sites": [
+    "call-03617",
+    "call-03618",
+    "call-03619",
+    "call-03620",
+    "call-03621",
+    "call-03622",
+    "call-03635",
+    "call-03636",
+    "call-03645",
+    "call-03646",
+    "call-03649",
+    "call-03677",
+    "call-03681",
+    "call-03726",
+    "call-03743",
+    "call-03789",
+    "call-03790",
+    "call-03857",
+    "call-03919",
+    "call-04120",
+    "call-04148",
+    "call-04149",
+    "call-04150",
+    "call-04151"
+  ],
+  "manifest": [
+    {
+      "path": "sources-01.json",
+      "kind": "sources",
+      "bytes": 49556,
+      "sha256": "0159522fb6f46381a0b19123d427e83b994256c8b3f359281e62ca8aa234e919"
+    },
+    {
+      "path": "name-forms-01.json",
+      "kind": "name-forms",
+      "bytes": 141642,
+      "sha256": "4eeb7c35020c8e176bbc8c4396a76a26fce74338d83b02695a6aed614a1d8ece"
+    },
+    {
+      "path": "name-forms-02.json",
+      "kind": "name-forms",
+      "bytes": 79714,
+      "sha256": "4034f5bcfdaae0ff262ceaf0b995e6ac0d781c177fc528e908644ba32e48f035"
+    },
+    {
+      "path": "field-forms-01.json",
+      "kind": "field-forms",
+      "bytes": 141109,
+      "sha256": "a3737d49051baf2f7aafbde24c7241f243dfc1d472b3c6c1c73c865dd8333f16"
+    },
+    {
+      "path": "field-forms-02.json",
+      "kind": "field-forms",
+      "bytes": 141198,
+      "sha256": "32ab6d88c698688d153e2552f967d25fd63a7864b67cc2b7f427a7a71037d6a4"
+    },
+    {
+      "path": "field-forms-03.json",
+      "kind": "field-forms",
+      "bytes": 67867,
+      "sha256": "ed3a78d59e16721eee770d9284203c0768a37f97e7823c40cca4e9b4b4d8949b"
+    },
+    {
+      "path": "shapes-01.json",
+      "kind": "shapes",
+      "bytes": 99766,
+      "sha256": "43dfae514bc1015ebc7496731b464e040bd809037a196060ccda3107424be42f"
+    },
+    {
+      "path": "sites-01.json",
+      "kind": "sites",
+      "bytes": 141993,
+      "sha256": "4a93abb20c449f07b374fddf9aa3ed85b24ffbe212b66fc664742b71e55267e3"
+    },
+    {
+      "path": "sites-02.json",
+      "kind": "sites",
+      "bytes": 142103,
+      "sha256": "06154d51ca86ab295d1eff869aac4fb703c60ea0113fb7a02c0c72bb9dd63c22"
+    },
+    {
+      "path": "sites-03.json",
+      "kind": "sites",
+      "bytes": 141971,
+      "sha256": "0e2f97aa8d439913466769392ab79b3cd121d01a7b5fdecf61ea70e88efd3a12"
+    },
+    {
+      "path": "sites-04.json",
+      "kind": "sites",
+      "bytes": 141961,
+      "sha256": "da694c113d16d2a3ec4c0e98fb588494242b429fdb1591ed5c6c494719077112"
+    },
+    {
+      "path": "sites-05.json",
+      "kind": "sites",
+      "bytes": 62809,
+      "sha256": "1205315ac1e8fb3854fc6b2b40d92121a66324582b98d6f6df00ff568a61bc14"
+    },
+    {
+      "path": "dictionary-01.json",
+      "kind": "dictionary",
+      "bytes": 142981,
+      "sha256": "be8a862f7efa9bf529795f87c9ee14d06e961b554c35ff45698ba991abf851e6"
+    },
+    {
+      "path": "dictionary-02.json",
+      "kind": "dictionary",
+      "bytes": 143043,
+      "sha256": "77a082ed30767707b726e7b87d3e813f808a0fe94426500bdeb4f74925aac1f7"
+    },
+    {
+      "path": "dictionary-03.json",
+      "kind": "dictionary",
+      "bytes": 143099,
+      "sha256": "90656d2b5e1a528fe4601d46a08fc2a749b3106c01dd23ee37acb422008d0516"
+    },
+    {
+      "path": "dictionary-04.json",
+      "kind": "dictionary",
+      "bytes": 143017,
+      "sha256": "8443b1922511439a8fd82fa78c20df7882933ea7e20a18e465e301baa180eb9f"
+    },
+    {
+      "path": "dictionary-05.json",
+      "kind": "dictionary",
+      "bytes": 143219,
+      "sha256": "7f15a75a98dcbbffbc5f383c9f0f038c4b5a013b5be8716631ae6a37e7df612a"
+    },
+    {
+      "path": "dictionary-06.json",
+      "kind": "dictionary",
+      "bytes": 130215,
+      "sha256": "ebbcbcec432d029cc7c78ba5a87df0d93faed56643b8e641ba0f05649f8fb634"
+    },
+    {
+      "path": "unknown-names-01.json",
+      "kind": "unknown-names",
+      "bytes": 9448,
+      "sha256": "585667fc5823593c8ded4ebefb746ea59e87bb25543a5ae433a7c58f3071c837"
+    },
+    {
+      "path": "partial-names-01.json",
+      "kind": "partial-names",
+      "bytes": 118,
+      "sha256": "69b2a1a30ecacd9703c8c065d0a8c3978b5c51855429c08eae3c4c2c5240c13a"
+    },
+    {
+      "path": "analytics_payload-01.md",
+      "kind": "human_dictionary",
+      "bytes": 144110,
+      "sha256": "d235682c0f4e5eb85d3521b728af14f0853f92fb001e49f163bfbaea84eb7881"
+    },
+    {
+      "path": "analytics_payload-02.md",
+      "kind": "human_dictionary",
+      "bytes": 136573,
+      "sha256": "5284ed30836dbe7eca425ad3fd9e228493fcfdc2afa9472e57111ce133cbe6a9"
+    },
+    {
+      "path": "desktop_event-01.md",
+      "kind": "human_dictionary",
+      "bytes": 104303,
+      "sha256": "fb6765195be0a8e4c3f1496c0bcbd8801f63966fefe9973b5db82601ac6a7f0e"
+    },
+    {
+      "path": "health_action-01.md",
+      "kind": "human_dictionary",
+      "bytes": 9482,
+      "sha256": "5d6735c76c06c3dd338a721aa3343f49fb96a68eb9c920c9c2d5813df2bcad5f"
+    },
+    {
+      "path": "unknown-names-01.md",
+      "kind": "human_unknown",
+      "bytes": 59155,
+      "sha256": "a30d285b45c806fc219058387d5afdb4d3899cd16f73cb7b1c3705e57145d6a1"
+    }
+  ],
+  "projection_revision": "2026-10-15-independent-label-review"
+}

@@ -367,3 +367,7 @@ sequenceDiagram
 ## 动手推演
 
 [完整案例：状态表、可运行代码与预测练习](worked-case.md)把本卷的异步边界放到同一条时间线上。
+
+## 动手检查附件状态
+
+打开[附件实验台](../../01-Frontend-Design-And-HTML-Templates/interactive-lessons/attachment-pipeline/README.md)，先预测两个附件谁先完成，再观察预算、槽位和 Send 快照。实验允许手动投递取消后的迟到结果，检查旧回调为什么不能恢复已经取消的卡片。

@@ -1,0 +1,51 @@
+{
+  "lesson": "附件实验台：从可见到可发送",
+  "scope": "Original synthetic client-state teaching UI, not a Claude screen reproduction or a claim about current product behavior",
+  "validated_on": "2026-10-15",
+  "files": {
+    "index.html": "6ed788f38951d0cc6bbdd7a76518570d6dc702c9b377310b11b05768b342d389",
+    "README.md": "d6b53e8d454f89bbd310747aaddffc9465b1456d7d37db0bb584c1a565a6b479",
+    "test.cjs": "ffd1b6d03121f1af8c7ee133a4bda10ce2d3febfe95f98304151288a67ff54a4"
+  },
+  "original_source": {
+    "html_sha256": "6ed788f38951d0cc6bbdd7a76518570d6dc702c9b377310b11b05768b342d389",
+    "html_preserved_unchanged": true,
+    "supporting_file_changes": [
+      "Portable jsdom import and file URL handling in tests",
+      "Public Chinese README, clean-directory dependency instructions, and relative reading links"
+    ]
+  },
+  "node_jsdom": {
+    "status": "passed",
+    "checks": 21,
+    "passed": 21,
+    "failed": 0,
+    "node_version": "24.19.0",
+    "jsdom_version": "26.1.0",
+    "dependency_setup": "Clean temporary directory; pinned npm package installed from the existing npm cache with lifecycle scripts disabled",
+    "reproduce": "See README.md for clean-directory installation and test commands",
+    "includes": [
+      "Actual UTF-8 accounting and concurrent admission",
+      "Stable attachment identity and input order",
+      "Cancellation, account/draft/generation ownership, and stale attempts",
+      "Send eligibility and immutable snapshots",
+      "Focus-management and ARIA contracts in a simulated DOM",
+      "500-step deterministic state trace",
+      "No runtime external assets or service requests"
+    ]
+  },
+  "relative_links": {
+    "status": "passed",
+    "scope": "All README Markdown links and HTML href/src references"
+  },
+  "real_browser": {
+    "status": "not_verified_for_this_publication",
+    "rendering_checked": false,
+    "native_keyboard_checked": false,
+    "screen_reader_checked": false
+  },
+  "limits": [
+    "Node/jsdom is not a real-browser layout, native keyboard, screen-reader, or WCAG compliance result.",
+    "Synthetic data only; no real file uploads, persistence, network service, model token accounting, or server prompt-cache behavior is tested."
+  ]
+}

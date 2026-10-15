@@ -1,0 +1,7 @@
+await unsafe: current=B, value=result:A, outcome=committed
+await guarded: current=B, value=null, outcome=stale
+deadline: report=deadline, writes=0
+deadline later: report=deadline, signal=true, work=written, writes=1
+queue admitted: accepted=true, state=queued, writes=0
+queue started: state=running, writes=0
+queue completed: state=fulfilled, value=saved, writes=1

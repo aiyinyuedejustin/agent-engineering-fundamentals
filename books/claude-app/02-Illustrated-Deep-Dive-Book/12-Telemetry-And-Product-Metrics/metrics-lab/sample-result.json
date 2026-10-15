@@ -1,0 +1,43 @@
+{
+  "denominator": 3,
+  "marginal_counts": {
+    "visible": 2,
+    "success": 1,
+    "value": 1
+  },
+  "marginal_rates": {
+    "visible": 0.6666666666666666,
+    "success": 0.3333333333333333,
+    "value": 0.3333333333333333
+  },
+  "sequential_funnel": {
+    "submitted": 3,
+    "visible": 2,
+    "visible_and_success": 1,
+    "visible_success_and_value": 1
+  },
+  "outcomes": {
+    "success": 1,
+    "failure": 1,
+    "cancelled": 0,
+    "unknown": 1
+  },
+  "retry_task_count": 1,
+  "ttfo_observed_count": 2,
+  "ttfo_p50_ms": 100,
+  "ttfo_p95_ms": 400,
+  "completion_observed_count": 1,
+  "completion_p95_ms": 500,
+  "quality": {
+    "duplicate_deliveries": 1,
+    "events_after_horizon": 0,
+    "events_before_start": 0,
+    "right_censored_tasks": 1
+  },
+  "limitations": [
+    "No population extrapolation from consented traffic",
+    "Unknown outcome is not an observed failure",
+    "Quantiles describe observed output/completion only",
+    "No causal lift or confidence intervals are computed"
+  ]
+}

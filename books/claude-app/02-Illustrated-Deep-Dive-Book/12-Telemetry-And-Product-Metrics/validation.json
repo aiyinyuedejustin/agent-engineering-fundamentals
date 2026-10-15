@@ -1,0 +1,223 @@
+{
+  "status": "pass",
+  "target_executed": false,
+  "telemetry_sent": false,
+  "public_files_are_original_metadata_and_code": true,
+  "static_evidence": {
+    "status": "pass",
+    "files_verified": 3782,
+    "sites_verified": 7443,
+    "anchors_verified": 34,
+    "dictionary_entries": 3021,
+    "target_executed": false,
+    "network_used": false
+  },
+  "columnar_round_trip": {
+    "status": "pass",
+    "dictionary_entries_preserved": 3021,
+    "site_records_preserved": 7443,
+    "referenced_sources_preserved": 478,
+    "field_form_rows": 6007,
+    "shape_rows": 3173,
+    "unknown_name_sites": 577,
+    "partial_name_sites": 4,
+    "files": 27,
+    "max_file_bytes": 144110
+  },
+  "metrics_lab": {
+    "unit_tests": 26,
+    "passed": 26,
+    "cli_sample_matches_saved_output": true
+  },
+  "diagrams": {
+    "status": "pass",
+    "blocks": 4,
+    "syntax_pass": 4,
+    "rendered": 0,
+    "negative_control": "rejected",
+    "limitation": "Parser validation only; no browser render or visual layout claim"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 38945,
+      "sha256": "aac92908a1b557df0206b100be6f627ee8ab93cb65836a3192738c3cce106f6d"
+    },
+    {
+      "path": "metrics-lab/README.md",
+      "bytes": 2204,
+      "sha256": "45282418c3d4a6653f504efdce5be65879862da425d8c0a33a3450f5947cb61c"
+    },
+    {
+      "path": "metrics-lab/metrics_lab.py",
+      "bytes": 8157,
+      "sha256": "3d27246a74326782385f183ee803fdbf67b535083cff8d9e1cbb56c38dc53375"
+    },
+    {
+      "path": "metrics-lab/sample-events.jsonl",
+      "bytes": 3305,
+      "sha256": "d4854a451d835c29fc29d36895dc59f5d88f40419bb891b8b3fea26b3b85e08d"
+    },
+    {
+      "path": "metrics-lab/sample-result.json",
+      "bytes": 1007,
+      "sha256": "6401155332cb122d9e60857db39591962646fd31cf5a14007887dc53ab164ba9"
+    },
+    {
+      "path": "metrics-lab/test_metrics_lab.py",
+      "bytes": 5913,
+      "sha256": "0c334711eb9d63932b6cf28764fc5a0fe0e9f35a2d1073fd051c7c55a9847810"
+    },
+    {
+      "path": "telemetry-evidence/README.md",
+      "bytes": 2313,
+      "sha256": "b28cfd82bc3feaee7b29e0bb27cdf216befcfd94c9506b7c413545f5a2bd2de2"
+    },
+    {
+      "path": "telemetry-evidence/analytics_payload-01.md",
+      "bytes": 144110,
+      "sha256": "d235682c0f4e5eb85d3521b728af14f0853f92fb001e49f163bfbaea84eb7881"
+    },
+    {
+      "path": "telemetry-evidence/analytics_payload-02.md",
+      "bytes": 136573,
+      "sha256": "5284ed30836dbe7eca425ad3fd9e228493fcfdc2afa9472e57111ce133cbe6a9"
+    },
+    {
+      "path": "telemetry-evidence/desktop_event-01.md",
+      "bytes": 104303,
+      "sha256": "fb6765195be0a8e4c3f1496c0bcbd8801f63966fefe9973b5db82601ac6a7f0e"
+    },
+    {
+      "path": "telemetry-evidence/dictionary-01.json",
+      "bytes": 142981,
+      "sha256": "be8a862f7efa9bf529795f87c9ee14d06e961b554c35ff45698ba991abf851e6"
+    },
+    {
+      "path": "telemetry-evidence/dictionary-02.json",
+      "bytes": 143043,
+      "sha256": "77a082ed30767707b726e7b87d3e813f808a0fe94426500bdeb4f74925aac1f7"
+    },
+    {
+      "path": "telemetry-evidence/dictionary-03.json",
+      "bytes": 143099,
+      "sha256": "90656d2b5e1a528fe4601d46a08fc2a749b3106c01dd23ee37acb422008d0516"
+    },
+    {
+      "path": "telemetry-evidence/dictionary-04.json",
+      "bytes": 143017,
+      "sha256": "8443b1922511439a8fd82fa78c20df7882933ea7e20a18e465e301baa180eb9f"
+    },
+    {
+      "path": "telemetry-evidence/dictionary-05.json",
+      "bytes": 143219,
+      "sha256": "7f15a75a98dcbbffbc5f383c9f0f038c4b5a013b5be8716631ae6a37e7df612a"
+    },
+    {
+      "path": "telemetry-evidence/dictionary-06.json",
+      "bytes": 130215,
+      "sha256": "ebbcbcec432d029cc7c78ba5a87df0d93faed56643b8e641ba0f05649f8fb634"
+    },
+    {
+      "path": "telemetry-evidence/field-forms-01.json",
+      "bytes": 141109,
+      "sha256": "a3737d49051baf2f7aafbde24c7241f243dfc1d472b3c6c1c73c865dd8333f16"
+    },
+    {
+      "path": "telemetry-evidence/field-forms-02.json",
+      "bytes": 141198,
+      "sha256": "32ab6d88c698688d153e2552f967d25fd63a7864b67cc2b7f427a7a71037d6a4"
+    },
+    {
+      "path": "telemetry-evidence/field-forms-03.json",
+      "bytes": 67867,
+      "sha256": "ed3a78d59e16721eee770d9284203c0768a37f97e7823c40cca4e9b4b4d8949b"
+    },
+    {
+      "path": "telemetry-evidence/health_action-01.md",
+      "bytes": 9482,
+      "sha256": "5d6735c76c06c3dd338a721aa3343f49fb96a68eb9c920c9c2d5813df2bcad5f"
+    },
+    {
+      "path": "telemetry-evidence/index.json",
+      "bytes": 34658,
+      "sha256": "f493d415c180e40d6d54c210e2ba35870e1860b8b599733774562171463924d0"
+    },
+    {
+      "path": "telemetry-evidence/name-forms-01.json",
+      "bytes": 141642,
+      "sha256": "4eeb7c35020c8e176bbc8c4396a76a26fce74338d83b02695a6aed614a1d8ece"
+    },
+    {
+      "path": "telemetry-evidence/name-forms-02.json",
+      "bytes": 79714,
+      "sha256": "4034f5bcfdaae0ff262ceaf0b995e6ac0d781c177fc528e908644ba32e48f035"
+    },
+    {
+      "path": "telemetry-evidence/partial-names-01.json",
+      "bytes": 118,
+      "sha256": "69b2a1a30ecacd9703c8c065d0a8c3978b5c51855429c08eae3c4c2c5240c13a"
+    },
+    {
+      "path": "telemetry-evidence/shapes-01.json",
+      "bytes": 99766,
+      "sha256": "43dfae514bc1015ebc7496731b464e040bd809037a196060ccda3107424be42f"
+    },
+    {
+      "path": "telemetry-evidence/sites-01.json",
+      "bytes": 141993,
+      "sha256": "4a93abb20c449f07b374fddf9aa3ed85b24ffbe212b66fc664742b71e55267e3"
+    },
+    {
+      "path": "telemetry-evidence/sites-02.json",
+      "bytes": 142103,
+      "sha256": "06154d51ca86ab295d1eff869aac4fb703c60ea0113fb7a02c0c72bb9dd63c22"
+    },
+    {
+      "path": "telemetry-evidence/sites-03.json",
+      "bytes": 141971,
+      "sha256": "0e2f97aa8d439913466769392ab79b3cd121d01a7b5fdecf61ea70e88efd3a12"
+    },
+    {
+      "path": "telemetry-evidence/sites-04.json",
+      "bytes": 141961,
+      "sha256": "da694c113d16d2a3ec4c0e98fb588494242b429fdb1591ed5c6c494719077112"
+    },
+    {
+      "path": "telemetry-evidence/sites-05.json",
+      "bytes": 62809,
+      "sha256": "1205315ac1e8fb3854fc6b2b40d92121a66324582b98d6f6df00ff568a61bc14"
+    },
+    {
+      "path": "telemetry-evidence/sources-01.json",
+      "bytes": 49556,
+      "sha256": "0159522fb6f46381a0b19123d427e83b994256c8b3f359281e62ca8aa234e919"
+    },
+    {
+      "path": "telemetry-evidence/unknown-names-01.json",
+      "bytes": 9448,
+      "sha256": "585667fc5823593c8ded4ebefb746ea59e87bb25543a5ae433a7c58f3071c837"
+    },
+    {
+      "path": "telemetry-evidence/unknown-names-01.md",
+      "bytes": 59155,
+      "sha256": "a30d285b45c806fc219058387d5afdb4d3899cd16f73cb7b1c3705e57145d6a1"
+    }
+  ],
+  "independent_review": {
+    "status": "pass",
+    "scope": "Selected semantic source neighborhoods and metadata-only wording/label review",
+    "original_static_validation": "Inherited; no exhaustive rescan was performed",
+    "source_package_modified": false,
+    "label_changes_only_in_columnar_tables": true,
+    "metrics_lab_code_unchanged": true,
+    "additional_synthetic_checks": 8,
+    "known_retry_limit_documented": true,
+    "selected_sites_reviewed": 18,
+    "wrapper_anchors_reviewed": 12,
+    "baseline_tests_passed": 26,
+    "additional_synthetic_checks_passed": 8,
+    "cli_sample_matches_saved_output": true,
+    "manifests_and_unchanged_table_values_verified": true
+  }
+}

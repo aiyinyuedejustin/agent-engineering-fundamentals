@@ -15,7 +15,7 @@ def commands(include_skills=False):
     if not node:
         raise RuntimeError('需要 Node.js 20+，请先把 node 放入 PATH。')
     jobs = [('core-code-lab', ROOT / 'core-code-lab', [sys.executable, '-B', 'run_tests.py'])]
-    for folder, pattern in [('shell-lifecycle', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
+    for folder, pattern in [('async-reading-primer', '*.test.mjs'), ('shell-lifecycle', '*.test.mjs'), ('tool-contracts', 'test/*.test.mjs'),
                             ('streaming-performance', 'test/*.test.mjs'), ('security-guardrails', '*.test.mjs'), ('native-voice-geometry', '*.test.mjs'), ('resilience-quota', 'test/*.test.mjs')]:
         location = ROOT / folder
         files = sorted(location.glob(pattern))
@@ -24,6 +24,7 @@ def commands(include_skills=False):
         jobs.append((folder, location, [node, '--test', *map(str, files)]))
     jobs.append(('worked-cases-python', ROOT / 'worked-cases', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_worked_cases.py']))
     jobs.append(('worked-cases-node', ROOT / 'worked-cases', [node, '--test', 'context_budget.test.mjs']))
+    jobs.append(('telemetry-metrics', BOOK / '02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab', [sys.executable, '-B', '-m', 'unittest', '-v', 'test_metrics_lab.py']))
     if include_skills:
         location = BOOK / '03-Ready-To-Use-Agent-Skills'
         files = sorted(location.rglob('*.test.mjs'))

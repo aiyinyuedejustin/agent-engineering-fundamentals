@@ -52,3 +52,6 @@ python3 -B run_book_tests.py --skills
 - [三个可手算的工程案例](worked-cases/README.md)：Stop/restart、UTF-8 预留与 MCP 审批绑定；17 项 Python 与 11 项 Node 测试。
 
 - [原创模型的七条边界合同](model-boundaries.md)：取消重入、数值溢出、审批序列化与原子输入验证。
+
+- [三个异步边界实验](async-reading-primer/README.md)：19 项确定性测试与逐步预测题。
+- [遥测指标实验](../02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/metrics-lab/README.md)：26 项测试，从合成事件重算指标及其分母。

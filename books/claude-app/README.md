@@ -58,6 +58,7 @@
 | 09 | [Memory、Projects 与 Styles](02-Illustrated-Deep-Dive-Book/09-Memory-Projects-And-Styles/README.md) | 跨对话信息和当前轮输入怎样分层组织？ |
 | 10 | [Feature Flags 与配置演化](02-Illustrated-Deep-Dive-Book/10-Feature-Flags-And-Evolution/README.md) | 开关、能力与产品入口如何组合，代码能说明什么？ |
 | 11 | [流式性能与分层调度](02-Illustrated-Deep-Dive-Book/11-Performance-And-Streaming/README.md) | 稳定块、活动尾部、Worker 与图表队列怎样减少重复工作？ |
+| 12 | [遥测事件与指标设计](02-Illustrated-Deep-Dive-Book/12-Telemetry-And-Product-Metrics/README.md) | 从事件触发合同到可重算指标，如何避免把埋点当成产品结论？ |
 | 13 | [原生系统桥接](02-Illustrated-Deep-Dive-Book/13-Native-OS-Bridges/README.md) | 窗口上下文、选择文字与最终编辑目标如何保持同一身份？ |
 | 14 | [安全防线与执行边界](02-Illustrated-Deep-Dive-Book/14-Security-And-Guardrails/README.md) | 内容、权限、资源身份与执行之间，哪些检查不能省？ |
 | 15 | [语音与视觉数学](02-Illustrated-Deep-Dive-Book/15-Voice-And-Vision-Math/README.md) | 采样、播放、像素、显示器与文档坐标如何换算？ |

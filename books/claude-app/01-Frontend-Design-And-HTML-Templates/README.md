@@ -419,3 +419,7 @@ demo 的最小结构由 `.composer-dock` 包住表单 `.composer`，表单内是
 - [原创示例说明](interactive-study/README.md)：运行、行为、复用和来源范围
 
 本章最值得带走的是一组能具体实现的关系：暖中性表面如何成层，品牌与动作怎样分工，输入区域如何组合，正文偏好如何避开工具密度，以及同一个组件如何响应主题、指针与动态效果设置。后续的真实桌面核验将决定哪些静态分支确实进入当前界面；本章已经提供了可追溯的起点和一份范围明确的原创代码。
+
+## 交互式工程课
+
+[附件实验台：从可见到可发送](interactive-lessons/attachment-pipeline/README.md)把固定槽位、UTF-8 预留、取消与跨草稿回包变成可逐步操作的合成案例；[打开单文件页面](interactive-lessons/attachment-pipeline/index.html)。
