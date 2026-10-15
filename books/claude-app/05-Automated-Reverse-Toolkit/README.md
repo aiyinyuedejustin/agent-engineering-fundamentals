@@ -254,10 +254,10 @@ python3 -B reverse_toolkit.py unpack-asar --input "/path/to/app.asar" --output "
 python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --output "/path/to/private/new-asar-diff"
 ```
 
-三个既有 Linux/Windows/macOS 样本的元数据清点通过，均有 25 个精确共享范围别名，并分别有 3/6/10 个外置文件；未重新核验每个成员的实际哈希。严格提取全部在写出前拒绝，未创建输出目录；不能宣称这些官方包已可直接完整差分。新增显式配套目录候选合同只用原创合成样本验证，尚待独立审查；本轮未读取或验证三个实际包的配套材料。完整支持范围、来源和测试见 [SUPPORT.md](SUPPORT.md)、[ASAR-SOURCE-NOTES.md](ASAR-SOURCE-NOTES.md)、[ASAR-VALIDATION.md](ASAR-VALIDATION.md)。
+三个既有Linux/Windows/macOS样本的元数据清点均有25个精确共享范围别名，分别声明3/6/10个外置文件。默认不提供companion时，严格提取会在写出前拒绝；只读元数据清点不等于成员完整性通过。显式提供精确companion后，Linux 2.37337.1已完成489个声明文件完整性核验及同包差分，见[Linux验证](LINUX-ASAR-VALIDATION.md)；不能将此结果扩展到另外两个平台或真实跨版本比较。完整支持范围、来源和测试见 [SUPPORT.md](SUPPORT.md)、[ASAR-SOURCE-NOTES.md](ASAR-SOURCE-NOTES.md)、[ASAR-VALIDATION.md](ASAR-VALIDATION.md)。
 
 
-### 显式 ASAR 配套目录候选接口
+### 显式 ASAR 配套目录接口
 
 ```sh
 python3 -B reverse_toolkit.py unpack-asar --input "/path/to/app.asar" --unpacked-dir "/explicit/companion" --output "/private/new-tree"
@@ -266,7 +266,7 @@ python3 -B diff-versions.py "/path/to/old.asar" "/path/to/new.asar" --old-unpack
 
 默认不读取任何 companion。显式 opt-in 后，只允许 ASAR 声明的外置文件、外置目录和必要祖先目录；缺失、额外内容（包括空目录）、链接/特殊文件、大小或声明哈希不匹配、输入变动都会整体失败，没有绕过开关。原子交付前才返回成功；失败不产出残缺差分。
 
-此候选实现目前只在 Linux 通过原创合成验证，需要 POSIX no-follow 与 descriptor-relative 原语，Windows sidecar 尚不支持。完整文件清单覆盖不等于完整应用或发布方认证；原生文件的语义不会因此被静态扫描器解析。详见 [显式配套目录合同](SUPPORT.md#显式配套目录精确匹配整体成功或整体失败)。
+此入口已在Linux通过原创合成检查和上述真实同包验证；需要POSIX no-follow与descriptor-relative原语，Windows原生sidecar入口尚不支持，macOS原生运行未验证。完整文件清单覆盖不等于完整应用或发布方认证；原生文件的语义不会因此被静态扫描器解析。详见 [显式配套目录合同](SUPPORT.md#显式配套目录精确匹配整体成功或整体失败)。
 
 ## 真实样本验证
 
