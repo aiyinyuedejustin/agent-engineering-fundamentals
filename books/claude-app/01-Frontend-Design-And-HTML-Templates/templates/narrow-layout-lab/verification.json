@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "scope": "Static/build and minimal mocked-DOM tests only; no real browser or CSP enforcement claims",
+  "layout": "templates/narrow-layout-lab/ next to the six original templates",
+  "sourceRoot": "templates",
+  "sourceBundleSha256": "be68a58fb3ae9e3ec2a0c6b27b4c1351220e23e2fc1273e283aa2182031dc945",
+  "artifact": {
+    "filename": "fixture.html",
+    "bytes": 313929,
+    "sha256": "54cea36ecf1661245e9bda78d88f44b8e491554df852068a439804daaf6b36f9"
+  },
+  "checks": [
+    {
+      "command": "python3 build_fixture.py --check fixture.html",
+      "result": "PASS",
+      "scope": "read-only source drift and deterministic output"
+    },
+    {
+      "command": "python3 test_fixture.py",
+      "passed": 20,
+      "failed": 0
+    },
+    {
+      "command": "node --test test_runtime.cjs",
+      "passed": 15,
+      "failed": 0
+    }
+  ],
+  "notRun": [
+    "Browser rendering",
+    "CSP runtime enforcement",
+    "Android/iOS or touch",
+    "200% browser zoom",
+    "persistent storage"
+  ],
+  "sourceFiles": [
+    {
+      "filename": "01-component-gallery.html",
+      "title": "01 组件图谱",
+      "bytes": 32844,
+      "sha256": "63e105c6031be008738a039693cc680b06595e9df8f6c75a54dd799f84870821"
+    },
+    {
+      "filename": "02-chat-workspace-template.html",
+      "title": "02 对话工作区",
+      "bytes": 39556,
+      "sha256": "906d639339e14b2838cf0e5906d61e04e8addb7d7c97cdd3e5be77206e848081"
+    },
+    {
+      "filename": "03-split-artifact-ide-template.html",
+      "title": "03 作品与代码工作区",
+      "bytes": 38177,
+      "sha256": "c03dcd318877d8693721954efe9499779ab10af2e6b12f8abbe029c570d3538a"
+    },
+    {
+      "filename": "04-editorial-blog-and-doc-template.html",
+      "title": "04 编辑式博客与文档",
+      "bytes": 39111,
+      "sha256": "3b1dd5992b651f7593c7fde7016980db6ae6cb7470306337bd78b1bd36045f8b"
+    },
+    {
+      "filename": "05-settings-and-dashboard-template.html",
+      "title": "05 设置与概览",
+      "bytes": 41946,
+      "sha256": "1a87ff25d0bc238fe4064cb913afce64990f8365b4b46362459e012f4f96cd6f"
+    },
+    {
+      "filename": "06-floating-launcher-template.html",
+      "title": "06 浮动轻入口",
+      "bytes": 34861,
+      "sha256": "94b5af590991bcfdeabf3807abfdf582c757f7fb886c0d85220446a9bfb3d095"
+    }
+  ],
+  "sourceAttributionFix": "Keep previous source labels while a new digest is pending; replace with a detached prepared iframe and commit labels synchronously; guard load by generation, element identity, and exact srcdoc; preserve last verified frame on failure.",
+  "buildPlatform": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "node": "24.19.0",
+    "portability": "POSIX output APIs required; other build platforms not verified"
+  }
+}
