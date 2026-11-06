@@ -1,28 +1,30 @@
 {
   "schema_version": "1.0",
   "research_date": "2026-11-06",
-  "scope": "Representative, not exhaustive; depths reflect this investigation only",
+  "scope": "Representative 47-entry research catalog; explicit updates through increment-11, with task/source/component scope caveats. Not 47 completed deep studies.",
   "benchmarks": [
     {
       "id": "mmlu-pro",
       "name": "MMLU-Pro",
-      "version": "2024 paper; repository snapshot 2026-11-06",
+      "version": "Repository f418b116db00b065c2aea046518d8fcf74d39872; HF HEAD observed b189ec765aa7ed75c8acfea42df31fdae71f97be",
       "kind": "static-dataset",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text",
-      "task_form": "closed-answer",
+      "task_form": "Multiple-choice with category CoT exemplars; backend-dependent prompt/parse/retry",
       "target": "academic knowledge and reasoning",
-      "metric": "multiple-choice accuracy",
+      "metric": "Question-count-weighted accuracy; unparsed-answer and retry policies differ by runner",
       "environment": "stateless",
       "freshness": "public static",
       "useful_feature": "14 domains; more answer options than MMLU",
-      "limitations": "Prompt, CoT, extraction and retry policies change the experiment",
+      "limitations": "Actual test/validation rows checked, but viewer requests and code loader not revision-pinned. Local/API/APIX source trace only; no model run. Optional retry_wrong uses gold correctness for selection. Component D4 only synthetic parser/scorer.",
       "sources": [
-        "https://github.com/TIGER-AI-Lab/MMLU-Pro"
+        "https://github.com/TIGER-AI-Lab/MMLU-Pro/tree/f418b116db00b065c2aea046518d8fcf74d39872",
+        "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/mmlu-pro-prompts-parsers-and-retries.md"
     },
     {
       "id": "gpqa",
@@ -111,24 +113,26 @@
     {
       "id": "arc-agi-3",
       "name": "ARC-AGI-3",
-      "version": "2026 interactive edition; methodology accessed 2026-11-06",
+      "version": "Harness 353d38be471395b5ae47dbb44df95440677397e1; toolkit f12822c4d550121c35a275008d964afbbed47d2f (0.9.9)",
       "kind": "interactive-benchmark",
       "depth": "D1",
-      "modality": "visual-state+actions",
+      "modality": "visual-state environment; inspected official harness passes integer-grid text",
       "task_form": "interactive goal discovery",
       "target": "adaptation and skill acquisition efficiency",
-      "metric": "Relative Human Action Efficiency",
-      "environment": "turn-based game environments",
+      "metric": "Squared Relative Human Action Efficiency, level-index weights and completion cap",
+      "environment": "Turn-based game environments; ONLINE, local and COMPETITION modes differ",
       "freshness": "public/semi-private/private protocols require explicit split",
       "useful_feature": "Scores completion and actions relative to first-time humans",
-      "limitations": "Internal reasoning/tool costs are not counted as environment actions; harness and split matter",
+      "limitations": "Overall D1 because actual game frame/full metadata not obtained. Source-traced harness/scorer and isolated synthetic arithmetic D4 do not establish game/model performance. Standard vs Provider Adapter state handling and game split must be explicit.",
       "sources": [
-        "https://arcprize.org/arc-agi/3",
-        "https://docs.arcprize.org/methodology"
+        "https://docs.arcprize.org/methodology",
+        "https://github.com/arcprize/arc-agi-3-benchmarking/tree/353d38be471395b5ae47dbb44df95440677397e1",
+        "https://github.com/arcprize/ARC-AGI/tree/f12822c4d550121c35a275008d964afbbed47d2f"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/arc-agi-3-scoring-and-context.md"
     },
     {
       "id": "simpleqa",
@@ -239,23 +243,25 @@
     {
       "id": "ruler",
       "name": "RULER",
-      "version": "2024 benchmark; repository snapshot 2026-11-06",
+      "version": "NVIDIA/RULER db43f92ff634bbce1c33d1fb15858aec4bba509a; NeMo-Skills bcf059af55c20a89f797724598f9908d126153e6, v1/v2 distinguished",
       "kind": "synthetic-generator",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text",
-      "task_form": "controlled long-context tasks",
+      "task_form": "Model-tokenizer-conditioned synthetic generation; v1 13 tasks, v2 12 tasks with different retrieval/solve stages",
       "target": "effective context use",
-      "metric": "task-specific correctness across lengths",
+      "metric": "v1 per-target substring recall / any-alias match; v2 soft WER+substring or multichoice; equal task means; historical effective-length threshold 85.6",
       "environment": "stateless",
       "freshness": "generated synthetic",
       "useful_feature": "13 tasks in four categories with adjustable length/complexity",
-      "limitations": "Synthetic effective length is not real-world document competence",
+      "limitations": "Official generator core instantiated and 20 bounded probes; no calibrated official test corpus, tokenizer, model or leaderboard reproduction. v2 numeric-key instance is nondefault. editdistance dependency replaced by documented Levenshtein DP. v2 MMLU evaluator only routed, not fully traced.",
       "sources": [
-        "https://github.com/NVIDIA/RULER"
+        "https://github.com/NVIDIA/RULER/tree/db43f92ff634bbce1c33d1fb15858aec4bba509a",
+        "https://github.com/NVIDIA-NeMo/Skills/tree/bcf059af55c20a89f797724598f9908d126153e6/nemo_skills/dataset/ruler2"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/ruler-versions-generation-and-effective-context.md"
     },
     {
       "id": "mmmu",
@@ -346,7 +352,7 @@
     {
       "id": "livecodebench",
       "name": "LiveCodeBench",
-      "version": "repo 28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24; date-window required",
+      "version": "code28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24; data release must be specified separately",
       "kind": "rolling-benchmark",
       "depth": "D1",
       "modality": "text+code",
@@ -356,7 +362,7 @@
       "environment": "sandboxed code execution",
       "freshness": "date-stamped contest windows",
       "useful_feature": "Select post-cutoff problems",
-      "limitations": "Training cutoff often unknown; fresh contests do not alone prove no contamination",
+      "limitations": "Training cutoff often unknown; fresh contests do not alone prove no contamination Source audit and caller-only synthetic D4; overall remainsD1 because no complete real dataset row was read. Auxiliary compute_scores can print unsupported k>n, unlike guarded main metrics path.",
       "sources": [
         "https://livecodebench.github.io/",
         "https://github.com/LiveCodeBench/LiveCodeBench"
@@ -455,44 +461,47 @@
     {
       "id": "bfcl",
       "name": "Berkeley Function Calling Leaderboard",
-      "version": "V4; official page pins f7cf735 / bfcl-eval==2025.12.17",
+      "version": "BFCL_v4; gorilla 6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
       "kind": "tool-use-benchmark",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text+function schemas",
-      "task_form": "function calls and agentic categories",
+      "task_form": "Single-turn AST calls; multi-turn simulated state/response checks; agentic final-answer matching",
       "target": "tool selection and arguments",
-      "metric": "category-specific scoring; unweighted category mean",
+      "metric": "Version-specific five-group weighted accuracy (10/10/10/30/40), not all-task micro-average",
       "environment": "execution/AST by subtest",
       "freshness": "versioned",
       "useful_feature": "Explicit code/package checkpoint",
-      "limitations": "FC vs prompted mode and category aggregation differ",
+      "limitations": "Real single-turn and multi-turn task rows read. No model/API or real backend run; D4 limited to 15 synthetic checker contracts, two with mocked executor. No published-score effect measured.",
       "sources": [
-        "https://gorilla.cs.berkeley.edu/leaderboard.html"
+        "https://github.com/ShishirPatil/gorilla/tree/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/bfcl-v4-distinct-success-events.md"
     },
     {
       "id": "mcp-atlas",
       "name": "MCP-Atlas",
-      "version": "2026 official paper page; 500 public + 500 private",
+      "version": "Harness v2 at e3dfef3ce93287c3d7b9e765c3a021f252eefbff; HF HEAD observed 8c563b55d7c967755f474299848049834d624617",
       "kind": "tool-use-benchmark",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text+tools",
-      "task_form": "multi-server workflows",
+      "task_form": "Controlled real MCP tool menus, agent loop, claim-based final-answer judge; public500/full1000 separate",
       "target": "tool discovery and cross-server reasoning",
-      "metric": "claim-level rubric, thresholded success",
+      "metric": "Mean claim coverage and task pass at coverage>=0.75; model/groundtruth inner join and valid-score denominator must be recorded",
       "environment": "real MCP servers/containerized harness",
       "freshness": "held-out private split",
       "useful_feature": "1000 tasks, 36 servers, 220 tools",
-      "limitations": "Answer-level success is not exact tool-path fidelity; threshold and servers must be pinned",
+      "limitations": "Actual public task/trajectory and source path read; 15 synthetic scoring tests with mocked judge only. No live MCP, LLM, judge or full leaderboard run. Current harness differs from original paper.",
       "sources": [
-        "https://labs.scale.com/papers/mcpatlas"
+        "https://github.com/scaleapi/mcp-atlas/tree/e3dfef3ce93287c3d7b9e765c3a021f252eefbff",
+        "https://labs.scale.com/leaderboard/mcp_atlas"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md"
     },
     {
       "id": "gaia",
@@ -603,23 +612,25 @@
     {
       "id": "gdpval",
       "name": "GDPval",
-      "version": "initial 2025-09-25 release",
+      "version": "Original paper 2510.04374v1; official HF v2 11e7900cdcac61bc4daf59e65feb238acda98fbf (2026-02-10)",
       "kind": "professional-work-benchmark",
-      "depth": "D1",
+      "depth": "D2",
       "modality": "files+multimodal artifacts",
-      "task_form": "occupational deliverables",
+      "task_form": "Occupational deliverable creation from prompts and reference files; public v2 also exposes human deliverables and rubrics",
       "target": "economically relevant knowledge work",
-      "metric": "expert comparison/rubrics, protocol-dependent",
+      "metric": "Protocol-specific human/automated pairwise preference; tie handling and eligible-task denominator must be named",
       "environment": "artifact workspace",
       "freshness": "1320 full / 220 public gold",
       "useful_feature": "44 occupations across 9 industries",
-      "limitations": "One-shot work products are not whole jobs, GDP effects or labor displacement",
+      "limitations": "Actual row, file manifests and 38 rubrics read. Workbook bytes not opened. Original expert grading not reproduced. Third-party Inspect d95bb30 collector traced separately, not official grader source.",
       "sources": [
-        "https://openai.com/index/gdpval/"
+        "https://arxiv.org/html/2510.04374v1",
+        "https://huggingface.co/datasets/openai/gdpval/tree/11e7900cdcac61bc4daf59e65feb238acda98fbf"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/gdpval-artifacts-versions-and-judging.md"
     },
     {
       "id": "apex-agents",
@@ -645,23 +656,24 @@
     {
       "id": "mle-bench",
       "name": "MLE-bench",
-      "version": "leaderboard paused submissions 2026-04-24",
+      "version": "openai/mle-bench 507f92e1138bb6e40dac5c6ee7a6758e6424bf97 (2026-04-24); split75 and low/lite distinct",
       "kind": "professional-code-benchmark",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "code+data",
-      "task_form": "ML competitions",
+      "task_form": "Competition-level ML engineering ending in prediction files, evaluated on newly prepared held-out public-training subsets",
       "target": "machine-learning engineering",
-      "metric": "competition task grading/medals",
+      "metric": "Any-medal proportion by competition, averaged over seeds; recommended mean ± SEM; explicit missing-report policy",
       "environment": "compute+data environments",
       "freshness": "historical competition tasks",
       "useful_feature": "Measures training/data/iteration workflow",
-      "limitations": "Hardware, runtime budget, external resources and leaderboard fairness matter",
+      "limitations": "Real competition instructions/configuration/source read; images/training rows and LFS leaderboards not acquired. D4 only 19 synthetic grader/aggregation checks, no training or historical-report reanalysis.",
       "sources": [
-        "https://github.com/openai/mle-bench"
+        "https://github.com/openai/mle-bench/tree/507f92e1138bb6e40dac5c6ee7a6758e6424bf97"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/mlebench-splits-medals-and-seeds.md"
     },
     {
       "id": "paperbench",
@@ -687,23 +699,26 @@
     {
       "id": "scicode",
       "name": "SciCode",
-      "version": "2024 original benchmark/project page snapshot",
+      "version": "e3158ea011d4235245a547460d3688d7ccbf9900; recommended Inspect integration and fixed problem 77 fixture",
       "kind": "scientific-code-benchmark",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text+code",
-      "task_form": "scientific research coding",
+      "task_form": "Sequential scientific code with prior generated functions and optional expert background",
       "target": "scientific knowledge into working programs",
-      "metric": "scientist-authored tests",
-      "environment": "code execution",
+      "metric": "All-step main-problem success and pooled substep correctness; task-specific numerical/scientific tests",
+      "environment": "Inspected scorer directly invokes host Python subprocess; no Task sandbox configured",
       "freshness": "80 main / 338 subproblems",
       "useful_feature": "Domain-specific scientific validity checks",
-      "limitations": "Main/subproblem and background-provided conditions change difficulty",
+      "limitations": "HDF5 numeric targets not obtained, live HF revision unpinned, no model/candidate execution. Component D4 probes only cached-pass accounting of provided-context steps; no published-score impact inferred.",
       "sources": [
-        "https://scicode-bench.github.io/"
+        "https://github.com/scicode-bench/SciCode/tree/e3158ea011d4235245a547460d3688d7ccbf9900",
+        "https://github.com/scicode-bench/SciCode/blob/e3158ea011d4235245a547460d3688d7ccbf9900/tests/test_data/first_problem.jsonl",
+        "https://scicode-bench.github.io/faq/"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/scicode-scientific-tests-and-bookkeeping.md"
     },
     {
       "id": "metr-th",
@@ -751,9 +766,9 @@
     {
       "id": "agentdojo",
       "name": "AgentDojo",
-      "version": "repository snapshot; API documented as evolving",
+      "version": "089ed468cf3ed0322acc66b0211f26d9d90dbf60; case explicitly workspace v1 UserTask0",
       "kind": "security-environment",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text+tools",
       "task_form": "benign tasks under prompt injection",
       "target": "utility and attack resistance",
@@ -761,9 +776,10 @@
       "environment": "simulated tool environments",
       "freshness": "dynamic attacks+defenses",
       "useful_feature": "Measures indirect instruction threats in agent workflow",
-      "limitations": "Needs attack-budget and clean-utility reporting; no universal security guarantee",
+      "limitations": "D3 is one real task/config and task-level orchestration trace; no attack or model run. security field means attacker goal success in attacked runs, with mode/error-policy caveats. Later task-suite versions must be named.",
       "sources": [
-        "https://github.com/ethz-spylab/agentdojo"
+        "https://github.com/ethz-spylab/agentdojo",
+        "https://github.com/ethz-spylab/agentdojo/tree/089ed468cf3ed0322acc66b0211f26d9d90dbf60"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
@@ -794,44 +810,49 @@
     {
       "id": "arena-text",
       "name": "Arena text leaderboards",
-      "version": "dataset snapshot 2026-11-06; style-controlled variants separate",
+      "version": "Official FAQ and style-control methods; factuality variant 2026-07-14 updated 2026-07-31, accessed 2026-11-06",
       "kind": "human-preference-leaderboard",
       "depth": "D1",
       "modality": "text",
       "task_form": "pairwise answers",
       "target": "human relative preference",
-      "metric": "Bradley–Terry-style rating by board",
+      "metric": "Bradley-Terry relative preference; style-controlled and factuality-weighted variants are separate",
       "environment": "live user prompts",
       "freshness": "ongoing crowdsourced",
       "useful_feature": "Natural user preferences",
-      "limitations": "Relative cohort/selection/style effects; not absolute capability percentage",
+      "limitations": "Relative cohort/selection/style effects; not absolute capability percentage. Factuality variant's default 25% factuality loss weight is not a claim that all boards use the toggle.",
       "sources": [
-        "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset"
+        "https://arena.ai/faq/",
+        "https://arena.ai/blog/style-control",
+        "https://arena.ai/blog/factuality-in-arena"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "02-benchmark-landscape/arena-preference-and-agent-signals.md"
     },
     {
       "id": "agent-arena",
       "name": "Agent Arena",
-      "version": "2026-06-04 methodology",
+      "version": "Methodology page updated 2026-10-15; signal definitions updated 2026-10-12",
       "kind": "deployment-measurement",
       "depth": "D1",
       "modality": "tools+artifacts+text",
       "task_form": "real agent sessions",
       "target": "orchestrator contribution to user outcomes",
-      "metric": "randomized-component causal effects across signals",
+      "metric": "Net improvement under randomized orchestrator assignment and weighted per-signal estimates",
       "environment": "real deployment platform",
       "freshness": "live traffic",
-      "useful_feature": "Uses approval, feedback, steerability, recovery, hallucinated-tool signals",
-      "limitations": "Not pairwise text Arena; component assignments and proxies define estimand",
+      "useful_feature": "Latest task confirmation, praise/complaint, steering-effort, bash-reliability and tool-hallucination definitions have distinct event units",
+      "limitations": "Current formal production setting K=1 orchestrator only. Not pairwise text Arena; missingness, baseline distribution, time weights and platform population define the estimand. Production code and raw traces not audited.",
       "sources": [
-        "https://arena.ai/blog/agent-arena-methodology/"
+        "https://arena.ai/blog/agent-arena-methodology",
+        "https://arena.ai/resources/agent-arena-signals"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "02-benchmark-landscape/arena-preference-and-agent-signals.md"
     },
     {
       "id": "livebench2",
@@ -880,7 +901,7 @@
       "name": "Video-MME-v2",
       "version": "b2834bd4091d6234ccaf0fa1f149a7ef4eac5875 (2026-08-05)",
       "kind": "grouped-multimodal-dataset",
-      "depth": "D1",
+      "depth": "D2",
       "modality": "video frames and optional subtitle text in inspected adapter",
       "task_form": "groups of four eight-option questions",
       "target": "temporal understanding, reasoning consistency and coherence",
@@ -888,9 +909,10 @@
       "environment": "static video assets with configurable frame sampling",
       "freshness": "2026 release, distinct from original Video-MME",
       "useful_feature": "Same question accuracy can yield different scores according to dependency structure",
-      "limitations": "Complete video task not inspected; isolated scorer-only D4 probe does not upgrade overall depth. Research-only terms; no raw data copied.",
+      "limitations": "D2 covers actual four-question task text/metadata and source contract; video not downloaded or watched. HF data revision remains unpinned. Isolated scorer D4 is not full reproduction. Research-only data terms; no raw tasks copied.",
       "sources": [
-        "https://github.com/MME-Benchmarks/Video-MME-v2/tree/b2834bd4091d6234ccaf0fa1f149a7ef4eac5875"
+        "https://github.com/MME-Benchmarks/Video-MME-v2/tree/b2834bd4091d6234ccaf0fa1f149a7ef4eac5875",
+        "https://datasets-server.huggingface.co/rows?dataset=MME-Benchmarks%2FVideo-MME-v2&config=default&split=test&offset=0&length=4"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
@@ -962,24 +984,50 @@
     {
       "id": "screenspot-pro",
       "name": "ScreenSpot-Pro",
-      "version": "repo dbe00114bc53a32c61c1a267786da85967710da8; leaderboard2026-09-10",
+      "version": "Code dbe00114bc53a32c61c1a267786da85967710da8; HF data 210e78d3844251110bff86c95835ebd37a6930fa",
       "kind": "gui-grounding-dataset",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "high-resolution screenshot and text instruction",
       "task_form": "locate GUI target",
       "target": "professional GUI grounding",
-      "metric": "micro-average grounding accuracy; official leaderboard greedy decoding",
+      "metric": "Inclusive point-in-box after coordinate normalization; micro average with format failures retained; not IoU or application-state success",
       "environment": "static screenshots across professional applications and OS versions",
       "freshness": "2025 release; current official methods read",
       "useful_feature": "Separates target localization from full interactive desktop completion",
-      "limitations": "No actual image inspected or grounding code traced; cannot infer multi-step task success",
+      "limitations": "All 26 annotation files reanalyzed (1581 unique tasks), source path traced and 20 synthetic assertions. No image pixels inspected, no model or UI run. Adapter processor internal final resizing not verified. Nondefault CLI findings do not establish leaderboard impact.",
       "sources": [
         "https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding/tree/dbe00114bc53a32c61c1a267786da85967710da8",
-        "https://gui-agent.github.io/grounding-leaderboard/"
+        "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/tree/210e78d3844251110bff86c95835ebd37a6930fa"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
-      "full_reproduction": false
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/screenspot-pro-geometry-and-measurement.md"
+    },
+    {
+      "id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "version": "2026-04-22 release; HF HEAD observed349962fd46dd02343a0d8a606491baf59154ea1a; public reference652c89d0ca9df547706735883097e9537d40dc47",
+      "kind": "professional-rubric-benchmark",
+      "depth": "D2",
+      "modality": "text conversations",
+      "task_form": "Next response for clinician consult, writing/documentation or research",
+      "target": "Clinician-facing chat quality and safety under selected tasks",
+      "metric": "Length-adjusted weighted rubric score; mean then clip, not percent accuracy",
+      "environment": "Internal production evaluator; public simple-evals is unofficial external reference",
+      "freshness": "525 curated real clinician tasks; difficulty enrichment and red-team selection",
+      "useful_feature": "Public actual row/schema checked; distinguishes physician baseline, rubric outcome, model and product harness",
+      "limitations": "No production implementation audit, no clinical/model evaluation. Public raw schema needs conversion for reference evaluator; generic score field remains unadjusted. Component D4 only synthetic arithmetic.",
+      "sources": [
+        "https://openai.com/index/making-chatgpt-better-for-clinicians/",
+        "https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf",
+        "https://huggingface.co/datasets/openai/healthbench-professional",
+        "https://github.com/openai/simple-evals/tree/652c89d0ca9df547706735883097e9537d40dc47"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_report_actual_metadata_and_reference_source",
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/healthbench-rubrics-and-professional-protocol.md"
     }
   ]
 }

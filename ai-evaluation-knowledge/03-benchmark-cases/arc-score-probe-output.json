@@ -1,0 +1,78 @@
+{
+  "scope": "D4 only for isolated arithmetic/property probes; no ARC game or model run",
+  "toolkit_revision": "f12822c4d550121c35a275008d964afbbed47d2f",
+  "source_sha256": "4d05726b3894469ea03bf9746d3175eb236312801304434e13fd6da44eebd1a9",
+  "source": "https://github.com/arcprize/ARC-AGI/blob/f12822c4d550121c35a275008d964afbbed47d2f/arc_agi/scorecard.py",
+  "fixtures": [
+    {
+      "case": "all_five_human_efficiency",
+      "score": 100.0,
+      "per_level_scores": [
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0
+      ],
+      "expected": 100.0
+    },
+    {
+      "case": "all_five_twice_human_actions",
+      "score": 25.0,
+      "per_level_scores": [
+        25.0,
+        25.0,
+        25.0,
+        25.0,
+        25.0
+      ],
+      "expected": 25.0
+    },
+    {
+      "case": "first_four_very_fast_completion_cap",
+      "score": 66.66666666666666,
+      "per_level_scores": [
+        115.0,
+        115.0,
+        115.0,
+        115.0,
+        0.0
+      ],
+      "expected": 66.66666666666667
+    },
+    {
+      "case": "only_first_at_human_efficiency",
+      "score": 6.666666666666667,
+      "per_level_scores": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": 6.666666666666667
+    },
+    {
+      "case": "completed_but_zero_actions_guard",
+      "score": 0.0,
+      "per_level_scores": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": 0.0
+    }
+  ],
+  "multi_run_property": {
+    "input_scores": [
+      20.0,
+      80.0
+    ],
+    "actual": 80.0,
+    "arithmetic_mean_not_used": 50.0,
+    "scope": "EnvironmentScoreList.score property, not competition server"
+  },
+  "all_assertions_passed": true
+}

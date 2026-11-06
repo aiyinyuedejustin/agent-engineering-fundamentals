@@ -1,0 +1,53 @@
+{
+  "scope": "D4 only for cached-pass bookkeeping on synthetic metadata; no candidate execution or model evaluation",
+  "revision": "e3158ea011d4235245a547460d3688d7ccbf9900",
+  "source_sha256": "c3ca8504f3fd5d11d1cbfeb39aeace55b86be6ad5937785b90c7f6e62a723ddb",
+  "source": "https://github.com/scicode-bench/SciCode/blob/e3158ea011d4235245a547460d3688d7ccbf9900/eval/inspect_ai/scicode.py",
+  "results": [
+    {
+      "synthetic_problem_id": "77",
+      "listed_steps": 2,
+      "provided_context_steps_skipped": [],
+      "all_evaluated_steps_have_cached_pass": true,
+      "returned_problem_correct": 1,
+      "returned_total_correct": 2,
+      "returned_total_steps": 2
+    },
+    {
+      "synthetic_problem_id": "13",
+      "listed_steps": 7,
+      "provided_context_steps_skipped": [
+        6
+      ],
+      "all_evaluated_steps_have_cached_pass": true,
+      "returned_problem_correct": 0,
+      "returned_total_correct": 6,
+      "returned_total_steps": 7
+    },
+    {
+      "synthetic_problem_id": "62",
+      "listed_steps": 2,
+      "provided_context_steps_skipped": [
+        1
+      ],
+      "all_evaluated_steps_have_cached_pass": true,
+      "returned_problem_correct": 0,
+      "returned_total_correct": 1,
+      "returned_total_steps": 2
+    },
+    {
+      "synthetic_problem_id": "76",
+      "listed_steps": 4,
+      "provided_context_steps_skipped": [
+        3
+      ],
+      "all_evaluated_steps_have_cached_pass": true,
+      "returned_problem_correct": 0,
+      "returned_total_correct": 3,
+      "returned_total_steps": 4
+    }
+  ],
+  "subprocess_calls": 0,
+  "all_assertions_passed": true,
+  "limitation": "Does not establish frequency or effect on published model scores. Synthetic step counts are not claimed to match those real tasks."
+}

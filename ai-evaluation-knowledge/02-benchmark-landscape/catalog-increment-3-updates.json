@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Field replacements for existing catalog IDs, not new benchmark entries. Preserve all unaffected fields and full_reproduction:false.",
+  "updates": [
+    {
+      "id": "agent-arena",
+      "version": "Methodology page updated 2026-10-15; signal definitions updated 2026-10-12",
+      "depth": "D1",
+      "metric": "Net improvement under randomized orchestrator assignment and weighted per-signal estimates",
+      "useful_feature": "Latest task confirmation, praise/complaint, steering-effort, bash-reliability and tool-hallucination definitions have distinct event units",
+      "limitations": "Current formal production setting K=1 orchestrator only. Not pairwise text Arena; missingness, baseline distribution, time weights and platform population define the estimand. Production code and raw traces not audited.",
+      "sources": [
+        "https://arena.ai/blog/agent-arena-methodology",
+        "https://arena.ai/resources/agent-arena-signals"
+      ],
+      "case_artifact": "02-benchmark-landscape/arena-preference-and-agent-signals.md"
+    },
+    {
+      "id": "arena-text",
+      "version": "Official FAQ and style-control methods; factuality variant 2026-07-14 updated 2026-07-31, accessed 2026-11-06",
+      "depth": "D1",
+      "metric": "Bradley-Terry relative preference; style-controlled and factuality-weighted variants are separate",
+      "limitations": "Relative cohort/selection/style effects; not absolute capability percentage. Factuality variant's default 25% factuality loss weight is not a claim that all boards use the toggle.",
+      "sources": [
+        "https://arena.ai/faq/",
+        "https://arena.ai/blog/style-control",
+        "https://arena.ai/blog/factuality-in-arena"
+      ],
+      "case_artifact": "02-benchmark-landscape/arena-preference-and-agent-signals.md"
+    },
+    {
+      "id": "arc-agi-3",
+      "version": "Harness 353d38be471395b5ae47dbb44df95440677397e1; toolkit f12822c4d550121c35a275008d964afbbed47d2f (0.9.9)",
+      "depth": "D1",
+      "modality": "visual-state environment; inspected official harness passes integer-grid text",
+      "metric": "Squared Relative Human Action Efficiency, level-index weights and completion cap",
+      "environment": "Turn-based game environments; ONLINE, local and COMPETITION modes differ",
+      "limitations": "Overall D1 because actual game frame/full metadata not obtained. Source-traced harness/scorer and isolated synthetic arithmetic D4 do not establish game/model performance. Standard vs Provider Adapter state handling and game split must be explicit.",
+      "sources": [
+        "https://docs.arcprize.org/methodology",
+        "https://github.com/arcprize/arc-agi-3-benchmarking/tree/353d38be471395b5ae47dbb44df95440677397e1",
+        "https://github.com/arcprize/ARC-AGI/tree/f12822c4d550121c35a275008d964afbbed47d2f"
+      ],
+      "case_artifact": "03-benchmark-cases/arc-agi-3-scoring-and-context.md"
+    },
+    {
+      "id": "scicode",
+      "version": "e3158ea011d4235245a547460d3688d7ccbf9900; recommended Inspect integration and fixed problem 77 fixture",
+      "depth": "D3",
+      "task_form": "Sequential scientific code with prior generated functions and optional expert background",
+      "metric": "All-step main-problem success and pooled substep correctness; task-specific numerical/scientific tests",
+      "environment": "Inspected scorer directly invokes host Python subprocess; no Task sandbox configured",
+      "limitations": "HDF5 numeric targets not obtained, live HF revision unpinned, no model/candidate execution. Component D4 probes only cached-pass accounting of provided-context steps; no published-score impact inferred.",
+      "sources": [
+        "https://github.com/scicode-bench/SciCode/tree/e3158ea011d4235245a547460d3688d7ccbf9900",
+        "https://github.com/scicode-bench/SciCode/blob/e3158ea011d4235245a547460d3688d7ccbf9900/tests/test_data/first_problem.jsonl",
+        "https://scicode-bench.github.io/faq/"
+      ],
+      "case_artifact": "03-benchmark-cases/scicode-scientific-tests-and-bookkeeping.md"
+    }
+  ]
+}

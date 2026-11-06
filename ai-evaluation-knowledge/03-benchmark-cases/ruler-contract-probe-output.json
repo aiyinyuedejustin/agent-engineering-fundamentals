@@ -1,0 +1,165 @@
+{
+  "scope": "Original generator core and scorer file-flow with synthetic inputs. No tokenizer, language model, official test corpus, serving backend or leaderboard reproduced. editdistance library substituted by explicit dynamic programming.",
+  "revisions": {
+    "NVIDIA/RULER": "db43f92ff634bbce1c33d1fb15858aec4bba509a",
+    "NVIDIA-NeMo/Skills": "bcf059af55c20a89f797724598f9908d126153e6"
+  },
+  "source_sha256": {
+    "ruler-v1-variable-tracking.py": "9fd5e771efdf51c2859e933f1ccdfbbb57c5a824c68e2b034321a24b803e3dc2",
+    "ruler-v1-scoring.py": "f1c9d9c6d4c51bd524b7e5efa1c6580f3af92c1b90504522927c9ccd9ee04e59",
+    "ruler-v1-templates.py": "b31e52b94af1f6c2b6a2bf3b0f8864efabb74b4b5e4e012cdce44eac20e61a2b",
+    "ruler2-prepare-niah.py": "09d22fbaa0cc67fddf0f96b7a7887f9209b4c2e75db357593e645bceb2d3861d",
+    "ruler-ns-evaluator.py": "fc877cb5b5f87678c9a6ba5c9afd3508a40fd42de601cdc7db36a0f66672a16c",
+    "ruler2-score.py": "e84c8f14c7739525464e73020f86292a39c24171e9cf0f3f578ab1b23a559c07"
+  },
+  "numpy_version": "2.3.5",
+  "constructed_tasks": [
+    {
+      "kind": "v1 variable tracking",
+      "seed": 20261106,
+      "noise_repetitions": 20,
+      "hops": 4,
+      "assignments": [
+        "VAR QCGQI = 89868",
+        "VAR ZWAAC = VAR QCGQI",
+        "VAR HDIDX = VAR ZWAAC",
+        "VAR ASSAO = VAR HDIDX",
+        "VAR ZVMNS = VAR ASSAO"
+      ],
+      "answers": [
+        "QCGQI",
+        "ZWAAC",
+        "HDIDX",
+        "ASSAO",
+        "ZVMNS"
+      ],
+      "prompt_sha256": "11a10187592de4ddc3c0cebf5e1f0be8470dbf6deaf6c6d9f772b92ace9fe9e1"
+    },
+    {
+      "kind": "v2 multivalue NIAH with nondefault numerical keys",
+      "seed": 42,
+      "distractors": 20,
+      "answers": [
+        "9697354961",
+        "2181241943",
+        "1958682846",
+        "4163119785"
+      ],
+      "prompt_sha256": "256b487a1a768a325516fb972148aa383675bfb01225f1cebcaee0de5314a561"
+    }
+  ],
+  "checks": [
+    {
+      "name": "four hops give five target variables",
+      "observed": 5,
+      "expected": 5
+    },
+    {
+      "name": "five assignments inserted",
+      "observed": 5,
+      "expected": 5
+    },
+    {
+      "name": "all target variable names appear",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "assignments retain causal order",
+      "observed": [
+        "QCGQI",
+        "ZWAAC",
+        "HDIDX",
+        "ASSAO",
+        "ZVMNS"
+      ],
+      "expected": [
+        "QCGQI",
+        "ZWAAC",
+        "HDIDX",
+        "ASSAO",
+        "ZVMNS"
+      ]
+    },
+    {
+      "name": "all metric is fractional recall",
+      "observed": 50.0,
+      "expected": 50.0
+    },
+    {
+      "name": "substring boundary is not required",
+      "observed": 100.0,
+      "expected": 100.0
+    },
+    {
+      "name": "extra false answers do not reduce recall",
+      "observed": 100.0,
+      "expected": 100.0
+    },
+    {
+      "name": "part metric accepts any alias",
+      "observed": 100.0,
+      "expected": 100.0
+    },
+    {
+      "name": "v2 multivalue generator emits four answers",
+      "observed": 4,
+      "expected": 4
+    },
+    {
+      "name": "v2 ten-digit targets are in constructed prompt",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "v2 distractors plus needles give 24 context statements",
+      "observed": 24,
+      "expected": 24
+    },
+    {
+      "name": "v2 WER supplies partial credit",
+      "observed": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "v1 same paraphrase receives no credit",
+      "observed": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "v2 full-reference substring gets full credit despite extra words",
+      "observed": 1.0,
+      "expected": 1
+    },
+    {
+      "name": "two-step scorer only retains last blank-line segment",
+      "observed": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "part scorer removes formatted copied documents",
+      "observed": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "predicted_answer field is normalized",
+      "observed": "red\ngreen",
+      "expected": "red\ngreen"
+    },
+    {
+      "name": "scorer uses raw generation rather than predicted_answer",
+      "observed": 0.0,
+      "expected": 0
+    },
+    {
+      "name": "aggregate weights 12 tasks equally",
+      "observed": 0.08333333333333333,
+      "expected": 0.08333333333333333
+    },
+    {
+      "name": "missing task fails instead of silently averaging subset",
+      "observed": true,
+      "expected": true
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "revision": "507f92e1138bb6e40dac5c6ee7a6758e6424bf97",
+  "source_sha256": {
+    "grade_helpers.py": "3e2683df1c3a9e0594a068d55ad9d6f053c6381927a211b1d352f7e122e9902f",
+    "aggregate_grading_reports.py": "f17b1381a771e3ce3fdbc5a5b504e5e6a2edc5dd5b1b8924e5a4c33ea2df543b",
+    "competitions/utils.py": "670622dc0417a05e57715287459601cfd854e552d796f6d6311b525b135a876d"
+  },
+  "dependencies": {
+    "pandas": "2.2.3",
+    "numpy": "2.3.5"
+  },
+  "scope": "Synthetic grader/aggregation behavior only; no real competition data, historical report reanalysis, model training or full reproduction.",
+  "checks": [
+    {
+      "name": "gold threshold equality counts",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "medals mutually exclusive",
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "median equality does not count above median",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "missing score receives no medal",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "score rounded to five decimals before thresholding",
+      "observed": 61.0,
+      "expected": 61.0
+    },
+    {
+      "name": "rounding crosses synthetic bronze boundary",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "unrounded value is below synthetic bronze boundary",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "ascending leaderboard infers lower is better",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "NaN returned by grade_fn passes wrapper as non-None",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "NaN earns no medal by comparisons",
+      "observed": false,
+      "expected": false
+    },
+    {
+      "name": "default truncates to minimum complete ordinal seed count",
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "padding keeps maximum ordinal seed count",
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "default complete-seed mean",
+      "observed": 100.0,
+      "expected": 100.0
+    },
+    {
+      "name": "padded-seed mean includes absent report failure",
+      "observed": 50.0,
+      "expected": 50.0
+    },
+    {
+      "name": "single-seed SEM set to zero",
+      "observed": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "entire expected competition missing raises by default",
+      "observed": "ValueError",
+      "expected": "ValueError"
+    },
+    {
+      "name": "submission rows are aligned by IDs",
+      "observed": [
+        0,
+        1
+      ],
+      "expected": [
+        0,
+        1
+      ]
+    },
+    {
+      "name": "equal length but wrong IDs rejected",
+      "observed": "InvalidSubmissionError",
+      "expected": "InvalidSubmissionError"
+    },
+    {
+      "name": "out of range AUROC probabilities rejected",
+      "observed": "InvalidSubmissionError",
+      "expected": "InvalidSubmissionError"
+    }
+  ]
+}

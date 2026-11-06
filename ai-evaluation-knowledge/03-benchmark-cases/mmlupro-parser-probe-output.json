@@ -1,0 +1,45 @@
+{
+  "scope": "D4 only for isolated local parser/scorer with synthetic outputs, not model evaluation",
+  "revision": "f418b116db00b065c2aea046518d8fcf74d39872",
+  "source_sha256": "cf5d79f18b3d5eab24800be4a4c2a1d950ed7c5b6530de649c07d19c8ba842ca",
+  "parser_results": [
+    {
+      "synthetic_output": "The answer is (B).",
+      "parsed": "B"
+    },
+    {
+      "synthetic_output": "Initially the answer is (A), but after checking the answer is (D).",
+      "parsed": "A"
+    },
+    {
+      "synthetic_output": "D",
+      "parsed": "D"
+    },
+    {
+      "synthetic_output": "I cannot determine it.",
+      "parsed": "I"
+    },
+    {
+      "synthetic_output": "not sure",
+      "parsed": null
+    }
+  ],
+  "same_unparsed_result_repeated_save_scores": [
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rng_seed_once": 12345,
+  "stored_prediction_remains_null": true,
+  "all_assertions_passed": true,
+  "limitations": "Only evaluate_from_local.py at this revision; other backends have different policies. No published-score effect established."
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Existing MCP-Atlas catalog update and two evidence records; no new benchmark",
+  "catalog_updates": [
+    {
+      "id": "mcp-atlas",
+      "version": "Harness v2 at e3dfef3ce93287c3d7b9e765c3a021f252eefbff; HF HEAD observed 8c563b55d7c967755f474299848049834d624617",
+      "depth": "D3",
+      "task_form": "Controlled real MCP tool menus, agent loop, claim-based final-answer judge; public500/full1000 separate",
+      "metric": "Mean claim coverage and task pass at coverage>=0.75; model/groundtruth inner join and valid-score denominator must be recorded",
+      "limitations": "Actual public task/trajectory and source path read; 15 synthetic scoring tests with mocked judge only. No live MCP, LLM, judge or full leaderboard run. Current harness differs from original paper.",
+      "sources": [
+        "https://github.com/scaleapi/mcp-atlas/tree/e3dfef3ce93287c3d7b9e765c3a021f252eefbff",
+        "https://labs.scale.com/leaderboard/mcp_atlas"
+      ],
+      "case_artifact": "03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "mcp-atlas-task-harness-scorer-trace",
+      "benchmark_id": "mcp-atlas",
+      "depth": "D3",
+      "depth_scope": "Complete real public task/trajectory; v2 loop, output extraction, scoring and statistics source",
+      "revision": "e3dfef3ce93287c3d7b9e765c3a021f252eefbff",
+      "source": "https://github.com/scaleapi/mcp-atlas/tree/e3dfef3ce93287c3d7b9e765c3a021f252eefbff",
+      "artifact": "03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md",
+      "finding": "Primary judge sees claim/response, not trajectory; compact is truncation rather than summarization; attempted calls consume budget. Error rows, missing claims, absent task rows and judge-call failures have different denominator behavior.",
+      "limitations": "No live runtime verification. Source-level shared-sandbox/reset observations are not a demonstrated cross-task leak."
+    },
+    {
+      "id": "mcp-atlas-synthetic-scoring-probe",
+      "benchmark_id": "mcp-atlas",
+      "depth": "D4",
+      "depth_scope": "15 synthetic scoring/merge/statistics assertions, all judge calls mocked",
+      "revision": "e3dfef3ce93287c3d7b9e765c3a021f252eefbff",
+      "source": "https://github.com/scaleapi/mcp-atlas/blob/e3dfef3ce93287c3d7b9e765c3a021f252eefbff/services/scoring/score_claims.py",
+      "artifact": "03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md",
+      "script": "03-benchmark-cases/mcp_atlas_scoring_probe.py",
+      "output": "03-benchmark-cases/mcp-atlas-scoring-probe-output.json",
+      "finding": "Judge failure maps claim to zero; empty output maps task to zero; missing claims maps None excluded from statistics; inner join drops absent tasks and keeps duplicate output IDs. Auxiliary clean_runs counter can double-subtract.",
+      "limitations": "No actual prevalence or published-score impact established; not an online judge-quality or agent-capability experiment."
+    }
+  ]
+}

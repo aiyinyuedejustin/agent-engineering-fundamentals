@@ -1,6 +1,6 @@
 # AI 评测基础设施研究知识库
 
-这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前是第四批可审阅成果，不是完成版综述，也不是模型总榜。
+这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前是第五批可审阅成果，不是完成版综述，也不是模型总榜。
 
 **继续研究从这里开始：** [RESUME.md](RESUME.md)、[方法与证据等级](methodology.md)、[实际覆盖](research-status/coverage.md)、[索引规范](data/README.md)。
 
@@ -8,14 +8,23 @@
 
 - **65 个经语义去重的模型/训练变体种子**，只表示报告支持的身份区分，不表示核验了 65 个不同权重文件。中央模型表共 **77 条记录**，另保留 3 个具名语音/委派系统与 9 个身份未决的报告条件，不把它们算入 65。
 - **342 个 D1 原文数值观测**，来自最新模型数据快照 v12；其中 23 条来源明确是独立评测方或 benchmark 作者。全部仍未由本项目复现，且可比性未判定。
-- **46 个代表性 benchmark 目录条目**。加上报告中需要单列的版本、内部评测和历史协议，中央索引有 **158 个 benchmark/协议记录**，不能把它们当作 158 个深度研究。
-- **8 篇 benchmark 案例**、5 篇基础设施文章、完整的 22 文件 runtime 专题、5 篇评测科学正文及评分执行链/审查清单。
-- **13 个已实际执行的局部诊断程序**。模型代码部分包含 gpt-oss、VLMEvalKit、Ovis 和 HLE 的合成组件探针；它们没有运行模型或重现公开分数。
-- 中央索引共有 **364 个来源记录、311 个不同外部来源 URL、491 条证据、23 个概念**。来源记录包含 62 个 D0 候选和 2 个原创本地实验，不能理解为读完了 364 份独立报告。
+- **47 个代表性 benchmark 目录条目**。加上报告中需要单列的版本、内部评测和历史协议，中央索引有 **158 个 benchmark/协议记录**，不能把它们当作 158 个深度研究。
+- **21 篇 benchmark 案例**、5 篇基础设施文章、完整的 22 文件 runtime 专题、5 篇评测科学正文及评分执行链/审查清单。
+- **23 个已实际执行的局部诊断程序**。模型代码部分包含 gpt-oss、VLMEvalKit、Ovis 和 HLE 的合成组件探针；它们没有运行模型或重现公开分数。
+- 中央索引共有 **403 个来源记录、350 个不同外部来源 URL、516 条证据、23 个概念**。来源记录包含 62 个 D0 候选和 2 个原创本地实验，不能理解为读完了 403 份独立报告。
 
 **完整模型/benchmark 复现数量仍为 0。** 完整深度研究检查表尚未签核，不把局部源码分析冒充 50 个已完成深度研究。200+ 模型种子与五小时以上持续研究要求也没有宣称完成；等待上传不是研究活动。
 
-## 本批模型阅读入口
+## 本批 benchmark 阅读入口
+
+- [评测选择指南](02-benchmark-landscape/benchmark-selection-guide.md)与[成功事件和测量约定](02-benchmark-landscape/measurement-contracts-guide.md)。目录的 47 项为 30 D1、3 D2、14 D3；没有把组件 D4 提升成整个 benchmark 的 D4。
+- [AgentDojo](03-benchmark-cases/agentdojo-utility-and-attack-outcomes.md)、[BFCL](03-benchmark-cases/bfcl-v4-distinct-success-events.md)、[MCP-Atlas](03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md)：任务效用、工具调用与攻击成功不是同一个事件。
+- [HealthBench Professional](03-benchmark-cases/healthbench-rubrics-and-professional-protocol.md)、[GDPval](03-benchmark-cases/gdpval-artifacts-versions-and-judging.md)、[MLE-bench](03-benchmark-cases/mlebench-splits-medals-and-seeds.md)：公开参考实现、内部生产计分与历史报告要分开。
+- [MMLU-Pro](03-benchmark-cases/mmlu-pro-prompts-parsers-and-retries.md)、[RULER](03-benchmark-cases/ruler-versions-generation-and-effective-context.md)、[ScreenSpot-Pro](03-benchmark-cases/screenspot-pro-geometry-and-measurement.md)：提示、重试、版本、坐标和聚合改变测量对象。
+
+新收录的 10 个探针均独立重放并与原始输出 JSON 完全一致。ScreenSpot 包括真实公开标注的统计复算，但没有看截图、调用模型或点击 UI；其他探针也保留各自的合成输入、模拟依赖与未覆盖路径。
+
+## 模型阅读入口
 
 - [最新快照 v12](01-model-landscape/snapshots/v12/README.md)：124 个来源/报告候选，62 D1、62 D0；342 个 D1 数值观测。
 - [模型身份审查](01-model-landscape/audits/model-identities-v9.md)及[后续 22 个标签](01-model-landscape/audits/model-identities-v12-additions.json)：85 个原始标签不等于 85 个模型。

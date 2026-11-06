@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "RULER family version-specific deepening; no new leaderboard or model result",
+  "catalog_updates": [
+    {
+      "id": "ruler",
+      "version": "NVIDIA/RULER db43f92ff634bbce1c33d1fb15858aec4bba509a; NeMo-Skills bcf059af55c20a89f797724598f9908d126153e6, v1/v2 distinguished",
+      "depth": "D3",
+      "metric": "v1 per-target substring recall / any-alias match; v2 soft WER+substring or multichoice; equal task means; historical effective-length threshold 85.6",
+      "task_form": "Model-tokenizer-conditioned synthetic generation; v1 13 tasks, v2 12 tasks with different retrieval/solve stages",
+      "limitations": "Official generator core instantiated and 20 bounded probes; no calibrated official test corpus, tokenizer, model or leaderboard reproduction. v2 numeric-key instance is nondefault. editdistance dependency replaced by documented Levenshtein DP. v2 MMLU evaluator only routed, not fully traced.",
+      "sources": [
+        "https://github.com/NVIDIA/RULER/tree/db43f92ff634bbce1c33d1fb15858aec4bba509a",
+        "https://github.com/NVIDIA-NeMo/Skills/tree/bcf059af55c20a89f797724598f9908d126153e6/nemo_skills/dataset/ruler2"
+      ],
+      "case_artifact": "03-benchmark-cases/ruler-versions-generation-and-effective-context.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "ruler-generator-and-version-trace",
+      "benchmark_id": "ruler",
+      "depth": "D3",
+      "depth_scope": "Classic generated task inspected; v1/v2 generator, adapter, scoring, aggregation traced",
+      "revision": "NVIDIA/RULER db43f92ff634bbce1c33d1fb15858aec4bba509a; NVIDIA-NeMo/Skills bcf059af55c20a89f797724598f9908d126153e6",
+      "source": "https://github.com/NVIDIA-NeMo/Skills/blob/bcf059af55c20a89f797724598f9908d126153e6/nemo_skills/evaluation/evaluator/ruler.py",
+      "artifact": "03-benchmark-cases/ruler-versions-generation-and-effective-context.md",
+      "finding": "Synthetic length is tokenizer-conditioned; v2 changes target events and partial-credit semantics, not only context length. Prefix/output-budget configuration differs across data formats.",
+      "limitations": "Not a complete v2 multichoice audit or official dataset generation"
+    },
+    {
+      "id": "ruler-bounded-component-probe",
+      "benchmark_id": "ruler",
+      "depth": "D4",
+      "depth_scope": "20 source-component assertions, two generated task cores and scorer file-flow",
+      "revision": "NVIDIA/RULER db43f92ff634bbce1c33d1fb15858aec4bba509a; NVIDIA-NeMo/Skills bcf059af55c20a89f797724598f9908d126153e6",
+      "source": "https://github.com/NVIDIA-NeMo/Skills/blob/bcf059af55c20a89f797724598f9908d126153e6/nemo_skills/evaluation/evaluator/ruler.py",
+      "artifact": "03-benchmark-cases/ruler-versions-generation-and-effective-context.md",
+      "finding": "Synthetic length is tokenizer-conditioned; v2 changes target events and partial-credit semantics, not only context length. Prefix/output-budget configuration differs across data formats.",
+      "limitations": "No tokenizer/model; editdistance substituted; no official corpus or published-score impact",
+      "script": "03-benchmark-cases/ruler_contract_probe.py",
+      "output": "03-benchmark-cases/ruler-contract-probe-output.json"
+    }
+  ]
+}

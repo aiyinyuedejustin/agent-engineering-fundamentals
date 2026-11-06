@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Existing GDPval catalog update and two evidence records; no new benchmark",
+  "catalog_updates": [
+    {
+      "id": "gdpval",
+      "version": "Original paper 2510.04374v1; official HF v2 11e7900cdcac61bc4daf59e65feb238acda98fbf (2026-02-10)",
+      "depth": "D2",
+      "task_form": "Occupational deliverable creation from prompts and reference files; public v2 also exposes human deliverables and rubrics",
+      "metric": "Protocol-specific human/automated pairwise preference; tie handling and eligible-task denominator must be named",
+      "limitations": "Actual row, file manifests and 38 rubrics read. Workbook bytes not opened. Original expert grading not reproduced. Third-party Inspect d95bb30 collector traced separately, not official grader source.",
+      "sources": [
+        "https://arxiv.org/html/2510.04374v1",
+        "https://huggingface.co/datasets/openai/gdpval/tree/11e7900cdcac61bc4daf59e65feb238acda98fbf"
+      ],
+      "case_artifact": "03-benchmark-cases/gdpval-artifacts-versions-and-judging.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "gdpval-v2-real-row-and-versions",
+      "benchmark_id": "gdpval",
+      "depth": "D2",
+      "depth_scope": "Current real prompt, reference/deliverable manifests, rubric items and version history; not workbook contents",
+      "revision": "HF HEAD observed 11e7900cdcac61bc4daf59e65feb238acda98fbf; rows API unpinned",
+      "source": "https://datasets-server.huggingface.co/rows?dataset=openai%2Fgdpval&config=default&split=train&offset=0&length=1",
+      "artifact": "03-benchmark-cases/gdpval-artifacts-versions-and-judging.md",
+      "finding": "Current official v2 has rubric and human-deliverable fields. One record's prompt/rubric column references disagree, pending workbook verification. Original report metrics are not interchangeable with later grading services.",
+      "limitations": "No files opened, no prevalence estimate, no claim of model-score impact."
+    },
+    {
+      "id": "gdpval-inspect-collector-source-trace",
+      "benchmark_id": "gdpval",
+      "depth": "D3",
+      "depth_scope": "Third-party adapter's task, metadata mapping, extraction and submission preparation; not official scoring service",
+      "revision": "d95bb308e49d810617ae65f8052dfd848e9ffedb",
+      "source": "https://github.com/UKGovernmentBEIS/inspect_evals/tree/d95bb308e49d810617ae65f8052dfd848e9ffedb/src/inspect_evals/gdpval",
+      "artifact": "03-benchmark-cases/gdpval-artifacts-versions-and-judging.md",
+      "finding": "Default exact() against target NONE is an output-collection placeholder. Quality grading remains external. Adapter pins older dataset metadata and forwards reference URLs unchanged.",
+      "limitations": "No Docker run, upload or grading submission; source tracing must not be called GDPval reproduction."
+    }
+  ]
+}

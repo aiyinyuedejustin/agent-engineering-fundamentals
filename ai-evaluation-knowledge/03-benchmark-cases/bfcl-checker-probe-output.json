@@ -1,0 +1,101 @@
+{
+  "revision": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "source_sha256": {
+    "ast_checker.py": "ad21dc1b57b2835029bbf0556d9737399dad58fdef6af248ef45fcd7327ecd3a",
+    "agentic_checker.py": "9ece48a8bfb702039793ba14d1f3fde27242a5e9361fdcdc7f7243d446583199",
+    "multi_turn_checker.py": "da48a1d490a9d9a9ff7661e3633b674ecde4da11266057462fc2ede547edfc2f"
+  },
+  "scope": "Synthetic component experiments only; no inference, actual environment execution, leaderboard reproduction or prevalence estimate.",
+  "checks": [
+    {
+      "name": "optional omitted with empty-string sentinel",
+      "observed": true,
+      "expected": true,
+      "scope": "pure checker"
+    },
+    {
+      "name": "optional omitted without sentinel",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "required boolean is not integer",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "string punctuation collision",
+      "observed": true,
+      "expected": true,
+      "scope": "pure checker"
+    },
+    {
+      "name": "extra parameter rejected",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "greedy no-order match with ambiguous allowed values",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "same calls reversed avoid greedy mismatch",
+      "observed": true,
+      "expected": true,
+      "scope": "pure checker"
+    },
+    {
+      "name": "agentic answer in negative sentence",
+      "observed": true,
+      "expected": true,
+      "scope": "pure checker"
+    },
+    {
+      "name": "agentic whitespace is not removed",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "agentic boundary rejects substring",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "response result order not required",
+      "observed": true,
+      "expected": true,
+      "scope": "pure checker"
+    },
+    {
+      "name": "response duplicate multiplicity required",
+      "observed": false,
+      "expected": false,
+      "scope": "pure checker"
+    },
+    {
+      "name": "extra model state and differing private state ignored",
+      "observed": true,
+      "expected": true,
+      "scope": "pure checker"
+    },
+    {
+      "name": "main checker skips state and response check for empty gold turn",
+      "observed": true,
+      "expected": true,
+      "scope": "checker control flow with mocked executor"
+    },
+    {
+      "name": "separate irrelevance checker rejects same decoded calls",
+      "observed": false,
+      "expected": false,
+      "scope": "separate helper; not called by pinned eval_runner"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Existing BFCL catalog update plus two evidence records; no new benchmark",
+  "catalog_updates": [
+    {
+      "id": "bfcl",
+      "version": "BFCL_v4; gorilla 6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+      "depth": "D3",
+      "task_form": "Single-turn AST calls; multi-turn simulated state/response checks; agentic final-answer matching",
+      "metric": "Version-specific five-group weighted accuracy (10/10/10/30/40), not all-task micro-average",
+      "limitations": "Real single-turn and multi-turn task rows read. No model/API or real backend run; D4 limited to 15 synthetic checker contracts, two with mocked executor. No published-score effect measured.",
+      "sources": [
+        "https://github.com/ShishirPatil/gorilla/tree/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard"
+      ],
+      "case_artifact": "03-benchmark-cases/bfcl-v4-distinct-success-events.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "bfcl-v4-grading-source-trace",
+      "benchmark_id": "bfcl",
+      "depth": "D3",
+      "depth_scope": "Real task schemas, handler decoding, category routing, checker and aggregation source",
+      "revision": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+      "source": "https://github.com/ShishirPatil/gorilla/tree/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard",
+      "artifact": "03-benchmark-cases/bfcl-v4-distinct-success-events.md",
+      "finding": "AST acceptance, simulated state/response equivalence, and agentic string occurrence define different success events. Multi-turn irrelevance helper is imported but not invoked in the pinned evaluation runner.",
+      "limitations": "Not all adapters/backend classes read; no inference or production score reanalysis."
+    },
+    {
+      "id": "bfcl-v4-component-checker-probe",
+      "benchmark_id": "bfcl",
+      "depth": "D4",
+      "depth_scope": "15 synthetic checker assertions; final two use mocked execution to inspect empty-gold-turn control flow",
+      "revision": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+      "source": "https://github.com/ShishirPatil/gorilla/tree/6ea57973c7a6097fd7c5915698c54c17c5b1b6c8/berkeley-function-call-leaderboard/bfcl_eval/eval_checker",
+      "artifact": "03-benchmark-cases/bfcl-v4-distinct-success-events.md",
+      "script": "03-benchmark-cases/bfcl_checker_probe.py",
+      "output": "03-benchmark-cases/bfcl-checker-probe-output.json",
+      "finding": "Overlapping allowed-value sets expose greedy parallel matching order sensitivity; normalized string matching ignores negation; the main empty-gold-turn path differs from its separate irrelevance helper.",
+      "limitations": "Synthetic valid-schema boundary cases only. No scan of actual overlapping gold sets, no real environment execution or leaderboard effect estimate."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Existing MLE-bench update and two evidence records; no new benchmark",
+  "catalog_updates": [
+    {
+      "id": "mle-bench",
+      "version": "openai/mle-bench 507f92e1138bb6e40dac5c6ee7a6758e6424bf97 (2026-04-24); split75 and low/lite distinct",
+      "depth": "D3",
+      "task_form": "Competition-level ML engineering ending in prediction files, evaluated on newly prepared held-out public-training subsets",
+      "metric": "Any-medal proportion by competition, averaged over seeds; recommended mean ± SEM; explicit missing-report policy",
+      "limitations": "Real competition instructions/configuration/source read; images/training rows and LFS leaderboards not acquired. D4 only 19 synthetic grader/aggregation checks, no training or historical-report reanalysis.",
+      "sources": [
+        "https://github.com/openai/mle-bench/tree/507f92e1138bb6e40dac5c6ee7a6758e6424bf97"
+      ],
+      "case_artifact": "03-benchmark-cases/mlebench-splits-medals-and-seeds.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "mlebench-task-split-source-trace",
+      "benchmark_id": "mle-bench",
+      "depth": "D3",
+      "depth_scope": "Real Aerial Cactus task/config, preparation, grading, reference-medal semantics and seed aggregation",
+      "revision": "507f92e1138bb6e40dac5c6ee7a6758e6424bf97",
+      "source": "https://github.com/openai/mle-bench/tree/507f92e1138bb6e40dac5c6ee7a6758e6424bf97",
+      "artifact": "03-benchmark-cases/mlebench-splits-medals-and-seeds.md",
+      "finding": "Prepared splits differ from original Kaggle hidden tests. Registry membership differs from split75. Medal, median and valid-submission events differ; complete-seed versus padded aggregation changes the denominator.",
+      "limitations": "No original images, training data, LFS leaderboard or successful historical report fetch; no actual model training."
+    },
+    {
+      "id": "mlebench-grader-aggregate-component-probe",
+      "benchmark_id": "mle-bench",
+      "depth": "D4",
+      "depth_scope": "19 synthetic assertions on grading and cross-seed aggregation source",
+      "revision": "507f92e1138bb6e40dac5c6ee7a6758e6424bf97",
+      "source": "https://github.com/openai/mle-bench/blob/507f92e1138bb6e40dac5c6ee7a6758e6424bf97/mlebench/grade_helpers.py",
+      "artifact": "03-benchmark-cases/mlebench-splits-medals-and-seeds.md",
+      "script": "03-benchmark-cases/mlebench_grade_probe.py",
+      "output": "03-benchmark-cases/mlebench-grade-probe-output.json",
+      "finding": "Medal ties count but median ties do not; rounding precedes ranking; NaN is not rejected by the wrapper; synthetic missing-run policy changes mean from 100 to 50 percent.",
+      "limitations": "These are boundary semantics and synthetic examples, not published-score corrections, real-data prevalence or full benchmark reproduction."
+    }
+  ]
+}

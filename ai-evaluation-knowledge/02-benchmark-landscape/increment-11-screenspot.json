@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "ScreenSpot-Pro annotation, geometry and protocol deepening; no new benchmark",
+  "catalog_updates": [
+    {
+      "id": "screenspot-pro",
+      "version": "Code dbe00114bc53a32c61c1a267786da85967710da8; HF data 210e78d3844251110bff86c95835ebd37a6930fa",
+      "depth": "D3",
+      "metric": "Inclusive point-in-box after coordinate normalization; micro average with format failures retained; not IoU or application-state success",
+      "limitations": "All 26 annotation files reanalyzed (1581 unique tasks), source path traced and 20 synthetic assertions. No image pixels inspected, no model or UI run. Adapter processor internal final resizing not verified. Nondefault CLI findings do not establish leaderboard impact.",
+      "sources": [
+        "https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding/tree/dbe00114bc53a32c61c1a267786da85967710da8",
+        "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/tree/210e78d3844251110bff86c95835ebd37a6930fa"
+      ],
+      "case_artifact": "03-benchmark-cases/screenspot-pro-geometry-and-measurement.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "screenspot-annotations-and-flow",
+      "benchmark_id": "screenspot-pro",
+      "depth": "D3",
+      "depth_scope": "All real metadata and scoring/coordinate source paths; no visual pixels",
+      "revision": "Code dbe00114bc53a32c61c1a267786da85967710da8; data 210e78d3844251110bff86c95835ebd37a6930fa",
+      "source": "https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding/blob/dbe00114bc53a32c61c1a267786da85967710da8/eval_screenspot_pro.py",
+      "artifact": "03-benchmark-cases/screenspot-pro-geometry-and-measurement.md",
+      "finding": "Actual 1581 versus eval.yaml 1585; tiny-target geometry and micro weights quantified; single point localization differs from actual action success; CLI variant paths can duplicate instructions or misroute serial gt_type=all.",
+      "limitations": "No pixel inspection/model run/leaderboard impact; raw annotation/gold not republished. Component D4 is not full task reproduction."
+    },
+    {
+      "id": "screenspot-annotation-reanalysis-probe",
+      "benchmark_id": "screenspot-pro",
+      "depth": "D4",
+      "depth_scope": "Actual 1581-row annotation statistics and 20 synthetic scorer/control-flow assertions",
+      "revision": "Code dbe00114bc53a32c61c1a267786da85967710da8; data 210e78d3844251110bff86c95835ebd37a6930fa",
+      "source": "https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding/blob/dbe00114bc53a32c61c1a267786da85967710da8/eval_screenspot_pro.py",
+      "artifact": "03-benchmark-cases/screenspot-pro-geometry-and-measurement.md",
+      "finding": "Actual 1581 versus eval.yaml 1585; tiny-target geometry and micro weights quantified; single point localization differs from actual action success; CLI variant paths can duplicate instructions or misroute serial gt_type=all.",
+      "limitations": "No pixel inspection/model run/leaderboard impact; raw annotation/gold not republished. Component D4 is not full task reproduction.",
+      "script": "03-benchmark-cases/screenspot_contract_probe.py",
+      "output": "03-benchmark-cases/screenspot-contract-probe-output.json"
+    }
+  ]
+}

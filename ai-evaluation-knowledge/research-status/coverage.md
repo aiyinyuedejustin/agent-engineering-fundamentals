@@ -1,52 +1,46 @@
 # Coverage and verification status
 
-Fourth reviewed integration: **2026-11-06T04:09:38.269727+00:00**. Model view advances to immutable v12; benchmark catalog, infrastructure and science retain their prior published cutoffs. Later local work is not counted here.
+Fifth reviewed integration: **2026-11-06T04:28:52.725449+00:00**. This advances the benchmark catalog and case collection through explicit increment-11. Model view remains v12; later science/infrastructure/learning work remains outside this public cutoff.
 
-## Central counts
+## Actual counts
 
-| Measure | Actual count | Meaning |
+| Measure | Count | Interpretation |
 |---|---:|---|
-| Conservative model/training-variant seeds | 65 | Source-supported identity labels after semantic grouping, not verified weight hashes |
-| Total model-index records | 77 | Includes 3 named voice/delegation systems and 9 unresolved report conditions, excluded from 65 |
-| Verbatim model/system labels audited | 85 | Not distinct model identities |
-| Benchmark/protocol records | 158 | 46 catalog entries plus explicitly named historical/internal/report protocols |
-| Numerical observations | 342 | All D1, not reproduced here; 23 explicitly independently reported |
-| Sources | 364 | 124 model-report/index candidates plus other cited/local evidence |
-| Unique external URLs | 311 | Not full-source reading count; 2 local source URLs remain null |
-| Concepts | 23 | Evidence-linked working definitions |
-| Evidence records | 491 | Scope-specific granular records, not independent discoveries |
-| Reviewed-complete deep studies | 0 | Checklist gates not yet signed off |
-| Full benchmark/model reproductions | 0 | Component probes do not count |
+| Conservative model/training-variant seeds | 65 | Report-supported semantic identity, not verified weight hashes |
+| Model index records | 77 | Also retains 3 named voice/delegation systems and 9 unresolved conditions, excluded from seed count |
+| Numerical model observations | 342 | D1, not reproduced; 23 explicitly independently reported |
+| Representative catalog entries | 47 | 30 D1, 3 D2, 14 scoped D3; none whole-benchmark D4 |
+| Central benchmark/protocol records | 158 | Includes named historical/internal report protocols; not 158 deep studies |
+| Benchmark case articles | 21 | Scoped cases, not checklist-complete study count |
+| Source records / external URLs | 403 / 350 | Includes 62 D0 candidates and 2 original local experiment sources |
+| Concepts / evidence records | 23 / 516 | Granular records with limits, not independent discoveries |
+| Stable section artifacts / diagnostic programs | 199 / 23 | Navigation counts, not active-time or model-run counts |
+| Checklist-complete studies / full model-benchmark reproductions | 0 / 0 | Explicit review and reproduction gates remain unmet |
 
-Depth distribution: D1 409, D2 2, D3 60, D4 20. Source statuses: 299 partially read, 62 discovered, 2 read, 1 executed. Date-only access precision remains unchanged.
+Claim depths: D1 412, D2 5, D3 69, D4 30. Source statuses: 338 partially read, 62 discovered, 2 read, 1 executed. Date precision is retained.
 
-## Model identity and numerical interpretation
+## Catalog and experiment boundaries
 
-The latest registry is v12: **124 source/report/index candidates, 62 D1 and 62 D0**. v1 through v12 remain immutable history; component-only v4/v8/v10 do not replace a model data view. The latest 342 observations retain all earlier numerical records unchanged. Central IDs for the original 99 results and 18 model identities remain stable.
+The 47-entry catalog merges authoritative field updates through RULER and ScreenSpot-Pro (increment-11). HealthBench Professional is the one added catalog entry; it already had a report-protocol record centrally, so total central benchmark/protocol records remain 158. Historical observations do not inherit updated catalog versions.
 
-The 65 seed count excludes 9 unresolved conditions and 3 named voice/delegation systems. Unresolved conditions include an unsuffixed Qwen model, HunyuanVideo task-specific resolution buckets, four pretraining ablation labels with unknown cross-table identity overlap, a live product variant and an unverified third-party GPT-4o label. They remain in the index to preserve evidence, not to inflate coverage.
+New cases cover LiveCodeBench, AgentDojo, Video-MME-v2 task metadata, ARC-AGI-3, SciCode, HealthBench Professional, MMLU-Pro, BFCL, GDPval, MLE-bench, MCP-Atlas, RULER and ScreenSpot-Pro. The selection and measurement-contract guides distinguish success-event types rather than collapsing all scores into accuracy.
 
-Reasoning modes, agent swarm, PaCoRe, renaming aliases, quantization and explicit same-weight deployment conditions are grouped only as supported by the identity audits. Their exact labels and differences remain in each result's settings and model_version. Distinct training stages and dated versions remain separate. All current results are comparability-unassessed; none forms a single pooled ranking. Safety percentages, internal simulations, throughput, preference margins, WER and benchmark accuracy measure different events.
+Overall catalog depth remains conservative. LiveCodeBench and ARC-AGI-3 have separately scoped code/arithmetic probes but incomplete real task inspection; GDPval workbook contents were not opened; Video-MME-v2 and ScreenSpot media pixels were not inspected. HealthBench's public reference scorer is not its internal production evaluator. Neither source inspection nor a synthetic boundary case establishes frequency or impact on a published leaderboard.
 
-The 158 benchmark/protocol records are not 158 benchmarks deeply inspected. The representative catalog is still its older 46-entry snapshot (40 D1, 6 scoped D3). New report-named protocols have D1 evidence only. They are not assumed equivalent to current datasets or similarly named protocols elsewhere.
+`benchmarks.csv.depth` is the highest linked evidence depth; `catalog_depth` separately preserves overall scoped catalog inspection. D4 linked to a benchmark is always restricted to its actual component or metadata experiment. Model observations remain D1 and comparability-unassessed.
 
-## Published section coverage
+## Verification performed in this increment
 
-- Models: all stable snapshots v1–v12, both identity audits, additive report notes and four component code bundles. Latest data view v12 only.
-- Landscape/cases: 46-entry catalog, taxonomy and eight case articles at their prior cutoff.
-- Infrastructure: five articles, provider-policy mocks and actual Linux mmap diagnostics.
-- Runtime: complete frozen 22-file first section, with two original mechanism/transport labs and 51 normalized granular claims.
-- Science: original five chapters, scorer traces and review checklist; later phases await integration.
-- 07–09: scaffolds in this public snapshot; later completed maps, curricula and proposed architecture remain uncounted until publication.
+All ten newly included benchmark programs were independently replayed using the already pinned local inputs: LiveCodeBench, ARC, SciCode, HealthBench reference, MMLU-Pro, BFCL, MLE-bench, MCP-Atlas, RULER and ScreenSpot. Every full output JSON matched the frozen original. Original evidence is unchanged; integration reruns are not counted as additional distinct experiments.
 
-**153 stable section artifacts** and **13 diagnostic programs** are published. These counts are navigation/coverage facts, not active-time measures.
+ScreenSpot reanalyzes all 26 public annotation files, totaling 1,581 task records, without images or inference. Other probes use the stated synthetic inputs, mocked executors/judges or source fragments. RULER's edit-distance dependency substitution and lack of calibrated tokenizer/model corpus remain explicit. These experiments do not reproduce a benchmark score.
 
-## New integration checks
+Central IDs, foreign keys, result links, artifacts and depth restrictions pass. All staged JSON/Python syntax and local Markdown links pass; credential-pattern scan found no matches. Raw source snapshots, raw annotations and task answers are not republished. The batch manifest records scripts, hashes and replay results.
 
-All 70 registered model-snapshot/audit content hashes match. All model observation increments retain previous records exactly. Central IDs, references, source precision, identity-count exclusions and artifact paths pass validation. The three newly integrated component probes were independently replayed: VLMEvalKit 18, Ovis 19 and HLE 25 synthetic cases; complete output JSON matched. Original outputs remain unchanged, and replay is not a new benchmark experiment. NumPy/dependency differences and mocked transports/processors remain disclosed in each bundle.
+## Published sections and next work
 
-All staged JSON and Python syntax and local Markdown links pass; credential-pattern scan has no matches. No raw source mirrors or private inputs are included. Prior manifests describe prior commits and keep their historical hashes.
+Models v1–v12 and identity audits, the updated landscape and 21 cases, first five infrastructure articles, full initial runtime section and first five science chapters are public. Newer model/code increments and infrastructure/science phases remain uncounted until integrated.
 
-## Remaining work
+The 07–09 learning/architecture bundle has dependencies on those later sections. Publish prerequisites before its guides to avoid broken links. Then integrate its blind-spot map, curriculum, questions and proposed ADRs without treating proposals as executed/accepted architecture.
 
-Integrate the frozen benchmark deltas, infrastructure studies, science phases and 07/08 maps in separate reviewed batches. Review new architecture proposals without treating them as accepted implementation. Finish explicit deep-study checklists before counting toward 50. Continue broadening actual deduplicated model seeds toward 200+. No five-hour completion is claimed; upload waits are not research activity.
+Targets remain 200+ actual deduplicated model seeds and 50 substantive, checklist-reviewed benchmark studies. Five-hour completion is not claimed; upload waits and artifact counts are not active research time. Previous manifests retain historical hashes for previous commits.

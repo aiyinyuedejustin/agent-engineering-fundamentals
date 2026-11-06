@@ -1,0 +1,26 @@
+{
+  "scope": "Synthetic caller-contract experiment; not a published result audit",
+  "upstream_commit": "28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24",
+  "source_sha256": {
+    "pass_k_utils.py": "6af3ee55d40f96fa06fa511bd5e43d94b19604750e82454b4b3c1f45c5199010",
+    "compute_scores.py": "b6272b78588f0cafc8abe3529a8aa7a6e9eed282eef5ea20da4e4187a4918531"
+  },
+  "fixture": "Three synthetic tasks, each n=10,c=0",
+  "compute_scores_stdout_overall": [
+    "Pass@1 =  0.0",
+    "Pass@5 =  0.0",
+    "Pass@10 =  0.0",
+    "Pass@25 =  1.0",
+    "Pass@50 =  1.0",
+    "Pass@100 =  1.0",
+    "Pass@150 =  1.0",
+    "Pass@200 =  1.0",
+    "Pass@1: 0.0"
+  ],
+  "guarded_compute_metrics_from_results": {
+    "pass@1": 0.0,
+    "pass@5": 0.0,
+    "pass@10": 0.0
+  },
+  "interpretation": "k>n is not estimable by this estimator; printing1.0 is an invalid-domain artifact, not evidence of success"
+}

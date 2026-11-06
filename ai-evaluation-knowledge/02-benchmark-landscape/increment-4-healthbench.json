@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "One new catalog candidate ready for merge plus two evidence records; do not count evidence as new benchmarks",
+  "catalog_additions": [
+    {
+      "id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "version": "2026-04-22 release; HF HEAD observed349962fd46dd02343a0d8a606491baf59154ea1a; public reference652c89d0ca9df547706735883097e9537d40dc47",
+      "kind": "professional-rubric-benchmark",
+      "depth": "D2",
+      "modality": "text conversations",
+      "task_form": "Next response for clinician consult, writing/documentation or research",
+      "target": "Clinician-facing chat quality and safety under selected tasks",
+      "metric": "Length-adjusted weighted rubric score; mean then clip, not percent accuracy",
+      "environment": "Internal production evaluator; public simple-evals is unofficial external reference",
+      "freshness": "525 curated real clinician tasks; difficulty enrichment and red-team selection",
+      "useful_feature": "Public actual row/schema checked; distinguishes physician baseline, rubric outcome, model and product harness",
+      "limitations": "No production implementation audit, no clinical/model evaluation. Public raw schema needs conversion for reference evaluator; generic score field remains unadjusted. Component D4 only synthetic arithmetic.",
+      "sources": [
+        "https://openai.com/index/making-chatgpt-better-for-clinicians/",
+        "https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf",
+        "https://huggingface.co/datasets/openai/healthbench-professional",
+        "https://github.com/openai/simple-evals/tree/652c89d0ca9df547706735883097e9537d40dc47"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_report_actual_metadata_and_reference_source",
+      "full_reproduction": false,
+      "case_artifact": "03-benchmark-cases/healthbench-rubrics-and-professional-protocol.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "healthbench-professional-data-reference-audit",
+      "benchmark_id": "healthbench-professional",
+      "depth": "D2",
+      "depth_scope": "Official report, one complete public row and external reference config/code; internal production evaluator not available",
+      "revision": "HF HEAD observed349962fd46dd02343a0d8a606491baf59154ea1a; reference code652c89d0ca9df547706735883097e9537d40dc47",
+      "source": "https://huggingface.co/datasets/openai/healthbench-professional",
+      "additional_sources": [
+        "https://openai.com/index/making-chatgpt-better-for-clinicians/",
+        "https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf",
+        "https://huggingface.co/datasets/openai/healthbench-professional",
+        "https://github.com/openai/simple-evals/tree/652c89d0ca9df547706735883097e9537d40dc47"
+      ],
+      "artifact": "03-benchmark-cases/healthbench-rubrics-and-professional-protocol.md",
+      "finding": "Professional raw schema differs from original HealthBench loader. Published production evaluation is internal; length-adjusted score, field selection and repeated-sample inference need explicit matching.",
+      "limitations": "Viewer row request was not revision-pinned; no clinical/model evaluation or production replication. Task text and physician response not republished."
+    },
+    {
+      "id": "healthbench-reference-arithmetic-component-probe",
+      "benchmark_id": "healthbench-professional",
+      "depth": "D4",
+      "depth_scope": "Isolated public reference arithmetic and aggregation on synthetic inputs only",
+      "revision": "652c89d0ca9df547706735883097e9537d40dc47",
+      "source": "https://github.com/openai/simple-evals/blob/652c89d0ca9df547706735883097e9537d40dc47/healthbench_eval.py",
+      "artifact": "03-benchmark-cases/healthbench-rubrics-and-professional-protocol.md",
+      "script": "03-benchmark-cases/healthbench_score_probe.py",
+      "output": "03-benchmark-cases/healthbench-score-probe-output.json",
+      "finding": "Negative rubric scores, missing negative-only tag score, mean-before-clipping and separate raw/length-adjusted output fields reproduced.",
+      "limitations": "Not a clinical or model experiment. No claim that unpublished production evaluator has the same implementation or that reported scores are affected."
+    }
+  ]
+}

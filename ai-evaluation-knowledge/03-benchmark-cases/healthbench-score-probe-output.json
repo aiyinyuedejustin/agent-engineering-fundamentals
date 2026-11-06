@@ -1,0 +1,38 @@
+{
+  "scope": "D4 only for isolated synthetic scoring and field aggregation, not medical/model evaluation",
+  "revision": "652c89d0ca9df547706735883097e9537d40dc47",
+  "source_sha256": "5636b92f7ca07be7cee127ad59042f863859ea367b176bde71e64eef397dc268",
+  "negative_rubric_score": -0.5,
+  "negative_only_tag_score": null,
+  "clipping_order": {
+    "input": [
+      -0.5,
+      1.0
+    ],
+    "actual_mean_then_clip": 0.25,
+    "different_clip_each_then_mean": 0.5
+  },
+  "length_adjustment": [
+    {
+      "characters": 1500,
+      "raw": 0.8,
+      "adjusted": 0.8147000000000001
+    },
+    {
+      "characters": 2000,
+      "raw": 0.8,
+      "adjusted": 0.8
+    },
+    {
+      "characters": 2500,
+      "raw": 0.8,
+      "adjusted": 0.7853
+    }
+  ],
+  "aggregate_fields": {
+    "score": 0.8,
+    "overall_score_length_adjusted": 0.7853
+  },
+  "all_assertions_passed": true,
+  "limitation": "Public reference is not the unreleased HealthBench Professional production implementation."
+}

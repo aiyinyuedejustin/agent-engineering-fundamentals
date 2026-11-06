@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "One existing catalog record update, not a new benchmark; two evidence records",
+  "catalog_updates": [
+    {
+      "id": "mmlu-pro",
+      "version": "Repository f418b116db00b065c2aea046518d8fcf74d39872; HF HEAD observed b189ec765aa7ed75c8acfea42df31fdae71f97be",
+      "depth": "D3",
+      "task_form": "Multiple-choice with category CoT exemplars; backend-dependent prompt/parse/retry",
+      "metric": "Question-count-weighted accuracy; unparsed-answer and retry policies differ by runner",
+      "limitations": "Actual test/validation rows checked, but viewer requests and code loader not revision-pinned. Local/API/APIX source trace only; no model run. Optional retry_wrong uses gold correctness for selection. Component D4 only synthetic parser/scorer.",
+      "sources": [
+        "https://github.com/TIGER-AI-Lab/MMLU-Pro/tree/f418b116db00b065c2aea046518d8fcf74d39872",
+        "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro"
+      ],
+      "case_artifact": "03-benchmark-cases/mmlu-pro-prompts-parsers-and-retries.md"
+    }
+  ],
+  "records": [
+    {
+      "id": "mmlupro-task-protocol-source-trace",
+      "benchmark_id": "mmlu-pro",
+      "depth": "D3",
+      "depth_scope": "Actual test and validation rows, local/API/APIX prompt and scoring paths",
+      "revision": "f418b116db00b065c2aea046518d8fcf74d39872",
+      "source": "https://github.com/TIGER-AI-Lab/MMLU-Pro/tree/f418b116db00b065c2aea046518d8fcf74d39872",
+      "artifact": "03-benchmark-cases/mmlu-pro-prompts-parsers-and-retries.md",
+      "finding": "Backend choice changes examples, limits, extraction, unparsed-answer handling and optional gold-conditioned regeneration. README's retry_wrong=2 example is not ordinary one-shot accuracy.",
+      "limitations": "No model calls or published-score reanalysis. New Gemini shell scripts reference Python files absent from the pinned tree."
+    },
+    {
+      "id": "mmlupro-parser-save-component-probe",
+      "benchmark_id": "mmlu-pro",
+      "depth": "D4",
+      "depth_scope": "Local parser and save_res on synthetic output and a nine-option unparsed record",
+      "revision": "f418b116db00b065c2aea046518d8fcf74d39872",
+      "source": "https://github.com/TIGER-AI-Lab/MMLU-Pro/blob/f418b116db00b065c2aea046518d8fcf74d39872/evaluate_from_local.py",
+      "artifact": "03-benchmark-cases/mmlu-pro-prompts-parsers-and-retries.md",
+      "script": "03-benchmark-cases/mmlupro_parser_probe.py",
+      "output": "03-benchmark-cases/mmlupro-parser-probe-output.json",
+      "finding": "First matching answer phrase can override a later correction; isolated I can be parsed as a choice. Repeated scoring of the same persisted null prediction samples different random guesses.",
+      "limitations": "Only the specified local functions, not every MMLU-Pro harness; actual model prevalence and published-score effects unknown."
+    }
+  ]
+}

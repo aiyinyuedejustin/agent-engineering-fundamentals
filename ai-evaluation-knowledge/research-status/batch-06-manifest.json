@@ -1,0 +1,436 @@
+{
+  "batch": "fifth research increment / batch-06",
+  "snapshot_at_utc": "2026-11-06T04:28:52.725449+00:00",
+  "previous_verified_commit": "d6d852e4d771837b9fa180b5fcd2034651f43886",
+  "scope": "Benchmark catalog through increment11, scoped task/source cases and bounded probes.",
+  "counts": {
+    "generated_at_utc": "2026-11-06T04:28:52.725449+00:00",
+    "stable_artifacts": 199,
+    "models": 77,
+    "benchmarks": 158,
+    "concepts": 23,
+    "result_observations": 342,
+    "sources": 403,
+    "unique_source_urls": 350,
+    "source_statuses": {
+      "partially_read": 338,
+      "discovered": 62,
+      "read": 2,
+      "executed": 1
+    },
+    "evidence": 516,
+    "evidence_depths": {
+      "D1": 412,
+      "D3": 69,
+      "D2": 5,
+      "D4": 30
+    },
+    "catalog_entries": 47,
+    "catalog_depths": {
+      "D3": 14,
+      "D1": 30,
+      "D2": 3
+    },
+    "reviewed_complete_deep_studies": 0,
+    "full_benchmark_reproductions": 0,
+    "model_report_registry_records": 124,
+    "model_report_registry_depths": {
+      "D1": 62,
+      "D0": 62
+    },
+    "original_local_source_records": 2,
+    "runtime_files": 22,
+    "runtime_source_records_added": 28,
+    "runtime_evidence_records_added": 51,
+    "diagnostic_programs": 23,
+    "counted_model_seeds": 65,
+    "model_identity_statuses": {
+      "source_supported_label": 65,
+      "unresolved_reported_condition": 9,
+      "named_voice_model_system": 3
+    },
+    "verbatim_model_system_labels": 85,
+    "result_origins": {
+      "source_reported": 319,
+      "independent_reported": 23
+    },
+    "integrated_model_snapshot": "v12",
+    "benchmark_cases": 21,
+    "benchmark_records_added": 24,
+    "benchmark_increment_counts": {
+      "increment-3-evidence.json": 8,
+      "increment-4-healthbench.json": 2,
+      "increment-5-mmlupro.json": 2,
+      "increment-6-bfcl.json": 2,
+      "increment-7-gdpval.json": 2,
+      "increment-8-mlebench.json": 2,
+      "increment-9-mcpatlas.json": 2,
+      "increment-10-ruler.json": 2,
+      "increment-11-screenspot.json": 2
+    }
+  },
+  "validation": {
+    "benchmark_replays": [
+      {
+        "script": "03-benchmark-cases/livecodebench_k_guard_probe.py",
+        "original_output": "03-benchmark-cases/livecodebench-k-guard-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:42.997745+00:00",
+        "exit_code": 0,
+        "script_sha256": "06ababac08cb2b971e87e52d5bd7a5689b095e092bb518f195b721bc6ec66f6c",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/arc_score_probe.py",
+        "original_output": "03-benchmark-cases/arc-score-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:43.113882+00:00",
+        "exit_code": 0,
+        "script_sha256": "e5e648188f5d22360386cbd00dd7fcdd5a3b95cc1b14218c301a81467f0153e6",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/scicode_skip_probe.py",
+        "original_output": "03-benchmark-cases/scicode-skip-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:43.157230+00:00",
+        "exit_code": 0,
+        "script_sha256": "b9edae8c64eda2cdb6a541e9947ebde7e2f20967170e3f84ad2152229df8df74",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/healthbench_score_probe.py",
+        "original_output": "03-benchmark-cases/healthbench-score-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:43.200528+00:00",
+        "exit_code": 0,
+        "script_sha256": "3ef84779a5992e65b75a291977f1794bf336ec3d03b24c2dfc07906d1b49ece7",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/mmlupro_parser_probe.py",
+        "original_output": "03-benchmark-cases/mmlupro-parser-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:43.351021+00:00",
+        "exit_code": 0,
+        "script_sha256": "10952fabd4d83afc8ac110017866bc99470019c8ed9a9b76eb5318b43fbe87c2",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/bfcl_checker_probe.py",
+        "original_output": "03-benchmark-cases/bfcl-checker-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:43.381927+00:00",
+        "exit_code": 0,
+        "script_sha256": "c301cbabbf16c82233dfcbbb61c814709bec347419bd984e0baa56c422edb620",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/mlebench_grade_probe.py",
+        "original_output": "03-benchmark-cases/mlebench-grade-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:43.422411+00:00",
+        "exit_code": 0,
+        "script_sha256": "67b8b84a147de00807645807cf745ec0a97257016939fe36600ddf7a53416a23",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/mcp_atlas_scoring_probe.py",
+        "original_output": "03-benchmark-cases/mcp-atlas-scoring-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:44.243005+00:00",
+        "exit_code": 0,
+        "script_sha256": "7b45f3f96b8af9d0cc02ff76c78d89a5bada1678b0c9b538653a7d2c5f76a978",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/ruler_contract_probe.py",
+        "original_output": "03-benchmark-cases/ruler-contract-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:44.520082+00:00",
+        "exit_code": 0,
+        "script_sha256": "0905f2bc733fd134c4d235855fdcecd0ff5325b6f8509e23e983102274c15738",
+        "full_json_equal": true
+      },
+      {
+        "script": "03-benchmark-cases/screenspot_contract_probe.py",
+        "original_output": "03-benchmark-cases/screenspot-contract-probe-output.json",
+        "rerun_started_at_utc": "2026-11-06T04:29:44.610817+00:00",
+        "exit_code": 0,
+        "script_sha256": "c1b0fca7633a06176e86ed8accec0e417b59156d00119ee91980dd5d6b087d5d",
+        "full_json_equal": true
+      }
+    ],
+    "model_calls": 0,
+    "judge_calls": 0,
+    "network_calls_in_replays": 0
+  },
+  "files": [
+    {
+      "path": "02-benchmark-landscape/arena-preference-and-agent-signals.md",
+      "sha256": "6fc520e83ad21f18dbd43f192aee560522fd9f8969dd31ce5c467173e6a02418",
+      "bytes": 5392
+    },
+    {
+      "path": "02-benchmark-landscape/benchmark-catalog.json",
+      "sha256": "ee72478ae33a3c683ec48cd3de2d762ef720b8c83e7aba2d701aa1555bf94034",
+      "bytes": 51195
+    },
+    {
+      "path": "02-benchmark-landscape/benchmark-selection-guide.md",
+      "sha256": "6ea2678b457d3fcca710c2dd952c0cd0f67391bb9e78143173c26588bc29e84f",
+      "bytes": 6457
+    },
+    {
+      "path": "02-benchmark-landscape/catalog-increment-3-updates.json",
+      "sha256": "b86bf2c272f1ca46034cb9e013cdb0a4b3bdd10be233d404baa4e5263bd1641f",
+      "bytes": 4142
+    },
+    {
+      "path": "02-benchmark-landscape/increment-10-ruler.json",
+      "sha256": "793c9cd76813a210d8898580f4dc2c5548abd9e4113edc9e5db8d6a1d1963c10",
+      "bytes": 3289
+    },
+    {
+      "path": "02-benchmark-landscape/increment-11-screenspot.json",
+      "sha256": "526beecf52de31f3a851b607f13892bf14ecd871d7225a056b711d71c627d2e9",
+      "bytes": 3261
+    },
+    {
+      "path": "02-benchmark-landscape/increment-3-evidence.json",
+      "sha256": "55ea535ccd8807d26f61130c07ebb06dedc66f1741f3879fe726846711115396",
+      "bytes": 7237
+    },
+    {
+      "path": "02-benchmark-landscape/increment-4-healthbench.json",
+      "sha256": "ba3dc5bf91ffc7ed4c8d0b08458cb18f10d709720d8a61dd80591ff33f7373de",
+      "bytes": 4419
+    },
+    {
+      "path": "02-benchmark-landscape/increment-5-mmlupro.json",
+      "sha256": "b3927595719b3f85c7e908b2a40fe0afd47eef9dfaf0ed763216a6e18344be50",
+      "bytes": 2938
+    },
+    {
+      "path": "02-benchmark-landscape/increment-6-bfcl.json",
+      "sha256": "3b00529be34fdf8b1f071c1e9a4221e8fdb102b2dd11abaed34e51d7308b26a1",
+      "bytes": 2900
+    },
+    {
+      "path": "02-benchmark-landscape/increment-7-gdpval.json",
+      "sha256": "840bb823add90b0ccbd90f1d40a1de1a5f22cc89e73679be66a88f37a2486237",
+      "bytes": 2895
+    },
+    {
+      "path": "02-benchmark-landscape/increment-8-mlebench.json",
+      "sha256": "de19c8859111e7821fa93c3a81c0da2404632eb91b63eab4288bba2c96c5df6c",
+      "bytes": 2904
+    },
+    {
+      "path": "02-benchmark-landscape/increment-9-mcpatlas.json",
+      "sha256": "9e56abd6b6f7fd3f20823f6440220c568f6e0c5c4b202b62e91aa987e2154944",
+      "bytes": 3064
+    },
+    {
+      "path": "02-benchmark-landscape/measurement-contracts-guide.md",
+      "sha256": "67bcd95ed31dc0b8768c12a9be491c1601026a17096e40ac84960a62e0553855",
+      "bytes": 11596
+    },
+    {
+      "path": "03-benchmark-cases/agentdojo-utility-and-attack-outcomes.md",
+      "sha256": "2b0bdf3f1cfeaa0bdde593a277891c203f9316a6ea801c5825a3b01e833f202f",
+      "bytes": 6305
+    },
+    {
+      "path": "03-benchmark-cases/arc-agi-3-scoring-and-context.md",
+      "sha256": "f01f97b566e08cd5f231a34b64cb7e2085b514e32cf773e3407313edfd09f5b7",
+      "bytes": 7627
+    },
+    {
+      "path": "03-benchmark-cases/arc-score-probe-output.json",
+      "sha256": "5de20f010c0ec74a211ba532bfe5e8bc3997bcb1202555128b133a2b8c7065bc",
+      "bytes": 1738
+    },
+    {
+      "path": "03-benchmark-cases/arc_score_probe.py",
+      "sha256": "e5e648188f5d22360386cbd00dd7fcdd5a3b95cc1b14218c301a81467f0153e6",
+      "bytes": 3077
+    },
+    {
+      "path": "03-benchmark-cases/bfcl-checker-probe-output.json",
+      "sha256": "8d40e3316f83537370af3a347213794994987a2e6b886bf6c965037c40939c72",
+      "bytes": 2845
+    },
+    {
+      "path": "03-benchmark-cases/bfcl-v4-distinct-success-events.md",
+      "sha256": "ab41ca2927c7619d871ca233cee865c2260314ca2626343473335862052005ca",
+      "bytes": 10540
+    },
+    {
+      "path": "03-benchmark-cases/bfcl_checker_probe.py",
+      "sha256": "c301cbabbf16c82233dfcbbb61c814709bec347419bd984e0baa56c422edb620",
+      "bytes": 5929
+    },
+    {
+      "path": "03-benchmark-cases/gdpval-artifacts-versions-and-judging.md",
+      "sha256": "1f6ef4d602899f98b5dd6444314b2b773d5c9e38ad85eb24d28a4d15b63c0d0b",
+      "bytes": 9966
+    },
+    {
+      "path": "03-benchmark-cases/healthbench-rubrics-and-professional-protocol.md",
+      "sha256": "7f301038affb9dc6c1e788ceca808a7ef8fe3538ed3179d648e62a473f8d095b",
+      "bytes": 6987
+    },
+    {
+      "path": "03-benchmark-cases/healthbench-score-probe-output.json",
+      "sha256": "f4a048ffa78e1fe07f989c5e0bdeb3dcf552645c76fba6ffc129a32a25319757",
+      "bytes": 986
+    },
+    {
+      "path": "03-benchmark-cases/healthbench_score_probe.py",
+      "sha256": "3ef84779a5992e65b75a291977f1794bf336ec3d03b24c2dfc07906d1b49ece7",
+      "bytes": 3517
+    },
+    {
+      "path": "03-benchmark-cases/livecodebench-k-guard-probe-output.json",
+      "sha256": "18e0d23cefb7f911f8a3b6650536dd0a2df078cfce86d173bc3e4bdf0fb4b505",
+      "bytes": 884
+    },
+    {
+      "path": "03-benchmark-cases/livecodebench-release-and-caller-contract.md",
+      "sha256": "618a6cc2b8113d6276daa755c09ac37c98bf931395a6d1a80dc05b93c04f7a9d",
+      "bytes": 5896
+    },
+    {
+      "path": "03-benchmark-cases/livecodebench_k_guard_probe.py",
+      "sha256": "06ababac08cb2b971e87e52d5bd7a5689b095e092bb518f195b721bc6ec66f6c",
+      "bytes": 3029
+    },
+    {
+      "path": "03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md",
+      "sha256": "03d2650da69071f08919f59c4df1991c061520ec0a90a1edfcb87f08f3dbf547",
+      "bytes": 10333
+    },
+    {
+      "path": "03-benchmark-cases/mcp-atlas-scoring-probe-output.json",
+      "sha256": "860294ea0c5b09415c75d2a72e4c3a3080693e5d93e6fd5b1d1c4fc0fce620fc",
+      "bytes": 2324
+    },
+    {
+      "path": "03-benchmark-cases/mcp_atlas_scoring_probe.py",
+      "sha256": "7b45f3f96b8af9d0cc02ff76c78d89a5bada1678b0c9b538653a7d2c5f76a978",
+      "bytes": 4968
+    },
+    {
+      "path": "03-benchmark-cases/mlebench-grade-probe-output.json",
+      "sha256": "bb1b5ab2e27faa86084ee38ce49ad13b4eabc7884c92c375bbe290c95d68982c",
+      "bytes": 2995
+    },
+    {
+      "path": "03-benchmark-cases/mlebench-splits-medals-and-seeds.md",
+      "sha256": "8a274dd65f6075ce3b55ea7ee9dda244e6f26eaa9501d41e28f8e7e4bce891ef",
+      "bytes": 9813
+    },
+    {
+      "path": "03-benchmark-cases/mlebench_grade_probe.py",
+      "sha256": "67b8b84a147de00807645807cf745ec0a97257016939fe36600ddf7a53416a23",
+      "bytes": 6371
+    },
+    {
+      "path": "03-benchmark-cases/mmlu-pro-prompts-parsers-and-retries.md",
+      "sha256": "012b9682895e0b523bcaed0ce158ac2159cbd226566e06c8618ae249fa076862",
+      "bytes": 6976
+    },
+    {
+      "path": "03-benchmark-cases/mmlupro-parser-probe-output.json",
+      "sha256": "f0dc9638bab80d516d78574098dd17763a65f7abb9cf40ead576638a0bf5eb76",
+      "bytes": 1112
+    },
+    {
+      "path": "03-benchmark-cases/mmlupro_parser_probe.py",
+      "sha256": "10952fabd4d83afc8ac110017866bc99470019c8ed9a9b76eb5318b43fbe87c2",
+      "bytes": 2648
+    },
+    {
+      "path": "03-benchmark-cases/ruler-contract-probe-output.json",
+      "sha256": "bd9b9abe5901ba488713aa23c77e728cdfbd0d3a0993403e26214bed5ec715b0",
+      "bytes": 4484
+    },
+    {
+      "path": "03-benchmark-cases/ruler-versions-generation-and-effective-context.md",
+      "sha256": "4cc6ad37ae8242f5d14c1a56e27d44e9c78a1bdf4e7ebcb6e8f4610f3977f2c4",
+      "bytes": 10070
+    },
+    {
+      "path": "03-benchmark-cases/ruler_contract_probe.py",
+      "sha256": "0905f2bc733fd134c4d235855fdcecd0ff5325b6f8509e23e983102274c15738",
+      "bytes": 7603
+    },
+    {
+      "path": "03-benchmark-cases/scicode-scientific-tests-and-bookkeeping.md",
+      "sha256": "65c0dee1f01e4095e5922121716558924a4a22f0757dcc99b6c20c7efa958635",
+      "bytes": 7510
+    },
+    {
+      "path": "03-benchmark-cases/scicode-skip-probe-output.json",
+      "sha256": "91afebd05bab76d96cd5a7445cde71c81e131cc3c1ffae477e3b1fdb12c4724e",
+      "bytes": 1767
+    },
+    {
+      "path": "03-benchmark-cases/scicode_skip_probe.py",
+      "sha256": "b9edae8c64eda2cdb6a541e9947ebde7e2f20967170e3f84ad2152229df8df74",
+      "bytes": 3710
+    },
+    {
+      "path": "03-benchmark-cases/screenspot-contract-probe-output.json",
+      "sha256": "06ac3591bf866eea03c438149b1bb8174e5a52c5382d03248222549bd9adc48b",
+      "bytes": 13536
+    },
+    {
+      "path": "03-benchmark-cases/screenspot-pro-geometry-and-measurement.md",
+      "sha256": "d81813d7d5d81c51b77f0d623e2ce6e66b6575d4e2cfeaa5bba5a86b7c967cd1",
+      "bytes": 9148
+    },
+    {
+      "path": "03-benchmark-cases/screenspot_contract_probe.py",
+      "sha256": "c1b0fca7633a06176e86ed8accec0e417b59156d00119ee91980dd5d6b087d5d",
+      "bytes": 8022
+    },
+    {
+      "path": "03-benchmark-cases/video-mme-v2-metadata-followup.md",
+      "sha256": "0cf01c1eb0da5d950458ea1c77ba1496a85294afbf9b32f09df5de992437b8ae",
+      "bytes": 2634
+    },
+    {
+      "path": "README.md",
+      "sha256": "a9a504b654c3ff67e771f6980082b59f79523598bc01a55191941ef9c5a2cf48",
+      "bytes": 7014
+    },
+    {
+      "path": "RESUME.md",
+      "sha256": "c3c1c9013e2509b681482d4d825327edc7e52bb7ad5394018d1742fbf4c9358a",
+      "bytes": 2182
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "7759ecc55c936802f0eec0af213c2a0927ef35950fa2f1c061e52ba0cc0d98f8",
+      "bytes": 9674
+    },
+    {
+      "path": "data/benchmarks.csv",
+      "sha256": "05c4cdfe01f2255e3f06d11f0902a8d933acb0afb26162b6756f97b2e516a8b3",
+      "bytes": 87133
+    },
+    {
+      "path": "data/evidence.jsonl",
+      "sha256": "9285c989cbc8049659c96741498734a6ea1715303a4e1f14a5b5342c0a70a7d7",
+      "bytes": 508026
+    },
+    {
+      "path": "data/sources.jsonl",
+      "sha256": "5ec9bfa76a69a1bd787c67eac8b8d895ce04413fa94d2c289a1357a9794ef86b",
+      "bytes": 308331
+    },
+    {
+      "path": "data/validate_indexes.py",
+      "sha256": "135d9b946598387a4963c65c7864cb2eef565921dc8ff920334bc95c9c838bb2",
+      "bytes": 4423
+    },
+    {
+      "path": "research-status/coverage.md",
+      "sha256": "b106e403f7163a0b5a61f03c88d0e791b2fdb3bbe3499579813e46ed882abde8",
+      "bytes": 5037
+    }
+  ]
+}

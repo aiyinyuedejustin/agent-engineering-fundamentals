@@ -1,0 +1,349 @@
+{
+  "scope": "All26 pinned annotation files reanalyzed; original scorer/serial control flow/parallel worker and coordinate transforms tested with synthetic responses. No screenshot pixels inspected, no model or UI executed. Canonical JSON hashes identify parsed data, not original HTTP bytes.",
+  "code_revision": "dbe00114bc53a32c61c1a267786da85967710da8",
+  "data_revision": "210e78d3844251110bff86c95835ebd37a6930fa",
+  "source_sha256": {
+    "screenspot-eval.py": "db8006975c5ed1888e8ab49aa629a6aa3dedd2998e86f16a5693f8f3fa7f79da",
+    "screenspot-eval-parallel.py": "696b3242e0a9277a445a80e54f4147d42e2764e28b1006d41759e0ff86191a2e",
+    "screenspot-narrowing.py": "59fb531fb4d4a5e2cec626bf042fc9993e2eb471375ba469940165aec6923428"
+  },
+  "annotation_statistics": {
+    "rows": 1581,
+    "unique_ids": 1581,
+    "unique_image_paths": 1581,
+    "ui_types": {
+      "icon": 604,
+      "text": 977
+    },
+    "platforms": {
+      "macos": 604,
+      "windows": 927,
+      "linux": 50
+    },
+    "groups": {
+      "Dev": 299,
+      "CAD": 261,
+      "Creative": 341,
+      "Scientific": 254,
+      "Office": 230,
+      "OS": 196
+    },
+    "mean_target_area_percent": 0.06508412192199409,
+    "median_target_area_percent": 0.035493827160493825,
+    "target_area_below_0_1_percent": 1321,
+    "per_type": {
+      "icon": {
+        "count": 604,
+        "mean_area_percent": 0.030775365220055178,
+        "median_area_percent": 0.013671875
+      },
+      "text": {
+        "count": 977,
+        "mean_area_percent": 0.08629444848081815,
+        "median_area_percent": 0.06521990740740741
+      }
+    },
+    "invalid_box_count": 1,
+    "invalid_box_task_ids": [
+      "inventor_windows_60"
+    ],
+    "source_files": [
+      {
+        "path": "annotations/android_studio_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/android_studio_macos.json",
+        "rows": 80,
+        "canonical_json_sha256": "55dc73b5fb20223d586a7e64e8d289538aa9dd6d87779c144d99d706e3f49a0d"
+      },
+      {
+        "path": "annotations/autocad_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/autocad_windows.json",
+        "rows": 34,
+        "canonical_json_sha256": "7d1a385d3d48bc281e8699238c6379e6989ef71b1cdee37481243d182783dcbe"
+      },
+      {
+        "path": "annotations/blender_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/blender_windows.json",
+        "rows": 71,
+        "canonical_json_sha256": "7005a9b8e712daffcf4eb1649e0ab809e5c9722077e733a839244dc5da06a514"
+      },
+      {
+        "path": "annotations/davinci_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/davinci_macos.json",
+        "rows": 44,
+        "canonical_json_sha256": "34997a8fa8f08b963b372c46f2e6b43c2c30e1fdf6539c75c5ca1baf3235b9b5"
+      },
+      {
+        "path": "annotations/eviews_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/eviews_windows.json",
+        "rows": 50,
+        "canonical_json_sha256": "de33dd041fcbd1b608f601c449e56d8c0fc91126c470a06a6c40a47841a9dd68"
+      },
+      {
+        "path": "annotations/excel_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/excel_macos.json",
+        "rows": 64,
+        "canonical_json_sha256": "3f13d83c421de399eb269401157c2ded601da363b4a146946549930f67b74950"
+      },
+      {
+        "path": "annotations/fruitloops_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/fruitloops_windows.json",
+        "rows": 57,
+        "canonical_json_sha256": "64ac20b3784d20f80de614050a4b96c6b15da276cde90ba00b4fc3595a2367a4"
+      },
+      {
+        "path": "annotations/illustrator_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/illustrator_windows.json",
+        "rows": 31,
+        "canonical_json_sha256": "b9a9ef7ab007e6b15967ab30ede774f92446e7041d00d8e9a7d32c2e8aff2206"
+      },
+      {
+        "path": "annotations/inventor_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/inventor_windows.json",
+        "rows": 70,
+        "canonical_json_sha256": "99d6cd61d2b7e1ad9a3c1b85dccca5c47e7123be454480d2dcf2d8d3c7914e16"
+      },
+      {
+        "path": "annotations/linux_common_linux.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/linux_common_linux.json",
+        "rows": 50,
+        "canonical_json_sha256": "0ae249ef08478d9363f015429bb5506edf1d8dd5d7930c3610b4e7caa758663a"
+      },
+      {
+        "path": "annotations/macos_common_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/macos_common_macos.json",
+        "rows": 65,
+        "canonical_json_sha256": "0d7456cf75ab3d026f1c1266aa268a557afab3970e30349b7700ca46b5f48de5"
+      },
+      {
+        "path": "annotations/matlab_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/matlab_macos.json",
+        "rows": 93,
+        "canonical_json_sha256": "ef53556bbaa7ddca3104fde101355b1287e846750556565516bed79ab7d4f3fd"
+      },
+      {
+        "path": "annotations/origin_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/origin_windows.json",
+        "rows": 62,
+        "canonical_json_sha256": "da25cae73dcca1597214297042d9bcffe66c1fc5eb066ee13e276b06be94f6a2"
+      },
+      {
+        "path": "annotations/photoshop_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/photoshop_windows.json",
+        "rows": 51,
+        "canonical_json_sha256": "21b6a5aa5de81bbe96d8b4edc22833694efcbd3898d8cd39dce73de06d6c12b6"
+      },
+      {
+        "path": "annotations/powerpoint_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/powerpoint_windows.json",
+        "rows": 82,
+        "canonical_json_sha256": "5be294bef2848a4c8eb59c8cd15c0d9982fbf6c43fe951748628465a032db2f9"
+      },
+      {
+        "path": "annotations/premiere_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/premiere_windows.json",
+        "rows": 52,
+        "canonical_json_sha256": "a3fe75727b93152a1f1d36c73eb2444c8391dcc6b177ed95b60c463da90360da"
+      },
+      {
+        "path": "annotations/pycharm_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/pycharm_macos.json",
+        "rows": 78,
+        "canonical_json_sha256": "12f9bccaedaeb5468cb0039a844777da9b44b5ae82ebd93846ceccce0f09f14d"
+      },
+      {
+        "path": "annotations/quartus_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/quartus_windows.json",
+        "rows": 45,
+        "canonical_json_sha256": "8b9c57872cf7e78f5159c710cb4718a8f75845a6844d3176d388b0faa3abd980"
+      },
+      {
+        "path": "annotations/solidworks_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/solidworks_windows.json",
+        "rows": 77,
+        "canonical_json_sha256": "9f68b175b5f87595e778ca01044eba56f28001224e440a1c46bbe2b1ded41983"
+      },
+      {
+        "path": "annotations/stata_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/stata_windows.json",
+        "rows": 49,
+        "canonical_json_sha256": "bc2b26f8eeae4fb6a76bd876b89be7cd9477de31a65fe5a4d2ba9202a277c69f"
+      },
+      {
+        "path": "annotations/unreal_engine_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/unreal_engine_windows.json",
+        "rows": 35,
+        "canonical_json_sha256": "63837969e2002cbeb6bd9c8ae1f7419a37a211fbab5cfbc63c519a3d5b408390"
+      },
+      {
+        "path": "annotations/vivado_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/vivado_windows.json",
+        "rows": 80,
+        "canonical_json_sha256": "61e5068137d6eeed7c74b424334d9e6e5cf9f3172ecd08baf01c60bd312b69fb"
+      },
+      {
+        "path": "annotations/vmware_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/vmware_macos.json",
+        "rows": 41,
+        "canonical_json_sha256": "35c4fdee549e839b74d86d9bb94bc473bc7f0d03f4960021617ed457b07ef9a6"
+      },
+      {
+        "path": "annotations/vscode_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/vscode_macos.json",
+        "rows": 55,
+        "canonical_json_sha256": "ad7da689531a38b3b6de1cb3e62186c7b1943e0ac05aab4c153e0db9cc77b10c"
+      },
+      {
+        "path": "annotations/windows_common_windows.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/windows_common_windows.json",
+        "rows": 81,
+        "canonical_json_sha256": "bf3670182927f4b98bd3e5c5c10505efe2b78361465b042b6d34c553513d65d8"
+      },
+      {
+        "path": "annotations/word_macos.json",
+        "source": "https://huggingface.co/datasets/likaixin/ScreenSpot-Pro/raw/210e78d3844251110bff86c95835ebd37a6930fa/annotations/word_macos.json",
+        "rows": 84,
+        "canonical_json_sha256": "15a47c64d2f7cf6a4238b7d9edbd0eb68beea80b827cd276af6d194dd653bb7e"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "annotation file count",
+      "observed": 26,
+      "expected": 26
+    },
+    {
+      "name": "actual task row count",
+      "observed": 1581,
+      "expected": 1581
+    },
+    {
+      "name": "task IDs unique",
+      "observed": 1581,
+      "expected": 1581
+    },
+    {
+      "name": "image paths unique",
+      "observed": 1581,
+      "expected": 1581
+    },
+    {
+      "name": "normalized point inside pixel gold box",
+      "observed": "correct",
+      "expected": "correct"
+    },
+    {
+      "name": "box boundary included",
+      "observed": "correct",
+      "expected": "correct"
+    },
+    {
+      "name": "unconverted pixel point fails",
+      "observed": "wrong",
+      "expected": "wrong"
+    },
+    {
+      "name": "missing point is wrong format",
+      "observed": "wrong_format",
+      "expected": "wrong_format"
+    },
+    {
+      "name": "positive scorer ignores conflicting negative label",
+      "observed": "correct",
+      "expected": "correct"
+    },
+    {
+      "name": "format errors remain in overall denominator",
+      "observed": 0.3333333333333333,
+      "expected": 0.3333333333333333
+    },
+    {
+      "name": "text/icon macro average would differ",
+      "observed": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "empty group reports zero",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "lang output does not satisfy language filter",
+      "observed": 0,
+      "expected": 0
+    },
+    {
+      "name": "all styles cause three inference calls",
+      "observed": 3,
+      "expected": 3
+    },
+    {
+      "name": "English style expansion reuses same instruction",
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "serial all-types route uses last task type for both",
+      "observed": [
+        "negative",
+        "negative"
+      ],
+      "expected": [
+        "negative",
+        "negative"
+      ]
+    },
+    {
+      "name": "stored sample types still differ despite shared route",
+      "observed": [
+        "positive",
+        "negative"
+      ],
+      "expected": [
+        "positive",
+        "negative"
+      ]
+    },
+    {
+      "name": "parallel worker routes each task's own type",
+      "observed": [
+        "positive",
+        "negative"
+      ],
+      "expected": [
+        "positive",
+        "negative"
+      ]
+    },
+    {
+      "name": "crop-local box maps through parent viewport",
+      "observed": [
+        0.25,
+        0.125,
+        0.75,
+        0.625
+      ],
+      "expected": [
+        0.25,
+        0.125,
+        0.75,
+        0.625
+      ]
+    },
+    {
+      "name": "crop center is not global center",
+      "observed": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "expected": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    }
+  ]
+}

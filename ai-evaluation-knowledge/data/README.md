@@ -2,7 +2,7 @@
 
 All CSV files use UTF-8, comma separation, one header row, and standard CSV quoting. Empty cells mean unknown/unverified, not zero or false. Multi-value ID and modality fields use semicolons. JSONL files contain one JSON object per line and no enclosing array. Empty JSONL files are intentionally valid empty indexes.
 
-**Current records:** the fourth reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
+**Current records:** the fifth reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
 
 ## Stable identifiers
 
@@ -34,6 +34,7 @@ One row per identified benchmark/protocol version. Required: `benchmark_id`, `ca
 - `version`, `domain`, `task_type`, `modalities`, `split`, `metric`, `metric_direction`: verified protocol descriptors.
 - `official_url`, `paper_url`, `repository_url`, `dataset_url`: discovered source URLs.
 - `case_study_path`: relative path to the substantive local case artifact, when present.
+- `catalog_depth`: the catalog author’s scoped overall inspection depth for representative entries, kept separate from the highest linked claim `depth`. A component D4 does not promote catalog depth or establish whole-benchmark reproduction. Empty for report-only protocols outside the catalog.
 - `deep_study_review`: `not_started`, `in_progress`, `reviewed_complete`, or `needs_review`. This is not inferred merely from depth or file existence.
 - `status`: `candidate`, `documented`, `implementation_inspected`, `source_traced`, `experimented`, or `needs_review`.
 

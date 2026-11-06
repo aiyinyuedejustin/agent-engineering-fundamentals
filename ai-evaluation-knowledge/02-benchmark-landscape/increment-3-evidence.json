@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Original analysis evidence records; component experiments are not full benchmark reproductions",
+  "records": [
+    {
+      "id": "agentdojo-task-source-trace",
+      "benchmark_id": "agentdojo",
+      "depth": "D3",
+      "depth_scope": "One v1 workspace task, its environment and task-level execution/assessment flow",
+      "revision": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+      "source": "https://github.com/ethz-spylab/agentdojo/tree/089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+      "artifact": "03-benchmark-cases/agentdojo-utility-and-attack-outcomes.md",
+      "finding": "Normal-task utility and attacker-goal success have separate semantics. Security booleans also have no-attack and error-branch defaults, so they cannot all be read as observed malicious actions.",
+      "limitations": "No attack or tool execution. v1 task semantics not assumed for later task versions."
+    },
+    {
+      "id": "video-mme-v2-real-metadata-followup",
+      "benchmark_id": "video-mme-v2",
+      "depth": "D2",
+      "depth_scope": "Four complete actual metadata rows and previously traced evaluation code; no media inspection",
+      "revision": "code b2834bd4091d6234ccaf0fa1f149a7ef4eac5875; dataset revision unpinned",
+      "source": "https://datasets-server.huggingface.co/rows?dataset=MME-Benchmarks%2FVideo-MME-v2&config=default&split=test&offset=0&length=4",
+      "artifact": "03-benchmark-cases/video-mme-v2-metadata-followup.md",
+      "finding": "Four related question rows have separate question/options columns and differing level labels; group-level and question-level classification use different units.",
+      "limitations": "No video downloaded or watched. No model evaluation. Task text and answers not republished."
+    },
+    {
+      "id": "livecodebench-passk-caller-probe",
+      "benchmark_id": "livecodebench",
+      "depth": "D4",
+      "depth_scope": "Isolated source-function experiment on synthetic all-failing ten-sample inputs; overall benchmark depth remains D1",
+      "revision": "28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24",
+      "source": "https://github.com/LiveCodeBench/LiveCodeBench/blob/28fef95ea8c9f7a547c8329f2cd3d32b92c1fa24/lcb_runner/evaluation/compute_scores.py",
+      "artifact": "03-benchmark-cases/livecodebench-release-and-caller-contract.md",
+      "script": "03-benchmark-cases/livecodebench_k_guard_probe.py",
+      "output": "03-benchmark-cases/livecodebench-k-guard-probe-output.json",
+      "finding": "Auxiliary caller evaluates k beyond available samples without the main path's n>=k guard, producing misleading ones on the synthetic invalid-domain inputs.",
+      "limitations": "Not a model result, not the guarded main evaluator, not evidence that published scores use invalid inputs."
+    },
+    {
+      "id": "arena-method-and-signal-version-audit",
+      "benchmark_id": "agent-arena",
+      "depth": "D1",
+      "revision": "Signal definitions 2026-10-12; methodology page updated 2026-10-15",
+      "source": "https://arena.ai/resources/agent-arena-signals",
+      "additional_sources": [
+        "https://arena.ai/blog/agent-arena-methodology",
+        "https://arena.ai/faq/",
+        "https://arena.ai/blog/style-control",
+        "https://arena.ai/blog/factuality-in-arena"
+      ],
+      "artifact": "02-benchmark-landscape/arena-preference-and-agent-signals.md",
+      "finding": "Updated deployment signals have distinct event units and missingness rules; current production method explicitly treats orchestrator-only K=1, unlike pairwise preference ratings.",
+      "limitations": "No production implementation, assignment logs or user-trace audit; exact classifier and weighting parameters unavailable."
+    },
+    {
+      "id": "arc-agi-3-source-protocol-audit",
+      "benchmark_id": "arc-agi-3",
+      "depth": "D1",
+      "depth_scope": "Overall D1 because real game frame/full metadata missing; detailed harness/scorer source trace is included",
+      "revision": "harness 353d38be471395b5ae47dbb44df95440677397e1; toolkit f12822c4d550121c35a275008d964afbbed47d2f",
+      "source": "https://github.com/arcprize/arc-agi-3-benchmarking/tree/353d38be471395b5ae47dbb44df95440677397e1",
+      "artifact": "03-benchmark-cases/arc-agi-3-scoring-and-context.md",
+      "finding": "The inspected official harness renders integer-grid text rather than image inputs. State retention, action budgets and operation mode are separate comparison conditions.",
+      "limitations": "No API key, online scorecard, game download or game execution; server scorer not audited."
+    },
+    {
+      "id": "arc-agi-3-arithmetic-component-probe",
+      "benchmark_id": "arc-agi-3",
+      "depth": "D4",
+      "depth_scope": "Isolated arithmetic class and run-list property, synthetic inputs only",
+      "revision": "f12822c4d550121c35a275008d964afbbed47d2f",
+      "source": "https://github.com/arcprize/ARC-AGI/blob/f12822c4d550121c35a275008d964afbbed47d2f/arc_agi/scorecard.py",
+      "artifact": "03-benchmark-cases/arc-agi-3-scoring-and-context.md",
+      "script": "03-benchmark-cases/arc_score_probe.py",
+      "output": "03-benchmark-cases/arc-score-probe-output.json",
+      "finding": "Squared efficiency, level weighting and completion cap are reproduced. The local multi-run property chooses maximum score, not mean.",
+      "limitations": "No valid game trajectory claimed for guard fixtures; local multi-run property not generalized to competition server."
+    },
+    {
+      "id": "scicode-scientific-task-source-trace",
+      "benchmark_id": "scicode",
+      "depth": "D3",
+      "depth_scope": "Real fixed task fixture and recommended Inspect generation/scoring path",
+      "revision": "e3158ea011d4235245a547460d3688d7ccbf9900",
+      "source": "https://github.com/scicode-bench/SciCode/tree/e3158ea011d4235245a547460d3688d7ccbf9900",
+      "artifact": "03-benchmark-cases/scicode-scientific-tests-and-bookkeeping.md",
+      "finding": "Problem 77 combines numerical targets and scientific trajectory checks across dependent generated functions. Recommended and deprecated paths differ in bookkeeping and caches.",
+      "limitations": "HDF5 targets not fetched, live HF revision unpinned, no candidate/model execution."
+    },
+    {
+      "id": "scicode-skipped-step-component-probe",
+      "benchmark_id": "scicode",
+      "depth": "D4",
+      "depth_scope": "Original evaluator class on synthetic metadata and cached pass labels, subprocess trapped",
+      "revision": "e3158ea011d4235245a547460d3688d7ccbf9900",
+      "source": "https://github.com/scicode-bench/SciCode/blob/e3158ea011d4235245a547460d3688d7ccbf9900/eval/inspect_ai/scicode.py",
+      "artifact": "03-benchmark-cases/scicode-scientific-tests-and-bookkeeping.md",
+      "script": "03-benchmark-cases/scicode_skip_probe.py",
+      "output": "03-benchmark-cases/scicode-skip-probe-output.json",
+      "finding": "Provided-context steps skipped from execution remain in total_steps, so all tested steps passing can still yield problem_correct=0 in the pinned branch.",
+      "limitations": "Synthetic step counts not claimed to match real tasks; no inference about published-score impact or prevalence."
+    }
+  ]
+}

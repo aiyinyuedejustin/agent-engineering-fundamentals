@@ -26,6 +26,7 @@ for row in results:
  check(row['model_id'] in mi,'Unknown result model');check(row['benchmark_id'] in bi,'Unknown result benchmark')
  check(row['comparability_status'] in ['unassessed','protocol_matched','partially_matched','not_comparable'],'Bad comparability state')
 for row in benchmarks:
+ if row.get('catalog_depth'):check(row['catalog_depth'] in ['D0','D1','D2','D3'],'Catalog depth incorrectly promoted from a component experiment')
  if row.get('parent_benchmark_id'):check(row['parent_benchmark_id'] in bi,'Unknown parent benchmark')
  if row.get('case_study_path'):check((ROOT/row['case_study_path']).is_file(),'Missing case study '+row['case_study_path'])
 for row in evidence:

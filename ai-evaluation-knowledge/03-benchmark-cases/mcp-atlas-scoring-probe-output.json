@@ -1,0 +1,93 @@
+{
+  "revision": "e3dfef3ce93287c3d7b9e765c3a021f252eefbff",
+  "source_sha256": "33d5159cd1b1df9ff63f0918998d6fced812c5e3362cba1b993efafc571d0f85",
+  "pandas_version": "2.2.3",
+  "scope": "Synthetic scorer control-flow and dataframe experiments; all judge responses mocked. No model, MCP server, tool action, live judge or leaderboard reproduction.",
+  "checks": [
+    {
+      "name": "fulfilled plus partial mean",
+      "observed": 0.75,
+      "expected": 0.75
+    },
+    {
+      "name": "reported zero confidence does not reduce score",
+      "observed": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "failed judge claim becomes zero while remaining in denominator",
+      "observed": 0.5,
+      "expected": 0.5
+    },
+    {
+      "name": "no claims with nonempty response yields None",
+      "observed": null,
+      "expected": null
+    },
+    {
+      "name": "short claims discarded by extraction",
+      "observed": [
+        "long enough"
+      ],
+      "expected": [
+        "long enough"
+      ]
+    },
+    {
+      "name": "Python-list claim string accepted",
+      "observed": [
+        "First synthetic claim",
+        "Second synthetic claim"
+      ],
+      "expected": [
+        "First synthetic claim",
+        "Second synthetic claim"
+      ]
+    },
+    {
+      "name": "error response scored zero rather than excluded",
+      "observed": 0.0,
+      "expected": 0.0
+    },
+    {
+      "name": "no-claims row remains unscored",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "name": "stats retain three total rows",
+      "observed": 3,
+      "expected": 3
+    },
+    {
+      "name": "stats denominator excludes one None score",
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "conditional pass rate differs from planned-task rate",
+      "observed": 50.0,
+      "expected": 50.0
+    },
+    {
+      "name": "clean_runs double subtraction can be negative",
+      "observed": -1,
+      "expected": -1
+    },
+    {
+      "name": "inner join drops task lacking model row",
+      "observed": 1,
+      "expected": 1
+    },
+    {
+      "name": "duplicate output IDs produce duplicate scoring rows",
+      "observed": 2,
+      "expected": 2
+    },
+    {
+      "name": "duplicated rows still represent one unique task",
+      "observed": 1,
+      "expected": 1
+    }
+  ]
+}
