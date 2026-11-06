@@ -1,0 +1,9 @@
+{
+  "README.md": "76182c2be34415e5d4ba937e625a6b9a463c253d04b8596db1c226774d6b359a",
+  "data/code-evidence.json": "4d42b3f8e52a6c55f8b8e4818376da5cab0a1e403b2e2c387cf6d19002cd9979",
+  "experiments/vlmevalkit-video-adapter/README.md": "05af05a882fa8712f9fa05b725a5868e8b73e2d89a4693bbf38cbbbbc38c9d45",
+  "experiments/vlmevalkit-video-adapter/fetch_inputs.py": "2a742a10dc3dd5dcc3bb0d7dc1f10aff95fc8baed4d6594a36e3c118b7ae473b",
+  "experiments/vlmevalkit-video-adapter/probe.py": "2c24a1bbd75a2d6fb9608d71320308b3183d95474240082f455120c4bc3d1611",
+  "experiments/vlmevalkit-video-adapter/results.json": "ed265050526884c0560394f853c04753ac3cecb0654c13bd99767284eec12c24",
+  "experiments/vlmevalkit-video-adapter/source-manifest.json": "cb9af012e40e87a6e5bdae7617e7d6bd1d66f52acc439572d8efa1fdd2048344"
+}

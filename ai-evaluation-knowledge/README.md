@@ -1,72 +1,42 @@
 # AI 评测基础设施研究知识库
 
-这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前内容是第三批可审阅成果，不是完成版综述，也不是模型总榜。
+这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前是第四批可审阅成果，不是完成版综述，也不是模型总榜。
 
-**继续研究从这里开始：** [RESUME.md](RESUME.md)、[方法与证据等级](methodology.md)、[覆盖情况](research-status/coverage.md)、[数据索引规范](data/README.md)。
+**继续研究从这里开始：** [RESUME.md](RESUME.md)、[方法与证据等级](methodology.md)、[实际覆盖](research-status/coverage.md)、[索引规范](data/README.md)。
 
 ## 当前实际完成的内容
 
-截至 2026-11-06 第三批集成快照：
+- **65 个经语义去重的模型/训练变体种子**，只表示报告支持的身份区分，不表示核验了 65 个不同权重文件。中央模型表共 **77 条记录**，另保留 3 个具名语音/委派系统与 9 个身份未决的报告条件，不把它们算入 65。
+- **342 个 D1 原文数值观测**，来自最新模型数据快照 v12；其中 23 条来源明确是独立评测方或 benchmark 作者。全部仍未由本项目复现，且可比性未判定。
+- **46 个代表性 benchmark 目录条目**。加上报告中需要单列的版本、内部评测和历史协议，中央索引有 **158 个 benchmark/协议记录**，不能把它们当作 158 个深度研究。
+- **8 篇 benchmark 案例**、5 篇基础设施文章、完整的 22 文件 runtime 专题、5 篇评测科学正文及评分执行链/审查清单。
+- **13 个已实际执行的局部诊断程序**。模型代码部分包含 gpt-oss、VLMEvalKit、Ovis 和 HLE 的合成组件探针；它们没有运行模型或重现公开分数。
+- 中央索引共有 **364 个来源记录、311 个不同外部来源 URL、491 条证据、23 个概念**。来源记录包含 62 个 D0 候选和 2 个原创本地实验，不能理解为读完了 364 份独立报告。
 
-- **46 个代表性 benchmark 目录条目**，不是 46 个深度复现。加上报告中需要单独区分的版本/协议，中央索引共有 **65 个 benchmark/协议记录**。
-- **18 个明确模型/训练变体名称**，来自已读报告中的结果。推理模式、Kimi Agent Swarm 与 Step PaCoRe 没有被当成额外模型；明确不同训练阶段的变体保持区分。
-- **99 个 D1 原文报告数值观测**，保留 harness、任务子集、工具、预算和聚合差异。没有独立复现这些分数。
-- **8 篇 benchmark 案例**：6 篇选定源码路径分析，加上 LongBench v2、Video-MME-v2 的协议审查。后两者缺完整真实数据/媒体任务，整体保守保留 D1；局部 scorer 实验单独记录。
-- **5 篇基础设施文章与 22 个 runtime 文件**，增加 OpenHands/ACP、multi-step、模拟用户、故障实验、风险登记和选型指南。
-- **5 篇评测科学正文**、评分执行链、审查清单及 **10 个局部实验程序**。包括 gpt-oss 组件、IFEval loose、Video-MME-v2 grouped scoring、真实 Linux mmap，以及两组自写 runtime/传输机制实验。
-- 中央索引有 **331 个来源记录、278 个不同外部来源 URL、242 条证据、23 个概念**。来源记录包含 2 个本地原创实验、只发现未读的候选与共用官方索引入口，不能把这些数字理解为读完了 331 份独立报告。
+**完整模型/benchmark 复现数量仍为 0。** 完整深度研究检查表尚未签核，不把局部源码分析冒充 50 个已完成深度研究。200+ 模型种子与五小时以上持续研究要求也没有宣称完成；等待上传不是研究活动。
 
-**没有完成完整 benchmark/model 运行。** D4 仅指已实际执行的局部函数、模拟控制流程或合成统计实验。完整深度研究检查表尚未签核，因此不把现有案例冒充 50 个已完成深度研究。
+## 本批模型阅读入口
 
-## 优先阅读
+- [最新快照 v12](01-model-landscape/snapshots/v12/README.md)：124 个来源/报告候选，62 D1、62 D0；342 个 D1 数值观测。
+- [模型身份审查](01-model-landscape/audits/model-identities-v9.md)及[后续 22 个标签](01-model-landscape/audits/model-identities-v12-additions.json)：85 个原始标签不等于 85 个模型。
+- [报告笔记 v3](01-model-landscape/snapshots/v3/report-reading-notes-v3.md)、[音频/翻译 v5](01-model-landscape/snapshots/v5/report-reading-notes-v5.md)、[Kimi v7](01-model-landscape/snapshots/v7/report-reading-notes-v7.md)、[独立评测 v9](01-model-landscape/snapshots/v9/report-reading-notes-v9.md)、[多模态 v11](01-model-landscape/snapshots/v11/report-reading-notes-v11.md)、[同权重与版本更新 v12](01-model-landscape/snapshots/v12/report-reading-notes-v12.md)。
+- [VLMEvalKit 视频适配器](01-model-landscape/snapshots/v4/experiments/vlmevalkit-video-adapter/README.md)、[Ovis 预处理](01-model-landscape/snapshots/v8/experiments/ovis-preprocessing/README.md)、[HLE simple runner](01-model-landscape/snapshots/v10/experiments/hle-statistics/README.md)：分别 18、19、25 个合成组件探针，集成时独立重放结果完全一致。
 
-1. [有效性与评测设计](06-evaluation-science/01-validity-and-evaluation-design.md)：先定义决策、任务与可观察成功条件。
-2. [评分器与指标](06-evaluation-science/02-grading-and-metrics.md)：分清答案正确、解析成功、有效分母和 pass@k。
-3. [BrowseComp reference evaluator](03-benchmark-cases/browsecomp-reference-evaluator.md)：一个小 parser contract 可以改变整条计分链。
-4. [Harbor 执行链](05-agent-runtime/harbor-source-trace.md)：agent、environment、trial、verifier 是不同对象。
-5. [隔离与部署](04-infrastructure/01-isolation-is-not-deployment.md)及[资源预算](04-infrastructure/03-resource-budgets-change-the-test.md)：相同配置文字未必等于相同执行条件。
-6. [模型报告快照 v2](01-model-landscape/snapshots/v2/README.md)：94 个来源/报告候选中 26 个达到所标范围的 D1，其余 68 个仍为 D0。v1 保留为历史快照。
+推理模式、Agent Swarm、PaCoRe、量化与同权重 deployment 条件保留在具体观测中。Rosalind 6 与 Astra 的同权重关系不表示评测设置或结果等价；Cyber 的额外训练、Sol/Luna 的月份版本不能被抹掉。第三方产品使用“GPT-4o”标签，也不自动证明它是 OpenAI 的对应模型。
 
-## 本批新增入口
+## 建议阅读顺序
 
-- [Runtime 选型与验收](05-agent-runtime/runtime-selection-and-validation.md)、[OpenHands 状态与远端链](05-agent-runtime/openhands-state-and-remote-trace.md)、[ACP 黑箱代理](05-agent-runtime/acp-black-box-agent-trace.md)。
-- [多步任务与模拟用户](05-agent-runtime/harbor-multi-step-and-simulated-user.md)、[本地机制实验](05-agent-runtime/mock-conformance-lab.md)、[传输故障实验](05-agent-runtime/transport-fault-lab.md)。两组实验分别为 30 和 27 个重复断言通过，不是 57 个不同任务，也不是上游框架复现。
+1. [有效性与评测设计](06-evaluation-science/01-validity-and-evaluation-design.md)：定义问题、任务与成功条件。
+2. [评分器与指标](06-evaluation-science/02-grading-and-metrics.md)：答案、解析、分母和 pass@k。
+3. [BrowseComp evaluator](03-benchmark-cases/browsecomp-reference-evaluator.md)：沿完整计分接口找证据边界。
+4. [Runtime 选型与验收](05-agent-runtime/runtime-selection-and-validation.md)：比较模型、scaffold 与 provider 是不同问题。
+5. [隔离与部署](04-infrastructure/01-isolation-is-not-deployment.md)、[快照/reset](04-infrastructure/04-snapshot-and-reset-contracts.md)：恢复对象与外部副作用必须明确。
+6. [统计比较](06-evaluation-science/03-statistics-and-comparisons.md)、[judge 可靠性](06-evaluation-science/04-judge-reliability.md)、[污染与生命周期](06-evaluation-science/05-leakage-and-benchmark-lifecycle.md)。
 
-此前已发布入口：
+## 目录与证据
 
-- [IFEval 的 loose 语义](03-benchmark-cases/ifeval-verifiable-instructions.md)与[Video-MME-v2 的组分](03-benchmark-cases/video-mme-v2-grouped-scoring.md)。
-- [Firecracker 快照契约](04-infrastructure/04-snapshot-and-reset-contracts.md)与[Kubernetes 生命周期](04-infrastructure/05-kubernetes-lifecycle-source-trace.md)。
-- [Inspect bridge 与轨迹](05-agent-runtime/inspect-bridge-and-trajectory.md)、[远程执行契约](05-agent-runtime/remote-execution-contract.md)、[mini-SWE-agent](05-agent-runtime/coding-runtime-source-trace.md)。
-- [统计比较](06-evaluation-science/03-statistics-and-comparisons.md)、[judge 可靠性](06-evaluation-science/04-judge-reliability.md)、[污染与 benchmark 生命周期](06-evaluation-science/05-leakage-and-benchmark-lifecycle.md)。
+`01-model-landscape/` 保存报告、身份审查、数值观察和组件实验；`02-benchmark-landscape/` 是代表性目录；`03-benchmark-cases/` 是任务/源码案例；`04-infrastructure/` 研究环境与执行；`05-agent-runtime/` 研究控制、轨迹、恢复与传输；`06-evaluation-science/` 研究测量有效性。当前公开的 `07–09` 仍是待集成的盲点、学习和架构入口。
 
-## 目录
+D0 是候选发现；D1 是明确范围的报告/文档阅读；D2 是真实任务、配置或关键实现；D3 是具体源码执行链；D4 是保留实际结果的实验。等级只适用于该条证据。D3 不表示已运行，局部 D4 不表示完整复现，模型报告分数不是本项目跑分。
 
-| 路径 | 内容 |
-|---|---|
-| `01-model-landscape/` | 模型报告、来源登记和报告数值观察 |
-| `02-benchmark-landscape/` | 代表性 benchmark 目录与版本边界 |
-| `03-benchmark-cases/` | 真实任务、配置、评分器和源码路径案例 |
-| `04-infrastructure/` | 隔离、部署、资源、生命周期与局部测试 |
-| `05-agent-runtime/` | agent loop、trial、环境接口与日志/产物契约 |
-| `06-evaluation-science/` | 有效性、评分、统计与实际局部实验 |
-| `07-unknown-unknowns/` | 尚未系统填充的盲点与开放问题 |
-| `08-learning-path/` | 待从已核验证据形成的学习路线 |
-| `09-architecture-decisions/` | 待审阅的架构方案与权衡，尚无已接受架构 |
-| `data/` | 模型、benchmark、结果、概念、来源与证据索引 |
-| `research-status/` | 实际覆盖、验证范围与下一步 |
-
-## 证据等级
-
-- D0：发现候选，未核验实质内容。
-- D1：已读官方报告、论文或文档的明确范围。
-- D2：已读真实任务、配置或关键实现。
-- D3：已跟踪具体源码执行路径。
-- D4：已实际执行实验，并保留设置、结果与限制。
-
-等级用于**具体证据范围**。D3 不表示已运行；局部 D4 不表示完整 benchmark 复现；模型报告分数不是本项目跑分。中央实体的 depth 仅为已关联证据的最高等级，不是该实体所有属性的统一可信度。
-
-## 长期目标与限制
-
-目标仍是 200+ 可追溯模型种子与 50 个实质性 benchmark 深度研究，不按别名、配置或占位文件凑数。五小时以上持续研究要求仍未宣称完成；以实际研究活动和产物为准，不用等待时间替代工作。
-
-成果持续发布在 `aiyinyuedejustin/agent-engineering-fundamentals` 的独立 `ai-evaluation-knowledge/` 目录。只发布审阅后的原创分析、事实记录、测试代码和结果，不重新打包完整上游源码、私有数据或未审阅草稿；保留仓库其他内容。
+成果仅发布在本仓库独立的 `ai-evaluation-knowledge/` 目录。保留全部历史模型快照，不把历史数据重复加总。只发布审阅后的原创分析、事实记录、测试代码和结果，不重新打包完整上游源码、私有数据或草稿。

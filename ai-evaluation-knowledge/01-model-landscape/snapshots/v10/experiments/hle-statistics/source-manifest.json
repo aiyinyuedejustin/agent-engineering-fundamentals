@@ -1,0 +1,64 @@
+{
+  "repository": "centerforaisafety/hle",
+  "commit": "22ed3074b1e7b134bcbc09028d0ba320839b0655",
+  "commit_date": "2026-09-23T15:38:47Z",
+  "observed_at": "2026-11-06",
+  "files": [
+    {
+      "path": "README.md",
+      "git_blob_sha": "a948c9512541fff702aaf5e0c8bc371fded3689c",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/README.md",
+      "sha256": "fd3bd0049e1a2b39244d8240a63d0ccfe037b0b6e5979d5826e1d1cf4203ee88",
+      "bytes": 2648
+    },
+    {
+      "path": "hle_eval/run_model_predictions.py",
+      "git_blob_sha": "171a78f7e61899ea028681e1407970bc20799365",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/hle_eval/run_model_predictions.py",
+      "sha256": "d2062d8afcfb8968f350bbae953e897d4303a6f72a4ae7d97b7db0137a333b17",
+      "bytes": 4125
+    },
+    {
+      "path": "hle_eval/run_judge_results.py",
+      "git_blob_sha": "4caca7c5e6eaa9c64ec33e5f1bcc93312e6c5b31",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/hle_eval/run_judge_results.py",
+      "sha256": "a796e74d6e58beab3bd88f46182f599443a102308b2d1c7e0b4b22f578468446",
+      "bytes": 7858
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob_sha": "3e27820ee026d537d52367bb645d310a9aae13ec",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/requirements.txt",
+      "sha256": "02011254bb80995c8179b61a0c45d6c00afc6131298574b4b2390def56f9be78",
+      "bytes": 45
+    },
+    {
+      "path": "docs/evaluation-with-tools.md",
+      "git_blob_sha": "78ad17375fe3ec2239615cf05f577d6196af2992",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/docs/evaluation-with-tools.md",
+      "sha256": "3852a7f7008ceb27e9aec97f223436acbecdc9a4bc22cd63de54e5f0d49d9cab",
+      "bytes": 2953
+    },
+    {
+      "path": "docs/blocklist.json",
+      "git_blob_sha": "8ca485255e99736e2615d73a25736b30055c5c5b",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/docs/blocklist.json",
+      "sha256": "3abaf35e03d6d5d361d2611746683a32315fe73ef851ec5f33c54b3c6a526575",
+      "bytes": 11400
+    },
+    {
+      "path": "docs/requirements-tools.txt",
+      "git_blob_sha": "d700cda6162e2d4f5d86dbf4865487721d979050",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/docs/requirements-tools.txt",
+      "sha256": "c1c626beb8f2fab11609f6ed41a2721d9acd139554d6ce3c8c83f52a49797068",
+      "bytes": 207
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "ab3194876547c8459fcfdf96c1c1f1607f960865",
+      "source_url": "https://github.com/centerforaisafety/hle/blob/22ed3074b1e7b134bcbc09028d0ba320839b0655/LICENSE",
+      "sha256": "f402878026b8008bd53f2f038b5c9e3e6b7c1a690e05e2ca6ddbc9019aa3c08e",
+      "bytes": 1074
+    }
+  ]
+}

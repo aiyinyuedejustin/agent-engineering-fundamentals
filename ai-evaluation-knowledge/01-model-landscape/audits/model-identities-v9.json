@@ -1,0 +1,867 @@
+{
+  "scope": "v9 observations only,252rows63verbatimlabels",
+  "observed_at": "2026-11-06",
+  "depth": "D1",
+  "rules": [
+    "This audit is a semantic review, not checkpoint/hash identity verification.",
+    "A shared underlying_model_key is a grouping suggestion. Preserve exact version, modality, task, precision, harness, tool and reasoning settings per observation.",
+    "Organization names are supported author/team identities, not verified legal entities; source publisher of a comparison table must not become every model creator.",
+    "Do not count aliases, quantizations or system configurations as new underlying training identities. Keep separate artifact/system records when useful.",
+    "Null underlying keys need observation-level followup; no automatic merge."
+  ],
+  "rows": [
+    {
+      "verbatim_label": "DeepSeek-V3.2 Thinking",
+      "classification": "configuration_alias",
+      "underlying_model_key": "DeepSeek-V3.2",
+      "organization": "DeepSeek",
+      "organization_evidence_source_ids": [
+        "ML056"
+      ],
+      "observation_source_ids": [
+        "ML056"
+      ],
+      "normalization_note": "thinking mode"
+    },
+    {
+      "verbatim_label": "DeepSeek-V3.2 non-thinking",
+      "classification": "configuration_alias",
+      "underlying_model_key": "DeepSeek-V3.2",
+      "organization": "DeepSeek",
+      "organization_evidence_source_ids": [
+        "ML056"
+      ],
+      "observation_source_ids": [
+        "ML056"
+      ],
+      "normalization_note": "non-thinking mode"
+    },
+    {
+      "verbatim_label": "DeepSeek-V3.2 Speciale",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "DeepSeek-V3.2 Speciale",
+      "organization": "DeepSeek",
+      "organization_evidence_source_ids": [
+        "ML056"
+      ],
+      "observation_source_ids": [
+        "ML056"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-Coder-Next",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Qwen3-Coder-Next",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML068"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Claude Sonnet 4.5",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Claude Sonnet 4.5",
+      "organization": "Anthropic",
+      "organization_evidence_source_ids": [
+        "ML014"
+      ],
+      "observation_source_ids": [
+        "ML068"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "DeepSeek-V3.2",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "DeepSeek-V3.2",
+      "organization": "DeepSeek",
+      "organization_evidence_source_ids": [
+        "ML056"
+      ],
+      "observation_source_ids": [
+        "ML068"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "GLM-5.1",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GLM-5.1",
+      "organization": "Z.ai",
+      "organization_evidence_source_ids": [
+        "ML065"
+      ],
+      "observation_source_ids": [
+        "ML065"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Kimi K2.6",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Kimi K2.6",
+      "organization": "Moonshot AI",
+      "organization_evidence_source_ids": [
+        "ML061"
+      ],
+      "observation_source_ids": [
+        "ML061"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Kimi K2.6 Agent Swarm",
+      "classification": "system_configuration",
+      "underlying_model_key": "Kimi K2.6",
+      "organization": "Moonshot AI",
+      "organization_evidence_source_ids": [
+        "ML061"
+      ],
+      "observation_source_ids": [
+        "ML061"
+      ],
+      "normalization_note": "multi-agent swarm; preserve system configuration and budget"
+    },
+    {
+      "verbatim_label": "Claude Opus 5.5",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Claude Opus 5.5",
+      "organization": "Anthropic",
+      "organization_evidence_source_ids": [
+        "ML002",
+        "ML026"
+      ],
+      "observation_source_ids": [
+        "ML026",
+        "ML118",
+        "ML121",
+        "ML122"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Gemini 4 Argon",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Gemini 4 Argon",
+      "organization": "Google DeepMind",
+      "organization_evidence_source_ids": [
+        "ML003",
+        "ML047"
+      ],
+      "observation_source_ids": [
+        "ML047"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "GPT-6.1 Terra",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GPT-6.1 Terra",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML001",
+        "ML007",
+        "ML008",
+        "ML117"
+      ],
+      "observation_source_ids": [
+        "ML008"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Magistral Medium",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Magistral Medium",
+      "organization": "Mistral",
+      "organization_evidence_source_ids": [
+        "ML074"
+      ],
+      "observation_source_ids": [
+        "ML074"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Magistral Small SFT",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Magistral Small SFT",
+      "organization": "Mistral",
+      "organization_evidence_source_ids": [
+        "ML074"
+      ],
+      "observation_source_ids": [
+        "ML074"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Magistral Small RL-only",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Magistral Small RL-only",
+      "organization": "Mistral",
+      "organization_evidence_source_ids": [
+        "ML074"
+      ],
+      "observation_source_ids": [
+        "ML074"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Magistral Small SFT+RL",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Magistral Small SFT+RL",
+      "organization": "Mistral",
+      "organization_evidence_source_ids": [
+        "ML074"
+      ],
+      "observation_source_ids": [
+        "ML074"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "MiniMax-M1-40k",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "MiniMax-M1-40k",
+      "organization": "MiniMax",
+      "organization_evidence_source_ids": [
+        "ML078"
+      ],
+      "observation_source_ids": [
+        "ML078"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "MiniMax-M1-80k",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "MiniMax-M1-80k",
+      "organization": "MiniMax",
+      "organization_evidence_source_ids": [
+        "ML078"
+      ],
+      "observation_source_ids": [
+        "ML078"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "gpt-oss-120b",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "gpt-oss-120b",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML005"
+      ],
+      "observation_source_ids": [
+        "ML005"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "gpt-oss-20b",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "gpt-oss-20b",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML005"
+      ],
+      "observation_source_ids": [
+        "ML005"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Step 3.5 Flash",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Step 3.5 Flash",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML084"
+      ],
+      "observation_source_ids": [
+        "ML084"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Step 3.5 Flash PaCoRe",
+      "classification": "system_configuration",
+      "underlying_model_key": "Step 3.5 Flash",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML084"
+      ],
+      "observation_source_ids": [
+        "ML084"
+      ],
+      "normalization_note": "PaCoRe test-time orchestration; not a new checkpoint"
+    },
+    {
+      "verbatim_label": "GLM-5",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GLM-5",
+      "organization": "Z.ai",
+      "organization_evidence_source_ids": [
+        "ML064"
+      ],
+      "observation_source_ids": [
+        "ML064"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Claude Opus 4.5",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Claude Opus 4.5",
+      "organization": "Anthropic",
+      "organization_evidence_source_ids": [
+        "ML002",
+        "ML026"
+      ],
+      "observation_source_ids": [
+        "ML064"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "LongCat-Flash",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "LongCat-Flash",
+      "organization": "Meituan",
+      "organization_evidence_source_ids": [
+        "ML080"
+      ],
+      "observation_source_ids": [
+        "ML080"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "MiMo-V2-Flash",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "MiMo-V2-Flash",
+      "organization": "Xiaomi",
+      "organization_evidence_source_ids": [
+        "ML085"
+      ],
+      "observation_source_ids": [
+        "ML085"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "ERNIE-4.5-300B-A47B-Base",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "ERNIE-4.5-300B-A47B-Base",
+      "organization": "Baidu",
+      "organization_evidence_source_ids": [
+        "ML079"
+      ],
+      "observation_source_ids": [
+        "ML079"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "ERNIE-4.5-300B-A47B",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "ERNIE-4.5-300B-A47B",
+      "organization": "Baidu",
+      "organization_evidence_source_ids": [
+        "ML079"
+      ],
+      "observation_source_ids": [
+        "ML079"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-Omni-30B-A3B-Instruct",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Qwen3-Omni-30B-A3B-Instruct",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML071"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-Omni-30B-A3B-Thinking",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Qwen3-Omni-30B-A3B-Thinking",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML071"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-Omni-Flash-Thinking",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Qwen3-Omni-Flash-Thinking",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML071"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-30B-A3B-Base-202507",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Qwen3-30B-A3B-Base-202507",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML071"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-Omni-30B-A3B-Base-202507",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Qwen3-Omni-30B-A3B-Base-202507",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML071"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Qwen3-Omni-30B-A3B",
+      "classification": "ambiguous_variant_label",
+      "underlying_model_key": null,
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML071"
+      ],
+      "normalization_note": "Speech-generation table uses unsuffixed name; do not silently resolve to Instruct or Thinking checkpoint"
+    },
+    {
+      "verbatim_label": "InternVL3.5-241B-A28B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "InternVL3.5-241B-A28B",
+      "organization": "InternVL team",
+      "organization_evidence_source_ids": [
+        "ML103"
+      ],
+      "observation_source_ids": [
+        "ML103"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "HunyuanVideo 1.5 720p",
+      "classification": "family_resolution_bucket",
+      "underlying_model_key": null,
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML113"
+      ],
+      "observation_source_ids": [
+        "ML113"
+      ],
+      "normalization_note": "Rows include720P T2V and720P I2V and speed settings; retain per-observation task. Do not assert one immutable checkpoint identity"
+    },
+    {
+      "verbatim_label": "HunyuanVideo 1.5 CFG-distilled",
+      "classification": "trained_distilled_variant",
+      "underlying_model_key": "HunyuanVideo 1.5 CFG-distilled",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML113"
+      ],
+      "observation_source_ids": [
+        "ML113"
+      ],
+      "normalization_note": "Distillation changes trained weights; do not collapse into nondistilled benchmark model"
+    },
+    {
+      "verbatim_label": "Step-Audio 2",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Step-Audio 2",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML105"
+      ],
+      "observation_source_ids": [
+        "ML105"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Qwen3-32B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Qwen3-32B",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML071",
+        "ML068"
+      ],
+      "observation_source_ids": [
+        "ML105"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "MiMo-Audio-7B-Base",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "MiMo-Audio-7B-Base",
+      "organization": "Xiaomi",
+      "organization_evidence_source_ids": [
+        "ML108"
+      ],
+      "observation_source_ids": [
+        "ML108"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "MiMo-Audio-7B-Instruct",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "MiMo-Audio-7B-Instruct",
+      "organization": "Xiaomi",
+      "organization_evidence_source_ids": [
+        "ML108"
+      ],
+      "observation_source_ids": [
+        "ML108"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "MiMo-Audio-7B-Instruct +Think",
+      "classification": "configuration_alias",
+      "underlying_model_key": "MiMo-Audio-7B-Instruct",
+      "organization": "Xiaomi",
+      "organization_evidence_source_ids": [
+        "ML108"
+      ],
+      "observation_source_ids": [
+        "ML108"
+      ],
+      "normalization_note": "thinking mode; preserve modality and token budget"
+    },
+    {
+      "verbatim_label": "gpt-4o-audio-preview-2024-12-17",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "gpt-4o-audio-preview-2024-12-17",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML108"
+      ],
+      "observation_source_ids": [
+        "ML108"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Hunyuan-MT-7B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Hunyuan-MT-7B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML100"
+      ],
+      "observation_source_ids": [
+        "ML100"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Hunyuan-MT-Chimera-7B",
+      "classification": "distinct_aggregation_model",
+      "underlying_model_key": "Hunyuan-MT-Chimera-7B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML100"
+      ],
+      "observation_source_ids": [
+        "ML100"
+      ],
+      "normalization_note": "Translation candidate-fusion model/pipeline; not just alternate spelling of Hunyuan-MT-7B"
+    },
+    {
+      "verbatim_label": "Gemini-2.5-Pro",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Gemini-2.5-Pro",
+      "organization": "Google DeepMind",
+      "organization_evidence_source_ids": [
+        "ML003",
+        "ML047"
+      ],
+      "observation_source_ids": [
+        "ML100"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "HY-MT1.0-7B",
+      "classification": "explicit_renaming_alias",
+      "underlying_model_key": "Hunyuan-MT-7B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML101"
+      ],
+      "observation_source_ids": [
+        "ML101"
+      ],
+      "normalization_note": "ML101 section3.1 explicitly identifies previous Hunyuan-MT-7B as HY-MT1.0-7B"
+    },
+    {
+      "verbatim_label": "HY-MT1.5-1.8B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "HY-MT1.5-1.8B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML101"
+      ],
+      "observation_source_ids": [
+        "ML101"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "HY-MT1.5-7B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "HY-MT1.5-7B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML101"
+      ],
+      "observation_source_ids": [
+        "ML101"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "HY-MT1.5-1.8B-FP8",
+      "classification": "quantized_artifact",
+      "underlying_model_key": "HY-MT1.5-1.8B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML101"
+      ],
+      "observation_source_ids": [
+        "ML101"
+      ],
+      "normalization_note": "W8A8C8-FP8; same underlying model family, distinct artifact/settings"
+    },
+    {
+      "verbatim_label": "HY-MT1.5-1.8B-Int4",
+      "classification": "quantized_artifact",
+      "underlying_model_key": "HY-MT1.5-1.8B",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML101"
+      ],
+      "observation_source_ids": [
+        "ML101"
+      ],
+      "normalization_note": "Weight-Int4 GPTQ; preserve quantization/calibration artifact"
+    },
+    {
+      "verbatim_label": "KAT-Coder",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "KAT-Coder",
+      "organization": "KAT-Coder team",
+      "organization_evidence_source_ids": [
+        "ML098"
+      ],
+      "observation_source_ids": [
+        "ML098"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Ovis2.5-2B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Ovis2.5-2B",
+      "organization": "Ovis team",
+      "organization_evidence_source_ids": [
+        "ML102"
+      ],
+      "observation_source_ids": [
+        "ML102"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Ovis2.5-9B",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Ovis2.5-9B",
+      "organization": "Ovis team",
+      "organization_evidence_source_ids": [
+        "ML102"
+      ],
+      "observation_source_ids": [
+        "ML102"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Ling-1T",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Ling-1T",
+      "organization": "InclusionAI",
+      "organization_evidence_source_ids": [
+        "ML095"
+      ],
+      "observation_source_ids": [
+        "ML095"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Kimi-K2-Instruct",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Kimi-K2-Instruct",
+      "organization": "Moonshot AI",
+      "organization_evidence_source_ids": [
+        "ML058"
+      ],
+      "observation_source_ids": [
+        "ML058"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Kimi-K2-Thinking",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Kimi-K2-Thinking",
+      "organization": "Moonshot AI",
+      "organization_evidence_source_ids": [
+        "ML059"
+      ],
+      "observation_source_ids": [
+        "ML059"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "Kimi-K2.5",
+      "classification": "distinct_trained_or_stage_variant",
+      "underlying_model_key": "Kimi-K2.5",
+      "organization": "Moonshot AI",
+      "organization_evidence_source_ids": [
+        "ML060"
+      ],
+      "observation_source_ids": [
+        "ML060"
+      ],
+      "normalization_note": "Keep separate from differently trained/base/instruct/thinking/size/stage variant; no weight-hash identity claim"
+    },
+    {
+      "verbatim_label": "GPT-5.5",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GPT-5.5",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML001",
+        "ML007",
+        "ML008",
+        "ML117"
+      ],
+      "observation_source_ids": [
+        "ML116"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "GPT-6 Astra",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GPT-6 Astra",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML001",
+        "ML007",
+        "ML008",
+        "ML117"
+      ],
+      "observation_source_ids": [
+        "ML117",
+        "ML118",
+        "ML121",
+        "ML122"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "GPT-6.1 Sol",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GPT-6.1 Sol",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML001",
+        "ML007",
+        "ML008",
+        "ML117"
+      ],
+      "observation_source_ids": [
+        "ML118"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "GPT-5.6 Sol",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "GPT-5.6 Sol",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML001",
+        "ML007",
+        "ML008",
+        "ML117"
+      ],
+      "observation_source_ids": [
+        "ML117"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    },
+    {
+      "verbatim_label": "Claude Fable 5.1",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "Claude Fable 5.1",
+      "organization": "Anthropic",
+      "organization_evidence_source_ids": [
+        "ML002",
+        "ML026"
+      ],
+      "observation_source_ids": [
+        "ML117"
+      ],
+      "normalization_note": "Retain reported name. A source-level model label does not establish immutable API snapshot or released checkpoint."
+    }
+  ]
+}

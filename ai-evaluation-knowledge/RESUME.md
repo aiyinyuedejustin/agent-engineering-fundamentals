@@ -1,22 +1,23 @@
 # Resume entry
 
-Read README.md, methodology.md, research-status/coverage.md and data/README.md first. Run `python data/validate_indexes.py` to validate the central snapshot.
+Read README.md, methodology.md, research-status/coverage.md and data/README.md first. Run `python data/validate_indexes.py`.
 
-## Last reviewed increment
+## Current reviewed view
 
-The third integration increment adds the complete 22-file frozen runtime section. Central coverage is 18 normalized model/training-variant identities, 65 benchmark/protocol records, 99 D1 reported observations, 23 concepts, 331 sources (278 distinct external URLs and 2 local experiment records), and 242 evidence records. The model view is still v2; the benchmark catalog remains the reviewed 46-entry snapshot. Do not treat later unintegrated work as already public.
+Fourth integration: latest model data v12, all historical model snapshots retained. The 85 verbatim labels resolve to 77 central records: 65 conservative model/training-variant seeds, 3 named voice/delegation systems and 9 unresolved conditions. Only the 65 source-supported label groups count as model seeds, not verified weight hashes. All 342 numerical observations remain D1 and comparability-unassessed; 23 are explicitly independent reports, never project reproductions.
 
-There are 82 stable section artifacts and 10 local diagnostic programs. The two new self-written runtime/transport labs passed 30 and 27 repeated assertions, respectively, including an independent integration rerun. They are not upstream framework/cloud/model experiments. No full benchmark reproduction, completed 50-study goal, 200-model goal or five-hour completion is claimed.
+Central totals: 158 benchmark/protocol records, 23 concepts, 364 source records/311 external URLs, 491 evidence records. The representative benchmark catalog is still the older 46-entry view. 153 stable section artifacts and 13 local diagnostic programs do not establish full reproduction or research duration. Full benchmark/model reproductions and checklist-complete deep studies remain 0.
 
-## Publication contract
+## Publishing contract
 
-Repository: aiyinyuedejustin/agent-engineering-fundamentals. Branch: main. Folder: ai-evaluation-knowledge/.
-The second research increment was verified at 8bf169cff44697e82dbaf54aa46121b46025c3cd. Read later commits from repository history.
+Repository: aiyinyuedejustin/agent-engineering-fundamentals. Branch: main. Scope: ai-evaluation-knowledge/ only. Prior runtime tranche verified at 4cdf40bb0ef5108d08108661d111023ccfe5a056; inspect repository history for later commits.
 
-Refresh main, preserve all unrelated paths, build on the current root tree, and update non-force with the exact expected head. Use small uploads, inspect remote outcomes before any retry, then verify the new head, changed paths and blob hashes. Do not publish raw upstream caches, secrets, private data, hidden answers or unreviewed drafts. A source URL may remain null for a hash-verified original local experiment rather than inventing an unverified public link.
+Refresh current head, preserve unrelated paths, use a parented commit and non-force expected-head update. Upload small chunks, verify uncertain outcomes before retrying, then check exact changed paths and blob hashes. Never publish source caches, credentials, private data, unreviewed drafts or hidden answers. Original local experiment sources may retain null public URLs with a validated local path/hash rather than invented links.
 
-## Concrete next work
+## Next logical tranches
 
-Integrate the later immutable model snapshots and authoritative benchmark deltas. Audit model configuration aliases before counting identities. Then integrate the frozen infrastructure, evaluation-science, blind-spot and learning-path bundles. Keep synthetic inputs, actual historical judgments, unchanged source fragments and full model experiments distinct. Failed or blocked runs must remain visibly blocked.
-
-Complete the methodology's explicit deep-study review gates before marking cases reviewed_complete. Expand media/task inspection and resolve unpinned datasets and uncertain protocol equivalence. Track genuine active research rather than publication waits or file counts.
+1. Merge authoritative benchmark updates and review source-trace/probe scopes without promoting whole benchmarks to D4.
+2. Integrate frozen infrastructure articles and successful/blocked experiments. Blocked HumanEval IPC and uncompiled Go fixtures must remain visibly blocked.
+3. Integrate evaluation-science phases, licenses and historical-data versus synthetic-experiment distinctions.
+4. Integrate frozen unknown-unknowns and learning maps, then review architecture proposals.
+5. Complete deep-study gates, broaden model identity coverage and continue genuine active research; no five-hour completion is claimed.

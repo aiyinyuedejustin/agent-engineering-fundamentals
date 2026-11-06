@@ -1,0 +1,194 @@
+{
+  "scope": "D4 component-only synthetic experiment; no model or benchmark reproduction",
+  "repository": "open-compass/VLMEvalKit",
+  "commit": "933eda4c27844b38f57ff6733ab72aa25110bd1b",
+  "source_files_verified": 9,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "model_calls": 0,
+  "judge_calls": 0,
+  "network_calls": 0,
+  "real_videos_opened": 0,
+  "synthetic_cases": 18,
+  "cases": [
+    {
+      "id": "VMA001",
+      "name": "fixed-frame sampler excludes endpoints",
+      "actual": [
+        2,
+        5,
+        7
+      ],
+      "expected": [
+        2,
+        5,
+        7
+      ],
+      "passed": true,
+      "scope": "sampler arithmetic with fake metadata"
+    },
+    {
+      "id": "VMA002",
+      "name": "sub-one-frame fps budget returns no frames",
+      "actual": [
+        [],
+        []
+      ],
+      "expected": [
+        [],
+        []
+      ],
+      "passed": true,
+      "scope": "sampler arithmetic with fake metadata"
+    },
+    {
+      "id": "VMA003",
+      "name": "subtitle ending exactly at boundary appears before boundary",
+      "actual": "early edge",
+      "expected": "early edge",
+      "passed": true,
+      "scope": "original subtitle overlap helper"
+    },
+    {
+      "id": "VMA004",
+      "name": "same boundary word also appears after boundary",
+      "actual": "edge middle",
+      "expected": "edge middle",
+      "passed": true,
+      "scope": "original subtitle overlap helper"
+    },
+    {
+      "id": "VMA005",
+      "name": "interleaved subtitles omit pre-first-frame early word",
+      "actual": false,
+      "expected": false,
+      "passed": true,
+      "scope": "frame prompt with synthetic subtitles and fake metadata"
+    },
+    {
+      "id": "VMA006",
+      "name": "interleaved subtitles retain boundary and later words",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "scope": "frame prompt with synthetic subtitles and fake metadata"
+    },
+    {
+      "id": "VMA007",
+      "name": "non-interleaved subtitles retain early word",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "scope": "frame prompt with synthetic subtitles and fake metadata"
+    },
+    {
+      "id": "VMA008",
+      "name": "raw-video prompt emits resize dimensions despite resize flag false",
+      "actual": [
+        592,
+        336
+      ],
+      "expected": [
+        592,
+        336
+      ],
+      "passed": true,
+      "scope": "raw-video prompt metadata, not model behavior"
+    },
+    {
+      "id": "VMA009",
+      "name": "raw-video prompt passes requested frame count",
+      "actual": 3,
+      "expected": 3,
+      "passed": true,
+      "scope": "raw-video prompt metadata"
+    },
+    {
+      "id": "VMA010",
+      "name": "raw-video prompt concatenates early subtitle despite interleave flag true",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "scope": "raw-video prompt with synthetic subtitles"
+    },
+    {
+      "id": "VMA011",
+      "name": "v2 regex: Final Answer: D",
+      "actual": "D",
+      "expected": "D",
+      "passed": true,
+      "scope": "original letter parser on synthetic response"
+    },
+    {
+      "id": "VMA012",
+      "name": "v2 regex: Based on the video, Final Answer: D",
+      "actual": "B",
+      "expected": "B",
+      "passed": true,
+      "scope": "original letter parser on synthetic response"
+    },
+    {
+      "id": "VMA013",
+      "name": "v2 regex: I first considered A, but Final Answer: D",
+      "actual": "A",
+      "expected": "A",
+      "passed": true,
+      "scope": "original letter parser on synthetic response"
+    },
+    {
+      "id": "VMA014",
+      "name": "v2 regex: circle",
+      "actual": "",
+      "expected": "",
+      "passed": true,
+      "scope": "original letter parser on synthetic response"
+    },
+    {
+      "id": "VMA015",
+      "name": "fallback separate options column creates no choices",
+      "actual": {},
+      "expected": {},
+      "passed": true,
+      "scope": "original extract_option plus build_choices"
+    },
+    {
+      "id": "VMA016",
+      "name": "fallback with no judge returns Z for separate options",
+      "actual": "Z",
+      "expected": "Z",
+      "passed": true,
+      "scope": "original fallback chain with model=None; language detector stubbed"
+    },
+    {
+      "id": "VMA017",
+      "name": "fallback joined question yields A/B choices",
+      "actual": {
+        "A": "square",
+        "B": "circle"
+      },
+      "expected": {
+        "A": "square",
+        "B": "circle"
+      },
+      "passed": true,
+      "scope": "original extract_option plus build_choices"
+    },
+    {
+      "id": "VMA018",
+      "name": "fallback joined question recognizes free text circle",
+      "actual": "B",
+      "expected": "B",
+      "passed": true,
+      "scope": "original fallback chain with model=None; language detector stubbed"
+    }
+  ],
+  "limitations": [
+    "Decord is replaced by a metadata-only fake; cached dummy frame paths avoid pixel decoding.",
+    "English-language detection is stubbed false; relevant matching and choice-building bodies remain original.",
+    "No Video-MME-v2 task text, options, media, model predictions, or official scores are copied or replayed.",
+    "No API adapter, full runner, judge, or model implementation is executed."
+  ]
+}

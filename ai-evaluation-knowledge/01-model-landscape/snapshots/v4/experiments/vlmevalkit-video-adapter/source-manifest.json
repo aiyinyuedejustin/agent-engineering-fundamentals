@@ -1,0 +1,61 @@
+{
+  "repository": "open-compass/VLMEvalKit",
+  "commit": "933eda4c27844b38f57ff6733ab72aa25110bd1b",
+  "observed_at": "2026-11-06",
+  "files": [
+    {
+      "path": "vlmeval/dataset/videomme.py",
+      "blob_sha": "70a812e1de5c111fe92f3d620a21a68cc389cb72",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/dataset/videomme.py",
+      "sha256": "cc4ec6b863c7a5148fba791d87655ee6914809e1e079d29d2cf875039dc93b8e"
+    },
+    {
+      "path": "vlmeval/dataset/videommev2.py",
+      "blob_sha": "0c9827882b0603f7bf4e8cf6e61a4afdb9672b56",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/dataset/videommev2.py",
+      "sha256": "f237424c8fb743cb4c3b4bcbeb7c219669182fdbc65c58b43cdd95c980a1e4a5"
+    },
+    {
+      "path": "vlmeval/dataset/utils/videomme.py",
+      "blob_sha": "262cd4bd456df6369c498299483242fc5902cad0",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/dataset/utils/videomme.py",
+      "sha256": "693af1d9227ca791db4e46aa4fa99b968bce056091f721e38bd6c5a2ac3009ef"
+    },
+    {
+      "path": "vlmeval/dataset/video_base.py",
+      "blob_sha": "79c2f51ac9f9bdbd03afe21454233624ba89010d",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/dataset/video_base.py",
+      "sha256": "f1d9a34bd69b1b7fbd2689e4f7f623ce2f4e0599a5bbabad8fb069292cd39012"
+    },
+    {
+      "path": "vlmeval/dataset/video_dataset_config.py",
+      "blob_sha": "ed873d8b3b293279114496f14bf52cc1b7e2f6e1",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/dataset/video_dataset_config.py",
+      "sha256": "bbfabbee800c036d4b14fe2c3c23b98880788521d7868b5bc125336478dc0f05"
+    },
+    {
+      "path": "vlmeval/inference_video.py",
+      "blob_sha": "bf1ec2b86db5129801cf4aa58e7ec3d3df1d520f",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/inference_video.py",
+      "sha256": "5fc67f2b14725a7e690aabf2eb4d5a12b87927b77f614fa074ed1afeda3b9b59"
+    },
+    {
+      "path": "vlmeval/dataset/utils/multiple_choice.py",
+      "blob_sha": "67212094e7044c189321423d6056df267be5eb7d",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/dataset/utils/multiple_choice.py",
+      "sha256": "39188c274e60899ceeff9f4180cbf0f9c798dd8954da0f9dccc85da0951d54c6"
+    },
+    {
+      "path": "vlmeval/utils/matching_util.py",
+      "blob_sha": "84ee053d7d267ffe7ad397d3a99c2f5e80716c56",
+      "sha256": "eac9202e7dfa11e35c9d8cfa7bb55e66141798c4cc46c5b96e69664567b8a7de",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/utils/matching_util.py"
+    },
+    {
+      "path": "vlmeval/smp/vlm.py",
+      "blob_sha": "8d444a01730dec8002bf1aec573c50b43b8f6379",
+      "sha256": "574e94b2c7088557932a136ed5c3e8e1be560a4729c5375556a3d828cf6c0e83",
+      "url": "https://github.com/open-compass/VLMEvalKit/blob/933eda4c27844b38f57ff6733ab72aa25110bd1b/vlmeval/smp/vlm.py"
+    }
+  ]
+}

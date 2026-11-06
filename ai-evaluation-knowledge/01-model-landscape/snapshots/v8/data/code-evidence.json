@@ -1,0 +1,31 @@
+[
+  {
+    "id": "MC005",
+    "subject": "Ovis2.5 GitHub media preprocessing and budget orchestration trace",
+    "depth": "D3",
+    "learning_level": "L2",
+    "source_url": "https://github.com/ATH-MaaS/Ovis/tree/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5",
+    "revision": "e1916bf3cb0ca123e71ab173ff4463df5c3a71b5",
+    "observed_at": "2026-11-06",
+    "artifact": "experiments/ovis-preprocessing/README.md",
+    "read_scope": "demo/chat entry, formatter, resize/patch packing, placeholder expansion, generation orchestration; not complete vision transformer computation",
+    "real_task_limit": "Public example question read but image pixels not viewed; no claim of complete D2 visual-task inspection",
+    "delivery_comparison": "HF remote code d73b2283ae2a930b7762f8d7b8b8a3f0f3b5c3bd inspected as rendered text only, not executed or byte-verified",
+    "model_score_reproduced": false
+  },
+  {
+    "id": "MC006",
+    "subject": "Ovis media and chat synthetic component probes",
+    "depth": "D4",
+    "learning_level": "L2",
+    "source_id": "MC005",
+    "artifact": "experiments/ovis-preprocessing/results.json",
+    "cases": 19,
+    "network_calls": 0,
+    "model_calls": 0,
+    "judge_calls": 0,
+    "real_task_images_processed": 0,
+    "model_score_reproduced": false,
+    "scope_limit": "Original AST-selected methods; NumPy tensor stand-in, zero-array image processor, fixed token generation; no Torch/model numerics; non-default temporal cases marked separately"
+  }
+]

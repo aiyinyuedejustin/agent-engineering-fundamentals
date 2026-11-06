@@ -1,0 +1,277 @@
+{
+  "experiment": "HLE official simple runner synthetic component probes",
+  "commit": "22ed3074b1e7b134bcbc09028d0ba320839b0655",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "upstream_pinned_numpy": "1.26.4",
+    "dependency_match": false
+  },
+  "model_calls": 0,
+  "judge_calls": 0,
+  "network_calls": 0,
+  "real_dataset_loaded": false,
+  "cases": [
+    {
+      "id": "HLE01",
+      "name": "calibration n=0",
+      "observed": {
+        "exception_type": "IndexError",
+        "message": "list index out of range"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE02",
+      "name": "calibration n=99",
+      "observed": {
+        "exception_type": "IndexError",
+        "message": "list index out of range"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE03",
+      "name": "all wrong with 100% confidence n=100",
+      "observed": {
+        "source_rms": 0.0,
+        "all_bins_diagnostic": 1.0,
+        "omitted_highest_confidence_examples": 100
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE04",
+      "name": "all wrong with 100% confidence n=199",
+      "observed": {
+        "source_rms": 0.0,
+        "all_bins_diagnostic": 1.0,
+        "omitted_highest_confidence_examples": 199
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE05",
+      "name": "all wrong with 100% confidence n=200",
+      "observed": {
+        "source_rms": 0.7071067811865476,
+        "all_bins_diagnostic": 1.0,
+        "omitted_highest_confidence_examples": 100
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE06",
+      "name": "all wrong with 100% confidence n=250",
+      "observed": {
+        "source_rms": 0.6324555320336759,
+        "all_bins_diagnostic": 1.0,
+        "omitted_highest_confidence_examples": 150
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE07",
+      "name": "all wrong with 100% confidence n=1000",
+      "observed": {
+        "source_rms": 0.9486832980505138,
+        "all_bins_diagnostic": 0.9999999999999999,
+        "omitted_highest_confidence_examples": 100
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE08",
+      "name": "all wrong with 100% confidence n=2500",
+      "observed": {
+        "source_rms": 0.9797958971132714,
+        "all_bins_diagnostic": 1.0,
+        "omitted_highest_confidence_examples": 100
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE09",
+      "name": "only highest-confidence100 are miscalibrated",
+      "observed": {
+        "source_rms": 0.0,
+        "all_bins_diagnostic": 0.31622776601683794
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE10",
+      "name": "well-calibrated deterministic control",
+      "observed": 0.0,
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE11",
+      "name": "200 successful judgements for1000 dataset questions",
+      "observed": {
+        "status": {
+          "returned": null
+        },
+        "stdout": "Available predictions: 200 | Total questions: 1000\n*** Metrics ***\nAccuracy: 20.0% +/- 2.48% | n = 1000\nCalibration Error: 0.0\n"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE12",
+      "name": "Wald endpoint all200correct has zero half-width",
+      "observed": {
+        "status": {
+          "returned": null
+        },
+        "stdout": "*** Metrics ***\nAccuracy: 100.0% +/- 0.0% | n = 200\nCalibration Error: 0.0\n"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE13",
+      "name": "no judged responses cannot print final metrics",
+      "observed": {
+        "status": {
+          "exception_type": "IndexError",
+          "message": "list index out of range"
+        },
+        "stdout": "Available predictions: 0 | Total questions: 1000\n"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE14",
+      "name": "stale cache can exceed denominator and invalidate Wald sqrt",
+      "observed": {
+        "status": {
+          "exception_type": "ValueError",
+          "message": "math domain error"
+        },
+        "stdout": "Available predictions: 300 | Total questions: 200\n"
+      },
+      "scope": "synthetic cache mismatch, not observed published run"
+    },
+    {
+      "id": "HLE15",
+      "name": "unbounded synthetic confidence200percent",
+      "observed": 1.4142135623730951,
+      "scope": "malformed persisted judge data; no claim actual judge emitted it"
+    },
+    {
+      "id": "HLE16",
+      "name": "o1 substring selects user prompt role",
+      "observed": "user",
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE17",
+      "name": "other model uses system prompt role",
+      "observed": "system",
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE18",
+      "name": "image field forwarded as URL without decode or resize",
+      "observed": [
+        "text",
+        "image_url"
+      ],
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE19",
+      "name": "temperature CLI value not sent to API",
+      "observed": {
+        "requested_temperature": 0.23,
+        "api_keys": [
+          "max_completion_tokens",
+          "messages",
+          "model",
+          "stream"
+        ],
+        "has_temperature": false
+      },
+      "scope": "mock transport records actual kwargs; no API call"
+    },
+    {
+      "id": "HLE20",
+      "name": "outer semaphore reserves one slot workers=2",
+      "observed": {
+        "num_workers": 2,
+        "peak_in_flight": 1,
+        "completed": 8
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE21",
+      "name": "outer semaphore reserves one slot workers=3",
+      "observed": {
+        "num_workers": 3,
+        "peak_in_flight": 2,
+        "completed": 8
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE22",
+      "name": "cached judge response reused without checking changed gold",
+      "observed": {
+        "response": "old response",
+        "judge_response": {
+          "correct": "yes",
+          "confidence": 100,
+          "correct_answer": "old gold"
+        }
+      },
+      "scope": "synthetic cache reuse"
+    },
+    {
+      "id": "HLE23",
+      "name": "prediction max_samples=0",
+      "observed": {
+        "attempted_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "filename": "hle_same-model.json"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE24",
+      "name": "prediction max_samples=2",
+      "observed": {
+        "attempted_ids": [
+          "a",
+          "b"
+        ],
+        "filename": "hle_same-model.json"
+      },
+      "scope": "synthetic component"
+    },
+    {
+      "id": "HLE25",
+      "name": "different dataset same model filename reuses matching IDs",
+      "observed": {
+        "attempted_ids": [
+          "c"
+        ],
+        "cached_ids": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      "scope": "synthetic datasets; no real datasets downloaded"
+    }
+  ],
+  "case_count": 25,
+  "limits": [
+    "AST-extracted functions only; mocked API transport and dataset/scheduler as explicitly marked.",
+    "The current simple-runner code is not proven to be the production Scale, CAIS Diamond, or AA leaderboard pipeline.",
+    "No change to any published model score is justified by these probes.",
+    "Diamond dataset rows returned401; no attempt to bypass or acquire restricted records."
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "MC003",
+    "subject": "VLMEvalKit Video-MME-v2 adapter execution flow",
+    "depth": "D3",
+    "learning_level": "L2",
+    "source_url": "https://github.com/open-compass/VLMEvalKit/tree/933eda4c27844b38f57ff6733ab72aa25110bd1b",
+    "revision": "933eda4c27844b38f57ff6733ab72aa25110bd1b",
+    "observed_at": "2026-11-06",
+    "read_scope": "14 configuration aliases; dataset conversion; runner branches; frame and subtitle preparation; answer parsing and fallback; group aggregation",
+    "real_task_read_scope": "Public task 001-1 text and metadata inspected; no video watched; HF dataset revision not pinned",
+    "artifact": "experiments/vlmevalkit-video-adapter/README.md",
+    "model_score_reproduced": false
+  },
+  {
+    "id": "MC004",
+    "subject": "VLMEvalKit Video-MME-v2 adapter component probes",
+    "depth": "D4",
+    "learning_level": "L2",
+    "source_id": "MC003",
+    "artifact": "experiments/vlmevalkit-video-adapter/results.json",
+    "cases": 18,
+    "network_calls": 0,
+    "model_calls": 0,
+    "judge_calls": 0,
+    "real_videos_opened": 0,
+    "model_score_reproduced": false,
+    "scope_limit": "Original AST-selected bodies with fake video metadata and synthetic subtitles/options; English language detection stub; not a full runner or benchmark reproduction"
+  }
+]

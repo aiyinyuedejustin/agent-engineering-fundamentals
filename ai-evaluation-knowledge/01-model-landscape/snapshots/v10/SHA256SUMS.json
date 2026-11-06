@@ -1,0 +1,9 @@
+{
+  "README.md": "fb418b621e49f579dffa0fe734f16c85e6757f96fae0e9a752cb9163c04dc2e3",
+  "data/code-evidence.json": "2c395ad16cc7ae85b4c74ffc27140388ac67d5a5a0ba73e3af9a42be4198ad37",
+  "experiments/hle-statistics/README.md": "cd2bff4aa5a79fce8c24b7ad86a5b6511d848a718fdcf45dd221d96622f6b21f",
+  "experiments/hle-statistics/fetch_inputs.py": "1cbdbbbc6d6331e4f22be79f457e952ddb3817f0bcee8a3ad2dda019cae4480c",
+  "experiments/hle-statistics/probe.py": "77082a231ddf244f8cb1b7979b173121a19a8896f2ca3a09e7a527324ce4d136",
+  "experiments/hle-statistics/results.json": "6573dde739a6632338912fff78ccc0ef211ba2ffe435d64a1bffa60cb3bf799d",
+  "experiments/hle-statistics/source-manifest.json": "b94828e5f1ba54c8fe9cbc6fef31ccabe8585061e051c3bb3eda0558d2fefb27"
+}

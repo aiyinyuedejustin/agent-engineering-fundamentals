@@ -2,7 +2,7 @@
 
 All CSV files use UTF-8, comma separation, one header row, and standard CSV quoting. Empty cells mean unknown/unverified, not zero or false. Multi-value ID and modality fields use semicolons. JSONL files contain one JSON object per line and no enclosing array. Empty JSONL files are intentionally valid empty indexes.
 
-**Current records:** the third reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
+**Current records:** the fourth reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
 
 ## Stable identifiers
 
@@ -21,7 +21,9 @@ One row per explicitly identified model entity. Required for ingestion: `model_i
 - `status`: `candidate`, `documented`, `implementation_inspected`, `source_traced`, `experimented`, or `needs_review`.
 - `last_verified_utc`: actual most recent verification timestamp, ISO 8601 UTC; leave blank if not verified.
 
-Count model seeds only after deduplication. Exclude alias rows from a distinct-model count; report family versus checkpoint/API counts separately.
+Count model seeds only after semantic deduplication. `identity_status` is `source_supported_label`, `named_voice_model_system`, or `unresolved_reported_condition`. `count_as_model_seed` is a literal true/false; current counts exclude named voice/delegation systems and unresolved conditions from the conservative model-seed total. `reported_labels` preserves the source labels grouped into each entity. These are not verified weight hashes or released-checkpoint counts. Do not silently discard unresolved observations: they remain linked to explicit excluded records.
+
+The immutable v9/v12-additions identity audits explain every grouping. Reasoning modes, quantization, swarm and same-weight deployment differences remain in each observation. The HunyuanVideo resolution bucket is split by task metadata but excluded from the seed count until checkpoint identity is resolved.
 
 ## `benchmarks.csv`
 
@@ -41,7 +43,7 @@ A completed implementation-backed deep study requires `reviewed_complete`, an ex
 
 One row per sourced result observation, not a synthesized leaderboard. Required: `result_id`, `model_id`, `benchmark_id`, `result_origin`, `source_ids`, `evidence_ids`, and `comparability_status`.
 
-- `result_origin`: `source_reported`, `developer_reported`, `independent_reported`, or `local_experiment`. Current imports use `source_reported` to avoid guessing whether each table cell was measured by the publisher, quoted, or rerun elsewhere.
+- `result_origin`: `source_reported`, `developer_reported`, `independent_reported`, or `local_experiment`. Use `independent_reported` only where the source record explicitly identifies an independent evaluator or benchmark author; otherwise retain `source_reported` rather than guessing whether the publisher measured, quoted or reran each cell.
 - `model_version`, `benchmark_version`, `split`, `prompt_id`, `shots`, `sample_count`, `sampling_budget`, `inference_settings`, `tool_access`, `grader`, and `aggregation`: preserve protocol qualifiers or leave unknown.
 - `score_raw`, `score_unit`, `metric`, `metric_direction`: original reported metric. Do not normalize silently.
 - `uncertainty`: source-reported interval/error estimate or a clearly specified locally computed estimate.
@@ -79,6 +81,8 @@ Each evidence object has:
 - `depth`: `D0`, `D1`, `D2`, `D3`, or `D4`; satisfy methodology criteria.
 - `verification_status`: `supported`, `partial`, `conflicted`, `unverified`, or `superseded`.
 - Optional: `repository_commit`, `artifact_paths` (array), `execution_performed` (boolean), `limitations` (array), `contradicts_evidence_ids` (array), `supersedes_evidence_ids` (array), `review_notes`.
+
+Model-result evidence uses `result_ref` to link the full settings in `model_benchmark_evidence.csv`, rather than duplicating every setting in JSONL. Immutable source observation JSON retains the original fields.
 
 D4 synthetic experiments can have an empty external `source_refs` array when the actual script/results supply the evidence. Always include artifact paths and explicitly state synthetic/component scope.
 

@@ -1,0 +1,55 @@
+{
+  "repository": "ATH-MaaS/Ovis",
+  "commit": "e1916bf3cb0ca123e71ab173ff4463df5c3a71b5",
+  "observed_at": "2026-11-06",
+  "files": [
+    {
+      "path": "ovis/model/modeling_ovis.py",
+      "blob_sha": "2a995ac6681bc5b50d997048b8101941c3524434",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/model/modeling_ovis.py",
+      "sha256": "7704ddd81ba033583a07cf250de0561401e3a721180ff3565c5b49e9828d3b26"
+    },
+    {
+      "path": "ovis/model/configuration_ovis.py",
+      "blob_sha": "94135953db733f648c2d83db9f3d04047b1530c6",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/model/configuration_ovis.py",
+      "sha256": "3500267b075a267130002a36331b73ddb863c95f287472797ce529e055d94c29"
+    },
+    {
+      "path": "ovis/serve/infer_basic_demo.py",
+      "blob_sha": "e001001be68b1d6aa156c1bc0e4d1b9295680ada",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/serve/infer_basic_demo.py",
+      "sha256": "a015373cc7596d0b385c299c213502c21e7f3835cb1cabc84c9d8595ca9b34d2"
+    },
+    {
+      "path": "ovis/serve/infer_think_demo.py",
+      "blob_sha": "7a76192e0c08d13581949671ae91688daa37061d",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/serve/infer_think_demo.py",
+      "sha256": "b9c23317555b9a65a288581a8893d1bc19ad37940d24f9f550bbfb2756727b36"
+    },
+    {
+      "path": "ovis/model/vit/configuration_siglip2_navit.py",
+      "blob_sha": "9d4e32a74744d52a30567fd2f798dae64ec7178f",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/model/vit/configuration_siglip2_navit.py",
+      "sha256": "7c1585ef53f4cc4b18a02219a17deaacceb0c204a844df4b60d9aec182deaa7e"
+    },
+    {
+      "path": "ovis/model/vit/modeling_siglip2_navit.py",
+      "blob_sha": "8f5040aeb862272f25301496a9d6985377ed9922",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/model/vit/modeling_siglip2_navit.py",
+      "sha256": "6ccaa157280c166aa5e2fbf3688574f899bf32d9df2def1904ea74b13052b484"
+    },
+    {
+      "path": "ovis/model/conversation_formatter.py",
+      "blob_sha": "e14b8a3309481a1d50efe30ccc8acb81873f086a",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/model/conversation_formatter.py",
+      "sha256": "ef95fef1c4949442edb3ea9bce99da5d123b09caacb73fd27be7821ed82e5546"
+    },
+    {
+      "path": "ovis/util/constants.py",
+      "blob_sha": "3c5428543c6ad1f38bcae6da9759ea3b4b7edaea",
+      "url": "https://github.com/ATH-MaaS/Ovis/blob/e1916bf3cb0ca123e71ab173ff4463df5c3a71b5/ovis/util/constants.py",
+      "sha256": "f2bf9348e2735eb682c017f9e3685c64739dc51800dec9d79ee2e49b7548a6b2"
+    }
+  ]
+}

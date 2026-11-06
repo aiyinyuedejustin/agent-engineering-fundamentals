@@ -1,0 +1,298 @@
+{
+  "scope": "additive v9→v12 identity audit,22newverbatimlabels; combine with unchanged model-identities-v9.json",
+  "observed_at": "2026-11-06",
+  "depth": "D1",
+  "rules": [
+    "This audit is a semantic review, not checkpoint/hash identity verification.",
+    "A shared underlying_model_key is a grouping suggestion. Preserve exact version, modality, task, precision, harness, tool and reasoning settings per observation.",
+    "Organization names are supported author/team identities, not verified legal entities; source publisher of a comparison table must not become every model creator.",
+    "Do not count aliases, quantizations or system configurations as new underlying training identities. Keep separate artifact/system records when useful.",
+    "Null underlying keys need observation-level followup; no automatic merge."
+  ],
+  "rows": [
+    {
+      "verbatim_label": "StepAudio 2.5 ASR",
+      "classification": "trained_task_specialization",
+      "underlying_model_key": "StepAudio 2.5 ASR",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML106"
+      ],
+      "observation_source_ids": [
+        "ML106"
+      ],
+      "normalization_note": "ASR branch; retain MTP training/decoding configuration separately from TTS/Realtime."
+    },
+    {
+      "verbatim_label": "StepAudio 2.5 ASR w/o MTP training",
+      "classification": "training_ablation_checkpoint",
+      "underlying_model_key": "StepAudio 2.5 ASR w/o MTP training",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML106"
+      ],
+      "observation_source_ids": [
+        "ML106"
+      ],
+      "normalization_note": "After SFT before MTP training. Not merely disabling speculative decode at inference."
+    },
+    {
+      "verbatim_label": "StepAudio 2.5 TTS",
+      "classification": "trained_task_specialization",
+      "underlying_model_key": "StepAudio 2.5 TTS",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML106"
+      ],
+      "observation_source_ids": [
+        "ML106"
+      ],
+      "normalization_note": "TTS branch removes encoder/adaptor and has generation-specific training. Do not merge ASR/TTS."
+    },
+    {
+      "verbatim_label": "StepAudio 3 Gen pretraining ablation without RVQ Adaptor",
+      "classification": "experimental_training_condition",
+      "underlying_model_key": null,
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML107"
+      ],
+      "observation_source_ids": [
+        "ML107"
+      ],
+      "normalization_note": "A pretraining ablation condition, not final deployed model. Within-pair conditions differ, but identity overlap between Table2 RVQ pair and Table3 strategy pair is not established; do not count four unique released checkpoints."
+    },
+    {
+      "verbatim_label": "StepAudio 3 Gen pretraining ablation with RVQ Adaptor",
+      "classification": "experimental_training_condition",
+      "underlying_model_key": null,
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML107"
+      ],
+      "observation_source_ids": [
+        "ML107"
+      ],
+      "normalization_note": "A pretraining ablation condition, not final deployed model. Within-pair conditions differ, but identity overlap between Table2 RVQ pair and Table3 strategy pair is not established; do not count four unique released checkpoints."
+    },
+    {
+      "verbatim_label": "StepAudio 3 Gen pretraining baseline",
+      "classification": "experimental_training_condition",
+      "underlying_model_key": null,
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML107"
+      ],
+      "observation_source_ids": [
+        "ML107"
+      ],
+      "normalization_note": "A pretraining ablation condition, not final deployed model. Within-pair conditions differ, but identity overlap between Table2 RVQ pair and Table3 strategy pair is not established; do not count four unique released checkpoints."
+    },
+    {
+      "verbatim_label": "StepAudio 3 Gen pretraining interference-aware",
+      "classification": "experimental_training_condition",
+      "underlying_model_key": null,
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML107"
+      ],
+      "observation_source_ids": [
+        "ML107"
+      ],
+      "normalization_note": "A pretraining ablation condition, not final deployed model. Within-pair conditions differ, but identity overlap between Table2 RVQ pair and Table3 strategy pair is not established; do not count four unique released checkpoints."
+    },
+    {
+      "verbatim_label": "StepAudio 3 Gen",
+      "classification": "posttrained_generation_model",
+      "underlying_model_key": "StepAudio 3 Gen",
+      "organization": "StepFun",
+      "organization_evidence_source_ids": [
+        "ML107"
+      ],
+      "observation_source_ids": [
+        "ML107"
+      ],
+      "normalization_note": "Final generation model, distinct from report pretraining ablation conditions."
+    },
+    {
+      "verbatim_label": "HunyuanImage 3.0",
+      "classification": "distinct_reported_model_label",
+      "underlying_model_key": "HunyuanImage 3.0",
+      "organization": "Tencent",
+      "organization_evidence_source_ids": [
+        "ML099"
+      ],
+      "observation_source_ids": [
+        "ML099"
+      ],
+      "normalization_note": "Retain source label; immutable checkpoint/API snapshot not established."
+    },
+    {
+      "verbatim_label": "LongCat-Flash-Omni Instruct",
+      "classification": "posttrained_multimodal_model",
+      "underlying_model_key": "LongCat-Flash-Omni Instruct",
+      "organization": "Meituan",
+      "organization_evidence_source_ids": [
+        "ML083"
+      ],
+      "observation_source_ids": [
+        "ML083"
+      ],
+      "normalization_note": "API/benchmark Instruct label; separate from live product measurement."
+    },
+    {
+      "verbatim_label": "LongCat-Flash-Omni",
+      "classification": "system_label_variant_unresolved",
+      "underlying_model_key": null,
+      "organization": "Meituan",
+      "organization_evidence_source_ids": [
+        "ML083"
+      ],
+      "observation_source_ids": [
+        "ML083"
+      ],
+      "normalization_note": "Live audiovisual product/system measurements; family known but exact deployed checkpoint and identity with Instruct API row not pinned. Keep VAD/interface/time as system settings."
+    },
+    {
+      "verbatim_label": "GPT-4o product as labeled by report",
+      "classification": "unverified_product_model_identity",
+      "underlying_model_key": null,
+      "organization": null,
+      "organization_evidence_source_ids": [],
+      "observation_source_ids": [
+        "ML083"
+      ],
+      "normalization_note": "Report footnote uses https://chat.chatbot.app/?model=gpt-4o. Actual provider and underlying model not verified. Do not resolve to OpenAI GPT-4o entity solely by report label."
+    },
+    {
+      "verbatim_label": "Qwen3.5-Omni-Flash",
+      "classification": "distinct_model_size_service_variant",
+      "underlying_model_key": "Qwen3.5-Omni-Flash",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML072"
+      ],
+      "observation_source_ids": [
+        "ML072"
+      ],
+      "normalization_note": "Flash and Plus are distinct variants with different serving resources/parallelism. Do not treat Flash as a decoding flag on Plus."
+    },
+    {
+      "verbatim_label": "Qwen3.5-Omni-Plus",
+      "classification": "distinct_model_size_service_variant",
+      "underlying_model_key": "Qwen3.5-Omni-Plus",
+      "organization": "Qwen team",
+      "organization_evidence_source_ids": [
+        "ML072"
+      ],
+      "observation_source_ids": [
+        "ML072"
+      ],
+      "normalization_note": "Flash and Plus are distinct variants with different serving resources/parallelism. Do not treat Flash as a decoding flag on Plus."
+    },
+    {
+      "verbatim_label": "GPT-Rosalind-6",
+      "classification": "explicit_same_weights_deployment_variant",
+      "underlying_model_key": "GPT-6 Astra",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML011"
+      ],
+      "observation_source_ids": [
+        "ML011"
+      ],
+      "normalization_note": "ML011 sections1–2 explicitly same weights, no new data/post-training. Keep separate deployment/policy/access variant; not all metrics matched."
+    },
+    {
+      "verbatim_label": "GPT-Rosalind-5.5",
+      "classification": "distinct_reported_prior_model",
+      "underlying_model_key": "GPT-Rosalind-5.5",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML011"
+      ],
+      "observation_source_ids": [
+        "ML011"
+      ],
+      "normalization_note": "Prior model re-evaluated on matched beneficial benchmarks; no same-weight link to another model established in this source."
+    },
+    {
+      "verbatim_label": "GPT-6 Cyber",
+      "classification": "distinct_posttrained_variant",
+      "underlying_model_key": "GPT-6 Cyber",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML010"
+      ],
+      "observation_source_ids": [
+        "ML010"
+      ],
+      "normalization_note": "Specialized RL post-training from Astra; not same-weights policy variant or mere effort setting."
+    },
+    {
+      "verbatim_label": "GPT-6 Sol October2026",
+      "classification": "dated_deployment_model_version",
+      "underlying_model_key": "GPT-6 Sol October2026",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML009"
+      ],
+      "observation_source_ids": [
+        "ML009"
+      ],
+      "normalization_note": "October2026 ChatGPT release, explicitly different from September versions in Codex/Work at card publication. Do not merge dates or assume present-day routing."
+    },
+    {
+      "verbatim_label": "GPT-6 Luna October2026",
+      "classification": "dated_deployment_model_version",
+      "underlying_model_key": "GPT-6 Luna October2026",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML009"
+      ],
+      "observation_source_ids": [
+        "ML009"
+      ],
+      "normalization_note": "October2026 ChatGPT release, explicitly different from September versions in Codex/Work at card publication. Do not merge dates or assume present-day routing."
+    },
+    {
+      "verbatim_label": "GPT-Live-1",
+      "classification": "voice_model_and_delegation_system",
+      "underlying_model_key": "GPT-Live-1",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML123"
+      ],
+      "observation_source_ids": [
+        "ML123"
+      ],
+      "normalization_note": "Distinct named voice version/size; card evaluates two-model systems with delegated thinking model. No unique end-to-end checkpoint identity asserted. Live1.1 succeeds Live1; Quip succeeds Live1 mini."
+    },
+    {
+      "verbatim_label": "GPT-Live-1.1",
+      "classification": "voice_model_and_delegation_system",
+      "underlying_model_key": "GPT-Live-1.1",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML123"
+      ],
+      "observation_source_ids": [
+        "ML123"
+      ],
+      "normalization_note": "Distinct named voice version/size; card evaluates two-model systems with delegated thinking model. No unique end-to-end checkpoint identity asserted. Live1.1 succeeds Live1; Quip succeeds Live1 mini."
+    },
+    {
+      "verbatim_label": "GPT-Live-1.1 Quip",
+      "classification": "voice_model_and_delegation_system",
+      "underlying_model_key": "GPT-Live-1.1 Quip",
+      "organization": "OpenAI",
+      "organization_evidence_source_ids": [
+        "ML123"
+      ],
+      "observation_source_ids": [
+        "ML123"
+      ],
+      "normalization_note": "Distinct named voice version/size; card evaluates two-model systems with delegated thinking model. No unique end-to-end checkpoint identity asserted. Live1.1 succeeds Live1; Quip succeeds Live1 mini."
+    }
+  ]
+}

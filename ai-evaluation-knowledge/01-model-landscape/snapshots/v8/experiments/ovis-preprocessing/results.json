@@ -1,0 +1,395 @@
+{
+  "scope": "D4 synthetic component-only; GitHub repository implementation, not HF remote-code model execution",
+  "repository": "ATH-MaaS/Ovis",
+  "commit": "e1916bf3cb0ca123e71ab173ff4463df5c3a71b5",
+  "source_files_verified": 8,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "torch": "not installed; explicit NumPy stand-in"
+  },
+  "cases": [
+    {
+      "id": "OVP001",
+      "name": "4K dimensions are downscaled under direct preprocess default cap",
+      "actual": [
+        1152,
+        2048
+      ],
+      "expected": [
+        1152,
+        2048
+      ],
+      "passed": true,
+      "scope": "original resize arithmetic"
+    },
+    {
+      "id": "OVP002",
+      "name": "small square is upscaled to minimum area",
+      "actual": [
+        448,
+        448
+      ],
+      "expected": [
+        448,
+        448
+      ],
+      "passed": true,
+      "scope": "original resize arithmetic"
+    },
+    {
+      "id": "OVP003",
+      "name": "non-multiple dimensions round to patch-stride alignment",
+      "actual": [
+        1088,
+        1920
+      ],
+      "expected": [
+        1088,
+        1920
+      ],
+      "passed": true,
+      "scope": "original resize arithmetic"
+    },
+    {
+      "id": "OVP004",
+      "name": "oversized aspect ratio clamps instead of preserving original ratio",
+      "actual": [
+        32,
+        6400
+      ],
+      "expected": [
+        32,
+        6400
+      ],
+      "passed": true,
+      "scope": "original resize arithmetic, extreme aspect fixture"
+    },
+    {
+      "id": "OVP005",
+      "name": "small-dimension branch can yield zero after later flooring",
+      "actual": [
+        0,
+        155168
+      ],
+      "expected": [
+        0,
+        155168
+      ],
+      "passed": true,
+      "scope": "boundary arithmetic only; no image processor invocation"
+    },
+    {
+      "id": "OVP006",
+      "name": "equal min-max target may be exceeded after ceil alignment",
+      "actual": [
+        [
+          320,
+          640
+        ],
+        204800,
+        true
+      ],
+      "expected": [
+        [
+          320,
+          640
+        ],
+        204800,
+        true
+      ],
+      "passed": true,
+      "scope": "original resize arithmetic with equal min/max budget"
+    },
+    {
+      "id": "OVP007",
+      "name": "single-image patch packing",
+      "actual": [
+        [
+          8,
+          768
+        ],
+        [
+          [
+            1,
+            2,
+            4
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          8,
+          768
+        ],
+        [
+          [
+            1,
+            2,
+            4
+          ]
+        ]
+      ],
+      "passed": true,
+      "scope": "original packing with zero-valued processor output"
+    },
+    {
+      "id": "OVP008",
+      "name": "mixed-aspect frames use dimensions of first frame",
+      "actual": [
+        {
+          "original_size": [
+            200,
+            100
+          ],
+          "requested_size": {
+            "height": 32,
+            "width": 64
+          }
+        },
+        {
+          "original_size": [
+            100,
+            200
+          ],
+          "requested_size": {
+            "height": 32,
+            "width": 64
+          }
+        }
+      ],
+      "expected": [
+        {
+          "original_size": [
+            200,
+            100
+          ],
+          "requested_size": {
+            "height": 32,
+            "width": 64
+          }
+        },
+        {
+          "original_size": [
+            100,
+            200
+          ],
+          "requested_size": {
+            "height": 32,
+            "width": 64
+          }
+        }
+      ],
+      "passed": true,
+      "scope": "processor call arguments, not actual pixel interpolation"
+    },
+    {
+      "id": "OVP009",
+      "name": "video area budget applies to each supplied frame",
+      "actual": [
+        [
+          16,
+          768
+        ],
+        [
+          [
+            2,
+            2,
+            4
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          16,
+          768
+        ],
+        [
+          [
+            2,
+            2,
+            4
+          ]
+        ]
+      ],
+      "passed": true,
+      "scope": "original video packing with two synthetic frames"
+    },
+    {
+      "id": "OVP010",
+      "name": "default temporal size gives four visual atoms for two frames",
+      "actual": 4,
+      "expected": 4,
+      "passed": true,
+      "scope": "original placeholder expansion, released temporal size1"
+    },
+    {
+      "id": "OVP011",
+      "name": "temporal size2 pads three frames to four",
+      "actual": [
+        [
+          16,
+          1536
+        ],
+        [
+          [
+            2,
+            2,
+            4
+          ]
+        ]
+      ],
+      "expected": [
+        [
+          16,
+          1536
+        ],
+        [
+          [
+            2,
+            2,
+            4
+          ]
+        ]
+      ],
+      "passed": true,
+      "scope": "non-default temporal size2 packing"
+    },
+    {
+      "id": "OVP012",
+      "name": "non-default temporal size2 divides atom count again",
+      "actual": [
+        2,
+        4
+      ],
+      "expected": [
+        2,
+        4
+      ],
+      "passed": true,
+      "scope": "non-default temporal size2 placeholder count versus spatial-merge count; no model forward"
+    },
+    {
+      "id": "OVP013",
+      "name": "temporal size3 and two frames fail reshape after padding",
+      "actual": "ValueError",
+      "expected": "ValueError",
+      "passed": true,
+      "scope": "non-default temporal size3 boundary"
+    },
+    {
+      "id": "OVP014",
+      "name": "forced bridge consumes remaining answer budget",
+      "actual": [
+        {
+          "max_new_tokens": 3,
+          "input_length": 2
+        },
+        {
+          "max_new_tokens": 4,
+          "input_length": 8
+        }
+      ],
+      "expected": [
+        {
+          "max_new_tokens": 3,
+          "input_length": 2
+        },
+        {
+          "max_new_tokens": 4,
+          "input_length": 8
+        }
+      ],
+      "passed": true,
+      "scope": "chat control flow with fixed token outputs and three-token bridge"
+    },
+    {
+      "id": "OVP015",
+      "name": "history retains final response, not synthetic thinking tokens",
+      "actual": "20",
+      "expected": "20",
+      "passed": true,
+      "scope": "chat history assembly with token fixtures"
+    },
+    {
+      "id": "OVP016",
+      "name": "existing think delimiter avoids bridge insertion",
+      "actual": [
+        {
+          "max_new_tokens": 3,
+          "input_length": 2
+        },
+        {
+          "max_new_tokens": 8,
+          "input_length": 4
+        }
+      ],
+      "expected": [
+        {
+          "max_new_tokens": 3,
+          "input_length": 2
+        },
+        {
+          "max_new_tokens": 8,
+          "input_length": 4
+        }
+      ],
+      "passed": true,
+      "scope": "chat control flow with preexisting delimiter"
+    },
+    {
+      "id": "OVP017",
+      "name": "end-of-message in phase1 skips phase2",
+      "actual": 1,
+      "expected": 1,
+      "passed": true,
+      "scope": "chat control flow with fixed end token"
+    },
+    {
+      "id": "OVP018",
+      "name": "bridge may exceed total budget when insufficient margin",
+      "actual": [
+        1,
+        "10 11 12 88 89",
+        ""
+      ],
+      "expected": [
+        1,
+        "10 11 12 88 89",
+        ""
+      ],
+      "passed": true,
+      "scope": "undersized total-budget boundary; HF documentation recommends a margin"
+    },
+    {
+      "id": "OVP019",
+      "name": "no thinking budget means one total-budget generation call",
+      "actual": [
+        {
+          "max_new_tokens": 10,
+          "input_length": 2
+        }
+      ],
+      "expected": [
+        {
+          "max_new_tokens": 10,
+          "input_length": 2
+        }
+      ],
+      "passed": true,
+      "scope": "chat control flow with budget omitted"
+    }
+  ],
+  "synthetic_cases": 19,
+  "model_calls": 0,
+  "judge_calls": 0,
+  "network_calls": 0,
+  "real_task_images_processed": 0,
+  "limitations": [
+    "No weights, transformer, flash attention, actual tokenizer, torch backend, or model generation executed.",
+    "Pixel processor returns zero arrays; packing executes but interpolation and vision quality are not tested.",
+    "Temporal sizes2/3 are outside released checkpoint config, whose temporal size is1.",
+    "HF remote code differs from GitHub interface; this executable study is pinned to GitHub only.",
+    "No benchmark score, actual image task answer or image fidelity reproduced."
+  ]
+}

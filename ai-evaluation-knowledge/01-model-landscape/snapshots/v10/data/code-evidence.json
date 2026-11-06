@@ -1,0 +1,36 @@
+[
+  {
+    "id": "MC007",
+    "artifact": "HLE simple runner and Diamond tool protocol",
+    "depth": "D3",
+    "learning_level": "L3",
+    "evidence_kind": "source_execution_flow_trace",
+    "source_url": "https://github.com/centerforaisafety/hle/tree/22ed3074b1e7b134bcbc09028d0ba320839b0655",
+    "commit": "22ed3074b1e7b134bcbc09028d0ba320839b0655",
+    "read_scope": "prediction CLI/data/cache/API flow; judge/cache/metrics/calibration/Wald CI; tool protocol and blocklist configuration",
+    "limitations": "Not production leaderboard implementation. No real Diamond task read: rows401/gated. Tool wrapper not available in reviewed source.",
+    "observed_at": "2026-11-06"
+  },
+  {
+    "id": "MC008",
+    "artifact": "HLE simple runner synthetic component probes",
+    "depth": "D4",
+    "learning_level": "L2",
+    "evidence_kind": "executed_synthetic_component_probe",
+    "source_id": "MC007",
+    "probe_count": 25,
+    "model_calls": 0,
+    "judge_calls": 0,
+    "network_calls": 0,
+    "real_dataset_loaded": false,
+    "environment": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "upstream_pinned_numpy": "1.26.4",
+      "dependency_match": false
+    },
+    "results_path": "experiments/hle-statistics/results.json",
+    "limitations": "AST functions with explicit mock transports/dataset/scheduler. Not model score reproduction. Independent all-bin comparator diagnostic only. Replay identical but not an extra experiment.",
+    "observed_at": "2026-11-06"
+  }
+]
