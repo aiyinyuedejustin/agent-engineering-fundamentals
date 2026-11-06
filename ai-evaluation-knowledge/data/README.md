@@ -2,7 +2,7 @@
 
 All CSV files use UTF-8, comma separation, one header row, and standard CSV quoting. Empty cells mean unknown/unverified, not zero or false. Multi-value ID and modality fields use semicolons. JSONL files contain one JSON object per line and no enclosing array. Empty JSONL files are intentionally valid empty indexes.
 
-**Current records:** the second reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
+**Current records:** the third reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
 
 ## Stable identifiers
 
@@ -61,9 +61,11 @@ Each source object has:
 
 - Required: `source_id`, `title`, `url`, `source_type`, `primary`, `accessed_at_utc`, `inspection_status`.
 - Optional: `authors` (array), `organization`, `published_date`, `version`, `repository_commit`, `local_path`, `content_hash`, `license`, `notes`.
-- `source_type`: `paper`, `technical_report`, `documentation`, `repository`, `code_file`, `dataset`, `model_card`, `release_note`, `article`, or `other`.
+- `source_type`: `paper`, `technical_report`, `documentation`, `repository`, `code_file`, `dataset`, `model_card`, `release_note`, `article`, `task`, `original_experiment`, or `other`.
 - `primary`: boolean describing whether the source is primary for the recorded claim context; explain mixed cases in notes. For a discovered candidate this describes the official destination, not verification of the target report.
-- `inspection_status`: `discovered`, `read`, `partially_read`, or `unavailable`.
+- `inspection_status`: `discovered`, `read`, `partially_read`, `executed`, or `unavailable`.
+
+For an original local experiment, `url` may remain null until publication is verified. In that case `source_type` must be `original_experiment`, with an existing `local_path` and matching `sha256`; do not invent a public URL. Source-record counts include these records, but unique external URL counts exclude null.
 
 Only record access times for actual retrievals. If exact time was not measured, `accessed_at_utc` is null, `accessed_date` retains the actual date, and `access_time_precision` is `date`. A URL-only discovery does not mean the target content was read. Report candidates may share an official index URL; source-record count and unique-URL count are different. `read_scope` and `notes` preserve the actual inspected extent.
 

@@ -1,0 +1,193 @@
+{
+  "batch": "third research increment / batch-04",
+  "snapshot_at_utc": "2026-11-06T03:54:41.062230+00:00",
+  "previous_verified_commit": "8bf169cff44697e82dbaf54aa46121b46025c3cd",
+  "scope": "Complete frozen runtime section and normalized metadata. No model/catalog expansion in this increment.",
+  "counts": {
+    "generated_at_utc": "2026-11-06T03:54:41.062230+00:00",
+    "stable_artifacts": 82,
+    "models": 18,
+    "benchmarks": 65,
+    "concepts": 23,
+    "result_observations": 99,
+    "sources": 331,
+    "unique_source_urls": 278,
+    "source_statuses": {
+      "partially_read": 260,
+      "discovered": 68,
+      "read": 2,
+      "executed": 1
+    },
+    "evidence": 242,
+    "evidence_depths": {
+      "D1": 166,
+      "D3": 57,
+      "D2": 2,
+      "D4": 17
+    },
+    "catalog_entries": 46,
+    "catalog_depths": {
+      "D1": 40,
+      "D3": 6
+    },
+    "reviewed_complete_deep_studies": 0,
+    "full_benchmark_reproductions": 0,
+    "model_report_registry_records": 94,
+    "model_report_registry_depths": {
+      "D1": 26,
+      "D0": 68
+    },
+    "original_local_source_records": 2,
+    "runtime_files": 22,
+    "runtime_source_records_added": 28,
+    "runtime_evidence_records_added": 51,
+    "diagnostic_programs": 10
+  },
+  "validation": {
+    "central_integrity": "pass",
+    "runtime_labs": [
+      {
+        "original": "05-agent-runtime/mock-conformance-results.json",
+        "rerun_started_at": "2026-11-06T03:55:09.457630+00:00",
+        "case_observations_equal": true,
+        "script_hash_equal": true,
+        "scope": "Integration rerun only; original output unchanged."
+      },
+      {
+        "original": "05-agent-runtime/transport-fault-results.json",
+        "rerun_started_at": "2026-11-06T03:55:10.438329+00:00",
+        "case_observations_equal": true,
+        "script_hash_equal": true,
+        "scope": "Integration rerun only; original output unchanged."
+      }
+    ],
+    "frozen_runtime_files": 22
+  },
+  "files": [
+    {
+      "path": "05-agent-runtime/acp-black-box-agent-trace.md",
+      "sha256": "c7900560d70aa87a022d99699f95f3e32113c88b4cfaf768e137bf0d11d468a9",
+      "bytes": 11873
+    },
+    {
+      "path": "05-agent-runtime/collection-ledger.md",
+      "sha256": "0a13dc55375e214acb545950c5d0ab714beb6864b22974d0e8eafaf8b75c325d",
+      "bytes": 6269
+    },
+    {
+      "path": "05-agent-runtime/computer-action-transport-addendum.md",
+      "sha256": "6c2d35f9f0eb794d20c25b38cd0df7c66e163b403ead7db27143bcfa4dd35cc2",
+      "bytes": 6238
+    },
+    {
+      "path": "05-agent-runtime/harbor-multi-step-and-simulated-user.md",
+      "sha256": "5dbcf80c26e57f2187957ccc51a0a017753418910b646c55a8bca5ea0d833f8f",
+      "bytes": 10172
+    },
+    {
+      "path": "05-agent-runtime/mock-conformance-lab.md",
+      "sha256": "2d7b6828c861a5b694c57e4dc0c6a1a6d416ce4603d009dec8b4409c0e778c5e",
+      "bytes": 4194
+    },
+    {
+      "path": "05-agent-runtime/mock-conformance-results.json",
+      "sha256": "44ea5b7e8f424de3cc0572250c57bc28fed0eea6c48e1d33cc97734c76db27ad",
+      "bytes": 12286
+    },
+    {
+      "path": "05-agent-runtime/mock_conformance_lab.py",
+      "sha256": "56a56799244c618a39459fc1a153a4307e4da8e9d11617e61784e1df38dcf3f8",
+      "bytes": 10845
+    },
+    {
+      "path": "05-agent-runtime/openhands-state-and-remote-trace.md",
+      "sha256": "cf555d1eb88ffeb36662f4b58da3528140a99d2affef4b9767bfd0e03fe4744b",
+      "bytes": 10678
+    },
+    {
+      "path": "05-agent-runtime/runtime-evidence-bundle.json",
+      "sha256": "0434e3a831220b70f21691a851df526d6b831d80444310474d6b13236eb8bf73",
+      "bytes": 35298
+    },
+    {
+      "path": "05-agent-runtime/runtime-evidence-multistep.json",
+      "sha256": "59e9c57e4738971f5a65f5451ac12174c1164c1da096a306941a4cdb3e12c1d0",
+      "bytes": 12333
+    },
+    {
+      "path": "05-agent-runtime/runtime-evidence-openhands.json",
+      "sha256": "83fdaa8b2f3810b621ccf4267209ad4e54544105f5fe2b6e76681d7f657f4d6c",
+      "bytes": 19503
+    },
+    {
+      "path": "05-agent-runtime/runtime-evidence-transport-lab.json",
+      "sha256": "7a28f0cfad5440d89679ff7f2e62a070b9156d2a97b456ddc540fa6685c7bf0a",
+      "bytes": 7988
+    },
+    {
+      "path": "05-agent-runtime/runtime-risk-register.md",
+      "sha256": "37e3f99cdd697483bf853b7f74c43ea85979b1da2145e1ae8c4121b54304402f",
+      "bytes": 6500
+    },
+    {
+      "path": "05-agent-runtime/runtime-selection-and-validation.md",
+      "sha256": "293684adc9a734a118c7e7110eef2383cc7096669f31bb22e3dbddba3a17baad",
+      "bytes": 7963
+    },
+    {
+      "path": "05-agent-runtime/transport-fault-lab.md",
+      "sha256": "bdaff3d6e20f4fb42187778b7817e65f90443243e41d8d0c2741a213c03ff288",
+      "bytes": 6944
+    },
+    {
+      "path": "05-agent-runtime/transport-fault-results.json",
+      "sha256": "03888799ab98a365851b7b2fac2c388a5a1b429b21cc485574366ff9eb469a46",
+      "bytes": 11115
+    },
+    {
+      "path": "05-agent-runtime/transport_fault_lab.py",
+      "sha256": "271c5ff4cfabc098675c15acb6ec914d904f43b778c7309e46a6daf8a02897bb",
+      "bytes": 12476
+    },
+    {
+      "path": "README.md",
+      "sha256": "3ad18622f2ccda8a86745a0b383fa1fb0690bf93fc90131b4eb4a77616f76818",
+      "bytes": 6589
+    },
+    {
+      "path": "RESUME.md",
+      "sha256": "48c2310af125c5755d846fd1704add1f6f0176a738dff6d5720a208b6c32e7e9",
+      "bytes": 2495
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "c50cc2e53350922042b0204744c3e7e7a04d09794a78c6786505d431b4c58c2f",
+      "bytes": 8333
+    },
+    {
+      "path": "data/concepts.csv",
+      "sha256": "2eab7fe9a7159e0d2113b4db3ca6d8d1bedc4ef6c19efa11588af91fe1b140e8",
+      "bytes": 14543
+    },
+    {
+      "path": "data/evidence.jsonl",
+      "sha256": "f7c42d40ff50b6fd1221a8bd2ccf8a8180aa1b5f7cc0a3ec21e22059c1eb2a01",
+      "bytes": 215140
+    },
+    {
+      "path": "data/sources.jsonl",
+      "sha256": "f4610fcbd994214f08c530e64c12a0ac06ea79ea74783c49458c6bbcfa7f77ac",
+      "bytes": 213312
+    },
+    {
+      "path": "data/validate_indexes.py",
+      "sha256": "17cb427f2c2c2b8fb7d1f6068b78bb079386e0a08fbc9882081cd560213cda1a",
+      "bytes": 3561
+    },
+    {
+      "path": "research-status/coverage.md",
+      "sha256": "2671406be027e0ca4690197b396736773fc430cff43158e0a557fcd4c12b4510",
+      "bytes": 5704
+    }
+  ]
+}

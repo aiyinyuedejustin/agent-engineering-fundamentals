@@ -1,0 +1,483 @@
+{
+  "schema_version": "runtime-evidence-bundle-1",
+  "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+  "scope": "Supplemental OpenHands and ACP source evidence",
+  "ingestion_notes": [
+    "Existing concept IDs refer to runtime-evidence-bundle.json.",
+    "No edits to earlier frozen artifacts.",
+    "Source code locators beginning conversation/, agent/ or io/ are under openhands-sdk/openhands/sdk/.",
+    "Date-only access fields preserve day precision.",
+    "Source-level D3 does not imply cloud or CLI execution."
+  ],
+  "sources": [
+    {
+      "source_id": "source:runtime-openhands",
+      "title": "OpenHands software-agent-sdk selected source files",
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Relevant sections only. Exact fetch time not retained. No CLI/server/model execution.",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346"
+    },
+    {
+      "source_id": "source:runtime-openhands-persistence",
+      "title": "OpenHands SDK Persistence",
+      "url": "https://docs.openhands.dev/sdk/guides/convo-persistence",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Relevant sections only. Exact fetch time not retained. No CLI/server/model execution."
+    },
+    {
+      "source_id": "source:runtime-openhands-remote",
+      "title": "OpenHands Remote Agent Server Overview",
+      "url": "https://docs.openhands.dev/sdk/guides/agent-server/overview",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Relevant sections only. Exact fetch time not retained. No CLI/server/model execution."
+    },
+    {
+      "source_id": "source:runtime-openhands-acp",
+      "title": "OpenHands ACP Agent",
+      "url": "https://docs.openhands.dev/sdk/guides/agent-acp",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Relevant sections only. Exact fetch time not retained. No CLI/server/model execution."
+    },
+    {
+      "source_id": "source:runtime-acp-session",
+      "title": "ACP Session Setup",
+      "url": "https://agentclientprotocol.com/protocol/session-setup",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Relevant sections only. Exact fetch time not retained. No CLI/server/model execution."
+    },
+    {
+      "source_id": "source:runtime-acp-prompt",
+      "title": "ACP Prompt Turn",
+      "url": "https://agentclientprotocol.com/protocol/prompt-turn",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Relevant sections only. Exact fetch time not retained. No CLI/server/model execution."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "concept:black-box-agent-protocol",
+      "name": "Black-box agent protocol",
+      "definition": "A high-level session/prompt interface to an external agent that manages its own model, tools and execution.",
+      "source_ids": [
+        "source:runtime-openhands",
+        "source:runtime-acp-prompt"
+      ],
+      "status": "documented"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evidence:runtime-openhands-persistence-scope",
+      "entity_ids": [
+        "concept:checkpoint-scope"
+      ],
+      "claim": "ConversationState restore loads base state/events, repairs view, and adopts the provided workspace; the traced path is not a workspace filesystem snapshot restore.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/state.py:457-629"
+        },
+        {
+          "source_id": "source:runtime-openhands-persistence",
+          "locator": "Saving/Restoring State"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-openhands-autosave",
+      "entity_ids": [
+        "concept:checkpoint-scope"
+      ],
+      "claim": "Public-field reassignment triggers autosave, nested agent_state mutation requires reassignment, and state context-manager changes are batched to exit.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/state.py:203-263,631-683,779-800"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-openhands-event-tree",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "Events carry parent/HEAD relationships; active branch excludes abandoned branches, and missing HEAD recovery can select the last surviving event with a warning.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/state.py:300-364; conversation/event_store.py:241-303,392-453"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-openhands-fork-workspace",
+      "entity_ids": [
+        "concept:checkpoint-scope"
+      ],
+      "claim": "LocalConversation.fork copies agent/events/state but passes the same workspace; navigate_to changes view without file rollback, and fork resets metrics by default.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/impl/local_conversation.py:861-1022"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-openhands-remote-reconcile",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "Remote client combines REST history and WebSocket events with reconciliation; reconciliation can log an error and return partial results.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/impl/remote_conversation.py:336-450,1204-1311"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-openhands-completion-race",
+      "entity_ids": [
+        "concept:remote-exec-semantics"
+      ],
+      "claim": "Remote run prefers post-run WebSocket state because stop hooks can revert FINISHED; it has a timed REST fallback and wait timeout does not terminate server work.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/impl/remote_conversation.py:1395-1582; conversation/impl/local_conversation.py:2104-2164"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-openhands-local-remote-errors",
+      "entity_ids": [
+        "concept:remote-exec-semantics"
+      ],
+      "claim": "Local iteration-limit/stuck conditions return with state status, while RemoteConversation.run raises ConversationRunError for ERROR/STUCK.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "conversation/impl/local_conversation.py:2081-2102,2164-2237; conversation/impl/remote_conversation.py:1607-1627"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/openhands-state-and-remote-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-native-control",
+      "entity_ids": [
+        "concept:black-box-agent-protocol"
+      ],
+      "claim": "ACPAgent delegates model/tools/context to the external CLI, creates an initialized protocol session, and wraps one high-level prompt rather than observing each internal model call.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:3051-3450,3806-3834,4154-4286; examples/01_standalone_sdk/40_acp_agent_example.py"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-idle-timeout",
+      "entity_ids": [
+        "concept:runtime-budget-unit"
+      ],
+      "claim": "ACP prompt timeout is an inactivity watchdog reset by session updates, unlike the hard startup timeout and remote client wait budget.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:1815-1895,1492-1543,3842-3901"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-synthetic-tool-status",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "Adapter supplements missing terminal tool notifications with completed on prompt return and synthetic failed on abort/retry; those statuses are not all native reports.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:3559-3624,3906-3993"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-usage-limits",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "Usage uses response tokens and cumulative session cost deltas, with a token-pricing fallback; unavailable usage does not imply zero cost.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:943-986,2151-2225,3806-3834"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-currency-gap",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "ACP allows monetary currencies or credits; inspected usage recording consumes amount without a currency branch, so non-USD unit compatibility remains a targeted test need.",
+      "claim_type": "interpretation",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:1492-1543,2151-2225"
+        },
+        {
+          "source_id": "source:runtime-acp-prompt",
+          "locator": "Session usage updates"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "partial",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction.",
+        "No actual provider observed emitting credits or non-USD currency. No synthetic response run against upstream implementation."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-session-fallback",
+      "entity_ids": [
+        "concept:checkpoint-scope"
+      ],
+      "claim": "ACP restore guards persisted session cwd and may fall back from protocol load error to a new session; transport failures propagate rather than silently creating a new connection.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:3128-3176,3340-3407"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-cancel-drain",
+      "entity_ids": [
+        "concept:remote-exec-semantics"
+      ],
+      "claim": "Async cancellation sends session/cancel and drains, may restart runtime after a grace timeout, and preserves session identity because drain timeout does not establish lost persistence.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:3626-3733,4733-4827"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "supported",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-acp-mcp-doc-mismatch",
+      "entity_ids": [
+        "concept:black-box-agent-protocol"
+      ],
+      "claim": "Read ACP guide says mcp_config unsupported, while pinned implementation forwards configured MCP servers rather than creating in-process MCP tools.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-openhands-acp",
+          "locator": "What ACPAgent Does Not Support"
+        },
+        {
+          "source_id": "source:runtime-openhands",
+          "locator": "agent/acp_agent.py:2233-2240,3243-3250,3354-3360,3401-3406"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:11:37.874043+00:00",
+      "verification_status": "conflicted",
+      "repository_commit": "295b3baf71dfac1be028c5b187134ec3eb495346",
+      "artifact_paths": [
+        "05-agent-runtime/acp-black-box-agent-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Selected source flow only; no SDK/CLI/server/model runtime execution or benchmark reproduction."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "schema_version": "original-agent-runtime-lab-1",
+  "scope": "D4 for original mocks and listed local subprocess/bash experiments only",
+  "not_executed": [
+    "Harbor",
+    "Inspect",
+    "mini-SWE-agent",
+    "SWE-bench",
+    "OSWorld",
+    "BrowserGym",
+    "Docker daemon",
+    "cloud providers",
+    "model APIs"
+  ],
+  "started_utc": "2026-11-06T02:53:38.540408+00:00",
+  "completed_utc": "2026-11-06T02:53:39.438283+00:00",
+  "elapsed_seconds": 0.897875,
+  "python": "3.12.14",
+  "system": "Linux",
+  "machine": "x86_64",
+  "script_sha256": "56a56799244c618a39459fc1a153a4307e4da8e9d11617e61784e1df38dcf3f8",
+  "repetitions": 3,
+  "passed_cases": 30,
+  "runs": [
+    {
+      "iteration": 1,
+      "cases": [
+        {
+          "id": "turns_are_not_actions",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "turn_limit": 3,
+            "model_calls": 3,
+            "actions": 6
+          }
+        },
+        {
+          "id": "precall_cost_check_can_overshoot",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "limit": 1.0,
+            "reported_cost": 1.2,
+            "calls": 2,
+            "overshoot": 0.2
+          }
+        },
+        {
+          "id": "references_do_not_prove_completeness",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "references_valid": true,
+            "all_calls_have_results": false
+          }
+        },
+        {
+          "id": "inclusive_tree_totals_double_count",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "inclusive_totals": {
+              "root": 100,
+              "child": 40,
+              "grandchild": 10
+            },
+            "sum_all_nodes": 150,
+            "whole_run_total": 100
+          }
+        },
+        {
+          "id": "cache_key_omitting_patch_reuses_old_result",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "first": {
+              "evaluated_patch_sha256": "438d04fa0b3627789839640c90fe98851edbd6c706c7376e50bad44254f570dd"
+            },
+            "same_run_changed_patch": {
+              "evaluated_patch_sha256": "438d04fa0b3627789839640c90fe98851edbd6c706c7376e50bad44254f570dd"
+            },
+            "new_run_changed_patch": {
+              "evaluated_patch_sha256": "a158a9dbcb39a7e8da3a5f02a01c0f8ad362adb11749502eb1bce8a77fd014bb"
+            }
+          }
+        },
+        {
+          "id": "restoring_state_does_not_undo_external_effect",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "restored": {
+              "next_operation": 0
+            },
+            "external_writes": [
+              "operation-0",
+              "operation-0"
+            ],
+            "duplicate_count": 1
+          }
+        },
+        {
+          "id": "head_tail_observation_is_not_complete_output",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "original_chars": 12023,
+            "shown_chars": 10000,
+            "middle_marker_visible": false,
+            "full_output_sha256": "51581a93ad558e62fa7e7e383c69560493e6e1f20e1bcf5dfbdb522d418031d2",
+            "shown_output_sha256": "1193f0636b2c9a09acb067551a1cb5827cf6a543b2d11db923c5f5e6e7c21502"
+          }
+        },
+        {
+          "id": "cancelling_wait_is_not_terminating_worker",
+          "kind": "actual_local_subprocess",
+          "passed": true,
+          "observed": {
+            "worker_running_after_waiter_cancel": true,
+            "artifact_after_waiter_cancel": true,
+            "artifact_after_worker_terminate": false,
+            "all_workers_reaped": true
+          }
+        },
+        {
+          "id": "fresh_shell_preserves_files_not_cd_or_export",
+          "kind": "actual_local_bash",
+          "passed": true,
+          "observed": {
+            "first_returncode": 0,
+            "second_returncode": 0,
+            "cwd_is_initial": true,
+            "variable": "unset",
+            "file_contents": "saved"
+          }
+        },
+        {
+          "id": "cwd_string_requires_shell_quoting",
+          "kind": "actual_local_bash",
+          "passed": true,
+          "observed": {
+            "unquoted_returncode": 1,
+            "quoted_returncode": 0,
+            "quoted_stdout": "reached"
+          }
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "cases": [
+        {
+          "id": "turns_are_not_actions",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "turn_limit": 3,
+            "model_calls": 3,
+            "actions": 6
+          }
+        },
+        {
+          "id": "precall_cost_check_can_overshoot",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "limit": 1.0,
+            "reported_cost": 1.2,
+            "calls": 2,
+            "overshoot": 0.2
+          }
+        },
+        {
+          "id": "references_do_not_prove_completeness",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "references_valid": true,
+            "all_calls_have_results": false
+          }
+        },
+        {
+          "id": "inclusive_tree_totals_double_count",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "inclusive_totals": {
+              "root": 100,
+              "child": 40,
+              "grandchild": 10
+            },
+            "sum_all_nodes": 150,
+            "whole_run_total": 100
+          }
+        },
+        {
+          "id": "cache_key_omitting_patch_reuses_old_result",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "first": {
+              "evaluated_patch_sha256": "438d04fa0b3627789839640c90fe98851edbd6c706c7376e50bad44254f570dd"
+            },
+            "same_run_changed_patch": {
+              "evaluated_patch_sha256": "438d04fa0b3627789839640c90fe98851edbd6c706c7376e50bad44254f570dd"
+            },
+            "new_run_changed_patch": {
+              "evaluated_patch_sha256": "a158a9dbcb39a7e8da3a5f02a01c0f8ad362adb11749502eb1bce8a77fd014bb"
+            }
+          }
+        },
+        {
+          "id": "restoring_state_does_not_undo_external_effect",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "restored": {
+              "next_operation": 0
+            },
+            "external_writes": [
+              "operation-0",
+              "operation-0"
+            ],
+            "duplicate_count": 1
+          }
+        },
+        {
+          "id": "head_tail_observation_is_not_complete_output",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "original_chars": 12023,
+            "shown_chars": 10000,
+            "middle_marker_visible": false,
+            "full_output_sha256": "51581a93ad558e62fa7e7e383c69560493e6e1f20e1bcf5dfbdb522d418031d2",
+            "shown_output_sha256": "1193f0636b2c9a09acb067551a1cb5827cf6a543b2d11db923c5f5e6e7c21502"
+          }
+        },
+        {
+          "id": "cancelling_wait_is_not_terminating_worker",
+          "kind": "actual_local_subprocess",
+          "passed": true,
+          "observed": {
+            "worker_running_after_waiter_cancel": true,
+            "artifact_after_waiter_cancel": true,
+            "artifact_after_worker_terminate": false,
+            "all_workers_reaped": true
+          }
+        },
+        {
+          "id": "fresh_shell_preserves_files_not_cd_or_export",
+          "kind": "actual_local_bash",
+          "passed": true,
+          "observed": {
+            "first_returncode": 0,
+            "second_returncode": 0,
+            "cwd_is_initial": true,
+            "variable": "unset",
+            "file_contents": "saved"
+          }
+        },
+        {
+          "id": "cwd_string_requires_shell_quoting",
+          "kind": "actual_local_bash",
+          "passed": true,
+          "observed": {
+            "unquoted_returncode": 1,
+            "quoted_returncode": 0,
+            "quoted_stdout": "reached"
+          }
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "cases": [
+        {
+          "id": "turns_are_not_actions",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "turn_limit": 3,
+            "model_calls": 3,
+            "actions": 6
+          }
+        },
+        {
+          "id": "precall_cost_check_can_overshoot",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "limit": 1.0,
+            "reported_cost": 1.2,
+            "calls": 2,
+            "overshoot": 0.2
+          }
+        },
+        {
+          "id": "references_do_not_prove_completeness",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "references_valid": true,
+            "all_calls_have_results": false
+          }
+        },
+        {
+          "id": "inclusive_tree_totals_double_count",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "inclusive_totals": {
+              "root": 100,
+              "child": 40,
+              "grandchild": 10
+            },
+            "sum_all_nodes": 150,
+            "whole_run_total": 100
+          }
+        },
+        {
+          "id": "cache_key_omitting_patch_reuses_old_result",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "first": {
+              "evaluated_patch_sha256": "438d04fa0b3627789839640c90fe98851edbd6c706c7376e50bad44254f570dd"
+            },
+            "same_run_changed_patch": {
+              "evaluated_patch_sha256": "438d04fa0b3627789839640c90fe98851edbd6c706c7376e50bad44254f570dd"
+            },
+            "new_run_changed_patch": {
+              "evaluated_patch_sha256": "a158a9dbcb39a7e8da3a5f02a01c0f8ad362adb11749502eb1bce8a77fd014bb"
+            }
+          }
+        },
+        {
+          "id": "restoring_state_does_not_undo_external_effect",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "restored": {
+              "next_operation": 0
+            },
+            "external_writes": [
+              "operation-0",
+              "operation-0"
+            ],
+            "duplicate_count": 1
+          }
+        },
+        {
+          "id": "head_tail_observation_is_not_complete_output",
+          "kind": "original_algorithm_mock",
+          "passed": true,
+          "observed": {
+            "original_chars": 12023,
+            "shown_chars": 10000,
+            "middle_marker_visible": false,
+            "full_output_sha256": "51581a93ad558e62fa7e7e383c69560493e6e1f20e1bcf5dfbdb522d418031d2",
+            "shown_output_sha256": "1193f0636b2c9a09acb067551a1cb5827cf6a543b2d11db923c5f5e6e7c21502"
+          }
+        },
+        {
+          "id": "cancelling_wait_is_not_terminating_worker",
+          "kind": "actual_local_subprocess",
+          "passed": true,
+          "observed": {
+            "worker_running_after_waiter_cancel": true,
+            "artifact_after_waiter_cancel": true,
+            "artifact_after_worker_terminate": false,
+            "all_workers_reaped": true
+          }
+        },
+        {
+          "id": "fresh_shell_preserves_files_not_cd_or_export",
+          "kind": "actual_local_bash",
+          "passed": true,
+          "observed": {
+            "first_returncode": 0,
+            "second_returncode": 0,
+            "cwd_is_initial": true,
+            "variable": "unset",
+            "file_contents": "saved"
+          }
+        },
+        {
+          "id": "cwd_string_requires_shell_quoting",
+          "kind": "actual_local_bash",
+          "passed": true,
+          "observed": {
+            "unquoted_returncode": 1,
+            "quoted_returncode": 0,
+            "quoted_stdout": "reached"
+          }
+        }
+      ]
+    }
+  ]
+}

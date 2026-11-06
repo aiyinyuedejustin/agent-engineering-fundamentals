@@ -1,0 +1,868 @@
+{
+  "schema_version": "runtime-evidence-bundle-1",
+  "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+  "scope": "Original source-grounded runtime analysis and explicitly bounded local mechanism experiments",
+  "ingestion_notes": [
+    "Only 05-agent-runtime files are authored here; shared indexes untouched.",
+    "Date-only accessed_at_utc values intentionally preserve known day precision rather than invent exact retrieval times.",
+    "Local lab source URL is null until publication coordinator verifies its public location.",
+    "No upstream source snapshots are included.",
+    "D4 evidence applies only to the original lab, not to linked products."
+  ],
+  "sources": [
+    {
+      "source_id": "source:runtime-harbor",
+      "title": "harbor-framework/harbor inspected implementation",
+      "url": "https://github.com/harbor-framework/harbor",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "notes": "Only files/symbols explicitly cited in the linked artifacts were read. Exact original fetch timestamp was not retained. No repository-wide audit or upstream execution."
+    },
+    {
+      "source_id": "source:runtime-inspect",
+      "title": "UKGovernmentBEIS/inspect_ai inspected implementation",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "repository_commit": "7cf09c929b3ea9138762ca9e4d8d23f119554ee6",
+      "notes": "Only files/symbols explicitly cited in the linked artifacts were read. Exact original fetch timestamp was not retained. No repository-wide audit or upstream execution."
+    },
+    {
+      "source_id": "source:runtime-osworld",
+      "title": "xlang-ai/OSWorld inspected implementation",
+      "url": "https://github.com/xlang-ai/OSWorld",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "repository_commit": "8903ebeb0efdf74331bd7dc37ed91ccbbff22317",
+      "notes": "Only files/symbols explicitly cited in the linked artifacts were read. Exact original fetch timestamp was not retained. No repository-wide audit or upstream execution."
+    },
+    {
+      "source_id": "source:runtime-browsergym",
+      "title": "ServiceNow/BrowserGym inspected implementation",
+      "url": "https://github.com/ServiceNow/BrowserGym",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "repository_commit": "27a90ce815098f43414e93491e06907af468e45b",
+      "notes": "Only files/symbols explicitly cited in the linked artifacts were read. Exact original fetch timestamp was not retained. No repository-wide audit or upstream execution."
+    },
+    {
+      "source_id": "source:runtime-mini-swe-agent",
+      "title": "SWE-agent/mini-swe-agent inspected implementation",
+      "url": "https://github.com/SWE-agent/mini-swe-agent",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "repository_commit": "04d809ceab9df28f9adaed044884180159172930",
+      "notes": "Only files/symbols explicitly cited in the linked artifacts were read. Exact original fetch timestamp was not retained. No repository-wide audit or upstream execution."
+    },
+    {
+      "source_id": "source:runtime-swe-bench",
+      "title": "SWE-bench/SWE-bench inspected implementation",
+      "url": "https://github.com/SWE-bench/SWE-bench",
+      "source_type": "repository",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "repository_commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+      "notes": "Only files/symbols explicitly cited in the linked artifacts were read. Exact original fetch timestamp was not retained. No repository-wide audit or upstream execution."
+    },
+    {
+      "source_id": "source:runtime-inspect-bridge-docs",
+      "title": "Inspect Agent Bridge",
+      "url": "https://inspect.aisi.org.uk/agent-bridge.html",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-inspect-logs",
+      "title": "Inspect Evaluation Logs",
+      "url": "https://inspect.aisi.org.uk/eval-logs.html",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-inspect-events",
+      "title": "Inspect Event Reference",
+      "url": "https://inspect.aisi.org.uk/reference/inspect_ai.event.html",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-inspect-checkpoint",
+      "title": "Inspect Agent Checkpointing",
+      "url": "https://inspect.aisi.org.uk/checkpointing.html",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-harbor-atif",
+      "title": "Harbor ATIF",
+      "url": "https://docs.harborframework.com/agents/atif.md",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-harbor-verifier-docs",
+      "title": "Harbor Separate Verifier",
+      "url": "https://docs.harborframework.com/tasks/separate-verifier.md",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-harbor-asp",
+      "title": "Harbor Agent Sandbox Protocol RFC",
+      "url": "https://docs.harborframework.com/sandboxes/asp.md",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-otel-agent-spans",
+      "title": "OpenTelemetry GenAI agent spans",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Mutable official documentation read on the stated UTC date; exact original fetch timestamp not retained. Not an execution record. Relevant sections were inspected; no claim of exhaustive documentation audit."
+    },
+    {
+      "source_id": "source:runtime-original-lab",
+      "title": "Original runtime mechanism lab and recorded results",
+      "url": null,
+      "source_type": "other",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06T02:53:39.438283+00:00",
+      "inspection_status": "read",
+      "local_path": "05-agent-runtime/mock_conformance_lab.py",
+      "content_hash": "sha256:56a56799244c618a39459fc1a153a4307e4da8e9d11617e61784e1df38dcf3f8",
+      "notes": "Original locally executed artifact. Public URL intentionally null until publisher verifies it. Results in mock-conformance-results.json."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "concept:agent-harness",
+      "name": "Agent harness",
+      "definition": "Orchestrates agent, task environment, trial lifecycle, evidence capture and scoring.",
+      "source_ids": [
+        "source:runtime-harbor"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:artifact-grading-boundary",
+      "name": "Artifact grading boundary",
+      "definition": "Defines which outputs cross from the agent environment to a verifier.",
+      "source_ids": [
+        "source:runtime-harbor"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:agent-bridge",
+      "name": "Agent bridge",
+      "definition": "Adapts agent model/tool traffic into an evaluation runtime; may change effective generation or capability policy.",
+      "source_ids": [
+        "source:runtime-inspect"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:trajectory-completeness",
+      "name": "Trajectory completeness",
+      "definition": "Separate property from schema validity: whether relevant calls, results, media and subagents were actually retained.",
+      "source_ids": [
+        "source:runtime-harbor"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:runtime-budget-unit",
+      "name": "Runtime budget unit",
+      "definition": "The precise operation counted by a limit: generation, primitive action, token, cost or elapsed time.",
+      "source_ids": [
+        "source:runtime-mini-swe-agent"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:remote-exec-semantics",
+      "name": "Remote exec semantics",
+      "definition": "Process, output, timeout, cancellation and cleanup contract behind an execution interface.",
+      "source_ids": [
+        "source:runtime-harbor"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:checkpoint-scope",
+      "name": "Checkpoint scope",
+      "definition": "The registered state and filesystem subset captured and restored, excluding untracked external side effects.",
+      "source_ids": [
+        "source:runtime-inspect-checkpoint"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:cache-identity",
+      "name": "Evaluation cache identity",
+      "definition": "Fields used to identify a reusable prediction or report; omitted content changes require invalidation.",
+      "source_ids": [
+        "source:runtime-swe-bench"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:computer-action-transport",
+      "name": "Computer action transport",
+      "definition": "Converts agent actions into remote input/program execution and feedback, with endpoint-specific failure semantics.",
+      "source_ids": [
+        "source:runtime-osworld"
+      ],
+      "status": "documented"
+    },
+    {
+      "concept_id": "concept:original-runtime-lab",
+      "name": "Original runtime mechanism lab",
+      "definition": "Self-written counterexample experiments, distinct from reproducing an upstream benchmark.",
+      "source_ids": [
+        "source:runtime-original-lab"
+      ],
+      "status": "documented"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evidence:runtime-trial-lifecycle",
+      "entity_ids": [
+        "concept:agent-harness"
+      ],
+      "claim": "SingleStepTrial runs agent, syncs logs, collects artifacts, and grades; agent timeout/nonzero status is separate from reward and its validity.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:608-685; src/harbor/trial/single_step.py:38-113"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-separate-verifier",
+      "entity_ids": [
+        "concept:artifact-grading-boundary"
+      ],
+      "claim": "The inspected separate verifier path creates a fresh environment and transfers declared artifacts rather than copying all agent filesystem state.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:1020-1141; examples/tasks/separate-verifier-environment/task.toml and tests/test.sh"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-reward-file",
+      "entity_ids": [
+        "concept:artifact-grading-boundary"
+      ],
+      "claim": "Verifier.verify reads validated reward files; the test-script return code is not directly used as the final numeric reward.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/verifier/verifier.py:69-126,193-310"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-installed-cli",
+      "entity_ids": [
+        "concept:agent-harness"
+      ],
+      "claim": "Installed-agent setup includes configuration even when installation is skipped; Codex integration includes effective config, native sessions and post-run log conversion.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/agents/installed/base.py:1171-1213; src/harbor/agents/installed/codex.py:2070-2250"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-bridge-config",
+      "entity_ids": [
+        "concept:agent-bridge"
+      ],
+      "claim": "Sandbox bridge defaults forward_generation_config to false and resolves aliases/models before forwarding; its default can alter native generation settings.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-inspect",
+          "locator": "src/inspect_ai/agent/_bridge/sandbox/bridge.py:55-335"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-bridge-host-tools",
+      "entity_ids": [
+        "concept:agent-bridge"
+      ],
+      "claim": "Host tools normally consume a matching model-proposed grant once; proposal exemption is an explicit capability change.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-inspect",
+          "locator": "src/inspect_ai/agent/_bridge/sandbox/host_tool.py:110-165,236-282"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-bridge-mcp-mismatch",
+      "entity_ids": [
+        "concept:agent-bridge"
+      ],
+      "claim": "Read documentation/docstring refers to Stdio configs, while pinned _register_bridged_tools returns MCPServerConfigHTTP.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-inspect-bridge-docs",
+          "locator": "Bridged tools"
+        },
+        {
+          "source_id": "source:runtime-inspect",
+          "locator": "src/inspect_ai/agent/_bridge/sandbox/bridge.py:389-409"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "conflicted",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Version-specific documentation/implementation mismatch; not exercised at runtime."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-root-attribution",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "is_root_agent can be true for unknown attribution; positive root attribution requires explicit kind == root.",
+      "claim_type": "source_inspected",
+      "depth": "D2",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-inspect",
+          "locator": "src/inspect_ai/agent/_bridge/context.py:1-109"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Context helper implementation and example task inspected; complete downstream consumers were not traced."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-atif-validation",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "ATIF trajectory validation checks present observation references but does not require every tool call to have an observation; session_id and trajectory_id have different scopes.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/models/trajectories/trajectory.py"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-codex-inclusive-metrics",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "Inspected Codex converter merges descendant usage into parent final_metrics and propagates unknown values rather than treating them as zero.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/agents/installed/codex.py:1503-1542"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-codex-conversion-failure",
+      "entity_ids": [
+        "concept:trajectory-completeness"
+      ],
+      "claim": "Codex post-run trajectory conversion failure is logged and returns without filling usage; missing telemetry must not be interpreted as zero cost.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/agents/installed/codex.py:1899-1934"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "No observed production data loss; code-path analysis only."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-checkpoint-boundaries",
+      "entity_ids": [
+        "concept:checkpoint-scope"
+      ],
+      "claim": "Inspect documents registered agent state, selected sandbox filesystem paths and sample state; arbitrary process RAM, running tools and external side effects are not captured.",
+      "claim_type": "reported",
+      "depth": "D1",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-inspect-checkpoint",
+          "locator": "Overview; Recovery; Checkpoint Flow; Limitations"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/inspect-bridge-and-trajectory.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Documentation only; no checkpoint source trace or restore execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-remote-interface",
+      "entity_ids": [
+        "concept:remote-exec-semantics"
+      ],
+      "claim": "Harbor Docker, Modal direct and Daytona POSIX direct adapters differ in stream handling, timeout layers and session cleanup; their shared exec signature does not prove semantic equivalence.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/environments/base.py:110-113,1436-1463; docker/docker.py:748-951,1398-1494; modal.py:1432-1507; daytona/environment.py:1693-1754,1808-1894"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/remote-execution-contract.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "No provider or SDK-level execution; direct-path findings do not cover DinD."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-ssh-transport",
+      "entity_ids": [
+        "concept:remote-exec-semantics"
+      ],
+      "claim": "SSHAccess manages transport/workspace and a local SSH subprocess; provisioning and isolation remain provider responsibilities.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/environments/ssh.py:47-177"
+        },
+        {
+          "source_id": "source:runtime-harbor-asp",
+          "locator": "RFC v0 scope"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/remote-execution-contract.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-mini-driver",
+      "entity_ids": [
+        "concept:agent-harness"
+      ],
+      "claim": "mini-SWE-agent batch creates a new agent per instance, saves submission as model_patch, and skips existing prediction keys unless redo is enabled.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-mini-swe-agent",
+          "locator": "src/minisweagent/run/benchmarks/swebench.py:68-178,202-280; utils/common.py"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/coding-runtime-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-mini-budget",
+      "entity_ids": [
+        "concept:runtime-budget-unit"
+      ],
+      "claim": "DefaultAgent counts model calls at query boundaries, executes a response action list sequentially, and can cross a cost threshold on the final billed call.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-mini-swe-agent",
+          "locator": "src/minisweagent/agents/default.py:85-157; src/minisweagent/config/benchmarks/swebench.yaml"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/coding-runtime-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-swe-report-cache",
+      "entity_ids": [
+        "concept:cache-identity"
+      ],
+      "claim": "SWE-bench run_instance reuses an existing report keyed by run/model/instance without comparing the patch in that branch; rewrite_reports reuses existing test output.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-swe-bench",
+          "locator": "swebench/harness/run_evaluation.py:229-275"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/coding-runtime-source-trace.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Cache condition inspected; no stale production report or full evaluation run observed."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-osworld-budget",
+      "entity_ids": [
+        "concept:runtime-budget-unit"
+      ],
+      "claim": "The ordinary OSWorld runner increments max_steps per predict round and may execute multiple returned actions within that round.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-osworld",
+          "locator": "lib_run_single.py:15-76; desktop_env/desktop_env.py:483-531"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/computer-use-source-traces.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-osworld-calc-grader",
+      "entity_ids": [
+        "concept:artifact-grading-boundary"
+      ],
+      "claim": "The inspected Calc task grades saved sheet_data through file getters and compare_table; this configuration does not establish all formatting/formula properties.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-osworld",
+          "locator": "evaluation_examples/examples/libreoffice_calc/01b269ae-2111-4a07-81fd-3fcd711993b0.json; desktop_env/evaluators/getters/file.py:52-128,145-231; metrics/table.py:374-502"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/computer-use-source-traces.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-browsergym-action",
+      "entity_ids": [
+        "concept:computer-action-transport"
+      ],
+      "claim": "BrowserGym separates mapped action execution and task.validate; multi-action code executes without intermediate agent feedback and parser strictness is configurable.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-browsergym",
+          "locator": "browsergym/core/src/browsergym/core/env.py:432-548; action/highlevel.py:515-557; action/base.py:46-73; browsergym/miniwob/src/browsergym/miniwob/base.py"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/computer-use-source-traces.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-osworld-command-status",
+      "entity_ids": [
+        "concept:computer-action-transport"
+      ],
+      "claim": "In the inspected ordinary step path, the guest can return HTTP 200 with nonzero command returncode and step does not propagate the controller return dict into agent observation.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-osworld",
+          "locator": "desktop_env/desktop_env.py:483-531; desktop_env/controllers/python.py:256-297; desktop_env/server/main.py:78-119"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/computer-action-transport-addendum.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-osworld-retry-input",
+      "entity_ids": [
+        "concept:computer-action-transport"
+      ],
+      "claim": "The normal input endpoint distinguishes pre-send failure from uncertain completion and attempts best-effort stranded-input release; script endpoint retry policies differ.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-osworld",
+          "locator": "desktop_env/controllers/python.py:16-36,256-411"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/computer-action-transport-addendum.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source trace only; no upstream end-to-end execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-local-lab-mocks",
+      "entity_ids": [
+        "concept:original-runtime-lab"
+      ],
+      "claim": "Seven original algorithm counterexamples ran three times each, covering budget units, cost overshoot, trace completeness, inclusive totals, cache keys, external effects and truncation.",
+      "claim_type": "experiment_observed",
+      "depth": "D4",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-original-lab",
+          "locator": "mock-conformance-results.json: each run cases with kind=original_algorithm_mock"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/mock-conformance-lab.md",
+        "05-agent-runtime/mock_conformance_lab.py",
+        "05-agent-runtime/mock-conformance-results.json"
+      ],
+      "execution_performed": true,
+      "limitations": [
+        "21 assertions in self-written mocks only; no upstream implementation reproduced."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-local-lab-processes",
+      "entity_ids": [
+        "concept:original-runtime-lab"
+      ],
+      "claim": "Three local subprocess/bash experiments ran three times each: waiter cancellation left a worker running, fresh shells reset cd/export but not files, and unquoted paths with spaces failed.",
+      "claim_type": "experiment_observed",
+      "depth": "D4",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-original-lab",
+          "locator": "mock-conformance-results.json: cases with kind=actual_local_subprocess or actual_local_bash"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T02:59:38.706110+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/mock-conformance-lab.md",
+        "05-agent-runtime/mock_conformance_lab.py",
+        "05-agent-runtime/mock-conformance-results.json"
+      ],
+      "execution_performed": true,
+      "limitations": [
+        "9 assertions on local Python/bash only; no Docker/cloud/OSWorld execution; all controlled workers reaped."
+      ]
+    }
+  ]
+}

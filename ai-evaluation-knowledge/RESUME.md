@@ -1,42 +1,22 @@
 # Resume entry
 
-## Read first
+Read README.md, methodology.md, research-status/coverage.md and data/README.md first. Run `python data/validate_indexes.py` to validate the central snapshot.
 
-1. README.md for actual published scope and reading order.
-2. methodology.md for D0–D4 and deep-study review gates.
-3. data/README.md and data/validate_indexes.py for schema and integrity checks.
-4. research-status/coverage.md for actual counts and gaps.
-5. The latest stable section snapshot before merging new evidence.
+## Last reviewed increment
 
-## Last reviewed batch
+The third integration increment adds the complete 22-file frozen runtime section. Central coverage is 18 normalized model/training-variant identities, 65 benchmark/protocol records, 99 D1 reported observations, 23 concepts, 331 sources (278 distinct external URLs and 2 local experiment records), and 242 evidence records. The model view is still v2; the benchmark catalog remains the reviewed 46-entry snapshot. Do not treat later unintegrated work as already public.
 
-The 2026-11-06 second increment contains 65 stable research artifacts across retained and new batches. Current indexes use models v2 and the 46-entry representative benchmark catalog: 18 normalized model/training-variant identities, 65 benchmark/protocol records, 99 reported observations, 12 concepts, 303 source records and 191 claims.
-
-Eight benchmark case articles include six scoped D3 traces; eight diagnostic programs have actually run. D4 claims remain component/mechanism-specific. No full benchmark/model inference or five-hour completion is claimed. Model-result observations all remain D1 and comparability-unassessed.
-
-The latest integrated report registry v2 has 94 candidates, 26 scoped D1 and 68 D0. Historical v1 remains unchanged. Source/report counts are not model counts; reasoning modes, Kimi swarm and Step PaCoRe configurations do not inflate model identity counts. Distinct training-stage variants stay separate.
+There are 82 stable section artifacts and 10 local diagnostic programs. The two new self-written runtime/transport labs passed 30 and 27 repeated assertions, respectively, including an independent integration rerun. They are not upstream framework/cloud/model experiments. No full benchmark reproduction, completed 50-study goal, 200-model goal or five-hour completion is claimed.
 
 ## Publication contract
 
-Repository: aiyinyuedejustin/agent-engineering-fundamentals.
-Branch: main. Folder: ai-evaluation-knowledge/.
-The scaffold commit was 3dff254798f8e2a53f5fa45e483eac8767b63d87; the first research increment and final hash manifest were verified at bd118c2b8bd36c315eef42b80b12d818c4fc53ac. Later publication commits should be read from repository history rather than inferred from this file.
+Repository: aiyinyuedejustin/agent-engineering-fundamentals. Branch: main. Folder: ai-evaluation-knowledge/.
+The second research increment was verified at 8bf169cff44697e82dbaf54aa46121b46025c3cd. Read later commits from repository history.
 
-Before each incremental publication, refresh main, read the existing folder tree, preserve unrelated paths, build on the current parent/root tree, use a non-force expected-head update, then verify exact remote head and changed paths. Do not publish raw upstream source caches, credentials, private data, task answers or unreviewed drafts.
+Refresh main, preserve all unrelated paths, build on the current root tree, and update non-force with the exact expected head. Use small uploads, inspect remote outcomes before any retry, then verify the new head, changed paths and blob hashes. Do not publish raw upstream caches, secrets, private data, hidden answers or unreviewed drafts. A source URL may remain null for a hash-verified original local experiment rather than inventing an unverified public link.
 
-## Concrete next action
+## Concrete next work
 
-Review the next frozen tranche: model-report v3, KernelBench hardware/cache analysis and phase-2 public LLMBar reanalysis were announced after this cutoff. Preserve artifact versions, source licenses and the difference between synthetic probes, real historical-data reanalysis and live model experiments. Add only completed snapshots and validated metadata; do not consume actively changing drafts.
+Integrate the later immutable model snapshots and authoritative benchmark deltas. Audit model configuration aliases before counting identities. Then integrate the frozen infrastructure, evaluation-science, blind-spot and learning-path bundles. Keep synthetic inputs, actual historical judgments, unchanged source fragments and full model experiments distinct. Failed or blocked runs must remain visibly blocked.
 
-## Open research work
-
-- Broaden model identities toward the 200+ seed target without counting reports, aliases or configurations as models.
-- Extend benchmark studies toward the 50 deep-study target; finish explicit checklist review of current cases before marking them reviewed_complete.
-- Keep parser/scorer/policy D4 component tests separate from full framework, security or model experiments.
-- Build evidence-backed unknown-unknowns, learning path and proposed architecture records from collected findings.
-- Resolve report date/version anomalies, unpinned dataset revisions and incomparable score settings.
-- Track actual active work; five hours of continuous research remains outstanding, and waiting alone is not research activity.
-
-## Validation and handoff
-
-Run `python data/validate_indexes.py` from any working directory. For each integration record the actual date/time, stable files, counts added, evidence depths, experiments actually run, unresolved blockers and next action. Preserve date-only source access precision when exact timestamps were not captured.
+Complete the methodology's explicit deep-study review gates before marking cases reviewed_complete. Expand media/task inspection and resolve unpinned datasets and uncertain protocol equivalence. Track genuine active research rather than publication waits or file counts.

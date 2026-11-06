@@ -1,0 +1,387 @@
+{
+  "experiment": "original transport fault lab",
+  "scope": "Self-written loopback server and actual local Python/OS behavior; not upstream SDK, cloud-provider or benchmark reproduction.",
+  "started_at_utc": "2026-11-06T03:29:51.096131+00:00",
+  "finished_at_utc": "2026-11-06T03:29:51.637155+00:00",
+  "elapsed_seconds": 0.541012,
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "script_sha256": "271c5ff4cfabc098675c15acb6ec914d904f43b778c7309e46a6daf8a02897bb",
+  "repetitions": 3,
+  "case_count": 9,
+  "passed_assertions": 27,
+  "rounds": [
+    {
+      "repetition": 1,
+      "cases": [
+        {
+          "id": "lost_response_blind_retry_duplicates",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "first": {
+              "transport": "eof_without_receipt"
+            },
+            "retry": {
+              "receipt": 2,
+              "amount": 1,
+              "id": "attempt-2"
+            },
+            "commits": 2
+          }
+        },
+        {
+          "id": "request_id_alone_is_not_idempotency",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 2,
+            "ids": [
+              "same-id",
+              "same-id"
+            ]
+          }
+        },
+        {
+          "id": "deduplicated_retry_returns_original_receipt",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 1,
+            "retry": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            }
+          }
+        },
+        {
+          "id": "client_timeout_does_not_cancel_server_commit",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "client": {
+              "transport": "client_wait_timeout"
+            },
+            "commits_at_timeout": 0,
+            "commits_after_wait": 1,
+            "retry": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            }
+          }
+        },
+        {
+          "id": "concurrent_key_claim_is_atomic_in_this_server",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 1,
+            "receipts": [
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "idempotency_key_needs_operation_binding",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "unbound_second_response": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            },
+            "bound_second_response": {
+              "error": "idempotency_key_body_mismatch"
+            },
+            "requested_second_amount": 99
+          }
+        },
+        {
+          "id": "pipe_eof_requires_all_writer_fds_closed",
+          "kind": "actual_local_os_pipe",
+          "passed": true,
+          "observed": {
+            "first_process_exit": 0,
+            "first_bytes": "ONE",
+            "eof_ready_while_other_writer_alive": false,
+            "eof_after_holder_exit": true
+          }
+        },
+        {
+          "id": "configured_pty_changes_channels_and_newlines",
+          "kind": "actual_local_configured_pty",
+          "passed": true,
+          "observed": {
+            "pipe_stdout": "OUT\n",
+            "pipe_stderr": "ERR\n",
+            "pty_combined": "OUT\r\nERR\r\n",
+            "pty_opost_onlcr": true
+          }
+        },
+        {
+          "id": "stream_chunks_are_not_text_character_boundaries",
+          "kind": "actual_local_stdlib_decoder",
+          "passed": true,
+          "observed": {
+            "original": "结果✓",
+            "per_chunk_replace": "���������",
+            "incremental": "结果✓",
+            "byte_chunks": 9
+          }
+        }
+      ]
+    },
+    {
+      "repetition": 2,
+      "cases": [
+        {
+          "id": "lost_response_blind_retry_duplicates",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "first": {
+              "transport": "eof_without_receipt"
+            },
+            "retry": {
+              "receipt": 2,
+              "amount": 1,
+              "id": "attempt-2"
+            },
+            "commits": 2
+          }
+        },
+        {
+          "id": "request_id_alone_is_not_idempotency",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 2,
+            "ids": [
+              "same-id",
+              "same-id"
+            ]
+          }
+        },
+        {
+          "id": "deduplicated_retry_returns_original_receipt",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 1,
+            "retry": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            }
+          }
+        },
+        {
+          "id": "client_timeout_does_not_cancel_server_commit",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "client": {
+              "transport": "client_wait_timeout"
+            },
+            "commits_at_timeout": 0,
+            "commits_after_wait": 1,
+            "retry": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            }
+          }
+        },
+        {
+          "id": "concurrent_key_claim_is_atomic_in_this_server",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 1,
+            "receipts": [
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "idempotency_key_needs_operation_binding",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "unbound_second_response": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            },
+            "bound_second_response": {
+              "error": "idempotency_key_body_mismatch"
+            },
+            "requested_second_amount": 99
+          }
+        },
+        {
+          "id": "pipe_eof_requires_all_writer_fds_closed",
+          "kind": "actual_local_os_pipe",
+          "passed": true,
+          "observed": {
+            "first_process_exit": 0,
+            "first_bytes": "ONE",
+            "eof_ready_while_other_writer_alive": false,
+            "eof_after_holder_exit": true
+          }
+        },
+        {
+          "id": "configured_pty_changes_channels_and_newlines",
+          "kind": "actual_local_configured_pty",
+          "passed": true,
+          "observed": {
+            "pipe_stdout": "OUT\n",
+            "pipe_stderr": "ERR\n",
+            "pty_combined": "OUT\r\nERR\r\n",
+            "pty_opost_onlcr": true
+          }
+        },
+        {
+          "id": "stream_chunks_are_not_text_character_boundaries",
+          "kind": "actual_local_stdlib_decoder",
+          "passed": true,
+          "observed": {
+            "original": "结果✓",
+            "per_chunk_replace": "���������",
+            "incremental": "结果✓",
+            "byte_chunks": 9
+          }
+        }
+      ]
+    },
+    {
+      "repetition": 3,
+      "cases": [
+        {
+          "id": "lost_response_blind_retry_duplicates",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "first": {
+              "transport": "eof_without_receipt"
+            },
+            "retry": {
+              "receipt": 2,
+              "amount": 1,
+              "id": "attempt-2"
+            },
+            "commits": 2
+          }
+        },
+        {
+          "id": "request_id_alone_is_not_idempotency",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 2,
+            "ids": [
+              "same-id",
+              "same-id"
+            ]
+          }
+        },
+        {
+          "id": "deduplicated_retry_returns_original_receipt",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 1,
+            "retry": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            }
+          }
+        },
+        {
+          "id": "client_timeout_does_not_cancel_server_commit",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "client": {
+              "transport": "client_wait_timeout"
+            },
+            "commits_at_timeout": 0,
+            "commits_after_wait": 1,
+            "retry": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            }
+          }
+        },
+        {
+          "id": "concurrent_key_claim_is_atomic_in_this_server",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "commits": 1,
+            "receipts": [
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "id": "idempotency_key_needs_operation_binding",
+          "kind": "original_loopback_server_experiment",
+          "passed": true,
+          "observed": {
+            "unbound_second_response": {
+              "receipt": 1,
+              "amount": 1,
+              "id": "operation"
+            },
+            "bound_second_response": {
+              "error": "idempotency_key_body_mismatch"
+            },
+            "requested_second_amount": 99
+          }
+        },
+        {
+          "id": "pipe_eof_requires_all_writer_fds_closed",
+          "kind": "actual_local_os_pipe",
+          "passed": true,
+          "observed": {
+            "first_process_exit": 0,
+            "first_bytes": "ONE",
+            "eof_ready_while_other_writer_alive": false,
+            "eof_after_holder_exit": true
+          }
+        },
+        {
+          "id": "configured_pty_changes_channels_and_newlines",
+          "kind": "actual_local_configured_pty",
+          "passed": true,
+          "observed": {
+            "pipe_stdout": "OUT\n",
+            "pipe_stderr": "ERR\n",
+            "pty_combined": "OUT\r\nERR\r\n",
+            "pty_opost_onlcr": true
+          }
+        },
+        {
+          "id": "stream_chunks_are_not_text_character_boundaries",
+          "kind": "actual_local_stdlib_decoder",
+          "passed": true,
+          "observed": {
+            "original": "结果✓",
+            "per_chunk_replace": "���������",
+            "incremental": "结果✓",
+            "byte_chunks": 9
+          }
+        }
+      ]
+    }
+  ]
+}

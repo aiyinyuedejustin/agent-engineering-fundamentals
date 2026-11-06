@@ -1,0 +1,287 @@
+{
+  "schema_version": "runtime-evidence-bundle-1",
+  "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+  "scope": "Supplemental Harbor multi-step and simulated-user evidence",
+  "ingestion_notes": [
+    "source:runtime-harbor and existing concept IDs refer to runtime-evidence-bundle.json.",
+    "All prose is original analysis; no raw upstream snapshots included.",
+    "Source-level D3 does not imply runtime or benchmark reproduction.",
+    "Date-only access fields preserve actual recorded precision."
+  ],
+  "sources": [
+    {
+      "source_id": "source:runtime-harbor-simulated-user-docs",
+      "title": "Harbor: Simulate a user",
+      "url": "https://docs.harborframework.com/jobs/simulate-a-user",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "read",
+      "notes": "Full page text read. Mutable docs, not a runtime execution."
+    },
+    {
+      "source_id": "source:runtime-harbor-multi-step-example",
+      "title": "Harbor hello-multi-step-advanced task",
+      "url": "https://github.com/harbor-framework/harbor/tree/26f95e0ebd8c77011bbf4656f5c98af66ce55848/examples/tasks/hello-multi-step-advanced",
+      "source_type": "task",
+      "primary": true,
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Read task.toml, three instructions/tests, common helper and workdir config. Did not execute."
+    },
+    {
+      "source_id": "source:runtime-harbor-simuser-example",
+      "title": "Harbor tomlkit simulated-user task",
+      "url": "https://github.com/harbor-framework/harbor/tree/26f95e0ebd8c77011bbf4656f5c98af66ce55848/examples/tasks/deepswe_tomlkit-toml-table-converters",
+      "source_type": "task",
+      "primary": true,
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Read task.toml, instruction.md, persona.md and outer tests/test.sh; hidden test patch not fully audited. Did not execute."
+    }
+  ],
+  "concepts": [
+    {
+      "concept_id": "concept:simulated-user-evaluation",
+      "name": "Simulated-user evaluation",
+      "definition": "Evaluation in which a separate user model reveals requirements and responds to the target agent, making user policy, information partition and role accounting part of the measured system.",
+      "source_ids": [
+        "source:runtime-harbor",
+        "source:runtime-harbor-simulated-user-docs"
+      ],
+      "status": "documented"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "evidence:runtime-harbor-multi-step-two-memories",
+      "entity_ids": [
+        "concept:checkpoint-scope",
+        "concept:agent-harness"
+      ],
+      "claim": "Multi-step evaluation keeps the agent environment across steps while resume_trajectory separately controls agent-session continuation. Uploaded per-step workdir content overlays existing state rather than establishing a full environment reset.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/multi_step.py:25-71,73-173,272-324,400-434"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-harbor-multi-step-grader-effects",
+      "entity_ids": [
+        "concept:artifact-grading-boundary"
+      ],
+      "claim": "The advanced example verifier mutates config.txt to test non-hardcoded behavior. Shared verifier cleanup removes specific test/output directories, not a general rollback of all grader effects.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:869-913"
+        },
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/multi_step.py:73-173,272-324"
+        },
+        {
+          "source_id": "source:runtime-harbor-multi-step-example",
+          "locator": "steps/implement/tests/test.sh; steps/document/tests/test.sh"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-harbor-multi-step-reward-denominator",
+      "entity_ids": [
+        "concept:artifact-grading-boundary"
+      ],
+      "claim": "FINAL selects the last executed step result, while mean includes only steps with verifier_result and fills missing reward keys with zero among that included set. Completion and denominator reporting therefore require separate fields.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:915-948"
+        },
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/multi_step.py:198-245"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed.",
+        "This helper does not determine final job-level validity or leaderboard error handling."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-harbor-multi-step-real-thresholds",
+      "entity_ids": [
+        "concept:artifact-grading-boundary",
+        "concept:runtime-budget-unit"
+      ],
+      "claim": "In the advanced example, implement min_reward=0.5 does not itself provide partial credit: the inspected verifier/helper writes binary rewards 0/1.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/multi_step.py:198-245"
+        },
+        {
+          "source_id": "source:runtime-harbor-multi-step-example",
+          "locator": "task.toml; tests/helpers.sh; steps/implement/tests/test.sh"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-harbor-simuser-information-flow",
+      "entity_ids": [
+        "concept:agent-harness",
+        "concept:simulated-user-evaluation"
+      ],
+      "claim": "The simulated-user path runs user_agent as the outer agent using persona, bridge instructions and task instruction. The target is driven through the bridge. MultiStepTrial rejects user_agent; these are distinct orchestration modes.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:708-793,1903-1989"
+        },
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/simulated_user.py"
+        },
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/multi_step.py:25-71"
+        },
+        {
+          "source_id": "source:runtime-harbor-simulated-user-docs",
+          "locator": "opening architecture description; User prompt"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed.",
+        "Prompt privacy and a read-only role instruction are not by themselves operating-system isolation."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-harbor-simuser-bridge-cost-roles",
+      "entity_ids": [
+        "concept:trajectory-completeness",
+        "concept:simulated-user-evaluation"
+      ],
+      "claim": "The ACP bridge stores extracted target usage in context.metadata.acp_target_usage. The extraction walks the session export and retains the last token-usage mapping, rather than summing all mappings or proving it is session-cumulative.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/bridges/acp.py:76-104,249-281"
+        },
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:1167-1186"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed.",
+        "Selected mapping may or may not be cumulative for a given CLI export; no live export was observed.",
+        "The metadata path alone is not evidence that target and user costs are combined."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-harbor-simuser-real-task-protocol",
+      "entity_ids": [
+        "concept:simulated-user-evaluation",
+        "concept:artifact-grading-boundary"
+      ],
+      "claim": "The inspected tomlkit task combines adaptive persona-guided disclosure with final base/new test execution. Task-specific budgets, image tag, role instructions and final verifier are part of its evaluation condition.",
+      "claim_type": "source_inspected",
+      "depth": "D3",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/simulated_user.py"
+        },
+        {
+          "source_id": "source:runtime-harbor",
+          "locator": "src/harbor/trial/trial.py:708-793"
+        },
+        {
+          "source_id": "source:runtime-harbor-simuser-example",
+          "locator": "task.toml; instruction.md; persona.md; tests/test.sh"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:26:06.893347+00:00",
+      "verification_status": "supported",
+      "repository_commit": "26f95e0ebd8c77011bbf4656f5c98af66ce55848",
+      "artifact_paths": [
+        "05-agent-runtime/harbor-multi-step-and-simulated-user.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "Source-level flow only; no Harbor trial, cloud environment, model or ACP CLI executed.",
+        "The complete hidden test patch and real persona rollout were not audited or executed."
+      ]
+    }
+  ]
+}

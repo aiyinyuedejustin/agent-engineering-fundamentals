@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate central research indexes without network access or modifications."""
 from pathlib import Path
-import collections,csv,json,sys
+import collections,csv,json,sys,hashlib
 ROOT=Path(__file__).resolve().parents[1];DATA=ROOT/'data'
 def csv_rows(name):
  with (DATA/name).open(encoding='utf-8',newline='') as f:return list(csv.DictReader(f))
@@ -31,7 +31,10 @@ for row in evidence:
  if row['depth']=='D4':check(row.get('execution_performed') is True and bool(row.get('artifact_paths')),'D4 lacks executed artifact')
  if row['depth']=='D3':check(row.get('execution_performed') is False,'Source-trace evidence incorrectly implies execution')
 for row in sources:
- check(bool(row.get('url')),'Source URL missing')
+ if not row.get('url'):
+  local=ROOT/row.get('local_path','')
+  check(row.get('source_type')=='original_experiment' and local.is_file(),'Source URL/local experiment missing')
+  if local.is_file():check(hashlib.sha256(local.read_bytes()).hexdigest()==row.get('sha256'),'Local source hash mismatch')
  if row.get('accessed_at_utc') is None:check(bool(row.get('accessed_date')) and row.get('access_time_precision')=='date','Undocumented access date precision')
-summary={'models':len(models),'benchmark_or_protocol_records':len(benchmarks),'concepts':len(concepts),'model_result_observations':len(results),'sources':len(sources),'unique_source_urls':len({x['url'] for x in sources}),'evidence':len(evidence),'evidence_depths':dict(collections.Counter(x['depth'] for x in evidence)),'fully_reviewed_deep_studies':sum(x['deep_study_review']=='reviewed_complete' for x in benchmarks),'errors':errors}
+summary={'models':len(models),'benchmark_or_protocol_records':len(benchmarks),'concepts':len(concepts),'model_result_observations':len(results),'sources':len(sources),'unique_source_urls':len({x['url'] for x in sources if x.get('url')}),'evidence':len(evidence),'evidence_depths':dict(collections.Counter(x['depth'] for x in evidence)),'fully_reviewed_deep_studies':sum(x['deep_study_review']=='reviewed_complete' for x in benchmarks),'errors':errors}
 print(json.dumps(summary,indent=2));sys.exit(bool(errors))

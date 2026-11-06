@@ -1,0 +1,193 @@
+{
+  "schema_version": "runtime-evidence-bundle-1",
+  "recorded_at_utc": "2026-11-06T03:32:35.308088+00:00",
+  "scope": "Original D4 transport fault experiments and one supporting RFC claim",
+  "ingestion_notes": [
+    "Existing concept IDs refer to runtime-evidence-bundle.json.",
+    "D4 belongs only to self-written loopback/OS experiments, never to an upstream product.",
+    "Local source URL is intentionally null until publication is verified."
+  ],
+  "sources": [
+    {
+      "source_id": "source:runtime-transport-lab",
+      "title": "Original loopback and local I/O fault experiment",
+      "url": null,
+      "source_type": "original_experiment",
+      "primary": true,
+      "local_path": "05-agent-runtime/transport_fault_lab.py",
+      "sha256": "271c5ff4cfabc098675c15acb6ec914d904f43b778c7309e46a6daf8a02897bb",
+      "accessed_at_utc": "2026-11-06T03:29:51.637155+00:00",
+      "inspection_status": "executed",
+      "notes": "Self-written standard-library experiment, not upstream/provider execution. Public URL to be added only after verified publication."
+    },
+    {
+      "source_id": "source:runtime-rfc9110",
+      "title": "RFC 9110 HTTP Semantics",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Read section 9.2.2, not the complete RFC."
+    },
+    {
+      "source_id": "source:runtime-aws-idempotent",
+      "title": "Making retries safe with idempotent APIs",
+      "url": "https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Read sections on request identifier, atomicity, semantic response, late arrival and differing intent. No AWS service executed."
+    },
+    {
+      "source_id": "source:runtime-python-pty",
+      "title": "Python 3.12 pty documentation",
+      "url": "https://docs.python.org/3.12/library/pty.html",
+      "source_type": "documentation",
+      "primary": true,
+      "accessed_at_utc": "2026-11-06",
+      "access_time_precision": "day",
+      "inspection_status": "partially_read",
+      "notes": "Read platform limitation and openpty/spawn descriptions. Mutable minor documentation version; local runtime is recorded separately."
+    }
+  ],
+  "concepts": [],
+  "evidence": [
+    {
+      "evidence_id": "evidence:runtime-transport-server-faults",
+      "entity_ids": [
+        "concept:remote-exec-semantics",
+        "concept:original-runtime-lab"
+      ],
+      "claim": "Six self-written loopback cases observed response-loss duplicate commits, ID-only non-deduplication, keyed retry behavior, server commit after client timeout, lock-serialized concurrent deduplication and parameter-binding necessity.",
+      "claim_type": "experiment_observed",
+      "depth": "D4",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-transport-lab",
+          "locator": "server_cases; six original_loopback_server_experiment cases repeated 3 times"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:32:35.308088+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/transport-fault-lab.md",
+        "05-agent-runtime/transport_fault_lab.py",
+        "05-agent-runtime/transport-fault-results.json"
+      ],
+      "execution_performed": true,
+      "limitations": [
+        "In-memory self-written JSON-line server; not HTTP, ACP, ASP, provider SDK or upstream harness execution.",
+        "No durable storage, restart, replication, tenant authentication, key expiry or production exactly-once guarantee tested."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-transport-pipe-eof",
+      "entity_ids": [
+        "concept:remote-exec-semantics",
+        "concept:original-runtime-lab"
+      ],
+      "claim": "After one owned process exited successfully, the OS pipe did not reach EOF while another owned process retained its write FD. Explicitly releasing that holder produced EOF.",
+      "claim_type": "experiment_observed",
+      "depth": "D4",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-transport-lab",
+          "locator": "pipe_eof_case; pipe_eof_requires_all_writer_fds_closed"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:32:35.308088+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/transport-fault-lab.md",
+        "05-agent-runtime/transport_fault_lab.py",
+        "05-agent-runtime/transport-fault-results.json"
+      ],
+      "execution_performed": true,
+      "limitations": [
+        "Actual local POSIX pipe only; no Kubernetes, Docker or SSH execution."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-transport-pty-framing",
+      "entity_ids": [
+        "concept:remote-exec-semantics",
+        "concept:original-runtime-lab"
+      ],
+      "claim": "A local PTY explicitly configured with OPOST/ONLCR and shared stdout/stderr produced combined CRLF output, unlike separately captured pipe streams.",
+      "claim_type": "experiment_observed",
+      "depth": "D4",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-transport-lab",
+          "locator": "pty_case; configured_pty_changes_channels_and_newlines"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:32:35.308088+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/transport-fault-lab.md",
+        "05-agent-runtime/transport_fault_lab.py",
+        "05-agent-runtime/transport-fault-results.json"
+      ],
+      "execution_performed": true,
+      "limitations": [
+        "Configuration-dependent local Linux observation; not a claim about every PTY default."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-transport-utf8-chunks",
+      "entity_ids": [
+        "concept:remote-exec-semantics",
+        "concept:original-runtime-lab"
+      ],
+      "claim": "Splitting the UTF-8 bytes of 结果✓ into single-byte chunks corrupted per-chunk replacement decoding, while a standard-library incremental decoder recovered the original text.",
+      "claim_type": "experiment_observed",
+      "depth": "D4",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-transport-lab",
+          "locator": "decoder_case; stream_chunks_are_not_text_character_boundaries"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:32:35.308088+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/transport-fault-lab.md",
+        "05-agent-runtime/transport_fault_lab.py",
+        "05-agent-runtime/transport-fault-results.json"
+      ],
+      "execution_performed": true,
+      "limitations": [
+        "A controlled decoder test, not an observed upstream adapter bug."
+      ]
+    },
+    {
+      "evidence_id": "evidence:runtime-rfc-retry-semantics",
+      "entity_ids": [
+        "concept:remote-exec-semantics"
+      ],
+      "claim": "RFC 9110 section 9.2.2 defines idempotency by intended effect and limits automatic non-idempotent retry unless semantics are known idempotent or original non-application can be detected.",
+      "claim_type": "official_documentation",
+      "depth": "D1",
+      "source_refs": [
+        {
+          "source_id": "source:runtime-rfc9110",
+          "locator": "Section 9.2.2"
+        }
+      ],
+      "recorded_at_utc": "2026-11-06T03:32:35.308088+00:00",
+      "verification_status": "supported",
+      "artifact_paths": [
+        "05-agent-runtime/transport-fault-lab.md"
+      ],
+      "execution_performed": false,
+      "limitations": [
+        "The lab is not an HTTP conformance implementation."
+      ]
+    }
+  ]
+}
