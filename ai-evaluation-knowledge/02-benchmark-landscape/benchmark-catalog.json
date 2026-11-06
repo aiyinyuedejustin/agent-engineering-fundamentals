@@ -143,7 +143,7 @@
       "environment": "stateless",
       "freshness": "public static",
       "useful_feature": "Separates unknown answers from wrong answers",
-      "limitations": "Judge parsing and aggregate reporting must be audited; not broad factuality Real dataset row not inspected; conservatively retained at D1 in integration review.",
+      "limitations": "Judge parsing and aggregate reporting must be audited; not broad factuality Source implementation read, but no real dataset row inspected in this work; conservative D1.",
       "sources": [
         "https://github.com/openai/simple-evals/blob/652c89d0ca9df547706735883097e9537d40dc47/simpleqa_eval.py"
       ],
@@ -281,9 +281,9 @@
     {
       "id": "video-mme",
       "name": "Video-MME",
-      "version": "discovered; substantive methodology not yet read",
+      "version": "06c2315b892f88578f81d73205d07cf576f292b9 (2025-12-08), original Video-MME",
       "kind": "static-dataset",
-      "depth": "D0",
+      "depth": "D1",
       "modality": "video",
       "task_form": "video understanding",
       "target": "not yet verified",
@@ -291,20 +291,21 @@
       "environment": "not yet verified",
       "freshness": "not yet verified",
       "useful_feature": "Candidate for missing video coverage",
-      "limitations": "Landing page alone is insufficient evidence",
+      "limitations": "No real video watched. Frame count, resolution and subtitles materially change the protocol; original benchmark has research-only distribution restrictions. Separate from2026 Video-MME-v2.",
       "sources": [
-        "https://video-mme.github.io/"
+        "https://video-mme.github.io/",
+        "https://github.com/MME-Benchmarks/Video-MME/tree/06c2315b892f88578f81d73205d07cf576f292b9"
       ],
       "accessed_at": "2026-11-06",
-      "evidence_type": "discovery_only",
+      "evidence_type": "official_document_or_source_code",
       "full_reproduction": false
     },
     {
       "id": "ifeval",
       "name": "IFEval",
-      "version": "2023; official code directory snapshot 2026-11-06",
+      "version": "google-research commit e6890f85757dd84e27ca6df2dd30651dafad28e0 (directory change 2026-07-22)",
       "kind": "verifiable-instruction-dataset",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "text",
       "task_form": "instruction constrained generation",
       "target": "explicit instruction following",
@@ -312,9 +313,10 @@
       "environment": "stateless",
       "freshness": "public static",
       "useful_feature": "Can grade concrete constraints without preference judge",
-      "limitations": "Does not establish semantic usefulness or all instruction-following skill",
+      "limitations": "Does not establish semantic usefulness or all instruction-following skill Task/source trace plus synthetic component-only D4 loose-scoring probe; not a benchmark run.",
       "sources": [
-        "https://github.com/google-research/google-research/tree/master/instruction_following_eval"
+        "https://github.com/google-research/google-research/tree/master/instruction_following_eval",
+        "https://github.com/google-research/google-research/tree/e6890f85757dd84e27ca6df2dd30651dafad28e0/instruction_following_eval"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
@@ -409,9 +411,9 @@
     {
       "id": "terminal-bench",
       "name": "Terminal-Bench",
-      "version": "4.0.0; 452bf305c6daa62fc59061d22133a7cbc7c1572e",
+      "version": "v4.0.0 / commit 452bf305c6daa62fc59061d22133a7cbc7c1572e",
       "kind": "interactive-benchmark",
-      "depth": "D1",
+      "depth": "D3",
       "modality": "terminal+files",
       "task_form": "multi-step terminal tasks",
       "target": "broad agentic work",
@@ -419,10 +421,11 @@
       "environment": "Harbor containers",
       "freshness": "semantically versioned tasks/datasets",
       "useful_feature": "Version updates distinguish reuse, regrade, rerun",
-      "limitations": "4.0 resource changes require reruns; not interchangeable with 2.0/2.1/3.0",
+      "limitations": "4.0 resource changes require reruns; not interchangeable with 2.0/2.1/3.0 D3 is task-local math-eval-grader trace only; no Harbor lifecycle or GPU execution.",
       "sources": [
         "https://www.tbench.ai/news/terminal-bench-4-0",
-        "https://www.tbench.ai/news/continuous-benchmarks"
+        "https://www.tbench.ai/news/continuous-benchmarks",
+        "https://github.com/harbor-framework/terminal-bench/tree/452bf305c6daa62fc59061d22133a7cbc7c1572e/tasks/math-eval-grader"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",
@@ -854,7 +857,7 @@
     {
       "id": "aa-index",
       "name": "Artificial Analysis Intelligence Index",
-      "version": "current methodology page accessed 2026-11-06; exact release changes rapidly",
+      "version": "Intelligence Index v5.0.1, methodology accessed2026-11-06",
       "kind": "composite-index",
       "depth": "D1",
       "modality": "mixed",
@@ -864,9 +867,115 @@
       "environment": "multiple harnesses",
       "freshness": "composition updated",
       "useful_feature": "Useful external standardized comparisons",
-      "limitations": "Index versions can change constituents/weights; never treat score as timeless unit",
+      "limitations": "Index versions can change constituents/weights; never treat score as timeless unit Current9 evaluations in4 equally weighted categories; primarily English/text with some image inputs. Independent task runs in AA-Briefcase do not carry forward model prior submissions.",
       "sources": [
         "https://artificialanalysis.ai/methodology/intelligence-benchmarking"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_document_or_source_code",
+      "full_reproduction": false
+    },
+    {
+      "id": "video-mme-v2",
+      "name": "Video-MME-v2",
+      "version": "b2834bd4091d6234ccaf0fa1f149a7ef4eac5875 (2026-08-05)",
+      "kind": "grouped-multimodal-dataset",
+      "depth": "D1",
+      "modality": "video frames and optional subtitle text in inspected adapter",
+      "task_form": "groups of four eight-option questions",
+      "target": "temporal understanding, reasoning consistency and coherence",
+      "metric": "nonlinear group rating plus per-question accuracy",
+      "environment": "static video assets with configurable frame sampling",
+      "freshness": "2026 release, distinct from original Video-MME",
+      "useful_feature": "Same question accuracy can yield different scores according to dependency structure",
+      "limitations": "Complete video task not inspected; isolated scorer-only D4 probe does not upgrade overall depth. Research-only terms; no raw data copied.",
+      "sources": [
+        "https://github.com/MME-Benchmarks/Video-MME-v2/tree/b2834bd4091d6234ccaf0fa1f149a7ef4eac5875"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_document_or_source_code",
+      "full_reproduction": false
+    },
+    {
+      "id": "mmau",
+      "name": "MMAU",
+      "version": "MMAU-v05.15.25; repo110127f54c0dfba3faa5ec9feee4a7e4148679c5",
+      "kind": "audio-task-dataset",
+      "depth": "D1",
+      "modality": "audio and text",
+      "task_form": "audio understanding questions",
+      "target": "speech, environmental sound and music perception/reasoning",
+      "metric": "answer accuracy; test-mini public, full-test answers withheld",
+      "environment": "static audio",
+      "freshness": "2025 revision changed approximately25% QA and5% audio; scoring service moved2026-01",
+      "useful_feature": "Three audio domains and27 task types; public1000 mini plus9000 test",
+      "limitations": "No audio listened to or official test submission. Versions materially change examples and cannot be pooled silently.",
+      "sources": [
+        "https://github.com/Sakshi113/MMAU/tree/110127f54c0dfba3faa5ec9feee4a7e4148679c5"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_document_or_source_code",
+      "full_reproduction": false
+    },
+    {
+      "id": "mmau-pro",
+      "name": "MMAU-Pro",
+      "version": "2025 paper; official page accessed2026-11-06",
+      "kind": "audio-task-suite",
+      "depth": "D1",
+      "modality": "speech, sound, music, spatial and multi-audio",
+      "task_form": "closed/open questions and instruction following",
+      "target": "broader audio perception and reasoning",
+      "metric": "domain-specific scores; evaluator not yet inspected",
+      "environment": "static audio including up to10-minute clips",
+      "freshness": "separate Pro suite",
+      "useful_feature": "Extends beyond transcript reasoning to spatial and mixed audio",
+      "limitations": "D1 overview only; not interchangeable with MMAU; no audio, task code or scoring reproduction",
+      "sources": [
+        "https://sonalkum.github.io/mmau-pro/"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_document_or_source_code",
+      "full_reproduction": false
+    },
+    {
+      "id": "voicebench",
+      "name": "VoiceBench (MatthewCYM)",
+      "version": "b56154172f2a57a43d29005de7d0471d748d70d1 (2026-09-28)",
+      "kind": "voice-assistant-evaluation-suite",
+      "depth": "D1",
+      "modality": "spoken or text prompts; response evaluation",
+      "task_form": "mixed open QA, MCQ, constraints, reasoning and safety subsets",
+      "target": "semantic capabilities and robustness of voice assistants",
+      "metric": "subset-specific LLM judge, exact/constraint and safety evaluators",
+      "environment": "human-recorded and synthetic speech datasets",
+      "freshness": "2024 core plus2025 human speech subsets; currentREADME read",
+      "useful_feature": "Audio/text input switches and multiple speaker/environment sources",
+      "limitations": "Subset sizes and evaluator choice matter; semantic answer score alone does not establish natural speech, duplex timing or latency quality; not unrelated PyPI voicebench tools",
+      "sources": [
+        "https://github.com/MatthewCYM/VoiceBench/tree/b56154172f2a57a43d29005de7d0471d748d70d1"
+      ],
+      "accessed_at": "2026-11-06",
+      "evidence_type": "official_document_or_source_code",
+      "full_reproduction": false
+    },
+    {
+      "id": "screenspot-pro",
+      "name": "ScreenSpot-Pro",
+      "version": "repo dbe00114bc53a32c61c1a267786da85967710da8; leaderboard2026-09-10",
+      "kind": "gui-grounding-dataset",
+      "depth": "D1",
+      "modality": "high-resolution screenshot and text instruction",
+      "task_form": "locate GUI target",
+      "target": "professional GUI grounding",
+      "metric": "micro-average grounding accuracy; official leaderboard greedy decoding",
+      "environment": "static screenshots across professional applications and OS versions",
+      "freshness": "2025 release; current official methods read",
+      "useful_feature": "Separates target localization from full interactive desktop completion",
+      "limitations": "No actual image inspected or grounding code traced; cannot infer multi-step task success",
+      "sources": [
+        "https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding/tree/dbe00114bc53a32c61c1a267786da85967710da8",
+        "https://gui-agent.github.io/grounding-leaderboard/"
       ],
       "accessed_at": "2026-11-06",
       "evidence_type": "official_document_or_source_code",

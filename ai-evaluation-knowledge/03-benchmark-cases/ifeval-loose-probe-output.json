@@ -1,0 +1,58 @@
+{
+  "scope": "component-only synthetic diagnostic; not model or benchmark score",
+  "upstream_commit": "e6890f85757dd84e27ca6df2dd30651dafad28e0",
+  "sha256": {
+    "instructions.py": "60e086f5342a03ce8e18b64bbcccf86308f523c08aa826707a562150a52f3edf",
+    "evaluation_lib.py": "40582b53ea8674b22a9ccb3b2c48fad78cfb0dd9225f168665506745f14c2ae3"
+  },
+  "response": "HEADER,\nok\nFOOTER,",
+  "strict": {
+    "follow_all": false,
+    "per_instruction": [
+      true,
+      false
+    ]
+  },
+  "loose": {
+    "follow_all": true,
+    "per_instruction": [
+      true,
+      true
+    ]
+  },
+  "candidate_results": [
+    {
+      "candidate": "HEADER,\nok\nFOOTER,",
+      "follow_all": false,
+      "per_instruction": [
+        true,
+        false
+      ]
+    },
+    {
+      "candidate": "ok\nFOOTER,",
+      "follow_all": false,
+      "per_instruction": [
+        false,
+        false
+      ]
+    },
+    {
+      "candidate": "HEADER,\nok",
+      "follow_all": false,
+      "per_instruction": [
+        true,
+        false
+      ]
+    },
+    {
+      "candidate": "ok",
+      "follow_all": false,
+      "per_instruction": [
+        false,
+        true
+      ]
+    }
+  ],
+  "any_single_candidate_satisfies_all": false
+}

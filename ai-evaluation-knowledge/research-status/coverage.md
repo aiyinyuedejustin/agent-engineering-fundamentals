@@ -1,62 +1,61 @@
 # Coverage and verification status
 
-Reviewed integration snapshot: **2026-11-06T02:45:11.467919Z**.
+Reviewed second integration snapshot: **2026-11-06T02:58:54.411713Z**.
 
 ## Actual central coverage
 
 | Measure | Verified snapshot | Interpretation |
 |---|---:|---|
-| Explicit normalized model identities | 9 | Only names in inspected result observations; modes/swarm not extra models |
-| Benchmark/protocol records | 52 | 41 catalog entries plus distinct report protocol/version records; not 52 completed deep studies |
-| Model–benchmark observations | 42 | D1 source-reported values; no local model inference |
-| Concepts | 8 | Evidence-linked working definitions |
-| Source records | 222 | Includes discovered candidates and repeated index pointers |
-| Unique source URLs | 181 | URL uniqueness does not mean full-document review |
-| Evidence records | 106 | Claim-level records with scope and limitations |
-| Fully checklist-reviewed deep studies | 0 | Four benchmark source-path case studies published; full checklist review remains open |
-| Full benchmark reproductions | 0 | No real model/full task-set run |
+| Explicit normalized model/training-variant identities | 18 | Reasoning modes and agent configurations are not extra models |
+| Benchmark/protocol records | 65 | 46 catalog entries plus report protocol/version records |
+| Model–benchmark observations | 99 | All D1 source-reported values, never promoted by component experiments |
+| Concepts | 12 | Evidence-linked working definitions |
+| Source records | 303 | Includes candidates and repeated official-index pointers |
+| Unique source URLs | 262 | Not a full-document-read count |
+| Evidence records | 191 | Claim-specific scope, sources, artifacts and limitations |
+| Fully checklist-reviewed deep studies | 0 | Eight benchmark case articles published; six have scoped D3 traces |
+| Full model/benchmark reproductions | 0 | No complete model/task-set inference |
 
-Model-report snapshot: **94 report/index/version candidate records, 19 D1 and 75 D0**. This is not a 94-model inventory. Benchmark catalog: **41 entries, 36 D1, 4 scoped D3 and 1 D0** after conservatively downgrading SimpleQA pending a real dataset-row inspection.
+The latest integrated model registry is immutable **v2: 94 report/index/version candidate records, 26 D1 and 68 D0**. v1 is retained historically and not added again to current counts. Its 99 numeric observations retain ME001–ME042 and add 57 records. These are not 99 models or 99 benchmarks.
 
-Source inspection statuses: **146 partially read records; 76 discovered records**. Exact per-source access times were not measured for most retrievals: their exact timestamp remains null and the verified read/discovery date is retained. Do not fabricate midnight UTC timestamps.
+The representative benchmark catalog has **46 entries: 40 D1 and 6 scoped D3**. Original Video-MME is now D1; five audio/video/grounding entries broaden coverage. SimpleQA remains conservatively D1. LongBench v2 and Video-MME-v2 remain overall D1 because complete real data/media tasks were not inspected, despite selected code analysis and a separately identified scoring probe.
+
+Source statuses: **235 partially read records and 68 discovered records**. Date-only access precision is retained; no fabricated exact retrieval times. Model and benchmark protocol identity are not inferred from report publication dates.
 
 ## Claim-level depth distribution
 
-| Depth | Evidence records | Scope |
+| Depth | Records | Boundary |
 |---|---:|---|
-| D0 | 1 | Video-MME candidate only |
-| D1 | 90 | Catalog facts, report observations and labeled conceptual synthesis |
-| D2 | 1 | Terminal-Bench legacy bn-fit-modify task/resource contract |
-| D3 | 7 | Specific execution paths, not all framework/provider branches |
-| D4 | 7 | Claims from four executed local diagnostic programs, not seven full benchmarks |
+| D1 | 164 | Reported observations, scoped source facts and labeled synthesis |
+| D2 | 1 | Legacy Terminal-Bench task/resource contract |
+| D3 | 15 | Selected task, lifecycle, bridge, runtime and scoring paths |
+| D4 | 11 | Claims from eight actual local diagnostic programs |
 
-The four executed programs are BrowseComp parser probe, Harbor/OSWorld provider-policy mock tests, isolated official scoring functions, and synthetic statistics. No Docker/VM, cloud sandbox, browser benchmark or paid model API run is claimed.
+The eight programs are BrowseComp parser, provider-policy mock tests, isolated official scorers, synthetic statistics, gpt-oss eval microprobes, IFEval loose probe, Video-MME-v2 scorer probe and Linux private-mapping tests. D4 is restricted to those exact experiments. Firecracker remains documentation-only; Kubernetes tests were read but not run; no real VM/container/cloud deployment, paid API use or security validation is claimed.
 
-## Published section scope
+## Stable published content
 
-- **01 Models:** immutable v1 source/report registry and 42 observation tuples. Five-hour and 200-model targets remain unfinished.
-- **02 Landscape:** representative 41-entry catalog; not exhaustive. Video-MME is D0. Protocol versions must remain distinct.
-- **03 Cases:** BrowseComp, SWE-bench, original OSWorld, current τ-bench source traces, plus one parser-only mock probe.
-- **04 Infrastructure:** deployment/isolation distinction; OSWorld V2.1 provider lifecycle; resource-budget case; 15 mocked/provider-policy assertions.
-- **05 Runtime:** Harbor single-step/installed-agent/verifier trace; OSWorld/BrowserGym and selected MiniWoB paths.
-- **06 Science:** validity/design; grading/metrics; scoped official-scorer and synthetic-statistics experiments.
-- **07–09:** scaffolds only. No complete blind-spot map, curriculum, or accepted architecture is claimed.
+- **01 Models:** v1 and v2 immutable snapshots; latest index uses v2, plus its separately scoped gpt-oss code evidence.
+- **02 Landscape:** 46-entry catalog; multidimensional taxonomy describes its original 41-entry collection scope explicitly.
+- **03 Cases:** eight case articles, three benchmark-specific synthetic scorer/parser probes, no benchmark assets or hidden answers copied.
+- **04 Infrastructure:** five original mechanism/lifecycle articles; mock-provider contracts and actual Linux mmap diagnostics.
+- **05 Runtime:** five source-trace articles; bridge, trajectory and remote execution limits remain explicit.
+- **06 Science:** complete first-round five-chapter analysis, scorer execution trace, evaluation checklist and 16-entry source registry.
+- **07–09:** scaffolds only; no comprehensive blind-spot map, completed curriculum or accepted architecture.
 
-## Integration checks performed
+## Integration validation
 
-- Parsed all central CSV/JSONL files, checked unique IDs, foreign keys, evidence entity IDs, artifact paths and depth rules using `data/validate_indexes.py`.
-- Re-ran statistical_diagnostics.py and scorer_diagnostics.py in a separate temporary copy; both outputs match the retained original JSON exactly. This validation does not create an additional model result or benchmark reproduction.
-- Parsed every staged Python script; retained original upstream-source blob/hash provenance.
-- Source snapshots/raw copied upstream code and active research ledgers are excluded from this publication.
-- Credential-pattern scanning and changed-path review are performed before publishing. The scan is a precaution, not a universal guarantee.
+Central parsing, ID uniqueness, foreign keys, artifact references and depth rules pass via `data/validate_indexes.py`. Staged Python syntax, local Markdown links, source snapshot hashes and credential-pattern scan are checked before publication. Previously published statistics/scorer outputs were independently replayed and matched exactly. New experiment validation is recorded in the batch manifest without relabeling integration checks as new model results.
 
-## Known gaps and next priorities
+All 99 model observations remain `comparability_status=unassessed`. Different training stages, token budgets, agent harnesses, task subsets, metrics and aggregation must not be pooled into a global ranking.
 
-1. Extend the actual model entity inventory, distinguishing families, aliases, checkpoint IDs and deployed API identities.
-2. Review source-path cases against the full deep-study checklist, explicitly documenting uninspected licensing, splits, controls, reproducibility and statistical issues.
-3. Preserve OSWorld original versus V2.1 and τ-bench current versus historical protocol distinctions; do not transfer scores across them.
-4. Inspect actual SimpleQA rows; extend video/audio and undercovered task domains.
-5. Integrate later stable research snapshots separately; do not overwrite immutable v1 or infer coverage from unfinished files.
-6. Continue active research toward the requested duration; no five-hour completion claim at this checkpoint.
+## Next priorities and cutoff
 
-All model results remain `comparability_status=unassessed`; no global ranking is supported by this snapshot.
+1. Expand actual model entities toward the 200+ target, not report-candidate counts.
+2. Finish explicit deep-study checklist review and missing primary-source checks before counting toward 50 completed studies.
+3. Integrate later frozen work separately: model-report v3, KernelBench hardware/cache analysis and real historical LLMBar reanalysis arrived after this cutoff.
+4. Extend multimedia task-level inspection and validate undercovered benchmark licensing/data paths.
+5. Build evidence-backed learning paths and architecture proposals without treating them as accepted implementation decisions.
+6. Continue real active research toward the requested duration; five-hour completion remains unclaimed.
+
+Earlier batch manifests describe earlier Git commits. Their hashes are historical and are not expected to match later modified central indexes.

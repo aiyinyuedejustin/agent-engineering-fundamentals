@@ -1,0 +1,271 @@
+{
+  "snapshot_date": "2026-11-06",
+  "generated_at_utc": "2026-11-06T03:02:40.133431+00:00",
+  "base_commit": "bd118c2b8bd36c315eef42b80b12d818c4fc53ac",
+  "files_in_increment": 50,
+  "files": [
+    {
+      "path": "01-model-landscape/snapshots/v2/README.md",
+      "bytes": 2714,
+      "sha256": "af80c1afef2a94b344812c00c47f2ba2ab0a1118643ffa6264eff9065ad25a6b"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/SHA256SUMS.json",
+      "bytes": 1208,
+      "sha256": "f191584591d90b81de988d97b84fa78b6c6c112c85f6a10863662f9b8f0f274f"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/data/code-evidence.json",
+      "bytes": 1019,
+      "sha256": "81d142074ff44dd0fd7f939e023f0f74236a8f3ba1fcac2ec92fc2c0de18ba38"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/data/model-benchmark-evidence.json",
+      "bytes": 62675,
+      "sha256": "33d6b4c766bab21da8d525bfe6ecc62ea83eea4ea52143700aa9b3daebf91b95"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/data/model-report-registry.json",
+      "bytes": 52616,
+      "sha256": "9a53f1eb1ae909f05a1a168ff3426aba7655923e94cea97e61e0b159b3f70f59"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/experiments/gpt-oss-eval-microprobe/README.md",
+      "bytes": 7832,
+      "sha256": "72cdf64f784ce0302bf701eb72174c4bffb8a1969312a96812e1964be11b25d0"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/experiments/gpt-oss-eval-microprobe/fetch_inputs.py",
+      "bytes": 1081,
+      "sha256": "68915fdcb0aae67569b2067240bf31297058bf230e0da00a4f1a9a2d45c816a9"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/experiments/gpt-oss-eval-microprobe/probe.py",
+      "bytes": 6092,
+      "sha256": "4c30e6b5c01e71453633fff53573879c0f77149599a882aecd16955b00dd6a45"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/experiments/gpt-oss-eval-microprobe/results.json",
+      "bytes": 4592,
+      "sha256": "cf1b230d9ed0b2d63f5056ff7b0e5117be7ca2e62599a18540aafbd956f00711"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/experiments/gpt-oss-eval-microprobe/source-manifest.json",
+      "bytes": 3116,
+      "sha256": "a1bfc3246f71de767fee80efebe09100c7de902f316edd4f5c9d8bc3f23eb398"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/model-report-registry.md",
+      "bytes": 11920,
+      "sha256": "74e73a1d64763b51b49350c7ce0c60923f1d0b93a9869f7e0aaaa6d9ed117187"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v2/report-reading-notes-v2.md",
+      "bytes": 7422,
+      "sha256": "651016b25ef6f54959f6fb7c1eb2c46fbec16ea146c9a32fc38a217b257d24b2"
+    },
+    {
+      "path": "02-benchmark-landscape/benchmark-catalog.json",
+      "bytes": 42751,
+      "sha256": "9e6c4cd8bd90ae49f719be3e7296bccdde6cd19afb9279e17911ac8bd7d2eb71"
+    },
+    {
+      "path": "02-benchmark-landscape/increment-2-evidence.json",
+      "bytes": 3427,
+      "sha256": "5bde0a39f61d74d3665e60bbe1cf782c179c5a33135d89f3b978e88bc60daf8c"
+    },
+    {
+      "path": "02-benchmark-landscape/multidimensional-taxonomy.md",
+      "bytes": 12021,
+      "sha256": "ae50dbb46a2088dbc9fe47b635b3356328fd8114c2769899123cfce0d2d103c0"
+    },
+    {
+      "path": "03-benchmark-cases/ifeval-loose-probe-output.json",
+      "bytes": 1208,
+      "sha256": "935f648134930c01a424fac695bf205ef815922634339506fea7c33e153d1ce1"
+    },
+    {
+      "path": "03-benchmark-cases/ifeval-verifiable-instructions.md",
+      "bytes": 5500,
+      "sha256": "48dab5bd2af0d520b09acfa45da99a46ae9c1c3fc8f85580e042ff70193ce2e3"
+    },
+    {
+      "path": "03-benchmark-cases/ifeval_loose_probe.py",
+      "bytes": 3640,
+      "sha256": "457e6be6426ccb648d2af242d0f4c7a0e81933459297fcf76fe55cbcd69432ce"
+    },
+    {
+      "path": "03-benchmark-cases/longbench-v2-protocol-audit.md",
+      "bytes": 5630,
+      "sha256": "c90c9c2ed67192a6a54d1915891cd1091d75a0484c89f7df22d9ecaedce6ce76"
+    },
+    {
+      "path": "03-benchmark-cases/terminal-bench-evaluating-an-evaluator.md",
+      "bytes": 6026,
+      "sha256": "39dc0a621d5d15e2957e02fb163dda1f54dc298874abf269663e3518a6373113"
+    },
+    {
+      "path": "03-benchmark-cases/video-mme-v2-grouped-scoring.md",
+      "bytes": 4560,
+      "sha256": "04630ecdf7e8dddbd1b24318c43706aaa7c9f3dcbe6b8b8f37575a4a3b91162a"
+    },
+    {
+      "path": "03-benchmark-cases/video-mme-v2-score-probe-output.json",
+      "bytes": 1436,
+      "sha256": "f1d5605a3952e13aafde0758789b563ee70edcbfdc0bc43dbccc7e6a7678595a"
+    },
+    {
+      "path": "03-benchmark-cases/video_mme_v2_score_probe.py",
+      "bytes": 2186,
+      "sha256": "9cbdc98827d8f2dc484f86544df60fc925eb27287e63aef82454f9e9717dcbfd"
+    },
+    {
+      "path": "04-infrastructure/04-snapshot-and-reset-contracts.md",
+      "bytes": 9866,
+      "sha256": "d3bf68e55397af842ffffbf343b1cfcb5c275664b4afaa4ee324a16cf87b4612"
+    },
+    {
+      "path": "04-infrastructure/05-kubernetes-lifecycle-source-trace.md",
+      "bytes": 12868,
+      "sha256": "2e4d92a1b9d9e0d3df88ab28df2dd1beea3213faf6d96648e94542289d0a320e"
+    },
+    {
+      "path": "04-infrastructure/experiments/private-mapping/README.md",
+      "bytes": 2080,
+      "sha256": "733ba0b9f861649cbefdf7479c5e38c3b04540e88ecce72750c722efc12bba4d"
+    },
+    {
+      "path": "04-infrastructure/experiments/private-mapping/result.txt",
+      "bytes": 763,
+      "sha256": "a00f4d9d4430d313d3f269568d520f69f28d8db18e841435561ac4c87a21f982"
+    },
+    {
+      "path": "04-infrastructure/experiments/private-mapping/run_mapping_tests.py",
+      "bytes": 3174,
+      "sha256": "51f8f3f5bd1a75f8a615c7565460aadb797ef9f3be871607e105922c7f0b3f7d"
+    },
+    {
+      "path": "05-agent-runtime/coding-runtime-source-trace.md",
+      "bytes": 8981,
+      "sha256": "5a75de1b12bc0ff27e8cf20f39e64f6ed09d17eb3a5a55f3e3d6099b3d708024"
+    },
+    {
+      "path": "05-agent-runtime/inspect-bridge-and-trajectory.md",
+      "bytes": 12533,
+      "sha256": "4d75991cf991554e09219495d0b132cff53b4f8a8f670f0da9f23af9a303c5ff"
+    },
+    {
+      "path": "05-agent-runtime/remote-execution-contract.md",
+      "bytes": 9964,
+      "sha256": "38f3da47c5252d2d0bd808817e359316c472e530ff118eb8d3f130e363a1b8e1"
+    },
+    {
+      "path": "06-evaluation-science/03-statistics-and-comparisons.md",
+      "bytes": 7198,
+      "sha256": "769859bda220fd259899779cdae6ad305c115cfd7faa099ccc1a995c1003f2d6"
+    },
+    {
+      "path": "06-evaluation-science/04-judge-reliability.md",
+      "bytes": 6213,
+      "sha256": "4e65379b9ad966b9b9904db74ff2427401272fccae0511d2532e852d07593eaa"
+    },
+    {
+      "path": "06-evaluation-science/05-leakage-and-benchmark-lifecycle.md",
+      "bytes": 7101,
+      "sha256": "261be2f097b4680d07a6b7bd0dd3ac3e21359bd7177286c3e14a240a30ec1b5f"
+    },
+    {
+      "path": "06-evaluation-science/README.md",
+      "bytes": 3773,
+      "sha256": "607b3f0af9089c19e45a4a95cffefc2ca85be2adfc2f52793260975feee78e44"
+    },
+    {
+      "path": "06-evaluation-science/case-studies/scorer-execution-traces.md",
+      "bytes": 8012,
+      "sha256": "338cde7f96800feff126d3f8c142fecd6c3b8ba7070bb84bf7bc78d15d428ad3"
+    },
+    {
+      "path": "06-evaluation-science/evaluation-review-checklist.md",
+      "bytes": 2909,
+      "sha256": "8e64073a3a119a5a202e8a6f4d789cfbc10463f20b7fb127ceb2beb13bd82d01"
+    },
+    {
+      "path": "06-evaluation-science/sources.md",
+      "bytes": 5110,
+      "sha256": "6611fbf2ead9d38d0909b914d8e92046e810beab3023dc228f25fe0c5a43deb4"
+    },
+    {
+      "path": "06-evaluation-science/sources/sources.json",
+      "bytes": 14322,
+      "sha256": "fb34d26d231da44f9a3408177d03b82c23f3505580010b8895feee0e1e0c4219"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5932,
+      "sha256": "aa849d69cb588dc6e17e1fdd9f32a626b3da30bc908cd39bd0b34dab89c55428"
+    },
+    {
+      "path": "RESUME.md",
+      "bytes": 3575,
+      "sha256": "95484127303e69a94f47d3d4f04cf2b8268ffcbc671b7b652b5c869ec864a6f9"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 7975,
+      "sha256": "037f22e472b88217d15be3b4e5074bbe35ffd139adbe5d3d0306bda0ee6daaac"
+    },
+    {
+      "path": "data/benchmarks.csv",
+      "bytes": 36213,
+      "sha256": "44152ef1b44dba099b2dfc081bae88c1623d0b097ef7bd61574d0d74764925fc"
+    },
+    {
+      "path": "data/concepts.csv",
+      "bytes": 7571,
+      "sha256": "df7dfb829de8475343ce8f4027c8d91ac83ddd7c9d6013c23f19c297e57d448a"
+    },
+    {
+      "path": "data/evidence.jsonl",
+      "bytes": 167567,
+      "sha256": "378fbaf41d6c95a1afe092f2f618e4d2a9ff14d3f6862844abea058466e995a8"
+    },
+    {
+      "path": "data/model_benchmark_evidence.csv",
+      "bytes": 47042,
+      "sha256": "631cf426b50bdd637fc8107b8dc58130f9feab08a71bf3c973b291a139f51738"
+    },
+    {
+      "path": "data/models.csv",
+      "bytes": 8947,
+      "sha256": "ca9899e2be2c09cac6efac789223ab13c7a1efcdb2de988673e86e073e0a5261"
+    },
+    {
+      "path": "data/sources.jsonl",
+      "bytes": 196765,
+      "sha256": "ecbbad7ac8a0272e33c2361d13ce1e1045a6c4fb5df72de5725103dcfd2c04ff"
+    },
+    {
+      "path": "research-status/coverage.md",
+      "bytes": 5212,
+      "sha256": "4fe3ce31e702280640f87b9b5f0b061c5a051187d1edfc089ab89c245893bcf6"
+    }
+  ],
+  "checks": {
+    "central_indexes": "parsed; IDs, foreign keys, artifact references and depth checks passed",
+    "python_syntax": "all staged scripts parse",
+    "local_markdown_links": "passed",
+    "credential_pattern_matches": 0,
+    "model_v2_snapshot": "all 11 SHA256SUMS content hashes match",
+    "gpt_oss_probe_replay": "27 probes; exact JSON match",
+    "ifeval_replay": "exact JSON match",
+    "video_mme_v2_replay": "exact JSON match",
+    "linux_mmap_replay": "3 tests passed; original timestamped output retained unchanged"
+  },
+  "limits": [
+    "No complete model or benchmark inference",
+    "No VM/container/cluster/cloud experiment",
+    "No five-hour completion claim",
+    "Upstream source caches excluded",
+    "Model v3 and later announced batches are outside this cutoff"
+  ]
+}

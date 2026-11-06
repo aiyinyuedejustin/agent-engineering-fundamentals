@@ -1,0 +1,9 @@
+{"architecture": "x86_64", "kernel": "6.18.57", "page_size": 4096, "python": "3.12.14", "scope": "actual host mmap calls; no VM, network, dependencies or privilege changes", "started_at_utc": "2026-11-06T02:48:48.857332+00:00", "system": "Linux"}
+test_backing_write_affects_unprivatized_page_on_this_host (__main__.PrivateMappingTests.test_backing_write_affects_unprivatized_page_on_this_host) ... ok
+test_new_clone_requires_accessible_backing_path (__main__.PrivateMappingTests.test_new_clone_requires_accessible_backing_path) ... ok
+test_private_write_is_not_shared_or_persisted (__main__.PrivateMappingTests.test_private_write_is_not_shared_or_persisted) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

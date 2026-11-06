@@ -1,0 +1,425 @@
+[
+  {
+    "id": "ES01",
+    "title": "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations",
+    "author": "Evan Miller",
+    "date": "2024-11-01",
+    "url": "https://arxiv.org/html/2411.00640v1",
+    "version": "arXiv 2411.00640v1",
+    "depth": "D1",
+    "read_scope": "Sections 2–5 and relevant appendices; official metadata version verified",
+    "supports": [
+      "question-level uncertainty",
+      "paired differences",
+      "clustered standard errors",
+      "variance decomposition",
+      "power analysis"
+    ],
+    "limitations": [
+      "Super-population and dependence assumptions required",
+      "Section 4.2 numerical example contains an arithmetic inconsistency; general covariance identity independently checked"
+    ],
+    "artifacts": [
+      "03-statistics-and-comparisons.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES02",
+    "title": "Measuring what Matters: Construct Validity in Large Language Model Benchmarks",
+    "author": "Andrew M. Bean et al.",
+    "date": "2025-11-03",
+    "url": "https://arxiv.org/html/2511.04703v1",
+    "version": "arXiv 2511.04703v1",
+    "depth": "D1",
+    "read_scope": "Methods, results, recommendations and limitations",
+    "supports": [
+      "construct/task/metric/claim distinction",
+      "benchmark review methodology",
+      "format confounding",
+      "error analysis"
+    ],
+    "limitations": [
+      "445-paper corpus selected from specified conferences and years",
+      "HTML omitted one introductory include; no claim based on missing text"
+    ],
+    "artifacts": [
+      "01-validity-and-evaluation-design.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES03",
+    "title": "Toward an Evaluation Science for Generative AI Systems",
+    "author": "Laura Weidinger et al.",
+    "date": "2025-03-13",
+    "url": "https://arxiv.org/html/2503.05336v3",
+    "version": "arXiv 2503.05336v3",
+    "depth": "D1",
+    "read_scope": "Introduction and section 3 recommendations",
+    "supports": [
+      "real-world applicability",
+      "system and sociotechnical context",
+      "iterative validation"
+    ],
+    "limitations": [
+      "Position/perspective paper, not a universal empirical effectiveness estimate"
+    ],
+    "artifacts": [
+      "01-validity-and-evaluation-design.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES04",
+    "title": "Holistic Evaluation of Language Models",
+    "author": "Percy Liang et al.",
+    "date": "2023-10-01",
+    "url": "https://arxiv.org/abs/2211.09110",
+    "version": "arXiv 2211.09110v2",
+    "depth": "D1",
+    "read_scope": "Official abstract and official project homepage; not full 100+ page technical paper",
+    "supports": [
+      "multi-metric evaluation design",
+      "standardized scenarios and conditions"
+    ],
+    "limitations": [
+      "Historical experiment; no current ranking inferred",
+      "Detailed empirical findings not independently reviewed here"
+    ],
+    "artifacts": [
+      "01-validity-and-evaluation-design.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES05",
+    "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+    "author": "Lianmin Zheng et al.",
+    "date": "2023-12-24",
+    "url": "https://arxiv.org/html/2306.05685v4",
+    "version": "arXiv 2306.05685v4",
+    "depth": "D1",
+    "read_scope": "Sections 3–4, Table 5, relevant prompts and agreement definitions",
+    "supports": [
+      "position bias",
+      "reference-guided judging",
+      "tie-sensitive agreement",
+      "historical limits of self-bias inference"
+    ],
+    "limitations": [
+      "2023 models and specific sample/protocol",
+      "Non-tie agreement must not be confused with all-vote agreement"
+    ],
+    "artifacts": [
+      "04-judge-reliability.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES06",
+    "title": "Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators",
+    "author": "Yann Dubois et al.",
+    "date": "2024",
+    "url": "https://arxiv.org/html/2404.04475v2",
+    "version": "arXiv 2404.04475v2",
+    "depth": "D1",
+    "read_scope": "Methods, results, gameability, correlation and limitations",
+    "supports": [
+      "regression-based length adjustment",
+      "conditional evaluation target",
+      "metric gameability"
+    ],
+    "limitations": [
+      "Specific English dataset and judge prompt",
+      "Correlation improvement bootstrap p-value about 0.07",
+      "Does not remove all judge biases"
+    ],
+    "artifacts": [
+      "04-judge-reliability.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES07",
+    "title": "Evaluating Large Language Models at Evaluating Instruction Following",
+    "author": "Zhiyuan Zeng et al.",
+    "date": "2024-04-16",
+    "url": "https://arxiv.org/html/2310.07641v2",
+    "version": "arXiv 2310.07641v2",
+    "depth": "D1",
+    "read_scope": "Introduction, dataset purpose, sections 4.1–4.4 and official README example schema",
+    "supports": [
+      "objective instruction adherence vs preference",
+      "accuracy vs position agreement",
+      "meta-evaluation challenge sets"
+    ],
+    "limitations": [
+      "Adversarial selection against specific models",
+      "Human agreement evaluated on 80 sampled items"
+    ],
+    "artifacts": [
+      "04-judge-reliability.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES08",
+    "title": "Proving Test Set Contamination in Black Box Language Models",
+    "author": "Yonatan Oren et al.",
+    "date": "2023-11-24",
+    "url": "https://arxiv.org/html/2310.17623v2",
+    "version": "arXiv 2310.17623v2",
+    "depth": "D1",
+    "read_scope": "Sections 2–3 methodology, experimental design and section 6 limitations",
+    "supports": [
+      "exchangeability-based contamination detection",
+      "permutation p-values",
+      "sharded asymptotic testing"
+    ],
+    "limitations": [
+      "Requires log probabilities",
+      "Exchangeability/independence assumptions",
+      "No detection guarantee for indirect contamination",
+      "Paper's displayed p-values not multiplicity-adjusted"
+    ],
+    "artifacts": [
+      "05-leakage-and-benchmark-lifecycle.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES09",
+    "title": "LiveBench: A Challenging, Contamination-Limited LLM Benchmark",
+    "author": "Colin White et al.",
+    "date": "2025-04-18",
+    "url": "https://arxiv.org/html/2406.19314v2",
+    "version": "arXiv 2406.19314v2",
+    "depth": "D1",
+    "read_scope": "Overview and appendices A.4–A.7",
+    "supports": [
+      "grading and rescoring policy",
+      "dynamic updates",
+      "explicit contamination limitations"
+    ],
+    "limitations": [
+      "Paper protocol not verified as current implementation cadence",
+      "Authors acknowledge some earlier-source task contamination"
+    ],
+    "artifacts": [
+      "02-grading-and-metrics.md",
+      "05-leakage-and-benchmark-lifecycle.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES10",
+    "title": "Why SWE-bench Verified no longer measures frontier coding capabilities",
+    "author": "OpenAI",
+    "date": "2026-02-23",
+    "url": "https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/",
+    "version": "Official report retrieved 2026-11-06",
+    "depth": "D1",
+    "read_scope": "Audit sampling, test-design findings, contamination examples and discussion",
+    "supports": [
+      "selected failure-subset audit",
+      "underspecified tests",
+      "reproduction-based contamination evidence"
+    ],
+    "limitations": [
+      "138 failure-selected tasks, not random prevalence sample",
+      "Provider-authored audit",
+      "Pro recommendation superseded by ES11"
+    ],
+    "artifacts": [
+      "05-leakage-and-benchmark-lifecycle.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES11",
+    "title": "Separating signal from noise in coding evaluations",
+    "author": "OpenAI",
+    "date": "2026-07-08",
+    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/",
+    "version": "Official report retrieved 2026-11-06",
+    "depth": "D1",
+    "read_scope": "Full report including methodology, human campaign, concrete example and retraction",
+    "supports": [
+      "SWE-bench Pro screening and audit",
+      "strict/low-coverage tests",
+      "retraction of prior Pro recommendation"
+    ],
+    "limitations": [
+      "Screened subset, not random-sample prevalence with CI",
+      "Independent full replication not done here"
+    ],
+    "artifacts": [
+      "05-leakage-and-benchmark-lifecycle.md"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "primary_paper_or_report",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES12",
+    "title": "HumanEval evaluation and execution source",
+    "author": "OpenAI",
+    "date": "2026-10-16",
+    "url": "https://github.com/openai/human-eval/tree/b9453e8f1865df0a0057a1383767caa400acfbcf",
+    "version": "b9453e8f1865df0a0057a1383767caa400acfbcf",
+    "depth": "D4",
+    "read_scope": "evaluation.py, execution.py, LICENSE, deprecation commit; isolated estimate_pass_at_k executed",
+    "supports": [
+      "finite-sample pass@k estimator",
+      "sample aggregation",
+      "unsafe candidate-execution boundary",
+      "deprecation"
+    ],
+    "limitations": [
+      "No candidate execution or model run",
+      "Deprecated/unmaintained repository"
+    ],
+    "artifacts": [
+      "02-grading-and-metrics.md",
+      "case-studies/scorer-execution-traces.md",
+      "experiments/results/scorer_diagnostics.json"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "official_source_code",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES13",
+    "title": "SQuAD 2.0 official evaluator",
+    "author": "SQuAD authors",
+    "date": "2023-10-12",
+    "url": "https://github.com/rajpurkar/SQuAD-explorer/blob/eee5fdbf62f8613a7812b03419e6b29617b74fd1/evaluate-v2.0.py",
+    "version": "eee5fdbf62f8613a7812b03419e6b29617b74fd1",
+    "depth": "D4",
+    "read_scope": "Scoring functions and main path; selected pure functions executed",
+    "supports": [
+      "normalization",
+      "token F1",
+      "max over references",
+      "threshold and missing-ID behavior"
+    ],
+    "limitations": [
+      "Synthetic fixtures not dataset error-frequency estimates"
+    ],
+    "artifacts": [
+      "02-grading-and-metrics.md",
+      "case-studies/scorer-execution-traces.md",
+      "experiments/results/scorer_diagnostics.json"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "official_source_code",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES14",
+    "title": "FastChat LLM judge common.py and show_result.py",
+    "author": "LMSYS/FastChat contributors",
+    "date": "2025-06-02",
+    "url": "https://github.com/lm-sys/FastChat/tree/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge",
+    "version": "587d5cfa1609a43d192cedb8441cac3c17db105d",
+    "depth": "D4",
+    "read_scope": "Judge parsing, position swap and aggregation traced; judge functions run with API stubs",
+    "supports": [
+      "parser ambiguity",
+      "out-of-range rating parsing",
+      "order mapping",
+      "error filtering and tie aggregation"
+    ],
+    "limitations": [
+      "No actual judge calls",
+      "Synthetic judge texts do not establish real failure prevalence"
+    ],
+    "artifacts": [
+      "04-judge-reliability.md",
+      "case-studies/scorer-execution-traces.md",
+      "experiments/results/scorer_diagnostics.json"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "official_source_code",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES15",
+    "title": "SWE-bench grading.py and constants",
+    "author": "SWE-bench contributors",
+    "date": "2026-09-02",
+    "url": "https://github.com/SWE-bench/SWE-bench/tree/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness",
+    "version": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+    "depth": "D4",
+    "read_scope": "Grading call chain; status, ID resolution and log-validity gate executed with synthetic fixtures",
+    "supports": [
+      "F2P vs P2P",
+      "FAIL_ONLY contract",
+      "empty/zero-test rejection",
+      "exit-code crosscheck",
+      "truncated ID handling"
+    ],
+    "limitations": [
+      "Parser stub used for log gate fixture",
+      "No real task/container/model run",
+      "Does not verify every project parser"
+    ],
+    "artifacts": [
+      "case-studies/scorer-execution-traces.md",
+      "experiments/results/scorer_diagnostics.json"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "official_source_code",
+    "status": "read_or_executed"
+  },
+  {
+    "id": "ES16",
+    "title": "Original statistical diagnostics",
+    "author": "Evaluation-science research",
+    "date": "2026-11-06T02:31:41Z",
+    "url": null,
+    "version": "statistical_diagnostics.py; seed 20261106; Python 3.12.14",
+    "depth": "D4",
+    "read_scope": "Actual local run with saved JSON",
+    "supports": [
+      "pairing",
+      "cluster resampling",
+      "selection optimism",
+      "class imbalance",
+      "nonlinear aggregation",
+      "variance identity"
+    ],
+    "limitations": [
+      "Synthetic or simulated data only",
+      "No model capability measurement"
+    ],
+    "artifacts": [
+      "experiments/statistical_diagnostics.py",
+      "experiments/results/statistical_diagnostics.json"
+    ],
+    "retrieved_at": "2026-11-06",
+    "source_type": "original_experiment",
+    "status": "read_or_executed"
+  }
+]

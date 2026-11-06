@@ -1,0 +1,223 @@
+{
+  "scope": "D4 component microprobe only; no model or judge; no benchmark score reproduced",
+  "commit": "277020131d524f06bed5f66b694a92ed7f6e5224",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "network_calls": 0,
+  "model_calls": 0,
+  "judge_calls": 0,
+  "cases": [
+    {
+      "name": "GPQA parser",
+      "observed": "A",
+      "input": "Answer: A"
+    },
+    {
+      "name": "GPQA parser",
+      "observed": "A",
+      "input": "Answer: A\nAfter checking, Answer: B"
+    },
+    {
+      "name": "GPQA parser",
+      "observed": "A",
+      "input": "Answer: A\n\\boxed{B}"
+    },
+    {
+      "name": "GPQA parser",
+      "observed": "B",
+      "input": "Because I cannot decide."
+    },
+    {
+      "name": "GPQA parser",
+      "observed": "n",
+      "input": "no answer"
+    },
+    {
+      "name": "GPQA parser",
+      "observed": "",
+      "input": ""
+    },
+    {
+      "name": "GPQA parser",
+      "observed": "D",
+      "input": "Dunno"
+    },
+    {
+      "name": "AIME parser",
+      "observed": 42,
+      "input": "The answer is \\boxed{42}",
+      "extracted": "42"
+    },
+    {
+      "name": "AIME parser",
+      "observed": 3,
+      "input": "No answer. Tried 3 cases.",
+      "extracted": "3"
+    },
+    {
+      "name": "AIME parser",
+      "observed": 234,
+      "input": "\\boxed{1,234}",
+      "extracted": "234"
+    },
+    {
+      "name": "AIME parser",
+      "observed": null,
+      "input": "\\boxed{\\text{42}}",
+      "extracted": "\\text{42"
+    },
+    {
+      "name": "AIME parser",
+      "observed": -1,
+      "input": "\\boxed{-1}",
+      "extracted": "-1"
+    },
+    {
+      "name": "AIME parser",
+      "observed": null,
+      "input": "",
+      "extracted": ""
+    },
+    {
+      "name": "GPQAEval constructor",
+      "observed": {
+        "example_count": 24
+      },
+      "input": {
+        "num_examples": null,
+        "n_repeats": 8
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "GPQAEval constructor",
+      "observed": {
+        "example_count": 24
+      },
+      "input": {
+        "num_examples": 0,
+        "n_repeats": 8
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "GPQAEval constructor",
+      "observed": {
+        "error": "AssertionError",
+        "message": "n_repeats only supported for num_examples = None"
+      },
+      "input": {
+        "num_examples": 1,
+        "n_repeats": 8
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "GPQAEval constructor",
+      "observed": {
+        "example_count": 1
+      },
+      "input": {
+        "num_examples": 1,
+        "n_repeats": 1
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "GPQA debug filter",
+      "observed": 1,
+      "input": {
+        "debug": true,
+        "num_examples": 0
+      }
+    },
+    {
+      "name": "GPQA debug filter",
+      "observed": 1,
+      "input": {
+        "debug": true,
+        "num_examples": 1
+      }
+    },
+    {
+      "name": "GPQA debug filter",
+      "observed": 1,
+      "input": {
+        "debug": true,
+        "num_examples": 10
+      }
+    },
+    {
+      "name": "AIME25Eval constructor",
+      "observed": {
+        "example_count": 24
+      },
+      "input": {
+        "num_examples": null,
+        "n_repeats": 8
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "AIME25Eval constructor",
+      "observed": {
+        "example_count": 24
+      },
+      "input": {
+        "num_examples": 0,
+        "n_repeats": 8
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "AIME25Eval constructor",
+      "observed": {
+        "error": "AssertionError",
+        "message": "n_repeats only supported for num_examples = None"
+      },
+      "input": {
+        "num_examples": 1,
+        "n_repeats": 8
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "AIME25Eval constructor",
+      "observed": {
+        "example_count": 1
+      },
+      "input": {
+        "num_examples": 1,
+        "n_repeats": 1
+      },
+      "synthetic_source_rows": 3
+    },
+    {
+      "name": "empty progress map",
+      "observed": {
+        "error": "ValueError",
+        "message": "Number of processes must be at least 1"
+      },
+      "input": []
+    },
+    {
+      "name": "report std is population spread, not standard error",
+      "observed": 0.5,
+      "input": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "HealthBench clips after averaging",
+      "observed": 0.0,
+      "raw_example_scores": [
+        -2.0,
+        1.0
+      ],
+      "alternative_clip_each_then_mean": 0.5
+    }
+  ]
+}

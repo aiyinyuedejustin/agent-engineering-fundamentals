@@ -1,0 +1,13 @@
+{
+  "report-reading-notes-v2.md": "651016b25ef6f54959f6fb7c1eb2c46fbec16ea146c9a32fc38a217b257d24b2",
+  "README.md": "af80c1afef2a94b344812c00c47f2ba2ab0a1118643ffa6264eff9065ad25a6b",
+  "model-report-registry.md": "74e73a1d64763b51b49350c7ce0c60923f1d0b93a9869f7e0aaaa6d9ed117187",
+  "data/code-evidence.json": "81d142074ff44dd0fd7f939e023f0f74236a8f3ba1fcac2ec92fc2c0de18ba38",
+  "data/model-report-registry.json": "9a53f1eb1ae909f05a1a168ff3426aba7655923e94cea97e61e0b159b3f70f59",
+  "data/model-benchmark-evidence.json": "33d6b4c766bab21da8d525bfe6ecc62ea83eea4ea52143700aa9b3daebf91b95",
+  "experiments/gpt-oss-eval-microprobe/probe.py": "4c30e6b5c01e71453633fff53573879c0f77149599a882aecd16955b00dd6a45",
+  "experiments/gpt-oss-eval-microprobe/source-manifest.json": "a1bfc3246f71de767fee80efebe09100c7de902f316edd4f5c9d8bc3f23eb398",
+  "experiments/gpt-oss-eval-microprobe/README.md": "72cdf64f784ce0302bf701eb72174c4bffb8a1969312a96812e1964be11b25d0",
+  "experiments/gpt-oss-eval-microprobe/results.json": "cf1b230d9ed0b2d63f5056ff7b0e5117be7ca2e62599a18540aafbd956f00711",
+  "experiments/gpt-oss-eval-microprobe/fetch_inputs.py": "68915fdcb0aae67569b2067240bf31297058bf230e0da00a4f1a9a2d45c816a9"
+}

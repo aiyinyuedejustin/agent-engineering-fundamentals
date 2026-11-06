@@ -1,0 +1,65 @@
+{
+  "scope": "Synthetic pure-function experiment only; not benchmark reproduction",
+  "upstream_commit": "b2834bd4091d6234ccaf0fa1f149a7ef4eac5875",
+  "source_sha256": "f27a00bca743adcdc55c22e65deeff4416305d41f15197de3d2cad086cf6674b",
+  "groups": [
+    {
+      "correctness": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "question_accuracy": 75.0,
+      "relevance_score": 56.25,
+      "logic_sequential_score": 56.25,
+      "logic_parallel_middle_score": 58.333333333333336
+    },
+    {
+      "correctness": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "question_accuracy": 75.0,
+      "relevance_score": 56.25,
+      "logic_sequential_score": 0.0,
+      "logic_parallel_middle_score": 0.0
+    },
+    {
+      "correctness": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "question_accuracy": 75.0,
+      "relevance_score": 56.25,
+      "logic_sequential_score": 6.25,
+      "logic_parallel_middle_score": 33.333333333333336
+    }
+  ],
+  "parser_examples": [
+    {
+      "synthetic_response": "D",
+      "extracted": "D"
+    },
+    {
+      "synthetic_response": "Final Answer: D",
+      "extracted": "D"
+    },
+    {
+      "synthetic_response": "Based on the sequence, the final step follows. Final Answer: D",
+      "extracted": "B"
+    },
+    {
+      "synthetic_response": "I choose D",
+      "extracted": "D"
+    },
+    {
+      "synthetic_response": "d",
+      "extracted": ""
+    }
+  ]
+}

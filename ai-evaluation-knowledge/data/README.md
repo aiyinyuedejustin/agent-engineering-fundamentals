@@ -2,7 +2,7 @@
 
 All CSV files use UTF-8, comma separation, one header row, and standard CSV quoting. Empty cells mean unknown/unverified, not zero or false. Multi-value ID and modality fields use semicolons. JSONL files contain one JSON object per line and no enclosing array. Empty JSONL files are intentionally valid empty indexes.
 
-**Current records:** the first reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
+**Current records:** the second reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
 
 ## Stable identifiers
 
@@ -41,7 +41,7 @@ A completed implementation-backed deep study requires `reviewed_complete`, an ex
 
 One row per sourced result observation, not a synthesized leaderboard. Required: `result_id`, `model_id`, `benchmark_id`, `result_origin`, `source_ids`, `evidence_ids`, and `comparability_status`.
 
-- `result_origin`: `source_reported`, `developer_reported`, `independent_reported`, or `local_experiment`. The first batch uses `source_reported` to avoid guessing whether each table cell was measured by the publisher, quoted, or rerun elsewhere.
+- `result_origin`: `source_reported`, `developer_reported`, `independent_reported`, or `local_experiment`. Current imports use `source_reported` to avoid guessing whether each table cell was measured by the publisher, quoted, or rerun elsewhere.
 - `model_version`, `benchmark_version`, `split`, `prompt_id`, `shots`, `sample_count`, `sampling_budget`, `inference_settings`, `tool_access`, `grader`, and `aggregation`: preserve protocol qualifiers or leave unknown.
 - `score_raw`, `score_unit`, `metric`, `metric_direction`: original reported metric. Do not normalize silently.
 - `uncertainty`: source-reported interval/error estimate or a clearly specified locally computed estimate.

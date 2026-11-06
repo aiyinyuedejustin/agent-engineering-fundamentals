@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-11-06",
+  "scope": "Original analysis records; no raw benchmark or hidden test data",
+  "records": [
+    {
+      "id": "terminal-bench-math-eval-grader-trace",
+      "benchmark_id": "terminal-bench",
+      "depth": "D3",
+      "depth_scope": "Task-local artifact verifier flow, not full Harbor lifecycle",
+      "revision": "452bf305c6daa62fc59061d22133a7cbc7c1572e",
+      "release": "v4.0.0",
+      "source": "https://github.com/harbor-framework/terminal-bench/tree/452bf305c6daa62fc59061d22133a7cbc7c1572e/tasks/math-eval-grader",
+      "artifact": "03-benchmark-cases/terminal-bench-evaluating-an-evaluator.md",
+      "finding": "The submitted evaluation pipeline is itself the evaluated artifact; separate checks assess extraction, grader behavior and result consistency. Executable artifacts are treated as untrusted code.",
+      "limitations": "No environment build, model inference or security audit. README timing summary is stale relative to operational configuration."
+    },
+    {
+      "id": "ifeval-task-source-trace",
+      "benchmark_id": "ifeval",
+      "depth": "D3",
+      "revision": "e6890f85757dd84e27ca6df2dd30651dafad28e0",
+      "source": "https://github.com/google-research/google-research/tree/e6890f85757dd84e27ca6df2dd30651dafad28e0/instruction_following_eval",
+      "artifact": "03-benchmark-cases/ifeval-verifiable-instructions.md",
+      "finding": "Registered mechanical constraints need not cover the whole natural-language request. Prompt-level AND and instruction-level mean are distinct metrics. Loose scoring chooses transformations independently for each constraint.",
+      "limitations": "No model generation or full benchmark scoring."
+    },
+    {
+      "id": "ifeval-loose-synthetic-probe",
+      "benchmark_id": "ifeval",
+      "depth": "D4",
+      "depth_scope": "Only an isolated source-function experiment on synthetic input",
+      "revision": "e6890f85757dd84e27ca6df2dd30651dafad28e0",
+      "source": "https://github.com/google-research/google-research/blob/e6890f85757dd84e27ca6df2dd30651dafad28e0/instruction_following_eval/evaluation_lib.py",
+      "artifact": "03-benchmark-cases/ifeval-loose-probe-output.json",
+      "script": "03-benchmark-cases/ifeval_loose_probe.py",
+      "finding": "Synthetic response passes loose prompt scoring while no single allowed transformed candidate satisfies every constraint.",
+      "limitations": "This is the implemented upper-bound behavior, not automatically a defect. Frequency and effect on real model scores are unknown."
+    },
+    {
+      "id": "longbench-v2-protocol-source-audit",
+      "benchmark_id": "longbench-v2",
+      "depth": "D1",
+      "depth_scope": "Overall depth held at D1 despite source tracing because complete real data row was not accessible in this pass",
+      "revision": "2e00731f8d0bff23dc4325161044d0ed8af94c1e",
+      "source": "https://github.com/THUDM/LongBench/tree/2e00731f8d0bff23dc4325161044d0ed8af94c1e",
+      "artifact": "03-benchmark-cases/longbench-v2-protocol-audit.md",
+      "finding": "Prompt truncation, two-stage CoT, literal answer extraction, skipped API failures and partial-result denominators are distinct operational conditions.",
+      "limitations": "HF viewer reported oversized row groups and direct JSON read timed out; dataset revision unpinned; no model run or claim about published-score validity."
+    }
+  ]
+}

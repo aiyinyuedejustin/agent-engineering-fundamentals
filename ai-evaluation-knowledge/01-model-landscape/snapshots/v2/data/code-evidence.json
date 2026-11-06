@@ -1,0 +1,27 @@
+[
+  {
+    "id": "MC001",
+    "subject": "openai/gpt-oss evaluation task execution flow",
+    "depth": "D3",
+    "learning_level": "L2",
+    "source_url": "https://github.com/openai/gpt-oss/tree/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals",
+    "revision": "277020131d524f06bed5f66b694a92ed7f6e5224",
+    "read_scope": "CLI configuration; GPQA/AIME/HealthBench tasks; samplers; parsers; grading; aggregation",
+    "artifact": "experiments/gpt-oss-eval-microprobe/README.md",
+    "model_score_reproduced": false
+  },
+  {
+    "id": "MC002",
+    "subject": "gpt-oss evaluation components offline synthetic microprobe",
+    "depth": "D4",
+    "learning_level": "L2",
+    "source_id": "MC001",
+    "artifact": "experiments/gpt-oss-eval-microprobe/results.json",
+    "cases": 27,
+    "network_calls": 0,
+    "model_calls": 0,
+    "judge_calls": 0,
+    "model_score_reproduced": false,
+    "scope_limit": "Extracted original component bodies with fake local data; not complete CLI or live benchmark execution"
+  }
+]

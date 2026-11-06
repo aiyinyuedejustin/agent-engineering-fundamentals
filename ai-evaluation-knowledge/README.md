@@ -1,20 +1,20 @@
 # AI 评测基础设施研究知识库
 
-这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前内容是第一批可审阅成果，不是完成版综述，也不是模型总榜。
+这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前内容是第二批可审阅成果，不是完成版综述，也不是模型总榜。
 
 **继续研究从这里开始：** [RESUME.md](RESUME.md)、[方法与证据等级](methodology.md)、[覆盖情况](research-status/coverage.md)、[数据索引规范](data/README.md)。
 
 ## 当前实际完成的内容
 
-截至 2026-11-06 首批集成快照：
+截至 2026-11-06 第二批集成快照：
 
-- **41 个代表性 benchmark 目录条目**，不是 41 个深度复现。加上报告中需要单独区分的版本/协议，中央索引共有 **52 个 benchmark/协议记录**。
-- **9 个明确模型名称**，来自已读报告中的结果。推理模式与 Kimi Agent Swarm 没有被当成额外模型。
-- **42 个 D1 原文报告数值观测**，保留 harness、任务子集、工具、预算和聚合差异。没有独立复现这些分数。
-- **4 篇 benchmark 源码路径案例**：BrowseComp、SWE-bench、原 OSWorld、当前 τ-bench。每篇明确所读版本与未完成部分。
-- **5 篇基础设施/runtime 分析**，覆盖隔离、VM 生命周期、资源预算、Harbor trial/verifier、OSWorld/BrowserGym 执行边界。
-- **2 篇评测科学正文**及 **4 个局部实验程序**：BrowseComp parser、provider/policy mock、官方 scorer 隔离函数、合成统计诊断。
-- 中央索引有 **222 个来源记录、181 个不同来源 URL、106 条证据、8 个概念**。来源记录包含只发现未读的候选与共用官方索引入口，不能把这些数字理解为读完了 222 份独立报告。
+- **46 个代表性 benchmark 目录条目**，不是 46 个深度复现。加上报告中需要单独区分的版本/协议，中央索引共有 **65 个 benchmark/协议记录**。
+- **18 个明确模型/训练变体名称**，来自已读报告中的结果。推理模式、Kimi Agent Swarm 与 Step PaCoRe 没有被当成额外模型；明确不同训练阶段的变体保持区分。
+- **99 个 D1 原文报告数值观测**，保留 harness、任务子集、工具、预算和聚合差异。没有独立复现这些分数。
+- **8 篇 benchmark 案例**：6 篇选定源码路径分析，加上 LongBench v2、Video-MME-v2 的协议审查。后两者缺完整真实数据/媒体任务，整体保守保留 D1；局部 scorer 实验单独记录。
+- **10 篇基础设施/runtime 分析**，覆盖隔离、VM 生命周期、资源预算、快照与 reset、Kubernetes 生命周期、bridge、轨迹和远程执行契约。
+- **5 篇评测科学正文**、评分执行链、审查清单及 **8 个局部实验程序**。新增 gpt-oss 组件、IFEval loose、Video-MME-v2 grouped scoring 与真实 Linux mmap 诊断。
+- 中央索引有 **303 个来源记录、262 个不同来源 URL、191 条证据、12 个概念**。来源记录包含只发现未读的候选与共用官方索引入口，不能把这些数字理解为读完了 303 份独立报告。
 
 **没有完成完整 benchmark/model 运行。** D4 仅指已实际执行的局部函数、模拟控制流程或合成统计实验。完整深度研究检查表尚未签核，因此不把现有案例冒充 50 个已完成深度研究。
 
@@ -25,7 +25,14 @@
 3. [BrowseComp reference evaluator](03-benchmark-cases/browsecomp-reference-evaluator.md)：一个小 parser contract 可以改变整条计分链。
 4. [Harbor 执行链](05-agent-runtime/harbor-source-trace.md)：agent、environment、trial、verifier 是不同对象。
 5. [隔离与部署](04-infrastructure/01-isolation-is-not-deployment.md)及[资源预算](04-infrastructure/03-resource-budgets-change-the-test.md)：相同配置文字未必等于相同执行条件。
-6. [模型报告快照 v1](01-model-landscape/snapshots/v1/README.md)：94 个来源/报告候选中只有 19 个达到所标范围的 D1，其余 75 个仍为 D0。
+6. [模型报告快照 v2](01-model-landscape/snapshots/v2/README.md)：94 个来源/报告候选中 26 个达到所标范围的 D1，其余 68 个仍为 D0。v1 保留为历史快照。
+
+## 本批新增入口
+
+- [IFEval 的 loose 语义](03-benchmark-cases/ifeval-verifiable-instructions.md)与[Video-MME-v2 的组分](03-benchmark-cases/video-mme-v2-grouped-scoring.md)。
+- [Firecracker 快照契约](04-infrastructure/04-snapshot-and-reset-contracts.md)与[Kubernetes 生命周期](04-infrastructure/05-kubernetes-lifecycle-source-trace.md)。
+- [Inspect bridge 与轨迹](05-agent-runtime/inspect-bridge-and-trajectory.md)、[远程执行契约](05-agent-runtime/remote-execution-contract.md)、[mini-SWE-agent](05-agent-runtime/coding-runtime-source-trace.md)。
+- [统计比较](06-evaluation-science/03-statistics-and-comparisons.md)、[judge 可靠性](06-evaluation-science/04-judge-reliability.md)、[污染与 benchmark 生命周期](06-evaluation-science/05-leakage-and-benchmark-lifecycle.md)。
 
 ## 目录
 

@@ -10,21 +10,23 @@
 
 ## Last reviewed batch
 
-The 2026-11-06 first research increment integrates 27 stable research artifacts, normalized central indexes and explicit coverage qualifications. It contains 9 model identities, 52 benchmark/protocol records, 42 source-reported observations, 8 concepts, 222 source records and 106 claim-level evidence records. Four original benchmark case studies trace selected source paths; four local diagnostic programs executed. No full benchmark/model run or five-hour completion is claimed.
+The 2026-11-06 second increment contains 65 stable research artifacts across retained and new batches. Current indexes use models v2 and the 46-entry representative benchmark catalog: 18 normalized model/training-variant identities, 65 benchmark/protocol records, 99 reported observations, 12 concepts, 303 source records and 191 claims.
 
-The report inventory is not a model count: v1 has 94 report/index/version candidates, 19 scoped D1 and 75 D0. The central model count deliberately collapses thinking modes and the Kimi swarm configuration into their base named model identities while preserving the reported system settings in result rows.
+Eight benchmark case articles include six scoped D3 traces; eight diagnostic programs have actually run. D4 claims remain component/mechanism-specific. No full benchmark/model inference or five-hour completion is claimed. Model-result observations all remain D1 and comparability-unassessed.
+
+The latest integrated report registry v2 has 94 candidates, 26 scoped D1 and 68 D0. Historical v1 remains unchanged. Source/report counts are not model counts; reasoning modes, Kimi swarm and Step PaCoRe configurations do not inflate model identity counts. Distinct training-stage variants stay separate.
 
 ## Publication contract
 
 Repository: aiyinyuedejustin/agent-engineering-fundamentals.
 Branch: main. Folder: ai-evaluation-knowledge/.
-The first scaffold commit was 3dff254798f8e2a53f5fa45e483eac8767b63d87. Later publication commits should be read from repository history rather than inferred from this file.
+The scaffold commit was 3dff254798f8e2a53f5fa45e483eac8767b63d87; the first research increment and final hash manifest were verified at bd118c2b8bd36c315eef42b80b12d818c4fc53ac. Later publication commits should be read from repository history rather than inferred from this file.
 
 Before each incremental publication, refresh main, read the existing folder tree, preserve unrelated paths, build on the current parent/root tree, use a non-force expected-head update, then verify exact remote head and changed paths. Do not publish raw upstream source caches, credentials, private data, task answers or unreviewed drafts.
 
 ## Concrete next action
 
-Review the next stable batch without stopping ongoing research. Newly available Terminal-Bench 4.0 task-local and IFEval cases were announced after this snapshot cutoff and are not included here. Reconcile their versions, source IDs and actual experiment scope before adding them. Update the representative catalog only from its next verified snapshot.
+Review the next frozen tranche: model-report v3, KernelBench hardware/cache analysis and phase-2 public LLMBar reanalysis were announced after this cutoff. Preserve artifact versions, source licenses and the difference between synthetic probes, real historical-data reanalysis and live model experiments. Add only completed snapshots and validated metadata; do not consume actively changing drafts.
 
 ## Open research work
 

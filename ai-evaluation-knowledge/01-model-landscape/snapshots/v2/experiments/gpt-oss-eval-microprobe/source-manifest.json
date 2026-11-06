@@ -1,0 +1,61 @@
+{
+  "repository": "openai/gpt-oss",
+  "commit": "277020131d524f06bed5f66b694a92ed7f6e5224",
+  "observed_at": "2026-11-06",
+  "files": [
+    {
+      "path": "gpt_oss/evals/README.md",
+      "blob_sha": "f0713dcf0c0fc1b5171e6a4917d455dea5e0b7d8",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/README.md",
+      "sha256": "a65af575ee24ae698f9a64d90487943e1e2cce0e6e294c62f52404f3c1d419eb"
+    },
+    {
+      "path": "gpt_oss/evals/__main__.py",
+      "blob_sha": "40d56c1294a8484844c3258334fda3f6f4731080",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/__main__.py",
+      "sha256": "b5d36aa75d7e090ce7b3112278bb8e2d104948de31d5e37eeaf1de58b9bd837d"
+    },
+    {
+      "path": "gpt_oss/evals/gpqa_eval.py",
+      "blob_sha": "1b12a43565f2895cf260fa9941380a976c9551e4",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/gpqa_eval.py",
+      "sha256": "8bb7e2115903f8f1d8b9f23def6c19816b8c073c5ac5d8b8dd928f2ede3fe06c"
+    },
+    {
+      "path": "gpt_oss/evals/aime_eval.py",
+      "blob_sha": "c6e9d64b27bf016cd7d7045bd49338f0090695db",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/aime_eval.py",
+      "sha256": "d396a16ec7e2dc834a4e7d8086a08d48f788733af203ca3fac67a0c5f393768b"
+    },
+    {
+      "path": "gpt_oss/evals/abcd_grader.py",
+      "blob_sha": "37088c8f1ee0bf56c64789ab160719e25a79e3a6",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/abcd_grader.py",
+      "sha256": "48795d8051f103a97a89a6dd7b50069c1de89245b22a3812784c5af38cf613ad"
+    },
+    {
+      "path": "gpt_oss/evals/report.py",
+      "blob_sha": "787dd1fc47da319ad901e68c752d73a063a09c16",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/report.py",
+      "sha256": "50522c2b2eeabfee743c561020487cc0428ff2407547165e7061668acb7cbd64"
+    },
+    {
+      "path": "gpt_oss/evals/responses_sampler.py",
+      "blob_sha": "134303f5db715f7b6a0261e45cfcf8b5c902f762",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/responses_sampler.py",
+      "sha256": "fc2524b667afb96eb92497f7d1e30e9869a31c0387930d0915d088afe8464521"
+    },
+    {
+      "path": "gpt_oss/evals/chat_completions_sampler.py",
+      "blob_sha": "29c1a0a894ad8810b28ae7a3c296ac74c8d17f01",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/chat_completions_sampler.py",
+      "sha256": "aca3855f04d1b818048602364533c197c2f5b1822c365e2aaa1851e70c1e4b52"
+    },
+    {
+      "path": "gpt_oss/evals/healthbench_eval.py",
+      "blob_sha": "09d184c1c285d0e2a520595b196917261ecff7b7",
+      "url": "https://github.com/openai/gpt-oss/blob/277020131d524f06bed5f66b694a92ed7f6e5224/gpt_oss/evals/healthbench_eval.py",
+      "sha256": "a87a8b96a31f99265a837f2c48266cbd99c123225eb84a7b705ad36831c17cf5"
+    }
+  ]
+}
