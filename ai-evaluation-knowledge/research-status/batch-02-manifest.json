@@ -155,13 +155,13 @@
     },
     {
       "path": "data/benchmarks.csv",
-      "bytes": 27639,
-      "sha256": "b25224789978e2566dad8f291a38da575ab1bf9b5c9ba740eb06b70255c61667"
+      "bytes": 27586,
+      "sha256": "61f6f1c17e117bad4f2a858edb5ea51cf974cf753b24f378507743849b737ae8"
     },
     {
       "path": "data/concepts.csv",
-      "bytes": 4355,
-      "sha256": "18b02a43ead6412f93dd8097aba6c7ed8a55fe2f416497352017c498a4678c49"
+      "bytes": 4346,
+      "sha256": "396f50fe2baa022220b9f7811f6dc11a9eac634375e3b240fb54130b2c517514"
     },
     {
       "path": "data/evidence.jsonl",
@@ -170,13 +170,13 @@
     },
     {
       "path": "data/model_benchmark_evidence.csv",
-      "bytes": 19402,
-      "sha256": "2594c89f72f4bed5721ee9448df65eacf34233f67cde66e50ff3e75a5fe2531f"
+      "bytes": 19359,
+      "sha256": "86449432e1366d0c1bef90f16cdc8af155d343594ef2cf00a94508e8d80541c9"
     },
     {
       "path": "data/models.csv",
-      "bytes": 4388,
-      "sha256": "a35c63c8c24d30e9f52bdda89a87c4650634d5f9919baf6d06cb3ce9e9e397aa"
+      "bytes": 4378,
+      "sha256": "22fd899d8ab293312a661010a6baffeecbb2c169cfa9fa59c532ebb3fef88994"
     },
     {
       "path": "data/sources.jsonl",
@@ -200,7 +200,8 @@
     "local_markdown_links": "passed",
     "credential_pattern_matches": 0,
     "statistics_replay": "exact output match in temporary copy",
-    "scorer_replay": "exact output match in temporary copy"
+    "scorer_replay": "exact output match in temporary copy",
+    "publication_text_normalization": "CSV newlines normalized to LF before final manifest verification; hashes match the GitHub text payload."
   },
   "limits": [
     "No raw upstream source caches included",
