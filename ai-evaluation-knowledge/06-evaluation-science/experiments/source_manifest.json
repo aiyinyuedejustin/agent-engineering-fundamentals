@@ -1,0 +1,52 @@
+[
+  {
+    "id": "humaneval_evaluation",
+    "repo": "openai/human-eval",
+    "path": "human_eval/evaluation.py",
+    "commit": "b9453e8f1865df0a0057a1383767caa400acfbcf",
+    "git_blob_sha": "9ce96dfc4cb4c553e41e4530b710fdf94d4442f5",
+    "local_path": "/tmp/eval-science-humaneval_evaluation.py",
+    "url": "https://raw.githubusercontent.com/openai/human-eval/b9453e8f1865df0a0057a1383767caa400acfbcf/human_eval/evaluation.py",
+    "display_url": "https://github.com/openai/human-eval/blob/b9453e8f1865df0a0057a1383767caa400acfbcf/human_eval/evaluation.py"
+  },
+  {
+    "id": "squad_eval",
+    "repo": "rajpurkar/SQuAD-explorer",
+    "path": "evaluate-v2.0.py",
+    "commit": "eee5fdbf62f8613a7812b03419e6b29617b74fd1",
+    "git_blob_sha": "21f52c179c8c6547ae5999215f8afd36038f20ca",
+    "local_path": "/tmp/eval-science-pinned-squad_eval.py",
+    "url": "https://raw.githubusercontent.com/rajpurkar/SQuAD-explorer/eee5fdbf62f8613a7812b03419e6b29617b74fd1/evaluate-v2.0.py",
+    "display_url": "https://github.com/rajpurkar/SQuAD-explorer/blob/eee5fdbf62f8613a7812b03419e6b29617b74fd1/evaluate-v2.0.py"
+  },
+  {
+    "id": "fastchat_common",
+    "repo": "lm-sys/FastChat",
+    "path": "fastchat/llm_judge/common.py",
+    "commit": "587d5cfa1609a43d192cedb8441cac3c17db105d",
+    "git_blob_sha": "d2640d6013b08c05a3ae3a1b887f13d3a4b1f39c",
+    "local_path": "/tmp/eval-science-pinned-fastchat_common.py",
+    "url": "https://raw.githubusercontent.com/lm-sys/FastChat/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/common.py",
+    "display_url": "https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/common.py"
+  },
+  {
+    "id": "swe_grading",
+    "repo": "SWE-bench/SWE-bench",
+    "path": "swebench/harness/grading.py",
+    "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+    "git_blob_sha": "39174d64aef5c3cc211b27124af5966349d1aa8c",
+    "local_path": "/tmp/eval-science-pinned-swe_grading.py",
+    "url": "https://raw.githubusercontent.com/SWE-bench/SWE-bench/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/grading.py",
+    "display_url": "https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/grading.py"
+  },
+  {
+    "id": "swe_constants",
+    "repo": "SWE-bench/SWE-bench",
+    "path": "swebench/harness/constants/__init__.py",
+    "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+    "git_blob_sha": "3f7755d12bc334e07b2d416986d3ed32895421b7",
+    "local_path": "/tmp/eval-science-pinned-swe_constants.py",
+    "url": "https://raw.githubusercontent.com/SWE-bench/SWE-bench/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/constants/__init__.py",
+    "display_url": "https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/constants/__init__.py"
+  }
+]

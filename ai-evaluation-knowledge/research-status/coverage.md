@@ -1,68 +1,62 @@
-# Research coverage and verification status
+# Coverage and verification status
 
-Last scaffold update: **2026-11-06 UTC**.
+Reviewed integration snapshot: **2026-11-06T02:45:11.467919Z**.
 
-## Honest baseline
+## Actual central coverage
 
-The central indexes were initialized with headers only (CSV) or zero records (JSONL). No entities, sources, scores, completed studies, source traces, or experiments are claimed by this scaffold. Parallel research may already have section artifacts; these are **not yet assessed or ingested here**.
+| Measure | Verified snapshot | Interpretation |
+|---|---:|---|
+| Explicit normalized model identities | 9 | Only names in inspected result observations; modes/swarm not extra models |
+| Benchmark/protocol records | 52 | 41 catalog entries plus distinct report protocol/version records; not 52 completed deep studies |
+| Model–benchmark observations | 42 | D1 source-reported values; no local model inference |
+| Concepts | 8 | Evidence-linked working definitions |
+| Source records | 222 | Includes discovered candidates and repeated index pointers |
+| Unique source URLs | 181 | URL uniqueness does not mean full-document review |
+| Evidence records | 106 | Claim-level records with scope and limitations |
+| Fully checklist-reviewed deep studies | 0 | Four benchmark source-path case studies published; full checklist review remains open |
+| Full benchmark reproductions | 0 | No real model/full task-set run |
 
-| Measure | Target or purpose | Verified central baseline |
-| --- | --- | --- |
-| Distinct model seeds | 200+ broad, provenance-backed seeds | 0 indexed; section artifacts not assessed |
-| Benchmark inventory | Broad discovery supporting case selection | 0 indexed; section artifacts not assessed |
-| Implementation-backed benchmark deep studies | 50 substantive reviewed cases | 0 counted; section artifacts not assessed |
-| D1 primary-document evidence | Report/document-supported claims | 0 central evidence records |
-| D2 task/config/key-code evidence | Concrete implementation analysis | 0 central evidence records |
-| D3 source-level traces | Followed execution path through source | 0 central evidence records |
-| D4 experiments | Actual executed runs with artifacts | 0 central evidence records |
-| Model–benchmark result observations | Qualified, sourced result rows | 0 indexed |
-| Concepts | Sourced definitions and relationships | 0 indexed |
-| Sources | Retrieved or discovered source metadata | 0 indexed |
+Model-report snapshot: **94 report/index/version candidate records, 19 D1 and 75 D0**. This is not a 94-model inventory. Benchmark catalog: **41 entries, 36 D1, 4 scoped D3 and 1 D0** after conservatively downgrading SimpleQA pending a real dataset-row inspection.
 
-These are initialization counts, not a claim that no other research has occurred. Refresh them only after checking current files and evidence.
+Source inspection statuses: **146 partially read records; 76 discovered records**. Exact per-source access times were not measured for most retrievals: their exact timestamp remains null and the verified read/discovery date is retained. Do not fabricate midnight UTC timestamps.
 
-## Section state
+## Claim-level depth distribution
 
-| Section | Current review state | Next verification step |
-| --- | --- | --- |
-| 01 Model landscape | Not assessed by scaffold task | Review and deduplicate model seeds; ingest source-backed records. |
-| 02 Benchmark landscape | Not assessed by scaffold task | Review benchmark candidates, primary sources, and version distinctions. |
-| 03 Benchmark cases | Not assessed by scaffold task | Review case artifacts against the deep-study checklist and D0–D4 criteria. |
-| 04 Infrastructure | Not assessed by scaffold task | Inspect traces and distinguish code inspection from execution. |
-| 05 Agent runtime | Not assessed by scaffold task | Review runtime contracts and trace evidence. |
-| 06 Evaluation science | Not assessed by scaffold task | Review methodological claims, case studies, and experiment artifacts. |
-| 07 Unknown unknowns | Scaffold only | Investigate evidence-grounded blind spots and open questions. |
-| 08 Learning path | Scaffold only | Build a progressive path from reviewed sources and cases. |
-| 09 Architecture decisions | Scaffold only | Record proposed trade-offs and their supporting evidence. |
+| Depth | Evidence records | Scope |
+|---|---:|---|
+| D0 | 1 | Video-MME candidate only |
+| D1 | 90 | Catalog facts, report observations and labeled conceptual synthesis |
+| D2 | 1 | Terminal-Bench legacy bn-fit-modify task/resource contract |
+| D3 | 7 | Specific execution paths, not all framework/provider branches |
+| D4 | 7 | Claims from four executed local diagnostic programs, not seven full benchmarks |
 
-## Review gates
+The four executed programs are BrowseComp parser probe, Harbor/OSWorld provider-policy mock tests, isolated official scoring functions, and synthetic statistics. No Docker/VM, cloud sandbox, browser benchmark or paid model API run is claimed.
 
-- Discovery and reading are separate states.
-- An accessible repository is not evidence of code inspection.
-- A code trace is not evidence of execution.
-- A published score is not a locally reproduced score.
-- A draft case file is not a completed deep study.
-- A family or alias must not inflate distinct-model counts.
-- A raw aggregate must not hide protocol differences or unverified fields.
+## Published section scope
 
-## Current blockers and gaps
+- **01 Models:** immutable v1 source/report registry and 42 observation tuples. Five-hour and 200-model targets remain unfinished.
+- **02 Landscape:** representative 41-entry catalog; not exhaustive. Video-MME is D0. Protocol versions must remain distinct.
+- **03 Cases:** BrowseComp, SWE-bench, original OSWorld, current τ-bench source traces, plus one parser-only mock probe.
+- **04 Infrastructure:** deployment/isolation distinction; OSWorld V2.1 provider lifecycle; resource-budget case; 15 mocked/provider-policy assertions.
+- **05 Runtime:** Harbor single-step/installed-agent/verifier trace; OSWorld/BrowserGym and selected MiniWoB paths.
+- **06 Science:** validity/design; grading/metrics; scoped official-scorer and synthetic-statistics experiments.
+- **07–09:** scaffolds only. No complete blind-spot map, curriculum, or accepted architecture is claimed.
 
-- Central indexes have not been populated or reconciled with section artifacts.
-- Section-level research quality, counts, and source accessibility have not been reviewed by this scaffold task.
-- No global completeness, saturated coverage, or experiment success is asserted.
-- No future run or recurring schedule is established by these files.
+## Integration checks performed
 
-## Next pass
+- Parsed all central CSV/JSONL files, checked unique IDs, foreign keys, evidence entity IDs, artifact paths and depth rules using `data/validate_indexes.py`.
+- Re-ran statistical_diagnostics.py and scorer_diagnostics.py in a separate temporary copy; both outputs match the retained original JSON exactly. This validation does not create an additional model result or benchmark reproduction.
+- Parsed every staged Python script; retained original upstream-source blob/hash provenance.
+- Source snapshots/raw copied upstream code and active research ledgers are excluded from this publication.
+- Credential-pattern scanning and changed-path review are performed before publishing. The scan is a precaution, not a universal guarantee.
 
-1. Read `../RESUME.md` and current section handoffs.
-2. Inventory actual artifacts without changing actively edited research files.
-3. Review one completed batch for provenance and depth, then ingest it.
-4. Validate indexes and update this file with actual counts, remaining gaps, and the inspection timestamp.
-5. Prioritize the next work by coverage gaps and evidence value, rather than by numerical targets alone.
+## Known gaps and next priorities
 
-## Publishing and duration checkpoint
+1. Extend the actual model entity inventory, distinguishing families, aliases, checkpoint IDs and deployed API identities.
+2. Review source-path cases against the full deep-study checklist, explicitly documenting uninspected licensing, splits, controls, reproducibility and statistical issues.
+3. Preserve OSWorld original versus V2.1 and τ-bench current versus historical protocol distinctions; do not transfer scores across them.
+4. Inspect actual SimpleQA rows; extend video/audio and undercovered task domains.
+5. Integrate later stable research snapshots separately; do not overwrite immutable v1 or infer coverage from unfinished files.
+6. Continue active research toward the requested duration; no five-hour completion claim at this checkpoint.
 
-- GitHub destination verified: `aiyinyuedejustin/agent-engineering-fundamentals`, branch `main`, folder `ai-evaluation-knowledge/`.
-- Independent repository folder: absent before the first scaffold batch; no unrelated paths are part of the publication scope.
-- Five-hour active-research requirement: outstanding; no duration-completion claim.
-- Track actual active research and artifacts separately from wall-clock waiting.
+All model results remain `comparability_status=unassessed`; no global ranking is supported by this snapshot.

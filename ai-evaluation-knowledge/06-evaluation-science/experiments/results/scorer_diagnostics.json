@@ -1,0 +1,666 @@
+{
+  "experiment_type": "official scoring functions on synthetic fixtures; no LLM benchmark inference",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "source_provenance": [
+    {
+      "id": "humaneval_evaluation",
+      "repo": "openai/human-eval",
+      "path": "human_eval/evaluation.py",
+      "commit": "b9453e8f1865df0a0057a1383767caa400acfbcf",
+      "git_blob_sha": "9ce96dfc4cb4c553e41e4530b710fdf94d4442f5",
+      "url": "https://raw.githubusercontent.com/openai/human-eval/b9453e8f1865df0a0057a1383767caa400acfbcf/human_eval/evaluation.py",
+      "display_url": "https://github.com/openai/human-eval/blob/b9453e8f1865df0a0057a1383767caa400acfbcf/human_eval/evaluation.py",
+      "sha256": "e926d5e9b8f1ec040096cd5952e8cf79f8dc0b7fb80ba6667ce604ffea0397bc"
+    },
+    {
+      "id": "squad_eval",
+      "repo": "rajpurkar/SQuAD-explorer",
+      "path": "evaluate-v2.0.py",
+      "commit": "eee5fdbf62f8613a7812b03419e6b29617b74fd1",
+      "git_blob_sha": "21f52c179c8c6547ae5999215f8afd36038f20ca",
+      "url": "https://raw.githubusercontent.com/rajpurkar/SQuAD-explorer/eee5fdbf62f8613a7812b03419e6b29617b74fd1/evaluate-v2.0.py",
+      "display_url": "https://github.com/rajpurkar/SQuAD-explorer/blob/eee5fdbf62f8613a7812b03419e6b29617b74fd1/evaluate-v2.0.py",
+      "sha256": "710840ce2c2c61716334c056777032f24660b83eb9869a451036e6a24d8103c4"
+    },
+    {
+      "id": "fastchat_common",
+      "repo": "lm-sys/FastChat",
+      "path": "fastchat/llm_judge/common.py",
+      "commit": "587d5cfa1609a43d192cedb8441cac3c17db105d",
+      "git_blob_sha": "d2640d6013b08c05a3ae3a1b887f13d3a4b1f39c",
+      "url": "https://raw.githubusercontent.com/lm-sys/FastChat/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/common.py",
+      "display_url": "https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/common.py",
+      "sha256": "71c3b317322845cb05eb6d9b555b03e5084fa59085d24989ce521fcfa8bdc9a7"
+    },
+    {
+      "id": "swe_grading",
+      "repo": "SWE-bench/SWE-bench",
+      "path": "swebench/harness/grading.py",
+      "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+      "git_blob_sha": "39174d64aef5c3cc211b27124af5966349d1aa8c",
+      "url": "https://raw.githubusercontent.com/SWE-bench/SWE-bench/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/grading.py",
+      "display_url": "https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/grading.py",
+      "sha256": "a095273010175001a6779e365b3b77abb8657c7ac2e4f80b4bc360faa6f09483"
+    },
+    {
+      "id": "swe_constants",
+      "repo": "SWE-bench/SWE-bench",
+      "path": "swebench/harness/constants/__init__.py",
+      "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e",
+      "git_blob_sha": "3f7755d12bc334e07b2d416986d3ed32895421b7",
+      "url": "https://raw.githubusercontent.com/SWE-bench/SWE-bench/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/constants/__init__.py",
+      "display_url": "https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/swebench/harness/constants/__init__.py",
+      "sha256": "8895ab5313d874349c4b07bd223bb9eb00acaee377b432e67cc7ad840341e79b"
+    }
+  ],
+  "function_lines": {
+    "humaneval": {
+      "estimate_pass_at_k": [
+        13,
+        36
+      ]
+    },
+    "squad": {
+      "normalize_answer": [
+        45,
+        57
+      ],
+      "get_tokens": [
+        59,
+        61
+      ],
+      "compute_exact": [
+        63,
+        64
+      ],
+      "compute_f1": [
+        66,
+        79
+      ],
+      "get_raw_scores": [
+        81,
+        100
+      ],
+      "apply_no_ans_threshold": [
+        102,
+        110
+      ],
+      "make_eval_dict": [
+        112,
+        126
+      ]
+    },
+    "fastchat": {
+      "two_score_pattern": [
+        34,
+        34
+      ],
+      "two_score_pattern_backup": [
+        35,
+        35
+      ],
+      "one_score_pattern": [
+        36,
+        36
+      ],
+      "one_score_pattern_backup": [
+        37,
+        37
+      ],
+      "run_judge_single": [
+        135,
+        189
+      ],
+      "run_judge_pair": [
+        235,
+        310
+      ]
+    },
+    "swe": {
+      "SUITE_RAN": [
+        31,
+        46
+      ],
+      "TEST_EXIT_CODE_RE": [
+        51,
+        51
+      ],
+      "parse_test_exit_code": [
+        55,
+        58
+      ],
+      "_resolve_case": [
+        61,
+        82
+      ],
+      "test_passed": [
+        85,
+        90
+      ],
+      "test_maintained": [
+        93,
+        98
+      ],
+      "test_failed": [
+        101,
+        109
+      ],
+      "get_logs_eval": [
+        113,
+        176
+      ],
+      "get_eval_tests_report": [
+        179,
+        285
+      ],
+      "compute_fail_to_pass": [
+        288,
+        295
+      ],
+      "compute_pass_to_pass": [
+        298,
+        306
+      ],
+      "get_resolution_status": [
+        309,
+        326
+      ]
+    }
+  },
+  "humaneval_pass_at_k": [
+    {
+      "n": 10,
+      "correct": 1,
+      "k": 1,
+      "official": 0.09999999999999998,
+      "naive_plugin": 0.09999999999999998
+    },
+    {
+      "n": 10,
+      "correct": 1,
+      "k": 5,
+      "official": 0.5,
+      "naive_plugin": 0.40950999999999993
+    },
+    {
+      "n": 10,
+      "correct": 2,
+      "k": 5,
+      "official": 0.7777777777777778,
+      "naive_plugin": 0.6723199999999999
+    },
+    {
+      "n": 4,
+      "correct": 1,
+      "k": 4,
+      "official": 1.0,
+      "naive_plugin": 0.68359375
+    },
+    {
+      "n": 10,
+      "correct": 0,
+      "k": 5,
+      "official": 0.0,
+      "naive_plugin": 0.0
+    },
+    {
+      "n": 10,
+      "correct": 10,
+      "k": 5,
+      "official": 1.0,
+      "naive_plugin": 1.0
+    }
+  ],
+  "squad_normalization": [
+    {
+      "gold": "The Eiffel Tower.",
+      "prediction": "eiffel tower",
+      "normalized_gold": "eiffel tower",
+      "normalized_prediction": "eiffel tower",
+      "exact": 1,
+      "f1": 1.0
+    },
+    {
+      "gold": "not guilty",
+      "prediction": "guilty",
+      "normalized_gold": "not guilty",
+      "normalized_prediction": "guilty",
+      "exact": 0,
+      "f1": 0.6666666666666666
+    },
+    {
+      "gold": "0.5",
+      "prediction": "05",
+      "normalized_gold": "05",
+      "normalized_prediction": "05",
+      "exact": 1,
+      "f1": 1.0
+    },
+    {
+      "gold": "twenty one",
+      "prediction": "21",
+      "normalized_gold": "twenty one",
+      "normalized_prediction": "21",
+      "exact": 0,
+      "f1": 0
+    },
+    {
+      "gold": "",
+      "prediction": "the",
+      "normalized_gold": "",
+      "normalized_prediction": "",
+      "exact": 1,
+      "f1": 1
+    },
+    {
+      "gold": "Paris",
+      "prediction": "Paris and London",
+      "normalized_gold": "paris",
+      "normalized_prediction": "paris and london",
+      "exact": 0,
+      "f1": 0.5
+    }
+  ],
+  "squad_threshold_boundary": {
+    "0.49": 1.0,
+    "0.5": 0.0,
+    "0.51": 0.0
+  },
+  "fastchat_pair_parser": [
+    {
+      "stubbed_judge_text": "The winner is [[B]].",
+      "parsed_winner": "B"
+    },
+    {
+      "stubbed_judge_text": "I considered [[A]] but my final verdict is [[B]].",
+      "parsed_winner": "A"
+    },
+    {
+      "stubbed_judge_text": "No decision.",
+      "parsed_winner": "error"
+    },
+    {
+      "stubbed_judge_text": "[[C]]",
+      "parsed_winner": "tie"
+    }
+  ],
+  "fastchat_single_parser": [
+    {
+      "stubbed_judge_text": "[[8]]",
+      "parsed_score": 8
+    },
+    {
+      "stubbed_judge_text": "[[11]]",
+      "parsed_score": 11
+    },
+    {
+      "stubbed_judge_text": "Analysis [3], final rating [8]",
+      "parsed_score": 3
+    },
+    {
+      "stubbed_judge_text": "No score",
+      "parsed_score": -1
+    }
+  ],
+  "swe_status_fixtures": [
+    {
+      "case": "all_pass",
+      "mode": "pass_and_fail",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "all_pass",
+      "mode": "fail_only",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "skip_fix",
+      "mode": "pass_and_fail",
+      "resolution": "RESOLVED_NO",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [],
+          "failure": [
+            "fix"
+          ]
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "skip_fix",
+      "mode": "fail_only",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "skip_regression",
+      "mode": "pass_and_fail",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "skip_regression",
+      "mode": "fail_only",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "xfail_fix",
+      "mode": "pass_and_fail",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "xfail_fix",
+      "mode": "fail_only",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "missing_fix",
+      "mode": "pass_and_fail",
+      "resolution": "RESOLVED_NO",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [],
+          "failure": [
+            "fix"
+          ]
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "missing_fix",
+      "mode": "fail_only",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "missing_all",
+      "mode": "pass_and_fail",
+      "resolution": "RESOLVED_NO",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [],
+          "failure": [
+            "fix"
+          ]
+        },
+        "PASS_TO_PASS": {
+          "success": [],
+          "failure": [
+            "keep"
+          ]
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    },
+    {
+      "case": "missing_all",
+      "mode": "fail_only",
+      "resolution": "RESOLVED_FULL",
+      "report": {
+        "FAIL_TO_PASS": {
+          "success": [
+            "fix"
+          ],
+          "failure": []
+        },
+        "PASS_TO_PASS": {
+          "success": [
+            "keep"
+          ],
+          "failure": []
+        },
+        "FAIL_TO_FAIL": {
+          "success": [],
+          "failure": []
+        },
+        "PASS_TO_FAIL": {
+          "success": [],
+          "failure": []
+        }
+      }
+    }
+  ],
+  "swe_truncated_ids": {
+    "uniform_pass": true,
+    "mixed_pass_fail": false,
+    "complete_id_no_prefix_fallback": false
+  },
+  "swe_log_gate_fixtures": [
+    {
+      "case": "empty",
+      "valid": false,
+      "status_map": {}
+    },
+    {
+      "case": "zero_tests",
+      "valid": false,
+      "status_map": {}
+    },
+    {
+      "case": "real_runner_evidence",
+      "valid": true,
+      "status_map": {}
+    },
+    {
+      "case": "spoofed_pass_exit_1",
+      "valid": false,
+      "status_map": {}
+    },
+    {
+      "case": "pass_exit_0",
+      "valid": true,
+      "status_map": {
+        "fix": "PASSED"
+      }
+    }
+  ]
+}

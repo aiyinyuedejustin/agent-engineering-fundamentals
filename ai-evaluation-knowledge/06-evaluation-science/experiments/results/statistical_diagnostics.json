@@ -1,0 +1,129 @@
+{
+  "experiment_type": "synthetic mathematical/statistical diagnostics, not LLM inference",
+  "seed": 20261106,
+  "python": "3.12.14",
+  "same_aggregate_different_paired_uncertainty": {
+    "high_overlap": {
+      "n": 1000,
+      "A": 0.72,
+      "B": 0.7,
+      "delta": 0.02,
+      "discordant": 60,
+      "paired_se": 0.007723966575514142,
+      "paired_ci95": [
+        0.004861303694201105,
+        0.0351386963057989
+      ],
+      "unpaired_se": 0.02029807902270587,
+      "unpaired_ci95": [
+        -0.019783503839851477,
+        0.05978350383985148
+      ]
+    },
+    "low_overlap": {
+      "n": 1000,
+      "A": 0.72,
+      "B": 0.7,
+      "delta": 0.02,
+      "discordant": 560,
+      "paired_se": 0.023667702891496677,
+      "paired_ci95": [
+        -0.026387845264127987,
+        0.06638784526412798
+      ],
+      "unpaired_se": 0.02029807902270587,
+      "unpaired_ci95": [
+        -0.019783503839851477,
+        0.05978350383985148
+      ]
+    }
+  },
+  "cluster_pseudoreplication": {
+    "n_rows": 1000,
+    "n_clusters": 100,
+    "mean": 0.6,
+    "naive_se": 0.01549968516584257,
+    "cluster_mean_se": 0.04923659639173309,
+    "se_ratio": 3.1766191290283907,
+    "naive_row_bootstrap_ci95": [
+      0.569,
+      0.631
+    ],
+    "cluster_bootstrap_ci95": [
+      0.5,
+      0.69
+    ]
+  },
+  "judge_prevalence": {
+    "gold_positive": 95,
+    "gold_negative": 5,
+    "judge_always_positive": true,
+    "raw_accuracy": 0.95,
+    "positive_recall": 1.0,
+    "negative_recall": 0.0,
+    "balanced_accuracy": 0.5,
+    "chance_agreement_from_marginals": 0.95,
+    "cohen_kappa": 0.0,
+    "repeat_consistency": 1.0
+  },
+  "multiple_comparisons": {
+    "independent_tests": 20,
+    "per_test_alpha": 0.05,
+    "probability_at_least_one_false_positive": 0.6415140775914581
+  },
+  "winner_selection": {
+    "true_success_probability": 0.7,
+    "candidates": 20,
+    "n_per_candidate": 200,
+    "replications": 2000,
+    "mean_selected_observed_score": 0.7594575,
+    "mean_optimism": 0.05945750000000005
+  },
+  "zero_failures": {
+    "independent_trials": 100,
+    "failures": 0,
+    "one_sided_95pct_binomial_upper_failure_rate": 0.029513049607039932
+  },
+  "different_denominators": {
+    "A_slice_rates": [
+      0.9,
+      0.6
+    ],
+    "B_slice_rates": [
+      0.85,
+      0.55
+    ],
+    "A_slice_weights": [
+      0.1,
+      0.9
+    ],
+    "B_slice_weights": [
+      0.9,
+      0.1
+    ],
+    "A_mismatched_overall": 0.63,
+    "B_mismatched_overall": 0.8200000000000001,
+    "A_common_equal_weight": 0.75,
+    "B_common_equal_weight": 0.7
+  },
+  "task_heterogeneity": {
+    "per_task_p": [
+      0.2,
+      0.8
+    ],
+    "mean_p": 0.5,
+    "mean_pass_at_2": 0.6599999999999999,
+    "plug_in_mean_pass_at_2": 0.75,
+    "mean_all_2_success": 0.3400000000000001,
+    "plug_in_mean_all_2_success": 0.25
+  },
+  "variance_identity_audit": {
+    "variance_A": 0.08333333333333333,
+    "variance_B": 0.08333333333333333,
+    "correlation": 0.5,
+    "covariance": 0.041666666666666664,
+    "unpaired_variance_before_dividing_n": 0.16666666666666666,
+    "paired_variance_before_dividing_n": 0.08333333333333333,
+    "relative_variance_reduction": 0.5
+  }
+}

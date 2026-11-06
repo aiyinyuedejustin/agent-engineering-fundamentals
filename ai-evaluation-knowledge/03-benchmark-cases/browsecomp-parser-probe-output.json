@@ -1,0 +1,24 @@
+{
+  "scope": "parser-only mock experiment, not benchmark reproduction",
+  "source_sha256": "49ab43f3b2c47443400d15f07fccd1badbb5741e5392012961825b564048826f",
+  "rows": [
+    {
+      "mock_judge_output": "correct: yes",
+      "grade_result": "correct: yes",
+      "is_correct": false,
+      "is_incorrect": false
+    },
+    {
+      "mock_judge_output": "correct: no",
+      "grade_result": "correct: no",
+      "is_correct": false,
+      "is_incorrect": false
+    },
+    {
+      "mock_judge_output": "invalid output",
+      "grade_result": "no",
+      "is_correct": false,
+      "is_incorrect": true
+    }
+  ]
+}

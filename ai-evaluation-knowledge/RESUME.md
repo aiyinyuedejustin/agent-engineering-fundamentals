@@ -2,46 +2,39 @@
 
 ## Read first
 
-1. `README.md` for scope and workspace layout.
-2. `methodology.md` for D0–D4 evidence criteria and deep-study review.
-3. `data/README.md` for index schemas and count rules.
-4. `research-status/coverage.md` for the latest reviewed coverage state.
-5. Current section reports and editing ownership, before editing any section files.
+1. README.md for actual published scope and reading order.
+2. methodology.md for D0–D4 and deep-study review gates.
+3. data/README.md and data/validate_indexes.py for schema and integrity checks.
+4. research-status/coverage.md for actual counts and gaps.
+5. The latest stable section snapshot before merging new evidence.
 
-## Last completed step
+## Last reviewed batch
 
-On **2026-11-06 UTC**, the shared scaffold, methodology, central empty indexes, and sections 07–09 were initialized. The scaffold task did not inspect or modify other research sections. It did not populate research records, validate their findings, or run any experiments.
+The 2026-11-06 first research increment integrates 27 stable research artifacts, normalized central indexes and explicit coverage qualifications. It contains 9 model identities, 52 benchmark/protocol records, 42 source-reported observations, 8 concepts, 222 source records and 106 claim-level evidence records. Four original benchmark case studies trace selected source paths; four local diagnostic programs executed. No full benchmark/model run or five-hour completion is claimed.
 
-## Current checkpoint
+The report inventory is not a model count: v1 has 94 report/index/version candidates, 19 scoped D1 and 75 D0. The central model count deliberately collapses thinking modes and the Kimi swarm configuration into their base named model identities while preserving the reported system settings in result rows.
 
-- Workspace: the `ai-evaluation-knowledge/` folder in the research repository.
-- Central CSV indexes: headers only.
-- Central source/evidence JSONL indexes: zero records.
-- Coverage: initialization baseline; artifacts in other sections still require review and ingestion.
-- Targets: 200+ provenance-backed model seeds and 50 substantive benchmark deep studies; neither is claimed complete.
-- Autonomous scheduling: none established by this checkpoint.
+## Publication contract
+
+Repository: aiyinyuedejustin/agent-engineering-fundamentals.
+Branch: main. Folder: ai-evaluation-knowledge/.
+The first scaffold commit was 3dff254798f8e2a53f5fa45e483eac8767b63d87. Later publication commits should be read from repository history rather than inferred from this file.
+
+Before each incremental publication, refresh main, read the existing folder tree, preserve unrelated paths, build on the current parent/root tree, use a non-force expected-head update, then verify exact remote head and changed paths. Do not publish raw upstream source caches, credentials, private data, task answers or unreviewed drafts.
 
 ## Concrete next action
 
-Inventory the current section artifacts, identify completed batches and active ownership, then review one completed batch for primary sources, stable model/benchmark identity, and justified D0–D4 depth. Ingest only supported records. Validate references and update coverage counts from actual records.
+Review the next stable batch without stopping ongoing research. Newly available Terminal-Bench 4.0 task-local and IFEval cases were announced after this snapshot cutoff and are not included here. Reconcile their versions, source IDs and actual experiment scope before adding them. Update the representative catalog only from its next verified snapshot.
 
-## Continuation order
+## Open research work
 
-1. Reconcile duplicate model aliases and benchmark variants before importing.
-2. Create source records for actual sources, preserving publication/access dates and code revisions.
-3. Add claim-level evidence with precise locators and limitations.
-4. Add entity and result rows linked to those source/evidence IDs.
-5. Review case-study completeness; do not count placeholders or documentation-only cases as implementation-backed deep studies.
-6. Record uncovered risks and unresolved questions in `07-unknown-unknowns/`.
-7. Add source traces and experiments only to their earned depth; preserve logs and manifests for actual runs.
-8. Refresh coverage and this checkpoint with completed actions, next priorities, blockers, and explicit ownership.
+- Broaden model identities toward the 200+ seed target without counting reports, aliases or configurations as models.
+- Extend benchmark studies toward the 50 deep-study target; finish explicit checklist review of current cases before marking them reviewed_complete.
+- Keep parser/scorer/policy D4 component tests separate from full framework, security or model experiments.
+- Build evidence-backed unknown-unknowns, learning path and proposed architecture records from collected findings.
+- Resolve report date/version anomalies, unpinned dataset revisions and incomparable score settings.
+- Track actual active work; five hours of continuous research remains outstanding, and waiting alone is not research activity.
 
-## Handoff template
+## Validation and handoff
 
-For each resumed batch, append a concise entry containing: UTC date/time; scope; files inspected; files changed; verified counts added; evidence depths reached; completed versus incomplete steps; precise blockers; and the next action. Do not paste secrets or unsupported totals.
-
-## Publication and active-work continuation
-
-The verified destination is `aiyinyuedejustin/agent-engineering-fundamentals`, branch `main`, new folder `ai-evaluation-knowledge/`. The first publication increment contains only this scaffold. For each later increment, refresh the remote head, preserve unrelated paths, publish reviewed files with non-force expected-head protection, and verify the resulting remote commit.
-
-Continue the requested research for at least five hours of real active work across parallel research streams. Do not claim that waiting or elapsed clock time alone satisfies this. Record each substantive work batch and its outputs; duration completion remains outstanding at this checkpoint.
+Run `python data/validate_indexes.py` from any working directory. For each integration record the actual date/time, stable files, counts added, evidence depths, experiments actually run, unresolved blockers and next action. Preserve date-only source access precision when exact timestamps were not captured.

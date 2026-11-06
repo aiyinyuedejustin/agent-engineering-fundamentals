@@ -2,7 +2,7 @@
 
 All CSV files use UTF-8, comma separation, one header row, and standard CSV quoting. Empty cells mean unknown/unverified, not zero or false. Multi-value ID and modality fields use semicolons. JSONL files contain one JSON object per line and no enclosing array. Empty JSONL files are intentionally valid empty indexes.
 
-**Initialization:** these indexes contain no research records. Integrate reviewed evidence from section artifacts before reporting central coverage. Do not add dummy records merely to demonstrate the schema.
+**Current records:** the first reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
 
 ## Stable identifiers
 
@@ -41,7 +41,7 @@ A completed implementation-backed deep study requires `reviewed_complete`, an ex
 
 One row per sourced result observation, not a synthesized leaderboard. Required: `result_id`, `model_id`, `benchmark_id`, `result_origin`, `source_ids`, `evidence_ids`, and `comparability_status`.
 
-- `result_origin`: `developer_reported`, `independent_reported`, or `local_experiment`.
+- `result_origin`: `source_reported`, `developer_reported`, `independent_reported`, or `local_experiment`. The first batch uses `source_reported` to avoid guessing whether each table cell was measured by the publisher, quoted, or rerun elsewhere.
 - `model_version`, `benchmark_version`, `split`, `prompt_id`, `shots`, `sample_count`, `sampling_budget`, `inference_settings`, `tool_access`, `grader`, and `aggregation`: preserve protocol qualifiers or leave unknown.
 - `score_raw`, `score_unit`, `metric`, `metric_direction`: original reported metric. Do not normalize silently.
 - `uncertainty`: source-reported interval/error estimate or a clearly specified locally computed estimate.
@@ -62,10 +62,10 @@ Each source object has:
 - Required: `source_id`, `title`, `url`, `source_type`, `primary`, `accessed_at_utc`, `inspection_status`.
 - Optional: `authors` (array), `organization`, `published_date`, `version`, `repository_commit`, `local_path`, `content_hash`, `license`, `notes`.
 - `source_type`: `paper`, `technical_report`, `documentation`, `repository`, `code_file`, `dataset`, `model_card`, `release_note`, `article`, or `other`.
-- `primary`: boolean describing whether the source is primary for the recorded claim context; explain mixed cases in notes.
+- `primary`: boolean describing whether the source is primary for the recorded claim context; explain mixed cases in notes. For a discovered candidate this describes the official destination, not verification of the target report.
 - `inspection_status`: `discovered`, `read`, `partially_read`, or `unavailable`.
 
-Only record access times for actual retrievals. A URL-only discovery does not mean the target content was read.
+Only record access times for actual retrievals. If exact time was not measured, `accessed_at_utc` is null, `accessed_date` retains the actual date, and `access_time_precision` is `date`. A URL-only discovery does not mean the target content was read. Report candidates may share an official index URL; source-record count and unique-URL count are different. `read_scope` and `notes` preserve the actual inspected extent.
 
 ## `evidence.jsonl`
 
@@ -77,6 +77,8 @@ Each evidence object has:
 - `depth`: `D0`, `D1`, `D2`, `D3`, or `D4`; satisfy methodology criteria.
 - `verification_status`: `supported`, `partial`, `conflicted`, `unverified`, or `superseded`.
 - Optional: `repository_commit`, `artifact_paths` (array), `execution_performed` (boolean), `limitations` (array), `contradicts_evidence_ids` (array), `supersedes_evidence_ids` (array), `review_notes`.
+
+D4 synthetic experiments can have an empty external `source_refs` array when the actual script/results supply the evidence. Always include artifact paths and explicitly state synthetic/component scope.
 
 For D3, document the source trace and explicitly mark `execution_performed: false` unless execution also happened. For D4, reference a completed experiment manifest and actual outputs; distinguish successful, failed, and partial execution. An interpretation must identify its supporting evidence and assumptions rather than claiming to be a direct quote.
 

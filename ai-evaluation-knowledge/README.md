@@ -1,60 +1,60 @@
-# AI evaluation knowledge base
+# AI 评测基础设施研究知识库
 
-This is a persistent, evidence-first research workspace for understanding AI models, benchmarks, evaluation infrastructure, and evaluation science. It is a work in progress, not a completed survey or leaderboard.
+这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前内容是第一批可审阅成果，不是完成版综述，也不是模型总榜。
 
-**Start or resume:** read [RESUME.md](RESUME.md), [methodology.md](methodology.md), and [research-status/coverage.md](research-status/coverage.md).
+**继续研究从这里开始：** [RESUME.md](RESUME.md)、[方法与证据等级](methodology.md)、[覆盖情况](research-status/coverage.md)、[数据索引规范](data/README.md)。
 
-## Scope and quality targets
+## 当前实际完成的内容
 
-- Discover a broad seed inventory of **200+ models**, including distinct model families, versions, and deployment forms where useful.
-- Develop **50 benchmark deep studies** with substantive evaluation-protocol and implementation analysis.
-- Explain the infrastructure that connects model inference, task data, prompts, execution, scoring, aggregation, and reporting.
-- Investigate limitations such as contamination, leakage, variance, grader reliability, comparability, cost, and reproducibility.
+截至 2026-11-06 首批集成快照：
 
-These are research targets, not completed counts or permission to pad an inventory. A model alias is not a distinct model. A list entry is not a deep study. Missing evidence remains missing.
+- **41 个代表性 benchmark 目录条目**，不是 41 个深度复现。加上报告中需要单独区分的版本/协议，中央索引共有 **52 个 benchmark/协议记录**。
+- **9 个明确模型名称**，来自已读报告中的结果。推理模式与 Kimi Agent Swarm 没有被当成额外模型。
+- **42 个 D1 原文报告数值观测**，保留 harness、任务子集、工具、预算和聚合差异。没有独立复现这些分数。
+- **4 篇 benchmark 源码路径案例**：BrowseComp、SWE-bench、原 OSWorld、当前 τ-bench。每篇明确所读版本与未完成部分。
+- **5 篇基础设施/runtime 分析**，覆盖隔离、VM 生命周期、资源预算、Harbor trial/verifier、OSWorld/BrowserGym 执行边界。
+- **2 篇评测科学正文**及 **4 个局部实验程序**：BrowseComp parser、provider/policy mock、官方 scorer 隔离函数、合成统计诊断。
+- 中央索引有 **222 个来源记录、181 个不同来源 URL、106 条证据、8 个概念**。来源记录包含只发现未读的候选与共用官方索引入口，不能把这些数字理解为读完了 222 份独立报告。
 
-## Workspace map
+**没有完成完整 benchmark/model 运行。** D4 仅指已实际执行的局部函数、模拟控制流程或合成统计实验。完整深度研究检查表尚未签核，因此不把现有案例冒充 50 个已完成深度研究。
 
-| Path | Purpose |
-| --- | --- |
-| `01-model-landscape/` | Model discovery, taxonomy, and model-level research. |
-| `02-benchmark-landscape/` | Benchmark discovery, taxonomy, and landscape research. |
-| `03-benchmark-cases/` | Benchmark case studies and implementation analysis. |
-| `04-infrastructure/` | Evaluation frameworks, serving, orchestration, and execution paths. |
-| `05-agent-runtime/` | Agent execution, task environments, and runtime contracts. |
-| `06-evaluation-science/` | Measurement issues, methodological case studies, and experiments. |
-| `07-unknown-unknowns/` | Uncovered risks, blind spots, and open questions supported by observations. |
-| `08-learning-path/` | Progressive learning modules grounded in reviewed research. |
-| `09-architecture-decisions/` | Evidence-backed design alternatives, decisions, and consequences. |
-| `data/` | Central machine-readable indexes and their schema. |
-| `research-status/` | Coverage, verification gaps, and handoff state. |
+## 优先阅读
 
-The numbered folders reflect the current research layout. Research in other sections can precede ingestion into the central indexes.
+1. [有效性与评测设计](06-evaluation-science/01-validity-and-evaluation-design.md)：先定义决策、任务与可观察成功条件。
+2. [评分器与指标](06-evaluation-science/02-grading-and-metrics.md)：分清答案正确、解析成功、有效分母和 pass@k。
+3. [BrowseComp reference evaluator](03-benchmark-cases/browsecomp-reference-evaluator.md)：一个小 parser contract 可以改变整条计分链。
+4. [Harbor 执行链](05-agent-runtime/harbor-source-trace.md)：agent、environment、trial、verifier 是不同对象。
+5. [隔离与部署](04-infrastructure/01-isolation-is-not-deployment.md)及[资源预算](04-infrastructure/03-resource-budgets-change-the-test.md)：相同配置文字未必等于相同执行条件。
+6. [模型报告快照 v1](01-model-landscape/snapshots/v1/README.md)：94 个来源/报告候选中只有 19 个达到所标范围的 D1，其余 75 个仍为 D0。
 
-## Evidence depth
+## 目录
 
-- **D0 — discovered:** a candidate or source has been found.
-- **D1 — primary documentation:** an official report, paper, or documentation has actually been inspected.
-- **D2 — implementation inspected:** real task definitions, configuration, or key implementation code has been inspected.
-- **D3 — source-level execution trace:** the execution path has been followed through source, with concrete entry points, transformations, and scoring behavior documented.
-- **D4 — experiment executed:** an actual experiment was run, with a recorded setup, outputs, and limitations.
+| 路径 | 内容 |
+|---|---|
+| `01-model-landscape/` | 模型报告、来源登记和报告数值观察 |
+| `02-benchmark-landscape/` | 代表性 benchmark 目录与版本边界 |
+| `03-benchmark-cases/` | 真实任务、配置、评分器和源码路径案例 |
+| `04-infrastructure/` | 隔离、部署、资源、生命周期与局部测试 |
+| `05-agent-runtime/` | agent loop、trial、环境接口与日志/产物契约 |
+| `06-evaluation-science/` | 有效性、评分、统计与实际局部实验 |
+| `07-unknown-unknowns/` | 尚未系统填充的盲点与开放问题 |
+| `08-learning-path/` | 待从已核验证据形成的学习路线 |
+| `09-architecture-decisions/` | 待审阅的架构方案与权衡，尚无已接受架构 |
+| `data/` | 模型、benchmark、结果、概念、来源与证据索引 |
+| `research-status/` | 实际覆盖、验证范围与下一步 |
 
-Depth belongs to the evidence supporting a claim. A repository link alone is not D2. A source trace is not an executed experiment. A published result is not our reproduction. See the methodology for promotion criteria.
+## 证据等级
 
-## Current state
+- D0：发现候选，未核验实质内容。
+- D1：已读官方报告、论文或文档的明确范围。
+- D2：已读真实任务、配置或关键实现。
+- D3：已跟踪具体源码执行路径。
+- D4：已实际执行实验，并保留设置、结果与限制。
 
-The central indexes were initialized as empty, schema-only files on **2026-11-06 UTC**. Their empty state does not assert that all other sections are empty. Coverage must be recalculated after evidence is reviewed and ingested. Do not present targets as achievements or treat draft notes as verified findings.
+等级用于**具体证据范围**。D3 不表示已运行；局部 D4 不表示完整 benchmark 复现；模型报告分数不是本项目跑分。中央实体的 depth 仅为已关联证据的最高等级，不是该实体所有属性的统一可信度。
 
-## Working rules
+## 长期目标与限制
 
-1. Preserve original sources, dates, exact model/benchmark versions, and relevant code revisions.
-2. Separate reported results, inspected implementation behavior, and locally observed results.
-3. Record uncertainty, contradictory evidence, unsupported assumptions, and uninspected steps explicitly.
-4. Update indexes and status only after checking the supporting artifact.
-5. Keep credentials, account tokens, private datasets, and unnecessary personal data out of this workspace.
+目标仍是 200+ 可追溯模型种子与 50 个实质性 benchmark 深度研究，不按别名、配置或占位文件凑数。五小时以上持续研究要求仍未宣称完成；以实际研究活动和产物为准，不用等待时间替代工作。
 
-## Publication and work accounting
-
-The requested destination is an independent folder in a suitable existing repository selected through the user's GitHub connector. The verified destination is `aiyinyuedejustin/agent-engineering-fundamentals`, branch `main`, under the new `ai-evaluation-knowledge/` folder. This first increment contains only the scaffold and empty indexes. Research increments are published after review, preserving unrelated repository files.
-
-The request includes at least five hours of research across parallel research streams. This is an outstanding work requirement, not elapsed-time evidence of completion. Record actual research activity and artifacts; waiting alone does not count as active research.
+成果持续发布在 `aiyinyuedejustin/agent-engineering-fundamentals` 的独立 `ai-evaluation-knowledge/` 目录。只发布审阅后的原创分析、事实记录、测试代码和结果，不重新打包完整上游源码、私有数据或未审阅草稿；保留仓库其他内容。

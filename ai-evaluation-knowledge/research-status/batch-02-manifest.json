@@ -1,0 +1,217 @@
+{
+  "snapshot_date": "2026-11-06",
+  "artifact_count": 27,
+  "files_in_increment": 39,
+  "files": [
+    {
+      "path": "01-model-landscape/snapshots/v1/README.md",
+      "bytes": 2131,
+      "sha256": "c64d99abb7282d97058a9998f1ca8384403d032258366df8f45e648b645f29ee"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v1/data/model-benchmark-evidence.json",
+      "bytes": 25394,
+      "sha256": "34cbda8eb90e85d28f8827ea6da609280c441c4951c457254929e7d216269d46"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v1/data/model-report-registry.json",
+      "bytes": 51033,
+      "sha256": "9709aa021b02d0da700e74ce5deb62c7add63d80003098f7876993a38f150265"
+    },
+    {
+      "path": "01-model-landscape/snapshots/v1/model-report-registry.md",
+      "bytes": 11920,
+      "sha256": "94cfe9f8c97c538c9c51e99a8129b49f47b6726c8e14969a2eaa18e7210a4695"
+    },
+    {
+      "path": "02-benchmark-landscape/benchmark-catalog.json",
+      "bytes": 36181,
+      "sha256": "fb2b170c5746ffe7d2dfea4a630a2409053a53767eb3b5a9ecfec423f3dbf930"
+    },
+    {
+      "path": "03-benchmark-cases/browsecomp-parser-probe-output.json",
+      "bytes": 612,
+      "sha256": "93b4a79bb4aaa5aa2dd2076e543ae8da054162d218ac30daeea379e58a5e3887"
+    },
+    {
+      "path": "03-benchmark-cases/browsecomp-reference-evaluator.md",
+      "bytes": 3849,
+      "sha256": "c8d43e4c0a692f4f636274e9dd0da6af8268009d76b6af5bf7bd47ccf253039a"
+    },
+    {
+      "path": "03-benchmark-cases/browsecomp_parser_probe.py",
+      "bytes": 1745,
+      "sha256": "1d99d9897b335e39165a37016f96ceae2608080c48de91e321bc932c4858ba51"
+    },
+    {
+      "path": "03-benchmark-cases/osworld-state-evaluator.md",
+      "bytes": 3327,
+      "sha256": "261e9ddd5399e5164135d74c5b4b72fc0dd50ab99f666c83a45d1a935e4996be"
+    },
+    {
+      "path": "03-benchmark-cases/swe-bench-task-and-grading.md",
+      "bytes": 4064,
+      "sha256": "92a08b2662e66ecbf0c48a5240ac97b4414bc73d512f091a0d6da217e159ebfe"
+    },
+    {
+      "path": "03-benchmark-cases/tau-bench-outcomes-and-reliability.md",
+      "bytes": 5154,
+      "sha256": "342e65bc3eeed4efb47e0217f2027a55f11b2f54694e8523eb67a6461ee3fc9c"
+    },
+    {
+      "path": "04-infrastructure/01-isolation-is-not-deployment.md",
+      "bytes": 8535,
+      "sha256": "161f2e9f5737984fed25f2205ae102cd1715c9a5b65613c173a5400945da7be1"
+    },
+    {
+      "path": "04-infrastructure/02-osworld-vm-lifecycle-trace.md",
+      "bytes": 8950,
+      "sha256": "e091b0e0499ba385320200099cc6938a4cf85441d725a62b2e712394e6618758"
+    },
+    {
+      "path": "04-infrastructure/03-resource-budgets-change-the-test.md",
+      "bytes": 9651,
+      "sha256": "c9ad666ad578153241797929f361b326dea3da51791909cb0c61c842cd204d1b"
+    },
+    {
+      "path": "04-infrastructure/experiments/mock-provider-contracts/README.md",
+      "bytes": 3253,
+      "sha256": "41301682a3bd035d8adabdf26a8d1296ca6406499e6996cdbbc82dabd0e99f64"
+    },
+    {
+      "path": "04-infrastructure/experiments/mock-provider-contracts/result.txt",
+      "bytes": 2839,
+      "sha256": "87aacab5607c96d61b5544cec290ca51092e4e140ef91614ccb7c4d32f2c7a68"
+    },
+    {
+      "path": "04-infrastructure/experiments/mock-provider-contracts/run_contract_tests.py",
+      "bytes": 9029,
+      "sha256": "f62962a92b724d86aca09c1128c2618d796f1bfd01aa85e0804a9ddc94ed96b9"
+    },
+    {
+      "path": "05-agent-runtime/computer-use-source-traces.md",
+      "bytes": 10484,
+      "sha256": "0f2d62d3354832d1c16561b551c1e21577627f46dfdaaa3c514606371d184909"
+    },
+    {
+      "path": "05-agent-runtime/harbor-source-trace.md",
+      "bytes": 7878,
+      "sha256": "39407f5dfabfdd2971742d3ba1ac894edefb5f491bb0a4a0adfcb734f188eddc"
+    },
+    {
+      "path": "06-evaluation-science/01-validity-and-evaluation-design.md",
+      "bytes": 5738,
+      "sha256": "017d3c1a4ca0da0c6a383333762a8f2a598b9f5477f425dc8f16a3bccc4dadf4"
+    },
+    {
+      "path": "06-evaluation-science/02-grading-and-metrics.md",
+      "bytes": 5647,
+      "sha256": "5203fc4109c2d0a38509e93825c3771b013057b7efd1fc2d152e3f43978c9223"
+    },
+    {
+      "path": "06-evaluation-science/experiments/README.md",
+      "bytes": 5246,
+      "sha256": "e8d8a86a92f5f0a0910cd7d93648d97aee709e947dac798da16f96f4dc84cb25"
+    },
+    {
+      "path": "06-evaluation-science/experiments/results/scorer_diagnostics.json",
+      "bytes": 14766,
+      "sha256": "6f61c90ef62884cf751e7c44a51fe4a78103295fa25458aff77f296a0dd392d4"
+    },
+    {
+      "path": "06-evaluation-science/experiments/results/statistical_diagnostics.json",
+      "bytes": 3167,
+      "sha256": "22cbcff16a6e07b8a4c3aaa46121f5a4eb377cbbd910538281c5b4cd97391a84"
+    },
+    {
+      "path": "06-evaluation-science/experiments/scorer_diagnostics.py",
+      "bytes": 9245,
+      "sha256": "8e0fc49ea4aaf7062819464a16ba125d880d903005d024ff67072e06aced7e00"
+    },
+    {
+      "path": "06-evaluation-science/experiments/source_manifest.json",
+      "bytes": 2845,
+      "sha256": "a03fb33f6a3ade798abe3b748cae5d74bb70d52b6d1a5889f6af5fb2d579aeb7"
+    },
+    {
+      "path": "06-evaluation-science/experiments/statistical_diagnostics.py",
+      "bytes": 4390,
+      "sha256": "5e797de442b1cdaa2681468145657e3011e62ce7f647b15ce3afcd997cb58dc7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4867,
+      "sha256": "46960a5a5a12fd994842b7d0787d2ae7bd0df275f38e0d8b71eebd0dd57e283b"
+    },
+    {
+      "path": "RESUME.md",
+      "bytes": 3275,
+      "sha256": "9c28ee32e4f1672a9a153b465356910930ab237c2a8df792a601cbb7d40d1319"
+    },
+    {
+      "path": "data/README.md",
+      "bytes": 7975,
+      "sha256": "4e4b1f047b10a3cf9980c2d94f64fd987d622ed1f9967b8eca7cb06283300d1a"
+    },
+    {
+      "path": "data/benchmarks.csv",
+      "bytes": 27639,
+      "sha256": "b25224789978e2566dad8f291a38da575ab1bf9b5c9ba740eb06b70255c61667"
+    },
+    {
+      "path": "data/concepts.csv",
+      "bytes": 4355,
+      "sha256": "18b02a43ead6412f93dd8097aba6c7ed8a55fe2f416497352017c498a4678c49"
+    },
+    {
+      "path": "data/evidence.jsonl",
+      "bytes": 89036,
+      "sha256": "73c7428f93027ef52fddfbd46c75956fcf7cdf44c8e0ef25d62ef420580c6b74"
+    },
+    {
+      "path": "data/model_benchmark_evidence.csv",
+      "bytes": 19402,
+      "sha256": "2594c89f72f4bed5721ee9448df65eacf34233f67cde66e50ff3e75a5fe2531f"
+    },
+    {
+      "path": "data/models.csv",
+      "bytes": 4388,
+      "sha256": "a35c63c8c24d30e9f52bdda89a87c4650634d5f9919baf6d06cb3ce9e9e397aa"
+    },
+    {
+      "path": "data/sources.jsonl",
+      "bytes": 139929,
+      "sha256": "94f4b9ef9ff68173d663ea91a77f2c80b2a576ace26e62c8aaf7a7540bcc706e"
+    },
+    {
+      "path": "data/validate_indexes.py",
+      "bytes": 3289,
+      "sha256": "53072610b513ac0c28936777155f365192f747d33d8ffd4113f4a16438d4a71e"
+    },
+    {
+      "path": "research-status/coverage.md",
+      "bytes": 4844,
+      "sha256": "c42d48d08bca16ab05fdcb72b2f51d1d513ca216d3469ba9f125f649d5600daa"
+    }
+  ],
+  "checks": {
+    "csv_jsonl_foreign_keys": "passed",
+    "staged_python_syntax": "passed",
+    "local_markdown_links": "passed",
+    "credential_pattern_matches": 0,
+    "statistics_replay": "exact output match in temporary copy",
+    "scorer_replay": "exact output match in temporary copy"
+  },
+  "limits": [
+    "No raw upstream source caches included",
+    "No full model or benchmark run",
+    "No five-hour completion claim",
+    "Source reads usually have date precision only"
+  ],
+  "integration_adjustments": [
+    {
+      "path": "02-benchmark-landscape/benchmark-catalog.json",
+      "change": "SimpleQA conservatively D1 pending actual dataset-row inspection; research author confirmed correction."
+    }
+  ]
+}
