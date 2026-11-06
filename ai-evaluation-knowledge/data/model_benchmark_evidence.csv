@@ -1,0 +1,1 @@
+result_id,model_id,benchmark_id,model_version,benchmark_version,result_origin,evaluation_date,split,prompt_id,shots,sample_count,sampling_budget,inference_settings,tool_access,grader,aggregation,metric,score_raw,score_unit,metric_direction,uncertainty,source_ids,evidence_ids,depth,comparability_status,artifact_path,notes
