@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-11-06T03:00:13.725224+00:00",
+  "observed": {
+    "changed_image_returns_same_report": true,
+    "changed_patch_returns_same_report": true,
+    "initial_cached_result": true,
+    "new_run_id_misses_cache_and_is_safely_stopped": true,
+    "skip_patch_still_returns_same_report": true
+  },
+  "result": "PASS: cache-key behavior reproduced; not benchmark scoring validation",
+  "scope": "unchanged run_instance AST; real JSON cache files; live-evaluation branch blocked",
+  "source_git_blob": "bf9680f8d910f274ffbba35d57ec5d0e47a96243"
+}

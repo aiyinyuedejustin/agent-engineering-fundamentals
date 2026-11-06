@@ -1,0 +1,41 @@
+{
+  "timestamp_utc": "2026-11-06T03:37:31.246231+00:00",
+  "scope": "local unchanged AST and mock HTTP/clock; no network or browser",
+  "sources": {
+    "bg_instance.py": {
+      "git_blob": "1e6a9f98ce91aaaa435ee8a7ed6e31836dfe93cf",
+      "bytes": 8078,
+      "sha256": "47704a41bbda504866132c5924f06fe101fc154666c4c7bb56d8b5e4d83b39f6"
+    },
+    "bg_metadata_utils.py": {
+      "git_blob": "f1fccd6f9c504b979f24ee66f1133ab0c3d0d7ae",
+      "bytes": 10184,
+      "sha256": "c13de852ccb352e5f5fe7c3a9eaad79078c99db46613242a775e211a987f3562"
+    },
+    "bg_webarena.csv": {
+      "git_blob": "b263a22d41d9dfd917be4eed4ee1a127753129e5",
+      "bytes": 52798,
+      "sha256": "2d5ed053ece894d09cd17485f53cb6c3d4da2a4b7dec92603356dfcd09b7c962"
+    },
+    "agentlab_exp_utils.py": {
+      "git_blob": "27b909b2eefb9c8f5809384681c81da1c1d99b71",
+      "bytes": 6648,
+      "sha256": "17d1b5506ed9382907144659933fe9f98306d66360952b7b038b4328e0ccd15c"
+    }
+  }
+}
+test_actual_metadata_contracts_removed_intermediate_tasks (__main__.GraphTests.test_actual_metadata_contracts_removed_intermediate_tasks) ... ok
+test_agentlab_consumer_rejects_repeated_task_names_with_dependencies (__main__.GraphTests.test_agentlab_consumer_rejects_repeated_task_names_with_dependencies) ... ok
+test_nonparallel_seeds_produce_separate_graphs_not_reset_actions (__main__.GraphTests.test_nonparallel_seeds_produce_separate_graphs_not_reset_actions) ... ok
+test_missing_reset_url_skips_but_checks_reachability (__main__.ResetTests.test_missing_reset_url_skips_but_checks_reachability) ... Environment variable WA_FULL_RESET is missing or empty, required for a full instance reset.
+Skipping automated reset. Make sure the instance has been manually reset.
+ok
+test_poll_deadline_only_checked_after_status_returns (__main__.ResetTests.test_poll_deadline_only_checked_after_status_returns) ... ok
+test_ready_protocol_can_pass_with_unhealthy_site_status (__main__.ResetTests.test_ready_protocol_can_pass_with_unhealthy_site_status) ... ok
+test_strict_missing_url_raises_before_provider_calls (__main__.ResetTests.test_strict_missing_url_raises_before_provider_calls) ... Environment variable WA_FULL_RESET is missing or empty, required for a full instance reset.
+ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.022s
+
+OK

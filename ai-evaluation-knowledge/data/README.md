@@ -2,7 +2,7 @@
 
 All CSV files use UTF-8, comma separation, one header row, and standard CSV quoting. Empty cells mean unknown/unverified, not zero or false. Multi-value ID and modality fields use semicolons. JSONL files contain one JSON object per line and no enclosing array. Empty JSONL files are intentionally valid empty indexes.
 
-**Current records:** the fifth reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
+**Current records:** the sixth reviewed research batch is populated. See `../research-status/coverage.md` for counts and limits. Validate with `python data/validate_indexes.py`. Never add dummy rows or treat report candidates as model entities.
 
 ## Stable identifiers
 

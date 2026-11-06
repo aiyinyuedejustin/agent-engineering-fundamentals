@@ -1,6 +1,6 @@
 # AI 评测基础设施研究知识库
 
-这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前是第五批可审阅成果，不是完成版综述，也不是模型总榜。
+这是持续建设的证据型研究工作区，研究模型、benchmark、agent runtime、隔离环境与测量方法之间的关系。当前是第六批可审阅成果，不是完成版综述，也不是模型总榜。
 
 **继续研究从这里开始：** [RESUME.md](RESUME.md)、[方法与证据等级](methodology.md)、[实际覆盖](research-status/coverage.md)、[索引规范](data/README.md)。
 
@@ -8,14 +8,23 @@
 
 - **65 个经语义去重的模型/训练变体种子**，只表示报告支持的身份区分，不表示核验了 65 个不同权重文件。中央模型表共 **77 条记录**，另保留 3 个具名语音/委派系统与 9 个身份未决的报告条件，不把它们算入 65。
 - **342 个 D1 原文数值观测**，来自最新模型数据快照 v12；其中 23 条来源明确是独立评测方或 benchmark 作者。全部仍未由本项目复现，且可比性未判定。
-- **47 个代表性 benchmark 目录条目**。加上报告中需要单列的版本、内部评测和历史协议，中央索引有 **158 个 benchmark/协议记录**，不能把它们当作 158 个深度研究。
-- **21 篇 benchmark 案例**、5 篇基础设施文章、完整的 22 文件 runtime 专题、5 篇评测科学正文及评分执行链/审查清单。
-- **23 个已实际执行的局部诊断程序**。模型代码部分包含 gpt-oss、VLMEvalKit、Ovis 和 HLE 的合成组件探针；它们没有运行模型或重现公开分数。
-- 中央索引共有 **403 个来源记录、350 个不同外部来源 URL、516 条证据、23 个概念**。来源记录包含 62 个 D0 候选和 2 个原创本地实验，不能理解为读完了 403 份独立报告。
+- **47 个代表性 benchmark 目录条目**。加上报告中需要单列的版本、内部评测和历史协议，中央索引有 **159 个 benchmark/协议记录**，不能把它们当作 159 个深度研究。
+- **21 篇 benchmark 案例**、12 篇基础设施文章、完整的 22 文件 runtime 专题、5 篇评测科学正文及评分执行链/审查清单。
+- **28 个已实际执行的局部诊断程序**。模型代码部分包含 gpt-oss、VLMEvalKit、Ovis 和 HLE 的合成组件探针；它们没有运行模型或重现公开分数。
+- 中央索引共有 **485 个来源记录、432 个不同外部来源 URL、533 条证据、24 个概念**。来源记录包含 62 个 D0 候选和 2 个原创本地实验，不能理解为读完了 485 份独立报告。
 
 **完整模型/benchmark 复现数量仍为 0。** 完整深度研究检查表尚未签核，不把局部源码分析冒充 50 个已完成深度研究。200+ 模型种子与五小时以上持续研究要求也没有宣称完成；等待上传不是研究活动。
 
-## 本批 benchmark 阅读入口
+## 本批基础设施阅读入口
+
+- [KernelBench 的硬件与计时](04-infrastructure/06-kernelbench-hardware-and-timing.md)及[镜像、缓存和运行身份](04-infrastructure/07-images-caches-and-run-identity.md)：硬件、输入重复和缓存键会改变实际测量。
+- [网络策略的多个平面](04-infrastructure/08-network-policy-has-multiple-planes.md)：容器网络策略不等于控制器、模型托管工具、MCP 与 verifier 的共同边界。
+- [WebArena 状态重置](04-infrastructure/09-webarena-browser-reset-is-not-backend-reset.md)、[BrowserGym/AgentLab 重置与调度](04-infrastructure/10-browsergym-reset-scheduling-contract.md)、[AndroidWorld 设备状态](04-infrastructure/11-androidworld-device-state-contract.md)。
+- [Firecracker jailer 与编排器边界](04-infrastructure/12-firecracker-jailer-and-orchestrator-boundaries.md)：固定两个项目的源码版本，不代表已验证它们兼容或实际隔离有效。
+
+本批五个局部实验在集成时独立重放成功，原始结果未改。[HumanEval 单任务尝试](04-infrastructure/experiments/humaneval-single-task/README.md)与[Go jailer 测试尝试](04-infrastructure/experiments/firecracker-jailer-selection/README.md)均为 **BLOCKED**，分别在候选执行前与编译前停止，不计入成功诊断或完整复现。
+
+## benchmark 阅读入口
 
 - [评测选择指南](02-benchmark-landscape/benchmark-selection-guide.md)与[成功事件和测量约定](02-benchmark-landscape/measurement-contracts-guide.md)。目录的 47 项为 30 D1、3 D2、14 D3；没有把组件 D4 提升成整个 benchmark 的 D4。
 - [AgentDojo](03-benchmark-cases/agentdojo-utility-and-attack-outcomes.md)、[BFCL](03-benchmark-cases/bfcl-v4-distinct-success-events.md)、[MCP-Atlas](03-benchmark-cases/mcp-atlas-claims-tools-and-denominators.md)：任务效用、工具调用与攻击成功不是同一个事件。

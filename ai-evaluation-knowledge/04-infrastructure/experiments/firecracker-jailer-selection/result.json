@@ -1,0 +1,12 @@
+{
+  "status": "blocked_before_compilation",
+  "attempt_timestamp_utc": "2026-11-06T03:53:21.790969+00:00",
+  "tests_executed": 0,
+  "upstream_code_executed": false,
+  "reason": "PATH resolved go to /usr/bin/go, but go version returned nonzero with: Go: Unknown option: version",
+  "outcome_type": "toolchain_prerequisite_failure_not_access_denial",
+  "raw_output": "result.txt",
+  "fixture_status": "written_and_reviewed_but_not_compiled",
+  "later_change": "Runner now reports unrecognized Go toolchain clearly; no rerun was performed.",
+  "limits": "No dependency installation, network fetch, VMM/runc/KVM or namespace operation. This is not D4 verification of jailer selection."
+}

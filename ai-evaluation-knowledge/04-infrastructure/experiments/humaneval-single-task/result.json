@@ -1,0 +1,18 @@
+{
+  "status": "blocked_before_candidate_execution",
+  "research_date_utc": "2026-11-06",
+  "exact_failed_run_timestamp": null,
+  "source_commit": "b9453e8f1865df0a0057a1383767caa400acfbcf",
+  "task_id": "HumanEval/1",
+  "official_tests_executed": false,
+  "candidate_completions_executed": 0,
+  "passed": null,
+  "blocked_operation": "multiprocessing.Manager startup attempts to create a local IPC socket",
+  "first_error": "PermissionError: [Errno 1] Operation not permitted",
+  "location": "multiprocessing.connection.SocketListener.__init__ -> socket.socket",
+  "secondary_error": "EOFError while Manager parent waits for server address",
+  "host_default_multiprocessing_socket_family": "AF_UNIX",
+  "restriction_mechanism": "not established; EPERM observed, no security-setting changes attempted",
+  "disposition": "stopped; no retry of upstream execution or alternate IPC bypass",
+  "depth": "source/task D3 trace and real blocked preflight only; no successful task-level D4"
+}

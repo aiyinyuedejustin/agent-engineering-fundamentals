@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-11-06T02:54:16.458958+00:00",
+  "observed": {
+    "cache_root_removed": true,
+    "other_run_removed": true,
+    "outside_cache_preserved": true,
+    "selected_removed": true,
+    "sibling_removed": true
+  },
+  "result": "PASS: current broad-deletion behavior reproduced, not a correctness approval",
+  "scope": "one unchanged upstream AST function; actual temporary filesystem writes",
+  "source_git_blob": "6fac151ba282eeccbe0014c5e7b874fe1dbbce00"
+}

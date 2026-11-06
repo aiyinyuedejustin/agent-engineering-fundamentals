@@ -1,0 +1,53 @@
+{
+  "timestamp_utc": "2026-11-06T03:45:27.036232+00:00",
+  "scope": "unchanged local AST; all Android/provider operations mocked",
+  "sources": {
+    "controller.py": {
+      "git_blob": "3ce79c02e62208c7e3271826c1621bd52f9b43a8",
+      "bytes": 11048,
+      "sha256": "7027728b5088a9d907bb2c1b3ed65b8767e4d049c2827663c5eee5293823bd70"
+    },
+    "task_eval.py": {
+      "git_blob": "bce5a4e19f90be5754d2ee401cf3223054d6e81b",
+      "bytes": 6149,
+      "sha256": "096d6f4e0a58343c472e58d68dc4effc4589976bc3c2a8853e745c9b7b3cbb96"
+    },
+    "app_snapshot.py": {
+      "git_blob": "e2d23cab729c5352c28b5080013b63e855b72e25",
+      "bytes": 3903,
+      "sha256": "144d4b00261a66704fd01740ae1fed0ebeea995df38f5f5507ca1086467aef31"
+    },
+    "suite_utils.py": {
+      "git_blob": "2c72a418f773779d60799ef4eebae0eff192c635",
+      "bytes": 23610,
+      "sha256": "9c656f1274d66877d4587cce668cb1b7c7ebd374a5fcea4e67268ed9bd8ca565"
+    }
+  }
+}
+test_duplicate_initialization_checks_after_reset_side_effects (__main__.LifecycleTests.test_duplicate_initialization_checks_after_reset_side_effects) ... WARNING:root:Skipping app snapshot loading : synthetic missing snapshot
+ok
+test_episode_exception_returns_before_teardown (__main__.LifecycleTests.test_episode_exception_returns_before_teardown) ... ERROR:root:Logging exception and skipping task. Will keep running. Task: SyntheticTask: synthetic episode failure
+Traceback (most recent call last):
+  File "hash-verified-upstream-ast.py", line 247, in _run_task
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+ValueError: synthetic episode failure
+ok
+test_missing_snapshot_does_not_prevent_initialized_flag (__main__.LifecycleTests.test_missing_snapshot_does_not_prevent_initialized_flag) ... WARNING:root:Skipping app snapshot loading : synthetic missing snapshot
+ok
+test_observation_can_request_network_enable (__main__.LifecycleTests.test_observation_can_request_network_enable) ... WARNING:root:Airplane mode is on -- cannot retrieve a11y tree via gRPC. Turning it off...
+ok
+test_restore_clear_failure_continues_copy_and_permission_commands (__main__.LifecycleTests.test_restore_clear_failure_continues_copy_and_permission_commands) ... hash-verified-upstream-ast.py:101: DeprecationWarning: The 'warn' function is deprecated, use 'warning' instead
+WARNING:root:Continuing to restore synthetic snapshot after failing to clear application data.
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.009s
+
+OK

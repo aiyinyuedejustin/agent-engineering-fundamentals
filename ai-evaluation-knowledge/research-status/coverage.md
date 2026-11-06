@@ -1,46 +1,41 @@
 # Coverage and verification status
 
-Fifth reviewed integration: **2026-11-06T04:28:52.725449+00:00**. This advances the benchmark catalog and case collection through explicit increment-11. Model view remains v12; later science/infrastructure/learning work remains outside this public cutoff.
+Sixth reviewed integration: **2026-11-06T04:46:41.862386+00:00**. This advances infrastructure through article 12. Model view remains v12; benchmark catalog remains through increment-11. Later science, learning, model and security increments are not counted yet.
 
 ## Actual counts
 
 | Measure | Count | Interpretation |
 |---|---:|---|
 | Conservative model/training-variant seeds | 65 | Report-supported semantic identity, not verified weight hashes |
-| Model index records | 77 | Also retains 3 named voice/delegation systems and 9 unresolved conditions, excluded from seed count |
+| Model index records | 77 | Also 3 named voice/delegation systems and 9 unresolved conditions, excluded from seeds |
 | Numerical model observations | 342 | D1, not reproduced; 23 explicitly independently reported |
 | Representative catalog entries | 47 | 30 D1, 3 D2, 14 scoped D3; none whole-benchmark D4 |
-| Central benchmark/protocol records | 158 | Includes named historical/internal report protocols; not 158 deep studies |
-| Benchmark case articles | 21 | Scoped cases, not checklist-complete study count |
-| Source records / external URLs | 403 / 350 | Includes 62 D0 candidates and 2 original local experiment sources |
-| Concepts / evidence records | 23 / 516 | Granular records with limits, not independent discoveries |
-| Stable section artifacts / diagnostic programs | 199 / 23 | Navigation counts, not active-time or model-run counts |
+| Central benchmark/protocol records | 159 | Includes KernelBench source case outside the representative catalog and historical/internal protocols |
+| Benchmark case / infrastructure articles | 21 / 12 | Scoped cases, not checklist-complete studies |
+| Source records / external URLs | 485 / 432 | Includes 62 discovered candidates and 2 original local experiment sources |
+| Concepts / evidence records | 24 / 533 | Granular records with limits, not independent discoveries |
+| Stable section artifacts / successful diagnostic programs | 231 / 28 | Navigation counts, not active time or model runs |
+| Blocked experiment attempts | 2 | HumanEval before candidate execution; Go selector before compilation |
 | Checklist-complete studies / full model-benchmark reproductions | 0 / 0 | Explicit review and reproduction gates remain unmet |
 
-Claim depths: D1 412, D2 5, D3 69, D4 30. Source statuses: 338 partially read, 62 discovered, 2 read, 1 executed. Date precision is retained.
+Claim depths: D1 412, D2 8, D3 78, D4 35. Source statuses: 420 partially read, 62 discovered, 2 read, 1 executed. D0 candidates are not evidence claims. Source reading dates retain date precision.
 
-## Catalog and experiment boundaries
+## New evidence and scope
 
-The 47-entry catalog merges authoritative field updates through RULER and ScreenSpot-Pro (increment-11). HealthBench Professional is the one added catalog entry; it already had a report-protocol record centrally, so total central benchmark/protocol records remain 158. Historical observations do not inherit updated catalog versions.
+Seven new infrastructure articles trace GPU timing, report/image/runtime caches, policy planes, browser and device reset contracts, and native versus orchestrated microVM isolation. Seventeen central records separate real task/config inspection, source-level flow, five successful bounded experiments and two blocked harness attempts. One new concept identifies distinct network policy planes.
 
-New cases cover LiveCodeBench, AgentDojo, Video-MME-v2 task metadata, ARC-AGI-3, SciCode, HealthBench Professional, MMLU-Pro, BFCL, GDPval, MLE-bench, MCP-Atlas, RULER and ScreenSpot-Pro. The selection and measurement-contract guides distinguish success-event types rather than collapsing all scores into accuracy.
+KernelBench is added as a source-inspected central benchmark record, not silently added to the worker's 47-item representative catalog. `benchmarks.csv.depth` is the highest linked claim; `catalog_depth` remains the scoped catalog inspection. Cache deletion D4 is not CUDA correctness, acceleration or a model score. Android and WebArena component D4 does not imply actual device/browser/backend execution.
 
-Overall catalog depth remains conservative. LiveCodeBench and ARC-AGI-3 have separately scoped code/arithmetic probes but incomplete real task inspection; GDPval workbook contents were not opened; Video-MME-v2 and ScreenSpot media pixels were not inspected. HealthBench's public reference scorer is not its internal production evaluator. Neither source inspection nor a synthetic boundary case establishes frequency or impact on a published leaderboard.
+The five new programs exercise: actual temporary KernelBench cache deletion; actual temporary SWE-bench report-cache files; Inspect Compose config selection with real PyYAML and stubbed import plumbing; BrowserGym/AgentLab AST with mock HTTP/clock; AndroidWorld AST with all provider/device operations mocked. Each passed an independent integration replay. The two JSON results matched semantically after removing measured timestamps; the unittest runs passed 5, 7 and 5 tests. Replay is not counted as five additional distinct experiments.
 
-`benchmarks.csv.depth` is the highest linked evidence depth; `catalog_depth` separately preserves overall scoped catalog inspection. D4 linked to a benchmark is always restricted to its actual component or metadata experiment. Model observations remain D1 and comparability-unassessed.
+HumanEval's harness startup hit EPERM while creating local IPC, before any candidate or official test executed. The result remains passed:null. The Go selector fixture failed its toolchain prerequisite before compilation, with zero tests. Neither blocked operation was retried during integration. Source trace claims remain D3, not successful D4. These two causes are distinct: the Go failure is not an access denial.
 
-## Verification performed in this increment
+No Docker, GPU/CUDA, VM/KVM, Android/ADB, Ray, model, judge, browser service, firewall enforcement or real backend reset was run in this increment. Static WebArena metadata counts and shared resource identifiers do not establish default parallel races or leaderboard impact. Separate Firecracker and containerd source pins are not a compatibility certification.
 
-All ten newly included benchmark programs were independently replayed using the already pinned local inputs: LiveCodeBench, ARC, SciCode, HealthBench reference, MMLU-Pro, BFCL, MLE-bench, MCP-Atlas, RULER and ScreenSpot. Every full output JSON matched the frozen original. Original evidence is unchanged; integration reruns are not counted as additional distinct experiments.
+## Verification and publication boundary
 
-ScreenSpot reanalyzes all 26 public annotation files, totaling 1,581 task records, without images or inference. Other probes use the stated synthetic inputs, mocked executors/judges or source fragments. RULER's edit-distance dependency substitution and lack of calibrated tokenizer/model corpus remain explicit. These experiments do not reproduce a benchmark score.
+Frozen section hashes, JSON/Python syntax, local Markdown links, IDs, source/result foreign keys, artifact references and depth restrictions are checked. Credential-pattern scans are performed before publication. Raw upstream source mirrors, full task datasets/gold, caches and drafts are excluded. Replay inputs remain outside the publication tree. The batch manifest records exact changed-file hashes and validation results.
 
-Central IDs, foreign keys, result links, artifacts and depth restrictions pass. All staged JSON/Python syntax and local Markdown links pass; credential-pattern scan found no matches. Raw source snapshots, raw annotations and task answers are not republished. The batch manifest records scripts, hashes and replay results.
+Published sections now include models v1–v12 and identity audits, benchmark catalog/cases through increment-11, infrastructure articles 01–12, the full initial runtime section and the first five science chapters. Later science phases must be integrated before dependent learning/architecture guides, preserving their licenses and historical-data versus synthetic distinctions. Later model, benchmark and security work remains uncounted until its own review.
 
-## Published sections and next work
-
-Models v1–v12 and identity audits, the updated landscape and 21 cases, first five infrastructure articles, full initial runtime section and first five science chapters are public. Newer model/code increments and infrastructure/science phases remain uncounted until integrated.
-
-The 07–09 learning/architecture bundle has dependencies on those later sections. Publish prerequisites before its guides to avoid broken links. Then integrate its blind-spot map, curriculum, questions and proposed ADRs without treating proposals as executed/accepted architecture.
-
-Targets remain 200+ actual deduplicated model seeds and 50 substantive, checklist-reviewed benchmark studies. Five-hour completion is not claimed; upload waits and artifact counts are not active research time. Previous manifests retain historical hashes for previous commits.
+Targets remain 200+ actual deduplicated model seeds and 50 substantive, checklist-reviewed benchmark studies. Five-hour completion is not claimed; upload waits and artifact counts are not active research time. Previous manifests retain historical hashes for their respective commits.

@@ -1,0 +1,63 @@
+{
+  "source_commit": "dce04686a56253aefba7b18a4fa0937cf1dc987b",
+  "source_git_blob": "6649a867e5d7c7da7e6f69c86d2ffdb505fb12d3",
+  "record_count": 812,
+  "require_reset_counts": {
+    "false": 812
+  },
+  "selected_tasks": [
+    {
+      "task_id": 441,
+      "site": [
+        "gitlab"
+      ],
+      "require_reset": false,
+      "start_url": "__GITLAB__/byteblaze/gimmiethat.space",
+      "graded_resource_url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/index.html",
+      "expected_value_differs_by_task": true
+    },
+    {
+      "task_id": 442,
+      "site": [
+        "gitlab"
+      ],
+      "require_reset": false,
+      "start_url": "__GITLAB__/byteblaze/gimmiethat.space",
+      "graded_resource_url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/index.html",
+      "expected_value_differs_by_task": true
+    },
+    {
+      "task_id": 443,
+      "site": [
+        "gitlab"
+      ],
+      "require_reset": false,
+      "start_url": "__GITLAB__/byteblaze/gimmiethat.space",
+      "graded_resource_url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/index.html",
+      "expected_value_differs_by_task": true
+    },
+    {
+      "task_id": 444,
+      "site": [
+        "gitlab"
+      ],
+      "require_reset": false,
+      "start_url": "__GITLAB__/byteblaze/gimmiethat.space",
+      "graded_resource_url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/index.html",
+      "expected_value_differs_by_task": true
+    },
+    {
+      "task_id": 445,
+      "site": [
+        "gitlab"
+      ],
+      "require_reset": false,
+      "start_url": "__GITLAB__/byteblaze/gimmiethat.space",
+      "graded_resource_url": "__GITLAB__/byteblaze/gimmiethat.space/-/raw/main/index.html",
+      "expected_value_differs_by_task": true
+    }
+  ],
+  "runner_mentions_require_reset": false,
+  "browser_environment_mentions_require_reset": false,
+  "limit": "Static data/source audit only; no website operations, state reset or concurrency experiment."
+}

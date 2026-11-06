@@ -1,0 +1,325 @@
+{
+  "batch": "sixth research increment / batch-07",
+  "snapshot_at_utc": "2026-11-06T04:46:41.862386+00:00",
+  "previous_verified_commit": "7eb8863930dc55425061ea922c3711e39d36edc4",
+  "scope": "Infrastructure articles 06–12, scoped task/source traces, five bounded passing probes and two explicitly blocked attempts.",
+  "counts": {
+    "generated_at_utc": "2026-11-06T04:46:41.862386+00:00",
+    "stable_artifacts": 231,
+    "models": 77,
+    "benchmarks": 159,
+    "concepts": 24,
+    "result_observations": 342,
+    "sources": 485,
+    "unique_source_urls": 432,
+    "source_statuses": {
+      "partially_read": 420,
+      "discovered": 62,
+      "read": 2,
+      "executed": 1
+    },
+    "evidence": 533,
+    "evidence_depths": {
+      "D1": 412,
+      "D3": 78,
+      "D2": 8,
+      "D4": 35
+    },
+    "catalog_entries": 47,
+    "catalog_depths": {
+      "D3": 14,
+      "D1": 30,
+      "D2": 3
+    },
+    "reviewed_complete_deep_studies": 0,
+    "full_benchmark_reproductions": 0,
+    "model_report_registry_records": 124,
+    "model_report_registry_depths": {
+      "D1": 62,
+      "D0": 62
+    },
+    "original_local_source_records": 2,
+    "runtime_files": 22,
+    "runtime_source_records_added": 28,
+    "runtime_evidence_records_added": 51,
+    "diagnostic_programs": 28,
+    "counted_model_seeds": 65,
+    "model_identity_statuses": {
+      "source_supported_label": 65,
+      "unresolved_reported_condition": 9,
+      "named_voice_model_system": 3
+    },
+    "verbatim_model_system_labels": 85,
+    "result_origins": {
+      "source_reported": 319,
+      "independent_reported": 23
+    },
+    "integrated_model_snapshot": "v12",
+    "benchmark_cases": 21,
+    "benchmark_records_added": 24,
+    "benchmark_increment_counts": {
+      "increment-3-evidence.json": 8,
+      "increment-4-healthbench.json": 2,
+      "increment-5-mmlupro.json": 2,
+      "increment-6-bfcl.json": 2,
+      "increment-7-gdpval.json": 2,
+      "increment-8-mlebench.json": 2,
+      "increment-9-mcpatlas.json": 2,
+      "increment-10-ruler.json": 2,
+      "increment-11-screenspot.json": 2
+    },
+    "infrastructure_articles": 12,
+    "infrastructure_records_added": 17,
+    "blocked_experiment_attempts": 2
+  },
+  "validation": {
+    "infrastructure_replays": [
+      {
+        "name": "kernelbench-cache-scope",
+        "exit_code": 0,
+        "script_sha256": "eb587a1924c5b65a3f4fe7b0271d6555b8dc6d5a445ea0b45f9ba253b6cc7477",
+        "replayed_at_utc": "2026-11-06T04:45:16.515994+00:00",
+        "scope": "Independent replay of the frozen bounded experiment; no model, provider, browser, VM or device execution.",
+        "semantic_result_equal": true
+      },
+      {
+        "name": "swebench-report-cache",
+        "exit_code": 0,
+        "script_sha256": "beb279e8efe5d00f6b181a8dc2aa339cf3d65aec515ca0aab8f5a74bf161d1a1",
+        "replayed_at_utc": "2026-11-06T04:45:16.555129+00:00",
+        "scope": "Independent replay of the frozen bounded experiment; no model, provider, browser, VM or device execution.",
+        "semantic_result_equal": true
+      },
+      {
+        "name": "inspect-compose-defaults",
+        "exit_code": 0,
+        "script_sha256": "c5607da82daabfcfe5317b03ba751afe907893a33cc62868846fbbc8205271d4",
+        "replayed_at_utc": "2026-11-06T04:45:16.637903+00:00",
+        "scope": "Independent replay of the frozen bounded experiment; no model, provider, browser, VM or device execution.",
+        "test_summary": "Ran 5 tests in 0.003s"
+      },
+      {
+        "name": "browsergym-reset-contract",
+        "exit_code": 0,
+        "script_sha256": "1cdfa984a440d101f84f12c1bda562cdfa6f5e56cc57b0384629a963bec5713c",
+        "replayed_at_utc": "2026-11-06T04:45:16.727284+00:00",
+        "scope": "Independent replay of the frozen bounded experiment; no model, provider, browser, VM or device execution.",
+        "test_summary": "Ran 7 tests in 0.023s"
+      },
+      {
+        "name": "androidworld-lifecycle",
+        "exit_code": 0,
+        "script_sha256": "56425d3e7055994f1ebe31e18d8caecfa6c902cab714080289cbd4f40030b80f",
+        "replayed_at_utc": "2026-11-06T04:45:16.830985+00:00",
+        "scope": "Independent replay of the frozen bounded experiment; no model, provider, browser, VM or device execution.",
+        "test_summary": "Ran 5 tests in 0.008s"
+      }
+    ],
+    "blocked_attempts_retried": false,
+    "model_calls": 0,
+    "judge_calls": 0,
+    "network_calls_in_replays": 0
+  },
+  "files": [
+    {
+      "path": "04-infrastructure/00-evidence-ledger.md",
+      "sha256": "e6c3e3d5875ee83f55fd3109350daa55ebb9fd9be94020e9e0c2f14c3778d302",
+      "bytes": 10116
+    },
+    {
+      "path": "04-infrastructure/06-kernelbench-hardware-and-timing.md",
+      "sha256": "6218295fb030d49360f1c8a83bc3072e3b07d343adbfa9a473832bb02302abbc",
+      "bytes": 12925
+    },
+    {
+      "path": "04-infrastructure/07-images-caches-and-run-identity.md",
+      "sha256": "c0aa5493ea664525f96d2c20612765060e5e07235b0e8bf3c7a97ac4578a9175",
+      "bytes": 11440
+    },
+    {
+      "path": "04-infrastructure/08-network-policy-has-multiple-planes.md",
+      "sha256": "eddb5ccb2d85fecbbce09928879adcacfb22d5375fa3996179870783271607a9",
+      "bytes": 11384
+    },
+    {
+      "path": "04-infrastructure/09-webarena-browser-reset-is-not-backend-reset.md",
+      "sha256": "93e5f4fa3ed245e2f24d3e7e014ffe5a919108c31fef672cede8f09ce8f4a3e2",
+      "bytes": 9917
+    },
+    {
+      "path": "04-infrastructure/10-browsergym-reset-scheduling-contract.md",
+      "sha256": "4e4f721e8f8b128b76a599e49c303558e373ab9b805aa385fe86170f84fb43df",
+      "bytes": 14316
+    },
+    {
+      "path": "04-infrastructure/11-androidworld-device-state-contract.md",
+      "sha256": "db7e43ddaa28b5f0ae029e26f12f31d0f65b07c859dc4a2e020c8c75d5442e85",
+      "bytes": 13528
+    },
+    {
+      "path": "04-infrastructure/12-firecracker-jailer-and-orchestrator-boundaries.md",
+      "sha256": "c0a0d97d9697458afbef80ce235b1a4f677df938e09be21854449d6f1ef79865",
+      "bytes": 16712
+    },
+    {
+      "path": "04-infrastructure/evidence/second-checkpoint.md",
+      "sha256": "1330bfa372dbe3d1dd32fd63d2deaa5d6c7f67845fca73df814c5a7613377114",
+      "bytes": 1853
+    },
+    {
+      "path": "04-infrastructure/evidence/webarena-reset-static-audit.json",
+      "sha256": "c3c78fb84e05f30451366dbd7e68316741dce0850ea9df949056187ba3c69417",
+      "bytes": 1954
+    },
+    {
+      "path": "04-infrastructure/experiments/androidworld-lifecycle/README.md",
+      "sha256": "5a0296f0117990beec1418491af0905aa3f4c42d2bfaf51dcd42be0a4bf0fdc5",
+      "bytes": 2992
+    },
+    {
+      "path": "04-infrastructure/experiments/androidworld-lifecycle/result.txt",
+      "sha256": "ff4d06ac4eac089234032b014fb06b1157a42297095cd4248bfc89a582740f8d",
+      "bytes": 3045
+    },
+    {
+      "path": "04-infrastructure/experiments/androidworld-lifecycle/run_contract_tests.py",
+      "sha256": "56425d3e7055994f1ebe31e18d8caecfa6c902cab714080289cbd4f40030b80f",
+      "bytes": 7477
+    },
+    {
+      "path": "04-infrastructure/experiments/browsergym-reset-contract/README.md",
+      "sha256": "d078c6d8276bbf7b337d903ac77bfd9483d0d50722a8837a36ee4bf59abc11d1",
+      "bytes": 3448
+    },
+    {
+      "path": "04-infrastructure/experiments/browsergym-reset-contract/result.txt",
+      "sha256": "76f304f6361948de89d260590b49d3c12e42cca6ad923ce51df31afd46d0475e",
+      "bytes": 2331
+    },
+    {
+      "path": "04-infrastructure/experiments/browsergym-reset-contract/run_contract_tests.py",
+      "sha256": "1cdfa984a440d101f84f12c1bda562cdfa6f5e56cc57b0384629a963bec5713c",
+      "bytes": 6737
+    },
+    {
+      "path": "04-infrastructure/experiments/firecracker-jailer-selection/README.md",
+      "sha256": "1a99311c057a09faa408626828df59c9aa597fdeb3d5b07a85cecd6ecd697300",
+      "bytes": 2588
+    },
+    {
+      "path": "04-infrastructure/experiments/firecracker-jailer-selection/result.json",
+      "sha256": "6af1fcc9b8e087a8ea0c5a88636fa9fffcfbd7856276c276d3894cb8edece607",
+      "bytes": 684
+    },
+    {
+      "path": "04-infrastructure/experiments/firecracker-jailer-selection/result.txt",
+      "sha256": "a7a92a56c25dbab32c4811ae13f05d8c8f9fbd88f7b1c4844ff8def56baa6b56",
+      "bytes": 1365
+    },
+    {
+      "path": "04-infrastructure/experiments/firecracker-jailer-selection/run_tests.py",
+      "sha256": "847bf620b09e26b94959b78fad4051a9055860c39a367534572f08e0d259972d",
+      "bytes": 6971
+    },
+    {
+      "path": "04-infrastructure/experiments/humaneval-single-task/README.md",
+      "sha256": "4a7f34c6f3903ae4c30456105054d00f103fae93542154fe9e14f22bdb353dcd",
+      "bytes": 4519
+    },
+    {
+      "path": "04-infrastructure/experiments/humaneval-single-task/result.json",
+      "sha256": "0e01404f8e2b2eb07cddb983dc786e74aa854555bba9aa3672babc30e5b0cf1a",
+      "bytes": 983
+    },
+    {
+      "path": "04-infrastructure/experiments/humaneval-single-task/run_single_task.py",
+      "sha256": "0830b32eb3cbc5d66c1cba97a929c519c10dcde28701e38c73faa90980402a28",
+      "bytes": 6699
+    },
+    {
+      "path": "04-infrastructure/experiments/inspect-compose-defaults/README.md",
+      "sha256": "adf7b866039b63071f1481fae7c34a9ab157bc7603ca1a8486e55b275a82351a",
+      "bytes": 2092
+    },
+    {
+      "path": "04-infrastructure/experiments/inspect-compose-defaults/result.txt",
+      "sha256": "e96fb2a99c581e885747c5f72ffc94064f4f5b236e7d91b41df9e962bd8ca74c",
+      "bytes": 925
+    },
+    {
+      "path": "04-infrastructure/experiments/inspect-compose-defaults/run_compose_tests.py",
+      "sha256": "c5607da82daabfcfe5317b03ba751afe907893a33cc62868846fbbc8205271d4",
+      "bytes": 5576
+    },
+    {
+      "path": "04-infrastructure/experiments/kernelbench-cache-scope/README.md",
+      "sha256": "51a2df9515e1adce0d81b71697606f010e21c9857f892093dc2c1f868c85ae7d",
+      "bytes": 2353
+    },
+    {
+      "path": "04-infrastructure/experiments/kernelbench-cache-scope/result.json",
+      "sha256": "88a0b0acb3827909690e65f63f08da44bbeb3770ec74e3f4d379df3fcefec3da",
+      "bytes": 473
+    },
+    {
+      "path": "04-infrastructure/experiments/kernelbench-cache-scope/run_cache_scope_test.py",
+      "sha256": "eb587a1924c5b65a3f4fe7b0271d6555b8dc6d5a445ea0b45f9ba253b6cc7477",
+      "bytes": 3050
+    },
+    {
+      "path": "04-infrastructure/experiments/swebench-report-cache/README.md",
+      "sha256": "d775477eca4c5fab5d09530922c29354db7f028eb4b16980ffda7f2f013fa3b0",
+      "bytes": 1875
+    },
+    {
+      "path": "04-infrastructure/experiments/swebench-report-cache/result.json",
+      "sha256": "8b060bb359a5178392cd190aeb665d98686558c96926997b6b82ec0ac05b0731",
+      "bytes": 555
+    },
+    {
+      "path": "04-infrastructure/experiments/swebench-report-cache/run_report_cache_test.py",
+      "sha256": "beb279e8efe5d00f6b181a8dc2aa339cf3d65aec515ca0aab8f5a74bf161d1a1",
+      "bytes": 4097
+    },
+    {
+      "path": "README.md",
+      "sha256": "410d11821595135a2f2c79c0b6246012f388902a8a1e963534cdce8b4c80ad28",
+      "bytes": 8346
+    },
+    {
+      "path": "RESUME.md",
+      "sha256": "2bc259464e447011cbeffc39d2e3352843107fb5b11015e138266abfe9b76510",
+      "bytes": 2080
+    },
+    {
+      "path": "data/README.md",
+      "sha256": "c51f74570a52bda198581401403bc0fcceab9c011c964702442531ce66c96e18",
+      "bytes": 9674
+    },
+    {
+      "path": "data/benchmarks.csv",
+      "sha256": "50f9091241e0260cc0ac195ec278afbfd76af1b1cf3f3946381587370e5857ab",
+      "bytes": 89481
+    },
+    {
+      "path": "data/concepts.csv",
+      "sha256": "682a782ff7fb5e27d998895eea415f3c52fecfe42b20ecac864f739ddd976695",
+      "bytes": 20154
+    },
+    {
+      "path": "data/evidence.jsonl",
+      "sha256": "0017b0cc53faa50fd4ed5834d231a11c9a2c4b66370153e96a76ac914c5e128b",
+      "bytes": 562254
+    },
+    {
+      "path": "data/sources.jsonl",
+      "sha256": "43585ab70c2050dfdc76438430f8ca839702418eb60cf8691e91b098b3662bd8",
+      "bytes": 422662
+    },
+    {
+      "path": "research-status/coverage.md",
+      "sha256": "bc436b520295ad606f7b88e4f442725053fbdefd397b3def808e55e21fb48c26",
+      "bytes": 5203
+    }
+  ]
+}

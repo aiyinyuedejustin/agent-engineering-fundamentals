@@ -1,0 +1,20 @@
+{
+  "timestamp_utc": "2026-11-06T03:53:21.790969+00:00",
+  "source_git_blob": "19af4ad2dce6eb62f9cf64be06a475de09be5502",
+  "source_bytes": 4000,
+  "source_sha256": "aa2440b79328203728fd1f72d438e841581e3c5a581edf1701e6092661b1b0da",
+  "scope": "unchanged Go selector with local stub factories; no VMM"
+}
+Go: Unknown option: version
+Traceback (most recent call last):
+  File "/workspace/shared/ai-evaluation-knowledge/04-infrastructure/experiments/firecracker-jailer-selection/run_tests.py", line 149, in <module>
+    main()
+  File "/workspace/shared/ai-evaluation-knowledge/04-infrastructure/experiments/firecracker-jailer-selection/run_tests.py", line 142, in main
+    print(subprocess.check_output([go, "version"], env=env, text=True).strip(), flush=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/bin/go', 'version']' returned non-zero exit status 1.
